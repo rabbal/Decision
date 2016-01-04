@@ -1,0 +1,8 @@
+﻿@* GeneratePrettyNames: true*@
+@model  Decision.ViewModel.Role.RoleListViewModel
+
+
+@foreach (var role in Model.Roles)
+{
+    @Html.Partial(MVC.Role.Views._RoleItem, role)
+}

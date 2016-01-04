@@ -1,0 +1,92 @@
+﻿@model Decision.ViewModel.EntireEvaluation.EntireEvaluationViewModel
+
+<div class="col-md-12 " id="entireEvaluation-@Model.Id">
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <i class="fa fa-calendar"></i>
+                    <label class="text-muted">
+                        تاریخ:
+                    </label>
+                    <small>
+                        @Model.EvaluationDate.ToPersianString(PersianDateTimeFormat.Date)
+                    </small>
+                    
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-user"></i>
+                    <label class="text-muted">
+                        ارزیاب :
+                    </label>
+                    <small>@Model.EvaluatorName</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="text-muted">
+                        خلاصه
+                    </label>
+                    <hr class="margin-top-0 margin-bottom-0"/>
+                    @Html.Raw(Model.Brief)
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="text-muted">
+                        نقاط قوت
+                    </label>
+                    <hr class="margin-top-0 margin-bottom-0"/>
+                    @Html.Raw(Model.StrongPoint)
+                </div>
+                <div class="col-md-6">
+                    <label class="text-muted">
+                        نقاط ضعف
+                    </label>
+                    <hr class="margin-top-0 margin-bottom-0"/>
+                    @Html.Raw(Model.Foible)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button aria-controls="@Model.Id" aria-expanded="false" class="btn btn-default btn-sm " data-target="#@Model.Id" data-toggle="collapse" type="button">
+                        <i class="fa fa-eye"></i> نمایش محتوای ارزیابی
+                    </button>
+
+                    <div class="collapse " id="@Model.Id">
+                        <label class="text-muted">
+                            محتوا
+                        </label>
+                        <hr class="margin-top-0 margin-bottom-0"/>
+                        @Html.Raw(Model.Content)
+
+                    </div>
+
+                </div>
+
+            </div>
+            @{Html.RenderPartial(MVC.Shared.Views._AuditLog, Model);}
+        </div>
+        <div class="panel-footer ">
+            <div class="pull-left">
+                <a class="btn btn-sm btn-success " href="@Url.Action(MVC.EntireEvaluation.GetDocument(Model.Id,Model.TeacherId))">
+                    <i class="fa fa-download"></i>
+                    بارگذاری ضمیمه
+                </a>
+                <a class="btn btn-primary btn-sm"
+                   href="@Url.Action(MVC.EntireEvaluation.Edit(Model.Id))" role="button"><i class="fa fa-edit"></i>ویرایش</a>
+                <button class="btn-sm btn btn-danger"
+                        type="button" data-delete-url="@Url.Action(MVC.EntireEvaluation.Delete())" data-Teacher="@Model.TeacherId" data-removal-element="#entireEvaluation-@Model.Id" id="remove-@Model.Id">
+                    <i class="fa fa-trash-o"></i>
+                    حذف
+                </button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,54 @@
+﻿@model Decision.ViewModel.Role.RoleViewModel
+
+<div class="col-md-12 data-item" id="role-@Model.Id">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <i class="fa fa-group"></i>
+                    <label class="text-muted">
+                        نام گروه کاربری:
+                    </label>
+                    <small>
+                        @Model.Name
+                    </small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="list-group row margin-bottom-0">
+                        @foreach (var p in Model.PermissionsList)
+                        {
+                            <li class="list-group-item non-border col-xs-6 text-success">
+                                <i class="fa fa-check-square"></i>
+                                <small class="">@p</small>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        <div class="panel-footer block">
+            <div class="pull-left">
+                <a class="btn btn-primary btn-sm @(Model.IsSystemRole ? "not-active" : "")"
+                   data-ajax-oncomplete="editGetOnComplete(xhr,status)"
+                   disabled="@Model.IsSystemRole"
+                   data-ajax-begin="onBegin(xhr,this)"
+                   data-ajax="true" data-ajax-method="GET"
+                   data-ajax-mode="REPLACE-WITH" data-ajax-success="inlineEditGetOnSuccess(data, status, xhr,'@Model.Id')"
+                   data-ajax-update="#role-@Model.Id"
+                   href="@Url.Action(MVC.Role.Edit(Model.Id))" role="button"><i class="fa fa-edit"></i>ویرایش</a>
+
+                <button class="btn-sm btn btn-danger @(Model.IsSystemRole ? "not-active" : "")"
+                        disabled="@Model.IsSystemRole"
+                        type="button" data-delete-url="@Url.Action(MVC.Role.Delete())" data-refresh-btn="#refreshBtn" data-removal-element="#role-@Model.Id" id="remove-@Model.Id">
+                    <i class="fa fa-trash-o"></i>
+                    حذف
+                </button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

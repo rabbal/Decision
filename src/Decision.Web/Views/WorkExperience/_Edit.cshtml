@@ -1,0 +1,125 @@
+﻿@using Decision.Common.Helpers
+@model Decision.ViewModel.WorkExperience.EditWorkExperienceViewModel
+
+<div class="col-md-12" id="workExperience-@Model.Id">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-leanpub"></i>
+                ویرایش سابقه کاری
+            </h3>
+           
+        </div>
+        <div class="panel-body">
+            @using (Ajax.BeginForm(MVC.WorkExperience.Edit(), new AjaxOptions { HttpMethod = "POST", OnComplete = "editOnComplete(xhr, status, '" + Model.Id + "','#editButton" + Model.Id + "')" }, new { @class = "form-horizontal", id = Model.Id, autocomplete = "off", data_ajax_update = "workExperience-" + Model.Id }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.TeacherId)
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.RowVersion)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.OfficeName, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.NoAutoCompleteTextBoxFor(model => model.OfficeName)
+                        @Html.ValidationMessageFor(model => model.OfficeName, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ClosedProjectCount, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.NoAutoCompleteTextBoxForNumber(model => model.ClosedProjectCount)
+                        @Html.ValidationMessageFor(model => model.ClosedProjectCount, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.OpenProjectCount, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.NoAutoCompleteTextBoxForNumber(model => model.OpenProjectCount)
+                        @Html.ValidationMessageFor(model => model.OpenProjectCount, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ReferentialProjectCount, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.NoAutoCompleteTextBoxForNumber(model => model.ReferentialProjectCount)
+                        @Html.ValidationMessageFor(model => model.ReferentialProjectCount, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.TenureBeginDate, new { @class = "control-label col-md-2" })
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.TenureBeginDate, MVC.Shared.Views.EditorTemplates.PersianDatePicker)
+                        @Html.ValidationMessageFor(model => model.TenureBeginDate, null, new { @class = "text-danger" })
+                    </div>
+                    @Html.LabelFor(model => model.TenureEndDate, new { @class = "control-label col-md-2" })
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.TenureEndDate, MVC.Shared.Views.EditorTemplates.PersianDatePicker)
+                        @Html.ValidationMessageFor(model => model.TenureEndDate, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CooperationType, new { @class = "control-label col-md-2" })
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.CooperationType)
+                        @Html.ValidationMessageFor(model => model.CooperationType, null, new { @class = "text-danger" })
+                    </div>
+
+                    @Html.LabelFor(model => model.TitleId, new { @class = "control-label col-md-2" })
+                    <div class="col-md-4">
+                        @Html.DropDownListFor(model => model.TitleId, Model.Titles, "انتخاب  پست سازمانی", new { @class = "form-control", rows = 2 })
+                        @Html.ValidationMessageFor(model => model.TitleId, null, new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => Model.State, new { @class = "control-label col-md-2" })
+                    <div class="col-md-4">
+                        @Html.DropDownListFor(model => model.State, Model.States, "انتخاب استان محل خدمت", new
+                        {
+                            data_url = Url.Action(MVC.City.GetCities()),
+                            data_tofill = "City",
+                            data_lable = "انتخاب شهر محل خدمت",
+                            data_selects = "City",
+                            @class = "form-control cascade",
+                        })
+                        @Html.ValidationMessageFor(model => model.State, null, new { @class = "text-danger" })
+                    </div>
+                    @Html.LabelFor(model => model.City, new { @class = "control-label col-md-2" })
+                    <div class="col-md-4">
+                        @Html.DropDownListFor(model => model.City, Model.Cities, "انتخاب شهر محل خدمت", new { @class = "form-control", rows = 2 })
+                        @Html.ValidationMessageFor(model => model.City, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+            }
+        </div>
+
+        <div class="panel-footer">
+            <div class="pull-left">
+                <button type="button" id="@string.Format("editButton{0}",Model.Id)" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, '@Model.Id')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-sm">
+                    <i class="fa fa-check-square-o"></i>
+                    ذخیره تغییرات
+                </button>
+
+                <a class="btn btn-default btn-sm" data-ajax="true"
+                   data-ajax-mode="REPLACE-WITH" data-ajax-complete="cancelEditOnComplete(xhr, status)"
+                   data-ajax-update="#workExperience-@Model.Id" data-ajax-method="POST"
+                   href="@Url.Action(MVC.WorkExperience.CancelEdit(Model.Id))" rol role="button">
+                    <i class="fa fa-arrow-right"></i>
+                    انصراف
+                </a>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+</div>

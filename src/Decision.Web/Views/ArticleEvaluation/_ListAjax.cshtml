@@ -1,0 +1,62 @@
+﻿@using System.Globalization
+@model Decision.ViewModel.ArticleEvaluation.ArticleEvaluationListViewModel
+    @{
+        var rowCounter = 1;
+    }
+@foreach (var evaluation in Model.ArticleEvaluations)
+{
+    <div class="col-md-12" id="evaluation-@evaluation.Id">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label class="text-muted">ارزیابی شماره :</label>
+                        <small>@(rowCounter++.GetPersianNumber())</small>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="text-muted">ارزیاب :</label>
+                        <small>@evaluation.EvaluatorName</small>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="text-muted">امتیاز این ارزیابی :</label>
+                        <small >@evaluation.Score.GetPersianNumber()</small>
+                    </div>
+                </div>
+                @{Html.RenderPartial(MVC.Shared.Views._AuditLog,evaluation);}
+            </div>
+            <div class="panel-footer ">
+                <div class="pull-left">
+                    <button class="btn-sm btn btn-info"
+                            type="button" data-delete-url="#" >
+                        <i class="fa fa-list"></i>
+                        جزئیات
+                    </button>
+                    <button class="btn-sm btn btn-danger"
+                            type="button" data-delete-url="@Url.Action(MVC.ArticleEvaluation.Delete(evaluation.Id,Model.ArticleDetails.TeacherId))" data-removal-element="#evaluation-@evaluation.Id" id="remove-@evaluation.Id">
+                        <i class="fa fa-trash-o"></i>
+                        حذف
+                    </button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

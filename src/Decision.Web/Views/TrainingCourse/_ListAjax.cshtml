@@ -1,0 +1,6 @@
+﻿@* GeneratePrettyNames: true*@
+@model Decision.ViewModel.TrainingCourse.TrainingCourseListViewModel
+@foreach (var course in Model.TrainingCourses)
+{
+    @Html.Partial(MVC.TrainingCourse.Views._TrainingCourseItem, course)
+}

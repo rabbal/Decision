@@ -1,0 +1,44 @@
+﻿@model  Decision.ViewModel.EducationalExperience.EducationalExperienceListViewModel
+@{
+    ViewBag.ScientificTeaching = "لیست سوابق تدریس در مراکز علمی";
+}
+@Html.AntiForgeryToken()
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-2">
+                <a class="btn btn-default" data-ajax="true" data-ajax-mode="replace" data-ajax-success="onSuccessFormValidation(data, status, xhr,'createScientificTeachingForm','modal')"
+                   data-ajax-update="#modal" href="@Url.Action(MVC.ScientificTeaching.Create(Model.SearchRequest.TeacherId))" role="button"><i class="fa fa-plus"></i>درج سابقه تدریس علمی جدید</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row" id="scientificTeachingList">
+            @{ Html.RenderPartial(MVC.ScientificTeaching.Views.ViewNames._ListAjax, Model);}
+        </div>
+    </div>
+    <div class="panel-footer padding-5-5">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <button data-page="2" data-json='{"TeacherId":"@Model.SearchRequest.TeacherId","Type":"@Model.SearchRequest.Type"}' data-container="#scientificTeachingList"
+                        data-progress="#progress"
+                        data-load-url="@Url.Action(MVC.ScientificTeaching.ListAjax())"
+                        onclick="justPaging(this)" class="btn btn-info btn-block btn-sm" type="button">
+                    بیشتر
+                </button>
+            </div>
+        </div>
+        <div id="progress" align="center" style="display: none">
+            <img src="@Url.Content("~/Content/images/loading.gif")" alt="loading..."/>
+        </div>
+    </div>
+</div>
+@section Menu{
+    @{Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.SearchRequest.TeacherId);}
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

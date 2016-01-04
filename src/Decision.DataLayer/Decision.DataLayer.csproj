@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5AD7839-9524-4896-9009-97F1C45F7578}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Decision.DataLayer</RootNamespace>
+    <AssemblyName>Decision.DataLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EFSecondLevelCache, Version=1.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EFSecondLevelCache.1.1.4.0\lib\net45\EFSecondLevelCache.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.BulkInsert">
+      <HintPath>..\..\packages\EntityFramework.BulkInsert-ef6.6.0.2.8\lib\Net45\EntityFramework.BulkInsert.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Filters">
+      <HintPath>..\..\packages\EntityFramework.Filters.0.3.0.0\lib\net40\EntityFramework.Filters.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="RefactorThis.GraphDiff">
+      <HintPath>..\..\packages\RefactorThis.GraphDiff.2.0.1\lib\RefactorThis.GraphDiff.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\ApplicationDbContext.cs" />
+    <Compile Include="Context\IUnitOfWork.cs" />
+    <Compile Include="Migrations\201510160239047_Initial.cs" />
+    <Compile Include="Migrations\201510160239047_Initial.Designer.cs">
+      <DependentUpon>201510160239047_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510182128076_AddCodeToArticle.cs" />
+    <Compile Include="Migrations\201510182128076_AddCodeToArticle.Designer.cs">
+      <DependentUpon>201510182128076_AddCodeToArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510221124200_AddedScoreProperty.cs" />
+    <Compile Include="Migrations\201510221124200_AddedScoreProperty.Designer.cs">
+      <DependentUpon>201510221124200_AddedScoreProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512220940192_RemoveUniqueOfTeacherTable.cs" />
+    <Compile Include="Migrations\201512220940192_RemoveUniqueOfTeacherTable.Designer.cs">
+      <DependentUpon>201512220940192_RemoveUniqueOfTeacherTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512221245065_RemoveConstraint.cs" />
+    <Compile Include="Migrations\201512221245065_RemoveConstraint.Designer.cs">
+      <DependentUpon>201512221245065_RemoveConstraint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512221428430_removeNotification.cs" />
+    <Compile Include="Migrations\201512221428430_removeNotification.Designer.cs">
+      <DependentUpon>201512221428430_removeNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\MigrationExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Decision.DomainClasses\Decision.DomainClasses.csproj">
+      <Project>{72B9849F-931A-40C0-B11E-44324CD46250}</Project>
+      <Name>Decision.DomainClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Decision.Utility\Decision.Utility.csproj">
+      <Project>{1F30BF22-BAC2-4F0F-9C1F-2EE1282E25FD}</Project>
+      <Name>Decision.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201510160239047_Initial.resx">
+      <DependentUpon>201510160239047_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510182128076_AddCodeToArticle.resx">
+      <DependentUpon>201510182128076_AddCodeToArticle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510221124200_AddedScoreProperty.resx">
+      <DependentUpon>201510221124200_AddedScoreProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512220940192_RemoveUniqueOfTeacherTable.resx">
+      <DependentUpon>201512220940192_RemoveUniqueOfTeacherTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512221245065_RemoveConstraint.resx">
+      <DependentUpon>201512221245065_RemoveConstraint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512221428430_removeNotification.resx">
+      <DependentUpon>201512221428430_removeNotification.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

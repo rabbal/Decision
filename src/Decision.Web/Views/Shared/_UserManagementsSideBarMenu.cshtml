@@ -1,0 +1,6 @@
+﻿@using Decision.ServiceLayer.Security
+@using Decision.Web.HtmlHelpers
+
+
+@Html.SideBarSecureActionLink("لیست کاربران", Url.Action(MVC.User.List()), "list-group-item second-split", "fa fa-user", AssignableToRolePermissions.CanManageUser)
+@Html.SideBarSecureActionLink("لیست گروه های کاربری", Url.Action(MVC.Role.List()), "list-group-item second-split", "fa fa-group", AssignableToRolePermissions.CanManageUser)

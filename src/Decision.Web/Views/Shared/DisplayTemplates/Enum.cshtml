@@ -1,0 +1,24 @@
+@model Enum
+
+@if (EnumHelper.IsValidForEnumHelper(ViewData.ModelMetadata))
+{
+    // Display Enum using same names (from [Display] attributes) as in editors
+    string displayName = null;
+    foreach (var item in EnumHelper.GetSelectList(ViewData.ModelMetadata, Model).Where(item => item.Selected))
+    {
+        displayName = item.Text ?? item.Value;
+    }
+
+    // Handle the unexpected case that nothing is selected
+    if (String.IsNullOrEmpty(displayName))
+    {
+        displayName = Model == null ? String.Empty : Model.ToString();
+    }
+
+    @Html.DisplayTextFor(model => displayName)
+}
+else
+{
+    // This Enum type is not supported.  Fall back to the text.
+    @Html.DisplayTextFor(model => model)
+}

@@ -1,0 +1,78 @@
+﻿@model Decision.ViewModel.TrainingCenter.TrainingCenterViewModel
+
+<div class="col-md-12" id="trainingCenter-@Model.Id">
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <i class="fa fa-graduation-cap"></i>
+                    <label class="text-muted">نام مرکز:</label>
+                    <small>
+                        @Model.CenterName
+                    </small> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <i class="fa fa-location-arrow"></i>
+                    <label class="text-muted">شهر:</label>
+                    <small>@Model.City</small>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-map-marker"></i>
+                    <label class="text-muted">استان:</label>
+                    <small>@Model.State</small>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-phone"></i>
+                    <label class="text-muted">شماره تلفن ۱:</label>
+                    <small>@Model.PhoneNumber1</small>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-phone"></i>
+                    <label class="text-muted">شماره تلفن ۲:</label>
+                    <small>@Model.PhoneNumber2</small>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <i class="fa fa-align-justify"></i>
+                    <label class="text-muted">توضیحات:</label>
+                    <p>
+                        @Model.Description
+                    </p>
+
+                </div>
+                <div class="col-md-6">
+                    <i class="fa fa-map-marker"></i>
+                    <label class="text-muted">نشانی:</label>
+                    <small> @Model.Location</small>
+                </div>
+            </div>
+            @{Html.RenderPartial(MVC.Shared.Views._AuditLog, Model);}
+        </div>
+        <div class="panel-footer ">
+            <div class="pull-left">
+                <a href="@Url.Action(MVC.TrainingCourse.List(Model.Id))" class="btn btn-sm btn-info" type="button">
+                    <i class="fa fa-align-justify"></i>
+                   لیست دوره ها
+                </a>
+                <a class="btn btn-primary btn-sm" data-ajax-oncomplete="editGetOnComplete(xhr,status)"
+                   data-ajax="true" data-ajax-method="GET"
+                   data-ajax-begin="onBegin(xhr,this)"
+                   data-ajax-mode="REPLACE-WITH" data-ajax-success="inlineEditGetOnSuccess(data, status, xhr,'@Model.Id')"
+                   data-ajax-update="#trainingCenter-@Model.Id"
+                   href="@Url.Action(MVC.TrainingCenter.Edit(Model.Id))" role="button"><i class="fa fa-edit"></i>ویرایش</a>
+
+                <button class="btn-sm btn btn-danger"
+                        type="button" data-delete-url="@Url.Action(MVC.TrainingCenter.Delete())" data-removal-element="#trainingCenter-@Model.Id" id="remove-@Model.Id">
+                    <i class="fa fa-trash-o"></i>
+                    حذف
+                </button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

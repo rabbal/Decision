@@ -1,0 +1,153 @@
+﻿<#@ template language="C#" HostSpecific="True" #>
+<#@ output extension="cs" #>
+<#@ import namespace="System" #>
+<#@ parameter type="System.String" name="ControllerName" #>
+<#@ parameter type="System.String" name="ControllerRootName" #>
+<#@ parameter type="System.String" name="Namespace" #>
+<#@ parameter type="System.String" name="AreaName" #>
+<#
+var routePrefix = String.Empty;
+if (!String.IsNullOrWhiteSpace(AreaName)) {
+    routePrefix = AreaName + "/";
+}
+routePrefix += ControllerRootName;
+#>
+using System;
+using System.Threading.Tasks;
+using System.Web.Mvc;
+using System.Web.UI;
+using Decision.Common.Filters;
+using Decision.DataLayer.Context;
+using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ViewModel.AdminArea.EducationalBackground;
+using Decision.Web.Filters;
+
+namespace <#= Namespace #>
+{
+<#
+if (!String.IsNullOrWhiteSpace(AreaName)) {
+#>
+    [RouteArea("<#= AreaName #>")]
+<#
+}
+#>
+    [RoutePrefix("Teacher/<#= ControllerRootName #>")]
+    [Route("{action}")]
+    public class <#= ControllerName #> : Controller
+    {
+	    #region	Fields
+	    private readonly IUnitOfWork _unitOfWork;
+		private readonly I<#= ControllerName.Replace("Controller","")  #>Service _<#= ControllerName.Replace("Controller","")  #>Service;
+	    #endregion 
+
+		#region	Ctor
+		public <#= ControllerName #>(IUnitOfWork unitOfWork,I<#= ControllerName.Replace("Controller","")  #>Service <#= ControllerName.Replace("Controller","")  #>Service){
+		_unitOfWork=unitOfWork;
+		_<#= ControllerName.Replace("Controller","")  #>Service=<#= ControllerName.Replace("Controller","")  #>Service;
+		}
+		#endregion 
+
+		#region List,ListAjax
+		[HttpGet]
+        [Mvc5Authorize()]
+        [Audit( Description = "")]
+		public async  Task<ActionResult> List()
+		{
+			return View();	
+		}
+		//[CheckReferrer]
+        [AjaxOnly]
+        [Mvc5Authorize()]
+        [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
+		public async  Task<ActionResult> ListAjax()
+		{
+			return PartialView();
+		}
+		#endregion
+
+
+		#region Create
+		[HttpGet]
+		[AjaxOnly]
+        [Mvc5Authorize()]
+        public async  Task<ActionResult> Create()
+        {
+            return View();
+        }
+		
+		[AjaxOnly]
+		[HttpPost]
+        [ValidateAntiForgeryToken]
+        [Mvc5Authorize()]
+        //[CheckReferrer]
+		[Audit( Description = "")]
+        public async  Task<ActionResult> Create(Add<#= ControllerName.Replace("Controller","") #>ViewModel viewModel)
+        {
+          return View();
+        }
+		#endregion
+
+
+		#region Edit
+		[Route("Edit/{id}")]
+        [HttpGet]
+		[AjaxOnly]
+        [Mvc5Authorize()]
+		[OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
+        public async  Task<ActionResult> Edit(Guid? id)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("Edit/{id}")]
+        //[CheckReferrer]
+		[AjaxOnly]
+        [ValidateAntiForgeryToken]
+        [Mvc5Authorize()]
+		[Audit( Description = "")]
+        public async  Task<ActionResult> Edit(Edit<#= ControllerName.Replace("Controller","") #>ViewModel viewModel)
+        {
+           return View();
+        }
+
+		#endregion
+
+		#region Delete
+        [HttpPost]
+		[AjaxOnly]
+        [Route("Delete/{id}")]
+        //[CheckReferrer]
+        [ValidateAntiForgeryToken]
+        [Mvc5Authorize()]
+		[Audit( Description = "")]
+		[OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
+        public async  Task<ActionResult> Delete(Guid? id)
+        {
+          
+                return View();
+        }
+		#endregion 
+
+
+
+		#region RemoteValidations
+		[HttpPost]
+		[AjaxOnly]
+		[Mvc5Authorize()]
+
+        [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
+        public async  Task<JsonResult> Check(string input, Guid? id)
+        {
+            return Json(true);
+        }
+		#endregion
+
+
+		#region PrivateMethods
+		
+		#endregion
+
+       
+    }
+}

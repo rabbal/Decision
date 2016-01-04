@@ -1,0 +1,5 @@
+﻿@model Decision.ViewModel.Interview.InterviewListViewModel
+@foreach (var interview in Model.Interviews)
+{
+    @Html.Partial(MVC.Interview.Views._InterviewItem, interview)
+}

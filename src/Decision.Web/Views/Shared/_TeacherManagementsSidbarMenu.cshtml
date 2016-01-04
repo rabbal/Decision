@@ -1,0 +1,9 @@
+﻿@using Decision.ServiceLayer.Security
+@using Decision.Web.HtmlHelpers
+
+
+@Html.SideBarSecureActionLink("لیست اساتید", Url.Action(MVC.Teacher.List()), "list-group-item thrid-split", "fa fa-group", AssignableToRolePermissions.CanViewTeacherList)
+
+@Html.SideBarSecureActionLink("درج استاد ", Url.Action(MVC.Teacher.Create()), "list-group-item thrid-split", "fa fa-plus", AssignableToRolePermissions.CanCreateTeacher)
+
+

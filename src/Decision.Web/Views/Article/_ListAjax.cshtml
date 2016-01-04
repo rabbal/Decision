@@ -1,0 +1,6 @@
+﻿@model Decision.ViewModel.Article.ArticleListViewModel
+           
+@foreach (var judment in Model.Articles)
+{
+  @Html.Partial(MVC.Article.Views._ArticleItem, judment)
+}

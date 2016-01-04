@@ -1,0 +1,70 @@
+﻿@model  IEnumerable<Decision.ViewModel.PrivateMessage.OutBoxViewModel>
+
+@foreach (var conversation in Model)
+{
+    <div class="col-md-12" id="conversation-@conversation.Id">
+        <div class="panel panel-default" >
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-5">
+                        @if (!conversation.IsSeen)
+                        {
+                            <i class="fa fa-envelope"></i>
+                        }
+                        else
+                        {
+                            <i class="fa fa-envelope-o"></i>
+                        }
+                        <small>
+                            <a href="@Url.Action(MVC.PrivateMessage.Messages(conversation.Id))">@conversation.Subject</a>
+                        </small>
+                    </div>
+                   
+                    <div class="col-md-2">
+                        <i class="fa fa-user"></i>
+                        <label class="text-muted">گیرنده :</label>
+                        <small >@conversation.RecieverUserName</small>
+                    </div>
+                    <div class="col-md-5">
+                        <i class="fa fa-calendar-o"></i>
+                        <small>در :</small>
+
+                        <time>
+                            @conversation.StartDate.ToRemainingDateTime()
+                            ,
+                            @conversation.StartDate.ToPersianString(PersianDateTimeFormat.FullDate)
+                        </time>
+                        <i class="fa fa-clock-o"></i>
+                        <time>@conversation.StartDate.ToPersianTimeString()</time>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer ">
+                <div class="pull-left">
+                    <button class="btn-sm btn btn-danger"
+                                type="button" data-delete-url="@Url.Action(MVC.PrivateMessage.Delete())" data-removal-element="#conversation-@conversation.Id" id="remove-@conversation.Id">
+                            <i class="fa fa-trash-o"></i>
+                            حذف
+                        </button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

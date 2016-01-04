@@ -1,0 +1,104 @@
+﻿@using Decision.ServiceLayer.Security
+@using Auth=Decision.ServiceLayer.Security.AssignableToRolePermissions
+<div class="navbar-collapse collapse" id="navbar-main">
+    <ul class="nav navbar-nav">
+        @if (User.IsInRole(Auth.CanViewTeacherList))
+        {
+            <li class="main">
+                @Html.SecureActionLink("مدیریت اساتید", MVC.Teacher.List())
+            </li>
+        }
+       
+        @if (User.IsInRole(Auth.CanAccessReports))
+        {
+            <li class="main">
+                <a href="@Url.Action(MVC.Report.Design())">گزارشات</a>
+            </li>
+        }
+        @if (User.IsInRole(Auth.CanManageUser))
+        {
+            <li class="main">
+                @Html.SecureActionLink("مدیریت کاربران", MVC.User.List())
+            </li>
+        }
+        @if (User.IsInRole(Auth.CanAccessToSystemMaintenance))
+        {
+            <li class="main">
+                <a href="@Url.Action(MVC.Elmah.Index())">نگهداری سیستم</a>
+            </li>
+        }
+      @if (Auth.GetBaseSettingPermissions().Any(User.IsInRole))
+      {
+        <li class="main">
+            @Html.SecureActionLink("تنظیمات پایه", MVC.BaseSetting.Index())
+        </li>
+      }
+
+    </ul>
+    <ul class="nav navbar-nav navbar-left">
+        @if (User.IsInRole(Auth.CanUsePrivateMessage))
+        {
+            <li class="dropdown noti-dropdown main">
+                <a href="@Url.Action(MVC.PrivateMessage.InBox())">
+                    <span class="badge bage-noti digit">@{Html.RenderAction(MVC.Home.GetNewMessagesCount());}</span>
+                    <span class="fa fa-bell  animated infinite swing"></span>
+                    پیغام جدید
+                </a>
+            </li>
+        }
+      
+        <li>
+            <div id="dl-menu" class="dl-menuwrapper">
+                <button class="dl-trigger"></button>
+                <ul class="dl-menu">
+                    <li>
+                        <a href="#">
+                            تنظیمات کاربری
+                        </a>
+                    </li>
+                    @if (User.IsInRole(Auth.CanUsePrivateMessage))
+                    {
+                        <li>
+                            <a href="#">
+                                پیغام
+                                <span class="fa fa-caret-left pull-left"></span>
+                            </a>
+
+
+                            <ul class="dl-submenu">
+                                <li><a href="@Url.Action(MVC.PrivateMessage.NewMessage())">پیغام جدید</a></li>
+                                <li><a href="@Url.Action(MVC.PrivateMessage.InBox())">صندوق دریافت</a></li>
+                                <li><a href="@Url.Action(MVC.PrivateMessage.OutBox())">صندوق ارسال</a></li>
+                            </ul>
+
+
+                        </li>
+                    }
+                    @if (User.IsInRole(StandardRoles.Operators))
+                    {
+                        <li>
+                            <a href="@Url.Action(MVC.Teacher.ReferList())">
+                                لیست ارجاعات
+                            </a>
+                            <a href="@Url.Action(MVC.Teacher.NewTeacherList())">
+                                اساتید در حال تکمیل
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action(MVC.Teacher.Create())">
+                                درج استاد
+                            </a>
+                        </li>
+                    }
+
+                    <li>
+                        <a href="@Url.Action(MVC.Account.LogOff())">
+                            خروج
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /dl-menuwrapper -->
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,62 @@
+﻿@model Decision.ViewModel.TrainingCourse.TrainingCourseListViewModel
+@{
+    ViewBag.Title = "مشاهده لیست دوره ها";
+}
+@Html.AntiForgeryToken()
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="col-md-2">
+                    <a class="btn btn-default btn-sm" data-ajax="true" data-ajax-mode="replace" data-ajax-method="GET" data-ajax-success="onSuccessFormValidation(data, status, xhr,'createTrainingCourseForm','modal')"
+                       data-ajax-update="#modal" data-ajax-url="@Url.Action(MVC.TrainingCourse.Create(Model.SearchRequest.TrainingCenterId))" role="button"><i class="fa fa-plus"></i>درج دوره کارآموزی جدید</a>
+                </div>
+            </div>
+            <div class="col-md-8">
+                @using (Ajax.BeginForm(MVC.TrainingCourse.ListAjax(), new AjaxOptions { AllowCache = false, HttpMethod = "POST", OnComplete = "searchOnComplete(xhr,status,'#progress','#trainingCoursePager','#trainingCourseList')" }, new { @class = "form-horizontal search", autocomplete = "off", id = "trainingCourseSearchForm" }))
+                {
+                    @Html.Hidden("TrainingCenterId", Model.SearchRequest.TrainingCenterId)
+                    @Html.Hidden("PageIndex", Model.SearchRequest.PageIndex)
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="input-group">
+                                <input type="text" name="Term" class="form-control" placeholder="کد دوره کارآموزی">
+                                <span class="input-group-btn">
+                                    <button type="button" id="trainingCourseSearchButton" autocomplete="off" onclick="directSearchPaging('#progress', 'trainingCourseSearchForm', '#trainingCoursePager', '#trainingCourseList')" data-loading-text="درخواست" class="btn btn-success btn-sm search">
+                                        <i class="fa fa-search"></i>         جستجو
+                                    </button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+    <div class="panel-body">
+        <div class="row" id="trainingCourseList">
+            @{ Html.RenderPartial(MVC.TrainingCourse.Views.ViewNames._ListAjax, Model);}
+        </div>
+    </div>
+    <div class="panel-footer padding-5-5">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <button data-page="2" id="trainingCoursePager" onclick="doPaging(this, '#progress', 'trainingCourseSearchForm')" class="btn btn-info btn-block btn-sm" type="button">
+                    بیشتر
+                </button>
+            </div>
+        </div>
+        <div id="progress" align="center" style="display: none">
+            <img src="@Url.Content("~/Content/images/loading.gif")" alt="loading..."/>
+        </div>
+    </div>
+</div>
+    @section Menu{
+        @{Html.RenderPartial(MVC.Shared.Views._PublicSettingSideBarMenu);}
+    }
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/datePicker")
+    }

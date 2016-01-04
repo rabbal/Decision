@@ -1,0 +1,28 @@
+﻿
+@* Generator: MvcHelper GeneratePrettyNames: true *@
+@using System.Globalization
+@helper Initial() { 
+    Func<DateTime, string> toPersianDate = date =>
+    {
+        var dateTime = new DateTime(date.Year, date.Month, date.Day, new GregorianCalendar());
+        var persianCalendar = new PersianCalendar();
+        return string.Format("{0}/{1}/{2}",
+            persianCalendar.GetYear(dateTime),
+            persianCalendar.GetMonth(dateTime).ToString("00"),
+            persianCalendar.GetDayOfMonth(dateTime).ToString("00"));
+    };
+    
+    var today = toPersianDate(DateTime.Now);
+<script>
+    $(function() {
+        $(document).on('focus', 'input.datepicker', function() {
+            $(this).datepicker({
+                "setDate": @today,
+                changeMonth: true, //
+                changeYear: true, // T
+                yearRange: 'c-100:c+0'
+            });
+        });
+    });
+</script>
+}

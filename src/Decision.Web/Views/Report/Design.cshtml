@@ -1,0 +1,22 @@
+﻿
+@*@model dynamic
+
+@{
+    ViewBag.Title = "طراحی گزارش";
+}
+
+@section css{
+    @Html.Stimulsoft().RenderMvcDesignerScripts()
+}
+
+@Html.Stimulsoft().StiMvcDesigner(new StiMvcDesignerOptions()
+{
+    ActionGetReportTemplate = "GetReportTemplate",
+    Width = Unit.Percentage(100),
+    Height = Unit.Pixel(700),
+    ActionExportReport = "ExportReport",
+    ActionGetReportSnapshot = "GetReportSnapshot",
+    ActionDataProcessing = "DataProcessing",
+    ActionGetLocalization = "GetLocalization",
+    LocalizationDirectory = Server.MapPath("~/Content/Report")
+})*@

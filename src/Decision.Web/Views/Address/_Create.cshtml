@@ -1,0 +1,78 @@
+﻿@using Decision.Common.Helpers
+@using Decision.Common.Security.HiddenField
+@model Decision.ViewModel.Address.AddAddressViewModel
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header alert alert-success">
+            <h6 class="modal-title">درج آدرس</h6>
+        </div>
+        <div class="modal-body">
+            @using (Ajax.BeginForm(MVC.Address.Create(), new AjaxOptions { HttpMethod = "POST", OnComplete = "createOnComplete(xhr, status, 'addressList', '#modal','createAddressForm','#createAddressButton')" }, new { @class = "form-horizontal", id = "createAddressForm", autocomplete = "off" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.TeacherId)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Location, new { @class = "control-label col-md-2" })
+                    <div class="col-md-9">
+                        @Html.TextAreaFor(model => model.Location, new { @class = "form-control", rows = 2 })
+                        @Html.ValidationMessageFor(model => model.Location, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CellPhone, new { @class = "control-label col-md-2" })
+                    <div class="col-md-9">
+                        @Html.NoAutoCompleteTextBoxForLtr(model => model.CellPhone)
+                        @Html.ValidationMessageFor(model => model.CellPhone, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PhoneNumber, new { @class = "control-label col-md-2" })
+                    <div class="col-md-9">
+                        @Html.NoAutoCompleteTextBoxForLtr(model => model.PhoneNumber)
+                        @Html.ValidationMessageFor(model => model.PhoneNumber, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Type, new { @class = "control-label col-md-2" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.Type)
+                        @Html.ValidationMessageFor(model => model.Type, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => Model.State, new { @class = "control-label col-md-2" })
+                    <div class="col-md-9">
+                        @Html.DropDownListFor(model => model.State, Model.States, "انتخاب استان", new
+                        {
+                            data_url = Url.Action(MVC.City.GetCities()),
+                            data_tofill = "City",
+                            data_lable = "انتخاب شهر",
+                            data_selects = "City",
+                            @class = "form-control cascade",
+                        })
+                        @Html.ValidationMessageFor(model => model.State, null, new {@class = "text-danger"})
+                    </div>
+                  
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => Model.City, new { @class = "control-label col-md-2" })
+                    <div class="col-md-9">
+                        @Html.DropDownListFor(model => model.City, Model.Cities, "انتخاب شهر", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.City, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-2">
+                        <button type="button" id="createAddressButton" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'createAddressForm')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">
+                            ثبت آدرس جدید
+                        </button>
+                        <button class="btn btn-default btn-md" data-dismiss="modal" aria-hidden="true">
+                            انصراف
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

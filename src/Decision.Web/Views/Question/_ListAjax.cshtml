@@ -1,0 +1,5 @@
+﻿@model Decision.ViewModel.Question.QuestionListViewModel
+@foreach (var Question in Model.Questions)
+{
+    @Html.Partial(MVC.Question.Views._QuestionItem, Question)
+}

@@ -1,0 +1,3255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC08EEA8-F1E8-45EE-8361-40FDA6ACA512}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Decision.Web</RootNamespace>
+    <AssemblyName>Decision.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AttributeRouting, Version=3.5.6.0, Culture=neutral, PublicKeyToken=c10f85d521a011a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\AttributeRouting.Core.3.5.6\lib\net40\AttributeRouting.dll</HintPath>
+    </Reference>
+    <Reference Include="AttributeRouting.Web, Version=3.5.6.0, Culture=neutral, PublicKeyToken=c10f85d521a011a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\AttributeRouting.Core.Web.3.5.6\lib\net40\AttributeRouting.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="CaptchaMvc">
+      <HintPath>..\..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DNT.Extensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DNT.Extensions.1.0.0\lib\DNT.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="ElmahEFLogger">
+      <HintPath>..\..\packages\ElmahEFLogger.1.0.2.0\lib\net45\ElmahEFLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.1.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvcSiteMapProvider, Version=4.6.19.0, Culture=neutral, PublicKeyToken=1923abe4657913cc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvcSiteMapProvider.MVC5.Core.4.6.19\lib\net45\MvcSiteMapProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvcSiteMapProvider.WebActivator, Version=4.6.19.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvcSiteMapProvider.MVC5.4.6.19\lib\net45\MvcSiteMapProvider.WebActivator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Persia, Version=3.0.4727.38582, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Persia.NET.3.0.4727\lib\Persia.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PersianDateTime, Version=1.1.5082.36395, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\PersianDateTime.1.1.5082.36395\lib\net40\PersianDateTime.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RazorGenerator.Mvc.2.3.6\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RazorGenerator.Templating, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RazorGenerator.Templating.2.3.11\lib\portable-Profile328\RazorGenerator.Templating.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\packages\structuremap.3.1.6.186\lib\net40\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap.Web">
+      <HintPath>..\..\packages\structuremap.web.3.1.6.186\lib\net40\StructureMap.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="T4MVCExtensions">
+      <HintPath>..\..\packages\T4MVCExtensions.3.15.4\lib\net40\T4MVCExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="VikingErik.Mvc.ResumingActionResults">
+      <HintPath>..\..\packages\MVC.ResumingActionResults.1.0.5181.42826\lib\net35\VikingErik.Mvc.ResumingActionResults.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddressController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoptedPriorityController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppraiserController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArticleController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArticleEvaluationController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseSettingController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CityController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AddressController.cs" />
+    <Compile Include="Controllers\AdoptedPriorityController.cs" />
+    <Compile Include="Controllers\AppraiserController.cs" />
+    <Compile Include="Controllers\BaseSettingController.cs" />
+    <Compile Include="Controllers\CityController.cs" />
+    <Compile Include="Controllers\EducationalBackgroundController.cs" />
+    <Compile Include="Controllers\ElmahController.cs" />
+    <Compile Include="Controllers\EntireEvaluationController.cs" />
+    <Compile Include="Controllers\FavoriteIssueController.cs" />
+    <Compile Include="Controllers\InstitutionController.cs" />
+    <Compile Include="Controllers\InterviewController.cs" />
+    <Compile Include="Controllers\TeacherInServiceCourseTypeController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\ArticleEvaluationController.cs" />
+    <Compile Include="Controllers\OrganizationalTeachingController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\ResearchExperienceController.cs" />
+    <Compile Include="Controllers\ScientificTeachingController.cs" />
+    <Compile Include="Controllers\TitleController.cs" />
+    <Compile Include="Controllers\TrainingCenterController.cs" />
+    <Compile Include="Controllers\TrainingCourseController.cs" />
+    <Compile Include="Controllers\WorkExperienceController.cs" />
+    <Compile Include="Controllers\PrivateMessageController.cs" />
+    <Compile Include="EducationalBackgroundController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ElmahController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntireEvaluationController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FavoriteIssueController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\LazySingleton.cs" />
+    <Compile Include="HomeController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Hubs\HomeHub.cs" />
+    <Compile Include="Hubs\NotificationHub.cs" />
+    <Compile Include="InstitutionController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InterviewController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizationalTeachingController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateMessageController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResearchExperienceController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScientificTeachingController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4MVC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherInServiceCourseTypeController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitleController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingCenterController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingCourseController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Address\_AddressItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AddressItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdoptedPriority\_AdoptedPriorityItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AdoptedPriorityItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Appraiser\_AppraiserItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AppraiserItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseSetting\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EducationalBackground\_EducationalBackgroundItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_EducationalBackgroundItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntireEvaluation\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntireEvaluation\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntireEvaluation\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntireEvaluation\_EntireEvaluationItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_EntireEvaluationItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntireEvaluation\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error\BadRequest.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BadRequest.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error\Forbidden.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Forbidden.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error\InternalServerError.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InternalServerError.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error\LockOut.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LockOut.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error\MethodNotAllowed.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MethodNotAllowed.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error\NotFound.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotFound.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error\Unauthorized.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Unauthorized.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FavoriteIssue\_FavoriteIssueItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_FavoriteIssueItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\_Benckmarks.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Benckmarks.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\_TeacherWithTopScoreList.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_TeacherWithTopScoreList.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\_NewTeachersList.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_NewTeachersList.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Institution\_InstitutionItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_InstitutionItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Interview\_InterviewItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_InterviewItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TeacherInServiceCourseType\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TeacherInServiceCourseType\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TeacherInServiceCourseType\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TeacherInServiceCourseType\_TeacherInServiceCourseTypeItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_TeacherInServiceCourseTypeItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TeacherInServiceCourseType\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\NewTeacherList.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewTeacherList.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\ReferList.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReferList.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\_TeacherRelatedLinksBuilder.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_TeacherRelatedLinksBuilder.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Address\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Address\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Address\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Address\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdoptedPriority\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdoptedPriority\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdoptedPriority\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdoptedPriority\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Appraiser\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Appraiser\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Appraiser\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Appraiser\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EducationalBackground\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EducationalBackground\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EducationalBackground\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EducationalBackground\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FavoriteIssue\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FavoriteIssue\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FavoriteIssue\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FavoriteIssue\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Institution\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Institution\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Institution\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Institution\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Interview\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Interview\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Interview\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Interview\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\Details.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Details.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\_TeacherItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_TeacherItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\_Refer.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Refer.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ArticleEvaluation\Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ArticleEvaluation\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ArticleEvaluation\_ArticleEvaluationSidbarMenu.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ArticleEvaluationSidbarMenu.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ArticleEvaluation\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Article\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Article\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Article\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Article\_ArticleItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ArticleItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Article\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrganizationalTeaching\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrganizationalTeaching\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrganizationalTeaching\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrganizationalTeaching\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrganizationalTeaching\_OrganizationalTeachingItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_OrganizationalTeachingItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrivateMessage\InBox.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InBox.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrivateMessage\Messages.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrivateMessage\NewMessage.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewMessage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrivateMessage\OutBox.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutBox.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrivateMessage\_InBoxListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_InBoxListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrivateMessage\_OutBoxListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_OutBoxListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrivateMessage\_Reply.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Reply.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Question\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Question\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Question\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Question\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Question\_QuestionItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_QuestionItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\Design.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Design.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResearchExperience\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResearchExperience\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResearchExperience\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResearchExperience\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResearchExperience\_ResearchExperienceItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ResearchExperienceItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Role\_RoleItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_RoleItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScientificTeaching\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScientificTeaching\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScientificTeaching\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScientificTeaching\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScientificTeaching\_ScientificTeachingItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ScientificTeachingItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CanonicalHelperModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\MenuHelperModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MenuHelperModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetaRobotsHelperModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\SiteMapHelperModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteMapHelperModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteMapNodeModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteMapNodeModelList.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\SiteMapPath.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteMapPath.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteMapPathHelperModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteMapTitleHelperModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\EditorTemplates\Decimal.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Decimal.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_AuditLog.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AuditLog.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_TeacherManagementsSidbarMenu.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_TeacherManagementsSidbarMenu.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_LoginPartial.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_LoginPartial.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_NewMessagesCount.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_NewMessagesCount.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_PublicSettingSideBarMenu.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_PublicSettingSideBarMenu.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_UserManagementsSideBarMenu.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_UserManagementsSideBarMenu.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_UserProfileSideBarMenu.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_UserProfileSideBarMenu.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Title\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Title\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Title\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Title\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Title\_TitleItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_TitleItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainingCenter\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainingCenter\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainingCenter\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainingCenter\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainingCenter\_TrainingCenterItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_TrainingCenterItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainingCourse\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainingCourse\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainingCourse\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainingCourse\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainingCourse\_TrainingCourseItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_TrainingCourseItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\_UserItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_UserItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkExperience\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkExperience\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkExperience\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkExperience\_ListAjax1.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkExperience\_WorkExperienceItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_WorkExperienceItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Filters\AuditAttribute.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Views\Home\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Role\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Role\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Role\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Role\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\Enum.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Enum.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\EditorTemplates\Enum.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Enum.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\EditorTemplates\PersianDatePicker.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersianDatePicker.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_Layout1.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Layout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Extentions\ControllerExtentions.cs" />
+    <Compile Include="Filters\TeacherAuthorizeAttribute.cs" />
+    <Compile Include="Helpers\TreeView.cs" />
+    <Compile Include="Hubs\BaseHub.cs" />
+    <Compile Include="App_Start\RoutingConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\ApplicationStart.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="App_Start\RegisterModules.cs" />
+    <Compile Include="App_Start\StructureMapControllerFactory.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="RazorHelpers\CheckBoxListBuilder.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckBoxListBuilder.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="RazorHelpers\DatePickerInitial.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatePickerInitial.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="RazorHelpers\NotyBuilder.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotyBuilder.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlHelpers\T4SecureExtensions.cs" />
+    <Compile Include="Views\Account\Login.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Error.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Error.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_CaptchaPartial.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_CaptchaPartial.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_Noty.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Noty.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\_ViewStart.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ViewStart.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkExperienceController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\IranCities.xml" />
+    <Content Include="Content\fonts\BMitra-Bold.svg" />
+    <Content Include="Content\fonts\BMitra-Regular.svg" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\FontLicense.txt" />
+    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\IRAN Sans.html" />
+    <Content Include="Content\Images\default-avatar.png" />
+    <Content Include="Content\Images\lightbulb.png" />
+    <Content Include="Content\Images\loading.gif" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\Overlays\01.png" />
+    <Content Include="Content\Images\Overlays\02.png" />
+    <Content Include="Content\Images\Overlays\03.png" />
+    <Content Include="Content\Images\Overlays\04.png" />
+    <Content Include="Content\Images\Overlays\05.png" />
+    <Content Include="Content\Images\Overlays\06.png" />
+    <Content Include="Content\Images\Overlays\07.png" />
+    <Content Include="Content\Images\Overlays\08.png" />
+    <Content Include="Content\Images\Overlays\09.png" />
+    <Content Include="Content\Images\Overlays\10.png" />
+    <Content Include="Content\Images\Overlays\11.png" />
+    <Content Include="Content\Images\Overlays\12.png" />
+    <Content Include="Content\Images\Overlays\13.png" />
+    <Content Include="Content\Images\Overlays\14.png" />
+    <Content Include="Content\Images\Overlays\15.png" />
+    <Content Include="Content\plugins\fileinput.min.css" />
+    <Content Include="Content\plugins\PagedList.css" />
+    <Content Include="Content\plugins\PagedList.min.css" />
+    <Content Include="Content\plugins\slider-pro.min.css" />
+    <Content Include="Content\plugins\star-rating.css" />
+    <Content Include="Content\plugins\star-rating.min.css" />
+    <Content Include="Content\plugins\xeditable.css" />
+    <Content Include="Content\plugins\xeditable.min.css" />
+    <Content Include="Content\site.css" />
+    <Content Include="Content\site.min.css">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
+    <Content Include="Content\style.css" />
+    <Content Include="Error\Forbidden.html" />
+    <Content Include="Error\GatewayTimeout.html" />
+    <Content Include="Error\ServiceUnavailable.html" />
+    <Content Include="NoScript.html" />
+    <Content Include="browserconfig.xml" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-aria.js" />
+    <Content Include="Scripts\angular-aria.min.js" />
+    <Content Include="Scripts\angular-cookies.js" />
+    <Content Include="Scripts\angular-cookies.min.js" />
+    <Content Include="Scripts\angular-csp.css" />
+    <Content Include="Scripts\angular-loader.js" />
+    <Content Include="Scripts\angular-loader.min.js" />
+    <Content Include="Scripts\angular-message-format.js" />
+    <Content Include="Scripts\angular-message-format.min.js" />
+    <Content Include="Scripts\angular-messages.js" />
+    <Content Include="Scripts\angular-messages.min.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-sanitize.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-scenario.js" />
+    <Content Include="Scripts\angular-touch.js" />
+    <Content Include="Scripts\angular-touch.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\ckeditor\adapters\jquery.js" />
+    <Content Include="Scripts\ckeditor\build-config.js" />
+    <Content Include="Scripts\ckeditor\ckeditor.js" />
+    <Content Include="Scripts\ckeditor\config.js" />
+    <Content Include="Scripts\ckeditor\contents.css" />
+    <Content Include="Scripts\ckeditor\lang\en.js" />
+    <Content Include="Scripts\ckeditor\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\af.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fo.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Scripts\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Scripts\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Scripts\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Scripts\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Scripts\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Scripts\ckeditor\plugins\icons.png" />
+    <Content Include="Scripts\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Scripts\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Scripts\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Scripts\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Scripts\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Scripts\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Scripts\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Scripts\ckeditor\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <Content Include="Scripts\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Scripts\ckeditor\plugins\magicline\images\icon-rtl.png" />
+    <Content Include="Scripts\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Scripts\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Scripts\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Scripts\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\af.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\da.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ko.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\lt.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Scripts\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Scripts\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\.temp\css\dialog.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\.temp\css\dialog_ie.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\.temp\css\dialog_ie7.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\.temp\css\dialog_ie8.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\.temp\css\dialog_iequirks.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\.temp\css\dialog_opera.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\.temp\css\editor.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\.temp\css\editor_gecko.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\.temp\css\editor_ie.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\.temp\css\editor_ie7.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\.temp\css\editor_ie8.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\.temp\css\editor_iequirks.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\dev\icons16.svg" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\dev\icons32.svg" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\dialog.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\dialog_ie.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\dialog_ie7.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\dialog_ie8.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\dialog_iequirks.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\dialog_opera.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\editor.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\editor_gecko.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\editor_ie.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\editor_ie7.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\editor_ie8.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\editor_iequirks.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\icons.png" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\icons_hidpi.png" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\images\arrow.png" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\images\close.png" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\images\hidpi\close.png" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\images\hidpi\lock-open.png" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\images\hidpi\lock.png" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\images\hidpi\refresh.png" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\images\lock-open.png" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\images\lock.png" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\images\refresh.png" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\sample\bootstrapck-sample.html" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\sample\css\bootstrapck-sample.css" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\sample\js\analytics.js" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\sample\js\jquery-1.11.0.min.js" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\skin.js" />
+    <Content Include="Scripts\ckeditor\styles.js" />
+    <Content Include="Scripts\customs\ajax.methods.js" />
+    <Content Include="Scripts\customs\ajax.methods.min.js">
+      <DependentUpon>ajax.methods.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\customs\jquery.ajax.querystring.js" />
+    <Content Include="Scripts\customs\jquery.ajax.querystring.min.js">
+      <DependentUpon>jquery.ajax.querystring.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\customs\jquery.form.config.js" />
+    <Content Include="Scripts\customs\jquery.form.config.min.js">
+      <DependentUpon>jquery.form.config.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\customs\noty.alerts.js" />
+    <Content Include="Scripts\customs\noty.alerts.min.js">
+      <DependentUpon>noty.alerts.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\customs\site.min.js">
+      <DependentUpon>site.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
+    <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
+    <Content Include="Scripts\i18n\angular-locale_aa-et.js" />
+    <Content Include="Scripts\i18n\angular-locale_aa.js" />
+    <Content Include="Scripts\i18n\angular-locale_af-na.js" />
+    <Content Include="Scripts\i18n\angular-locale_af-za.js" />
+    <Content Include="Scripts\i18n\angular-locale_af.js" />
+    <Content Include="Scripts\i18n\angular-locale_agq-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_agq.js" />
+    <Content Include="Scripts\i18n\angular-locale_ak-gh.js" />
+    <Content Include="Scripts\i18n\angular-locale_ak.js" />
+    <Content Include="Scripts\i18n\angular-locale_am-et.js" />
+    <Content Include="Scripts\i18n\angular-locale_am.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-001.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-ae.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-bh.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-dj.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-dz.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-eg.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-eh.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-er.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-il.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-iq.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-jo.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-km.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-kw.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-lb.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-ly.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-ma.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-mr.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-om.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-ps.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-qa.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-sa.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-sd.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-so.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-ss.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-sy.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-td.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-tn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-ye.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar.js" />
+    <Content Include="Scripts\i18n\angular-locale_as-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_as.js" />
+    <Content Include="Scripts\i18n\angular-locale_asa-tz.js" />
+    <Content Include="Scripts\i18n\angular-locale_asa.js" />
+    <Content Include="Scripts\i18n\angular-locale_ast-es.js" />
+    <Content Include="Scripts\i18n\angular-locale_ast.js" />
+    <Content Include="Scripts\i18n\angular-locale_az-cyrl-az.js" />
+    <Content Include="Scripts\i18n\angular-locale_az-cyrl.js" />
+    <Content Include="Scripts\i18n\angular-locale_az-latn-az.js" />
+    <Content Include="Scripts\i18n\angular-locale_az-latn.js" />
+    <Content Include="Scripts\i18n\angular-locale_az.js" />
+    <Content Include="Scripts\i18n\angular-locale_bas-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_bas.js" />
+    <Content Include="Scripts\i18n\angular-locale_be-by.js" />
+    <Content Include="Scripts\i18n\angular-locale_be.js" />
+    <Content Include="Scripts\i18n\angular-locale_bem-zm.js" />
+    <Content Include="Scripts\i18n\angular-locale_bem.js" />
+    <Content Include="Scripts\i18n\angular-locale_bez-tz.js" />
+    <Content Include="Scripts\i18n\angular-locale_bez.js" />
+    <Content Include="Scripts\i18n\angular-locale_bg-bg.js" />
+    <Content Include="Scripts\i18n\angular-locale_bg.js" />
+    <Content Include="Scripts\i18n\angular-locale_bm-latn-ml.js" />
+    <Content Include="Scripts\i18n\angular-locale_bm-latn.js" />
+    <Content Include="Scripts\i18n\angular-locale_bm-ml.js" />
+    <Content Include="Scripts\i18n\angular-locale_bm.js" />
+    <Content Include="Scripts\i18n\angular-locale_bn-bd.js" />
+    <Content Include="Scripts\i18n\angular-locale_bn-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_bn.js" />
+    <Content Include="Scripts\i18n\angular-locale_bo-cn.js" />
+    <Content Include="Scripts\i18n\angular-locale_bo-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_bo.js" />
+    <Content Include="Scripts\i18n\angular-locale_br-fr.js" />
+    <Content Include="Scripts\i18n\angular-locale_br.js" />
+    <Content Include="Scripts\i18n\angular-locale_brx-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_brx.js" />
+    <Content Include="Scripts\i18n\angular-locale_bs-cyrl-ba.js" />
+    <Content Include="Scripts\i18n\angular-locale_bs-cyrl.js" />
+    <Content Include="Scripts\i18n\angular-locale_bs-latn-ba.js" />
+    <Content Include="Scripts\i18n\angular-locale_bs-latn.js" />
+    <Content Include="Scripts\i18n\angular-locale_bs.js" />
+    <Content Include="Scripts\i18n\angular-locale_byn-er.js" />
+    <Content Include="Scripts\i18n\angular-locale_byn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ca-ad.js" />
+    <Content Include="Scripts\i18n\angular-locale_ca-es-valencia.js" />
+    <Content Include="Scripts\i18n\angular-locale_ca-es.js" />
+    <Content Include="Scripts\i18n\angular-locale_ca-fr.js" />
+    <Content Include="Scripts\i18n\angular-locale_ca-it.js" />
+    <Content Include="Scripts\i18n\angular-locale_ca.js" />
+    <Content Include="Scripts\i18n\angular-locale_cgg-ug.js" />
+    <Content Include="Scripts\i18n\angular-locale_cgg.js" />
+    <Content Include="Scripts\i18n\angular-locale_chr-us.js" />
+    <Content Include="Scripts\i18n\angular-locale_chr.js" />
+    <Content Include="Scripts\i18n\angular-locale_ckb-arab-iq.js" />
+    <Content Include="Scripts\i18n\angular-locale_ckb-arab-ir.js" />
+    <Content Include="Scripts\i18n\angular-locale_ckb-arab.js" />
+    <Content Include="Scripts\i18n\angular-locale_ckb-iq.js" />
+    <Content Include="Scripts\i18n\angular-locale_ckb-ir.js" />
+    <Content Include="Scripts\i18n\angular-locale_ckb-latn-iq.js" />
+    <Content Include="Scripts\i18n\angular-locale_ckb-latn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ckb.js" />
+    <Content Include="Scripts\i18n\angular-locale_cs-cz.js" />
+    <Content Include="Scripts\i18n\angular-locale_cs.js" />
+    <Content Include="Scripts\i18n\angular-locale_cy-gb.js" />
+    <Content Include="Scripts\i18n\angular-locale_cy.js" />
+    <Content Include="Scripts\i18n\angular-locale_da-dk.js" />
+    <Content Include="Scripts\i18n\angular-locale_da-gl.js" />
+    <Content Include="Scripts\i18n\angular-locale_da.js" />
+    <Content Include="Scripts\i18n\angular-locale_dav-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_dav.js" />
+    <Content Include="Scripts\i18n\angular-locale_de-at.js" />
+    <Content Include="Scripts\i18n\angular-locale_de-be.js" />
+    <Content Include="Scripts\i18n\angular-locale_de-ch.js" />
+    <Content Include="Scripts\i18n\angular-locale_de-de.js" />
+    <Content Include="Scripts\i18n\angular-locale_de-li.js" />
+    <Content Include="Scripts\i18n\angular-locale_de-lu.js" />
+    <Content Include="Scripts\i18n\angular-locale_de.js" />
+    <Content Include="Scripts\i18n\angular-locale_dje-ne.js" />
+    <Content Include="Scripts\i18n\angular-locale_dje.js" />
+    <Content Include="Scripts\i18n\angular-locale_dsb-de.js" />
+    <Content Include="Scripts\i18n\angular-locale_dsb.js" />
+    <Content Include="Scripts\i18n\angular-locale_dua-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_dua.js" />
+    <Content Include="Scripts\i18n\angular-locale_dyo-sn.js" />
+    <Content Include="Scripts\i18n\angular-locale_dyo.js" />
+    <Content Include="Scripts\i18n\angular-locale_dz-bt.js" />
+    <Content Include="Scripts\i18n\angular-locale_dz.js" />
+    <Content Include="Scripts\i18n\angular-locale_ebu-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_ebu.js" />
+    <Content Include="Scripts\i18n\angular-locale_ee-gh.js" />
+    <Content Include="Scripts\i18n\angular-locale_ee-tg.js" />
+    <Content Include="Scripts\i18n\angular-locale_ee.js" />
+    <Content Include="Scripts\i18n\angular-locale_el-cy.js" />
+    <Content Include="Scripts\i18n\angular-locale_el-gr.js" />
+    <Content Include="Scripts\i18n\angular-locale_el.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-001.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-150.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ag.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ai.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-as.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-au.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-bb.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-be.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-bm.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-bs.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-bw.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-bz.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ca.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-cc.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ck.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-cx.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-dg.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-dm.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-er.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-fj.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-fk.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-fm.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-gb.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-gd.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-gg.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-gh.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-gi.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-gm.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-gu.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-gy.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-hk.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ie.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-im.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-io.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-iso.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-je.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-jm.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ki.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-kn.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ky.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-lc.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-lr.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ls.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-mg.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-mh.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-mo.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-mp.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ms.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-mt.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-mu.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-mw.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-my.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-na.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-nf.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ng.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-nr.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-nu.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-nz.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-pg.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ph.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-pk.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-pn.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-pr.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-pw.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-rw.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-sb.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-sc.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-sd.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-sg.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-sh.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-sl.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ss.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-sx.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-sz.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-tc.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-tk.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-to.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-tt.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-tv.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-tz.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ug.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-um.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-us.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-vc.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-vg.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-vi.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-vu.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ws.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-za.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-zm.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-zw.js" />
+    <Content Include="Scripts\i18n\angular-locale_en.js" />
+    <Content Include="Scripts\i18n\angular-locale_eo-001.js" />
+    <Content Include="Scripts\i18n\angular-locale_eo.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-419.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-ar.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-bo.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-cl.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-co.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-cr.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-cu.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-do.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-ea.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-ec.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-es.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-gq.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-gt.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-hn.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-ic.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-mx.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-ni.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-pa.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-pe.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-ph.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-pr.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-py.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-sv.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-us.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-uy.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-ve.js" />
+    <Content Include="Scripts\i18n\angular-locale_es.js" />
+    <Content Include="Scripts\i18n\angular-locale_et-ee.js" />
+    <Content Include="Scripts\i18n\angular-locale_et.js" />
+    <Content Include="Scripts\i18n\angular-locale_eu-es.js" />
+    <Content Include="Scripts\i18n\angular-locale_eu.js" />
+    <Content Include="Scripts\i18n\angular-locale_ewo-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_ewo.js" />
+    <Content Include="Scripts\i18n\angular-locale_fa-af.js" />
+    <Content Include="Scripts\i18n\angular-locale_fa-ir.js" />
+    <Content Include="Scripts\i18n\angular-locale_fa.js" />
+    <Content Include="Scripts\i18n\angular-locale_ff-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_ff-gn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ff-mr.js" />
+    <Content Include="Scripts\i18n\angular-locale_ff-sn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ff.js" />
+    <Content Include="Scripts\i18n\angular-locale_fi-fi.js" />
+    <Content Include="Scripts\i18n\angular-locale_fi.js" />
+    <Content Include="Scripts\i18n\angular-locale_fil-ph.js" />
+    <Content Include="Scripts\i18n\angular-locale_fil.js" />
+    <Content Include="Scripts\i18n\angular-locale_fo-fo.js" />
+    <Content Include="Scripts\i18n\angular-locale_fo.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-be.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-bf.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-bi.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-bj.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-bl.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-ca.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-cd.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-cf.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-cg.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-ch.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-ci.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-dj.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-dz.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-fr.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-ga.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-gf.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-gn.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-gp.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-gq.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-ht.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-km.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-lu.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-ma.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-mc.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-mf.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-mg.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-ml.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-mq.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-mr.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-mu.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-nc.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-ne.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-pf.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-pm.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-re.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-rw.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-sc.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-sn.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-sy.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-td.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-tg.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-tn.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-vu.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-wf.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-yt.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr.js" />
+    <Content Include="Scripts\i18n\angular-locale_fur-it.js" />
+    <Content Include="Scripts\i18n\angular-locale_fur.js" />
+    <Content Include="Scripts\i18n\angular-locale_fy-nl.js" />
+    <Content Include="Scripts\i18n\angular-locale_fy.js" />
+    <Content Include="Scripts\i18n\angular-locale_ga-ie.js" />
+    <Content Include="Scripts\i18n\angular-locale_ga.js" />
+    <Content Include="Scripts\i18n\angular-locale_gd-gb.js" />
+    <Content Include="Scripts\i18n\angular-locale_gd.js" />
+    <Content Include="Scripts\i18n\angular-locale_gl-es.js" />
+    <Content Include="Scripts\i18n\angular-locale_gl.js" />
+    <Content Include="Scripts\i18n\angular-locale_gsw-ch.js" />
+    <Content Include="Scripts\i18n\angular-locale_gsw-fr.js" />
+    <Content Include="Scripts\i18n\angular-locale_gsw-li.js" />
+    <Content Include="Scripts\i18n\angular-locale_gsw.js" />
+    <Content Include="Scripts\i18n\angular-locale_gu-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_gu.js" />
+    <Content Include="Scripts\i18n\angular-locale_guz-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_guz.js" />
+    <Content Include="Scripts\i18n\angular-locale_gv-im.js" />
+    <Content Include="Scripts\i18n\angular-locale_gv.js" />
+    <Content Include="Scripts\i18n\angular-locale_ha-latn-gh.js" />
+    <Content Include="Scripts\i18n\angular-locale_ha-latn-ne.js" />
+    <Content Include="Scripts\i18n\angular-locale_ha-latn-ng.js" />
+    <Content Include="Scripts\i18n\angular-locale_ha-latn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ha.js" />
+    <Content Include="Scripts\i18n\angular-locale_haw-us.js" />
+    <Content Include="Scripts\i18n\angular-locale_haw.js" />
+    <Content Include="Scripts\i18n\angular-locale_he-il.js" />
+    <Content Include="Scripts\i18n\angular-locale_he.js" />
+    <Content Include="Scripts\i18n\angular-locale_hi-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_hi.js" />
+    <Content Include="Scripts\i18n\angular-locale_hr-ba.js" />
+    <Content Include="Scripts\i18n\angular-locale_hr-hr.js" />
+    <Content Include="Scripts\i18n\angular-locale_hr.js" />
+    <Content Include="Scripts\i18n\angular-locale_hsb-de.js" />
+    <Content Include="Scripts\i18n\angular-locale_hsb.js" />
+    <Content Include="Scripts\i18n\angular-locale_hu-hu.js" />
+    <Content Include="Scripts\i18n\angular-locale_hu.js" />
+    <Content Include="Scripts\i18n\angular-locale_hy-am.js" />
+    <Content Include="Scripts\i18n\angular-locale_hy.js" />
+    <Content Include="Scripts\i18n\angular-locale_ia-fr.js" />
+    <Content Include="Scripts\i18n\angular-locale_ia.js" />
+    <Content Include="Scripts\i18n\angular-locale_id-id.js" />
+    <Content Include="Scripts\i18n\angular-locale_id.js" />
+    <Content Include="Scripts\i18n\angular-locale_ig-ng.js" />
+    <Content Include="Scripts\i18n\angular-locale_ig.js" />
+    <Content Include="Scripts\i18n\angular-locale_ii-cn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ii.js" />
+    <Content Include="Scripts\i18n\angular-locale_in.js" />
+    <Content Include="Scripts\i18n\angular-locale_is-is.js" />
+    <Content Include="Scripts\i18n\angular-locale_is.js" />
+    <Content Include="Scripts\i18n\angular-locale_it-ch.js" />
+    <Content Include="Scripts\i18n\angular-locale_it-it.js" />
+    <Content Include="Scripts\i18n\angular-locale_it-sm.js" />
+    <Content Include="Scripts\i18n\angular-locale_it.js" />
+    <Content Include="Scripts\i18n\angular-locale_iw.js" />
+    <Content Include="Scripts\i18n\angular-locale_ja-jp.js" />
+    <Content Include="Scripts\i18n\angular-locale_ja.js" />
+    <Content Include="Scripts\i18n\angular-locale_jgo-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_jgo.js" />
+    <Content Include="Scripts\i18n\angular-locale_jmc-tz.js" />
+    <Content Include="Scripts\i18n\angular-locale_jmc.js" />
+    <Content Include="Scripts\i18n\angular-locale_ka-ge.js" />
+    <Content Include="Scripts\i18n\angular-locale_ka.js" />
+    <Content Include="Scripts\i18n\angular-locale_kab-dz.js" />
+    <Content Include="Scripts\i18n\angular-locale_kab.js" />
+    <Content Include="Scripts\i18n\angular-locale_kam-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_kam.js" />
+    <Content Include="Scripts\i18n\angular-locale_kde-tz.js" />
+    <Content Include="Scripts\i18n\angular-locale_kde.js" />
+    <Content Include="Scripts\i18n\angular-locale_kea-cv.js" />
+    <Content Include="Scripts\i18n\angular-locale_kea.js" />
+    <Content Include="Scripts\i18n\angular-locale_khq-ml.js" />
+    <Content Include="Scripts\i18n\angular-locale_khq.js" />
+    <Content Include="Scripts\i18n\angular-locale_ki-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_ki.js" />
+    <Content Include="Scripts\i18n\angular-locale_kk-cyrl-kz.js" />
+    <Content Include="Scripts\i18n\angular-locale_kk-cyrl.js" />
+    <Content Include="Scripts\i18n\angular-locale_kk.js" />
+    <Content Include="Scripts\i18n\angular-locale_kkj-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_kkj.js" />
+    <Content Include="Scripts\i18n\angular-locale_kl-gl.js" />
+    <Content Include="Scripts\i18n\angular-locale_kl.js" />
+    <Content Include="Scripts\i18n\angular-locale_kln-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_kln.js" />
+    <Content Include="Scripts\i18n\angular-locale_km-kh.js" />
+    <Content Include="Scripts\i18n\angular-locale_km.js" />
+    <Content Include="Scripts\i18n\angular-locale_kn-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_kn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ko-kp.js" />
+    <Content Include="Scripts\i18n\angular-locale_ko-kr.js" />
+    <Content Include="Scripts\i18n\angular-locale_ko.js" />
+    <Content Include="Scripts\i18n\angular-locale_kok-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_kok.js" />
+    <Content Include="Scripts\i18n\angular-locale_ks-arab-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_ks-arab.js" />
+    <Content Include="Scripts\i18n\angular-locale_ks.js" />
+    <Content Include="Scripts\i18n\angular-locale_ksb-tz.js" />
+    <Content Include="Scripts\i18n\angular-locale_ksb.js" />
+    <Content Include="Scripts\i18n\angular-locale_ksf-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_ksf.js" />
+    <Content Include="Scripts\i18n\angular-locale_ksh-de.js" />
+    <Content Include="Scripts\i18n\angular-locale_ksh.js" />
+    <Content Include="Scripts\i18n\angular-locale_kw-gb.js" />
+    <Content Include="Scripts\i18n\angular-locale_kw.js" />
+    <Content Include="Scripts\i18n\angular-locale_ky-cyrl-kg.js" />
+    <Content Include="Scripts\i18n\angular-locale_ky-cyrl.js" />
+    <Content Include="Scripts\i18n\angular-locale_ky.js" />
+    <Content Include="Scripts\i18n\angular-locale_lag-tz.js" />
+    <Content Include="Scripts\i18n\angular-locale_lag.js" />
+    <Content Include="Scripts\i18n\angular-locale_lb-lu.js" />
+    <Content Include="Scripts\i18n\angular-locale_lb.js" />
+    <Content Include="Scripts\i18n\angular-locale_lg-ug.js" />
+    <Content Include="Scripts\i18n\angular-locale_lg.js" />
+    <Content Include="Scripts\i18n\angular-locale_lkt-us.js" />
+    <Content Include="Scripts\i18n\angular-locale_lkt.js" />
+    <Content Include="Scripts\i18n\angular-locale_ln-ao.js" />
+    <Content Include="Scripts\i18n\angular-locale_ln-cd.js" />
+    <Content Include="Scripts\i18n\angular-locale_ln-cf.js" />
+    <Content Include="Scripts\i18n\angular-locale_ln-cg.js" />
+    <Content Include="Scripts\i18n\angular-locale_ln.js" />
+    <Content Include="Scripts\i18n\angular-locale_lo-la.js" />
+    <Content Include="Scripts\i18n\angular-locale_lo.js" />
+    <Content Include="Scripts\i18n\angular-locale_lt-lt.js" />
+    <Content Include="Scripts\i18n\angular-locale_lt.js" />
+    <Content Include="Scripts\i18n\angular-locale_lu-cd.js" />
+    <Content Include="Scripts\i18n\angular-locale_lu.js" />
+    <Content Include="Scripts\i18n\angular-locale_luo-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_luo.js" />
+    <Content Include="Scripts\i18n\angular-locale_luy-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_luy.js" />
+    <Content Include="Scripts\i18n\angular-locale_lv-lv.js" />
+    <Content Include="Scripts\i18n\angular-locale_lv.js" />
+    <Content Include="Scripts\i18n\angular-locale_mas-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_mas-tz.js" />
+    <Content Include="Scripts\i18n\angular-locale_mas.js" />
+    <Content Include="Scripts\i18n\angular-locale_mer-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_mer.js" />
+    <Content Include="Scripts\i18n\angular-locale_mfe-mu.js" />
+    <Content Include="Scripts\i18n\angular-locale_mfe.js" />
+    <Content Include="Scripts\i18n\angular-locale_mg-mg.js" />
+    <Content Include="Scripts\i18n\angular-locale_mg.js" />
+    <Content Include="Scripts\i18n\angular-locale_mgh-mz.js" />
+    <Content Include="Scripts\i18n\angular-locale_mgh.js" />
+    <Content Include="Scripts\i18n\angular-locale_mgo-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_mgo.js" />
+    <Content Include="Scripts\i18n\angular-locale_mk-mk.js" />
+    <Content Include="Scripts\i18n\angular-locale_mk.js" />
+    <Content Include="Scripts\i18n\angular-locale_ml-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_ml.js" />
+    <Content Include="Scripts\i18n\angular-locale_mn-cyrl-mn.js" />
+    <Content Include="Scripts\i18n\angular-locale_mn-cyrl.js" />
+    <Content Include="Scripts\i18n\angular-locale_mn.js" />
+    <Content Include="Scripts\i18n\angular-locale_mr-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_mr.js" />
+    <Content Include="Scripts\i18n\angular-locale_ms-latn-bn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ms-latn-my.js" />
+    <Content Include="Scripts\i18n\angular-locale_ms-latn-sg.js" />
+    <Content Include="Scripts\i18n\angular-locale_ms-latn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ms.js" />
+    <Content Include="Scripts\i18n\angular-locale_mt-mt.js" />
+    <Content Include="Scripts\i18n\angular-locale_mt.js" />
+    <Content Include="Scripts\i18n\angular-locale_mua-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_mua.js" />
+    <Content Include="Scripts\i18n\angular-locale_my-mm.js" />
+    <Content Include="Scripts\i18n\angular-locale_my.js" />
+    <Content Include="Scripts\i18n\angular-locale_naq-na.js" />
+    <Content Include="Scripts\i18n\angular-locale_naq.js" />
+    <Content Include="Scripts\i18n\angular-locale_nb-no.js" />
+    <Content Include="Scripts\i18n\angular-locale_nb-sj.js" />
+    <Content Include="Scripts\i18n\angular-locale_nb.js" />
+    <Content Include="Scripts\i18n\angular-locale_nd-zw.js" />
+    <Content Include="Scripts\i18n\angular-locale_nd.js" />
+    <Content Include="Scripts\i18n\angular-locale_ne-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_ne-np.js" />
+    <Content Include="Scripts\i18n\angular-locale_ne.js" />
+    <Content Include="Scripts\i18n\angular-locale_nl-aw.js" />
+    <Content Include="Scripts\i18n\angular-locale_nl-be.js" />
+    <Content Include="Scripts\i18n\angular-locale_nl-bq.js" />
+    <Content Include="Scripts\i18n\angular-locale_nl-cw.js" />
+    <Content Include="Scripts\i18n\angular-locale_nl-nl.js" />
+    <Content Include="Scripts\i18n\angular-locale_nl-sr.js" />
+    <Content Include="Scripts\i18n\angular-locale_nl-sx.js" />
+    <Content Include="Scripts\i18n\angular-locale_nl.js" />
+    <Content Include="Scripts\i18n\angular-locale_nmg-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_nmg.js" />
+    <Content Include="Scripts\i18n\angular-locale_nn-no.js" />
+    <Content Include="Scripts\i18n\angular-locale_nn.js" />
+    <Content Include="Scripts\i18n\angular-locale_nnh-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_nnh.js" />
+    <Content Include="Scripts\i18n\angular-locale_no-no.js" />
+    <Content Include="Scripts\i18n\angular-locale_no.js" />
+    <Content Include="Scripts\i18n\angular-locale_nr-za.js" />
+    <Content Include="Scripts\i18n\angular-locale_nr.js" />
+    <Content Include="Scripts\i18n\angular-locale_nso-za.js" />
+    <Content Include="Scripts\i18n\angular-locale_nso.js" />
+    <Content Include="Scripts\i18n\angular-locale_nus-sd.js" />
+    <Content Include="Scripts\i18n\angular-locale_nus.js" />
+    <Content Include="Scripts\i18n\angular-locale_nyn-ug.js" />
+    <Content Include="Scripts\i18n\angular-locale_nyn.js" />
+    <Content Include="Scripts\i18n\angular-locale_om-et.js" />
+    <Content Include="Scripts\i18n\angular-locale_om-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_om.js" />
+    <Content Include="Scripts\i18n\angular-locale_or-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_or.js" />
+    <Content Include="Scripts\i18n\angular-locale_os-ge.js" />
+    <Content Include="Scripts\i18n\angular-locale_os-ru.js" />
+    <Content Include="Scripts\i18n\angular-locale_os.js" />
+    <Content Include="Scripts\i18n\angular-locale_pa-arab-pk.js" />
+    <Content Include="Scripts\i18n\angular-locale_pa-arab.js" />
+    <Content Include="Scripts\i18n\angular-locale_pa-guru-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_pa-guru.js" />
+    <Content Include="Scripts\i18n\angular-locale_pa.js" />
+    <Content Include="Scripts\i18n\angular-locale_pl-pl.js" />
+    <Content Include="Scripts\i18n\angular-locale_pl.js" />
+    <Content Include="Scripts\i18n\angular-locale_ps-af.js" />
+    <Content Include="Scripts\i18n\angular-locale_ps.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt-ao.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt-br.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt-cv.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt-gw.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt-mo.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt-mz.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt-pt.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt-st.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt-tl.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt.js" />
+    <Content Include="Scripts\i18n\angular-locale_qu-bo.js" />
+    <Content Include="Scripts\i18n\angular-locale_qu-ec.js" />
+    <Content Include="Scripts\i18n\angular-locale_qu-pe.js" />
+    <Content Include="Scripts\i18n\angular-locale_qu.js" />
+    <Content Include="Scripts\i18n\angular-locale_rm-ch.js" />
+    <Content Include="Scripts\i18n\angular-locale_rm.js" />
+    <Content Include="Scripts\i18n\angular-locale_rn-bi.js" />
+    <Content Include="Scripts\i18n\angular-locale_rn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ro-md.js" />
+    <Content Include="Scripts\i18n\angular-locale_ro-ro.js" />
+    <Content Include="Scripts\i18n\angular-locale_ro.js" />
+    <Content Include="Scripts\i18n\angular-locale_rof-tz.js" />
+    <Content Include="Scripts\i18n\angular-locale_rof.js" />
+    <Content Include="Scripts\i18n\angular-locale_ru-by.js" />
+    <Content Include="Scripts\i18n\angular-locale_ru-kg.js" />
+    <Content Include="Scripts\i18n\angular-locale_ru-kz.js" />
+    <Content Include="Scripts\i18n\angular-locale_ru-md.js" />
+    <Content Include="Scripts\i18n\angular-locale_ru-ru.js" />
+    <Content Include="Scripts\i18n\angular-locale_ru-ua.js" />
+    <Content Include="Scripts\i18n\angular-locale_ru.js" />
+    <Content Include="Scripts\i18n\angular-locale_rw-rw.js" />
+    <Content Include="Scripts\i18n\angular-locale_rw.js" />
+    <Content Include="Scripts\i18n\angular-locale_rwk-tz.js" />
+    <Content Include="Scripts\i18n\angular-locale_rwk.js" />
+    <Content Include="Scripts\i18n\angular-locale_sah-ru.js" />
+    <Content Include="Scripts\i18n\angular-locale_sah.js" />
+    <Content Include="Scripts\i18n\angular-locale_saq-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_saq.js" />
+    <Content Include="Scripts\i18n\angular-locale_sbp-tz.js" />
+    <Content Include="Scripts\i18n\angular-locale_sbp.js" />
+    <Content Include="Scripts\i18n\angular-locale_se-fi.js" />
+    <Content Include="Scripts\i18n\angular-locale_se-no.js" />
+    <Content Include="Scripts\i18n\angular-locale_se-se.js" />
+    <Content Include="Scripts\i18n\angular-locale_se.js" />
+    <Content Include="Scripts\i18n\angular-locale_seh-mz.js" />
+    <Content Include="Scripts\i18n\angular-locale_seh.js" />
+    <Content Include="Scripts\i18n\angular-locale_ses-ml.js" />
+    <Content Include="Scripts\i18n\angular-locale_ses.js" />
+    <Content Include="Scripts\i18n\angular-locale_sg-cf.js" />
+    <Content Include="Scripts\i18n\angular-locale_sg.js" />
+    <Content Include="Scripts\i18n\angular-locale_shi-latn-ma.js" />
+    <Content Include="Scripts\i18n\angular-locale_shi-latn.js" />
+    <Content Include="Scripts\i18n\angular-locale_shi-tfng-ma.js" />
+    <Content Include="Scripts\i18n\angular-locale_shi-tfng.js" />
+    <Content Include="Scripts\i18n\angular-locale_shi.js" />
+    <Content Include="Scripts\i18n\angular-locale_si-lk.js" />
+    <Content Include="Scripts\i18n\angular-locale_si.js" />
+    <Content Include="Scripts\i18n\angular-locale_sk-sk.js" />
+    <Content Include="Scripts\i18n\angular-locale_sk.js" />
+    <Content Include="Scripts\i18n\angular-locale_sl-si.js" />
+    <Content Include="Scripts\i18n\angular-locale_sl.js" />
+    <Content Include="Scripts\i18n\angular-locale_smn-fi.js" />
+    <Content Include="Scripts\i18n\angular-locale_smn.js" />
+    <Content Include="Scripts\i18n\angular-locale_sn-zw.js" />
+    <Content Include="Scripts\i18n\angular-locale_sn.js" />
+    <Content Include="Scripts\i18n\angular-locale_so-dj.js" />
+    <Content Include="Scripts\i18n\angular-locale_so-et.js" />
+    <Content Include="Scripts\i18n\angular-locale_so-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_so-so.js" />
+    <Content Include="Scripts\i18n\angular-locale_so.js" />
+    <Content Include="Scripts\i18n\angular-locale_sq-al.js" />
+    <Content Include="Scripts\i18n\angular-locale_sq-mk.js" />
+    <Content Include="Scripts\i18n\angular-locale_sq-xk.js" />
+    <Content Include="Scripts\i18n\angular-locale_sq.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-cyrl-ba.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-cyrl-me.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-cyrl-rs.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-cyrl-xk.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-cyrl.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-latn-ba.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-latn-me.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-latn-rs.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-latn-xk.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-latn.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr.js" />
+    <Content Include="Scripts\i18n\angular-locale_ss-sz.js" />
+    <Content Include="Scripts\i18n\angular-locale_ss-za.js" />
+    <Content Include="Scripts\i18n\angular-locale_ss.js" />
+    <Content Include="Scripts\i18n\angular-locale_ssy-er.js" />
+    <Content Include="Scripts\i18n\angular-locale_ssy.js" />
+    <Content Include="Scripts\i18n\angular-locale_st-ls.js" />
+    <Content Include="Scripts\i18n\angular-locale_st-za.js" />
+    <Content Include="Scripts\i18n\angular-locale_st.js" />
+    <Content Include="Scripts\i18n\angular-locale_sv-ax.js" />
+    <Content Include="Scripts\i18n\angular-locale_sv-fi.js" />
+    <Content Include="Scripts\i18n\angular-locale_sv-se.js" />
+    <Content Include="Scripts\i18n\angular-locale_sv.js" />
+    <Content Include="Scripts\i18n\angular-locale_sw-cd.js" />
+    <Content Include="Scripts\i18n\angular-locale_sw-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_sw-tz.js" />
+    <Content Include="Scripts\i18n\angular-locale_sw-ug.js" />
+    <Content Include="Scripts\i18n\angular-locale_sw.js" />
+    <Content Include="Scripts\i18n\angular-locale_swc-cd.js" />
+    <Content Include="Scripts\i18n\angular-locale_swc.js" />
+    <Content Include="Scripts\i18n\angular-locale_ta-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_ta-lk.js" />
+    <Content Include="Scripts\i18n\angular-locale_ta-my.js" />
+    <Content Include="Scripts\i18n\angular-locale_ta-sg.js" />
+    <Content Include="Scripts\i18n\angular-locale_ta.js" />
+    <Content Include="Scripts\i18n\angular-locale_te-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_te.js" />
+    <Content Include="Scripts\i18n\angular-locale_teo-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_teo-ug.js" />
+    <Content Include="Scripts\i18n\angular-locale_teo.js" />
+    <Content Include="Scripts\i18n\angular-locale_tg-cyrl-tj.js" />
+    <Content Include="Scripts\i18n\angular-locale_tg-cyrl.js" />
+    <Content Include="Scripts\i18n\angular-locale_tg.js" />
+    <Content Include="Scripts\i18n\angular-locale_th-th.js" />
+    <Content Include="Scripts\i18n\angular-locale_th.js" />
+    <Content Include="Scripts\i18n\angular-locale_ti-er.js" />
+    <Content Include="Scripts\i18n\angular-locale_ti-et.js" />
+    <Content Include="Scripts\i18n\angular-locale_ti.js" />
+    <Content Include="Scripts\i18n\angular-locale_tig-er.js" />
+    <Content Include="Scripts\i18n\angular-locale_tig.js" />
+    <Content Include="Scripts\i18n\angular-locale_tl.js" />
+    <Content Include="Scripts\i18n\angular-locale_tn-bw.js" />
+    <Content Include="Scripts\i18n\angular-locale_tn-za.js" />
+    <Content Include="Scripts\i18n\angular-locale_tn.js" />
+    <Content Include="Scripts\i18n\angular-locale_to-to.js" />
+    <Content Include="Scripts\i18n\angular-locale_to.js" />
+    <Content Include="Scripts\i18n\angular-locale_tr-cy.js" />
+    <Content Include="Scripts\i18n\angular-locale_tr-tr.js" />
+    <Content Include="Scripts\i18n\angular-locale_tr.js" />
+    <Content Include="Scripts\i18n\angular-locale_ts-za.js" />
+    <Content Include="Scripts\i18n\angular-locale_ts.js" />
+    <Content Include="Scripts\i18n\angular-locale_twq-ne.js" />
+    <Content Include="Scripts\i18n\angular-locale_twq.js" />
+    <Content Include="Scripts\i18n\angular-locale_tzm-latn-ma.js" />
+    <Content Include="Scripts\i18n\angular-locale_tzm-latn.js" />
+    <Content Include="Scripts\i18n\angular-locale_tzm.js" />
+    <Content Include="Scripts\i18n\angular-locale_ug-arab-cn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ug-arab.js" />
+    <Content Include="Scripts\i18n\angular-locale_ug.js" />
+    <Content Include="Scripts\i18n\angular-locale_uk-ua.js" />
+    <Content Include="Scripts\i18n\angular-locale_uk.js" />
+    <Content Include="Scripts\i18n\angular-locale_ur-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_ur-pk.js" />
+    <Content Include="Scripts\i18n\angular-locale_ur.js" />
+    <Content Include="Scripts\i18n\angular-locale_uz-arab-af.js" />
+    <Content Include="Scripts\i18n\angular-locale_uz-arab.js" />
+    <Content Include="Scripts\i18n\angular-locale_uz-cyrl-uz.js" />
+    <Content Include="Scripts\i18n\angular-locale_uz-cyrl.js" />
+    <Content Include="Scripts\i18n\angular-locale_uz-latn-uz.js" />
+    <Content Include="Scripts\i18n\angular-locale_uz-latn.js" />
+    <Content Include="Scripts\i18n\angular-locale_uz.js" />
+    <Content Include="Scripts\i18n\angular-locale_vai-latn-lr.js" />
+    <Content Include="Scripts\i18n\angular-locale_vai-latn.js" />
+    <Content Include="Scripts\i18n\angular-locale_vai-vaii-lr.js" />
+    <Content Include="Scripts\i18n\angular-locale_vai-vaii.js" />
+    <Content Include="Scripts\i18n\angular-locale_vai.js" />
+    <Content Include="Scripts\i18n\angular-locale_ve-za.js" />
+    <Content Include="Scripts\i18n\angular-locale_ve.js" />
+    <Content Include="Scripts\i18n\angular-locale_vi-vn.js" />
+    <Content Include="Scripts\i18n\angular-locale_vi.js" />
+    <Content Include="Scripts\i18n\angular-locale_vo-001.js" />
+    <Content Include="Scripts\i18n\angular-locale_vo.js" />
+    <Content Include="Scripts\i18n\angular-locale_vun-tz.js" />
+    <Content Include="Scripts\i18n\angular-locale_vun.js" />
+    <Content Include="Scripts\i18n\angular-locale_wae-ch.js" />
+    <Content Include="Scripts\i18n\angular-locale_wae.js" />
+    <Content Include="Scripts\i18n\angular-locale_wal-et.js" />
+    <Content Include="Scripts\i18n\angular-locale_wal.js" />
+    <Content Include="Scripts\i18n\angular-locale_xh-za.js" />
+    <Content Include="Scripts\i18n\angular-locale_xh.js" />
+    <Content Include="Scripts\i18n\angular-locale_xog-ug.js" />
+    <Content Include="Scripts\i18n\angular-locale_xog.js" />
+    <Content Include="Scripts\i18n\angular-locale_yav-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_yav.js" />
+    <Content Include="Scripts\i18n\angular-locale_yi-001.js" />
+    <Content Include="Scripts\i18n\angular-locale_yi.js" />
+    <Content Include="Scripts\i18n\angular-locale_yo-bj.js" />
+    <Content Include="Scripts\i18n\angular-locale_yo-ng.js" />
+    <Content Include="Scripts\i18n\angular-locale_yo.js" />
+    <Content Include="Scripts\i18n\angular-locale_zgh-ma.js" />
+    <Content Include="Scripts\i18n\angular-locale_zgh.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-cn.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hans-cn.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hans-hk.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hans-mo.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hans-sg.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hans.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hant-hk.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hant-mo.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hant-tw.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hant.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hk.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-tw.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh.js" />
+    <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
+    <Content Include="Scripts\i18n\angular-locale_zu.js" />
+    <Content Include="Scripts\libs\jquery.signalR-2.2.0.js" />
+    <Content Include="Scripts\libs\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Scripts\libs\modernizr-2.8.3.min.js" />
+    <Content Include="Scripts\libs\bootstrap.js" />
+    <Content Include="Scripts\libs\bootstrap.min.js" />
+    <Content Include="Scripts\libs\bootstrap.min.js.map" />
+    <Content Include="RazorHelpers\NotyBuilder.cshtml">
+      <LastGenOutput>NotyBuilder.generated.cs</LastGenOutput>
+      <BrowseToURL>~/ToastrBuilder.cshtml</BrowseToURL>
+      <Generator>RazorGenerator</Generator>
+    </Content>
+    <Content Include="RazorHelpers\CheckBoxListBuilder.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>CheckBoxListBuilder.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.farsiInput.js" />
+    <Content Include="Scripts\plugins\jquery.farsiInput.min.js">
+      <DependentUpon>jquery.farsiInput.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.mvc.deleteItem.min.js">
+      <DependentUpon>jquery.mvc.deleteItem.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Enum.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\EditorTemplates\Enum.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Enum.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Role\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Role\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Role\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Role\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_Layout.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Layout1.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\User\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\User\_Create.cshtml">
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </Content>
+    <Content Include="Views\User\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\User\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Teacher\Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\EditorTemplates\PersianDatePicker.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>PersianDatePicker.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Teacher\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\plugins\affix.js" />
+    <Content Include="Scripts\plugins\affix.min.js">
+      <DependentUpon>affix.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.confirm.js" />
+    <Content Include="Scripts\plugins\jquery.confirm.min.js" />
+    <Content Include="Scripts\plugins\jquery.dlmenu.js" />
+    <Content Include="Scripts\plugins\jquery.dlmenu.min.js">
+      <DependentUpon>jquery.dlmenu.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.form.js" />
+    <Content Include="Scripts\plugins\jquery.form.min.js">
+      <DependentUpon>jquery.form.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.mvc.asyncLoad.min.js">
+      <DependentUpon>jquery.mvc.asyncLoad.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.mvc.ban.js" />
+    <Content Include="Scripts\plugins\jquery.mvc.ban.min.js">
+      <DependentUpon>jquery.mvc.ban.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.mvc.getJson.js" />
+    <Content Include="Scripts\plugins\jquery.mvc.getJson.min.js">
+      <DependentUpon>jquery.mvc.getJson.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.mvc.scan.js" />
+    <Content Include="Scripts\plugins\jquery.mvc.scan.min.js">
+      <DependentUpon>jquery.mvc.scan.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.noty.packaged.js" />
+    <Content Include="Scripts\plugins\jquery.noty.packaged.min.js" />
+    <Content Include="Scripts\plugins\JQuerySerializeCheckbox.js" />
+    <Content Include="Scripts\plugins\masonry.pkgd.min.js" />
+    <Content Include="Scripts\plugins\mustache.js" />
+    <Content Include="Scripts\plugins\mustache.min.js">
+      <DependentUpon>mustache.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\star-rating.min.js">
+      <DependentUpon>star-rating.js</DependentUpon>
+    </Content>
+    <Content Include="T4MVC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\MvcControllerEmpty\Controller.cs.t4" />
+    <Content Include="CodeTemplates\MvcControllerWithActions\Controller.cs.t4" />
+    <Content Include="CodeTemplates\MvcControllerWithContext\Controller.cs.t4" />
+    <Content Include="CodeTemplates\MvcViewWithoutModel\Empty.cs.t4" />
+    <Content Include="CodeTemplates\MvcViewWithoutModel\Imports.include.t4" />
+    <Content Include="CodeTemplates\MvcView\Create.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Delete.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Details.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Edit.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Empty.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Imports.include.t4" />
+    <Content Include="CodeTemplates\MvcView\List.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\ModelMetadataFunctions.cs.include.t4" />
+    <Content Include="CodeTemplates\MvcView\_ListAjax.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\_Modal.cs.t4" />
+    <Content Include="Scripts\libs\dropdown-hover.js" />
+    <Content Include="Scripts\libs\errors.json" />
+    <Content Include="Scripts\customs\jquery.ajax.querystring.min.js.map">
+      <DependentUpon>jquery.ajax.querystring.min.js</DependentUpon>
+    </Content>
+    <Content Include="RazorHelpers\DatePickerInitial.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>DatePickerInitial.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\TrainingCenter\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\TrainingCenter\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\TrainingCenter\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\TrainingCenter\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_PublicSettingSideBarMenu.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_PublicSettingSideBarMenu.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Title\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Title\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Title\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Title\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\TrainingCourse\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\TrainingCourse\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\TrainingCourse\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\TrainingCourse\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Teacher\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Teacher\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_TeacherManagementsSidbarMenu.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TeacherManagementsSidbarMenu.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\customs\noty.alerts.min.js.map">
+      <DependentUpon>noty.alerts.min.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\_UserManagementsSideBarMenu.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_UserManagementsSideBarMenu.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Teacher\Details.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Details.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Address\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Address\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Address\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Address\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Appraiser\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Appraiser\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Appraiser\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Appraiser\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\EducationalBackground\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\EducationalBackground\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\EducationalBackground\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\EducationalBackground\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\FavoriteIssue\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\FavoriteIssue\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\FavoriteIssue\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\FavoriteIssue\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Institution\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Institution\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Institution\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Institution\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Interview\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Interview\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Interview\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Interview\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Article\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Article\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Article\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Article\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\OrganizationalTeaching\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\OrganizationalTeaching\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\OrganizationalTeaching\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\OrganizationalTeaching\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ResearchExperience\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ResearchExperience\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ResearchExperience\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ResearchExperience\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ScientificTeaching\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ScientificTeaching\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ScientificTeaching\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ScientificTeaching\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\WorkExperience\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\WorkExperience\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\WorkExperience\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\WorkExperience\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax1.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\AdoptedPriority\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\AdoptedPriority\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\AdoptedPriority\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\AdoptedPriority\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Role\_RoleItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_RoleItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\User\_UserItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_UserItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Teacher\_TeacherItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TeacherItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Teacher\_Refer.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Refer.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Teacher\_TeacherRelatedLinksBuilder.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TeacherRelatedLinksBuilder.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Address\_AddressItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_AddressItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\AdoptedPriority\_AdoptedPriorityItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_AdoptedPriorityItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Appraiser\_AppraiserItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_AppraiserItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\EducationalBackground\_EducationalBackgroundItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_EducationalBackgroundItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\FavoriteIssue\_FavoriteIssueItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_FavoriteIssueItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Institution\_InstitutionItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_InstitutionItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Interview\_InterviewItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_InterviewItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Article\_ArticleItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ArticleItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\OrganizationalTeaching\_OrganizationalTeachingItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_OrganizationalTeachingItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ResearchExperience\_ResearchExperienceItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ResearchExperienceItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ScientificTeaching\_ScientificTeachingItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ScientificTeachingItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Title\_TitleItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TitleItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\TrainingCenter\_TrainingCenterItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TrainingCenterItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\TrainingCourse\_TrainingCourseItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TrainingCourseItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\WorkExperience\_WorkExperienceItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_WorkExperienceItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_AuditLog.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_AuditLog.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\customs\jquery.form.config.min.js.map">
+      <DependentUpon>jquery.form.config.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Scripts\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\dev\locations.json" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\readme.md" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\browser-specific\gecko\editor_gecko.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\browser-specific\ie7\dialog_ie7.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\browser-specific\ie7\editor_ie7.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\browser-specific\ie8\dialog_ie8.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\browser-specific\ie8\editor_ie8.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\browser-specific\iequirks\dialog_iequirks.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\browser-specific\iequirks\editor_iequirks.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\browser-specific\ie\dialog_ie.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\browser-specific\ie\editor_ie.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\browser-specific\opera\dialog_opera.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\components\editor.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\components\_colorpanel.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\components\_elementspath.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\components\_mainui.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\components\_menu.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\components\_panel.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\components\_presets.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\components\_reset.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\components\_richcombo.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\components\_toolbar.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\config\_colors.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\config\_config.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\config\_defaults.scss" />
+    <Content Include="Scripts\ckeditor\skins\bootstrapck\scss\dialog\dialog.scss" />
+    <Content Include="Content\fonts\BMitra-Bold.eot" />
+    <Content Include="Content\fonts\BMitra-Bold.ttf" />
+    <Content Include="Content\fonts\BMitra-Bold.woff" />
+    <Content Include="Content\fonts\BMitra-Regular.eot" />
+    <Content Include="Content\fonts\BMitra-Regular.ttf" />
+    <Content Include="Content\fonts\BMitra-Regular.woff" />
+    <Content Include="Content\fonts\DroidNaskh-Regular.ttf" />
+    <Content Include="Content\fonts\DroidNaskh-Regular.woff" />
+    <Content Include="Content\fonts\DroidNaskhBold.eot" />
+    <Content Include="Content\fonts\DroidNaskhBold.ttf" />
+    <Content Include="Content\fonts\DroidNaskhBold.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\IRANSans-Bold-web.eot" />
+    <Content Include="Content\fonts\IRANSans-Bold-web.ttf" />
+    <Content Include="Content\fonts\IRANSans-Bold-web.woff" />
+    <Content Include="Content\fonts\IRANSans-Bold-web.woff2" />
+    <Content Include="Content\fonts\IRANSans-Light-web.eot" />
+    <Content Include="Content\fonts\IRANSans-Light-web.ttf" />
+    <Content Include="Content\fonts\IRANSans-Light-web.woff" />
+    <Content Include="Content\fonts\IRANSans-Light-web.woff2" />
+    <Content Include="Content\fonts\IRANSans-Medium-web.eot" />
+    <Content Include="Content\fonts\IRANSans-Medium-web.ttf" />
+    <Content Include="Content\fonts\IRANSans-Medium-web.woff" />
+    <Content Include="Content\fonts\IRANSans-Medium-web.woff2" />
+    <Content Include="Content\fonts\IRANSans-UltraLight-web.eot" />
+    <Content Include="Content\fonts\IRANSans-UltraLight-web.ttf" />
+    <Content Include="Content\fonts\IRANSans-UltraLight-web.woff" />
+    <Content Include="Content\fonts\IRANSans-UltraLight-web.woff2" />
+    <Content Include="Content\fonts\IRANSans-web.eot" />
+    <Content Include="Content\fonts\IRANSans-web.ttf" />
+    <Content Include="Content\fonts\IRANSans-web.woff" />
+    <Content Include="Content\fonts\IRANSans-web.woff2" />
+    <Content Include="Content\fonts\MitraWeb-Bold.woff" />
+    <Content Include="Content\fonts\MitraWeb-Regular.woff" />
+    <Content Include="Content\fonts\wYekan.woff" />
+    <Content Include="Content\fonts\YekanWeb-Bold.woff" />
+    <Content Include="Content\fonts\YekanWeb-Regular.woff" />
+    <Content Include="Views\EntireEvaluation\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\EntireEvaluation\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\EntireEvaluation\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\EntireEvaluation\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\EntireEvaluation\_EntireEvaluationItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_EntireEvaluationItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\TeacherInServiceCourseType\_TeacherInServiceCourseTypeItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TeacherInServiceCourseTypeItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\TeacherInServiceCourseType\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\TeacherInServiceCourseType\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\TeacherInServiceCourseType\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\TeacherInServiceCourseType\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Question\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Question\_QuestionItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_QuestionItem.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Question\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Question\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Question\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\PrivateMessage\NewMessage.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>NewMessage.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\PrivateMessage\Messages.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Messages.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\PrivateMessage\InBox.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>InBox.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\PrivateMessage\OutBox.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>OutBox.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\PrivateMessage\_InBoxListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_InBoxListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\PrivateMessage\_OutBoxListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_OutBoxListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_UserProfileSideBarMenu.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_UserProfileSideBarMenu.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\PrivateMessage\_Reply.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Reply.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Teacher\ReferList.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ReferList.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ArticleEvaluation\Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\BaseSetting\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <None Include="bundleconfig.json" />
+    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="Mvc.sitemap" />
+    <None Include="MvcSiteMapSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Scripts\errors.json" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-touch.min.js.map" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-resource.min.js.map" />
+    <Content Include="Scripts\angular-messages.min.js.map" />
+    <Content Include="Scripts\angular-message-format.min.js.map" />
+    <Content Include="Scripts\angular-loader.min.js.map" />
+    <Content Include="Scripts\angular-cookies.min.js.map" />
+    <Content Include="Scripts\angular-aria.min.js.map" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
+    <None Include="Scripts\libs\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\libs\jquery-2.1.4.js" />
+    <Content Include="Scripts\libs\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\libs\jquery-ui.js" />
+    <Content Include="Scripts\libs\jquery-ui.min.js" />
+    <Content Include="Scripts\libs\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\libs\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\libs\jquery-2.1.4.min.js.map">
+      <DependentUpon>jquery-2.1.4.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\libs\jquery.unobtrusive-ajax.min.js.map">
+      <DependentUpon>jquery.unobtrusive-ajax.min.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\libs\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\libs\jquery.validate.js" />
+    <Content Include="Scripts\libs\jquery.validate.min.js" />
+    <Content Include="Scripts\libs\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\libs\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\libs\jqueryval-default.js" />
+    <Content Include="Scripts\libs\jqueryval-default.min.js">
+      <DependentUpon>jqueryval-default.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\libs\npm.js" />
+    <Content Include="Scripts\libs\path.min.js" />
+    <Content Include="Content\plugins\bootstrap-datepicker.css" />
+    <Content Include="Scripts\plugins\bootstrap-datepicker.fa.js" />
+    <Content Include="Scripts\plugins\bootstrap-datepicker.fa.min.js" />
+    <Content Include="Scripts\plugins\bootstrap-datepicker.js" />
+    <Content Include="Content\plugins\bootstrap-datepicker.min.css" />
+    <Content Include="Scripts\plugins\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\plugins\fileinput.min.js" />
+    <Content Include="Scripts\plugins\jquery.mvc.modal-ajax-form.js" />
+    <Content Include="Scripts\plugins\jquery.mvc.deleteItem.js" />
+    <Content Include="Scripts\plugins\jquery.cookie.js" />
+    <Content Include="Scripts\plugins\jquery.cookie.min.js" />
+    <Content Include="Scripts\plugins\jquery.mvc.infiniteScroll.js" />
+    <Content Include="Scripts\plugins\jquery.InfiniteScroll.min.js">
+      <DependentUpon>jquery.mvc.infiniteScroll.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.lazyload.js" />
+    <Content Include="Scripts\plugins\jquery.lazyload.min.js" />
+    <Content Include="Scripts\plugins\jquery.mvc.postFormAjax.js" />
+    <Content Include="Scripts\plugins\jquery.PostMvcFormAjax.min.js">
+      <DependentUpon>jquery.mvc.postFormAjax.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.sliderPro.min.js" />
+    <Content Include="Scripts\plugins\json2.js" />
+    <Content Include="Scripts\plugins\json2.min.js" />
+    <Content Include="Scripts\plugins\lazysizes.js" />
+    <Content Include="Scripts\plugins\lazysizes.min.js" />
+    <Content Include="Scripts\libs\path.js" />
+    <Content Include="Scripts\plugins\star-rating.js" />
+    <Content Include="Scripts\plugins\starRating-plugin.js" />
+    <Content Include="Scripts\plugins\starRating-plugin.min.js">
+      <DependentUpon>starRating-plugin.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\xeditable.js" />
+    <Content Include="Scripts\plugins\xeditable.min.js" />
+    <Content Include="Scripts\libs\respond.js" />
+    <Content Include="Scripts\libs\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\libs\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\libs\respond.min.js" />
+    <Content Include="Scripts\customs\site.js" />
+    <Content Include="Scripts\libs\warning.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Scripts\plugins\jquery.cookie.min.js.map" />
+    <Content Include="Scripts\libs\jqueryval-default.min.js.map">
+      <DependentUpon>jqueryval-default.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\libs\version.json" />
+    <Content Include="Scripts\plugins\starRating-plugin.min.js.map">
+      <DependentUpon>starRating-plugin.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.PostMvcFormAjax.min.js.map">
+      <DependentUpon>jquery.PostMvcFormAjax.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.InfiniteScroll.min.js.map">
+      <DependentUpon>jquery.InfiniteScroll.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.mvc.asyncLoad.js" />
+    <Content Include="Scripts\libs\jquery-2.1.4.min.map" />
+    <Content Include="Scripts\libs\jquery.validate.min.js.map" />
+    <Content Include="Scripts\plugins\bootstrap-datepicker.fa.min.js.map">
+      <DependentUpon>bootstrap-datepicker.fa.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.confirm.min.js.map">
+      <DependentUpon>jquery.confirm.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.mvc.asyncLoad.min.js.map">
+      <DependentUpon>jquery.mvc.asyncLoad.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.mvc.scan.min.js.map">
+      <DependentUpon>jquery.mvc.scan.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.mvc.getJson.min.js.map">
+      <DependentUpon>jquery.mvc.getJson.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.noty.packaged.min.js.map">
+      <DependentUpon>jquery.noty.packaged.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.mvc.ban.min.js.map">
+      <DependentUpon>jquery.mvc.ban.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\affix.min.js.map">
+      <DependentUpon>affix.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\jquery.form.min.js.map">
+      <DependentUpon>jquery.form.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plugins\mustache.min.js.map">
+      <DependentUpon>mustache.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\version.json" />
+    <None Include="T4MVC.tt.settings.xml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\Error.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Error.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ViewStart.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_Noty.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Noty.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Account\Login.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Login.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_CaptchaPartial.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_CaptchaPartial.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="T4MVC.tt.hooks.t4" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_LoginPartial.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ArticleEvaluation\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ArticleEvaluation\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ArticleEvaluation\_ArticleEvaluationSidbarMenu.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ArticleEvaluationSidbarMenu.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SiteMapTitleHelperModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SiteMapPathHelperModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SiteMapNodeModelList.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SiteMapNodeModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapHelperModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SiteMapHelperModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>MetaRobotsHelperModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>MenuHelperModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>CanonicalHelperModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapPath.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SiteMapPath.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Teacher\NewTeacherList.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>NewTeacherList.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\_Benckmarks.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Benckmarks.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\_TeacherWithTopScoreList.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TeacherWithTopScoreList.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\_NewTeachersList.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_NewTeachersList.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_NewMessagesCount.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_NewMessagesCount.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Report\Design.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Design.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Decimal.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Error\BadRequest.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>BadRequest.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Error\Forbidden.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Forbidden.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Error\InternalServerError.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>InternalServerError.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Error\LockOut.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>LockOut.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Error\MethodNotAllowed.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>MethodNotAllowed.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Error\NotFound.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>NotFound.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Error\Unauthorized.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Unauthorized.generated.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\ErrorLogs\" />
+    <Folder Include="Client\Controllers\" />
+    <Folder Include="Client\Directives\" />
+    <Folder Include="Client\Models\" />
+    <Folder Include="Client\Services\" />
+    <Folder Include="Client\Views\" />
+    <Folder Include="Content\Report\" />
+    <Folder Include="File\avatar\" />
+    <Folder Include="File\image\" />
+    <Folder Include="File\userFile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Decision.Common\Decision.Common.csproj">
+      <Project>{795B21DF-4BE9-444D-BCC4-674144D560D2}</Project>
+      <Name>Decision.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Decision.DataLayer\Decision.DataLayer.csproj">
+      <Project>{A5AD7839-9524-4896-9009-97F1C45F7578}</Project>
+      <Name>Decision.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Decision.DomainClasses\Decision.DomainClasses.csproj">
+      <Project>{72B9849F-931A-40C0-B11E-44324CD46250}</Project>
+      <Name>Decision.DomainClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Decision.IocConfig\Decision.IocConfig.csproj">
+      <Project>{4955766B-D513-4867-9F5C-F333A8E66F9A}</Project>
+      <Name>Decision.IocConfig</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Decision.ServiceLayer\Decision.ServiceLayer.csproj">
+      <Project>{A3151FC4-6C88-4323-858A-9AA522D54BC2}</Project>
+      <Name>Decision.ServiceLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Decision.Utility\Decision.Utility.csproj">
+      <Project>{1F30BF22-BAC2-4F0F-9C1F-2EE1282E25FD}</Project>
+      <Name>Decision.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Decision.ViewModel\Decision.ViewModel.csproj">
+      <Project>{51986c43-db68-4a80-ae14-4ffd7a9e91a4}</Project>
+      <Name>Decision.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Client\app.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>25890</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:25890/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

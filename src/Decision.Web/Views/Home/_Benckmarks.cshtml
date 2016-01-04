@@ -1,0 +1,90 @@
+﻿@model Decision.ViewModel.Home.BenchmarkViewModel
+
+<div class="row bench-marks">
+    <div class="col-md-2">
+        <div class="media btn-lg btn-info">
+            <div class="media-left">
+                <span class="fa fa-users"></span>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <span class="digit">@Model.JugesCount</span>
+                    استاد ثبت شده
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="media btn-lg btn-danger">
+            <div class="media-left">
+                <span class="fa fa-warning"></span>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <span class="digit">@Model.SystemErrorsCount</span>
+                    خطاهای سیستم
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="media btn-lg btn-warning">
+            <div class="media-left">
+                <span class="fa fa-user"></span>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <span class="digit">@Model.UsersCount</span>
+                    تعداد کاربران
+                </h4>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="media btn-lg btn-info">
+            <div class="media-left">
+                <span class="fa fa-warning"></span>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <span class="digit">@Model.NonApprovedTeachersCount</span>
+                    اساتید در انتظار تأیید
+                </h4>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="media btn-lg btn-default">
+            <div class="media-left">
+                <span class="fa fa-warning"></span>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <span class="digit">@Model.ApprovedTeachersCount</span>
+                    اساتید تأیید شده
+                </h4>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="media btn-lg btn-default">
+            <div class="media-left">
+                <span class="fa fa-info"></span>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <span class="digit">@Model.ArticlesCount</span>
+                    تعداد مقالات
+                </h4>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

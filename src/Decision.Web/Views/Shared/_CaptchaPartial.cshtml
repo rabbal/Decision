@@ -1,0 +1,39 @@
+﻿@model CaptchaMvc.Models.MathBuildInfoModel
+
+@{
+    var id = Guid.NewGuid().ToString("N");
+    var functionName = string.Format("______{0}________()", Guid.NewGuid().ToString("N"));
+    <script type="text/javascript">
+
+        $(function () {
+            $('#@id').prop('disabled', false);
+        });
+
+        function @functionName{
+            $('#@id').prop('disabled', true);
+            $.post("@Model.RefreshUrl", { @Model.TokenParameterName: $('#@Model.TokenElementId').val() }, function () {
+                $('#@id').prop('disabled', false);
+            });
+            return false;
+        }
+    </script>
+
+}
+<label class="control-label col-md-2">تصویر امنیتی</label>
+<div class="col-md-3">
+    <figure>
+        <img id="@Model.ImageElementId" src="@Model.ImageUrl" alt="تصویر امنیتی" />
+        @Html.Hidden(Model.TokenElementId, Model.TokenValue)
+        <figcaption>
+            <a href="javascript:void(0)" id="@id" onclick="@functionName" class="btn  btn-link">
+                تغییر تصویر
+            </a>
+        </figcaption>
+    </figure>
+</div>
+<div class="col-md-6">
+    @Html.TextBox(Model.InputElementId, null, new Dictionary<string, object>() { { "data-val", "true" },
+    {"data-val-regex","لطفا تنها از اعداد و حروف انگلیسی استفاده نمائید"},{"data-val-regex-pattern","^[a-zA-Z0-9_]*$"},
+{ "data-val-required", "لطفا پاسخ تصویر را وارد کنید" }, { "class", "form-control" },{"autocomplete","off" },{"dir","ltr"}})
+    @Html.ValidationMessage(Model.InputElementId, new { @class = "text-danger" })
+</div>

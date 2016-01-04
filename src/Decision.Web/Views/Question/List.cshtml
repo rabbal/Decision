@@ -1,0 +1,88 @@
+﻿@using Decision.ViewModel.Question
+@model Decision.ViewModel.Question.QuestionListViewModel
+
+@{
+    ViewBag.Title = "لیست سوالات";
+}
+@Html.AntiForgeryToken()
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+
+        <div class="row">
+            <div class="col-md-12">
+                @Html.HelpAlert(Url.Content("~/Content/images/lightbulb.png"), "برای درج سوال جدید از دکمه (افزودن سوال جدید) استفاده کنید."
+                    , "در این قسمت امکان پیشفرفته ای برای درج انواع سوالات در اختیار کاربر قرار دارد."
+                    , "اگر نوع سوالات شما چند گزینه ای باشد ، لازم است  با استفاده از دکمه افزودن گزینه،اقدام به درج گزینه نمایید."
+                    , "ارزش وزنی خود سوال و گزینه های آن برای محاسبه امتیاز استاد ضروریست",
+                    "بعد از درج نهایی سوال ، امکان تغییر نوع سوال وجود ندارد."
+                    , "این امکان وجود دارد تا در صورت نیاز سوالی را غیرفعال یا فعال کرد."
+                    )
+            </div>
+        </div>
+        <hr class="margin-bottom-5 margin-top-5" />
+        <div class="row">
+            <div class="col-md-12">
+                <button aria-controls="create-question" aria-expanded="false" class="btn btn-default btn-sm btn-block" data-target="#create-question" data-toggle="collapse" type="button">
+                    <i class="fa fa-plus"></i>افزودن سوال جدید
+                </button>
+            </div>
+        </div>
+
+        <hr class="margin-bottom-5 margin-top-5" />
+        <div class="row collapse" id="create-question">
+            @{ Html.RenderPartial(MVC.Question.Views._Create, new AddQuestionViewModel());}
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row" id="questionList">
+            @{ Html.RenderPartial(MVC.Question.Views.ViewNames._ListAjax, Model);}
+        </div>
+    </div>
+    <div class="panel-footer padding-5-5">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <button data-page="2" data-container="#questionList"
+                        data-progress="#progress"
+                        data-json='{}'
+                        data-load-url="@Url.Action(MVC.Question.ListAjax())"
+                        onclick="justPaging(this)" class="btn btn-info btn-block btn-sm" type="button">
+                    بیشتر
+                </button>
+            </div>
+        </div>
+        <div id="progress" align="center" style="display: none">
+            <img src="@Url.Content("~/Content/images/loading.gif")" alt="loading..." />
+        </div>
+    </div>
+</div>
+
+
+@section Menu{
+    @{Html.RenderPartial(MVC.Shared.Views._PublicSettingSideBarMenu);}
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/formData")
+    @Scripts.Render("~/bundles/mustache")
+    <script type="text/template" id="answerOption">
+        <div class="form-group option">
+            <label class="control-label col-md-2" for="Options[{{index}}].Name">متن گزینه</label>
+            <div class="col-md-4">
+                <input autocomplete="off" class="form-control" data-val="true" data-val-required="لطفا متن گزینه را وارد کنید" id="Options[{{index}}].Name" name="Options[{{index}}].Name" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Options[{{index}}].Name" data-valmsg-replace="true"></span>
+            </div>
+
+            <label class="control-label col-md-2" for="Options[{{index}}].Weight">وزن ارزش گزینه</label>
+            <div class="col-md-3">
+                <input autocomplete="off" class="form-control" data-val="true" data-val-number="لطفا مقدار عددی وارد کنید" data-val-required="لطفا وزن ارزشی گزینه را مشخص کنید" dir="ltr" id="Options[{{index}}].Weight" name="Options[{{index}}].Weight" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Options[{{index}}].Weight" data-valmsg-replace="true"></span>
+            </div>
+
+        </div>
+    </script>
+}
+
+
+
+

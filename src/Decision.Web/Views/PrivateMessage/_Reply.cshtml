@@ -1,0 +1,63 @@
+﻿
+@using Decision.Common.Helpers
+@model Decision.ViewModel.PrivateMessage.AddMessageViewModel
+<div class="panel panel-defautl">
+    <div class="panel-heading">
+        <button aria-controls="reply" aria-expanded="false" class="btn btn-default btn-sm btn-block" data-target="#reply" data-toggle="collapse" type="button">
+            <i class="fa fa-plus"></i>ارسال پاسخ
+        </button>
+    </div>
+    <div class="panel-body collapse" id="reply">
+        @using (Html.BeginForm(MVC.PrivateMessage.Reply(), FormMethod.Post, new {role = "form", @class = "form-horizontal", autocomplete = "off", id = "replyForm", enctype = "multipart/form-data"}))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(a => a.ConversationId)
+            @Html.HiddenFor(a => a.ReplyId)
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="Content" class="control-label col-md-1">
+                            <i class="fa fa-align-justify"></i>
+                            متن پیغام
+                        </label>
+                        <div class="col-md-10">
+
+                            @Html.TextAreaFor(a => a.Content, new {@class = "ckeditor form-control", rows = 10})
+                            @Html.ValidationMessageFor(model => model.Content, "", new {@class = "text-danger"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Attachments" class="control-label col-md-1">
+                            <i class="fa fa-file"></i>
+                            ضمیمه
+                        </label>
+                        <div class="col-md-6">
+
+                            @Html.TextBoxFor(model => model.Attachments, new {type = "file", @class = "form-control", multiple = "true"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-1">
+                            <button type="button" autocomplete="off" onclick="AjaxForm.CustomSubmitWithEditor(this, 'replyForm')"
+                                    data-loading-text="در حال ارسال اطلاعات" class="btn btn-success">
+                                <i class="fa fa-paper-plane-o"></i>
+                                ارسال پاسخ
+                            </button>
+                        </div>
+                        </div>
+                </div>
+            </div>
+
+
+        }
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

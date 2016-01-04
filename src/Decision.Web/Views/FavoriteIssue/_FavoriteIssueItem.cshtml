@@ -1,0 +1,61 @@
+﻿@model Decision.ViewModel.EducationalExperience.EducationalExperienceViewModel
+
+<div class="col-md-12 " id="favoriteIssue-@Model.Id">
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <i class="fa fa-list-alt"></i>
+                    <label class="text-muted">
+                        عنوان :
+                    </label>
+                    <small>@Model.TitleName</small>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-calendar"></i>
+                    <label class="text-muted">
+                        سال شروع :
+                    </label>
+                    <small>@Model.BeginYear.GetPersianNumber()</small>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-calendar"></i>
+                    <label class="text-muted">
+                        سال پایان :
+                    </label>
+                    <small>@Model.EndYear.GetPersianNumber()</small>
+                </div>
+                <div class="col-md-6">
+                    <i class="fa fa-github-alt"></i>
+                    <label class="text-muted">
+                        توضیحات :
+                    </label>
+                    <small>@Model.Description</small>
+                </div>
+
+            </div>
+
+            @{Html.RenderPartial(MVC.Shared.Views._AuditLog, Model);}
+        </div>
+        <div class="panel-footer ">
+            <div class="pull-left">
+                <a class="btn btn-primary btn-sm" data-ajax-oncomplete="editGetOnComplete(xhr,status)"
+                   data-ajax="true" data-ajax-method="GET"
+                   data-ajax-begin="onBegin(xhr,this)"
+                   data-ajax-mode="REPLACE-WITH" data-ajax-success="inlineEditGetOnSuccess(data, status, xhr,'editFavoriteIssueForm')"
+                   data-ajax-update="#favoriteIssue-@Model.Id"
+                   href="@Url.Action(MVC.FavoriteIssue.Edit(Model.Id))" role="button"><i class="fa fa-edit"></i>ویرایش</a>
+
+                <button class="btn-sm btn btn-danger"
+                        type="button" data-delete-url="@Url.Action(MVC.FavoriteIssue.Delete())" data-Teacher="@Model.TeacherId" data-removal-element="#favoriteIssue-@Model.Id" id="remove-@Model.Id">
+                    <i class="fa fa-trash-o"></i>
+                    حذف
+                </button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+

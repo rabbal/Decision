@@ -1,0 +1,61 @@
+﻿@model Decision.ViewModel.EducationalBackground.EducationalBackgroundListViewModel
+@{
+    ViewBag.Title = "لیست سوابق تحصیلی استاد";
+}
+@Html.AntiForgeryToken()
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-12">
+                @Html.HelpAlert(Url.Content("~/Content/images/lightbulb.png"), "برای درج سابقه تحصیلی جدید از دکمه (افزودن سابقه تحصیلی جدید) استفاده کنید."
+                    , "در صورت استفاده از امکان آپلود فایل ضمیمه ، از تصویر استفاده کنید.")
+            </div>
+        </div>
+        <hr class="margin-bottom-5 margin-top-5" />
+        <div class="row">
+            <div class="col-md-12">
+                <button aria-controls="create-educationalBackground" aria-expanded="false" class="btn btn-default btn-sm btn-block" data-target="#create-educationalBackground" data-toggle="collapse" type="button">
+                    <i class="fa fa-plus"></i>افزودن سابقه  جدید
+                </button>
+            </div>
+        </div>
+        <hr class="margin-bottom-5 margin-top-5" />
+        <div class="row collapse" id="create-educationalBackground">
+            @{ Html.RenderAction(MVC.EducationalBackground.Create(Model.SearchRequest.TeacherId));}
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row" id="educationalBackgroundList">
+            @{ Html.RenderPartial(MVC.EducationalBackground.Views.ViewNames._ListAjax, Model);}
+        </div>
+    </div>
+    <div class="panel-footer padding-5-5">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <button data-page="2" data-json='{"TeacherId":"@Model.SearchRequest.TeacherId"}' data-container="#educationalBackgroundList"
+                        data-progress="#progress"
+                        data-load-url="@Url.Action(MVC.EducationalBackground.ListAjax())"
+                        onclick="justPaging(this)" class="btn btn-info btn-block btn-sm" type="button">
+                    بیشتر
+                </button>
+            </div>
+        </div>
+        <div id="progress" align="center" style="display: none">
+            <img src="@Url.Content("~/Content/images/loading.gif")" alt="loading..." />
+        </div>
+    </div>
+</div>
+
+
+
+@section Menu{
+    @{Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.SearchRequest.TeacherId);}
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/datePicker")
+    @Scripts.Render("~/bundles/formData")
+}
+
+

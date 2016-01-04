@@ -1,0 +1,44 @@
+﻿@using Decision.Common.Helpers
+@model Decision.ViewModel.Institution.AddInstitutionViewModel
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header alert alert-success">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h6 class="modal-title">درج موسسه آموزشی</h6>
+        </div>
+        <div class="modal-body">
+            @using (Ajax.BeginForm(MVC.Institution.Create(), new AjaxOptions { HttpMethod = "POST", OnComplete = "createOnComplete(xhr, status, 'institutionList', '#modal','createInstitutionForm','#createInstitutionButton')" }, new { @class = "form-horizontal", id = "createInstitutionForm", autocomplete = "off" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.NoAutoCompleteTextBoxFor(model => model.Name)
+                        @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.Description,new{@class="form-control",rows=3})
+                        @Html.ValidationMessageFor(model => model.Description, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+              
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-2">
+                        <button type="button" id="createInstitutionButton" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'createInstitutionForm')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">
+                            ثبت موسسه آموزشی 
+                        </button>
+                        <button class="btn btn-default btn-md" data-dismiss="modal" aria-hidden="true">
+                            انصراف
+                        </button>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,20 @@
+﻿@using System.Globalization
+@functions{
+    private object ModelValue
+    {
+        get
+        {
+            if (ViewData.TemplateInfo.FormattedModelValue == ViewData.ModelMetadata.Model)
+            {
+                return string.Format(CultureInfo.InvariantCulture,
+                                     "{0:0.00}", ViewData.ModelMetadata.Model);
+            }
+            return ViewData.TemplateInfo.FormattedModelValue;
+        }
+    }
+}
+@Html.TextBox(
+   "" ,
+    ModelValue,
+    new { @class = "form-control" ,dir="ltr"}
+)

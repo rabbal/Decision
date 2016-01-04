@@ -1,0 +1,8 @@
+﻿@* GeneratePrettyNames: true*@
+@model Decision.ViewModel.Address.AddressListViewModel
+@foreach (var e in Model.Addresses)
+{
+    @Html.Partial(MVC.Address.Views._AddressItem, e)
+}
+
+

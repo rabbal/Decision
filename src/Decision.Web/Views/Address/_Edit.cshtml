@@ -1,0 +1,93 @@
+﻿@using Decision.Common.Helpers
+@model Decision.ViewModel.Address.EditAddressViewModel
+
+<div class="col-md-12" id="address-@Model.Id">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-edit"></i>
+            </h3>
+        </div>
+        <div class="panel-body">
+           @using (Ajax.BeginForm(MVC.Address.Edit(), new AjaxOptions { HttpMethod = "POST", OnComplete = "editOnComplete(xhr, status, '"+Model.Id+"' ,'#editButton"+Model.Id+"')" }, new { @class = "form-horizontal", id = Model.Id, autocomplete = "off", data_ajax_update = "address-" + Model.Id }))
+           {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.TeacherId)
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.RowVersion)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Location, new {@class = "control-label col-md-2"})
+                    <div class="col-md-9">
+                        @Html.TextAreaFor(model => model.Location, new {@class = "form-control", rows = 2})
+                        @Html.ValidationMessageFor(model => model.Location, null, new {@class = "text-danger"})
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CellPhone, new {@class = "control-label col-md-2"})
+                    <div class="col-md-9">
+                        @Html.NoAutoCompleteTextBoxForLtr(model => model.CellPhone)
+                        @Html.ValidationMessageFor(model => model.CellPhone, null, new {@class = "text-danger"})
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PhoneNumber, new {@class = "control-label col-md-2"})
+                    <div class="col-md-9">
+                        @Html.NoAutoCompleteTextBoxForLtr(model => model.PhoneNumber)
+                        @Html.ValidationMessageFor(model => model.PhoneNumber, null, new {@class = "text-danger"})
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Type, new {@class = "control-label col-md-2"})
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.Type)
+                        @Html.ValidationMessageFor(model => model.Type, null, new {@class = "text-danger"})
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => Model.State, new {@class = "control-label col-md-2"})
+                    <div class="col-md-9">
+                        @Html.DropDownListFor(model => model.State, Model.States, "انتخاب استان", new
+                        {
+                            data_url = Url.Action(MVC.City.GetCities()),
+                            data_tofill = "City",
+                            data_lable = "انتخاب شهر",
+                            data_selects = "City",
+                            @class = "form-control cascade",
+                        })
+                        @Html.ValidationMessageFor(model => model.State, null, new {@class = "text-danger"})
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => Model.City, new {@class = "control-label col-md-2"})
+                    <div class="col-md-9">
+                        @Html.DropDownListFor(model => model.City, Model.Cities, "انتخاب شهر", new {@class = "form-control"})
+                        @Html.ValidationMessageFor(model => model.City, null, new {@class = "text-danger"})
+                    </div>
+                </div>
+
+
+            }
+        </div>
+        <div class="panel-footer ">
+            <div class="pull-left">
+                <button type="button" id="@string.Format("editButton{0}",Model.Id)" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, '@Model.Id')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-sm">
+                    <i class="fa fa-check-square-o"></i>
+                    ذخیره تغییرات
+                </button>
+
+                <a class="btn btn-default btn-sm" data-ajax="true"
+                   data-ajax-mode="REPLACE-WITH" data-ajax-complete="cancelEditOnComplete(xhr, status)"
+                   data-ajax-update="#address-@Model.Id" data-ajax-method="POST"
+                   href="@Url.Action(MVC.Address.CancelEdit(Model.Id))" role="button">
+                    <i class="fa fa-arrow-right"></i>
+                    انصراف
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+        

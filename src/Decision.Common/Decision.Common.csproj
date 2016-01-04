@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{795B21DF-4BE9-444D-BCC4-674144D560D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Decision.Common</RootNamespace>
+    <AssemblyName>Decision.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.SignalR.Owin.1.2.2\lib\net45\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PersianDateTime">
+      <HintPath>..\..\packages\PersianDateTime.1.1.5082.36395\lib\net40\PersianDateTime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\CacheProfileName.cs" />
+    <Compile Include="Constants\CacheSetting.cs" />
+    <Compile Include="Controller\DecimalModelBinder.cs" />
+    <Compile Include="Controller\ElmahResult.cs" />
+    <Compile Include="Controller\NotyHelper\MessageCloseType.cs" />
+    <Compile Include="Controller\NotyHelper\MessageLocation.cs" />
+    <Compile Include="Controller\NotyHelper\Noty.cs" />
+    <Compile Include="Controller\NotyHelper\NotyMessage.cs" />
+    <Compile Include="Controller\NotyHelper\AlertTypes.cs" />
+    <Compile Include="Controller\NotyHelper\AnimationTypes.cs" />
+    <Compile Include="Controller\BaseController.cs" />
+    <Compile Include="Controller\PersianDateModelBinder.cs" />
+    <Compile Include="Controller\PersianIntModelBinder.cs" />
+    <Compile Include="Controller\SecureTempDataProvider.cs" />
+    <Compile Include="Controller\CookieTempDataProvider.cs" />
+    <Compile Include="Controller\FileManager.cs" />
+    <Compile Include="Controller\StringToDateModelBinder.cs" />
+    <Compile Include="Filters\CheckReferrerAttribute.cs" />
+    <Compile Include="Filters\DosFilterAttribute.cs" />
+    <Compile Include="Filters\Mvc5ClaimAccessAuthorizeAttribute.cs" />
+    <Compile Include="Filters\ElmahRequestValidationErrorFilter.cs" />
+    <Compile Include="Filters\JsonPersistAttribute.cs" />
+    <Compile Include="Filters\NoBrowserCacheAttribute.cs" />
+    <Compile Include="Filters\RemoveServerHeaderFilterAttribute.cs" />
+    <Compile Include="Filters\SetIfModifiedSinceAttribute.cs" />
+    <Compile Include="Filters\SignalrAuthorizeAttribute.cs" />
+    <Compile Include="Filters\ThrottleAttribute.cs" />
+    <Compile Include="Helpers\CalculateReadingTime.cs" />
+    <Compile Include="Helpers\CalculateWordsCount.cs" />
+    <Compile Include="Helpers\Extentions\ConvertExtentions.cs" />
+    <Compile Include="Helpers\Extentions\TypeExtentions.cs" />
+    <Compile Include="Helpers\Json\JsonExtensions.cs" />
+    <Compile Include="Helpers\MvcHtmlHelperExtentions.cs" />
+    <Compile Include="Helpers\RegexHelpers.cs" />
+    <Compile Include="HttpCompress\CompressingFilter.cs" />
+    <Compile Include="Controller\ISessionProvider.cs" />
+    <Compile Include="Controller\SessionProvider.cs" />
+    <Compile Include="HttpCompress\DeflateFilter.cs" />
+    <Compile Include="HttpCompress\Enums.cs" />
+    <Compile Include="Filters\AjaxOnlyAttribute.cs" />
+    <Compile Include="Filters\AllowUploadSafeFilesAttribute.cs" />
+    <Compile Include="Filters\AllowUploadSpecialFilesAttribute.cs" />
+    <Compile Include="Filters\ChallengeResult.cs" />
+    <Compile Include="Filters\ContentSecurityPolicyFilterAttribute.cs" />
+    <Compile Include="HttpModules\DosAttackModule.cs" />
+    <Compile Include="Filters\ElmahHandledErrorLoggerFilter.cs" />
+    <Compile Include="Filters\ForceWww.cs" />
+    <Compile Include="HttpCompress\GZipFilter.cs" />
+    <Compile Include="Helpers\DropDown.cs" />
+    <Compile Include="Helpers\EnumHelper.cs" />
+    <Compile Include="Caching\CacheManager.cs" />
+    <Compile Include="Controller\ControllerExtentions.cs" />
+    <Compile Include="Helpers\Extentions\CookieExtention.cs" />
+    <Compile Include="Helpers\Http\HttpExtentions.cs" />
+    <Compile Include="Helpers\Extentions\ImageManage.cs" />
+    <Compile Include="Helpers\Json\JsonHelper.cs" />
+    <Compile Include="Helpers\Json\JsonNetResult.cs" />
+    <Compile Include="Helpers\Json\JsonNetValueProviderFactory.cs" />
+    <Compile Include="Helpers\SeoExtensions.cs" />
+    <Compile Include="Helpers\UrlGenerator.cs" />
+    <Compile Include="HtmlCleaner\AntiXssModule.cs" />
+    <Compile Include="HtmlCleaner\HtmlSanitizer.cs" />
+    <Compile Include="HtmlCleaner\PersianProofWriter.cs" />
+    <Compile Include="HttpCompress\HttpModule.cs" />
+    <Compile Include="HttpCompress\HttpOutputFilter.cs" />
+    <Compile Include="HttpModules\IpBlockModule.cs" />
+    <Compile Include="Filters\Mvc5AuthorizeAttribute.cs" />
+    <Compile Include="Filters\MvcAuthorizeAttribute.cs" />
+    <Compile Include="MVC\AspNetMvcHelpers.cs" />
+    <Compile Include="MVC\PlayerHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RSS\CryptoUtils.cs" />
+    <Compile Include="RSS\FeedItem.cs" />
+    <Compile Include="RSS\FeedResult.cs" />
+    <Compile Include="RSS\RtlHelper.cs" />
+    <Compile Include="HttpCompress\SectionHandler.cs" />
+    <Compile Include="Security\FilePermissionHelper.cs" />
+    <Compile Include="HttpCompress\Settings.cs" />
+    <Compile Include="Helpers\ControllerHelper.cs" />
+    <Compile Include="Security\HiddenField\ActionKey.cs" />
+    <Compile Include="Security\HiddenField\ActionKeyService.cs" />
+    <Compile Include="Security\HiddenField\EncryptSettingsProvider.cs" />
+    <Compile Include="Security\HiddenField\IActionKeyService.cs" />
+    <Compile Include="Security\HiddenField\IEncryptSettingsProvider.cs" />
+    <Compile Include="Security\HiddenField\InputExtensions.cs" />
+    <Compile Include="Security\HiddenField\IRijndaelStringEncrypter.cs" />
+    <Compile Include="Security\HiddenField\MvcHtmlHelperExtentions.cs" />
+    <Compile Include="Security\HiddenField\RijndaelStringEncrypter.cs" />
+    <Compile Include="Validations\FieldValidationHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Decision.Utility\Decision.Utility.csproj">
+      <Project>{1F30BF22-BAC2-4F0F-9C1F-2EE1282E25FD}</Project>
+      <Name>Decision.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\security\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

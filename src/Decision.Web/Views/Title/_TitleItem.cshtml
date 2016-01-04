@@ -1,0 +1,54 @@
+﻿@using Decision.DomainClasses.Entities.Common
+@model Decision.ViewModel.Title.TitleViewModel
+<div class="col-md-12 " id="title-@Model.Id">
+    <div class="panel panel-default">
+       
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <i class="fa fa-location-arrow"></i>
+                    <label class="text-muted">
+                        عنوان :
+                    </label>
+                    <small>@Model.Name</small>
+                </div>
+                <div class="col-md-2">
+                    <i class="fa fa-square"></i>
+                    <label class="text-muted">
+                        نوع :
+                    </label>
+                    <small>@Html.DisplayFor(a => Model.Type)</small>
+                </div>
+                @if (Model.Type == TitleType.CourseContent)
+                {
+                    <div class="col-md-2">
+                        <i class="fa fa-square"></i>
+                        <label class="text-muted">
+                            گروه :
+                        </label>
+                        <small>@Html.DisplayFor(a => Model.Category)</small>
+                    </div>
+                }
+            </div>
+            @{Html.RenderPartial(MVC.Shared.Views._AuditLog, Model);}
+
+        </div>
+        <div class="panel-footer ">
+            <div class="pull-left">
+                <a class="btn btn-primary btn-sm" data-ajax-oncomplete="editGetOnComplete(xhr,status)"
+                   data-ajax="true" data-ajax-method="GET"
+                   data-ajax-begin="onBegin(xhr,this)"
+                   data-ajax-mode="REPLACE-WITH" data-ajax-success="inlineEditGetOnSuccess(data, status, xhr,'@Model.Id')"
+                   data-ajax-update="#title-@Model.Id"
+                   href="@Url.Action(MVC.Title.Edit(Model.Id))" role="button"><i class="fa fa-edit"></i>ویرایش</a>
+
+                <button class="btn-sm btn btn-danger"
+                        type="button" data-delete-url="@Url.Action(MVC.Title.Delete())" data-removal-element="#title-@Model.Id" id="remove-@Model.Id">
+                    <i class="fa fa-trash-o"></i>
+                    حذف
+                </button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

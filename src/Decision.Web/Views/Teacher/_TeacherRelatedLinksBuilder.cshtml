@@ -1,0 +1,33 @@
+﻿@model Guid
+
+@using System.Web.Mvc
+@using Decision.ServiceLayer.Security
+@Html.SideBarSecureActionLink("فرم مشخصات استاد", Url.Action(MVC.Teacher.Details(Model)), "list-group-item thrid-split", "fa fa-eye",AssignableToRolePermissions.CanViewTeacherDetails)
+
+@Html.SideBarSecureActionLink("فرم ویرایش استاد", Url.Action(MVC.Teacher.Edit(Model)), "list-group-item thrid-split", "fa fa-edit", AssignableToRolePermissions.CanEditTeacher)
+
+@Html.SideBarSecureActionLink("آدرس ها", Url.Action(MVC.Address.List(Model)), "list-group-item second-split", "fa fa-map-marker", AssignableToRolePermissions.CanManageAddress)
+
+@Html.SideBarSecureActionLink("اولویت های تصویب شده", Url.Action(MVC.AdoptedPriority.List(Model)), "list-group-item second-split", "fa fa-list-ul", AssignableToRolePermissions.CanManageAddoptedPriority)
+
+@Html.SideBarSecureActionLink("سوابق تحصیلی", Url.Action(MVC.EducationalBackground.List(Model)), "list-group-item second-split", "fa fa-graduation-cap", AssignableToRolePermissions.CanManageEducationalBackground)
+
+@Html.SideBarSecureActionLink("لیست مقالات", Url.Action(MVC.Article.List(Model)), "list-group-item second-split", "fa fa-th-list", AssignableToRolePermissions.CanManageArticle)
+
+@Html.SideBarSecureActionLink("موضوعات مورد علاقه", Url.Action(MVC.FavoriteIssue.List(Model)), "list-group-item second-split", "fa fa-gratipay", AssignableToRolePermissions.CanManageFavoriteIssue)
+
+@Html.SideBarSecureActionLink("مصاحبه ها", Url.Action(MVC.Interview.List(Model)), "list-group-item second-split", "fa fa-comments", AssignableToRolePermissions.CanManageInterview)
+
+@Html.SideBarSecureActionLink("سوابق تدریس سازمانی", Url.Action(MVC.OrganizationalTeaching.List(Model)), "list-group-item second-split", "fa fa-balance-scale", AssignableToRolePermissions.CanManageOrganizationalTeaching)
+
+@Html.SideBarSecureActionLink("سوابق تدریس علمی", Url.Action(MVC.ScientificTeaching.List(Model)), "list-group-item second-split", "fa fa-university", AssignableToRolePermissions.CanManageScientificTeaching)
+
+@Html.SideBarSecureActionLink("سوابق پژوهشی", Url.Action(MVC.ResearchExperience.List(Model)), "list-group-item second-split", "fa fa-leanpub", AssignableToRolePermissions.CanManageResearchExperience)
+
+@Html.SideBarSecureActionLink("سوابق کاری", Url.Action(MVC.WorkExperience.List(Model)), "list-group-item second-split", "fa fa-list-alt", AssignableToRolePermissions.CanManageWorkExperience)
+
+@Html.SideBarSecureActionLink("ارزیابی های به عمل آمده", Url.Action(MVC.EntireEvaluation.List(Model)), "list-group-item second-split", "fa fa-list", AssignableToRolePermissions.CanManageWorkExperience)
+
+@Html.SideBarSecureActionLink("دوره های ضمن خدمت", Url.Action(MVC.TeacherInServiceCourseType.List(Model)), "list-group-item second-split", "fa fa-list", AssignableToRolePermissions.CanManageTeacherInServiceCourseType)
+
+

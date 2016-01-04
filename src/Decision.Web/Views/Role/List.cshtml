@@ -1,0 +1,59 @@
+﻿@model Decision.ViewModel.Role.RoleListViewModel
+@{
+    ViewBag.Title = "لیست گروه های کاربری";
+}
+@Html.AntiForgeryToken()
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-2">
+                <a class="btn btn-default btn-sm" data-ajax="true" data-ajax-mode="replace" data-ajax-method="GET" data-ajax-success="onSuccessFormValidation(data, status, xhr,'createRoleForm','modal')"
+                   data-ajax-update="#modal" data-ajax-url="@Url.Action(MVC.Role.Create())" role="button"><i class="fa fa-plus"></i>درج گروه کاربری جدید</a>
+            </div>
+            <div class="col-md-9">
+                @using (Ajax.BeginForm(MVC.Role.ListAjax(), new AjaxOptions { HttpMethod = "POST", OnComplete = "searchOnComplete(xhr,status,'#progress','#rolePager','#roleList')" }, new { @class = "form-horizontal search", autocomplete = "off", id = "roleSearchForm" }))
+                {
+                    @Html.Hidden("PageIndex", Model.SearchRequest.PageIndex)
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="input-group">
+                                <input type="text" name="Term" class="form-control"
+                                       placeholder="نام گروه کاربری">
+                                <span class="input-group-btn">
+                                    <button type="button" id="roleSearchButton" autocomplete="off" onclick="directSearchPaging('#progress', 'roleSearchForm', '#rolePager', '#roleList')" data-loading-text="درخواست" class="btn btn-success btn-sm search">
+                                        <i class="fa fa-search"></i>         جستجو
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row" id="roleList">
+            @{Html.RenderPartial(MVC.Role.Views._ListAjax, Model);}
+        </div>
+    </div>
+    <div class="panel-footer padding-5-5">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <button data-page="2" id="rolePager" onclick="doPaging(this, '#progress', 'roleSearchForm')" class="btn btn-info btn-block btn-sm" type="button">
+                    بیشتر
+                </button>
+            </div>
+        </div>
+        <div id="progress" align="center" style="display: none">
+            <img src="@Url.Content("~/Content/images/loading.gif")" alt="loading..."/>
+        </div>
+    </div>
+</div>
+@section Menu{
+    @{Html.RenderPartial(MVC.Shared.Views._UserManagementsSideBarMenu);}
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

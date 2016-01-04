@@ -1,0 +1,66 @@
+﻿@model Decision.ViewModel.User.UserListViewModel
+@{
+    ViewBag.Title = "مدیریت کاربران";
+}
+@Html.AntiForgeryToken()
+
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-2">
+                <a class="btn btn-default btn-sm" data-ajax="true" data-ajax-mode="replace" data-ajax-method="GET" data-ajax-success="onSuccessFormValidation(data, status, xhr,'createUserForm','modal')"
+                   data-ajax-update="#modal" data-ajax-url="@Url.Action(MVC.User.Create())" role="button"><i class="fa fa-plus"></i>درج کاربر جدید</a>
+            </div>
+            <div class="col-md-8">
+                @using (Ajax.BeginForm(MVC.User.ListAjax(), new AjaxOptions { AllowCache = false, HttpMethod = "POST", OnComplete = "searchOnComplete(xhr,status,'#progress','#userPager','#userList')" }, new { @class = "form-horizontal search", autocomplete = "off", id = "userSearchForm" }))
+                {
+                    @Html.Hidden("PageIndex", Model.SearchRequest.PageIndex)
+                    <div class="row">
+                        <div class="col-lg-6">
+                            @Html.DropDownList("RoleId", Model.Roles, "همه گروه های کاربری", new { @class = "form-control" })
+
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <input type="text" name="UserName" class="form-control" placeholder="نام کاربری">
+                                <span class="input-group-btn">
+                                    <button type="button" id="userSearchButton" autocomplete="off" onclick="directSearchPaging('#progress', 'userSearchForm', '#userPager', '#userList')" data-loading-text="درخواست" class="btn btn-success btn-sm search">
+                                        <i class="fa fa-search"></i>         جستجو
+                                    </button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-body">
+        <div class="row" id="userList">
+            @{ Html.RenderPartial(MVC.User.Views.ViewNames._ListAjax, Model);}
+        </div>
+    </div>
+    <div class="panel-footer padding-5-5">
+
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <button data-page="2" id="userPager" onclick="doPaging(this, '#progress', 'userSearchForm')" class="btn btn-info btn-block btn-sm" type="button">
+                    بیشتر
+                </button>
+            </div>
+        </div>
+        <div id="progress" align="center" style="display: none">
+            <img src="@Url.Content("~/Content/images/loading.gif")" alt="loading..."/>
+        </div>
+    </div>
+</div>
+@section Menu{
+
+    @{Html.RenderPartial(MVC.Shared.Views._UserManagementsSideBarMenu);}
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

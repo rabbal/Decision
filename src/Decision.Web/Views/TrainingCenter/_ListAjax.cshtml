@@ -1,0 +1,7 @@
+﻿@* GeneratePrettyNames: true*@
+
+@model Decision.ViewModel.TrainingCenter.TrainingCenterListViewModel
+@foreach (var cneter in Model.TrainingCenters)
+{
+    @Html.Partial(MVC.TrainingCenter.Views._TrainingCenterItem, cneter)
+}

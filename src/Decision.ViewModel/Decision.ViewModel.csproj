@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{51986C43-DB68-4A80-AE14-4FFD7A9E91A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Decision.ViewModel</RootNamespace>
+    <AssemblyName>Decision.ViewModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\LoginViewModel.cs" />
+    <Compile Include="Address\AddAddressViewModel.cs" />
+    <Compile Include="Address\AddressListViewModel.cs" />
+    <Compile Include="Address\AddressSearchRequest.cs" />
+    <Compile Include="Address\AddressViewModel.cs" />
+    <Compile Include="Address\EditAddressViewModel.cs" />
+    <Compile Include="AnswerOption\AddAnswerOptionViewModel.cs" />
+    <Compile Include="AnswerOption\AnswerOptionViewModel.cs" />
+    <Compile Include="AnswerOption\EditAnswerOptionViewModel.cs" />
+    <Compile Include="Appraiser\AddAppraiserViewModel.cs" />
+    <Compile Include="Appraiser\AppraiserListViewModel.cs" />
+    <Compile Include="Appraiser\AppraiserSearchRequest.cs" />
+    <Compile Include="Appraiser\AppraiserViewModel.cs" />
+    <Compile Include="Appraiser\EditAppraiserViewModel.cs" />
+    <Compile Include="EducationalBackground\AddEducationalBackgroundViewModel.cs" />
+    <Compile Include="EducationalBackground\EditEducationalBackgroundViewModel.cs" />
+    <Compile Include="EducationalBackground\EducationalBackgroundListViewModel.cs" />
+    <Compile Include="EducationalBackground\EducationalBackgroundSearchRequest.cs" />
+    <Compile Include="EducationalBackground\EducationalBackgroundViewModel.cs" />
+    <Compile Include="EducationalExperience\AddEducationalExperienceViewModel.cs" />
+    <Compile Include="EducationalExperience\EditEducationalExperienceViewModel.cs" />
+    <Compile Include="EducationalExperience\EducationalExperienceListViewModel.cs" />
+    <Compile Include="EducationalExperience\EducationalExperienceSearchRequest.cs" />
+    <Compile Include="EducationalExperience\EducationalExperienceViewModel.cs" />
+    <Compile Include="EntireEvaluation\AddEnitreEvaluationViewModel.cs" />
+    <Compile Include="EntireEvaluation\EditEnitreEvaluationViewModel.cs" />
+    <Compile Include="EntireEvaluation\EnitreEvaluationListViewModel.cs" />
+    <Compile Include="EntireEvaluation\EnitreEvaluationSearchRequest.cs" />
+    <Compile Include="EntireEvaluation\EnitreEvaluationViewModel.cs" />
+    <Compile Include="Home\BenchmarkViewModel.cs" />
+    <Compile Include="Home\TeacherWithTopScoreViewModel.cs" />
+    <Compile Include="Home\LastActivityViewModel.cs" />
+    <Compile Include="Home\NewAddedTeacherViewModel.cs" />
+    <Compile Include="Institution\AddInstitutionViewModel.cs" />
+    <Compile Include="Institution\EditInstitutionViewModel.cs" />
+    <Compile Include="Institution\InstitutionListViewModel.cs" />
+    <Compile Include="Institution\InstitutionSearchRequest.cs" />
+    <Compile Include="Institution\InstitutionViewModel.cs" />
+    <Compile Include="Interview\AddInterviewViewModel.cs" />
+    <Compile Include="Interview\EditInterviewViewModel.cs" />
+    <Compile Include="Interview\InterviewListViewModel.cs" />
+    <Compile Include="Interview\InterviewSearchRequest.cs" />
+    <Compile Include="Interview\InterviewViewModel.cs" />
+    <Compile Include="TeacherInServiceCourseType\AddTeacherInServiceCourseTypeViewModel.cs" />
+    <Compile Include="TeacherInServiceCourseType\EditTeacherInServiceCourseTypeViewModel.cs" />
+    <Compile Include="TeacherInServiceCourseType\TeacherInServiceCourseTypeListViewModel.cs" />
+    <Compile Include="TeacherInServiceCourseType\TeacherInServiceCourseTypeSearchRequest.cs" />
+    <Compile Include="TeacherInServiceCourseType\TeacherInServiceCourseTypeViewModel.cs" />
+    <Compile Include="Teacher\EditTeacherViewModel.cs" />
+    <Compile Include="Teacher\TeacherDetailsViewModel.cs" />
+    <Compile Include="Teacher\TeacherListViewModel.cs" />
+    <Compile Include="Teacher\TeacherSearchRequest.cs" />
+    <Compile Include="Teacher\TeacherViewModel.cs" />
+    <Compile Include="Teacher\ReferTeacherViewModel.cs" />
+    <Compile Include="ArticleEvaluation\AddArticleEvaluationBindingModel.cs" />
+    <Compile Include="ArticleEvaluation\AddArticleEvaluationViewModel.cs" />
+    <Compile Include="ArticleEvaluation\BaseQuestion.cs" />
+    <Compile Include="ArticleEvaluation\CheckBoxListQuestion.cs" />
+    <Compile Include="ArticleEvaluation\ArticleDetails.cs" />
+    <Compile Include="ArticleEvaluation\ArticleEvaluationListViewModel.cs" />
+    <Compile Include="ArticleEvaluation\ArticleEvaluationSearchRequest.cs" />
+    <Compile Include="ArticleEvaluation\ArticleEvaluationViewModel.cs" />
+    <Compile Include="ArticleEvaluation\NumericQuestion.cs" />
+    <Compile Include="ArticleEvaluation\RadioButtonListQuestion.cs" />
+    <Compile Include="ArticleEvaluation\StringQuestion.cs" />
+    <Compile Include="Article\AddArticleViewModel.cs" />
+    <Compile Include="Article\EditArticleViewModel.cs" />
+    <Compile Include="Article\ArticleListViewModel.cs" />
+    <Compile Include="Article\ArticleSearchRequest.cs" />
+    <Compile Include="Article\ArticleViewModel.cs" />
+    <Compile Include="PrivateMessage\AddConversationViewModel.cs" />
+    <Compile Include="PrivateMessage\AddMessageViewModel.cs" />
+    <Compile Include="PrivateMessage\AttachmentViewModel.cs" />
+    <Compile Include="PrivateMessage\InBoxViewModel.cs" />
+    <Compile Include="PrivateMessage\MessageListViewModel.cs" />
+    <Compile Include="PrivateMessage\MessageViewModel.cs" />
+    <Compile Include="PrivateMessage\OutBoxViewModel.cs" />
+    <Compile Include="PrivateMessage\ReplyViewModel.cs" />
+    <Compile Include="Question\AddQuestionViewModel.cs" />
+    <Compile Include="Question\EditQuestionViewModel.cs" />
+    <Compile Include="Question\QuestionListViewModel.cs" />
+    <Compile Include="Question\QuestionSearchRequest.cs" />
+    <Compile Include="Question\QuestionViewModel.cs" />
+    <Compile Include="ReferentialTeacher\AddReferentialTeacherViewModel.cs" />
+    <Compile Include="ReferentialTeacher\EditReferentialTeacherViewModel.cs" />
+    <Compile Include="ReferentialTeacher\ReferentialTeacherListViewModel.cs" />
+    <Compile Include="ReferentialTeacher\ReferentialTeacherViewModel.cs" />
+    <Compile Include="ResearchExperience\AddResearchExperienceViewModel.cs" />
+    <Compile Include="ResearchExperience\EditResearchExperienceViewModel.cs" />
+    <Compile Include="ResearchExperience\ResearchExperienceListViewModel.cs" />
+    <Compile Include="ResearchExperience\ResearchExperienceSearchRequest.cs" />
+    <Compile Include="ResearchExperience\ResearchExperienceViewModel.cs" />
+    <Compile Include="Teacher\AddTeacherViewModel.cs" />
+    <Compile Include="Permission\SelectPermissionViewModel.cs" />
+    <Compile Include="Role\AddRoleViewModel.cs" />
+    <Compile Include="Role\EditRoleViewModel.cs" />
+    <Compile Include="Role\RoleListViewModel.cs" />
+    <Compile Include="Role\RoleSearchRequest.cs" />
+    <Compile Include="Setting\UserSettingViewModel.cs" />
+    <Compile Include="Title\AddTitleViewModel.cs" />
+    <Compile Include="Title\EditTitleViewModel.cs" />
+    <Compile Include="Title\TitleListViewModel.cs" />
+    <Compile Include="Title\TitleSearchRequest.cs" />
+    <Compile Include="Title\TitleViewModel.cs" />
+    <Compile Include="TrainingCenter\AddTrainingCenterViewModel.cs" />
+    <Compile Include="TrainingCenter\EditTrainingCenterViewModel.cs" />
+    <Compile Include="TrainingCenter\TrainingCenterListViewModel.cs" />
+    <Compile Include="TrainingCenter\TrainingCenterSearchRequest.cs" />
+    <Compile Include="TrainingCenter\TrainingCenterViewModel.cs" />
+    <Compile Include="TrainingCourse\AddTrainingCourseViewModel.cs" />
+    <Compile Include="TrainingCourse\EditTrainingCourseViewModel.cs" />
+    <Compile Include="TrainingCourse\TrainingCourseListViewModel.cs" />
+    <Compile Include="TrainingCourse\TrainingCourseSearchRequest.cs" />
+    <Compile Include="TrainingCourse\TrainingCourseViewModel.cs" />
+    <Compile Include="User\UserListViewModel.cs" />
+    <Compile Include="User\UserSearchRequest.cs" />
+    <Compile Include="WorkExperience\AddWorkExperienceViewModel.cs" />
+    <Compile Include="WorkExperience\EditWorkExperienceViewModel.cs" />
+    <Compile Include="WorkExperience\WorkExperienceListViewModel.cs" />
+    <Compile Include="WorkExperience\WorkExperienceSearchRequest.cs" />
+    <Compile Include="WorkExperience\WorkExperienceViewModel.cs" />
+    <Compile Include="Common\BaseIsDelete.cs" />
+    <Compile Include="Common\BaseRowVersion.cs" />
+    <Compile Include="Common\BaseSearchRequest.cs" />
+    <Compile Include="Common\BaseSortByMode.cs" />
+    <Compile Include="Common\BaseViewModel.cs" />
+    <Compile Include="Common\PageSize.cs" />
+    <Compile Include="Common\SortDirectionMode.cs" />
+    <Compile Include="ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role\RoleViewModel.cs" />
+    <Compile Include="User\AddUserViewModel.cs" />
+    <Compile Include="User\EditUserViewModel.cs" />
+    <Compile Include="User\UserViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Decision.DomainClasses\Decision.DomainClasses.csproj">
+      <Project>{72B9849F-931A-40C0-B11E-44324CD46250}</Project>
+      <Name>Decision.DomainClasses</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

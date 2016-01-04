@@ -1,0 +1,8 @@
+﻿@* GeneratePrettyNames: true*@
+@model Decision.ViewModel.EducationalExperience.EducationalExperienceListViewModel
+@foreach (var e in Model.EducationalExperiences)
+{
+    @Html.Partial(MVC.OrganizationalTeaching.Views._OrganizationalTeachingItem, e)
+}
+
+

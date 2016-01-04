@@ -1,0 +1,56 @@
+﻿@model Decision.ViewModel.Interview.InterviewViewModel
+
+<div class="col-md-12 " id="interview-@Model.Id">
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <i class="fa fa-calendar"></i>
+                    <label class="text-muted">
+                        تاریخ:
+                    </label>
+                    <small>
+                        @Model.InterviewDate.ToPersianString(PersianDateTimeFormat.Date)
+                    </small>
+                   
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-user"></i>
+                    <label class="text-muted">
+                        مصاحبه کننده :
+                    </label>
+                    <small>@Model.InterviewerName</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="text-muted">
+                        خلاصه
+                    </label>
+                    <hr class="margin-top-5 margin-bottom-0"/>
+                    @Html.Raw(Model.Brief)
+                </div>
+
+            </div>
+            @{Html.RenderPartial(MVC.Shared.Views._AuditLog, Model);}
+        </div>
+        <div class="panel-footer ">
+            <div class="pull-left">
+                <a class="btn btn-sm btn-success " href="@Url.Action(MVC.Interview.GetDocument(Model.Id,Model.TeacherId))">
+                    <i class="fa fa-download"></i>
+                    بارگذاری ضمیمه
+                </a>
+                <a class="btn btn-primary btn-sm"
+                   href="@Url.Action(MVC.Interview.Edit(Model.Id))" role="button"><i class="fa fa-edit"></i>ویرایش</a>
+                <button class="btn-sm btn btn-danger"
+                        type="button" data-delete-url="@Url.Action(MVC.Interview.Delete())" data-removal-element="#interview-@Model.Id" id="remove-@Model.Id">
+                    <i class="fa fa-trash-o"></i>
+                    حذف
+                </button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+

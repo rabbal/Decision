@@ -1,0 +1,116 @@
+﻿
+@using System.Diagnostics
+@using Decision.Web.Helpers
+@model  Decision.ViewModel.PrivateMessage.MessageListViewModel
+@{
+    ViewBag.Title = "گفتگو";
+    var parent = Model.Messages.First(a => a.ReplyId == null);
+    var children = Model.Messages.Where(a => a.ReplyId != null);
+}
+
+<ul class="media-list">
+
+    <li class="media">
+        <div class="media-body">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h6 class=" media-heading">
+                        <span class="fa fa-user"></span>
+                        @parent.SenderUserName
+                        <small class="pull-left">
+                            <i class="fa fa-calendar"></i>
+                            <time>@parent.SendDate.ToRemainingDateTime(),@parent.SendDate.ToPersianString(PersianDateTimeFormat.Date)</time>
+                            <time>
+                                <i class="fa fa-clock-o"></i>
+                                <span>@parent.SendDate.ToPersianTimeString()</span>
+                            </time>
+                        </small>
+                    </h6>
+                </div>
+                <div class="panel-body">
+                    @Html.Raw(parent.Content)
+                   
+
+                    @if (parent.Attachments != null)
+                    {
+                        <hr class="margin-bottom-5" />
+                       
+                        <ul style="list-style-type: circle;">
+                            @foreach (var attachment in parent.Attachments)
+                            {
+
+                                <text>
+                                    <li>
+                                        <a href="@Url.Action(MVC.PrivateMessage.GetFile(attachment.Id))">@attachment.FriendlyName</a>
+                                    </li>
+                                </text>
+                            }
+                        </ul>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+        @foreach (var item in children)
+        {
+            <ul >
+                <li class="media margin-top-minus-35">
+                    <div class="media-body">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h6 class=" media-heading">
+                                    <span class="fa fa-user"></span>
+                                    @item.SenderUserName
+                                    <small class="pull-left">
+                                        <i class="fa fa-calendar"></i>
+                                        <time>@item.SendDate.ToRemainingDateTime(),@item.SendDate.ToPersianString(PersianDateTimeFormat.Date)</time>
+                                        <time>
+                                            
+                                            <i class="fa fa-clock-o"></i>
+                                            <span>@item.SendDate.ToPersianTimeString()</span>
+                                        </time>
+                                    </small>
+                                </h6>
+                            </div>
+                            <div class="panel-body">
+                                @Html.Raw(item.Content)
+                               
+                                @if (item.Attachments != null)
+                                {
+                                    <hr class="margin-bottom-5" />
+                                    <ul style="list-style-type: circle;">
+                                        @foreach (var attachment in item.Attachments)
+                                        {
+
+                                            <text>
+                                                <li>
+                                                 <a href="@Url.Action(MVC.PrivateMessage.GetFile(attachment.Id))">@attachment.FriendlyName</a>
+                                                </li>
+                                            </text>
+                                        }
+                                    </ul>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        }
+    </li>
+
+</ul>
+
+@{Html.RenderPartial(MVC.PrivateMessage.Views._Reply, Model.AddMessageViewModel);}
+
+@section Menu{
+    @{Html.RenderPartial(MVC.Shared.Views._UserProfileSideBarMenu);}
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/editor")
+    @Scripts.Render("~/bundles/formData")
+}

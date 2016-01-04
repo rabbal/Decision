@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <Automation Ref="2" type="Stimulsoft.Report.Dictionary.StiSqlDatabase" isKey="true">
+        <Alias>Automation</Alias>
+        <ConnectionStringEncrypted>+RrLSVZZ001sCM3sYXDjY9jygStOezGkbUm5BGFYYj/VWmmITkzjnWtE7dxpdONj0Xj7C9UYe83hXJyl6hxiE8k698nI</ConnectionStringEncrypted>
+        <Name>Automation</Name>
+      </Automation>
+    </Databases>
+    <DataSources isList="true" count="8">
+      <Afrad Ref="3" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>Afrad</Alias>
+        <Columns isList="true" count="38">
+          <value>Guid,System.String</value>
+          <value>CodeMelli,System.String</value>
+          <value>JensiyyatTypeId,System.Int64</value>
+          <value>TaaholTypeId,System.Int64</value>
+          <value>IsargariTypeId,System.Int64</value>
+          <value>NezamvazifeTypeId,System.Int64</value>
+          <value>MadraktahsiliTypeId,System.Int64</value>
+          <value>MahalleTavallodId,System.Int64</value>
+          <value>MahalleSodorId,System.Int64</value>
+          <value>MahalleSodorGavahinameId,System.Int64</value>
+          <value>GavahinameTypeId,System.Int64</value>
+          <value>ShiftFaliyatId,System.Int64</value>
+          <value>ShomareBime,System.String</value>
+          <value>BimeTypeId,System.Int64</value>
+          <value>VaziatBimeId,System.Int64</value>
+          <value>MalekiatTypeId,System.Int64</value>
+          <value>Description,System.String</value>
+          <value>DateShoroFaliyat,System.String</value>
+          <value>ShomareKartPayanKhedmat,System.String</value>
+          <value>EjazeTaraddodMahane,System.Boolean</value>
+          <value>Eynak,System.Boolean</value>
+          <value>Active,System.Boolean</value>
+          <value>ActiveChangeDescription,System.String</value>
+          <value>ActiveChangeDate,System.String</value>
+          <value>Farzand,System.Int64</value>
+          <value>Param,System.Int64</value>
+          <value>DateEngezaGavahiname,System.String</value>
+          <value>DateSodoreGavahiname,System.String</value>
+          <value>Address,System.String</value>
+          <value>ShomareGavahiname,System.String</value>
+          <value>CodePosti,System.String</value>
+          <value>Mobile,System.String</value>
+          <value>Tel,System.String</value>
+          <value>Name,System.String</value>
+          <value>Family,System.String</value>
+          <value>FatherName,System.String</value>
+          <value>ShomareShenasname,System.String</value>
+          <value>DateTavallod,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>Afrad</Name>
+        <NameInSource>Automation</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from Afrad</SqlCommand>
+      </Afrad>
+      <AfradView1 Ref="4" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>AfradView1</Alias>
+        <Columns isList="true" count="17">
+          <value>CodeMelli,System.String</value>
+          <value>DatePT,System.String</value>
+          <value>DatePB,System.String</value>
+          <value>KhodroCode,System.String</value>
+          <value>MalekiatTypeName,System.String</value>
+          <value>TaxiTypeId,System.Int64</value>
+          <value>MahalTavallodName,System.String</value>
+          <value>TaaholTypeName,System.String</value>
+          <value>MadraktahsiliTypeName,System.String</value>
+          <value>Farzand,System.Int64</value>
+          <value>Name,System.String</value>
+          <value>Family,System.String</value>
+          <value>FatherName,System.String</value>
+          <value>ShomareShenasname,System.String</value>
+          <value>Address,System.String</value>
+          <value>Mobile,System.String</value>
+          <value>Tel,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>AfradView1</Name>
+        <NameInSource>Automation</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from AfradView1</SqlCommand>
+      </AfradView1>
+      <AllInfoView Ref="5" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>AllInfoView</Alias>
+        <Columns isList="true" count="13">
+          <value>CodeMelli,System.String</value>
+          <value>JensiyyatTypeId,System.Int64</value>
+          <value>TaxiType,System.String</value>
+          <value>MalekiatType,System.String</value>
+          <value>KhodroCode,System.String</value>
+          <value>TaxiTypeId,System.Int64</value>
+          <value>KhodroTypeId,System.Int64</value>
+          <value>KhodroType,System.String</value>
+          <value>MalekiatTypeId,System.Int64</value>
+          <value>Jensiyyat,System.String</value>
+          <value>Name,System.String</value>
+          <value>Family,System.String</value>
+          <value>Mobile,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>AllInfoView</Name>
+        <NameInSource>Automation</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from AllInfoView</SqlCommand>
+      </AllInfoView>
+      <KhodroView1 Ref="6" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>KhodroView1</Alias>
+        <Columns isList="true" count="9">
+          <value>Code,System.String</value>
+          <value>KhodroTypeName,System.String</value>
+          <value>SokhtTypeName,System.String</value>
+          <value>ShomareMotor,System.String</value>
+          <value>ShomareShasi,System.String</value>
+          <value>Pan,System.String</value>
+          <value>Model,System.String</value>
+          <value>VIN,System.String</value>
+          <value>ShomarePelak,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>KhodroView1</Name>
+        <NameInSource>Automation</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from KhodroView1</SqlCommand>
+      </KhodroView1>
+      <PBCreditView Ref="7" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>PBCreditView</Alias>
+        <Columns isList="true" count="8">
+          <value>CodeMelli,System.String</value>
+          <value>ShomareParvane,System.String</value>
+          <value>KhodroCode,System.String</value>
+          <value>Id,System.Int64</value>
+          <value>Mobile,System.String</value>
+          <value>DateParvane,System.String</value>
+          <value>Name,System.String</value>
+          <value>Family,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>PBCreditView</Name>
+        <NameInSource>Automation</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from PBCreditView</SqlCommand>
+      </PBCreditView>
+      <PBTamdidCreditView Ref="8" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>PBTamdidCreditView</Alias>
+        <Columns isList="true" count="9">
+          <value>CodeMelli,System.String</value>
+          <value>ShomareParvane,System.String</value>
+          <value>KhodroCode,System.String</value>
+          <value>Id,System.Int64</value>
+          <value>TamdidFormDate,System.String</value>
+          <value>TamdidToDate,System.String</value>
+          <value>Name,System.String</value>
+          <value>Family,System.String</value>
+          <value>Mobile,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>PBTamdidCreditView</Name>
+        <NameInSource>Automation</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from PBTamdidCreditView</SqlCommand>
+      </PBTamdidCreditView>
+      <PtCreditView Ref="9" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>PtCreditView</Alias>
+        <Columns isList="true" count="8">
+          <value>Id,System.Int64</value>
+          <value>CodeMelli,System.String</value>
+          <value>ShomareParvane,System.String</value>
+          <value>DateEnd,System.String</value>
+          <value>TamdidToDate,System.String</value>
+          <value>Name,System.String</value>
+          <value>Family,System.String</value>
+          <value>Mobile,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>PtCreditView</Name>
+        <NameInSource>Automation</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from PtCreditView</SqlCommand>
+      </PtCreditView>
+      <Users Ref="10" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>Users</Alias>
+        <Columns isList="true" count="10">
+          <value>Id,System.Int64</value>
+          <value>UserName,System.String</value>
+          <value>Password,System.String</value>
+          <value>Name,System.String</value>
+          <value>Family,System.String</value>
+          <value>SysUser,System.Boolean</value>
+          <value>CanCreate,System.Boolean</value>
+          <value>CanDelete,System.Boolean</value>
+          <value>CanUpdate,System.Boolean</value>
+          <value>CanShow,System.Boolean</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>Users</Name>
+        <NameInSource>Automation</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from Users</SqlCommand>
+      </Users>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="11" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <DataUsers Ref="12" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,0.4,19,0.8</ClientRectangle>
+          <Components isList="true" count="7">
+            <DataUsers_Name Ref="13" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;DashDotDot;Black;1;DashDotDot;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>12.6,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>B Nazanin,10</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataUsers_Name</Name>
+              <Page isRef="11" />
+              <Parent isRef="12" />
+              <Text>{Users.Name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataUsers_Name>
+            <DataUsers_Family Ref="14" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;DashDotDot;Black;1;DashDotDot;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>7,0,5.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>B Nazanin,10</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataUsers_Family</Name>
+              <Page isRef="11" />
+              <Parent isRef="12" />
+              <Text>{Users.Family}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataUsers_Family>
+            <DataUsers_SysUser Ref="15" type="CheckBox" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;DashDotDot;Black;1;DashDotDot;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <Checked>{Users.SysUser}</Checked>
+              <ClientRectangle>5.6,0,1.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <ContourColor>Black</ContourColor>
+              <Name>DataUsers_SysUser</Name>
+              <Page isRef="11" />
+              <Parent isRef="12" />
+              <TextBrush>Black</TextBrush>
+            </DataUsers_SysUser>
+            <DataUsers_CanDelete Ref="16" type="CheckBox" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;DashDotDot;Black;1;DashDotDot;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <Checked>{Users.CanDelete}</Checked>
+              <ClientRectangle>4.2,0,1.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <ContourColor>Black</ContourColor>
+              <Name>DataUsers_CanDelete</Name>
+              <Page isRef="11" />
+              <Parent isRef="12" />
+              <TextBrush>Black</TextBrush>
+            </DataUsers_CanDelete>
+            <DataUsers_CanUpdate Ref="17" type="CheckBox" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;DashDotDot;Black;1;DashDotDot;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <Checked>{Users.CanUpdate}</Checked>
+              <ClientRectangle>2.6,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <ContourColor>Black</ContourColor>
+              <Name>DataUsers_CanUpdate</Name>
+              <Page isRef="11" />
+              <Parent isRef="12" />
+              <TextBrush>Black</TextBrush>
+            </DataUsers_CanUpdate>
+            <DataUsers_CanShow Ref="18" type="CheckBox" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;DashDotDot;Black;1;DashDotDot;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <Checked>{Users.CanShow}</Checked>
+              <ClientRectangle>1.4,0,1.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <ContourColor>Black</ContourColor>
+              <Name>DataUsers_CanShow</Name>
+              <Page isRef="11" />
+              <Parent isRef="12" />
+              <TextBrush>Black</TextBrush>
+            </DataUsers_CanShow>
+            <DataUsers_CanCreate Ref="19" type="CheckBox" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;DashDotDot;Black;1;DashDotDot;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <Checked>{Users.CanCreate}</Checked>
+              <ClientRectangle>0,0,1.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <ContourColor>Black</ContourColor>
+              <Name>DataUsers_CanCreate</Name>
+              <Page isRef="11" />
+              <Parent isRef="12" />
+              <TextBrush>Black</TextBrush>
+            </DataUsers_CanCreate>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Users</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataUsers</Name>
+          <Page isRef="11" />
+          <Parent isRef="11" />
+          <Sort isList="true" count="0" />
+        </DataUsers>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>62d04d790e1e4a72adda45a10fe52d94</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="20" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="21" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>8/25/2015 11:54:36 AM</ReportChanged>
+  <ReportCreated>8/24/2015 10:38:22 AM</ReportCreated>
+  <ReportFile>D:\Programs\Programming\Report\Report.mrt</ReportFile>
+  <ReportGuid>43e8040fcca34ecd8d3c748fece527b6</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2015.1.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

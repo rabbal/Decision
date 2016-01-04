@@ -1,0 +1,10 @@
+﻿@* GeneratePrettyNames: true*@
+
+
+@model Decision.ViewModel.User.UserListViewModel
+
+@foreach (var user in Model.Users)
+{
+    @Html.Partial(MVC.User.Views._UserItem, user)
+}
+

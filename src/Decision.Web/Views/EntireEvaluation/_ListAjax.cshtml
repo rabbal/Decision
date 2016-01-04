@@ -1,0 +1,6 @@
+﻿@model Decision.ViewModel.EntireEvaluation.EntireEvaluationListViewModel
+           
+@foreach (var e in Model.EntireEvaluations)
+{
+  @Html.Partial(MVC.EntireEvaluation.Views._EntireEvaluationItem, e)
+}

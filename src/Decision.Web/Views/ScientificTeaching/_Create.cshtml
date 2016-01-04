@@ -1,0 +1,58 @@
+﻿@using Decision.Common.Helpers
+@model Decision.ViewModel.EducationalExperience.AddEducationalExperienceViewModel
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header alert alert-success">
+            <h6 class="modal-title">درج سابقه تدریس علمی استاد</h6>
+        </div>
+        <div class="modal-body">
+            @using (Ajax.BeginForm(MVC.ScientificTeaching.Create(), new AjaxOptions { HttpMethod = "POST", OnComplete = "createOnComplete(xhr, status, 'scientificTeachingList', '#modal','createScientificTeachingForm','#createScientificTeachingButton')" }, new { @class = "form-horizontal", id = "createScientificTeachingForm", autocomplete = "off" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.TeacherId)
+                @Html.HiddenFor(model => model.Type)
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="TitleId">عنوان تدریس شده</label>
+                    <div class="col-md-9">
+                        @Html.DropDownListFor(model => model.TitleId, Model.Titles, "انتخاب عنوان تدریس شده", new { @class = "form-control", rows = 2 })
+                        @Html.ValidationMessageFor(model => model.TitleId, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.BeginYear, new { @class = "control-label col-md-2" })
+                    <div class="col-md-9">
+                        @Html.NoAutoCompleteTextBoxForNumber(model => model.BeginYear)
+                        @Html.ValidationMessageFor(model => model.BeginYear, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EndYear, new { @class = "control-label col-md-2" })
+                    <div class="col-md-9">
+                        @Html.NoAutoCompleteTextBoxForNumber(model => model.EndYear)
+                        @Html.ValidationMessageFor(model => model.EndYear, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="#Description" class="control-label col-md-2">نام مرکز عملی</label>
+                    <div class="col-md-9">
+                        @Html.TextAreaFor(model => model.Description, new { @class = "form-control", rows = 3 })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-2">
+                        <button type="button" id="createScientificTeachingButton" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'createScientificTeachingForm')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">
+                            ثبت موضوع جدید
+                        </button>
+                        <button class="btn btn-default btn-md" data-dismiss="modal" aria-hidden="true">
+                            انصراف
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+﻿@* Generator: MvcHelper GeneratePrettyNames: true *@
+@using System.Web.Mvc
+
+@helper CheckBoxList(string name, IEnumerable<SelectListItem> items)
+{
+    <div class="row">
+        @foreach (var item in items)
+        {
+            <text>
+                <div class="col-md-6">
+                    <input type="checkbox" @if (item.Selected) { <text> checked="checked" </text>  }
+                           id="@item.Value" name="@name" value="@item.Value" class="checkbox-inline" />
+                    <label for="@item.Value" class="control-label">@item.Text</label>
+                </div>
+            </text>
+        }
+    </div>
+}

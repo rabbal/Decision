@@ -1,0 +1,61 @@
+﻿
+@model Decision.ViewModel.Article.ArticleViewModel
+           
+<div class="col-md-12 " id="Article-@Model.Id">
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <i class="fa fa-calendar"></i>
+                    <label class="text-muted">
+                        تاریخ ارائه :
+                    </label>
+                    <small>@Model.ArticleDate.ToPersianString(PersianDateTimeFormat.Date)</small>
+                   
+                </div>
+                <div class="col-md-3">
+                    <label class="text-muted">
+                        کد :
+                    </label>
+                    <small>@Model.Code.GetPersianNumber()</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="text-muted">
+                        خلاصه مقاله
+                    </label>
+                    <hr class="margin-top-5 margin-bottom-5" />
+                    @Html.Raw(Model.Brief)
+                </div>
+
+            </div>
+            @{Html.RenderPartial(MVC.Shared.Views._AuditLog, Model);}
+        </div>
+        <div class="panel-footer ">
+            <div class="pull-left">
+                <a class="btn btn-sm btn-info " href="@Url.Action(MVC.ArticleEvaluation.List(Model.Id))">
+                    <i class="fa fa-list"></i>
+                    لیست ارزیابی ها
+                </a>
+                <a class="btn btn-sm btn-default " href="@Url.Action(MVC.ArticleEvaluation.Create(Model.Id))">
+                    <i class="fa fa-plus"></i>
+                    ارزیابی
+                </a>
+                <a class="btn btn-sm btn-success " href="@Url.Action(MVC.Article.GetDocument(Model.Id,Model.TeacherId))">
+                    <i class="fa fa-download"></i>
+                    بارگذاری
+                </a>
+                <a class="btn btn-primary btn-sm"
+                   href="@Url.Action(MVC.Article.Edit(Model.Id))" role="button"><i class="fa fa-edit"></i>ویرایش</a>
+                <button class="btn-sm btn btn-danger"
+                        type="button" data-delete-url="@Url.Action(MVC.Article.Delete())" data-Teacher="@Model.TeacherId" data-removal-element="#Article-@Model.Id" id="remove-@Model.Id">
+                    <i class="fa fa-trash-o"></i>
+                    حذف
+                </button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+﻿@using Decision.Common.Helpers
+@model Decision.ViewModel.User.EditUserViewModel
+<div class="col-md-6" id="user-@Model.Id">
+    @using (Ajax.BeginForm(MVC.User.Edit(), new AjaxOptions { HttpMethod = "POST", OnComplete = "editOnComplete(xhr, status, '" + Model.Id + "','#editButton" + Model.Id + "')" }, new { @class = "form-horizontal", id = Model.Id, autocomplete = "off", data_ajax_update = "user-" + Model.Id }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(a => a.Id)
+        @Html.HiddenFor(a => a.RowVersion)
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    @Html.LabelFor(m => m.UserName, new { @class = "col-md-3 control-label" })
+                    <div class="col-md-8">
+                        @Html.NoAutoCompleteTextBoxForLtr(m => m.UserName)
+                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.FirstName, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-8">
+                            @Html.NoAutoCompleteTextBoxFor(m => m.FirstName)
+                            @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.LastName, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-8">
+                            @Html.NoAutoCompleteTextBoxFor(m => m.LastName)
+                            @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-8">
+                            @Html.FormControlPasswordFor(m => m.Password)
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-8">
+                            @Html.FormControlPasswordFor(m => m.ConfirmPassword)
+                            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-md-offset-2">
+                        <ul class="list-group row margin-bottom-0">
+                            @foreach (var role in Model.Roles)
+                            {
+                                <li class="list-group-item non-border col-xs-6 text-primary">
+
+                                    <div class="col-md-12">
+                                        <input type="checkbox" @if (role.Selected) { <text> checked="checked" </text> }
+                                               id="@role.Value" name="RoleIds" value="@(role.Value)" class="checkbox-inline" />
+                                        <label class="control-label" for="@role.Value">@role.Text</label>
+                                    </div>
+
+                                </li>
+
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer block">
+                <div class="pull-left">
+                    <button type="button" id="@($"editButton{Model.Id}")" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, '@Model.Id')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-sm">
+                        <i class="fa fa-check-square-o"></i>
+                        ذخیره تغییرات
+                    </button>
+                    <a class="btn btn-default btn-sm" data-ajax="true"
+                       data-ajax-mode="REPLACE-WITH" data-ajax-complete="cancelEditOnComplete(xhr, status)"
+                       data-ajax-update="#user-@Model.Id" data-ajax-method="POST"
+                       href="@Url.Action(MVC.User.CancelEdit(Model.Id))" role="button">
+                        <i class="fa fa-arrow-right"></i>
+                        انصراف
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    }
+</div>

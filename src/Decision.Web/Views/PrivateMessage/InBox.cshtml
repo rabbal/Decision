@@ -1,0 +1,42 @@
+﻿
+@model IEnumerable<Decision.ViewModel.PrivateMessage.InBoxViewModel>
+@{
+    ViewBag.Title = "لیست پیغام های دریافتی";
+}
+@Html.AntiForgeryToken()
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-12">
+                @Html.HelpAlert(@Url.Content("~/Content/Images/lightbulb.png"),
+                    "توجه کنید که حذف توسط گیرنده/فرستنده به معنای انصراف کلی است",
+                    "اگر در لیست پیغام های ورودی یا خروجی ، پیغامی  توسط فرستنده یا گیرنده حذف شده باشد ،برای کاربر مقابل هم غیر فابل دسترس خواهد بود")
+
+            </div>
+        </div>
+    </div>
+    <div class="panel-body" id="conversationList">
+        @{Html.RenderPartial(MVC.PrivateMessage.Views._InBoxListAjax, Model);}
+    </div>
+    <div class="panel-footer padding-5-5">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <button data-page="2" data-container="#conversationList"
+                        data-progress="#progress"
+                        data-json='{}'
+                        data-load-url="@Url.Action(MVC.PrivateMessage.InBoxAjax())"
+                        onclick="justPaging(this)" class="btn btn-info btn-block btn-sm" type="button">
+                    بیشتر
+                </button>
+            </div>
+        </div>
+        <div id="progress" align="center" style="display: none">
+            <img src="@Url.Content("~/Content/images/loading.gif")" alt="loading..." />
+        </div>
+    </div>
+</div>
+
+@section Menu{
+    @{Html.RenderPartial(MVC.Shared.Views._UserProfileSideBarMenu);}
+}

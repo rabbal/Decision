@@ -1,0 +1,177 @@
+﻿@using Decision.Common.Helpers
+@using Decision.Common.Helpers.Extentions
+@model Decision.ViewModel.EducationalBackground.EditEducationalBackgroundViewModel
+
+
+<div class="row">
+    <div class="col-md-22">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-edit"></i>
+                </h3>
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm(MVC.EducationalBackground.Edit(), FormMethod.Post, new { @class = "form-horizontal", id = "editEducationalBackgroundForm", autocomplete = "off", enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(model => model.TeacherId)
+                    @Html.HiddenFor(model => model.RowVersion)
+                    @Html.HiddenFor(model => model.AttachmentScan)
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EducationalType, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.EducationalType)
+                            @Html.ValidationMessageFor(model => model.EducationalType, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AcademicDegree, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.AcademicDegree)
+                            @Html.ValidationMessageFor(model => model.AcademicDegree, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.HosDegree, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.HosDegree)
+                            @Html.ValidationMessageFor(model => model.HosDegree, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.StudyFieldId, new { @class = "control-label col-md-2" })
+                        <div class="col-md-4">
+                            @Html.DropDownListFor(model => model.StudyFieldId, Model.StudyFields, "انتخاب رشته تحصیلی", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.StudyFieldId, null, new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.InstitutionId, new { @class = "control-label col-md-2" })
+                        <div class="col-md-4">
+                            @Html.DropDownListFor(model => model.InstitutionId, Model.Institutions, "انتخاب موسسه آموزشی", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.InstitutionId, null, new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Supervisor, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-8">
+                            @Html.NoAutoCompleteTextBoxFor(model => model.Supervisor)
+                            @Html.ValidationMessageFor(model => model.Supervisor, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Advisor, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-8">
+                            @Html.NoAutoCompleteTextBoxFor(model => model.Advisor)
+                            @Html.ValidationMessageFor(model => model.Advisor, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-8">
+                            @Html.TextAreaFor(model => model.Description, new { @class = "form-control", rows = 2 })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ThesisTopic, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-8">
+                            @Html.NoAutoCompleteTextBoxFor(model => model.ThesisTopic)
+                            @Html.ValidationMessageFor(model => model.ThesisTopic, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EntryDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.EntryDate, MVC.Shared.Views.EditorTemplates.PersianDatePicker)
+                            @Html.ValidationMessageFor(model => model.EntryDate, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.GraduationDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.GraduationDate, MVC.Shared.Views.EditorTemplates.PersianDatePicker)
+                            @Html.ValidationMessageFor(model => model.GraduationDate, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ThesisScore, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-4">
+                            @Html.NoAutoCompleteTextBoxFor(model => model.ThesisScore)
+                            @Html.ValidationMessageFor(model => model.ThesisScore, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.GPA, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-4">
+                            @Html.NoAutoCompleteTextBoxFor(model => model.GPA)
+                            @Html.ValidationMessageFor(model => model.GPA, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.RelatedToOrganizationPosition, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-4">
+                            @Html.NoAutoCompleteTextBoxForNumber(model => model.RelatedToOrganizationPosition)
+                            @Html.ValidationMessageFor(model => model.RelatedToOrganizationPosition, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AttachmentFile, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(model => model.AttachmentFile, new { type = "file", @class = "form-control" })
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" autocomplete="off" data-type="image" data-container="AttachmentScan" class="btn btn-primary   btn-sm @(Model.AttachmentScan.HasValue() ? "scan-remove" : "scan")">
+
+                                @if (Model.AttachmentScan.HasValue())
+                                {<text>
+                                    <i class="fa fa-remove"></i>
+                                    حذف فایل اسکن شده
+                                </text>
+                                }
+                                else
+                                {<text>
+                                    <i class="fa fa-file-photo-o"></i>
+                                    افزودن اسکن
+                                </text>
+                                }
+                            </button>
+                        </div>
+                    </div>
+
+                }
+            </div>
+
+            <div class="panel-footer ">
+                <div class="pull-left">
+                    <button type="button" id="editEducationalBackgroundButton" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'editEducationalBackgroundForm')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">
+                        <i class="fa fa-check-square-o"></i>
+                        ذخیره تغییرات
+                    </button>
+                    <a class="btn btn-default btn-md"
+                       href="@Url.Action(MVC.EducationalBackground.List(Model.TeacherId))" role="button">
+                        <i class="fa fa-arrow-right"></i>
+                        انصراف
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Menu{
+    @{Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.TeacherId);}
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/datePicker")
+}

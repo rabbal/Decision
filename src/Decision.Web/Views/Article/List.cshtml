@@ -1,0 +1,64 @@
+﻿@using Decision.ViewModel.Article
+@model Decision.ViewModel.Article.ArticleListViewModel
+@{
+    ViewBag.Title = "لیست مقالات استاد";
+}
+@Html.AntiForgeryToken()
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+
+        <div class="row">
+            <div class="col-md-12">
+                @Html.HelpAlert(Url.Content("~/Content/images/lightbulb.png"), "برای درج مقاله جدید از دکمه (افزودن مقاله جدید) استفاده کنید.",
+                    "دقت کنید در صورت حجیم بودن فایل ضمیمه ، صبر کنید تا عملیات با موفقیت انجام شود."
+                    , "در صورت استفاده از امکان آپلود فایل ضمیمه ، از فرمت pdf استفاده کنید.")
+            </div>
+        </div>
+        <hr class="margin-bottom-5 margin-top-5" />
+        <div class="row">
+            <div class="col-md-12">
+                <button aria-controls="create-Article" aria-expanded="false" class="btn btn-default btn-sm btn-block" data-target="#create-Article" data-toggle="collapse" type="button">
+                    <i class="fa fa-plus"></i>افزودن مقاله جدید
+                </button>
+            </div>
+        </div>
+        <hr class="margin-bottom-5 margin-top-5" />
+
+        <div class="row collapse" id="create-Article">
+            @{ Html.RenderPartial(MVC.Article.Views.ViewNames._Create, new AddArticleViewModel { TeacherId = Model.SearchRequest.TeacherId });}
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row" id="ArticleList">
+            @{ Html.RenderPartial(MVC.Article.Views.ViewNames._ListAjax, Model);}
+        </div>
+    </div>
+    <div class="panel-footer padding-5-5">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <button data-page="2" data-json='{"TeacherId":"@Model.SearchRequest.TeacherId"}' data-container="#ArticleList"
+                        data-progress="#progress"
+                        data-load-url="@Url.Action(MVC.Article.ListAjax())"
+                        onclick="justPaging(this)" class="btn btn-info btn-block btn-sm" type="button">
+                    بیشتر
+                </button>
+            </div>
+        </div>
+        <div id="progress" align="center" style="display: none">
+            <img src="@Url.Content("~/Content/images/loading.gif")" alt="loading..." />
+        </div>
+    </div>
+</div>
+
+
+
+@section Menu{
+    @{Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.SearchRequest.TeacherId);}
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/datePicker")
+    @Scripts.Render("~/bundles/editor")
+    @Scripts.Render("~/bundles/formData")
+}

@@ -1,0 +1,60 @@
+﻿@model Decision.ViewModel.TrainingCourse.TrainingCourseViewModel
+
+<div class="col-md-12 data-item" id="trainingCourse-@Model.Id">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <i class="fa fa-leanpub"></i>
+                    <label class="text-muted">کد :</label>
+                    <small>@Model.CourseCode</small>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-calendar"></i>
+                    <label class="text-muted">تاریخ آغاز :</label>
+                    <small>@Model.BeginDate.ToPersianString(PersianDateTimeFormat.Date)</small>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-calendar-o"></i>
+                    <label class="text-muted">
+                        تاریخ پایان :
+                    </label>
+                    <small>@Model.EndDate.ToPersianString(PersianDateTimeFormat.Date)</small>
+                </div>
+                <div class="col-md-2">
+                    <i class="fa fa-clock-o"></i>
+                    <label class="text-muted">
+                        ساعات عملی:
+                    </label>
+                    <small>@Model.PracticalTotalHoures.GetPersianNumber()</small>
+                </div>
+                <div class="col-md-2">
+                    <i class="fa fa-clock-o"></i>
+                    <label class="text-muted">
+                        ساعات نظری:
+                    </label>
+                    <small>@Model.TheoryTotalHoures.GetPersianNumber()</small>
+                </div>
+            </div>
+            @{Html.RenderPartial(MVC.Shared.Views._AuditLog, Model);}
+        </div>
+        <div class="panel-footer ">
+            <div class="pull-left">
+                <a class="btn btn-primary btn-sm" data-ajax-oncomplete="editGetOnComplete(xhr,status)"
+                   data-ajax="true" data-ajax-method="GET"
+                   data-ajax-begin="onBegin(xhr,this)"
+                   data-ajax-mode="REPLACE-WITH" data-ajax-success="inlineEditGetOnSuccess(data, status, xhr,'@Model.Id')"
+                   data-ajax-update="#trainingCourse-@Model.Id"
+                   href="@Url.Action(MVC.TrainingCourse.Edit(Model.Id))" role="button"><i class="fa fa-edit"></i>ویرایش</a>
+
+                <button class="btn-sm btn btn-danger"
+                        type="button" data-delete-url="@Url.Action(MVC.TrainingCourse.Delete())" data-removal-element="#trainingCourse-@Model.Id" id="remove-@Model.Id">
+                    <i class="fa fa-trash-o"></i>
+                    حذف
+                </button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+

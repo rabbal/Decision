@@ -1,0 +1,43 @@
+﻿@model Decision.ViewModel.TeacherInServiceCourseType.AddTeacherInServiceCourseTypeViewModel
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header alert alert-success">
+            <h6 class="modal-title">درج دوره ضمن خدمت برای استاد</h6>
+        </div>
+        <div class="modal-body">
+            @using (Ajax.BeginForm(MVC.TeacherInServiceCourseType.Create(), new AjaxOptions { HttpMethod = "POST", OnComplete = "createOnComplete(xhr, status, 'TeacherInServiceCourseTypeList', '#modal','createTeacherInServiceCourseTypeForm','#createTeacherInServiceCourseTypeButton')" }, new { @class = "form-horizontal", id = "createTeacherInServiceCourseTypeForm", autocomplete = "off" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.TeacherId)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.HoursCount, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-8">
+                        @Html.TextBoxFor(model => model.HoursCount, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HoursCount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.InServiceCourseTypeTitleId, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-8">
+                        @Html.DropDownListFor(model => model.InServiceCourseTypeTitleId, Model.InServiceCourseTypeTitles, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.InServiceCourseTypeTitleId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-2">
+                        <button type="button" id="createTeacherInServiceCourseTypeButton" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'createTeacherInServiceCourseTypeForm')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">
+                            ثبت موضوع جدید
+                        </button>
+                        <button class="btn btn-default btn-md" data-dismiss="modal" aria-hidden="true">
+                            انصراف
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

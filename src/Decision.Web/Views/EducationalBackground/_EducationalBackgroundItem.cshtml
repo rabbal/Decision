@@ -1,0 +1,126 @@
+﻿@using Decision.DomainClasses.Entities.TeacherInfo
+@model Decision.ViewModel.EducationalBackground.EducationalBackgroundViewModel
+<div class="col-md-12 " id="educationalBackground-@Model.Id">
+    <div class="panel panel-default">
+        
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <i class="fa fa-graduation-cap"></i>
+                    <label class="text-muted">
+                        مقطع تحصیلی :
+                    </label>
+                    <small>
+                        @if (Model.EducationalType == EducationalType.Academic)
+                        {<text>
+                        @Html.DisplayFor(a => a.AcademicDegree)
+                        </text>
+                        }
+                        else
+                        {<text>
+                        @Html.DisplayFor(a => a.HosDegree)
+                        </text>
+                        }
+
+                    </small>
+                </div>
+                <div class="col-md-3">
+                    <label class="text-muted">
+                        نوع تحصیلات:
+                    </label>
+                    <small>
+                        @Html.DisplayFor(a => a.EducationalType)
+                    </small>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-calendar"></i>
+                    <label class="text-muted">
+                        ورود:
+                    </label>
+                    <small>@Model.EntryDate.ToPersianString(PersianDateTimeFormat.Date)</small>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-calendar"></i>
+                    <label class="text-muted">
+                        فارغ التحصیل:
+                    </label>
+                    <small>@Model.GraduationDate.ToPersianString(PersianDateTimeFormat.Date)</small>
+                </div>
+               
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label class="text-muted">
+                        استاد مشاور:
+                    </label>
+                    <small>@Model.Advisor</small>
+                </div>
+                <div class="col-md-3">
+                    <label class="text-muted">
+                        معدل کل :
+                    </label>
+                    <small>@Model.GPA.GetPersianNumber()</small>
+                </div>
+                <div class="col-md-3">
+                    <label class="text-muted">
+                        نمره پایان نامه :
+                    </label>
+                    <small>@Model.ThesisScore.GetPersianNumber()</small>
+                </div>
+                <div class="col-md-3">
+                    <label class="text-muted">
+                        ارتباط با پست کاری :
+                    </label>
+                    <small>@Model.RelatedToOrganizationPosition.GetPersianNumber()</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <label class="text-muted">
+                        موسسه آموزشی:
+                    </label>
+                    <small>@Model.InstitutionName</small>
+                </div>
+                <div class="col-md-3">
+                    <label class="text-muted">
+                       رشته تحصیلی :
+                    </label>
+                    <small>@Model.StudyFieldName</small>
+                </div>
+
+                <div class="col-md-9">
+                    <label class="text-muted">
+                        توضیحات:
+                    </label>
+                    <small>@Model.Description</small>
+                </div>
+                <div class="col-md-3">
+                    <label class="text-muted">
+                        استاد راهنما:
+                    </label>
+                    <small>@Model.Supervisor</small>
+                </div>
+            </div>
+            @{Html.RenderPartial(MVC.Shared.Views._AuditLog, Model);}
+        </div>
+        <div class="panel-footer ">
+            <div class="pull-left">
+              
+                <a class="btn btn-sm btn-success " href="#">
+                    <i class="fa fa-download"></i>
+                    مشاهده ضمیمه 
+                </a>
+                <a class="btn btn-primary btn-sm"
+                   href="@Url.Action(MVC.EducationalBackground.Edit(Model.Id))" role="button"><i class="fa fa-edit"></i>ویرایش</a>
+                <button class="btn-sm btn btn-danger"
+                        type="button" data-delete-url="@Url.Action(MVC.EducationalBackground.Delete())" data-Teacher="@Model.TeacherId" data-removal-element="#educationalBackground-@Model.Id" id="remove-@Model.Id">
+                    <i class="fa fa-trash-o"></i>
+                    حذف
+                </button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+

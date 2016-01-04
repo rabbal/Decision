@@ -1,0 +1,6 @@
+﻿@model Decision.ViewModel.TeacherInServiceCourseType.TeacherInServiceCourseTypeListViewModel
+           
+@foreach (var j in Model.TeacherInServiceCourseTypes)
+{
+  @Html.Partial(MVC.TeacherInServiceCourseType.Views._TeacherInServiceCourseTypeItem, j)
+}

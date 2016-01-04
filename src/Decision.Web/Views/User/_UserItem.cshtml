@@ -1,0 +1,61 @@
+﻿@model Decision.ViewModel.User.UserViewModel
+<div class="col-md-6 data-item" id="user-@Model.Id">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <i class="fa fa-user"></i>
+            <label class="text-muted">
+                نام کاربری:
+            </label>
+            <small>@Model.UserName</small>
+            
+            <label class="text-muted">نام-نام خانوادگی :</label>
+            <small>@Model.FullName</small>
+            @if (Model.IsSystemAccount)
+            {
+                <i class="fa fa-check-square-o text-success"></i>
+                <small class="text-muted">کاربر سیستمی</small>
+            }
+        </div>
+        <div class="panel-footer">
+            <div class="pull-left">
+
+                <a class="btn btn-primary btn-sm" data-ajax-oncomplete="editGetOnComplete(xhr,status)"
+                   data-ajax="true" data-ajax-method="GET"
+                   data-ajax-begin="onBegin(xhr,this)"
+                   data-ajax-mode="REPLACE-WITH" data-ajax-success="inlineEditGetOnSuccess(data, status, xhr,'@Model.Id')"
+                   data-ajax-update="#user-@Model.Id"
+                   href="@Url.Action(MVC.User.Edit(Model.Id))" role="button"><i class="fa fa-edit"></i>ویرایش</a>
+
+                @if (Model.IsBanned)
+                {
+                    <a class="btn btn-success btn-sm "
+                       data-ajax="true" data-ajax-method="POST"
+                       data-ajax-mode="REPLACE-WITH"
+                       data-ajax-begin="onBegin(xhr,this)"
+                       data-ajax-oncomplete="onComplete(xhr,status)"
+                       data-ajax-update="#user-@Model.Id"
+                       href="@Url.Action(MVC.User.EnableUser(Model.Id))" role="button">
+                        <i class="fa fa-check-square-o"></i>
+                        آزاد سازی
+                    </a>
+                }
+                else
+                {
+                    <a class="btn btn-danger btn-sm @(Model.IsSystemAccount ? "not-active" : "")"
+                       data-ajax="true" data-ajax-method="POST"
+                       data-ajax-begin="onBegin(xhr,this)"
+                       data-ajax-mode="REPLACE-WITH"
+                       data-ajax-oncomplete="onComplete(xhr,status)"
+                       disabled="@Model.IsSystemAccount"
+                       data-ajax-update="#user-@Model.Id"
+                       href="@Url.Action(MVC.User.BanUser(Model.Id))" role="button">
+                        <i class="fa fa-ban"></i>
+                        مسدود سازی
+                    </a>
+                }
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+</div>

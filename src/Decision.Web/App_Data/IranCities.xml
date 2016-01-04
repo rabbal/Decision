@@ -1,0 +1,1234 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+
+  <State Name="اردبیل">
+    <City>اردبیل</City>
+    <City>خلخال</City>
+    <City>عنبران</City>
+    <City>گرمی</City>
+    <City>پارس‌آباد</City>
+    <City>بیله‌سوار</City>
+    <City>آبی‌بیگلو</City>
+    <City>اصلاندوز</City>
+  </State>
+
+  <State Name="اصفهان">
+
+
+    <City>شهرضا</City>
+
+    <City>مبارکه</City>
+
+    <City>زرین‌شهر</City>
+
+    <City>دیزیچه</City>
+
+    <City>ابریشم</City>
+
+    <City>محمد آباد</City>
+
+    <City>نجف‌آباد</City>
+
+    <City>خوراسگان</City>
+
+    <City>اصفهان</City>
+
+    <City>تیران</City>
+
+    <City>دهق</City>
+
+    <City>اردستان</City>
+
+    <City>میمه</City>
+
+    <City>گلپایگان</City>
+
+    <City>گوگد</City>
+
+    <City>نطنز</City>
+
+    <City>کمه </City>
+
+    <City>بادرود</City>
+
+    <City>خور</City>
+
+    <City>نیاسر</City>
+
+    <City>زاغل</City>
+
+    <City>آبچوئیه</City>
+
+    <City>اژیه</City>
+
+    <City>تودشک</City>
+
+    <City>نیک‌آباد</City>
+
+    <City>کوهپایه </City>
+
+    <City>ابوزیدآباد</City>
+
+    <City>نوش‌آباد</City>
+
+    <City>خورزوق</City>
+
+    <City>کمشجه</City>
+
+    <City>خمینی‌شهر</City>
+
+    <City>خوانسار</City>
+
+    <City>بهارستان</City>
+
+    <City>شاهین‌شهر</City>
+
+    <City>برف‌انبار</City>
+
+    <City>فریدون‌شهر</City>
+
+    <City>جوشقان و کامو</City>
+
+    <City>گل‌شهر</City>
+
+    <City>ورنامخواست</City>
+
+    <City>چمگردان</City>
+
+    <City>زیباشهر</City>
+
+    <City>طالخونچه</City>
+
+    <City>کهریزسنگ</City>
+
+    <City>گل‌دشت</City>
+
+    <City>خالدآباد</City>
+
+  </State>
+
+  <State Name="البرز">
+    <City>ساوجبلاغ</City>
+
+    <City>طالقان</City>
+
+    <City>هشتگرد</City>
+
+    <City>چهارباغ</City>
+
+    <City>کوهسار</City>
+
+    <City>اشتهارد</City>
+
+    <City>ماهدشت</City>
+
+    <City>محمدشهر</City>
+
+    <City>مشکین‌دشت</City>
+
+    <City>کرج</City>
+
+    <City>کمالشهر</City>
+
+    <City>گرمدره</City>
+
+    <City>آسارا</City>
+
+    <City>نظرآباد</City>
+  </State>
+
+  <State Name="ایلام">
+    <City>آسمان آباد</City>
+
+    <City>موسیان</City>
+
+    <City>دهلران</City>
+
+    <City>میمه</City>
+
+    <City>پهله</City>
+
+    <City>مهران</City>
+
+    <City>ایلام</City>
+
+  </State>
+
+  <State Name="آذربایجان شرقی">
+    <City>خراجو</City>
+
+
+    <City>بناب</City>
+
+    <City>بناب جدید</City>
+
+    <City>خمارلو </City>
+
+    <City>مراغه</City>
+
+    <City>میانه</City>
+
+    <City>هشترود</City>
+
+    <City>ملکان</City>
+
+    <City>آذرشهر</City>
+
+    <City>آذرشهر </City>
+
+    <City>ممقان</City>
+
+    <City>گوگان</City>
+
+    <City>اسکو</City>
+
+    <City>اسکو </City>
+
+    <City>سراب </City>
+
+    <City>سراب</City>
+
+    <City>دوزدوزان</City>
+
+    <City>سهند</City>
+
+    <City>تبریز</City>
+
+
+    <City>شرفخانه</City>
+
+    <City>شبستر</City>
+
+    <City>خامنه</City>
+
+    <City>هریس</City>
+
+    <City>صوفیان</City>
+
+    <City>مرند</City>
+
+    <City>اهر</City>
+
+    <City>ورزقان</City>
+
+    <City>یامچی</City>
+
+    <City>زنوز</City>
+
+    <City>کلیبر</City>
+
+    <City>کلیبر </City>
+
+    <City>جلفا</City>
+
+    <City>ایلخچی</City>
+
+    <City>هوراند</City>
+
+    <City>بستان‌آباد</City>
+
+    <City>تیکمه‌داش</City>
+
+    <City>باسمنج</City>
+
+    <City>خسروشهر</City>
+
+    <City>سردرود</City>
+
+    <City>سیه‌رود</City>
+
+    <City>هادیشهر</City>
+
+    <City>قره‌آغاج</City>
+
+    <City>شربیان</City>
+
+    <City>مهربان</City>
+
+    <City>تسوج</City>
+
+    <City>سیس</City>
+
+    <City>شندآباد</City>
+
+    <City>وایقان</City>
+
+    <City>کوزه‌کنان</City>
+
+    <City>عجب‌شیر</City>
+
+    <City>آبش‌ احمد</City>
+
+
+    <City>کُشکسرای</City>
+
+    <City>لیلان</City>
+
+    <City>آقکند</City>
+
+    <City>بخشایش</City>
+
+    <City>خواجه</City>
+
+    <City>باروق</City>
+
+    <City>زرنق</City>
+
+    <City>ذوالبین</City>
+
+  </State>
+
+  <State Name="آذربایجان غربی">
+
+    <City>سردشت</City>
+
+    <City>تکاب</City>
+
+    <City>سیمینه</City>
+
+    <City>بوکان</City>
+
+    <City>مهاباد</City>
+
+    <City>کشاورز</City>
+
+    <City>نقده</City>
+
+    <City>میاندوآب</City>
+
+    <City>اشنویه</City>
+
+    <City>ارومیه</City>
+
+    <City>سلماس</City>
+
+    <City>خوی</City>
+
+    <City>قره ضیاءالدین</City>
+
+    <City>ماکو</City>
+
+    <City>بازرگان</City>
+
+    <City>سرو</City>
+
+    <City>سیلوانه</City>
+
+    <City>نوشین‌شهر</City>
+
+    <City>نالوس</City>
+
+    <City>پلدشت</City>
+
+    <City>گردکشانه</City>
+
+    <City>آواجیق</City>
+
+    <City>سیه‌چشمه</City>
+
+    <City>ایواوغلی</City>
+
+    <City>فیرورق</City>
+
+    <City>میرآباد</City>
+
+    <City>شاهین دژ</City>
+
+    <City>محمودآباد</City>
+
+    <City>شوط</City>
+
+    <City>باروق</City>
+
+    <City>محمدیار</City>
+
+    <City>چایپاره</City>
+
+  </State>
+
+  <State Name="بوشهر">
+
+    <City>بندر بوشهر</City>
+
+    <City>خارک</City>
+
+    <City>چغادک</City>
+
+    <City>جم</City>
+
+    <City>ریز</City>
+
+    <City>اهرم</City>
+
+    <City>دلوار</City>
+
+    <City>آب‌پخش</City>
+
+    <City>برازجان</City>
+
+    <City>تنگ ارم</City>
+
+    <City>دالکی</City>
+
+    <City>سعدآباد</City>
+
+    <City>شبانکاره</City>
+
+    <City>کلمه</City>
+
+    <City>وحدتیه</City>
+
+    <City>خورموج</City>
+
+    <City>شنبه</City>
+
+    <City>کاکی</City>
+
+    <City>آبدان</City>
+
+    <City>بردخون</City>
+
+    <City>بردستان</City>
+
+    <City>بندر دیر</City>
+
+    <City>امام حسن</City>
+
+    <City>بندر دیلم</City>
+
+    <City>بندر کنگان</City>
+
+    <City>بنک</City>
+
+    <City>طاهری</City>
+
+    <City>عسلویه</City>
+
+    <City>نخل تقی</City>
+
+    <City>بندر ریگ</City>
+
+    <City>بندر گناوه</City>
+
+    <City>بوشهر </City>
+
+  </State>
+
+  <State Name="تهران">
+    <City>ورامین</City>
+
+    <City>پاکدشت</City>
+
+    <City>قرچک</City>
+
+    <City>اسلام‌شهر</City>
+
+    <City>اسلام شهر</City>
+
+    <City>باقرشهر</City>
+
+    <City>گلستان</City>
+
+    <City>ری</City>
+
+    <City>تهران</City>
+
+    <City>وحیدیه</City>
+
+    <City>دماوند</City>
+
+    <City>دماوند</City>
+
+    <City>قدس</City>
+
+    <City>ملارد</City>
+
+    <City>رودهن</City>
+
+    <City>فیروزکوه</City>
+
+    <City>فیروزکوه</City>
+
+    <City>اندیشه</City>
+
+    <City>اندیشه</City>
+
+    <City>آبعلی</City>
+
+
+    <City>شمیرانات</City>
+
+    <City>لواسان</City>
+
+    <City>باغستان</City>
+
+    <City>فشم</City>
+
+    <City>شریف‌آباد</City>
+
+    <City>پیشوا</City>
+
+    <City>کیلان</City>
+
+    <City>رباط‌کریم</City>
+
+    <City>صالح‌آباد</City>
+
+    <City>نسیم‌شهر</City>
+
+    <City>نصیرشهر</City>
+
+    <City>زردبند</City>
+
+
+    <City>پردیس شهر</City>
+
+    <City>شاهدشهر</City>
+
+    <City>شهریار</City>
+
+    <City>صباشهر</City>
+
+    <City>فردوسیه</City>
+
+    <City>ارجمند</City>
+  </State>
+
+  <State Name="چهارمحال و بختیاری">
+    <City>لردگان</City>
+
+    <City>گندمان</City>
+
+    <City>بروجن</City>
+
+    <City>اردل</City>
+
+    <City>جونقان</City>
+
+    <City>فارسان</City>
+
+    <City>فرخ‌شهر</City>
+
+    <City>شهرکرد</City>
+
+    <City>چلگرد</City>
+
+    <City>سامان</City>
+
+    <City>فرادنبه</City>
+
+    <City>بلداجی</City>
+
+    <City>سفیددشت</City>
+
+    <City>سودجان</City>
+
+    <City>سورشجان</City>
+
+    <City>نافچ</City>
+
+    <City>هفشجان</City>
+
+    <City>گهرو</City>
+
+    <City>شلمزار</City>
+
+    <City>ناغان</City>
+
+    <City>آلونی</City>
+
+  </State>
+
+  <State Name="خراسان جنوبی">
+    <City>نهبندان</City>
+
+    <City>سربیشه</City>
+
+    <City>سربیشه</City>
+
+    <City>بیرجند</City>
+
+    <City>بیرجند</City>
+
+    <City>قائن</City>
+
+    <City>قائنات</City>
+
+    <City>سرایان</City>
+
+    <City>سرایان</City>
+
+    <City>خضری دشت بیاض</City>
+
+    <City>بشرویه</City>
+
+    <City>آیَسک</City>
+
+    <City>اسلامیه</City>
+
+    <City>فردوس</City>
+
+    <City>اسفدن</City>
+
+    <City>شوسف</City>
+
+    <City>طارق</City>
+
+    <City>درمیان</City>
+
+  </State>
+
+  <State Name="خراسان رضوی">
+    <City>کاخک</City>
+
+    <City>بیدخت</City>
+
+    <City>خرو</City>
+
+    <City>گناباد</City>
+
+    <City>بجستان</City>
+
+    <City>تایباد</City>
+
+    <City>سلامی</City>
+
+    <City>کاریز</City>
+
+    <City>باخرز</City>
+
+    <City>تربت جام</City>
+
+    <City>بردسکن</City>
+
+    <City>تربت حیدریه</City>
+
+    <City>تربت حیدریه</City>
+
+    <City>کاشمر</City>
+
+    <City>بایگ</City>
+
+    <City>فریمان</City>
+
+    <City>فرهادگرد</City>
+
+    <City>دررود</City>
+
+    <City>قدمگاه</City>
+
+    <City>نیشابور</City>
+
+    <City>سبزوار</City>
+
+    <City>داورزن</City>
+
+    <City>نیشابور</City>
+
+    <City>همت آباد</City>
+
+    <City>مشهد مقدس</City>
+
+    <City>مشهد</City>
+
+    <City>طرقبه</City>
+
+    <City>شاندیز</City>
+
+    <City>سرخس</City>
+
+    <City>چناران</City>
+
+    <City>چکنه</City>
+
+    <City>قوچان</City>
+
+    <City>نوخندان</City>
+
+    <City>انابد</City>
+
+    <City>فیروزه</City>
+
+    <City>نصرآباد</City>
+
+    <City>نیل‌شهر</City>
+
+
+    <City>خلیل‌آباد</City>
+
+    <City>قاسم‌آباد</City>
+
+    <City>چاپشلو</City>
+
+    <City>دولت‌آباد</City>
+
+    <City>رودآب</City>
+
+    <City>باجگیران</City>
+
+    <City>کلات</City>
+
+    <City>شادمهر</City>
+
+    <City>فیض‌آباد</City>
+
+  </State>
+
+  <State Name="خراسان شمالی">
+    <City>اسفراین</City>
+
+    <City>شیروان</City>
+
+    <City>بجنورد</City>
+
+    <City>آشخانه</City>
+
+    <City>صفی‌آباد</City>
+
+    <City>حصار گرم‌خان</City>
+
+    <City>راز</City>
+
+    <City>سنخواست</City>
+
+    <City>لوجلی</City>
+
+    <City>درق</City>
+
+    <City>پیش‌ قلعه</City>
+
+  </State>
+
+  <State Name="خوزستان">
+    <City>هندیجان</City>
+
+    <City>آبادان</City>
+
+    <City>خرمشهر</City>
+
+    <City>بندر امام خمینی ره</City>
+
+    <City>شادگان</City>
+
+    <City>ماهشهر</City>
+
+    <City>بهبهان</City>
+
+    <City>امیدیه</City>
+
+    <City>رامهرمز</City>
+
+    <City>اهواز</City>
+
+    <City>باغ‌ملک</City>
+
+    <City>اروند کنار</City>
+    <State>آبادان</State>
+
+    <City>سوسنگرد</City>
+
+    <City>ایذه</City>
+
+    <City>مسجد سلیمان</City>
+
+    <City>شوشتر</City>
+
+    <City>شوش</City>
+
+    <City>گتوند</City>
+
+    <City>لالی</City>
+
+    <City>دزفول</City>
+
+    <City>اندیمشک</City>
+
+    <City>صیدون</City>
+
+    <City>مینوشهر</City>
+
+    <City>میانرود</City>
+
+    <City>حر ریاحی</City>
+
+    <City>چمران</City>
+
+    <City>هفتگل</City>
+
+    <City>دشت آزادگان</City>
+
+  </State>
+
+  <State Name="زنجان">
+    <City>قیدار</City>
+
+    <City>ابهر</City>
+
+    <City>دندی</City>
+
+    <City>زنجان</City>
+
+    <City>ماه‌نشان</City>
+
+    <City>ارمغان‌خانه</City>
+
+    <City>سجاس</City>
+
+    <City>سهرورد</City>
+
+    <City>آب‌بر</City>
+
+  </State>
+
+  <State Name="سمنان">
+    <City>ایوانکی</City>
+
+    <City>سمنان</City>
+
+    <City>سرخه</City>
+
+    <City>شهمیرزاد</City>
+
+    <City>دامغان</City>
+
+    <City>شاهرود</City>
+
+    <City>بسطام</City>
+
+    <City>مجن</City>
+
+    <City>کلاته خیج</City>
+
+    <City>آرادان</City>
+
+    <City>درجزین</City>
+
+    <City>مهدی‌شهر</City>
+
+    <City>گرمسار</City>
+
+  </State>
+
+  <State Name="سیستان و بلوچستان">
+    <City>زابلی</City>
+    <City>بمپور</City>
+    <City>ایرانشهر</City>
+    <City>سراوان</City>
+    <City>چابهار</City>
+    <City>خاش</City>
+    <City>میرجاوه</City>
+    <City>زاهدان</City>
+    <City>زابل</City>
+    <City>کنارک</City>
+    <City>بزمان</City>
+    <City>نگور</City>
+    <City>نوک‌آباد</City>
+    <City>گلمورتی</City>
+    <City>ادیمی</City>
+    <City>بنجار</City>
+    <City>دوست‌محمد</City>
+    <City>محمدآباد</City>
+    <City>نصرت‌آباد</City>
+    <City>زهک</City>
+    <City>جالق</City>
+    <City>سوران</City>
+    <City>راسک</City>
+    <City>سرباز</City>
+    <City>پیشین</City>
+    <City>اسپکه</City>
+    <City>بنت</City>
+    <City>فنوج</City>
+    <City>قصرقند</City>
+    <City>نیک‌شهر</City>
+  </State>
+  
+  <State Name="فارس">
+    <City>اشکنان</City>
+    <City>لامرد</City>
+    <City>بیرم</City>
+    <City>علامرودشت</City>
+    <City>لار</City>
+    <City>گراش</City>
+    <City>اِوَز</City>
+    <City>خنج</City>
+    <City>بنارویه</City>
+    <City>قیر</City>
+    <City>جهرم</City>
+    <City>فیروزآباد</City>
+    <City>میمند</City>
+    <City>استهبان</City>
+    <City>نی‌ریز</City>
+    <City>کازرون</City>
+    <City>فسا</City>
+    <City>شیراز</City>
+    <City>مرودشت</City>
+    <City>ارسنجان</City>
+    <City>نورآباد ممسنی</City>
+    <City>نورآباد</City>
+    <City>کامفیروز</City>
+    <City>اردکان</City>
+    <City>اقلید</City>
+    <City>آباده</City>
+    <City>ایزدخواست</City>
+    <City>بهمن</City>
+    <City>سورمق</City>
+    <City>صغاد</City>
+    <City>سوریان</City>
+    <City>باب انار</City>
+    <City>خاوران</City>
+    <City>قطب‌آباد</City>
+    <City>شهر خنج</City>
+    <City>جنت‌شهر</City>
+    <City>رستم</City>
+    <City>ششده</City>
+    <City>بالاده</City>
+    <City>خشت</City>
+    <City>قائمیه</City>
+    <City>نودان</City>
+    <City>کنارتخته</City>
+    <City>کَوار</City>
+    <City>مرکزی گراش</City>
+    <City>خور</City>
+    <City>اَهِل</City>
+    <City>خومه‌زار</City>
+    <City>مُهر</City>
+    <City>وراوی</City>
+    <City>گله‌دار</City>
+  </State>
+  
+  <State Name="قزوین">
+    <City>تاکستان</City>
+    <City>الوند</City>
+    <City>قزوین</City>
+    <City>خاکعلی</City>
+    <City>ارداق</City>
+    <City>بوئین‌زهرا</City>
+    <City>شال</City>
+    <City>اسفرورین</City>
+    <City>نرجه</City>
+    <City>محمودآباد نمونه</City>
+    <City>کوهین</City>
+  </State>
+  
+  <State Name="قم">
+    <City>قم</City>
+    <City>دستجرد</City>
+  </State>
+  
+  <State Name="کردستان">
+    <City>قروه</City>
+    <City>سنندج</City>
+    <City>مریوان</City>
+    <City>بیجار</City>
+    <City>بانه</City>
+    <City>صاحب</City>
+    <City>سقز</City>
+    <City>بابارشانی</City>
+    <City>دهگلان</City>
+    <City>زرینه</City>
+    <City>شویشه</City>
+    <City>سریش آباد</City>
+    <City>چناره</City>
+  </State>
+  
+  <State Name="کرمان">
+    <City>منوجان</City>
+    <City>جبالبارز</City>
+    <City>بروات</City>
+    <City>بم</City>
+    <City>بافت</City>
+    <City>بزنجان</City>
+    <City>رابر</City>
+    <City>سیرجان</City>
+    <City>راین</City>
+    <City>پاریز</City>
+    <City>بردسیر</City>
+    <City>نودژ</City>
+    <City>جوپار</City>
+    <City>باغین</City>
+    <City>کرمان</City>
+    <City>اختیارآباد</City>
+    <City>رفسنجان</City>
+    <City>شهداد</City>
+    <City>چترود</City>
+    <City>راور</City>
+    <City>امین‌شهر</City>
+    <City>گلزار</City>
+    <City>نرماشیر</City>
+    <City>نظام‌شهر</City>
+    <City>جیرفت</City>
+    <City>بهرمان</City>
+    <City>ریحان‌شهر</City>
+    <City>کوهبنان</City>
+    <City>یزدان‌شهر</City>
+    <City>زیدآباد</City>
+    <City>دهج</City>
+    <City>مردهک</City>
+    <City>فهرج</City>
+    <City>اندوهجرد</City>
+    <City>زنگی‌آباد</City>
+    <City>محی‌آباد</City>
+    <City>کاظم‌آباد</City>
+  </State>
+
+
+  <State Name="کرمانشاه">
+    <City>سومار</City>
+    <City>سرمست</City>
+    <City>اسلام‌آباد غرب</City>
+    <City>هرسین</City>
+    <City>کرمانشاه</City>
+    <City>گهواره</City>
+    <City>بیستون</City>
+    <City>سرپل ذهاب</City>
+    <City>صحنه</City>
+    <City>کوزران</City>
+    <City>کنگاور</City>
+    <City>قصر شیرین</City>
+    <City>روانسر</City>
+    <City>سنقر</City>
+    <City>جوانرود</City>
+    <City>پاوه</City>
+    <City>نوسود</City>
+    <City>باینگان</City>
+    <City>ازگله</City>
+    <City>سطر</City>
+    <City>میان‌راهان</City>
+    <City>هلشی</City>
+    <City>گیلانغرب</City>
+  </State>
+  
+  <State Name="کهگیلویه و بویراحمد">
+    <City>کفشکنان</City>
+    <City>لیکک</City>
+    <City>گراب سفلی</City>
+    <City>یاسوج</City>
+    <City>چرام</City>
+    <City>سی سخت</City>
+    <City>پاتاوه</City>
+    <City>چیتاب</City>
+    <City>دیشموک</City>
+    <City>سوق</City>
+    <City>لنده</City>
+    <City>دوگنبدان</City>
+    <City>محله چینی‌ها</City>
+    <City>دهدشت</City>
+  </State>
+  
+  <State Name="گلستان">
+    <City>کردکوی</City>
+    <City>گلستان</City>
+    <City>گرگان</City>
+    <City>بندر ترکمن</City>
+    <City>آق قلا</City>
+    <City>گمیشان</City>
+    <City>آزادشهر</City>
+    <City>مینودشت</City>
+    <City>گالیکش</City>
+    <City>کلاله</City>
+    <City>نگین‌شهر</City>
+    <City>انبار آلوم</City>
+    <City>بندر گز</City>
+    <City>نوکنده</City>
+    <City>سیمین‌شهر</City>
+    <City>خان‌ببین</City>
+    <City>دلند</City>
+    <City>علی‌آباد کتول</City>
+    <City>سرخنکلاته</City>
+    <City>اینچه‌بُرون</City>
+    <City>گنبدکاووس</City>
+  </State>
+  
+  <State Name="گیلان">
+    <City>منجیل</City>
+    <City>رودبار</City>
+    <City>رودبار زیتون</City>
+    <City>چابکسر</City>
+    <City>شفت</City>
+    <City>لنگرود</City>
+    <City>لاهیجان</City>
+    <City>فومن</City>
+    <City>رشت</City>
+    <City>آستانه اشرفیه</City>>
+    <City>آستانه اشرفیه</City>
+    <City>رودبنه</City>
+    <City>کوچصفهان</City>
+    <City>صومعه سرا</City>
+    <City>صومعه سرا</City>
+    <City>رضوان‌شهر</City>
+    <City>هشتپر</City>
+    <City>تالش</City>
+    <City>چوبر</City>
+    <City>لوندویل</City>
+    <City>املش</City>
+    <City>بندر آستارا</City>
+    <City>بندر انزلی</City>
+    <City>اسالم</City>
+    <City>لیسار</City>
+    <City>لشت نشا</City>
+    <City>توتکابن</City>
+    <City>مارلیک</City>
+    <City>جیرنده</City>
+    <City>لوشان</City>
+    <City>خلیفه محله</City>
+    <City>واجارگاه</City>
+    <City>احمدسرگوراب</City>
+    <City>مرجغل</City>
+    <City>اطاقور</City>
+    <City>شلمان</City>
+    <City>بازارجمعه</City>
+    <City>ماسال</City>
+  </State>
+  
+  <State Name="لرستان">
+    <City>الیگودرز</City>
+    <City>ازنا</City>
+    <City>خرم‌آباد</City>
+    <City>دورود</City>
+    <City>کوهدشت</City>
+    <City>نورآباد</City>
+    <City>الشتر</City>
+    <City>بروجرد</City>
+    <City>فرزیان</City>
+    <City>معمولان</City>
+    <City>پل‌دختر</City>
+    <City>زاغه</City>
+    <City>ویسیان</City>
+    <City>سراب‌دوره</City>
+    <City>چالانچولان</City>
+    <City>فیروزآباد</City>
+    <City>درب گنبد</City>
+    <City>کونانی</City>
+    <City>گراب</City>
+  </State>
+  
+  <State Name="مازندران">
+    <City>گزنک</City>
+    <City>آلاشت</City>
+    <City>پل سفید</City>
+    <City>بلده</City>
+    <City>کیاسر</City>
+    <City>شیرگاه</City>
+    <City>آمل</City>
+    <City>قائم‌شهر</City>
+    <City>چمستان</City>
+    <City>کلاردشت</City>
+    <City>بابل</City>
+    <City>رویان</City>
+    <City>ساری</City>
+    <City>جویبار</City>
+    <City>نوشهر</City>
+    <City>چالوس</City>
+    <City>رستمکلا</City>
+    <City>فریدون‌کنار</City>
+    <City>بابلسر</City>
+    <City>بهشهر</City>
+    <City>گلوگاه</City>
+    <City>تنکابن</City>
+    <City>رامسر</City>
+    <City>دابودشت</City>
+    <City>امیرشهر</City>
+    <City>خوش‌رودپی</City>
+    <City>زرگرمحله</City>
+    <City>مرزیکلا</City>
+    <City>گتاب</City>
+    <City>کله‌بست</City>
+    <City>خلیل‌شهر</City>
+    <City>گرجی‌محله</City>
+    <City>نشتارود</City>
+    <City>کلارآباد</City>
+    <City>کوهی‌خیل</City>
+    <City>مرزن‌آباد</City>
+    <City>فریم</City>
+    <City>ایزدشهر</City>
+  </State>
+  
+  <State Name="مرکزی">
+    <City>خمین</City>
+    <City>شازند</City>
+    <City>شازند</City>
+    <City>محلات</City>
+    <City>نراق</City>
+    <City>اراک</City>
+    <City>خنداب</City>
+    <City>فرمهین</City>
+    <City>تفرش</City>
+    <City>ساوه</City>
+    <City>انجدان</City>
+    <City>سنجان</City>
+    <City>ضامنجان</City>
+    <City>فیجان</City>
+    <City>کرهرود</City>
+    <City>بازنه</City>
+    <City>آشتیان</City>
+    <City>قورچی‌باشی</City>
+    <City>رازقان</City>
+    <City>زاویه</City>
+    <City>مأمونیه</City>
+    <City>پرندک</City>
+    <City>غرق‌آباد</City>
+    <City>نوبران</City>
+    <City>توره</City>
+    <City>کمیجان</City>
+    <City>نیم‌ور</City>
+  </State>
+    
+  <State Name="هرمزگان">
+    <City>جاسک</City>
+    <City>ابوموسی</City>
+    <City>بندر لنگه</City>
+    <City>بندر چارک</City>
+    <City>بندر خمیر</City>
+    <City>سندرک</City>
+    <City>قشم</City>
+    <City>درگهان</City>
+    <City>جناح</City>
+    <City>میناب</City>
+    <City>بندر عباس</City>
+    <City>بستک</City>
+    <City>پارسیان</City>
+    <City>رودان</City>
+    <City>فین</City>
+    <City>حاجی‌آباد</City>
+    <City>جزیره کیش</City>
+    <City>شهر کنگ</City>
+    <City>شهر کیش</City>
+    <City>شهر رویدر</City>
+    <City>سیریک</City>
+  </State>
+  
+  <State Name="همدان">
+    <City>گیان</City>
+    <City>نهاوند</City>
+    <City>نهاوند</City>
+    <City>ملایر</City>
+    <City>فیروزان</City>
+    <City>همدان</City>
+    <City>بهار</City>
+    <City>فامنین</City>
+    <City>رزن</City>
+    <City>صالح‌آباد</City>
+    <City>لالجین</City>
+    <City>مهاجران</City>
+    <City>فرسفج</City>
+    <City>کبود رآهنگ</City>
+    <City>حسین آباد ناظم</City>
+    <City>زنگنه</City>
+    <City>سامن</City>
+    <City>برزول</City>
+    <City>قهاوند</City>
+    <State>همدان</State>
+  </State>
+  
+  <State Name="یزد">
+    <City>بافق</City>
+    <City>فردوس</City>
+    <City>یزد</City>
+    <City>ندوشن</City>
+    <City>میبد</City>
+    <City>اردکان</City>
+    <City>دیهوک</City>
+    <City>مهردشت</City>
+    <City>مروست</City>
+  </State>
+</DocumentElement>

@@ -1,0 +1,7 @@
+﻿@* GeneratePrettyNames: true*@
+@model  Decision.ViewModel.Teacher.TeacherListViewModel
+
+@foreach (var Teacher in Model.Teachers)
+{
+    @Html.Partial(MVC.Teacher.Views._TeacherItem, Teacher)
+}

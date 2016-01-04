@@ -1,0 +1,94 @@
+﻿@using Decision.Common.Helpers
+@model Decision.ViewModel.TrainingCenter.AddTrainingCenterViewModel
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header alert alert-success">
+            <h6 class="modal-title">درج مرکز کارآموزی</h6>
+        </div>
+        <div class="modal-body">
+            @using (Ajax.BeginForm(MVC.TrainingCenter.Create(), new AjaxOptions { HttpMethod = "POST", OnComplete = "createOnComplete(xhr, status, 'trainingCenterList', '#modal','createtrainingCenterForm','#createtrainingCenterButton')" }, new { @class = "form-horizontal", id = "createTrainingCenterForm", autocomplete = "off" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CenterName, new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+                                @Html.NoAutoCompleteTextBoxFor(model => model.CenterName)
+                                @Html.ValidationMessageFor(model => model.CenterName, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => Model.State, new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+                                @Html.DropDownListFor(model=>model.State, Model.States, "انتخاب استان", new
+                                {
+                                    data_url = Url.Action(MVC.City.GetCities()),
+                                    data_tofill = "City",
+                                    data_lable = "انتخاب شهر",
+                                    data_selects = "City",
+                                    @class = "form-control cascade",
+                                })
+                                @Html.ValidationMessageFor(model => model.State, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => Model.City, new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+                                @Html.DropDownListFor(model => model.City, Model.Cities, "انتخاب شهر", new { @class = "form-control"})
+                                @Html.ValidationMessageFor(model => model.City, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PhoneNumber1, new {@class = "control-label col-md-3"})
+                            <div class="col-md-9">
+                                @Html.NoAutoCompleteTextBoxForLtr(model => model.PhoneNumber1)
+                                @Html.ValidationMessageFor(model => model.PhoneNumber1, null, new {@class = "text-danger"})
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PhoneNumber2, new {@class = "control-label col-md-3"})
+                            <div class="col-md-9">
+                                @Html.NoAutoCompleteTextBoxForLtr(model => model.PhoneNumber2)
+                                @Html.ValidationMessageFor(model => model.PhoneNumber2, null, new {@class = "text-danger"})
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+                                @Html.NoAutoCompleteTextBoxForLtr(model => model.Description)
+                                @Html.ValidationMessageFor(model => model.Description, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group margin-right-30">
+                            @Html.LabelFor(model => model.Location, new {@class = "control-label col-md-1"})
+                            <div class="col-md-11">
+                                @Html.TextAreaFor(model => model.Location, new {@class = "form-control", @rows = 4})
+                                @Html.ValidationMessageFor(model => model.Location, null, new {@class = "text-danger"})
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="col-md-12 col-md-offset-3">
+                                <button type="button" id="createTrainingCenterButton" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'createTrainingCenterForm')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">
+                                    ثبت مرکز کارآموزی جدید
+                                </button>
+                                <button class="btn btn-default btn-md" data-dismiss="modal" aria-hidden="true">
+                                    انصراف
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            }
+        </div>
+    </div>
+</div>

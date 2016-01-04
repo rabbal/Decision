@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "پنل مدیریتی";
+}
+        @{Html.RenderAction(MVC.Home.GetBenckMarks());}
+
+        <hr/>
+        <div class="row">
+            <div class="col-md-4 asyncLoad" id="TopScoreTeachers" data-load-url="@Url.Action(MVC.Home.GetTopScoreTeachers())" data-progress-div="progressOne">
+                <div id="progressOne" align="center" style="display: none">
+                    <img src="@Url.Content("~/Content/images/loading.gif")" alt="loading..." />
+                </div>
+            </div>
+
+            <div class="col-md-4 asyncLoad" id="NewAddedTeachers" data-load-url="@Url.Action(MVC.Home.GetNewAddedTeachers())" data-progress-div="progressTwo">
+                <div id="progressTwo" align="center" style="display: none">
+                    <img src="@Url.Content("~/Content/images/loading.gif")" alt="loading..." />
+                </div>
+            </div>
+        </div>
+  

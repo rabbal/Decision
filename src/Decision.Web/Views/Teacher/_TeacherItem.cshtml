@@ -1,0 +1,192 @@
+﻿@using AttributeRouting.Helpers
+@using DNT.Extensions
+@model Decision.ViewModel.Teacher.TeacherViewModel
+<div class="col-md-12" id="Teacher-@Model.Id">
+    <div class="panel panel-default">
+       
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-2">
+                    @Html.Image(Model.Photo, Model.FullName, "img-rounded img-responsive img-thumbnail", 100)
+                </div>
+
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="text-muted">استاد :</label>
+                            
+                            <small>@Model.FullName</small> 
+                        </div>
+                        <div class="col-md-3">
+
+                            <label for="PersonnelCode" class="text-muted">کد پرسنلی:</label>
+                            <small id="PersonnelCode">
+                                @Model.PersonnelCode
+                            </small>
+
+                        </div>
+                        <div class="col-md-3">
+                            <label for="PositionName" class="text-muted">سمت:</label>
+                            <small id="PositionName">
+                                @Model.PositionName
+                            </small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="text-muted" for="birthDate">تاریخ تولد:</label>
+                            <small id="birthDate">@Model.BirthDate.ToPersianString(PersianDateTimeFormat.Date)</small>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="text-muted" for="Code">شماره شناسنامه:</label>
+                            <small id="Code">@Model.BirthCertificateNumber</small>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="text-muted" for="birthPlace">محل تولد:</label>
+                            <small id="birthPlace">@Model.BirthPlaceCity - @Model.BirthPlaceState</small>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="text-muted" for="nationalCode">کد ملی:</label>
+                            <small id="nationalCode">@Model.NationalCode.GetPersianNumbers()</small>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="text-muted" for="order">پایه استاد:</label>
+                            <small id="order">@Model.CollegiateOrder.GetPersianNumber()</small>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="text-muted" for="group">گروه شغلی:</label>
+                            <small id="group">@Model.OccupationalGroup.GetPersianNumber()</small>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="text-muted" for="trainingRank">رتبه کارآموزی:</label>
+                            <small id="trainingRank">
+                                @if (Model.TrainigGrade > 0)
+                                {
+                                <text>
+                                    @Model.TrainigGrade.GetPersianNumber()
+                                </text>
+                                }
+                                else
+                                {<text>
+                                    ثبت نشده
+                                </text>
+                                }
+                            </small>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="text-muted" for="gpa">معدل کارآموزی:</label>
+                            <small id="gpa">
+                                @if (Model.TrainingGPA > decimal.Zero)
+                                {
+                                <text>
+                                    @Model.TrainingGPA.GetPersianNumber()
+                                </text>
+                                }
+                                else
+                                {<text>
+                                    ثبت نشده
+                                </text>
+                                }
+                            </small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <hr class="margin-bottom-5 margin-top-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <i class="fa fa-check-square-o text-success"></i>
+                    <small class="text-muted">ثبت شده توسط:</small>
+                    <small>@Model.CreatorUserName</small><br>
+                    <i class="fa fa-calendar-o"></i>
+                    <small>در :</small>
+                    <time>@Model.CreateDate.ToPersianString(PersianDateTimeFormat.Date)</time>
+                    <i class="fa fa-clock-o "></i>
+                    <time>@Model.CreateDate.ToPersianTimeString()</time>
+                </div>
+                @if (Model.LastModifierUserName.HasValue())
+                {
+                    <div class="col-md-3">
+                        <i class="fa fa-edit text-info"></i>
+                        <small class="text-muted">ویرایش شده توسط:</small>
+                        <small>@Model.LastModifierUserName</small><br>
+                        <i class="fa fa-calendar-o"></i>
+                        <small>در :</small>
+                        <time>@Model.LastModifiedDate.ToPersianString(PersianDateTimeFormat.Date)</time>
+                        <i class="fa fa-clock-o"></i>
+                        <time>@Model.LastModifiedDate.ToPersianTimeString()</time>
+                    </div>
+                }
+               
+                @if (Model.IsApproved)
+                {
+                <div class="col-md-3">
+                    <i class="fa fa-check text-info"></i>
+                    <small class="text-muted">تأیید شده توسط:</small>
+                    <small>@Model.ApproveByName</small><br>
+                </div>
+                }
+
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="pull-left">
+                <a href="@Url.Action(MVC.Teacher.Edit(Model.Id))" class="btn btn-sm btn-primary" type="button">
+                    <i class="fa fa-edit"></i>
+                    ویرایش
+                </a>
+                <a href="@Url.Action(MVC.Teacher.Details(Model.Id))" class="btn btn-sm btn-info" type="button">
+                    <i class="fa fa-align-justify"></i>
+                    مشاهده اطلاعت بیشتر
+                </a>
+                <button class="btn-sm btn btn-danger"
+                        type="button" data-delete-url="@Url.Action(MVC.Teacher.Delete())" data-removal-element="#Teacher-@Model.Id" id="remove-@Model.Id">
+                    <i class="fa fa-trash-o"></i>
+                    حذف
+                </button>
+                @if (Model.IsInReference)
+                {
+                    <a class="btn btn-default btn-sm"
+                       data-ajax="true" data-ajax-method="POST"
+                       data-ajax-mode="REPLACE-WITH"
+                       data-ajax-begin="onBegin(xhr,this)"
+                       data-ajax-oncomplete="onComplete(xhr,status)"
+                       data-ajax-update="#Teacher-@Model.Id"
+                       href="@Url.Action(MVC.Teacher.CancelRefer(Model.Id))" role="button">
+                        <i class="fa fa-reply"></i>
+                        لغو ارجاع
+                    </a>
+                    
+                }
+                else
+                {
+                    <a class="btn btn-sm btn-warning" data-ajax="true" data-ajax-mode="replace" data-ajax-method="GET" data-ajax-success="onSuccessFormValidation(data, status, xhr,'referForm','modal')"
+                       data-ajax-update="#modal" data-ajax-url="@Url.Action(MVC.Teacher.Refer(Model.Id))" role="button">
+                        <i class="fa fa-reply"></i>
+                        ارجاع دادن
+                    </a>
+                    
+                }
+                @if (!Model.IsApproved && !Model.IsInReference)
+                {
+                    <a class="btn btn-success btn-sm"
+                       data-ajax="true" data-ajax-method="POST"
+                       data-ajax-mode="REPLACE-WITH"
+                       data-ajax-begin="onBegin(xhr,this)"
+                       data-ajax-oncomplete="onComplete(xhr,status)"
+                       data-ajax-update="#Teacher-@Model.Id"
+                       href="@Url.Action(MVC.Teacher.ApproveTeacher(Model.Id))" role="button">
+                        <i class="fa fa-check-square-o"></i>
+                        تأیید کردن
+                    </a>
+                }
+             
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

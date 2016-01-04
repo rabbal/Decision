@@ -1,0 +1,7 @@
+﻿@model Decision.ViewModel.EducationalBackground.EducationalBackgroundListViewModel
+
+@foreach (var e in Model.EducationalBackgrounds)
+{
+    @Html.Partial(MVC.EducationalBackground.Views._EducationalBackgroundItem, e)
+}
+

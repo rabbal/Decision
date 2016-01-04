@@ -1,0 +1,11 @@
+﻿@using Decision.ServiceLayer.Security
+
+@Html.SideBarSecureActionLink("مدیریت مراکز کارآموزی", Url.Action(MVC.TrainingCenter.List()), "list-group-item second-split", "fa fa-graduation-cap", AssignableToRolePermissions.CanManageTrainingCenter)
+
+@Html.SideBarSecureActionLink("مدیریت عنوان ها", Url.Action(MVC.Title.List()), "list-group-item second-split", "fa fa-list-ul", AssignableToRolePermissions.CanManageTitle)
+@Html.SideBarSecureActionLink("مدیریت ارزش گذارن", Url.Action(MVC.Appraiser.List()), "list-group-item second-split", "fa fa-certificate", AssignableToRolePermissions.CanManageAppraiser)
+@Html.SideBarSecureActionLink("مدیریت مراکز آموزش عالی", Url.Action(MVC.Institution.List()), "list-group-item second-split", "fa fa-university", AssignableToRolePermissions.CanManageInstitution)
+@Html.SideBarSecureActionLink("مدیریت سوالات", Url.Action(MVC.Question.List()), "list-group-item second-split", "fa fa-list-ol", AssignableToRolePermissions.CanManageQuestion)
+
+
+

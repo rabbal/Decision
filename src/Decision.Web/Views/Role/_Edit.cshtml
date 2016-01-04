@@ -1,0 +1,57 @@
+﻿@using Decision.Common.Helpers
+@model Decision.ViewModel.Role.EditRoleViewModel
+
+<div class="col-md-12" id="role-@Model.Id">
+    @using (Ajax.BeginForm(MVC.Role.Edit(), new AjaxOptions { HttpMethod = "POST", OnComplete = "editOnComplete(xhr, status, '" + Model.Id + "','#editButton" + Model.Id + "')" }, new { @class = "form-horizontal", id = Model.Id, autocomplete = "off", data_ajax_update = "role-" + Model.Id }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(a => a.Id)
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-5">
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", autocomplete = "off", placeholder = "نام گروه" })
+                            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-group row margin-bottom-0">
+                                @foreach (var p in Model.Permissions)
+                                {
+                                    <li class="list-group-item non-border col-xs-6 text-primary">
+                                        <div class="col-md-12">
+                                                <input type="checkbox" @if (p.Selected) { <text> checked="checked" </text>     }
+                                                       id="@p.Value" name="PermissionNames" value="@p.Value" class="checkbox-inline" />
+                                            <label class="control-label" for="@p.Value">@p.Text</label>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer block">
+                    <div class="pull-left">
+                        <button type="button" id="@($"editButton{Model.Id}")" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, '@Model.Id')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-sm">
+                            <i class="fa fa-check-square-o"></i>
+                            ذخیره تغییرات
+                        </button>
+
+                        <a class="btn btn-default btn-sm" data-ajax="true"
+                           data-ajax-mode="REPLACE-WITH" data-ajax-complete="cancelEditOnComplete(xhr, status)"
+                           data-ajax-update="#role-@Model.Id" data-ajax-method="POST"
+                           href="@Url.Action(MVC.Role.CancelEdit(Model.Id))" role="button">
+                            <i class="fa fa-arrow-right"></i>
+                            انصراف
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+    }
+</div>

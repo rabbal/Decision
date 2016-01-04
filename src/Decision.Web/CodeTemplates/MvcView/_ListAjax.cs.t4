@@ -1,0 +1,103 @@
+﻿@* GeneratePrettyNames: true*@
+@using Decision.Utility
+@using Decision.ViewModel.AdminArea;
+@using PagedList
+@using PagedList.Mvc
+@using Decision.ViewModel.AdminArea.State.Decision.ViewModel.AdminArea;
+<#@ template language="C#" HostSpecific="True" #>
+<#@ output extension=".cshtml" #>
+<#@ include file="Imports.include.t4" #>
+@model IEnumerable<#= "<" + ViewDataTypeName + ">" #>
+
+@model StateListViewModel
+@{
+    var refreshPageIndex = Model.Request.PageIndex;
+}
+
+@functions
+{
+    public StateSearchRequest SetPagerPageNumbers(int page)
+    {
+        Model.Request.PageIndex = page;
+        return Model.Request;
+    }
+
+}
+
+<div class="panel-body">
+    <div class="row">
+        <div class="col-md-3">
+            <h4>لیست استان ها</h4>
+        </div>
+     
+        <div class="col-md-8">
+            @Html.PagedListPager(new StaticPagedList<>(Model.States, Model.Request.PageIndex,
+                10, Model.Request.Total),
+                pageNumber => Url.Action(MVC.State.ListAjax().Result.AddRouteValues(new RouteValueDictionary(SetPagerPageNumbers(pageNumber)))),
+                PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new PagedListRenderOptions
+                {
+                    DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+                    DisplayLinkToLastPage = PagedListDisplayMode.Always,
+                    DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                    DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                    MaximumPageNumbersToDisplay = 6
+                },
+                    new AjaxOptions { AllowCache = false, HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "", OnComplete = "onComplete" }))
+
+        </div>
+        <div class="col-md-1">
+            <a class="btn btn-primary btn-sm" data-ajax="true" data-ajax-mode="replace"
+               data-ajax-update="#" href="@Url.Action(MVC..ListAjax().Result.AddRouteValues(new RouteValueDictionary(SetPagerPageNumbers(refreshPageIndex))))" role="button"><i class="fa fa-refresh"></i></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 table-responsive">
+<table class="table">
+    <tr>
+<#
+IEnumerable<PropertyMetadata> properties = ModelMetadata.Properties;
+foreach (PropertyMetadata property in properties) {
+    if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
+#>
+<#
+        // This is a temporary work around until core scaffolding provides support for independent associations.
+        if (property.IsAssociation && GetRelatedModelMetadata(property) == null) {
+            continue;
+        }
+#>
+        <th>
+            @Html.DisplayNameFor(model => model.<#= GetValueExpression(property) #>)
+        </th>
+<#
+    }
+}
+#>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+    </tr>
+}
+
+</table>
+ </div>
+    </div>
+</div>
+<script>
+    
+</script>
+<#
+// The following code closes the tag used in the case of a view using a layout page and the body and html tags in the case of a regular view page
+#>
+<#
+if(!IsPartialView && !IsLayoutPageSelected) {
+    ClearIndent();
+#>
+</body>
+</html>
+<#
+}
+#>
+<#@ include file="ModelMetadataFunctions.cs.include.t4" #>

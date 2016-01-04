@@ -1,0 +1,74 @@
+﻿
+@using Decision.Common.Helpers
+@using Decision.Common.Security.HiddenField
+@model Decision.ViewModel.Article.AddArticleViewModel
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm(MVC.Article.Create(), FormMethod.Post, new { @class = "form-horizontal", id = "createArticleForm", autocomplete = "off", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.EncryptedHiddenFor(model => model.TeacherId)
+            @Html.HiddenFor(model => model.AttachmentScan)
+            <div class="form-group">
+                @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-1" })
+                <div class="col-md-4">
+                    @Html.NoAutoCompleteTextBoxForLtr(model => model.Code)
+                    @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.ArticleDate, htmlAttributes: new { @class = "control-label col-md-1" })
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.ArticleDate, MVC.Shared.Views.EditorTemplates.PersianDatePicker)
+                    @Html.ValidationMessageFor(model => model.ArticleDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Brief, new { @class = "control-label col-md-1" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Brief, new { @class = "ckeditor form-control", rows = 3 })
+                    @Html.ValidationMessageFor(model => model.Brief, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Content, new { @class = "control-label col-md-1" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Content, new { @class = "ckeditor form-control", rows = 10 })
+                    @Html.ValidationMessageFor(model => model.Content, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.AttachmentFile, htmlAttributes: new { @class = "control-label col-md-1" })
+                <div class="col-md-6">
+                    @Html.TextBoxFor(model => model.AttachmentFile, new { type = "file", @class = "form-control" })
+                </div>
+                <div class="col-md-4">
+                    <button type="button" autocomplete="off" data-type="pdf" data-container="AttachmentScan" class="btn btn-primary   btn-sm @(!string.IsNullOrEmpty(Model.AttachmentScan) ? "scan-remove" : "scan")">
+
+                        @if (!string.IsNullOrEmpty(Model.AttachmentScan))
+                        {<text>
+                            <i class="fa fa-remove"></i>
+                            حذف فایل اسکن شده
+                        </text>
+                        }
+                        else
+                        {<text>
+                            <i class="fa fa-file-photo-o"></i>
+                            افزودن اسکن
+                        </text>
+                        }
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-6 col-md-offset-1">
+                    <button type="button" id="createArticleButton" autocomplete="off" onclick="formDataSubmit(this, 'createArticleForm', '#ArticleList', '#create-Article')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">
+                        ثبت مقاله جدید
+                    </button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
