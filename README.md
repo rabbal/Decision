@@ -1,6 +1,23 @@
 # Decision
 One Full Feature Decision System For Store Informations of Masters
 # Features
++ UserManagement With Dynamic GroupBase Authorization
++ Integrated With Elmah
++ PrivateMessage System
++ TrainingCenter And TrainingCourses Management
++ Titles Management
++ Appraisers Management
++ Institutions Management
++ Dynamic Multi Type Questions
++ Survey 
++ AuditLog System
++ Teacher's Addresses Managments
++ Teacher's Educational Backgrounds Management
++ Teacher's Educational Experiences Management
++ Teacher's Research Experiences Management
++ Teacher's Work Experienes Management
++ Teacher's Articles Evaluation System 
++ File Scanning
 
 # Screenshots
 ![Index Page](http://www.dotnettips.info/file/image?name=1-5d57c3601d3e4a54918ef86de32b0e3f.jpg "")
