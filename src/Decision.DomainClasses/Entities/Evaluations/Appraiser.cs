@@ -33,12 +33,10 @@ namespace Decision.DomainClasses.Entities.Evaluations
         /// شماره همراه ارزیاب
         /// </summary>
         public  string CellPhone { get; set; }
-
         /// <summary>
         /// جنسیت ارزیاب
         /// </summary>
         public  GenderType Gender { get; set; }
-
         #endregion
 
         #region NavigationProperties

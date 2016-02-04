@@ -38,6 +38,5 @@ namespace Decision.DomainClasses.Entities.Common
         /// </summary>
         [Display(Name = "سمت استاد")]
         TeacherPosition = 6
-
     }
 }

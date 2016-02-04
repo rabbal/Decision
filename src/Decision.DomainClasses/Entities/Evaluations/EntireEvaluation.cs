@@ -27,10 +27,6 @@ namespace Decision.DomainClasses.Entities.Evaluations
         /// </summary>
         public  DateTime EvaluationDate { get; set; }
         /// <summary>
-        /// خلاصه ارزیابی 
-        /// </summary>
-        public  string Brief { get; set; }
-        /// <summary>
         /// نقاط ضعف استاد
         /// </summary>
         public  string Foible { get; set; }
@@ -62,8 +58,6 @@ namespace Decision.DomainClasses.Entities.Evaluations
         /// آی دی ارزیاب
         /// </summary>
         public  Guid EvaluatorId { get; set; }
-      
-
         #endregion
     }
 }

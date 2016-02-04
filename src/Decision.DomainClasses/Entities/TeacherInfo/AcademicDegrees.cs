@@ -31,13 +31,6 @@ namespace Decision.DomainClasses.Entities.TeacherInfo
         /// فوق دکتری
         /// </summary>
         [Display(Name = "فوق دکتری")]
-        PostDoc,
-        /// <summary>
-        /// معادل دکتری به لحاظ ایثارگری
-        /// </summary>
-        [Display(Name = "معادل دکترا به لحاظ ایثارگری")]
-        EPhD
-
-
+        PostDoc
     }
 }

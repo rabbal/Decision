@@ -7,71 +7,74 @@ using Decision.Utility;
 
 namespace Decision.DomainClasses.Entities.PrivateMessage
 {
-    /// <summary>
-    /// نشان دهنده پیغام 
-    /// </summary>
-    public class Message
-    {
-        #region Ctor
+   
         /// <summary>
-        /// 
+        /// Represents One Reply to Conversation
         /// </summary>
-        public Message()
+        public class Message
         {
-            Id = SequentialGuidGenerator.NewSequentialGuid();
-            SendDate = DateTime.Now;
-            Attachments = new List<MessageAttachment>();
-        }
-        #endregion
+            #region Ctor
+            /// <summary>
+            /// create one instance of <see cref="Message"/>
+            /// </summary>
+            public Message()
+            {
+                Id = SequentialGuidGenerator.NewSequentialGuid();
+                SentOn = DateTime.Now;
 
-        #region Properties
-        /// <summary>
-        /// آی دی موجودیت 
-        /// </summary>
-        public  Guid Id { get; set; }
-        /// <summary>
-        /// محتوای پیغام
-        /// </summary>
-        public  string Content { get; set; }
-        /// <summary>
-        /// تاریخ ارسال
-        /// </summary>
-        public  DateTime SendDate { get; set; }
-        #endregion
 
-        #region NavigationProperties
-        /// <summary>
-        /// آی دی  پیغامی که این پیغام به عنوان پاسخ آن است
-        /// </summary>
-        public  Guid? ReplyId { get; set; }
-        /// <summary>
-        ///   پیغامی که این پیغام به عنوان پاسخ آن است
-        /// </summary>
-        public  Message Reply { get; set; }
-        /// <summary>
-        /// پاسخ های پیغام
-        /// </summary>
-        public  ICollection<Message> Children { get; set; }
-        /// <summary>
-        /// ارسال کننده پیغام
-        /// </summary>
-        public  User Sender { get; set; }
-        /// <summary>
-        /// آی دی ارسال کننده پیغام
-        /// </summary>
-        public  Guid SenderId { get; set; }
-        /// <summary>
-        /// ضمیمه های پیغام
-        /// </summary>
-        public  ICollection<MessageAttachment> Attachments { get; set; }
-        /// <summary>
-        /// گفتگویی که این پیغام مربوط به آن است
-        /// </summary>
-        public  Conversation Conversation { get; set; }
-        /// <summary>
-        ///آی د ی گفتگویی که این پیغام مربوط به آن است
-        /// </summary>
-        public  Guid ConversationId { get; set; }
-        #endregion
+            }
+            #endregion
+
+            #region Properties
+            /// <summary>
+            /// gets or sets identifier of record
+            /// </summary>
+            public virtual Guid Id { get; set; }
+            /// <summary>
+            /// represents this conversaionReply is seen
+            /// </summary>
+            public virtual bool IsRead { get; set; }
+            /// <summary>
+            /// gets or sets body of this conversationReply
+            /// </summary>
+            public virtual string Body { get; set; }
+            /// <summary>
+            /// gets or sets Date that this record added
+            /// </summary>
+            public virtual DateTime SentOn { get; set; }
+            #endregion
+
+            #region NavigationProperties
+            /// <summary>
+            /// gets or sets  Parent's Id Of this ConversationReply
+            /// </summary>
+            public virtual Guid? ParentId { get; set; }
+            /// <summary>
+            /// gets or sets Parent Of this ConversationReply
+            /// </summary>
+            public virtual Message Parent { get; set; }
+            /// <summary>
+            /// get or set Children Of this ConversationReply
+            /// </summary>
+            public virtual ICollection<Message> Children { get; set; }
+            /// <summary>
+            /// gets or sets if of  user that start this conversationReply
+            /// </summary>
+            public virtual long SenderId { get; set; }
+            /// <summary>
+            /// gets or sets user that start this conversationReply
+            /// </summary>
+            public virtual User Sender { get; set; }
+            /// <summary>
+            /// gets or sets Conversation that this message sent in it 
+            /// </summary>
+            public virtual Conversation Conversation { get; set; }
+            /// <summary>
+            /// gets or sets Id of Conversation that this message sent in it 
+            /// </summary>
+            public virtual Guid ConversationId { get; set; }
+            #endregion
+        
     }
 }

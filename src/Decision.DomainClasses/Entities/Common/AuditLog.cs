@@ -6,87 +6,89 @@ using Decision.Utility;
 namespace Decision.DomainClasses.Entities.Common
 {
     /// <summary>
-    /// نشان دهنده لاگ  فعالت های کاربر
+    /// Represent The Operation's log
     /// </summary>
     public class AuditLog
     {
         #region Ctor
         /// <summary>
-        /// 
+        /// Create One Instance Of <see cref="AuditLog"/>
         /// </summary>
         public AuditLog()
         {
             Id = SequentialGuidGenerator.NewSequentialGuid();
-            OperateDate = DateTime.Now;
+            OperatedOn = DateTime.Now;
         }
         #endregion
 
         #region Properties
         /// <summary>
-        /// نوع لاگ
-        /// <remarks>قابل سریالایز باشد یا ...</remarks>
+        /// sets or gets identifier of AuditLog
         /// </summary>
-        public  AuditLogType Type { get; set; }
+        public virtual Guid Id { get; set; }
         /// <summary>
-        /// آی دی موجودیت 
+        /// gets or sets Type of  Modification(create,softDelet,Delete,update)
         /// </summary>
-        public  Guid Id { get; set; }
+        public virtual AuditAction Action { get; set; }
         /// <summary>
-        /// نام جدولی که این لاگ مربوط به آن است
+        /// sets or gets description of Log
         /// </summary>
-        public  string TableName { get; set; }
+        public virtual string Description { get; set; }
         /// <summary>
-        /// آی دی رکوردی که لاگ آن گرفته شده است
+        /// sets or gets when log is operated
         /// </summary>
-        public  Guid? RecordedEntityId { get; set; }
+        public virtual DateTime OperatedOn { get; set; }
         /// <summary>
-        /// توضیحات کلی لاگ
+        /// sets or gets Type Of Entity 
         /// </summary>
-        public  string Description { get; set; }
-
+        public virtual string Entity { get; set; }
         /// <summary>
-        /// مقدار بعد از تغییر فیلد ها
+        /// gets or sets  Old value of  Properties before modification
         /// </summary>
-        public  string NewValue { get; set; }
-
+        public virtual string XmlOldValue { get; set; }
         /// <summary>
-        ///  ساختار ایکس ام ال مقدار بعد از تغییر فیلد ها
+        /// gets or sets XML Base OldValue of Properties (NotMapped)
         /// </summary>
-        public  XElement XmlNewValue
+        public virtual XElement XmlOldValueWrapper
         {
-            get { return XElement.Parse(NewValue); }
-            set { NewValue = value.ToString(); }
-        }
-
-        /// <summary>
-        /// مقدار قبل از تغییر فیلد ها
-        /// </summary>
-        public  string OldValue { get; set; }
-
-        /// <summary>
-        ///  ساختار ایکس ام ال مقدار قبل از تغییر فیلد ها
-        /// </summary>
-        public  XElement XmlOldValue
-        {
-            get { return XElement.Parse(OldValue); }
-            set { OldValue = value.ToString(); }
+            get { return XElement.Parse(XmlOldValue); }
+            set { XmlOldValue = value.ToString(); }
         }
         /// <summary>
-        /// تاریخ انجام عملیات 
+        /// gets or sets new value of  Properties after modification
         /// </summary>
-        public  DateTime OperateDate { get; set; }
+        public virtual string XmlNewValue { get; set; }
+        /// <summary>
+        /// gets or sets XML Base NewValue of Properties (NotMapped)
+        /// </summary>
+        public virtual XElement XmlNewValueWrapper
+        {
+            get { return XElement.Parse(XmlNewValue); }
+            set { XmlNewValue = value.ToString(); }
+        }
+        /// <summary>
+        /// gets or sets Identifier Of Entity
+        /// </summary>
+        public virtual string EntityId { get; set; }
+        /// <summary>
+        /// gets or sets user agent information
+        /// </summary>
+        public virtual string Agent { get; set; }
+        /// <summary>
+        /// gets or sets user's ip address
+        /// </summary>
+        public virtual string OperantIp { get; set; }
         #endregion
 
         #region NavigationProperties
         /// <summary>
-        /// کاربر ایجاد کننده 
+        /// sets or gets log's creator
         /// </summary>
-        public  User Creator { get; set; }
+        public virtual User Operant { get; set; }
         /// <summary>
-        /// آی دی کاربر ایجاد کننده
+        /// sets or gets identifier of log's creator
         /// </summary>
-        public  Guid CreatorId { get; set; }
-
+        public virtual long OperantId { get; set; }
         #endregion
     }
 }

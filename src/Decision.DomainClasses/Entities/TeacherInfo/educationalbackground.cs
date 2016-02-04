@@ -30,10 +30,6 @@ namespace Decision.DomainClasses.Entities.TeacherInfo
         /// </summary>
         public  EducationalType EducationalType { get; set; }
         /// <summary>
-        /// مقطع تحصیلات حوزوی
-        /// </summary>
-        public  HozeDegrees HosDegree{ get; set; }
-        /// <summary>
         /// مقطع تحصیلی دانشگاهی
         /// </summary>
         public  AcademicDegrees AcademicDegree { get; set; }

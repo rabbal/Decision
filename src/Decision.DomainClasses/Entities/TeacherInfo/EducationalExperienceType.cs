@@ -28,6 +28,5 @@ namespace Decision.DomainClasses.Entities.TeacherInfo
         /// اولویت های تصویب شده برای استاد به منظور آموزش دیدن
         /// </summary>
         AdoptedPrioritiesInCommittee
-
     }
 }

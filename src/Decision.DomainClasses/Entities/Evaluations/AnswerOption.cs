@@ -33,7 +33,7 @@ namespace Decision.DomainClasses.Entities.Evaluations
         /// <summary>
         /// وزن ارزشی گزینه
         /// </summary>
-        public virtual byte Weight { get; set; }
+        public virtual int Weight { get; set; }
         #endregion
 
         #region NavigationProperties
@@ -41,12 +41,10 @@ namespace Decision.DomainClasses.Entities.Evaluations
         /// لیست ارزیابی هایی که این گزینه رو انتخاب کرده اند
         /// </summary>
         public virtual ICollection<ArticleEvaluation> ArticleEvaluations { get; set; }
-
         /// <summary>
         /// سوالی که این گزینه جز پاسخ های آن است
         /// </summary>
         public virtual Question Question { get; set; }
-
         /// <summary>
         ///  آی دی سوالی که این گزینه جز پاسخ های آن است
         /// </summary>

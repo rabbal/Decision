@@ -7,61 +7,81 @@ using Decision.Utility;
 namespace Decision.DomainClasses.Entities.PrivateMessage
 {
     /// <summary>
-    /// نشان دهنده گفتگو
+    /// Indicate one conversation
     /// </summary>
     public class Conversation
     {
         #region Ctor
         /// <summary>
-        /// 
+        /// create one instance of <see cref="Conversation"/>
         /// </summary>
         public Conversation()
         {
             Id = SequentialGuidGenerator.NewSequentialGuid();
-            Messages = new List<Message>();
+            SentOn = DateTime.Now;
         }
         #endregion
 
         #region Properties
         /// <summary>
-        /// آی دی موجودیت 
+        /// gets or sets identifier of record
         /// </summary>
-        public Guid Id { get; set; }
+        public virtual Guid Id { get; set; }
         /// <summary>
-        /// آیا گفتگوی جدید مشاهده شده است؟
+        /// represents this conversaion is seen
         /// </summary>
-        public bool IsSeen { get; set; }
+        public virtual bool IsRead { get; set; }
         /// <summary>
-        /// موضوع گفتگو
+        /// gets or sets subject of this conversation
         /// </summary>
-        public string Subject { get; set; }
+        public virtual string Subject { get; set; }
         /// <summary>
-        /// تاریخ آغاز گفتگو
+        /// gets or sets Date that this record added
         /// </summary>
-        public DateTime StartDate { get; set; }
+        public virtual DateTime SentOn { get; set; }
+        /// <summary>
+        /// indicate this record deleted by sender
+        /// </summary>
+        public virtual bool DeletedBySender { get; set; }
+        /// <summary>
+        /// indicate this record deleted by receiver
+        /// </summary>
+        public virtual bool DeletedByReceiver { get; set; }
+        /// <summary>
+        /// gets or sets Messagescount that Unread  by sender of this conversation
+        /// </summary>
+        public virtual int UnReadSenderMessagesCount { get; set; }
+        /// <summary>
+        /// gets or sets Messagescount that Unread  by receiver of this conversation
+        /// </summary>
+        public virtual int UnReadReceiverMessagesCount { get; set; }
+        /// <summary>
+        /// gets or sets Messagescount of this conversation for increase performance
+        /// </summary>
+        public virtual int MessagesCount { get; set; }
         #endregion
 
         #region NavigationProperties
         /// <summary>
-        /// آی دی کاربر آغاز کننده گفتگو
+        /// gets or sets if of  user that start this conversation
         /// </summary>
-        public Guid SenderId { get; set; }
+        public virtual long SenderId { get; set; }
         /// <summary>
-        ///  کاربر آغاز کننده گفتگو
+        /// gets or sets user that start this conversation
         /// </summary>
-        public User Sender { get; set; }
+        public virtual User Sender { get; set; }
         /// <summary>
-        /// آی دی کاربر پذیرنده گفتگو
+        /// gets or sets id of  user that is recipient
         /// </summary>
-        public Guid ReceiverId { get; set; }
+        public virtual long ReceiverId { get; set; }
         /// <summary>
-        ///  کاربر پذیرنده گفتگو
+        /// gets or sets   user that is recipient
         /// </summary>
-        public User Receiver { get; set; }
+        public virtual User Receiver { get; set; }
         /// <summary>
-        /// پیغام های گفتگو
+        /// get or set Messages of this conversation
         /// </summary>
-        public ICollection<Message> Messages { get; set; }
+        public virtual ICollection<Message> Messages { get; set; }
         #endregion
     }
 }
