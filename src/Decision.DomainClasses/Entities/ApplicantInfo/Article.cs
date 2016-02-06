@@ -26,21 +26,37 @@ namespace Decision.DomainClasses.Entities.ApplicantInfo
         /// </summary>
         public double Score { get; set; }
         /// <summary>
-        /// موضوع مربوط به مقاله
+        /// عنوان مربوط به مقاله
         /// </summary>
-        public string Subject { get; set; }
+        public string Title { get; set; }
         /// <summary>
-        /// خلاصه مقاله
+        /// نام مجله یا سمینار
         /// </summary>
-        public string Content { get; set; }
+        public string MagazineOrSeminarName { get; set; }
+        /// <summary>
+        /// نوع مجله یا سمینار
+        /// </summary>
+        public MagazineOrSeminarType MagazineOrSeminarType { get; set; }
+        /// <summary>
+        /// نوع مسئولیت متقاضی در مقاله
+        /// </summary>
+        public ArticleResponsibilityType ResponsibilityType { get; set; }
+        /// <summary>
+        /// نوع مقاله
+        /// </summary>
+        public ArticleType Type { get; set; }
+        /// <summary>
+        /// نوع مقاله اگر نوع انتخابی آن غیره باشد
+        /// </summary>
+        public string ArticleType { get; set; }
         /// <summary>
         /// خلاصه مقاله 
         /// </summary>
         public string Brief { get; set; }
         /// <summary>
-        /// تاریخ ارائه مقاله
+        /// تاریخ چاپ 
         /// </summary>
-        public DateTime ArticleDate { get; set; }
+        public DateTime? PublicatedOn { get; set; }
         /// <summary>
         /// فایل ضمیمه  مقاله صدور شده
         /// </summary>

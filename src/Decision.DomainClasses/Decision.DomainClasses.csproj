@@ -81,6 +81,9 @@
     <Compile Include="Configurations\Users\UserLoginConfig.cs" />
     <Compile Include="Configurations\Users\UserRoleConfig.cs" />
     <Compile Include="Entities\ApplicantInfo\ApplicantStatus.cs" />
+    <Compile Include="Entities\ApplicantInfo\ArticleResponsibilityType.cs" />
+    <Compile Include="Entities\ApplicantInfo\ArticleType.cs" />
+    <Compile Include="Entities\ApplicantInfo\MagazineOrSeminarType.cs" />
     <Compile Include="Entities\ApplicantInfo\MembershipType.cs" />
     <Compile Include="Entities\ApplicantInfo\MilitaryStatus.cs" />
     <Compile Include="Entities\ApplicantInfo\Presenter.cs" />

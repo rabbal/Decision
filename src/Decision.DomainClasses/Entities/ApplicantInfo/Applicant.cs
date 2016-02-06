@@ -62,7 +62,7 @@ namespace Decision.DomainClasses.Entities.ApplicantInfo
         /// <summary>
         /// وضعیت نظام وظیفه
         /// </summary>
-        public  MilitaryStatus MilitaryStatus { get; set; }
+        public MilitaryStatus MilitaryStatus { get; set; }
         /// <summary>
         /// تاریخ پایان خدمت
         /// </summary>
@@ -154,6 +154,10 @@ namespace Decision.DomainClasses.Entities.ApplicantInfo
         /// آدرس های متقاضی
         /// </summary>
         public ICollection<Address> Addresses { get; set; }
+        /// <summary>
+        /// معرفان متقاضی
+        /// </summary>
+        public ICollection<Presenter> Presenters { get; set; }
         #endregion
     }
 }

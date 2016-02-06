@@ -9,16 +9,6 @@ namespace Decision.DomainClasses.Entities.Evaluations
     /// </summary>
     public class Question : BaseEntity
     {
-        #region Ctor
-        /// <summary>
-        /// سازنده پیش فرض
-        /// </summary>
-        public Question()
-        {
-            AnswerOptions = new List<AnswerOption>();
-        }
-        #endregion
-
         #region Properties
         /// <summary>
         /// عنوان سوال
@@ -40,7 +30,6 @@ namespace Decision.DomainClasses.Entities.Evaluations
         /// ترتیب نمایش
         /// </summary>
         public int DisplayOrder { get; set; }
-
         #endregion
 
         #region NavigationProperties
