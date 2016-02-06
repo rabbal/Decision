@@ -4,12 +4,12 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace Decision.ViewModel.TeacherInServiceCourseType
+namespace Decision.ViewModel.ApplicantInServiceCourseType
 {
     /// <summary>
-    /// ویومدل درج تعداد ساعت یک نوع ضمن خدمت برای استاد
+    /// ویومدل درج تعداد ساعت یک نوع ضمن خدمت برای متقاضی
     /// </summary>
-    public class AddTeacherInServiceCourseTypeViewModel
+    public class AddApplicantInServiceCourseTypeViewModel
     {
         #region Properties
         /// <summary>
@@ -21,11 +21,11 @@ namespace Decision.ViewModel.TeacherInServiceCourseType
         public  decimal HoursCount { get; set; }
 
         /// <summary>
-        /// آی دی استاد مربوطه
+        /// آی دی متقاضی مربوطه
         /// </summary>
-        [DisplayName("استاد")]
+        [DisplayName("متقاضی")]
         [Required]
-        public  Guid TeacherId { get; set; }
+        public  Guid ApplicantId { get; set; }
 
         /// <summary>
         /// آی دی عنوان دوره ضمن خدمت

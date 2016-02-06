@@ -1,11 +1,11 @@
 ﻿@using Decision.Common.Helpers
 @using Decision.Common.Helpers.Extentions
 @using Decision.Web.RazorHelpers
-@model Decision.ViewModel.Teacher.EditTeacherViewModel
+@model Decision.ViewModel.Applicant.EditApplicantViewModel
 @{
-    ViewBag.Title = "ویرایش استاد";
+    ViewBag.Title = "ویرایش متقاضی";
 }
-@using (Html.BeginForm(MVC.Teacher.Edit(), FormMethod.Post, new { role = "form", @class = "form-horizontal", autocomplete = "off", id = "editTeacherForm", enctype = "multipart/form-data" }))
+@using (Html.BeginForm(MVC.Applicant.Edit(), FormMethod.Post, new { role = "form", @class = "form-horizontal", autocomplete = "off", id = "editApplicantForm", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.Id)
@@ -21,7 +21,7 @@
                     @Html.HelpAlert(Url.Content("~/Content/Images/lightbulb.png"),
                     "در صورت عمل نکردن دکمه ثبت،توجه داشته باشید که تمام اطلاعات را در تمام تب های موجود صحیح وارد کرده باشید",
 
-         "برای فایل های ضمیمه مربوط به استاد از امکان آپلود تصاویر یا اسکن  میتوانید بهره مند شوید.",
+         "برای فایل های ضمیمه مربوط به متقاضی از امکان آپلود تصاویر یا اسکن  میتوانید بهره مند شوید.",
                     "دقت کنید در صورت انتخاب فایل جدید،جایگزین فایل های جدید خواهد شد"
            )
                 </div>
@@ -30,7 +30,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-1">
-                    <button type="button" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'editTeacherForm')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">
+                    <button type="button" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'editApplicantForm')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">
                         ذخیره تغییرات انجام شده
                     </button>
                 </div>
@@ -345,7 +345,7 @@
     </div>
 }
 @section Menu{
-    @{Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.Id);}
+    @{Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.Id);}
 }
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

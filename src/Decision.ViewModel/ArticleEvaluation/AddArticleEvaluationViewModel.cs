@@ -7,13 +7,13 @@ using System.Web.Mvc;
 namespace Decision.ViewModel.ArticleEvaluation
 {
     /// <summary>
-    /// ویومدل درج ارزیابی از مقاله استاد
+    /// ویومدل درج ارزیابی از مقاله متقاضی
     /// </summary>
     public class AddArticleEvaluationViewModel
     {
         #region Properties
         public Guid ArticleId { get; set; }
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
         /// <summary>
         ///  نظریه کلی برای مقاله
         /// </summary>

@@ -72,13 +72,13 @@ WriteLiteral(">\r\n            <div");
 
 WriteLiteral(" class=\"col-md-4 asyncLoad\"");
 
-WriteLiteral(" id=\"TopScoreTeachers\"");
+WriteLiteral(" id=\"TopScoreApplicants\"");
 
 WriteLiteral(" data-load-url=\"");
 
             
             #line 8 "..\..\Views\Home\Index.cshtml"
-                                                                            Write(Url.Action(MVC.Home.GetTopScoreTeachers()));
+                                                                            Write(Url.Action(MVC.Home.GetTopScoreApplicants()));
 
             
             #line default
@@ -113,13 +113,13 @@ WriteLiteral(" />\r\n                </div>\r\n            </div>\r\n\r\n       
 
 WriteLiteral(" class=\"col-md-4 asyncLoad\"");
 
-WriteLiteral(" id=\"NewAddedTeachers\"");
+WriteLiteral(" id=\"NewAddedApplicants\"");
 
 WriteLiteral(" data-load-url=\"");
 
             
             #line 14 "..\..\Views\Home\Index.cshtml"
-                                                                            Write(Url.Action(MVC.Home.GetNewAddedTeachers()));
+                                                                            Write(Url.Action(MVC.Home.GetNewAddedApplicants()));
 
             
             #line default

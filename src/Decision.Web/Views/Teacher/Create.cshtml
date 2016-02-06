@@ -1,11 +1,11 @@
 ﻿@using Decision.Common.Helpers
 @using Decision.Common.Helpers.Extentions
 @using Decision.Web.RazorHelpers
-@model Decision.ViewModel.Teacher.AddTeacherViewModel
+@model Decision.ViewModel.Applicant.AddApplicantViewModel
 @{
-    ViewBag.Title = "درج استاد جدید";
+    ViewBag.Title = "درج متقاضی جدید";
 }
-@using (Html.BeginForm(MVC.Teacher.Create(), FormMethod.Post, new { role = "form", @class = "form-horizontal", autocomplete = "off", id = "createTeacherForm", enctype = "multipart/form-data" }))
+@using (Html.BeginForm(MVC.Applicant.Create(), FormMethod.Post, new { role = "form", @class = "form-horizontal", autocomplete = "off", id = "createApplicantForm", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model=>model.PhotoScan)
@@ -18,7 +18,7 @@
             <div class="col-md-12">
                 @Html.HelpAlert(@Url.Content("~/Content/Images/lightbulb.png"),
                     "در صورت عمل نکردن دکمه ثبت،توجه داشته باشید که تمام اطلاعات را در تمام تب های موجود صحیح وارد کرده باشید",
-                    "برای فایل های ضمیمه مربوط به استاد از امکان آپلود تصاویر یا اسکن  میتوانید بهره مند شوید."
+                    "برای فایل های ضمیمه مربوط به متقاضی از امکان آپلود تصاویر یا اسکن  میتوانید بهره مند شوید."
            )
             </div>
         </div>
@@ -27,8 +27,8 @@
     <div class="panel-body">
     <div class="row">
         <div class="col-md-1">
-            <button type="button" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'createTeacherForm')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">
-                ثبت اطلاعات استاد
+            <button type="button" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'createApplicantForm')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">
+                ثبت اطلاعات متقاضی
             </button>
         </div>
 
@@ -343,7 +343,7 @@
     </div>
 }
 @section Menu{
-    @{Html.RenderPartial(MVC.Shared.Views._TeacherManagementsSidbarMenu);}
+    @{Html.RenderPartial(MVC.Shared.Views._ApplicantManagementsSidbarMenu);}
 }
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

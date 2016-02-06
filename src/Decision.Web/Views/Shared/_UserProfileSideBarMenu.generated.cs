@@ -62,7 +62,7 @@ WriteLiteral("></span>تنظیمات کاربری</a>\r\n");
 
             
             #line 3 "..\..\Views\Shared\_UserProfileSideBarMenu.cshtml"
-Write(Html.SideBarSecureActionLink("لیست ارجاعات", Url.Action(MVC.Teacher.ReferList()), "list-group-item thrid-split", "fa fa-list-ol", StandardRoles.Operators));
+Write(Html.SideBarSecureActionLink("لیست ارجاعات", Url.Action(MVC.Applicant.ReferList()), "list-group-item thrid-split", "fa fa-list-ol", StandardRoles.Operators));
 
             
             #line default
@@ -71,7 +71,7 @@ WriteLiteral("\r\n");
 
             
             #line 4 "..\..\Views\Shared\_UserProfileSideBarMenu.cshtml"
-Write(Html.SideBarSecureActionLink("اساتید در حال تکمیل", Url.Action(MVC.Teacher.NewTeacherList()), "list-group-item thrid-split", "fa fa-list-ol", StandardRoles.Operators));
+Write(Html.SideBarSecureActionLink("اساتید در حال تکمیل", Url.Action(MVC.Applicant.NewApplicantList()), "list-group-item thrid-split", "fa fa-list-ol", StandardRoles.Operators));
 
             
             #line default
@@ -80,7 +80,7 @@ WriteLiteral("\r\n");
 
             
             #line 5 "..\..\Views\Shared\_UserProfileSideBarMenu.cshtml"
-Write(Html.SideBarSecureActionLink("درج استاد جدید", Url.Action(MVC.Teacher.Create()), "list-group-item thrid-split", "fa fa-plus", AssignableToRolePermissions.CanCreateTeacher));
+Write(Html.SideBarSecureActionLink("درج متقاضی جدید", Url.Action(MVC.Applicant.Create()), "list-group-item thrid-split", "fa fa-plus", AssignableToRolePermissions.CanCreateApplicant));
 
             
             #line default

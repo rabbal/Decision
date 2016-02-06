@@ -1,7 +1,7 @@
 ﻿using System;
 using AutoMapper;
 using Decision.AutoMapperProfiles.Extentions;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Article;
 using Decision.ViewModel.ArticleEvaluation;
 using DNT.Extensions;
@@ -27,7 +27,7 @@ namespace Decision.AutoMapperProfiles
             CreateMap<Article, EditArticleViewModel>()
                 .IgnoreAllNonExisting();
             CreateMap<Article, ArticleDetails>()
-                .ForMember(d => d.TeacherFullName, m => m.MapFrom(s => s.Teacher.FirstName + " " + s.Teacher.LastName))
+                .ForMember(d => d.ApplicantFullName, m => m.MapFrom(s => s.Applicant.FirstName + " " + s.Applicant.LastName))
                 .ForMember(d => d.ArticleCode, m => m.MapFrom(s => s.Code))
                 .ForMember(d => d.TotalScore, m => m.UseValue(100f)).IgnoreAllNonExisting();
 

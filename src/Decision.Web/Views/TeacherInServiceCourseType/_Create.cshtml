@@ -1,15 +1,15 @@
-﻿@model Decision.ViewModel.TeacherInServiceCourseType.AddTeacherInServiceCourseTypeViewModel
+﻿@model Decision.ViewModel.ApplicantInServiceCourseType.AddApplicantInServiceCourseTypeViewModel
 
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header alert alert-success">
-            <h6 class="modal-title">درج دوره ضمن خدمت برای استاد</h6>
+            <h6 class="modal-title">درج دوره ضمن خدمت برای متقاضی</h6>
         </div>
         <div class="modal-body">
-            @using (Ajax.BeginForm(MVC.TeacherInServiceCourseType.Create(), new AjaxOptions { HttpMethod = "POST", OnComplete = "createOnComplete(xhr, status, 'TeacherInServiceCourseTypeList', '#modal','createTeacherInServiceCourseTypeForm','#createTeacherInServiceCourseTypeButton')" }, new { @class = "form-horizontal", id = "createTeacherInServiceCourseTypeForm", autocomplete = "off" }))
+            @using (Ajax.BeginForm(MVC.ApplicantInServiceCourseType.Create(), new AjaxOptions { HttpMethod = "POST", OnComplete = "createOnComplete(xhr, status, 'ApplicantInServiceCourseTypeList', '#modal','createApplicantInServiceCourseTypeForm','#createApplicantInServiceCourseTypeButton')" }, new { @class = "form-horizontal", id = "createApplicantInServiceCourseTypeForm", autocomplete = "off" }))
             {
                 @Html.AntiForgeryToken()
-                @Html.HiddenFor(model => model.TeacherId)
+                @Html.HiddenFor(model => model.ApplicantId)
                 <div class="form-group">
                     @Html.LabelFor(model => model.HoursCount, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-8">
@@ -29,7 +29,7 @@
 
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-2">
-                        <button type="button" id="createTeacherInServiceCourseTypeButton" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'createTeacherInServiceCourseTypeForm')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">
+                        <button type="button" id="createApplicantInServiceCourseTypeButton" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'createApplicantInServiceCourseTypeForm')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">
                             ثبت موضوع جدید
                         </button>
                         <button class="btn btn-default btn-md" data-dismiss="modal" aria-hidden="true">

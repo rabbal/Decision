@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Decision.ViewModel.EducationalBackground;
 
-namespace Decision.ServiceLayer.Contracts.TeacherInfo
+namespace Decision.ServiceLayer.Contracts.ApplicantInfo
 {
     /// <summary>
     /// نشان دهنده الزامات ارائه دهنده سرویس سابقه تحصیلی
@@ -47,7 +47,7 @@ namespace Decision.ServiceLayer.Contracts.TeacherInfo
 
         Task FillEditViewModel(EditEducationalBackgroundViewModel viewModel);
 
-        Task<AddEducationalBackgroundViewModel> GetForCreate(Guid TeacherId);
+        Task<AddEducationalBackgroundViewModel> GetForCreate(Guid ApplicantId);
 
         Task FillAddViewModel(AddEducationalBackgroundViewModel viewModel);
     }

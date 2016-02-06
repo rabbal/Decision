@@ -14,7 +14,7 @@
             @using (Ajax.BeginForm(MVC.WorkExperience.Edit(), new AjaxOptions { HttpMethod = "POST", OnComplete = "editOnComplete(xhr, status, '" + Model.Id + "','#editButton" + Model.Id + "')" }, new { @class = "form-horizontal", id = Model.Id, autocomplete = "off", data_ajax_update = "workExperience-" + Model.Id }))
             {
                 @Html.AntiForgeryToken()
-                @Html.HiddenFor(model => model.TeacherId)
+                @Html.HiddenFor(model => model.ApplicantId)
                 @Html.HiddenFor(model => model.Id)
                 @Html.HiddenFor(model => model.RowVersion)
                 <div class="form-group">

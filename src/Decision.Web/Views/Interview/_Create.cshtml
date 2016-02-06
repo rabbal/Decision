@@ -8,7 +8,7 @@
         @using (Html.BeginForm(MVC.Interview.Create(), FormMethod.Post, new { @class = "form-horizontal", id = "createInterviewForm", autocomplete = "off", enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
-            @Html.HiddenFor(model => model.TeacherId)
+            @Html.HiddenFor(model => model.ApplicantId)
             @Html.HiddenFor(model => model.AttachmentScan)
 
             <div class="form-group">

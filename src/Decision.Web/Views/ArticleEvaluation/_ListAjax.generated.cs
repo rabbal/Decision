@@ -191,7 +191,7 @@ WriteLiteral(" data-delete-url=\"");
 
             
             #line 35 "..\..\Views\ArticleEvaluation\_ListAjax.cshtml"
-                                                      Write(Url.Action(MVC.ArticleEvaluation.Delete(evaluation.Id,Model.ArticleDetails.TeacherId)));
+                                                      Write(Url.Action(MVC.ArticleEvaluation.Delete(evaluation.Id,Model.ArticleDetails.ApplicantId)));
 
             
             #line default

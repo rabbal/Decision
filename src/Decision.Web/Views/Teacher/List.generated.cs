@@ -34,16 +34,16 @@ namespace ASP
     using MvcSiteMapProvider.Web.Html.Models;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Teacher/List.cshtml")]
-    public partial class _Views_Teacher_List_cshtml : System.Web.Mvc.WebViewPage<Decision.ViewModel.Teacher.TeacherListViewModel>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Applicant/List.cshtml")]
+    public partial class _Views_Applicant_List_cshtml : System.Web.Mvc.WebViewPage<Decision.ViewModel.Applicant.ApplicantListViewModel>
     {
-        public _Views_Teacher_List_cshtml()
+        public _Views_Applicant_List_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 2 "..\..\Views\Teacher\List.cshtml"
+            #line 2 "..\..\Views\Applicant\List.cshtml"
   
     ViewBag.Title = "مشاهده لیست اساتید";
 
@@ -53,7 +53,7 @@ namespace ASP
 WriteLiteral("\r\n");
 
             
-            #line 5 "..\..\Views\Teacher\List.cshtml"
+            #line 5 "..\..\Views\Applicant\List.cshtml"
 Write(Html.AntiForgeryToken());
 
             
@@ -113,7 +113,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 20 "..\..\Views\Teacher\List.cshtml"
+            #line 20 "..\..\Views\Applicant\List.cshtml"
            Write(Html.HelpAlert(@Url.Content("~/Content/Images/lightbulb.png"),
                     "با استفاده از فرم زیر ، امکان جستجوی پیشرفته بین اساتید را خواهید داشت.",
                     "برای لغو فیلتر اعمال شده میتوانید از دکمه لغو استفاده کنید."));
@@ -124,70 +124,70 @@ WriteLiteral("                ");
 WriteLiteral("\r\n");
 
             
-            #line 23 "..\..\Views\Teacher\List.cshtml"
+            #line 23 "..\..\Views\Applicant\List.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 23 "..\..\Views\Teacher\List.cshtml"
-                 using (Ajax.BeginForm(MVC.Teacher.ListAjax(), new AjaxOptions {AllowCache = false, HttpMethod = "POST", OnComplete = "searchOnComplete(xhr,status,'#progress','#TeacherPager','#TeacherList')"}, new {@class = "form-horizontal", autocomplete = "off", id = "TeacherSearchForm"}))
+            #line 23 "..\..\Views\Applicant\List.cshtml"
+                 using (Ajax.BeginForm(MVC.Applicant.ListAjax(), new AjaxOptions {AllowCache = false, HttpMethod = "POST", OnComplete = "searchOnComplete(xhr,status,'#progress','#ApplicantPager','#ApplicantList')"}, new {@class = "form-horizontal", autocomplete = "off", id = "ApplicantSearchForm"}))
                 {
                     
             
             #line default
             #line hidden
             
-            #line 25 "..\..\Views\Teacher\List.cshtml"
+            #line 25 "..\..\Views\Applicant\List.cshtml"
                Write(Html.Hidden("PageIndex", Model.SearchRequest.PageIndex));
 
             
             #line default
             #line hidden
             
-            #line 25 "..\..\Views\Teacher\List.cshtml"
+            #line 25 "..\..\Views\Applicant\List.cshtml"
                                                                             
                     
             
             #line default
             #line hidden
             
-            #line 26 "..\..\Views\Teacher\List.cshtml"
+            #line 26 "..\..\Views\Applicant\List.cshtml"
                Write(Html.Hidden("PageSize", Model.SearchRequest.PageSize));
 
             
             #line default
             #line hidden
             
-            #line 26 "..\..\Views\Teacher\List.cshtml"
+            #line 26 "..\..\Views\Applicant\List.cshtml"
                                                                           
                     
             
             #line default
             #line hidden
             
-            #line 27 "..\..\Views\Teacher\List.cshtml"
+            #line 27 "..\..\Views\Applicant\List.cshtml"
                Write(Html.Hidden("CurrentSort", Model.SearchRequest.CurrentSort));
 
             
             #line default
             #line hidden
             
-            #line 27 "..\..\Views\Teacher\List.cshtml"
+            #line 27 "..\..\Views\Applicant\List.cshtml"
                                                                                 
                     
             
             #line default
             #line hidden
             
-            #line 28 "..\..\Views\Teacher\List.cshtml"
+            #line 28 "..\..\Views\Applicant\List.cshtml"
                Write(Html.Hidden("SortDirection", Model.SearchRequest.SortDirection));
 
             
             #line default
             #line hidden
             
-            #line 28 "..\..\Views\Teacher\List.cshtml"
+            #line 28 "..\..\Views\Applicant\List.cshtml"
                                                                                     
 
             
@@ -217,7 +217,7 @@ WriteLiteral(">\r\n                                        <i");
 
 WriteLiteral(" class=\"fa fa-align-justify\"");
 
-WriteLiteral("></i>\r\n                                        نام استاد\r\n                       " +
+WriteLiteral("></i>\r\n                                        نام متقاضی\r\n                       " +
 "             </label>\r\n                                    <input");
 
 WriteLiteral(" name=\"FirstName\"");
@@ -226,7 +226,7 @@ WriteLiteral(" id=\"FirstName\"");
 
 WriteLiteral(" class=\"form-control input-sm\"");
 
-WriteLiteral("\r\n                                           placeholder=\"نام استاد\"");
+WriteLiteral("\r\n                                           placeholder=\"نام متقاضی\"");
 
 WriteLiteral(" type=\"text\"");
 
@@ -249,7 +249,7 @@ WriteLiteral(">\r\n                                        <i");
 
 WriteLiteral(" class=\"fa fa-align-justify\"");
 
-WriteLiteral("></i>\r\n                                        نام خانودگی استاد\r\n               " +
+WriteLiteral("></i>\r\n                                        نام خانودگی متقاضی\r\n               " +
 "                     </label>\r\n                                    <input");
 
 WriteLiteral(" name=\"LastName\"");
@@ -258,7 +258,7 @@ WriteLiteral(" id=\"LastName\"");
 
 WriteLiteral(" class=\"form-control input-sm\"");
 
-WriteLiteral("\r\n                                           placeholder=\"نام خانودگی استاد\"");
+WriteLiteral("\r\n                                           placeholder=\"نام خانودگی متقاضی\"");
 
 WriteLiteral(" type=\"text\"");
 
@@ -345,13 +345,13 @@ WriteLiteral(">\r\n                                        <i");
 
 WriteLiteral(" class=\"fa fa-sort-asc\"");
 
-WriteLiteral("></i>\r\n                                        سمت استاد\r\n                       " +
+WriteLiteral("></i>\r\n                                        سمت متقاضی\r\n                       " +
 "             </label>\r\n");
 
 WriteLiteral("                                    ");
 
             
-            #line 77 "..\..\Views\Teacher\List.cshtml"
+            #line 77 "..\..\Views\Applicant\List.cshtml"
                                Write(Html.DropDownList("PositionId", Model.Positions, "همه سمت ها", new {@class = "form-control"}));
 
             
@@ -384,7 +384,7 @@ WriteLiteral("></i>\r\n                                        استان تول
 WriteLiteral("                                    ");
 
             
-            #line 88 "..\..\Views\Teacher\List.cshtml"
+            #line 88 "..\..\Views\Applicant\List.cshtml"
                                Write(Html.DropDownList("State",
                                         Model.States, "همه", new
                                         {
@@ -421,7 +421,7 @@ WriteLiteral("></i>\r\n                                        شهر تولد\r
 WriteLiteral("                                    ");
 
             
-            #line 105 "..\..\Views\Teacher\List.cshtml"
+            #line 105 "..\..\Views\Applicant\List.cshtml"
                                Write(Html.DropDownList("City", Model.Cities, "همه", new {@class = "form-control", id = "city"}));
 
             
@@ -450,7 +450,7 @@ WriteLiteral("></i>\r\n                                        نام محل ک�
 WriteLiteral("                                    ");
 
             
-            #line 114 "..\..\Views\Teacher\List.cshtml"
+            #line 114 "..\..\Views\Applicant\List.cshtml"
                                Write(Html.DropDownList("TrainingCenter", Model.TrainingCenters, "همه", new {@class = "form-control"}));
 
             
@@ -541,7 +541,7 @@ WriteLiteral(">\r\n                                        <i");
 
 WriteLiteral(" class=\"fa fa-graduation-cap\"");
 
-WriteLiteral("></i>\r\n                                        از پایه استاد\r\n                   " +
+WriteLiteral("></i>\r\n                                        از پایه متقاضی\r\n                   " +
 "                 </label>\r\n                                    <input");
 
 WriteLiteral(" name=\"CollegiateOrderFrom\"");
@@ -550,7 +550,7 @@ WriteLiteral(" id=\"CollegiateOrderFrom\"");
 
 WriteLiteral(" class=\"form-control input-sm\"");
 
-WriteLiteral(" placeholder=\"پایه استاد\"");
+WriteLiteral(" placeholder=\"پایه متقاضی\"");
 
 WriteLiteral(" type=\"text\"");
 
@@ -573,7 +573,7 @@ WriteLiteral(">\r\n                                        <i");
 
 WriteLiteral(" class=\"fa fa-graduation-cap\"");
 
-WriteLiteral("></i>\r\n                                        تا پایه استاد\r\n                   " +
+WriteLiteral("></i>\r\n                                        تا پایه متقاضی\r\n                   " +
 "                 </label>\r\n                                    <input");
 
 WriteLiteral(" name=\"CollegiateOrderTo\"");
@@ -582,7 +582,7 @@ WriteLiteral(" id=\"CollegiateOrderTo\"");
 
 WriteLiteral(" class=\"form-control input-sm\"");
 
-WriteLiteral(" placeholder=\"تا پایه استاد\"");
+WriteLiteral(" placeholder=\"تا پایه متقاضی\"");
 
 WriteLiteral(" type=\"text\"");
 
@@ -635,7 +635,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n                                    <label");
 
-WriteLiteral(" for=\"TeacherApprovalFilter\"");
+WriteLiteral(" for=\"ApplicantApprovalFilter\"");
 
 WriteLiteral(">\r\n                                        <i");
 
@@ -647,8 +647,8 @@ WriteLiteral("></i>\r\n                                        وضعیت تأی
 WriteLiteral("                                    ");
 
             
-            #line 172 "..\..\Views\Teacher\List.cshtml"
-                               Write(Html.EditorFor(a => a.SearchRequest.TeacherApprovalFilter, MVC.Shared.Views.EditorTemplates.Enum, "TeacherApprovalFilter"));
+            #line 172 "..\..\Views\Applicant\List.cshtml"
+                               Write(Html.EditorFor(a => a.SearchRequest.ApplicantApprovalFilter, MVC.Shared.Views.EditorTemplates.Enum, "ApplicantApprovalFilter"));
 
             
             #line default
@@ -664,7 +664,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n                                    <label");
 
-WriteLiteral(" for=\"TeacherReferenceFilter\"");
+WriteLiteral(" for=\"ApplicantReferenceFilter\"");
 
 WriteLiteral(">\r\n                                        <i");
 
@@ -676,8 +676,8 @@ WriteLiteral("></i>\r\n                                        وضعیت ارج
 WriteLiteral("                                    ");
 
             
-            #line 181 "..\..\Views\Teacher\List.cshtml"
-                               Write(Html.EditorFor(a => a.SearchRequest.TeacherReferenceFilter, MVC.Shared.Views.EditorTemplates.Enum, "TeacherReferenceFilter"));
+            #line 181 "..\..\Views\Applicant\List.cshtml"
+                               Write(Html.EditorFor(a => a.SearchRequest.ApplicantReferenceFilter, MVC.Shared.Views.EditorTemplates.Enum, "ApplicantReferenceFilter"));
 
             
             #line default
@@ -713,8 +713,8 @@ WriteLiteral("\r\n                                            id=\"userSearchBut
 
 WriteLiteral(" autocomplete=\"off\"");
 
-WriteLiteral(" onclick=\"directSearchPagingSorting(\'#progress\', \'#TeacherSearchForm\', \'#TeacherP" +
-"ager\', \'#TeacherList\', \'#SortBy\', \'#SortOrder\', \'#PageSizer\')\"");
+WriteLiteral(" onclick=\"directSearchPagingSorting(\'#progress\', \'#ApplicantSearchForm\', \'#ApplicantP" +
+"ager\', \'#ApplicantList\', \'#SortBy\', \'#SortOrder\', \'#PageSizer\')\"");
 
 WriteLiteral(" data-loading-text=\"درخواست\"");
 
@@ -729,7 +729,7 @@ WriteLiteral(" aria-controls=\"show-search\"");
 
 WriteLiteral(" aria-expanded=\"false\"");
 
-WriteLiteral(" onclick=\"resetSearch(\'#progress\', \'#TeacherSearchForm\', \'#TeacherPager\', \'#Teach" +
+WriteLiteral(" onclick=\"resetSearch(\'#progress\', \'#ApplicantSearchForm\', \'#ApplicantPager\', \'#Teach" +
 "erList\', \'#SortBy\', \'#SortOrder\', \'#PageSizer\')\"");
 
 WriteLiteral("\r\n                                            class=\" btn btn-default btn-sm\"");
@@ -750,7 +750,7 @@ WriteLiteral("></i>\r\n                                        لغو فیلتر
 "");
 
             
-            #line 202 "..\..\Views\Teacher\List.cshtml"
+            #line 202 "..\..\Views\Applicant\List.cshtml"
                 }
 
             
@@ -764,19 +764,19 @@ WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(" id=\"TeacherList\"");
+WriteLiteral(" id=\"ApplicantList\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 208 "..\..\Views\Teacher\List.cshtml"
+            #line 208 "..\..\Views\Applicant\List.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 208 "..\..\Views\Teacher\List.cshtml"
-               Html.RenderPartial(MVC.Teacher.Views.ViewNames._ListAjax, Model);
+            #line 208 "..\..\Views\Applicant\List.cshtml"
+               Html.RenderPartial(MVC.Applicant.Views.ViewNames._ListAjax, Model);
             
             #line default
             #line hidden
@@ -796,9 +796,9 @@ WriteLiteral(">\r\n                <button");
 
 WriteLiteral(" data-page=\"2\"");
 
-WriteLiteral(" id=\"TeacherPager\"");
+WriteLiteral(" id=\"ApplicantPager\"");
 
-WriteLiteral(" onclick=\"paging(\'#progress\', \'#TeacherSearchForm\', this, \'#SortBy\', \'#SortOrder\'" +
+WriteLiteral(" onclick=\"paging(\'#progress\', \'#ApplicantSearchForm\', this, \'#SortBy\', \'#SortOrder\'" +
 ", \'#PageSizer\')\"");
 
 WriteLiteral(" class=\"btn btn-info btn-block btn-sm\"");
@@ -819,8 +819,8 @@ WriteLiteral("></i>\r\n");
 WriteLiteral("                ");
 
             
-            #line 220 "..\..\Views\Teacher\List.cshtml"
-           Write(Html.DropDownList("SortBy", Model.SortableList, new {@class = "form-control", onchange = "sorting('progress', 'TeacherSearchForm', 'TeacherPager', 'SortBy', 'SortOrder', 'TeacherList','PageSizer');"}));
+            #line 220 "..\..\Views\Applicant\List.cshtml"
+           Write(Html.DropDownList("SortBy", Model.SortableList, new {@class = "form-control", onchange = "sorting('progress', 'ApplicantSearchForm', 'ApplicantPager', 'SortBy', 'SortOrder', 'ApplicantList','PageSizer');"}));
 
             
             #line default
@@ -838,8 +838,8 @@ WriteLiteral("></i>\r\n");
 WriteLiteral("                ");
 
             
-            #line 224 "..\..\Views\Teacher\List.cshtml"
-           Write(Html.DropDownList("SortOrder", Model.SortOrderList, new {@class = "form-control", onchange = "sorting('progress', 'TeacherSearchForm', 'TeacherPager', 'SortBy', 'SortOrder', 'TeacherList','PageSizer');"}));
+            #line 224 "..\..\Views\Applicant\List.cshtml"
+           Write(Html.DropDownList("SortOrder", Model.SortOrderList, new {@class = "form-control", onchange = "sorting('progress', 'ApplicantSearchForm', 'ApplicantPager', 'SortBy', 'SortOrder', 'ApplicantList','PageSizer');"}));
 
             
             #line default
@@ -857,8 +857,8 @@ WriteLiteral("></i>\r\n");
 WriteLiteral("                ");
 
             
-            #line 228 "..\..\Views\Teacher\List.cshtml"
-           Write(Html.DropDownList("PageSizer", Model.PageSizeList, new {@class = "form-control", onchange = "sorting('progress', 'TeacherSearchForm', 'TeacherPager', 'SortBy', 'SortOrder', 'TeacherList','PageSizer');"}));
+            #line 228 "..\..\Views\Applicant\List.cshtml"
+           Write(Html.DropDownList("PageSizer", Model.PageSizeList, new {@class = "form-control", onchange = "sorting('progress', 'ApplicantSearchForm', 'ApplicantPager', 'SortBy', 'SortOrder', 'ApplicantList','PageSizer');"}));
 
             
             #line default
@@ -875,7 +875,7 @@ WriteLiteral(">\r\n            <img");
 
 WriteAttribute("src", Tuple.Create(" src=\"", 14562), Tuple.Create("\"", 14612)
             
-            #line 232 "..\..\Views\Teacher\List.cshtml"
+            #line 232 "..\..\Views\Applicant\List.cshtml"
 , Tuple.Create(Tuple.Create("", 14568), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
             
             #line default
@@ -892,14 +892,14 @@ DefineSection("Menu", () => {
 WriteLiteral("\r\n");
 
             
-            #line 237 "..\..\Views\Teacher\List.cshtml"
+            #line 237 "..\..\Views\Applicant\List.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 237 "..\..\Views\Teacher\List.cshtml"
-      Html.RenderPartial(MVC.Shared.Views._TeacherManagementsSidbarMenu);
+            #line 237 "..\..\Views\Applicant\List.cshtml"
+      Html.RenderPartial(MVC.Shared.Views._ApplicantManagementsSidbarMenu);
             
             #line default
             #line hidden
@@ -914,7 +914,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 240 "..\..\Views\Teacher\List.cshtml"
+            #line 240 "..\..\Views\Applicant\List.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             

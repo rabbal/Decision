@@ -9,7 +9,7 @@ using Decision.Common.Filters;
 using Decision.Common.Helpers.Extentions;
 using Decision.Common.Helpers.Json;
 using Decision.DataLayer.Context;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Security;
 using Decision.ViewModel.WorkExperience;
 using Decision.Web.Extentions;
@@ -19,38 +19,38 @@ using MvcSiteMapProvider;
 namespace Decision.Web.Controllers
 {
     
-    [RoutePrefix("Teacher/WorkExperience")]
+    [RoutePrefix("Applicant/WorkExperience")]
     [Route("{action}")]
     [Mvc5Authorize(AssignableToRolePermissions.CanManageWorkExperience)]
     public partial class WorkExperienceController : Controller
     {
         #region	Fields
 
-        private readonly IReferentialTeacherService _referentialTeacherService;
+        private readonly IReferentialApplicantService _referentialApplicantService;
         private const string IranCitiesPath = "~/App_Data/IranCities.xml";
         private readonly IUnitOfWork _unitOfWork;
         private readonly IWorkExperienceService _workExperienceService;
         #endregion
 
         #region	Ctor
-        public WorkExperienceController(IUnitOfWork unitOfWork, IWorkExperienceService WorkExperienceService,IReferentialTeacherService referentialTeacherService)
+        public WorkExperienceController(IUnitOfWork unitOfWork, IWorkExperienceService WorkExperienceService,IReferentialApplicantService referentialApplicantService)
         {
             _unitOfWork = unitOfWork;
             _workExperienceService = WorkExperienceService;
-            _referentialTeacherService = referentialTeacherService;
+            _referentialApplicantService = referentialApplicantService;
         }
         #endregion
 
         #region List,ListAjax
         [HttpGet]
-        [Route("List/{TeacherId}")]
-        [TeacherAuthorize]
-        [MvcSiteMapNode(ParentKey = "Teacher_Details", Title = "لیست سوابق کاری استاد", PreservedRouteParameters = "TeacherId")]
-        public virtual async Task<ActionResult> List(Guid TeacherId)
+        [Route("List/{ApplicantId}")]
+        [ApplicantAuthorize]
+        [MvcSiteMapNode(ParentKey = "Applicant_Details", Title = "لیست سوابق کاری متقاضی", PreservedRouteParameters = "ApplicantId")]
+        public virtual async Task<ActionResult> List(Guid ApplicantId)
         {
             var viewModel = await _workExperienceService.GetPagedListAsync(new WorkExperienceSearchRequest
             {
-                TeacherId = TeacherId
+                ApplicantId = ApplicantId
             });
             return View( viewModel);
         }
@@ -60,7 +60,7 @@ namespace Decision.Web.Controllers
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public virtual async Task<ActionResult> ListAjax(WorkExperienceSearchRequest request)
         {
-            if (!_referentialTeacherService.CanManageTeacher(request.TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(request.ApplicantId)) return HttpNotFound();
             var viewModel = await _workExperienceService.GetPagedListAsync(request);
             if (viewModel.WorkExperiences == null || !viewModel.WorkExperiences.Any()) return Content("no-more-info");
             return PartialView(MVC.WorkExperience.Views._ListAjax, viewModel);
@@ -70,11 +70,11 @@ namespace Decision.Web.Controllers
         #region Create
         [HttpGet]
         [AjaxOnly]
-        public virtual async Task< ActionResult> Create(Guid TeacherId)
+        public virtual async Task< ActionResult> Create(Guid ApplicantId)
         {
-            if (!_referentialTeacherService.CanManageTeacher(TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
             
-            var viewModel =await _workExperienceService.GetForCreate(TeacherId, IranCitiesPath);
+            var viewModel =await _workExperienceService.GetForCreate(ApplicantId, IranCitiesPath);
             return PartialView(MVC.WorkExperience.Views._Create,viewModel);
         }
 
@@ -85,7 +85,7 @@ namespace Decision.Web.Controllers
         [Audit(Description = "درج سابقه کاری")]
         public virtual async Task<ActionResult> Create(AddWorkExperienceViewModel viewModel)
         {
-            if (!_referentialTeacherService.CanManageTeacher(viewModel.TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
             if (!ModelState.IsValid)
             {
                await _workExperienceService.FillAddViewModel(viewModel, IranCitiesPath);
@@ -121,7 +121,7 @@ namespace Decision.Web.Controllers
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var viewModel = await _workExperienceService.GetForEditAsync(id.Value, IranCitiesPath);
             if (viewModel == null) return HttpNotFound();
-            if (!_referentialTeacherService.CanManageTeacher(viewModel.TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
             return PartialView(MVC.WorkExperience.Views._Edit, viewModel);
         }
 
@@ -132,7 +132,7 @@ namespace Decision.Web.Controllers
         [Audit(Description = "ویرایش سابقه کاری ")]
         public virtual async Task<ActionResult> Edit(EditWorkExperienceViewModel viewModel)
         {
-            if (!_referentialTeacherService.CanManageTeacher(viewModel.TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
             if (!await _workExperienceService.IsInDb(viewModel.Id))
                 this.AddErrors("TitleId", "سابقه کاری مورد نظر توسط یکی از کاربران در شبکه،حذف شده است");
 
@@ -186,9 +186,9 @@ namespace Decision.Web.Controllers
         [ValidateAntiForgeryToken]
         [Audit(Description = "سابقه کاری ")]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        public virtual async Task<ActionResult> Delete(Guid id,Guid TeacherId)
+        public virtual async Task<ActionResult> Delete(Guid id,Guid ApplicantId)
         {
-            if (!_referentialTeacherService.CanManageTeacher(TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
             await _workExperienceService.DeleteAsync(id);
             return Content("ok");
         }

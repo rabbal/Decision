@@ -34,10 +34,10 @@ namespace ASP
     using MvcSiteMapProvider.Web.Html.Models;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Teacher/_Refer.cshtml")]
-    public partial class _Views_Teacher__Refer_cshtml : System.Web.Mvc.WebViewPage<Decision.ViewModel.ReferentialTeacher.AddReferentialTeacherViewModel>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Applicant/_Refer.cshtml")]
+    public partial class _Views_Applicant__Refer_cshtml : System.Web.Mvc.WebViewPage<Decision.ViewModel.ReferentialApplicant.AddReferentialApplicantViewModel>
     {
-        public _Views_Teacher__Refer_cshtml()
+        public _Views_Applicant__Refer_cshtml()
         {
         }
         public override void Execute()
@@ -70,49 +70,49 @@ WriteLiteral(">&times;</button>\r\n            <h6");
 
 WriteLiteral(" class=\"modal-title\"");
 
-WriteLiteral(">ارجاع استاد</h6>\r\n        </div>\r\n        <div");
+WriteLiteral(">ارجاع متقاضی</h6>\r\n        </div>\r\n        <div");
 
 WriteLiteral(" class=\"modal-body\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 10 "..\..\Views\Teacher\_Refer.cshtml"
+            #line 10 "..\..\Views\Applicant\_Refer.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 10 "..\..\Views\Teacher\_Refer.cshtml"
-             using (Ajax.BeginForm(MVC.Teacher.Refer(), new AjaxOptions { HttpMethod = "POST", OnComplete = "postOnComplete(xhr, status,'Teacher-"+Model.TeacherId+"', '#modal','referForm','#referButton')" }, new { @class = "form-horizontal", id = "referForm", autocomplete = "off" }))
+            #line 10 "..\..\Views\Applicant\_Refer.cshtml"
+             using (Ajax.BeginForm(MVC.Applicant.Refer(), new AjaxOptions { HttpMethod = "POST", OnComplete = "postOnComplete(xhr, status,'Applicant-"+Model.ApplicantId+"', '#modal','referForm','#referButton')" }, new { @class = "form-horizontal", id = "referForm", autocomplete = "off" }))
             {
                 
             
             #line default
             #line hidden
             
-            #line 12 "..\..\Views\Teacher\_Refer.cshtml"
+            #line 12 "..\..\Views\Applicant\_Refer.cshtml"
            Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 12 "..\..\Views\Teacher\_Refer.cshtml"
+            #line 12 "..\..\Views\Applicant\_Refer.cshtml"
                                         
                 
             
             #line default
             #line hidden
             
-            #line 13 "..\..\Views\Teacher\_Refer.cshtml"
-           Write(Html.HiddenFor(a=>a.TeacherId));
+            #line 13 "..\..\Views\Applicant\_Refer.cshtml"
+           Write(Html.HiddenFor(a=>a.ApplicantId));
 
             
             #line default
             #line hidden
             
-            #line 13 "..\..\Views\Teacher\_Refer.cshtml"
+            #line 13 "..\..\Views\Applicant\_Refer.cshtml"
                                                
 
             
@@ -131,7 +131,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 16 "..\..\Views\Teacher\_Refer.cshtml"
+            #line 16 "..\..\Views\Applicant\_Refer.cshtml"
                    Write(Html.LabelFor(m => m.ReferencedToId, new { @class = "col-md-2 control-label" }));
 
             
@@ -146,7 +146,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 18 "..\..\Views\Teacher\_Refer.cshtml"
+            #line 18 "..\..\Views\Applicant\_Refer.cshtml"
                        Write(Html.DropDownListFor(m => m.ReferencedToId,Model.RefrencedToUsers,"انتخاب کاربر",new{@class="form-control"}));
 
             
@@ -157,7 +157,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 19 "..\..\Views\Teacher\_Refer.cshtml"
+            #line 19 "..\..\Views\Applicant\_Refer.cshtml"
                        Write(Html.ValidationMessageFor(m => m.ReferencedToId, "", new { @class = "text-danger" }));
 
             
@@ -206,7 +206,7 @@ WriteLiteral(">\r\n                                انصراف\r\n             
 "iv>\r\n");
 
             
-            #line 35 "..\..\Views\Teacher\_Refer.cshtml"
+            #line 35 "..\..\Views\Applicant\_Refer.cshtml"
             }
 
             

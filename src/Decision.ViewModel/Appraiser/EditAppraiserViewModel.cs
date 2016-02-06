@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using Decision.DomainClasses.Entities.Common;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Common;
 
 namespace Decision.ViewModel.Appraiser
@@ -26,7 +26,7 @@ namespace Decision.ViewModel.Appraiser
         [Required(ErrorMessage = "لطفا نام  را وارد کنید")]
         [StringLength(256, MinimumLength = 3, ErrorMessage = "نام باید بین سه تا ۲۵۶ کاراکتر باشد")]
         [DisplayName("نام")]
-        [RegularExpression(@"^[\u0600-\u06FF,\u0590-\u05FF,۰-۹\s]*$", ErrorMessage = "لطفا فقط ازاعداد و حروف  فارسی برای نام استاد استفاده کنید")]
+        [RegularExpression(@"^[\u0600-\u06FF,\u0590-\u05FF,۰-۹\s]*$", ErrorMessage = "لطفا فقط ازاعداد و حروف  فارسی برای نام متقاضی استفاده کنید")]
         public string FirstName { get; set; }
         /// <summary>
         /// نام خانوادگی ارزیاب
@@ -34,7 +34,7 @@ namespace Decision.ViewModel.Appraiser
         [Required(ErrorMessage = "لطفا نام خانوادگی را وارد کنید")]
         [StringLength(256, MinimumLength = 3, ErrorMessage = "نام خانوادگی باید بین سه تا ۲۵۶ کاراکتر باشد")]
         [DisplayName("نام خانوادگی")]
-        [RegularExpression(@"^[\u0600-\u06FF,\u0590-\u05FF,۰-۹\s]*$", ErrorMessage = "لطفا فقط ازاعداد و حروف  فارسی برای نام استاد استفاده کنید")]
+        [RegularExpression(@"^[\u0600-\u06FF,\u0590-\u05FF,۰-۹\s]*$", ErrorMessage = "لطفا فقط ازاعداد و حروف  فارسی برای نام متقاضی استفاده کنید")]
         public string LastName { get; set; }
         /// <summary>
         /// شماره همراه ارزیاب

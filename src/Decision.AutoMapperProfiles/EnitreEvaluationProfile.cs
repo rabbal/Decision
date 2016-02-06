@@ -14,7 +14,7 @@ namespace Decision.AutoMapperProfiles
     /// <summary>
     /// تنظیمات مربوط به
     /// AutoMapper 
-    /// برای کلاس ارزیابی از استاد 
+    /// برای کلاس ارزیابی از متقاضی 
     /// </summary>
     public class EntireEvaluationProfile : Profile
     {

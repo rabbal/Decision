@@ -8,7 +8,7 @@ namespace Decision.DomainClasses.Entities.Evaluations
     /// <summary>
     /// نشان دهنده یک پاسخ برای سوال
     /// </summary>
-    public class AnswerOption 
+    public class AnswerOption
     {
         #region Ctor
 
@@ -27,20 +27,28 @@ namespace Decision.DomainClasses.Entities.Evaluations
         /// </summary>
         public virtual Guid Id { get; set; }
         /// <summary>
-        /// نام گزینه پاسخ
+        /// عنوان گزینه پاسخ
         /// </summary>
-        public virtual string Name { get; set; }
+        public virtual string Title { get; set; }
         /// <summary>
         /// وزن ارزشی گزینه
         /// </summary>
         public virtual int Weight { get; set; }
+        /// <summary>
+        /// توضیحاتی در مورد گزینه
+        /// </summary>
+        public string Description { get; set; }
+        /// <summary>
+        /// ترتیب نمایش
+        /// </summary>
+        public int DisplayOrder { get; set; }
         #endregion
 
         #region NavigationProperties
         /// <summary>
         /// لیست ارزیابی هایی که این گزینه رو انتخاب کرده اند
         /// </summary>
-        public virtual ICollection<ArticleEvaluation> ArticleEvaluations { get; set; }
+        public virtual ICollection<EntireEvaluation> EntireEvaluations { get; set; }
         /// <summary>
         /// سوالی که این گزینه جز پاسخ های آن است
         /// </summary>

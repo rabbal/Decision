@@ -3,7 +3,7 @@
 namespace Decision.ViewModel.EducationalBackground
 {
     /// <summary>
-    /// ویو مدل نمایش لیست سوابق تحصیلی استاد
+    /// ویو مدل نمایش لیست سوابق تحصیلی متقاضی
     /// </summary>
     public class EducationalBackgroundListViewModel
     {
@@ -13,7 +13,7 @@ namespace Decision.ViewModel.EducationalBackground
         public EducationalBackgroundSearchRequest SearchRequest { get; set; }
 
         /// <summary>
-        /// لیست ویو مدل نمایش سابقه تحصیلی استاد
+        /// لیست ویو مدل نمایش سابقه تحصیلی متقاضی
         /// </summary>
         public IEnumerable<EducationalBackgroundViewModel> EducationalBackgrounds { get; set; }
 

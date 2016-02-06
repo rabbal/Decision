@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using Decision.DomainClasses.Entities.Common;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Common;
 
 namespace Decision.ViewModel.Address
@@ -48,7 +48,7 @@ namespace Decision.ViewModel.Address
         /// </summary>
         public AddressType Type { get; set; }
 
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
 
         #endregion
     }

@@ -28,13 +28,13 @@ namespace ASP
     using System.Web.UI;
     using System.Web.WebPages;
     
-    #line 1 "..\..\Views\Teacher\Edit.cshtml"
+    #line 1 "..\..\Views\Applicant\Edit.cshtml"
     using Decision.Common.Helpers;
     
     #line default
     #line hidden
     
-    #line 2 "..\..\Views\Teacher\Edit.cshtml"
+    #line 2 "..\..\Views\Applicant\Edit.cshtml"
     using Decision.Common.Helpers.Extentions;
     
     #line default
@@ -43,7 +43,7 @@ namespace ASP
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     
-    #line 3 "..\..\Views\Teacher\Edit.cshtml"
+    #line 3 "..\..\Views\Applicant\Edit.cshtml"
     using Decision.Web.RazorHelpers;
     
     #line default
@@ -52,18 +52,18 @@ namespace ASP
     using MvcSiteMapProvider.Web.Html.Models;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Teacher/Edit.cshtml")]
-    public partial class _Views_Teacher_Edit_cshtml : System.Web.Mvc.WebViewPage<Decision.ViewModel.Teacher.EditTeacherViewModel>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Applicant/Edit.cshtml")]
+    public partial class _Views_Applicant_Edit_cshtml : System.Web.Mvc.WebViewPage<Decision.ViewModel.Applicant.EditApplicantViewModel>
     {
-        public _Views_Teacher_Edit_cshtml()
+        public _Views_Applicant_Edit_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 5 "..\..\Views\Teacher\Edit.cshtml"
+            #line 5 "..\..\Views\Applicant\Edit.cshtml"
   
-    ViewBag.Title = "ویرایش استاد";
+    ViewBag.Title = "ویرایش متقاضی";
 
             
             #line default
@@ -71,78 +71,78 @@ namespace ASP
 WriteLiteral("\r\n");
 
             
-            #line 8 "..\..\Views\Teacher\Edit.cshtml"
- using (Html.BeginForm(MVC.Teacher.Edit(), FormMethod.Post, new { role = "form", @class = "form-horizontal", autocomplete = "off", id = "editTeacherForm", enctype = "multipart/form-data" }))
+            #line 8 "..\..\Views\Applicant\Edit.cshtml"
+ using (Html.BeginForm(MVC.Applicant.Edit(), FormMethod.Post, new { role = "form", @class = "form-horizontal", autocomplete = "off", id = "editApplicantForm", enctype = "multipart/form-data" }))
 {
     
             
             #line default
             #line hidden
             
-            #line 10 "..\..\Views\Teacher\Edit.cshtml"
+            #line 10 "..\..\Views\Applicant\Edit.cshtml"
 Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 10 "..\..\Views\Teacher\Edit.cshtml"
+            #line 10 "..\..\Views\Applicant\Edit.cshtml"
                             
     
             
             #line default
             #line hidden
             
-            #line 11 "..\..\Views\Teacher\Edit.cshtml"
+            #line 11 "..\..\Views\Applicant\Edit.cshtml"
 Write(Html.HiddenFor(model => model.Id));
 
             
             #line default
             #line hidden
             
-            #line 11 "..\..\Views\Teacher\Edit.cshtml"
+            #line 11 "..\..\Views\Applicant\Edit.cshtml"
                                       
     
             
             #line default
             #line hidden
             
-            #line 12 "..\..\Views\Teacher\Edit.cshtml"
+            #line 12 "..\..\Views\Applicant\Edit.cshtml"
 Write(Html.HiddenFor(model => model.PhotoScan));
 
             
             #line default
             #line hidden
             
-            #line 12 "..\..\Views\Teacher\Edit.cshtml"
+            #line 12 "..\..\Views\Applicant\Edit.cshtml"
                                              
     
             
             #line default
             #line hidden
             
-            #line 13 "..\..\Views\Teacher\Edit.cshtml"
+            #line 13 "..\..\Views\Applicant\Edit.cshtml"
 Write(Html.HiddenFor(model => model.CopyOfBirthCertificateScan));
 
             
             #line default
             #line hidden
             
-            #line 13 "..\..\Views\Teacher\Edit.cshtml"
+            #line 13 "..\..\Views\Applicant\Edit.cshtml"
                                                               
     
             
             #line default
             #line hidden
             
-            #line 14 "..\..\Views\Teacher\Edit.cshtml"
+            #line 14 "..\..\Views\Applicant\Edit.cshtml"
 Write(Html.HiddenFor(model => model.CopyOfNationalCardScan));
 
             
             #line default
             #line hidden
             
-            #line 14 "..\..\Views\Teacher\Edit.cshtml"
+            #line 14 "..\..\Views\Applicant\Edit.cshtml"
                                                           
 
 
@@ -171,11 +171,11 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 21 "..\..\Views\Teacher\Edit.cshtml"
+            #line 21 "..\..\Views\Applicant\Edit.cshtml"
                Write(Html.HelpAlert(Url.Content("~/Content/Images/lightbulb.png"),
                     "در صورت عمل نکردن دکمه ثبت،توجه داشته باشید که تمام اطلاعات را در تمام تب های موجود صحیح وارد کرده باشید",
 
-         "برای فایل های ضمیمه مربوط به استاد از امکان آپلود تصاویر یا اسکن  میتوانید بهره مند شوید.",
+         "برای فایل های ضمیمه مربوط به متقاضی از امکان آپلود تصاویر یا اسکن  میتوانید بهره مند شوید.",
                     "دقت کنید در صورت انتخاب فایل جدید،جایگزین فایل های جدید خواهد شد"
            ));
 
@@ -200,7 +200,7 @@ WriteLiteral(" type=\"button\"");
 
 WriteLiteral(" autocomplete=\"off\"");
 
-WriteLiteral(" onclick=\"AjaxForm.CustomSubmit(this, \'editTeacherForm\')\"");
+WriteLiteral(" onclick=\"AjaxForm.CustomSubmit(this, \'editApplicantForm\')\"");
 
 WriteLiteral(" data-loading-text=\"در حال ارسال اطلاعات\"");
 
@@ -280,7 +280,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 61 "..\..\Views\Teacher\Edit.cshtml"
+            #line 61 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -295,7 +295,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 63 "..\..\Views\Teacher\Edit.cshtml"
+            #line 63 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.NoAutoCompleteTextBoxFor(model => model.FirstName));
 
             
@@ -306,7 +306,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 64 "..\..\Views\Teacher\Edit.cshtml"
+            #line 64 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" }));
 
             
@@ -322,7 +322,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 68 "..\..\Views\Teacher\Edit.cshtml"
+            #line 68 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -337,7 +337,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 70 "..\..\Views\Teacher\Edit.cshtml"
+            #line 70 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.NoAutoCompleteTextBoxFor(model => model.LastName));
 
             
@@ -348,7 +348,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 71 "..\..\Views\Teacher\Edit.cshtml"
+            #line 71 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" }));
 
             
@@ -364,7 +364,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 75 "..\..\Views\Teacher\Edit.cshtml"
+            #line 75 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.PersonnelCode, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -379,7 +379,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 77 "..\..\Views\Teacher\Edit.cshtml"
+            #line 77 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.NoAutoCompleteTextBoxForLtr(model => model.PersonnelCode));
 
             
@@ -390,7 +390,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 78 "..\..\Views\Teacher\Edit.cshtml"
+            #line 78 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.PersonnelCode, "", new { @class = "text-danger" }));
 
             
@@ -406,7 +406,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 82 "..\..\Views\Teacher\Edit.cshtml"
+            #line 82 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.NationalCode, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -421,7 +421,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 84 "..\..\Views\Teacher\Edit.cshtml"
+            #line 84 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.NoAutoCompleteTextBoxForLtr(model => model.NationalCode));
 
             
@@ -432,7 +432,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 85 "..\..\Views\Teacher\Edit.cshtml"
+            #line 85 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.NationalCode, "", new { @class = "text-danger" }));
 
             
@@ -448,7 +448,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 89 "..\..\Views\Teacher\Edit.cshtml"
+            #line 89 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.BirthCertificateNumber, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -463,7 +463,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 91 "..\..\Views\Teacher\Edit.cshtml"
+            #line 91 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.NoAutoCompleteTextBoxForLtr(model => model.BirthCertificateNumber));
 
             
@@ -474,7 +474,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 92 "..\..\Views\Teacher\Edit.cshtml"
+            #line 92 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.BirthCertificateNumber, "", new { @class = "text-danger" }));
 
             
@@ -490,7 +490,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 96 "..\..\Views\Teacher\Edit.cshtml"
+            #line 96 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -505,7 +505,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 98 "..\..\Views\Teacher\Edit.cshtml"
+            #line 98 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.EditorFor(model => model.Gender, new { @class = "form-control" }));
 
             
@@ -516,7 +516,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 99 "..\..\Views\Teacher\Edit.cshtml"
+            #line 99 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" }));
 
             
@@ -527,7 +527,7 @@ WriteLiteral("\r\n                                </div>\r\n");
 WriteLiteral("                                ");
 
             
-            #line 101 "..\..\Views\Teacher\Edit.cshtml"
+            #line 101 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.MarriageStatus, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -542,7 +542,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 103 "..\..\Views\Teacher\Edit.cshtml"
+            #line 103 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.EditorFor(model => model.MarriageStatus, new { @class = "form-control" }));
 
             
@@ -553,7 +553,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 104 "..\..\Views\Teacher\Edit.cshtml"
+            #line 104 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.MarriageStatus, "", new { @class = "text-danger" }));
 
             
@@ -569,7 +569,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 108 "..\..\Views\Teacher\Edit.cshtml"
+            #line 108 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.BirthPlaceState, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -584,7 +584,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 110 "..\..\Views\Teacher\Edit.cshtml"
+            #line 110 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.DropDownListFor(model => model.BirthPlaceState,
                             Model.StatesForBirthPlace, "انتخاب استان محل تولد", new
                             {
@@ -603,7 +603,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 119 "..\..\Views\Teacher\Edit.cshtml"
+            #line 119 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.BirthPlaceState, "", new { @class = "text-danger" }));
 
             
@@ -614,7 +614,7 @@ WriteLiteral("\r\n                                </div>\r\n");
 WriteLiteral("                                ");
 
             
-            #line 121 "..\..\Views\Teacher\Edit.cshtml"
+            #line 121 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.BirthPlaceCity, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -629,7 +629,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 123 "..\..\Views\Teacher\Edit.cshtml"
+            #line 123 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.DropDownListFor(model => model.BirthPlaceCity, Model.CitiesForBirthPlace, "انتخاب شهر محل تولد", new { @class = "form-control" }));
 
             
@@ -640,7 +640,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 124 "..\..\Views\Teacher\Edit.cshtml"
+            #line 124 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.BirthPlaceCity, "", new { @class = "text-danger" }));
 
             
@@ -656,7 +656,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 128 "..\..\Views\Teacher\Edit.cshtml"
+            #line 128 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.BirthDate, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -671,7 +671,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 130 "..\..\Views\Teacher\Edit.cshtml"
+            #line 130 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.EditorFor(model => model.BirthDate, MVC.Shared.Views.EditorTemplates.PersianDatePicker));
 
             
@@ -682,7 +682,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 131 "..\..\Views\Teacher\Edit.cshtml"
+            #line 131 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" }));
 
             
@@ -713,7 +713,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 141 "..\..\Views\Teacher\Edit.cshtml"
+            #line 141 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.BankName, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -728,7 +728,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 143 "..\..\Views\Teacher\Edit.cshtml"
+            #line 143 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.NoAutoCompleteTextBoxFor(model => model.BankName));
 
             
@@ -739,7 +739,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 144 "..\..\Views\Teacher\Edit.cshtml"
+            #line 144 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.BankName, "", new { @class = "text-danger" }));
 
             
@@ -755,7 +755,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 148 "..\..\Views\Teacher\Edit.cshtml"
+            #line 148 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.BankBranch, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -770,7 +770,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 150 "..\..\Views\Teacher\Edit.cshtml"
+            #line 150 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.NoAutoCompleteTextBoxFor(model => model.BankBranch));
 
             
@@ -781,7 +781,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 151 "..\..\Views\Teacher\Edit.cshtml"
+            #line 151 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.BankBranch, "", new { @class = "text-danger" }));
 
             
@@ -797,7 +797,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 155 "..\..\Views\Teacher\Edit.cshtml"
+            #line 155 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.AccountNumber, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -812,7 +812,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 157 "..\..\Views\Teacher\Edit.cshtml"
+            #line 157 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.NoAutoCompleteTextBoxFor(model => model.AccountNumber));
 
             
@@ -823,7 +823,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 158 "..\..\Views\Teacher\Edit.cshtml"
+            #line 158 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.AccountNumber, "", new { @class = "text-danger" }));
 
             
@@ -854,7 +854,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 168 "..\..\Views\Teacher\Edit.cshtml"
+            #line 168 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.TrainingGPA, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -869,7 +869,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 170 "..\..\Views\Teacher\Edit.cshtml"
+            #line 170 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.EditorFor(model => model.TrainingGPA));
 
             
@@ -880,7 +880,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 171 "..\..\Views\Teacher\Edit.cshtml"
+            #line 171 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.TrainingGPA, "", new { @class = "text-danger" }));
 
             
@@ -891,7 +891,7 @@ WriteLiteral("\r\n                                </div>\r\n");
 WriteLiteral("                                ");
 
             
-            #line 173 "..\..\Views\Teacher\Edit.cshtml"
+            #line 173 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.TrainigGrade, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -906,7 +906,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 175 "..\..\Views\Teacher\Edit.cshtml"
+            #line 175 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.NoAutoCompleteTextBoxForLtr(model => model.TrainigGrade));
 
             
@@ -917,7 +917,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 176 "..\..\Views\Teacher\Edit.cshtml"
+            #line 176 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.TrainigGrade, "", new { @class = "text-danger" }));
 
             
@@ -933,7 +933,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 180 "..\..\Views\Teacher\Edit.cshtml"
+            #line 180 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.CollegiateOrder, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -948,7 +948,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 182 "..\..\Views\Teacher\Edit.cshtml"
+            #line 182 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.NoAutoCompleteTextBoxForNumber(model => model.CollegiateOrder));
 
             
@@ -959,7 +959,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 183 "..\..\Views\Teacher\Edit.cshtml"
+            #line 183 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.CollegiateOrder, "", new { @class = "text-danger" }));
 
             
@@ -970,7 +970,7 @@ WriteLiteral("\r\n                                </div>\r\n");
 WriteLiteral("                                ");
 
             
-            #line 185 "..\..\Views\Teacher\Edit.cshtml"
+            #line 185 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.OccupationalGroup, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -985,7 +985,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 187 "..\..\Views\Teacher\Edit.cshtml"
+            #line 187 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.NoAutoCompleteTextBoxForNumber(model => model.OccupationalGroup));
 
             
@@ -996,7 +996,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 188 "..\..\Views\Teacher\Edit.cshtml"
+            #line 188 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.OccupationalGroup, "", new { @class = "text-danger" }));
 
             
@@ -1012,7 +1012,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 192 "..\..\Views\Teacher\Edit.cshtml"
+            #line 192 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.OfficialYears, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -1027,7 +1027,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 194 "..\..\Views\Teacher\Edit.cshtml"
+            #line 194 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.NoAutoCompleteTextBoxForNumber(model => model.OfficialYears));
 
             
@@ -1038,7 +1038,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 195 "..\..\Views\Teacher\Edit.cshtml"
+            #line 195 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.OfficialYears, "", new { @class = "text-danger" }));
 
             
@@ -1049,7 +1049,7 @@ WriteLiteral("\r\n                                </div>\r\n");
 WriteLiteral("                                ");
 
             
-            #line 197 "..\..\Views\Teacher\Edit.cshtml"
+            #line 197 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.CollegiateYears, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -1064,7 +1064,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 199 "..\..\Views\Teacher\Edit.cshtml"
+            #line 199 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.NoAutoCompleteTextBoxForNumber(model => model.CollegiateYears));
 
             
@@ -1075,7 +1075,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 200 "..\..\Views\Teacher\Edit.cshtml"
+            #line 200 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.CollegiateYears, "", new { @class = "text-danger" }));
 
             
@@ -1091,7 +1091,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 204 "..\..\Views\Teacher\Edit.cshtml"
+            #line 204 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.PositionId, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -1106,7 +1106,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 206 "..\..\Views\Teacher\Edit.cshtml"
+            #line 206 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.DropDownListFor(model => model.PositionId, Model.Positions, new { @class = "form-control" }));
 
             
@@ -1117,7 +1117,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 207 "..\..\Views\Teacher\Edit.cshtml"
+            #line 207 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.PositionId, "", new { @class = "text-danger" }));
 
             
@@ -1133,7 +1133,7 @@ WriteLiteral(">\r\n\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 212 "..\..\Views\Teacher\Edit.cshtml"
+            #line 212 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.CheckBoxFor(model => model.IsClothed, new { @class = "checkbox-inline" }));
 
             
@@ -1144,7 +1144,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 213 "..\..\Views\Teacher\Edit.cshtml"
+            #line 213 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.LabelFor(a => a.IsClothed, new { @class = "control-label" }));
 
             
@@ -1175,7 +1175,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 224 "..\..\Views\Teacher\Edit.cshtml"
+            #line 224 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.TrainingCenterState, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -1190,7 +1190,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 226 "..\..\Views\Teacher\Edit.cshtml"
+            #line 226 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.DropDownListFor(model => model.TrainingCenterState, Model.StatesForTrainingCeneter, "انتخاب", new
                    {
                        @class = "form-control cascade",
@@ -1208,7 +1208,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 234 "..\..\Views\Teacher\Edit.cshtml"
+            #line 234 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.TrainingCenterState, "", new { @class = "text-danger" }));
 
             
@@ -1219,7 +1219,7 @@ WriteLiteral("\r\n                                </div>\r\n");
 WriteLiteral("                                ");
 
             
-            #line 236 "..\..\Views\Teacher\Edit.cshtml"
+            #line 236 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.TrainingCenterCity, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -1234,7 +1234,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 238 "..\..\Views\Teacher\Edit.cshtml"
+            #line 238 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.DropDownListFor(model => model.TrainingCenterCity, Model.CitiesForTrainingCeneter, "انتخاب", new
                    {
                        @class = "form-control cascade",
@@ -1252,7 +1252,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 246 "..\..\Views\Teacher\Edit.cshtml"
+            #line 246 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.TrainingCenterCity, "", new { @class = "text-danger" }));
 
             
@@ -1268,7 +1268,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 250 "..\..\Views\Teacher\Edit.cshtml"
+            #line 250 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.TrainingCenterId, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -1283,7 +1283,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 252 "..\..\Views\Teacher\Edit.cshtml"
+            #line 252 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.DropDownListFor(model => model.TrainingCenterId, Model.TrainingCenters, "انتخاب", new
                    {
                        @class = "form-control cascade",
@@ -1301,7 +1301,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 260 "..\..\Views\Teacher\Edit.cshtml"
+            #line 260 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.TrainingCenterId, "", new { @class = "text-danger" }));
 
             
@@ -1312,7 +1312,7 @@ WriteLiteral("\r\n                                </div>\r\n");
 WriteLiteral("                                ");
 
             
-            #line 262 "..\..\Views\Teacher\Edit.cshtml"
+            #line 262 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.TrainingCourseId, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -1327,7 +1327,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 264 "..\..\Views\Teacher\Edit.cshtml"
+            #line 264 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.DropDownListFor(model => model.TrainingCourseId, Model.TrainingCourses, "انتخاب", new { @class = "form-control" }));
 
             
@@ -1338,7 +1338,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 265 "..\..\Views\Teacher\Edit.cshtml"
+            #line 265 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.ValidationMessageFor(model => model.TrainingCourseId, "", new { @class = "text-danger" }));
 
             
@@ -1369,7 +1369,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 275 "..\..\Views\Teacher\Edit.cshtml"
+            #line 275 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.CopyOfNationalCardFile, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -1384,7 +1384,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 277 "..\..\Views\Teacher\Edit.cshtml"
+            #line 277 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.TextBoxFor(model => model.CopyOfNationalCardFile, new { type = "file", @class = "form-control " }));
 
             
@@ -1409,7 +1409,7 @@ WriteAttribute("class", Tuple.Create(" class=\"", 19063), Tuple.Create("\"", 191
 , Tuple.Create(Tuple.Create(" ", 19074), Tuple.Create("btn-primary", 19075), true)
 , Tuple.Create(Tuple.Create("   ", 19086), Tuple.Create("btn-sm", 19089), true)
             
-            #line 280 "..\..\Views\Teacher\Edit.cshtml"
+            #line 280 "..\..\Views\Applicant\Edit.cshtml"
                                                                                       , Tuple.Create(Tuple.Create(" ", 19095), Tuple.Create<System.Object, System.Int32>(Model.CopyOfNationalCardScan.HasValue() ? "scan-remove" : "scan"
             
             #line default
@@ -1420,13 +1420,13 @@ WriteAttribute("class", Tuple.Create(" class=\"", 19063), Tuple.Create("\"", 191
 WriteLiteral(">\r\n");
 
             
-            #line 281 "..\..\Views\Teacher\Edit.cshtml"
+            #line 281 "..\..\Views\Applicant\Edit.cshtml"
                                         
             
             #line default
             #line hidden
             
-            #line 281 "..\..\Views\Teacher\Edit.cshtml"
+            #line 281 "..\..\Views\Applicant\Edit.cshtml"
                                          if (Model.CopyOfNationalCardScan.HasValue())
                                         {
             
@@ -1442,7 +1442,7 @@ WriteLiteral("></i>\r\n                                حذف فایل اسکن 
 WriteLiteral("\r\n");
 
             
-            #line 286 "..\..\Views\Teacher\Edit.cshtml"
+            #line 286 "..\..\Views\Applicant\Edit.cshtml"
                                         }
                                         else
                                         {
@@ -1459,7 +1459,7 @@ WriteLiteral("></i>\r\n                                افزودن اسکن\r\n
 WriteLiteral("\r\n");
 
             
-            #line 292 "..\..\Views\Teacher\Edit.cshtml"
+            #line 292 "..\..\Views\Applicant\Edit.cshtml"
                                         }
 
             
@@ -1475,7 +1475,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 297 "..\..\Views\Teacher\Edit.cshtml"
+            #line 297 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.CopyOfBirthCertificateFile, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -1490,7 +1490,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 299 "..\..\Views\Teacher\Edit.cshtml"
+            #line 299 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.TextBoxFor(model => model.CopyOfBirthCertificateFile, new { type = "file", @class = "form-control " }));
 
             
@@ -1515,7 +1515,7 @@ WriteAttribute("class", Tuple.Create(" class=\"", 20571), Tuple.Create("\"", 206
 , Tuple.Create(Tuple.Create(" ", 20582), Tuple.Create("btn-primary", 20583), true)
 , Tuple.Create(Tuple.Create("   ", 20594), Tuple.Create("btn-sm", 20597), true)
             
-            #line 302 "..\..\Views\Teacher\Edit.cshtml"
+            #line 302 "..\..\Views\Applicant\Edit.cshtml"
                                                                                           , Tuple.Create(Tuple.Create(" ", 20603), Tuple.Create<System.Object, System.Int32>(Model.CopyOfNationalCardScan.HasValue() ? "scan-remove" : "scan"
             
             #line default
@@ -1526,13 +1526,13 @@ WriteAttribute("class", Tuple.Create(" class=\"", 20571), Tuple.Create("\"", 206
 WriteLiteral(">\r\n");
 
             
-            #line 303 "..\..\Views\Teacher\Edit.cshtml"
+            #line 303 "..\..\Views\Applicant\Edit.cshtml"
                                         
             
             #line default
             #line hidden
             
-            #line 303 "..\..\Views\Teacher\Edit.cshtml"
+            #line 303 "..\..\Views\Applicant\Edit.cshtml"
                                          if (Model.CopyOfBirthCertificateScan.HasValue())
                                         {
             
@@ -1548,7 +1548,7 @@ WriteLiteral("></i>\r\n                                حذف فایل اسکن 
 WriteLiteral("\r\n");
 
             
-            #line 308 "..\..\Views\Teacher\Edit.cshtml"
+            #line 308 "..\..\Views\Applicant\Edit.cshtml"
                                         }
                                         else
                                         {
@@ -1565,7 +1565,7 @@ WriteLiteral("></i>\r\n                                افزودن اسکن\r\n
 WriteLiteral("\r\n");
 
             
-            #line 314 "..\..\Views\Teacher\Edit.cshtml"
+            #line 314 "..\..\Views\Applicant\Edit.cshtml"
                                         }
 
             
@@ -1581,7 +1581,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 319 "..\..\Views\Teacher\Edit.cshtml"
+            #line 319 "..\..\Views\Applicant\Edit.cshtml"
                            Write(Html.LabelFor(model => model.PhotoFile, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -1596,7 +1596,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 321 "..\..\Views\Teacher\Edit.cshtml"
+            #line 321 "..\..\Views\Applicant\Edit.cshtml"
                                Write(Html.TextBoxFor(model => model.PhotoFile, new { type = "file", @class = "form-control " }));
 
             
@@ -1621,7 +1621,7 @@ WriteAttribute("class", Tuple.Create(" class=\"", 22033), Tuple.Create("\"", 221
 , Tuple.Create(Tuple.Create(" ", 22044), Tuple.Create("btn-primary", 22045), true)
 , Tuple.Create(Tuple.Create("   ", 22056), Tuple.Create("btn-sm", 22059), true)
             
-            #line 324 "..\..\Views\Teacher\Edit.cshtml"
+            #line 324 "..\..\Views\Applicant\Edit.cshtml"
                                                                          , Tuple.Create(Tuple.Create(" ", 22065), Tuple.Create<System.Object, System.Int32>(Model.CopyOfNationalCardScan.HasValue() ? "scan-remove" : "scan"
             
             #line default
@@ -1632,13 +1632,13 @@ WriteAttribute("class", Tuple.Create(" class=\"", 22033), Tuple.Create("\"", 221
 WriteLiteral(">\r\n");
 
             
-            #line 325 "..\..\Views\Teacher\Edit.cshtml"
+            #line 325 "..\..\Views\Applicant\Edit.cshtml"
                                         
             
             #line default
             #line hidden
             
-            #line 325 "..\..\Views\Teacher\Edit.cshtml"
+            #line 325 "..\..\Views\Applicant\Edit.cshtml"
                                          if (Model.PhotoScan.HasValue())
                                         {
             
@@ -1654,7 +1654,7 @@ WriteLiteral("></i>\r\n                                حذف فایل اسکن 
 WriteLiteral("\r\n");
 
             
-            #line 330 "..\..\Views\Teacher\Edit.cshtml"
+            #line 330 "..\..\Views\Applicant\Edit.cshtml"
                                         }
                                         else
                                         {
@@ -1671,7 +1671,7 @@ WriteLiteral("></i>\r\n                                افزودن اسکن\r\n
 WriteLiteral("\r\n");
 
             
-            #line 336 "..\..\Views\Teacher\Edit.cshtml"
+            #line 336 "..\..\Views\Applicant\Edit.cshtml"
                                         }
 
             
@@ -1683,7 +1683,7 @@ WriteLiteral("                                    </button>\r\n                 
 "\r\n    </div>\r\n");
 
             
-            #line 346 "..\..\Views\Teacher\Edit.cshtml"
+            #line 346 "..\..\Views\Applicant\Edit.cshtml"
 }
 
             
@@ -1694,14 +1694,14 @@ DefineSection("Menu", () => {
 WriteLiteral("\r\n");
 
             
-            #line 348 "..\..\Views\Teacher\Edit.cshtml"
+            #line 348 "..\..\Views\Applicant\Edit.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 348 "..\..\Views\Teacher\Edit.cshtml"
-      Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.Id);
+            #line 348 "..\..\Views\Applicant\Edit.cshtml"
+      Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.Id);
             
             #line default
             #line hidden
@@ -1716,7 +1716,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 351 "..\..\Views\Teacher\Edit.cshtml"
+            #line 351 "..\..\Views\Applicant\Edit.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             
@@ -1727,7 +1727,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 352 "..\..\Views\Teacher\Edit.cshtml"
+            #line 352 "..\..\Views\Applicant\Edit.cshtml"
 Write(Scripts.Render("~/bundles/datePicker"));
 
             

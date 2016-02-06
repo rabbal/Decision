@@ -2,14 +2,14 @@
 using System.Web.Mvc;
 using Decision.ViewModel.Common;
 
-namespace Decision.ViewModel.Teacher
+namespace Decision.ViewModel.Applicant
 {
     /// <summary>
-    /// ویو مدل نمایش لیست استاد ها
+    /// ویو مدل نمایش لیست متقاضی ها
     /// </summary>
-    public class TeacherListViewModel
+    public class ApplicantListViewModel
     {
-        public TeacherListViewModel()
+        public ApplicantListViewModel()
         {
             Cities = new List<SelectListItem>();
 
@@ -37,33 +37,33 @@ namespace Decision.ViewModel.Teacher
             {
                 new SelectListItem
                 {
-                    Value = TeacherSortBy.CreateDate,
+                    Value = ApplicantSortBy.CreateDate,
                     Text = "تاریخ درج"
                 },
                 new SelectListItem
                 {
-                    Value = TeacherSortBy.LastModifiedDate,
+                    Value = ApplicantSortBy.LastModifiedDate,
                     Text = "تاریخ آخرین تغییر"
                 },
                 new SelectListItem
                 {
-                    Value = TeacherSortBy.FirstName,
+                    Value = ApplicantSortBy.FirstName,
                     Text = "نام"
                 },
                 new SelectListItem
                 {
-                    Value = TeacherSortBy.LastName,
+                    Value = ApplicantSortBy.LastName,
                     Text = "نام خانوادگی"
                 },
 
                 new SelectListItem
                 {
-                    Value = TeacherSortBy.CollegiateOrder,
+                    Value = ApplicantSortBy.CollegiateOrder,
                     Text = "پایه"
                 },
                 new SelectListItem
                 {
-                    Value = TeacherSortBy.OccupationalGroup,
+                    Value = ApplicantSortBy.OccupationalGroup,
                     Text = "گروه شغلی"
                 }
 
@@ -109,12 +109,12 @@ namespace Decision.ViewModel.Teacher
         /// <summary>
         /// اطلاعات جستجو و مرتب سازی
         /// </summary>
-        public TeacherSearchRequest SearchRequest { get; set; }
+        public ApplicantSearchRequest SearchRequest { get; set; }
 
         /// <summary>
-        /// لیست ویو مدل نمایش استاد
+        /// لیست ویو مدل نمایش متقاضی
         /// </summary>
-        public IEnumerable<TeacherViewModel> Teachers { get; set; }
+        public IEnumerable<ApplicantViewModel> Applicants { get; set; }
 
         /// <summary>
         /// لیست استان ها برای لیست آبشاری

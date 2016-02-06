@@ -92,7 +92,7 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
         #region GetPagedList
         public async Task<InterviewListViewModel> GetPagedListAsync(InterviewSearchRequest request)
         {
-            var interviews = _interviews.Where(a => a.TeacherId == request.TeacherId).Include(a => a.Interviewer)
+            var interviews = _interviews.Where(a => a.ApplicantId == request.ApplicantId).Include(a => a.Interviewer)
                 .Include(a => a.Creator).Include(a => a.LasModifier).AsNoTracking()
                 .OrderByDescending(a => a.InterviewDate).AsQueryable();
 
@@ -142,11 +142,11 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
         }
 
 
-        public async Task<AddInterviewViewModel> GetForCreate(Guid TeacherId)
+        public async Task<AddInterviewViewModel> GetForCreate(Guid ApplicantId)
         {
             return new AddInterviewViewModel
             {
-                TeacherId = TeacherId,
+                ApplicantId = ApplicantId,
                 Interviewers = await _appraiserService.GetAsSelectedListItem(null)
             };
         }

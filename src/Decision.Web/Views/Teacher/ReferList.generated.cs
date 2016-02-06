@@ -34,10 +34,10 @@ namespace ASP
     using MvcSiteMapProvider.Web.Html.Models;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Teacher/ReferList.cshtml")]
-    public partial class _Views_Teacher_ReferList_cshtml : System.Web.Mvc.WebViewPage<IEnumerable<Decision.ViewModel.Teacher.ReferTeacherViewModel>>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Applicant/ReferList.cshtml")]
+    public partial class _Views_Applicant_ReferList_cshtml : System.Web.Mvc.WebViewPage<IEnumerable<Decision.ViewModel.Applicant.ReferApplicantViewModel>>
     {
-        public _Views_Teacher_ReferList_cshtml()
+        public _Views_Applicant_ReferList_cshtml()
         {
         }
         public override void Execute()
@@ -45,7 +45,7 @@ namespace ASP
 WriteLiteral("\r\n");
 
             
-            #line 3 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 3 "..\..\Views\Applicant\ReferList.cshtml"
   
     ViewBag.Title = "لیست ارجاعات";
     
@@ -56,7 +56,7 @@ WriteLiteral("\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 7 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 7 "..\..\Views\Applicant\ReferList.cshtml"
 Write(Html.AntiForgeryToken());
 
             
@@ -65,7 +65,7 @@ Write(Html.AntiForgeryToken());
 WriteLiteral("\r\n");
 
             
-            #line 8 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 8 "..\..\Views\Applicant\ReferList.cshtml"
  foreach (var viewModel in Model)
 {
 
@@ -77,9 +77,9 @@ WriteLiteral("    <div");
 WriteLiteral(" class=\"col-md-12\"");
 
 WriteAttribute("id", Tuple.Create(" id=\"", 212), Tuple.Create("\"", 238)
-, Tuple.Create(Tuple.Create("", 217), Tuple.Create("Teacher-", 217), true)
+, Tuple.Create(Tuple.Create("", 217), Tuple.Create("Applicant-", 217), true)
             
-            #line 10 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 10 "..\..\Views\Applicant\ReferList.cshtml"
 , Tuple.Create(Tuple.Create("", 225), Tuple.Create<System.Object, System.Int32>(viewModel.Id
             
             #line default
@@ -108,7 +108,7 @@ WriteLiteral("></i>\r\n");
 WriteLiteral("                    ");
 
             
-            #line 15 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 15 "..\..\Views\Applicant\ReferList.cshtml"
                Write(viewModel.FullName);
 
             
@@ -131,7 +131,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 21 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 21 "..\..\Views\Applicant\ReferList.cshtml"
                    Write(Html.Image(viewModel.Photo, viewModel.FullName, "img-rounded img-responsive img-thumbnail", 100));
 
             
@@ -164,7 +164,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 28 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 28 "..\..\Views\Applicant\ReferList.cshtml"
                                Write(viewModel.PersonnelCode);
 
             
@@ -190,7 +190,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 34 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 34 "..\..\Views\Applicant\ReferList.cshtml"
                                Write(viewModel.PositionName);
 
             
@@ -218,7 +218,7 @@ WriteLiteral(" id=\"birthDate\"");
 WriteLiteral(">");
 
             
-            #line 41 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 41 "..\..\Views\Applicant\ReferList.cshtml"
                                                  Write(viewModel.BirthDate.ToPersianString(PersianDateTimeFormat.Date));
 
             
@@ -241,7 +241,7 @@ WriteLiteral(" id=\"Code\"");
 WriteLiteral(">");
 
             
-            #line 45 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 45 "..\..\Views\Applicant\ReferList.cshtml"
                                             Write(viewModel.BirthCertificateNumber);
 
             
@@ -264,7 +264,7 @@ WriteLiteral(" id=\"birthPlace\"");
 WriteLiteral(">");
 
             
-            #line 49 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 49 "..\..\Views\Applicant\ReferList.cshtml"
                                                   Write(viewModel.BirthPlaceCity);
 
             
@@ -273,7 +273,7 @@ WriteLiteral(">");
 WriteLiteral(" - ");
 
             
-            #line 49 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 49 "..\..\Views\Applicant\ReferList.cshtml"
                                                                               Write(viewModel.BirthPlaceState);
 
             
@@ -296,7 +296,7 @@ WriteLiteral(" id=\"nationalCode\"");
 WriteLiteral(">");
 
             
-            #line 53 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 53 "..\..\Views\Applicant\ReferList.cshtml"
                                                     Write(viewModel.NationalCode);
 
             
@@ -317,14 +317,14 @@ WriteLiteral(" class=\"text-muted\"");
 
 WriteLiteral(" for=\"order\"");
 
-WriteLiteral(">پایه استاد:</label>\r\n                                <small");
+WriteLiteral(">پایه متقاضی:</label>\r\n                                <small");
 
 WriteLiteral(" id=\"order\"");
 
 WriteLiteral(">");
 
             
-            #line 59 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 59 "..\..\Views\Applicant\ReferList.cshtml"
                                              Write(viewModel.CollegiateOrder.GetPersianNumber());
 
             
@@ -347,7 +347,7 @@ WriteLiteral(" id=\"group\"");
 WriteLiteral(">");
 
             
-            #line 63 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 63 "..\..\Views\Applicant\ReferList.cshtml"
                                              Write(viewModel.OccupationalGroup.GetPersianNumber());
 
             
@@ -370,13 +370,13 @@ WriteLiteral(" id=\"trainingRank\"");
 WriteLiteral(">\r\n");
 
             
-            #line 68 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 68 "..\..\Views\Applicant\ReferList.cshtml"
                                     
             
             #line default
             #line hidden
             
-            #line 68 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 68 "..\..\Views\Applicant\ReferList.cshtml"
                                      if (viewModel.TrainigGrade > 0)
                                     {
 
@@ -390,7 +390,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                            ");
 
             
-            #line 71 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 71 "..\..\Views\Applicant\ReferList.cshtml"
                                        Write(viewModel.TrainigGrade.GetPersianNumber());
 
             
@@ -401,7 +401,7 @@ WriteLiteral("\r\n                                        ");
 WriteLiteral("\r\n");
 
             
-            #line 73 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 73 "..\..\Views\Applicant\ReferList.cshtml"
                                     }
                                     else
                                     {
@@ -414,7 +414,7 @@ WriteLiteral("\r\n                                        ثبت نشده\r\n   
 WriteLiteral("\r\n");
 
             
-            #line 78 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 78 "..\..\Views\Applicant\ReferList.cshtml"
                                     }
 
             
@@ -438,13 +438,13 @@ WriteLiteral(" id=\"gpa\"");
 WriteLiteral(">\r\n");
 
             
-            #line 84 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 84 "..\..\Views\Applicant\ReferList.cshtml"
                                     
             
             #line default
             #line hidden
             
-            #line 84 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 84 "..\..\Views\Applicant\ReferList.cshtml"
                                      if (viewModel.TrainingGPA > decimal.Zero)
                                     {
 
@@ -458,7 +458,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                                            ");
 
             
-            #line 87 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 87 "..\..\Views\Applicant\ReferList.cshtml"
                                        Write(viewModel.TrainingGPA.GetPersianNumber());
 
             
@@ -469,7 +469,7 @@ WriteLiteral("\r\n                                        ");
 WriteLiteral("\r\n");
 
             
-            #line 89 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 89 "..\..\Views\Applicant\ReferList.cshtml"
                                     }
                                     else
                                     {
@@ -482,7 +482,7 @@ WriteLiteral("\r\n                                        ثبت نشده\r\n   
 WriteLiteral("\r\n");
 
             
-            #line 94 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 94 "..\..\Views\Applicant\ReferList.cshtml"
                                     }
 
             
@@ -502,8 +502,8 @@ WriteLiteral(">\r\n                    <a");
 
 WriteAttribute("href", Tuple.Create(" href=\"", 5310), Tuple.Create("\"", 5360)
             
-            #line 103 "..\..\Views\Teacher\ReferList.cshtml"
-, Tuple.Create(Tuple.Create("", 5317), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Teacher.Edit(viewModel.Id))
+            #line 103 "..\..\Views\Applicant\ReferList.cshtml"
+, Tuple.Create(Tuple.Create("", 5317), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.Edit(viewModel.Id))
             
             #line default
             #line hidden
@@ -523,8 +523,8 @@ WriteLiteral("></i>\r\n                        ویرایش\r\n                 
 
 WriteAttribute("href", Tuple.Create(" href=\"", 5541), Tuple.Create("\"", 5594)
             
-            #line 107 "..\..\Views\Teacher\ReferList.cshtml"
-, Tuple.Create(Tuple.Create("", 5548), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Teacher.Details(viewModel.Id))
+            #line 107 "..\..\Views\Applicant\ReferList.cshtml"
+, Tuple.Create(Tuple.Create("", 5548), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.Details(viewModel.Id))
             
             #line default
             #line hidden
@@ -549,18 +549,18 @@ WriteLiteral("\r\n                            type=\"button\"");
 WriteLiteral(" data-delete-url=\"");
 
             
-            #line 112 "..\..\Views\Teacher\ReferList.cshtml"
-                                                      Write(Url.Action(MVC.Teacher.Delete()));
+            #line 112 "..\..\Views\Applicant\ReferList.cshtml"
+                                                      Write(Url.Action(MVC.Applicant.Delete()));
 
             
             #line default
             #line hidden
 WriteLiteral("\"");
 
-WriteLiteral(" data-removal-element=\"#Teacher-");
+WriteLiteral(" data-removal-element=\"#Applicant-");
 
             
-            #line 112 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 112 "..\..\Views\Applicant\ReferList.cshtml"
                                                                                                                         Write(viewModel.Id);
 
             
@@ -571,7 +571,7 @@ WriteLiteral("\"");
 WriteAttribute("id", Tuple.Create(" id=\"", 5970), Tuple.Create("\"", 5995)
 , Tuple.Create(Tuple.Create("", 5975), Tuple.Create("remove-", 5975), true)
             
-            #line 112 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 112 "..\..\Views\Applicant\ReferList.cshtml"
                                                                        , Tuple.Create(Tuple.Create("", 5982), Tuple.Create<System.Object, System.Int32>(viewModel.Id
             
             #line default
@@ -593,24 +593,24 @@ WriteLiteral("\r\n                            type=\"button\"");
 WriteLiteral(" data-delete-url=\"");
 
             
-            #line 118 "..\..\Views\Teacher\ReferList.cshtml"
-                                                      Write(Url.Action(MVC.Teacher.FinishRefer(viewModel.Id)));
+            #line 118 "..\..\Views\Applicant\ReferList.cshtml"
+                                                      Write(Url.Action(MVC.Applicant.FinishRefer(viewModel.Id)));
 
             
             #line default
             #line hidden
 WriteLiteral("\"");
 
-WriteLiteral(" data-done-msg=\"استاد مورد نظر با موفقیت ارسال شد.\"");
+WriteLiteral(" data-done-msg=\"متقاضی مورد نظر با موفقیت ارسال شد.\"");
 
 WriteLiteral(" data-type=\"information\"");
 
-WriteLiteral(" data-message=\"آیا از ارسال استاد مطمئن هستید؟\"");
+WriteLiteral(" data-message=\"آیا از ارسال متقاضی مطمئن هستید؟\"");
 
-WriteLiteral(" data-removal-element=\"#Teacher-");
+WriteLiteral(" data-removal-element=\"#Applicant-");
 
             
-            #line 118 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 118 "..\..\Views\Applicant\ReferList.cshtml"
                                                                                                                                                                                                                                                                    Write(viewModel.Id);
 
             
@@ -621,7 +621,7 @@ WriteLiteral("\"");
 WriteAttribute("id", Tuple.Create(" id=\"", 6454), Tuple.Create("\"", 6479)
 , Tuple.Create(Tuple.Create("", 6459), Tuple.Create("remove-", 6459), true)
             
-            #line 118 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 118 "..\..\Views\Applicant\ReferList.cshtml"
                                                                                                                                                                                                                   , Tuple.Create(Tuple.Create("", 6466), Tuple.Create<System.Object, System.Int32>(viewModel.Id
             
             #line default
@@ -641,7 +641,7 @@ WriteLiteral(" class=\"clearfix\"");
 WriteLiteral("></div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 128 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 128 "..\..\Views\Applicant\ReferList.cshtml"
 
 }
 
@@ -655,13 +655,13 @@ DefineSection("Menu", () => {
 WriteLiteral("\r\n");
 
             
-            #line 132 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 132 "..\..\Views\Applicant\ReferList.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 132 "..\..\Views\Teacher\ReferList.cshtml"
+            #line 132 "..\..\Views\Applicant\ReferList.cshtml"
       Html.RenderPartial(MVC.Shared.Views._UserProfileSideBarMenu);
             
             #line default

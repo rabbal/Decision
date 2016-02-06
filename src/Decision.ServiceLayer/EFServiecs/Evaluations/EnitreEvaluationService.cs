@@ -16,7 +16,7 @@ using Microsoft.AspNet.Identity;
 namespace Decision.ServiceLayer.EFServiecs.Evaluations
 {
     /// <summary>
-    /// کلاس ارائه دهنده سروسیس های لازم برای اعمال روی ارزیابی از استاد
+    /// کلاس ارائه دهنده سروسیس های لازم برای اعمال روی ارزیابی از متقاضی
     /// </summary>
     public class EntireEvaluationService : IEntireEvaluationService
     {
@@ -88,7 +88,7 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
         #region GetPagedList
         public async  Task<EntireEvaluationListViewModel> GetPagedListAsync(EntireEvaluationSearchRequest request)
         {
-            var EntireEvaluations = _entireEvaluations.Where(a=>a.TeacherId==request.TeacherId).Include(a => a.Evaluator)
+            var EntireEvaluations = _entireEvaluations.Where(a=>a.ApplicantId==request.ApplicantId).Include(a => a.Evaluator)
                 .Include(a => a.Creator).Include(a => a.LasModifier).AsNoTracking()
                 .OrderByDescending(a => a.EvaluationDate).AsQueryable();
 
@@ -111,7 +111,7 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
 
 
 
-        public async  Task<AddEntireEvaluationViewModel> GetForCreate(Guid TeacherId)
+        public async  Task<AddEntireEvaluationViewModel> GetForCreate(Guid ApplicantId)
         {
             return new AddEntireEvaluationViewModel
             {

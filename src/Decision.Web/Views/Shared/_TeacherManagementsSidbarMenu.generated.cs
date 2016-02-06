@@ -29,14 +29,14 @@ namespace ASP
     using System.Web.WebPages;
     using Decision.Common.MVC;
     
-    #line 1 "..\..\Views\Shared\_TeacherManagementsSidbarMenu.cshtml"
+    #line 1 "..\..\Views\Shared\_ApplicantManagementsSidbarMenu.cshtml"
     using Decision.ServiceLayer.Security;
     
     #line default
     #line hidden
     using Decision.Utility;
     
-    #line 2 "..\..\Views\Shared\_TeacherManagementsSidbarMenu.cshtml"
+    #line 2 "..\..\Views\Shared\_ApplicantManagementsSidbarMenu.cshtml"
     using Decision.Web.HtmlHelpers;
     
     #line default
@@ -45,10 +45,10 @@ namespace ASP
     using MvcSiteMapProvider.Web.Html.Models;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/_TeacherManagementsSidbarMenu.cshtml")]
-    public partial class _Views_Shared__TeacherManagementsSidbarMenu_cshtml : System.Web.Mvc.WebViewPage<dynamic>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/_ApplicantManagementsSidbarMenu.cshtml")]
+    public partial class _Views_Shared__ApplicantManagementsSidbarMenu_cshtml : System.Web.Mvc.WebViewPage<dynamic>
     {
-        public _Views_Shared__TeacherManagementsSidbarMenu_cshtml()
+        public _Views_Shared__ApplicantManagementsSidbarMenu_cshtml()
         {
         }
         public override void Execute()
@@ -56,8 +56,8 @@ namespace ASP
 WriteLiteral("\r\n\r\n");
 
             
-            #line 5 "..\..\Views\Shared\_TeacherManagementsSidbarMenu.cshtml"
-Write(Html.SideBarSecureActionLink("لیست اساتید", Url.Action(MVC.Teacher.List()), "list-group-item thrid-split", "fa fa-group", AssignableToRolePermissions.CanViewTeacherList));
+            #line 5 "..\..\Views\Shared\_ApplicantManagementsSidbarMenu.cshtml"
+Write(Html.SideBarSecureActionLink("لیست اساتید", Url.Action(MVC.Applicant.List()), "list-group-item thrid-split", "fa fa-group", AssignableToRolePermissions.CanViewApplicantList));
 
             
             #line default
@@ -65,8 +65,8 @@ Write(Html.SideBarSecureActionLink("لیست اساتید", Url.Action(MVC.Teach
 WriteLiteral("\r\n\r\n");
 
             
-            #line 7 "..\..\Views\Shared\_TeacherManagementsSidbarMenu.cshtml"
-Write(Html.SideBarSecureActionLink("درج استاد ", Url.Action(MVC.Teacher.Create()), "list-group-item thrid-split", "fa fa-plus", AssignableToRolePermissions.CanCreateTeacher));
+            #line 7 "..\..\Views\Shared\_ApplicantManagementsSidbarMenu.cshtml"
+Write(Html.SideBarSecureActionLink("درج متقاضی ", Url.Action(MVC.Applicant.Create()), "list-group-item thrid-split", "fa fa-plus", AssignableToRolePermissions.CanCreateApplicant));
 
             
             #line default

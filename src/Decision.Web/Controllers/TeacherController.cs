@@ -13,11 +13,11 @@ using Decision.Common.Validations;
 using Decision.DataLayer.Context;
 using Decision.DomainClasses.Entities.Common;
 using Decision.ServiceLayer.Contracts.Common;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.ServiceLayer.Security;
-using Decision.ViewModel.Teacher;
-using Decision.ViewModel.ReferentialTeacher;
+using Decision.ViewModel.Applicant;
+using Decision.ViewModel.ReferentialApplicant;
 using Decision.Web.Extentions;
 using Decision.Web.Filters;
 using MvcSiteMapProvider;
@@ -26,21 +26,21 @@ using Auth = Decision.ServiceLayer.Security.AssignableToRolePermissions;
 namespace Decision.Web.Controllers
 {
     /// <summary>
-    /// کنترلر مربوط به استاد
+    /// کنترلر مربوط به متقاضی
     /// </summary>
-    [RoutePrefix("Teacher/Manage")]
+    [RoutePrefix("Applicant/Manage")]
     [Route("{action}")]
-    public partial class TeacherController : Controller
+    public partial class ApplicantController : Controller
     {
         #region Fields
 
-        private readonly IReferentialTeacherService _referentialTeacherService;
+        private readonly IReferentialApplicantService _referentialApplicantService;
         private const string IranCitiesPath = "~/App_Data/IranCities.xml";
         private readonly ITitleService _titleService;
         private readonly ITrainingCenterService _trainingCenterService;
         private readonly ITrainingCourseService _trainingCourseService;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ITeacherService _TeacherService;
+        private readonly IApplicantService _ApplicantService;
         private readonly IApplicationUserManager _userManager;
         private readonly IStateService _stateService;
         private readonly ICityService _cityService;
@@ -48,29 +48,29 @@ namespace Decision.Web.Controllers
 
         #region Ctor
 
-        public TeacherController(IUnitOfWork unitOfWork, IApplicationUserManager userManager, IReferentialTeacherService referentialTeacherService,
+        public ApplicantController(IUnitOfWork unitOfWork, IApplicationUserManager userManager, IReferentialApplicantService referentialApplicantService,
             ITrainingCenterService trainingCenterService, ITrainingCourseService trainingCourseService, ITitleService titleService,
-            ITeacherService TeacherService, IStateService stateService, ICityService cityService)
+            IApplicantService ApplicantService, IStateService stateService, ICityService cityService)
         {
             _unitOfWork = unitOfWork;
             _userManager = userManager;
-            _TeacherService = TeacherService;
+            _ApplicantService = ApplicantService;
             _stateService = stateService;
             _cityService = cityService;
             _trainingCenterService = trainingCenterService;
             _titleService = titleService;
-            _referentialTeacherService = referentialTeacherService;
+            _referentialApplicantService = referentialApplicantService;
         }
         #endregion
 
         #region List,ListAjax
         [HttpGet]
         [Audit(Description = "مشاهده لیست اساتید")]
-        [Mvc5Authorize(Auth.CanViewTeacherList)]
+        [Mvc5Authorize(Auth.CanViewApplicantList)]
         public virtual async Task<ActionResult> List()
         {
-            var viewModel = await _TeacherService.GetPagedListAsync(new TeacherSearchRequest());
-            viewModel.Positions = await _titleService.GetAsSelectListItemAsync(TitleType.TeacherPosition, null);
+            var viewModel = await _ApplicantService.GetPagedListAsync(new ApplicantSearchRequest());
+            viewModel.Positions = await _titleService.GetAsSelectListItemAsync(TitleType.ApplicantPosition, null);
             viewModel.States = _stateService.GetAsSelectListItemAsync(string.Empty, IranCitiesPath);
             viewModel.TrainingCenters = await _trainingCenterService.GetAsSelectListItemAsync(string.Empty, null);
             return View(viewModel);
@@ -78,109 +78,109 @@ namespace Decision.Web.Controllers
         //[CheckReferrer]
         [AjaxOnly]
         [HttpPost]
-        [Mvc5Authorize(Auth.CanViewTeacherList)]
+        [Mvc5Authorize(Auth.CanViewApplicantList)]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        public virtual async Task<ActionResult> ListAjax(TeacherSearchRequest request)
+        public virtual async Task<ActionResult> ListAjax(ApplicantSearchRequest request)
         {
-            var viewModel = await _TeacherService.GetPagedListAsync(request);
-            if (viewModel.Teachers == null || !viewModel.Teachers.Any()) return Content("no-more-info");
-            return PartialView(MVC.Teacher.Views._ListAjax, viewModel);
+            var viewModel = await _ApplicantService.GetPagedListAsync(request);
+            if (viewModel.Applicants == null || !viewModel.Applicants.Any()) return Content("no-more-info");
+            return PartialView(MVC.Applicant.Views._ListAjax, viewModel);
         }
         #endregion
 
         #region Create
         [HttpGet]
-        [Mvc5Authorize(Auth.CanCreateTeacher)]
+        [Mvc5Authorize(Auth.CanCreateApplicant)]
         public virtual async Task<ActionResult> Create()
         {
-            var viewModel = await _TeacherService.GetForCreate(IranCitiesPath);
+            var viewModel = await _ApplicantService.GetForCreate(IranCitiesPath);
             return View(viewModel);
         }
 
         [HttpPost]
         // [CheckReferrer]
         [ValidateAntiForgeryToken]
-        [Mvc5Authorize(Auth.CanCreateTeacher)]
+        [Mvc5Authorize(Auth.CanCreateApplicant)]
         [AllowUploadSpecialFilesOnly(".png,.jpg,.jpeg,.gif", justImage: true)]
-        public virtual async Task<ActionResult> Create(AddTeacherViewModel viewModel)
+        public virtual async Task<ActionResult> Create(AddApplicantViewModel viewModel)
         {
             if (!viewModel.NationalCode.IsValidNationalCode())
                 this.AddErrors("NationalCode", "لطفا کد ملی را به شکل صحیح وارد کنید");
 
-            if (await _TeacherService.IsTeacherNationalCodeExist(viewModel.NationalCode, null))
-                this.AddErrors("NationalCode", "یک استاد بااین کد ملی قبلا در سیستم ثبت شده است");
+            if (await _ApplicantService.IsApplicantNationalCodeExist(viewModel.NationalCode, null))
+                this.AddErrors("NationalCode", "یک متقاضی بااین کد ملی قبلا در سیستم ثبت شده است");
            
             if (!ModelState.IsValid)
             {
-                await _TeacherService.FillAddViewMoel(viewModel, IranCitiesPath);
+                await _ApplicantService.FillAddViewMoel(viewModel, IranCitiesPath);
 
                 return View(viewModel);
             }
 
-            _TeacherService.Create(viewModel);
+            _ApplicantService.Create(viewModel);
             await _unitOfWork.SaveChangesAsync();
-           this.NotyInformation("استاد جدید با موفقیت ثبت شد.");
-            return RedirectToAction(MVC.Teacher.Create());
+           this.NotyInformation("متقاضی جدید با موفقیت ثبت شد.");
+            return RedirectToAction(MVC.Applicant.Create());
         }
         #endregion
 
         #region Edit
-        [Route("EditTeacher/{TeacherId}")]
+        [Route("EditApplicant/{ApplicantId}")]
         [HttpGet]
-        [Mvc5Authorize(Auth.CanEditTeacher)]
-        [TeacherAuthorize]
-        public virtual async Task<ActionResult> Edit(Guid TeacherId)
+        [Mvc5Authorize(Auth.CanEditApplicant)]
+        [ApplicantAuthorize]
+        public virtual async Task<ActionResult> Edit(Guid ApplicantId)
         {
-            var viewModel = await _TeacherService.GetForEditAsync(TeacherId, IranCitiesPath);
+            var viewModel = await _ApplicantService.GetForEditAsync(ApplicantId, IranCitiesPath);
             if (viewModel == null) return HttpNotFound();
             return View(viewModel);
         }
 
-        [Route("EditTeacher/{TeacherId}")]
-        [TeacherAuthorize]
+        [Route("EditApplicant/{ApplicantId}")]
+        [ApplicantAuthorize]
         [HttpPost]
         // [CheckReferrer]
         [ValidateAntiForgeryToken]
         [AllowUploadSpecialFilesOnly(".png,.jpg,.jpeg,.gif", justImage: true)]
-        [Mvc5Authorize(Auth.CanEditTeacher)]
-        public virtual async Task<ActionResult> Edit(EditTeacherViewModel viewModel)
+        [Mvc5Authorize(Auth.CanEditApplicant)]
+        public virtual async Task<ActionResult> Edit(EditApplicantViewModel viewModel)
         {
             if (!viewModel.NationalCode.IsValidNationalCode())
                 this.AddErrors("NationalCode", "لطفا کد ملی را به شکل صحیح وارد کنید");
 
-            if (await _TeacherService.IsTeacherNationalCodeExist(viewModel.NationalCode, viewModel.Id))
-                this.AddErrors("NationalCode", "یک استاد بااین کد ملی قبلا در سیستم ثبت شده است");
+            if (await _ApplicantService.IsApplicantNationalCodeExist(viewModel.NationalCode, viewModel.Id))
+                this.AddErrors("NationalCode", "یک متقاضی بااین کد ملی قبلا در سیستم ثبت شده است");
            
             if (!ModelState.IsValid)
             {
-                await _TeacherService.FillEditViewMoel(viewModel, IranCitiesPath);
+                await _ApplicantService.FillEditViewMoel(viewModel, IranCitiesPath);
                 return View(viewModel);
             }
 
-            if (!await _TeacherService.IsInDb(viewModel.Id))
-                this.AddErrors("FirstName", "استاد مورد نظر توسط یکی از کاربران در شبکه، حذف شده است");
+            if (!await _ApplicantService.IsInDb(viewModel.Id))
+                this.AddErrors("FirstName", "متقاضی مورد نظر توسط یکی از کاربران در شبکه، حذف شده است");
 
             if (!ModelState.IsValid)
             {
-                await _TeacherService.FillEditViewMoel(viewModel, IranCitiesPath);
-                return View(MVC.Teacher.Views.Edit, viewModel);
+                await _ApplicantService.FillEditViewMoel(viewModel, IranCitiesPath);
+                return View(MVC.Applicant.Views.Edit, viewModel);
             }
 
-            await _TeacherService.EditAsync(viewModel);
+            await _ApplicantService.EditAsync(viewModel);
             var message = await _unitOfWork.ConcurrencySaveChangesAsync();
 
             if (message.HasValue())
             {
-                this.AddErrors("FirstName", string.Format(message, "استاد"));
+                this.AddErrors("FirstName", string.Format(message, "متقاضی"));
             }
 
             if (ModelState.IsValid)
                 return _userManager.IsOperator()
-                    ? RedirectToAction(MVC.Teacher.Details(viewModel.Id))
-                    : RedirectToAction(MVC.Teacher.List());
+                    ? RedirectToAction(MVC.Applicant.Details(viewModel.Id))
+                    : RedirectToAction(MVC.Applicant.List());
 
-            await _TeacherService.FillEditViewMoel(viewModel, IranCitiesPath);
-            return View(MVC.Teacher.Views.Edit, viewModel);
+            await _ApplicantService.FillEditViewMoel(viewModel, IranCitiesPath);
+            return View(MVC.Applicant.Views.Edit, viewModel);
         }
         #endregion
 
@@ -188,26 +188,26 @@ namespace Decision.Web.Controllers
         [HttpPost]
         //[CheckReferrer]
         [ValidateAntiForgeryToken]
-        [Mvc5Authorize(Auth.CanDeleteTeacher)]
+        [Mvc5Authorize(Auth.CanDeleteApplicant)]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public virtual async Task<ActionResult> Delete(Guid id)
         {
-            if (!_referentialTeacherService.CanManageTeacher(id)) return HttpNotFound();
-            await _TeacherService.DeleteAsync(id);
+            if (!_referentialApplicantService.CanManageApplicant(id)) return HttpNotFound();
+            await _ApplicantService.DeleteAsync(id);
             return Content("ok");
         }
         #endregion
 
         #region Details
         [HttpGet]
-        [Mvc5Authorize(Auth.CanViewTeacherDetails)]
-        [Route("Details/{TeacherId}")]
-        [TeacherAuthorize]
+        [Mvc5Authorize(Auth.CanViewApplicantDetails)]
+        [Route("Details/{ApplicantId}")]
+        [ApplicantAuthorize]
         [SiteMapTitle("FullName", Target = AttributeTarget.CurrentNode)]
-        public virtual async Task<ActionResult> Details(Guid TeacherId)
+        public virtual async Task<ActionResult> Details(Guid ApplicantId)
         {
-            if (!_referentialTeacherService.CanManageTeacher(TeacherId)) return HttpNotFound();
-            var viewModel = await _TeacherService.GetTeacherDetails(TeacherId);
+            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
+            var viewModel = await _ApplicantService.GetApplicantDetails(ApplicantId);
             if (viewModel == null) return HttpNotFound();
             return View(viewModel);
         }
@@ -219,29 +219,29 @@ namespace Decision.Web.Controllers
         [Audit(Description = "مشاهده لیست ارجاعات خود")]
         public virtual async Task<ActionResult> ReferList()
         {
-            var viewModel =await  _TeacherService.GetRefersTeachers(true);
+            var viewModel =await  _ApplicantService.GetRefersApplicants(true);
             return View(viewModel);
         }
         
         [HttpGet]
         [Mvc5Authorize(StandardRoles.Operators)]
         [Audit(Description = "مشاهده لیست اساتید درج شده  توسط خود اپراتور")]
-        public virtual async Task<ActionResult> NewTeacherList()
+        public virtual async Task<ActionResult> NewApplicantList()
         {
-            var viewModel = await _TeacherService.GetRefersTeachers(false);
+            var viewModel = await _ApplicantService.GetRefersApplicants(false);
             return View(viewModel);
         }
 
         [HttpPost]
         [Mvc5Authorize(StandardRoles.Operators)]
-        [Audit(Description = "اتمام نهایی کار استاد ارجاع داده شده")]
+        [Audit(Description = "اتمام نهایی کار متقاضی ارجاع داده شده")]
         [AjaxOnly]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         [ValidateAntiForgeryToken]
-        public virtual async Task<ActionResult> FinishRefer(Guid TeacherId)
+        public virtual async Task<ActionResult> FinishRefer(Guid ApplicantId)
         {
-            if (!_referentialTeacherService.CanManageTeacher(TeacherId)) return HttpNotFound();
-            await _TeacherService.FinishedRefer(TeacherId);
+            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
+            await _ApplicantService.FinishedRefer(ApplicantId);
             return Content("ok");
         }
 
@@ -250,72 +250,72 @@ namespace Decision.Web.Controllers
         #region RemoteValidations
         [HttpPost]
         [AjaxOnly]
-        [Mvc5Authorize(Auth.CanEditTeacher, Auth.CanCreateTeacher)]
+        [Mvc5Authorize(Auth.CanEditApplicant, Auth.CanCreateApplicant)]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        public virtual async Task<JsonResult> IsTeacherBirthCertificateNumberExist(string birthCertificateNumber, Guid? id)
+        public virtual async Task<JsonResult> IsApplicantBirthCertificateNumberExist(string birthCertificateNumber, Guid? id)
         {
-            return Json(!await _TeacherService.IsTeacherBirthCertificateNumberExist(birthCertificateNumber, id));
+            return Json(!await _ApplicantService.IsApplicantBirthCertificateNumberExist(birthCertificateNumber, id));
         }
 
         [HttpPost]
         [AjaxOnly]
-        [Mvc5Authorize(Auth.CanEditTeacher, Auth.CanCreateTeacher)]
+        [Mvc5Authorize(Auth.CanEditApplicant, Auth.CanCreateApplicant)]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        public virtual async Task<JsonResult> IsTeacherNationalCodeExist(string nationalCode, Guid? id)
+        public virtual async Task<JsonResult> IsApplicantNationalCodeExist(string nationalCode, Guid? id)
         {
             var validation = nationalCode.IsValidNationalCode();
             if (!validation) return Json(false);
-            return Json(!await _TeacherService.IsTeacherNationalCodeExist(nationalCode, id));
+            return Json(!await _ApplicantService.IsApplicantNationalCodeExist(nationalCode, id));
         }
 
         #endregion
 
         #region DownloadFiles
         [HttpGet]
-        [Route("File/{TeacherId}/{type}")]
-        [Mvc5Authorize(Auth.CanViewTeacherDetails)]
-        [TeacherAuthorize]
-        public virtual async Task<ActionResult> GetTeacherFile(Guid TeacherId, string type)
+        [Route("File/{ApplicantId}/{type}")]
+        [Mvc5Authorize(Auth.CanViewApplicantDetails)]
+        [ApplicantAuthorize]
+        public virtual async Task<ActionResult> GetApplicantFile(Guid ApplicantId, string type)
         {
-            if (!_referentialTeacherService.CanManageTeacher(TeacherId)) return HttpNotFound();
-            var file = await _TeacherService.GetTeacherDocument(TeacherId, type);
-            return File(file, "image/png", $"{TeacherId}.png");
+            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
+            var file = await _ApplicantService.GetApplicantDocument(ApplicantId, type);
+            return File(file, "image/png", $"{ApplicantId}.png");
         }
         #endregion
 
-        #region ApproveTeacher
+        #region ApproveApplicant
         [HttpPost]
         //[CheckReferrer]
-        [Mvc5Authorize(Auth.CanApproveTeacher)]
+        [Mvc5Authorize(Auth.CanApproveApplicant)]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        public virtual async Task<ActionResult> ApproveTeacher(Guid id)
+        public virtual async Task<ActionResult> ApproveApplicant(Guid id)
         {
-            var viewModel = await _TeacherService.Approve(id);
+            var viewModel = await _ApplicantService.Approve(id);
             if (viewModel == null) return HttpNotFound();
-            return PartialView(MVC.Teacher.Views._TeacherItem, viewModel);
+            return PartialView(MVC.Applicant.Views._ApplicantItem, viewModel);
         }
         #endregion
 
         #region Refer
         [HttpGet]
         //[CheckReferrer]
-        [Mvc5Authorize(Auth.CanReferTeacher)]
+        [Mvc5Authorize(Auth.CanReferApplicant)]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        public virtual async Task<ActionResult> Refer(Guid TeacherId)
+        public virtual async Task<ActionResult> Refer(Guid ApplicantId)
         {
-            if (await _TeacherService.IsInRefer(TeacherId)) return Content("in-refer");
-            var viewModel = new AddReferentialTeacherViewModel
+            if (await _ApplicantService.IsInRefer(ApplicantId)) return Content("in-refer");
+            var viewModel = new AddReferentialApplicantViewModel
             {
-                TeacherId = TeacherId,
+                ApplicantId = ApplicantId,
                 RefrencedToUsers = await _userManager.GetAsSelectListItem()
             };
-            return PartialView(MVC.Teacher.Views._Refer, viewModel);
+            return PartialView(MVC.Applicant.Views._Refer, viewModel);
         }
         [HttpPost]
         //[CheckReferrer]
         [Mvc5Authorize()]
         [ValidateAntiForgeryToken]
-        public virtual async Task<ActionResult> Refer(AddReferentialTeacherViewModel model)
+        public virtual async Task<ActionResult> Refer(AddReferentialApplicantViewModel model)
         {
             if (!ModelState.IsValid)
                 return new JsonNetResult
@@ -323,33 +323,33 @@ namespace Decision.Web.Controllers
                     Data = new
                     {
                         success = false,
-                        View = this.RenderPartialViewToString(MVC.Teacher.Views._Refer, model)
+                        View = this.RenderPartialViewToString(MVC.Applicant.Views._Refer, model)
                     }
                 };
 
-            var viewModel = await _TeacherService.ReferTeacher(model);
+            var viewModel = await _ApplicantService.ReferApplicant(model);
             if (viewModel == null) return HttpNotFound();
             return new JsonNetResult
             {
                 Data = new
                 {
                     success = true,
-                    View = this.RenderPartialViewToString(MVC.Teacher.Views._TeacherItem, viewModel)
+                    View = this.RenderPartialViewToString(MVC.Applicant.Views._ApplicantItem, viewModel)
                 }
             };
         }
 
         [HttpPost]
         //[CheckReferrer]
-        [Mvc5Authorize(Auth.CanCancelReferTeacher)]
+        [Mvc5Authorize(Auth.CanCancelReferApplicant)]
         public virtual async Task<ActionResult> CancelRefer(Guid? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            var viewModel = await _TeacherService.CancelRefer(id.Value);
+            var viewModel = await _ApplicantService.CancelRefer(id.Value);
             if (viewModel == null) return HttpNotFound();
 
-            return PartialView(MVC.Teacher.Views._TeacherItem, viewModel);
+            return PartialView(MVC.Applicant.Views._ApplicantItem, viewModel);
         }
         #endregion
         

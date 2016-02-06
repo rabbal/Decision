@@ -25,10 +25,10 @@ using System.Web.Routing;
 using T4MVC;
 namespace Decision.Web.Controllers
 {
-    public partial class TeacherInServiceCourseTypeController
+    public partial class ApplicantInServiceCourseTypeController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected TeacherInServiceCourseTypeController(Dummy d) { }
+        protected ApplicantInServiceCourseTypeController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -100,13 +100,13 @@ namespace Decision.Web.Controllers
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public TeacherInServiceCourseTypeController Actions { get { return MVC.TeacherInServiceCourseType; } }
+        public ApplicantInServiceCourseTypeController Actions { get { return MVC.ApplicantInServiceCourseType; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "teacherinservicecoursetype";
+        public readonly string Name = "Applicantinservicecoursetype";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "teacherinservicecoursetype";
+        public const string NameConst = "Applicantinservicecoursetype";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -129,7 +129,7 @@ namespace Decision.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_List
         {
-            public readonly string TeacherId = ("TeacherId").ToLowerInvariant();
+            public readonly string ApplicantId = ("ApplicantId").ToLowerInvariant();
         }
         static readonly ActionParamsClass_ListAjax s_params_ListAjax = new ActionParamsClass_ListAjax();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -145,7 +145,7 @@ namespace Decision.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Create
         {
-            public readonly string TeacherId = ("TeacherId").ToLowerInvariant();
+            public readonly string ApplicantId = ("ApplicantId").ToLowerInvariant();
             public readonly string viewModel = ("viewModel").ToLowerInvariant();
         }
         static readonly ActionParamsClass_Edit s_params_Edit = new ActionParamsClass_Edit();
@@ -163,7 +163,7 @@ namespace Decision.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Delete
         {
-            public readonly string TeacherId = ("TeacherId").ToLowerInvariant();
+            public readonly string ApplicantId = ("ApplicantId").ToLowerInvariant();
         }
         static readonly ActionParamsClass_CancelEdit s_params_CancelEdit = new ActionParamsClass_CancelEdit();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -186,39 +186,39 @@ namespace Decision.Web.Controllers
                 public readonly string _Create = "_Create";
                 public readonly string _Edit = "_Edit";
                 public readonly string _ListAjax = "_ListAjax";
-                public readonly string _TeacherInServiceCourseTypeItem = "_TeacherInServiceCourseTypeItem";
+                public readonly string _ApplicantInServiceCourseTypeItem = "_ApplicantInServiceCourseTypeItem";
                 public readonly string List = "List";
             }
-            public readonly string _Create = "~/Views/TeacherInServiceCourseType/_Create.cshtml";
-            public readonly string _Edit = "~/Views/TeacherInServiceCourseType/_Edit.cshtml";
-            public readonly string _ListAjax = "~/Views/TeacherInServiceCourseType/_ListAjax.cshtml";
-            public readonly string _TeacherInServiceCourseTypeItem = "~/Views/TeacherInServiceCourseType/_TeacherInServiceCourseTypeItem.cshtml";
-            public readonly string List = "~/Views/TeacherInServiceCourseType/List.cshtml";
+            public readonly string _Create = "~/Views/ApplicantInServiceCourseType/_Create.cshtml";
+            public readonly string _Edit = "~/Views/ApplicantInServiceCourseType/_Edit.cshtml";
+            public readonly string _ListAjax = "~/Views/ApplicantInServiceCourseType/_ListAjax.cshtml";
+            public readonly string _ApplicantInServiceCourseTypeItem = "~/Views/ApplicantInServiceCourseType/_ApplicantInServiceCourseTypeItem.cshtml";
+            public readonly string List = "~/Views/ApplicantInServiceCourseType/List.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_TeacherInServiceCourseTypeController : Decision.Web.Controllers.TeacherInServiceCourseTypeController
+    public partial class T4MVC_ApplicantInServiceCourseTypeController : Decision.Web.Controllers.ApplicantInServiceCourseTypeController
     {
-        public T4MVC_TeacherInServiceCourseTypeController() : base(Dummy.Instance) { }
+        public T4MVC_ApplicantInServiceCourseTypeController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void ListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid TeacherId);
+        partial void ListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid ApplicantId);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> List(System.Guid TeacherId)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> List(System.Guid ApplicantId)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.List);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "TeacherId", TeacherId);
-            ListOverride(callInfo, TeacherId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "ApplicantId", ApplicantId);
+            ListOverride(callInfo, ApplicantId);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 
         [NonAction]
-        partial void ListAjaxOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Decision.ViewModel.TeacherInServiceCourseType.TeacherInServiceCourseTypeSearchRequest request);
+        partial void ListAjaxOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Decision.ViewModel.ApplicantInServiceCourseType.ApplicantInServiceCourseTypeSearchRequest request);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> ListAjax(Decision.ViewModel.TeacherInServiceCourseType.TeacherInServiceCourseTypeSearchRequest request)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> ListAjax(Decision.ViewModel.ApplicantInServiceCourseType.ApplicantInServiceCourseTypeSearchRequest request)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ListAjax);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "request", request);
@@ -227,22 +227,22 @@ namespace Decision.Web.Controllers
         }
 
         [NonAction]
-        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid TeacherId);
+        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid ApplicantId);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Create(System.Guid TeacherId)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Create(System.Guid ApplicantId)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Create);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "TeacherId", TeacherId);
-            CreateOverride(callInfo, TeacherId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "ApplicantId", ApplicantId);
+            CreateOverride(callInfo, ApplicantId);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 
         [NonAction]
-        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Decision.ViewModel.TeacherInServiceCourseType.AddTeacherInServiceCourseTypeViewModel viewModel);
+        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Decision.ViewModel.ApplicantInServiceCourseType.AddApplicantInServiceCourseTypeViewModel viewModel);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Create(Decision.ViewModel.TeacherInServiceCourseType.AddTeacherInServiceCourseTypeViewModel viewModel)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Create(Decision.ViewModel.ApplicantInServiceCourseType.AddApplicantInServiceCourseTypeViewModel viewModel)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Create);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "viewModel", viewModel);
@@ -263,10 +263,10 @@ namespace Decision.Web.Controllers
         }
 
         [NonAction]
-        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Decision.ViewModel.TeacherInServiceCourseType.EditTeacherInServiceCourseTypeViewModel viewModel);
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Decision.ViewModel.ApplicantInServiceCourseType.EditApplicantInServiceCourseTypeViewModel viewModel);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Edit(Decision.ViewModel.TeacherInServiceCourseType.EditTeacherInServiceCourseTypeViewModel viewModel)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Edit(Decision.ViewModel.ApplicantInServiceCourseType.EditApplicantInServiceCourseTypeViewModel viewModel)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "viewModel", viewModel);
@@ -275,14 +275,14 @@ namespace Decision.Web.Controllers
         }
 
         [NonAction]
-        partial void DeleteOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid TeacherId);
+        partial void DeleteOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid ApplicantId);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Delete(System.Guid TeacherId)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Delete(System.Guid ApplicantId)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Delete);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "TeacherId", TeacherId);
-            DeleteOverride(callInfo, TeacherId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "ApplicantId", ApplicantId);
+            DeleteOverride(callInfo, ApplicantId);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 

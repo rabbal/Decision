@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-3">
                 <a class="btn btn-default" data-ajax="true" data-ajax-mode="replace" data-ajax-success="onSuccessFormValidation(data, status, xhr,'createAddressForm','modal')"
-                   data-ajax-update="#modal" href="@Url.Action(MVC.Address.Create(Model.Request.TeacherId))" role="button"><i class="fa fa-plus"></i>درج آدرس جدید</a>
+                   data-ajax-update="#modal" href="@Url.Action(MVC.Address.Create(Model.Request.ApplicantId))" role="button"><i class="fa fa-plus"></i>درج آدرس جدید</a>
             </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
     <div class="panel-footer padding-5-5">
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
-                <button data-page="2" data-json='{"TeacherId":"@Model.Request.TeacherId"}' data-container="#addressList"
+                <button data-page="2" data-json='{"ApplicantId":"@Model.Request.ApplicantId"}' data-container="#addressList"
                         data-progress="#progress"
                         data-load-url="@Url.Action(MVC.Address.ListAjax())"
                         onclick="justPaging(this)" class="btn btn-info btn-block btn-sm" type="button">
@@ -32,7 +32,7 @@
     </div>
 </div>
     @section Menu{
-        @{Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.Request.TeacherId);}
+        @{Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.Request.ApplicantId);}
     }
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")

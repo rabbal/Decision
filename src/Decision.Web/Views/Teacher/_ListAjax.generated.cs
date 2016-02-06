@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Decision.Web.Views.Teacher
+namespace Decision.Web.Views.Applicant
 {
     using System;
     using System.Collections.Generic;
@@ -34,8 +34,8 @@ namespace Decision.Web.Views.Teacher
     using MvcSiteMapProvider.Web.Html.Models;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Teacher/_ListAjax.cshtml")]
-    public partial class _ListAjax : System.Web.Mvc.WebViewPage<Decision.ViewModel.Teacher.TeacherListViewModel>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Applicant/_ListAjax.cshtml")]
+    public partial class _ListAjax : System.Web.Mvc.WebViewPage<Decision.ViewModel.Applicant.ApplicantListViewModel>
     {
         public _ListAjax()
         {
@@ -45,22 +45,22 @@ namespace Decision.Web.Views.Teacher
 WriteLiteral("\r\n");
 
             
-            #line 4 "..\..\Views\Teacher\_ListAjax.cshtml"
- foreach (var Teacher in Model.Teachers)
+            #line 4 "..\..\Views\Applicant\_ListAjax.cshtml"
+ foreach (var Applicant in Model.Applicants)
 {
     
             
             #line default
             #line hidden
             
-            #line 6 "..\..\Views\Teacher\_ListAjax.cshtml"
-Write(Html.Partial(MVC.Teacher.Views._TeacherItem, Teacher));
+            #line 6 "..\..\Views\Applicant\_ListAjax.cshtml"
+Write(Html.Partial(MVC.Applicant.Views._ApplicantItem, Applicant));
 
             
             #line default
             #line hidden
             
-            #line 6 "..\..\Views\Teacher\_ListAjax.cshtml"
+            #line 6 "..\..\Views\Applicant\_ListAjax.cshtml"
                                                           
 }
             

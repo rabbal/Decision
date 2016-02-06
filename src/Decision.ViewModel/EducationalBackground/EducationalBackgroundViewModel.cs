@@ -1,17 +1,17 @@
 ﻿using System;
 using System.ComponentModel;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Common;
 
 namespace Decision.ViewModel.EducationalBackground
 {
     /// <summary>
-    /// ویومدل نمایش سوابق تحصیلی استاد
+    /// ویومدل نمایش سوابق تحصیلی متقاضی
     /// </summary>
     public class EducationalBackgroundViewModel :BaseViewModel
     {
         #region Properties
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
         public Guid Id { get; set; }
         /// <summary>
         /// نوع تحصیلات 
@@ -51,15 +51,15 @@ namespace Decision.ViewModel.EducationalBackground
         public  DateTime EntryDate { get; set; }
 
         /// <summary>
-        /// استاد مشاور
+        /// متقاضی مشاور
         /// </summary>
-        [DisplayName("استاد مشاور")]
+        [DisplayName("متقاضی مشاور")]
         public  string Advisor { get; set; }
 
         /// <summary>
-        /// استاد راهنما
+        /// متقاضی راهنما
         /// </summary>
-        [DisplayName("استاد راهنما")]
+        [DisplayName("متقاضی راهنما")]
         public  string Supervisor { get; set; }
 
         /// <summary>

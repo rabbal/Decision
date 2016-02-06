@@ -5,7 +5,7 @@ using Decision.Common.Controller;
 using StructureMap.Configuration.DSL;
 using System.Runtime.Serialization.Formatters.Binary;
 using Decision.ServiceLayer.Contracts.Common;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.EFServiecs.Users;
 
 namespace Decision.IocConfig
@@ -17,7 +17,7 @@ namespace Decision.IocConfig
             Policies.SetAllProperties(y =>
             {
                 y.OfType<IAuditLogService>();
-                y.OfType<IReferentialTeacherService>();
+                y.OfType<IReferentialApplicantService>();
             });
             Scan(scanner =>
             {

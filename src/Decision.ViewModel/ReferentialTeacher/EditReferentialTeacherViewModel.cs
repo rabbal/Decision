@@ -5,16 +5,16 @@ using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using Decision.ViewModel.Common;
 
-namespace Decision.ViewModel.ReferentialTeacher
+namespace Decision.ViewModel.ReferentialApplicant
 {
     /// <summary>
-    /// ویومدل ویرایش ارجاع استاد
+    /// ویومدل ویرایش ارجاع متقاضی
     /// </summary>
-    public class EditReferentialTeacherViewModel : BaseIsDelete
+    public class EditReferentialApplicantViewModel : BaseIsDelete
     {
         #region Properties
         /// <summary>
-        /// آی دی کلاس ارجاع استاد
+        /// آی دی کلاس ارجاع متقاضی
         /// </summary>
         public  Guid Id { get; set; }
 
@@ -31,30 +31,30 @@ namespace Decision.ViewModel.ReferentialTeacher
         public  DateTime? FinishedDate { get; set; }
 
         /// <summary>
-        /// آی  دی کاربری که این استاد را ارجاع داده است
+        /// آی  دی کاربری که این متقاضی را ارجاع داده است
         /// </summary>
         [Required(ErrorMessage = "لطفا کاربر مبدا ارجاع را نتخاب کنید")]
         [DisplayName("کاربر مبدا ارجاع")]
         public  Guid ReferencedFromId { get; set; }
 
         /// <summary>
-        /// آی  دی کاربری که این استاد برای اصلاح به او ارجاع داده  شده است
+        /// آی  دی کاربری که این متقاضی برای اصلاح به او ارجاع داده  شده است
         /// </summary>
         [Required(ErrorMessage = "لطفا کاربر مقصد ارجاع را نتخاب کنید")]
         [DisplayName("کاربر مقصد ارجاع")]
         public  Guid ReferencedToId { get; set; }
 
         /// <summary>
-        ///  آی دی استاد ارجاع داده شده
+        ///  آی دی متقاضی ارجاع داده شده
         /// </summary>
-        [Required(ErrorMessage = "لطفا استاد را نتخاب کنید")]
-        [DisplayName("استاد")]
-        public  Guid TeacherId { get; set; }
+        [Required(ErrorMessage = "لطفا متقاضی را نتخاب کنید")]
+        [DisplayName("متقاضی")]
+        public  Guid ApplicantId { get; set; }
         #endregion
 
         #region SelectListItems
         /// <summary>
-        /// لیست کاربران برای انتخاب ارجاع دادن استاد به آنها، در لیست آبشاری
+        /// لیست کاربران برای انتخاب ارجاع دادن متقاضی به آنها، در لیست آبشاری
         /// </summary>
         public  IEnumerable<SelectListItem> RefrencedToUsers { get; set; }
         #endregion 

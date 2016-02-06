@@ -303,7 +303,7 @@ WriteLiteral(" class=\"btn btn-sm btn-success \"");
 WriteAttribute("href", Tuple.Create(" href=\"", 2835), Tuple.Create("\"", 2913)
             
             #line 75 "..\..\Views\EntireEvaluation\_EntireEvaluationItem.cshtml"
-, Tuple.Create(Tuple.Create("", 2842), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.EntireEvaluation.GetDocument(Model.Id,Model.TeacherId))
+, Tuple.Create(Tuple.Create("", 2842), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.EntireEvaluation.GetDocument(Model.Id,Model.ApplicantId))
             
             #line default
             #line hidden
@@ -352,11 +352,11 @@ WriteLiteral(" data-delete-url=\"");
             #line hidden
 WriteLiteral("\"");
 
-WriteLiteral(" data-Teacher=\"");
+WriteLiteral(" data-Applicant=\"");
 
             
             #line 82 "..\..\Views\EntireEvaluation\_EntireEvaluationItem.cshtml"
-                                                                                                            Write(Model.TeacherId);
+                                                                                                            Write(Model.ApplicantId);
 
             
             #line default

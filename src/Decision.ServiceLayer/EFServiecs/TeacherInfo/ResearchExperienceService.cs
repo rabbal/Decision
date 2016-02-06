@@ -7,14 +7,14 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Decision.Common.Helpers.Extentions;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.TeacherInfo;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.ViewModel.ResearchExperience;
 using EntityFramework.Extensions;
 using Microsoft.AspNet.Identity;
 
-namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
+namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
 {
     /// <summary>
     /// کلاس ارائه دهنده سرویس های لازم برای سابقه های پژوهشی
@@ -80,7 +80,7 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
             var cities =
                 _researchExperiences.Include(a => a.Creator)
                     .Include(a => a.LasModifier)
-                    .Where(a => a.TeacherId == request.TeacherId)
+                    .Where(a => a.ApplicantId == request.ApplicantId)
                     .AsNoTracking()
                     .OrderByDescending(a => a.Title)
                     .AsQueryable();

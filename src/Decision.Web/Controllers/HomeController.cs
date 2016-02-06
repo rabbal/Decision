@@ -5,7 +5,7 @@ using System.Web.Routing;
 using Decision.Common.Controller;
 using Decision.Common.Filters;
 using Decision.ServiceLayer.Contracts.Evaluations;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.PrivateMessage;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.Utility;
@@ -22,16 +22,16 @@ namespace Decision.Web.Controllers
         private readonly IMessageService _messageService;
         private readonly IApplicationUserManager _userManager;
         private readonly IArticleEvaluationService _ArticleEvaluationService;
-        private readonly ITeacherService _TeacherService;
+        private readonly IApplicantService _ApplicantService;
         private readonly IArticleService _ArticleService;
 
         #endregion
 
         #region Ctor
 
-        public HomeController(IMessageService messageService, IApplicationUserManager userManager, IArticleService ArticleService, ITeacherService TeacherService, IArticleEvaluationService ArticleEvaluation)
+        public HomeController(IMessageService messageService, IApplicationUserManager userManager, IArticleService ArticleService, IApplicantService ApplicantService, IArticleEvaluationService ArticleEvaluation)
         {
-            _TeacherService = TeacherService;
+            _ApplicantService = ApplicantService;
             _ArticleEvaluationService = ArticleEvaluation;
             _ArticleService = ArticleService;
             _userManager = userManager;
@@ -47,9 +47,9 @@ namespace Decision.Web.Controllers
         {
             var viewModel = new BenchmarkViewModel
             {
-                ApprovedTeachersCount = _TeacherService.ApprovedCount().GetPersianNumber(),
-                NonApprovedTeachersCount = _TeacherService.NonApprovedCount().GetPersianNumber(),
-                JugesCount = _TeacherService.Count().GetPersianNumber(),
+                ApprovedApplicantsCount = _ApplicantService.ApprovedCount().GetPersianNumber(),
+                NonApprovedApplicantsCount = _ApplicantService.NonApprovedCount().GetPersianNumber(),
+                JugesCount = _ApplicantService.Count().GetPersianNumber(),
                 UsersCount = _userManager.Count().GetPersianNumber(),
                 ArticlesCount = _ArticleService.Count().GetPersianNumber()
             };
@@ -66,18 +66,18 @@ namespace Decision.Web.Controllers
         #region Sections
         [AjaxOnly]
         [HttpPost]
-        public virtual ActionResult GetTopScoreTeachers()
+        public virtual ActionResult GetTopScoreApplicants()
         {
-            var viewModel = _TeacherService.GetTenTopScoreTeachers();
-            return PartialView(MVC.Home.Views._TeacherWithTopScoreList, viewModel);
+            var viewModel = _ApplicantService.GetTenTopScoreApplicants();
+            return PartialView(MVC.Home.Views._ApplicantWithTopScoreList, viewModel);
         }
 
         [AjaxOnly]
         [HttpPost]
-        public virtual ActionResult GetNewAddedTeachers()
+        public virtual ActionResult GetNewAddedApplicants()
         {
-            var viewModel = _TeacherService.GetTenNewAddedTeachers();
-            return PartialView(MVC.Home.Views._NewTeachersList, viewModel);
+            var viewModel = _ApplicantService.GetTenNewAddedApplicants();
+            return PartialView(MVC.Home.Views._NewApplicantsList, viewModel);
         }
         #endregion
     }

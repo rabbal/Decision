@@ -3,13 +3,13 @@
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header alert alert-success">
-            <h6 class="modal-title">درج سابقه تدریس علمی استاد</h6>
+            <h6 class="modal-title">درج سابقه تدریس علمی متقاضی</h6>
         </div>
         <div class="modal-body">
             @using (Ajax.BeginForm(MVC.ScientificTeaching.Create(), new AjaxOptions { HttpMethod = "POST", OnComplete = "createOnComplete(xhr, status, 'scientificTeachingList', '#modal','createScientificTeachingForm','#createScientificTeachingButton')" }, new { @class = "form-horizontal", id = "createScientificTeachingForm", autocomplete = "off" }))
             {
                 @Html.AntiForgeryToken()
-                @Html.HiddenFor(model => model.TeacherId)
+                @Html.HiddenFor(model => model.ApplicantId)
                 @Html.HiddenFor(model => model.Type)
                 <div class="form-group">
                     <label class="control-label col-md-2" for="TitleId">عنوان تدریس شده</label>

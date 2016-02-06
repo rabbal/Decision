@@ -10,7 +10,7 @@ using Decision.Common.Helpers.Extentions;
 using Decision.Common.Helpers.Json;
 using Decision.DataLayer.Context;
 using Decision.ServiceLayer.Contracts.Common;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Security;
 using Decision.ViewModel.Address;
 using Decision.Web.Extentions;
@@ -20,39 +20,39 @@ using MvcSiteMapProvider;
 namespace Decision.Web.Controllers
 {
     
-    [RoutePrefix("Teacher/Address")]
+    [RoutePrefix("Applicant/Address")]
     [Route("{action}")]
     [Mvc5Authorize(AssignableToRolePermissions.CanManageAddress)]
     public partial class AddressController : Controller
     {
         #region	Fields
 
-        private readonly IReferentialTeacherService _referentialTeacherService;
+        private readonly IReferentialApplicantService _referentialApplicantService;
         private const string IranCitiesPath = "~/App_Data/IranCities.xml";
         private readonly IUnitOfWork _unitOfWork;
         private readonly IAddressService _addressService;
         #endregion
 
         #region	Ctor
-        public AddressController(IUnitOfWork unitOfWork, IAddressService addressService,IReferentialTeacherService referentialTeacherService)
+        public AddressController(IUnitOfWork unitOfWork, IAddressService addressService,IReferentialApplicantService referentialApplicantService)
         {
             _unitOfWork = unitOfWork;
             _addressService = addressService;
-            _referentialTeacherService = referentialTeacherService;
+            _referentialApplicantService = referentialApplicantService;
         }
         #endregion
 
         #region List,ListAjax
         [HttpGet]
-        [Route("List/{TeacherId}")]
+        [Route("List/{ApplicantId}")]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        [TeacherAuthorize]
-        [MvcSiteMapNode(ParentKey = "Teacher_Details", Title = "لیست آدرس ها",PreservedRouteParameters = "TeacherId")]
-        public virtual async Task<ActionResult> List(Guid TeacherId)
+        [ApplicantAuthorize]
+        [MvcSiteMapNode(ParentKey = "Applicant_Details", Title = "لیست آدرس ها",PreservedRouteParameters = "ApplicantId")]
+        public virtual async Task<ActionResult> List(Guid ApplicantId)
         {
             var viewModel = await _addressService.GetAddressesAsync(new AddressSearchRequest
             {
-                TeacherId = TeacherId
+                ApplicantId = ApplicantId
             });
             return View( viewModel);
         }
@@ -63,7 +63,7 @@ namespace Decision.Web.Controllers
         
         public virtual async Task<ActionResult> ListAjax(AddressSearchRequest request)
         {
-            if (!_referentialTeacherService.CanManageTeacher(request.TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(request.ApplicantId)) return HttpNotFound();
             var viewModel = await _addressService.GetAddressesAsync(request);
             if (viewModel.Addresses == null || !viewModel.Addresses.Any()) return Content("no-more-info");
             return PartialView(MVC.Address.Views._ListAjax, viewModel);
@@ -74,10 +74,10 @@ namespace Decision.Web.Controllers
         [HttpGet]
         [AjaxOnly]
         
-        public virtual ActionResult Create(Guid TeacherId)
+        public virtual ActionResult Create(Guid ApplicantId)
         {
-            if (!_referentialTeacherService.CanManageTeacher(TeacherId)) return HttpNotFound();
-            var viewModel = _addressService.GetForCreate(TeacherId,IranCitiesPath);
+            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
+            var viewModel = _addressService.GetForCreate(ApplicantId,IranCitiesPath);
             return PartialView(MVC.Address.Views._Create, viewModel);
         }
 
@@ -89,7 +89,7 @@ namespace Decision.Web.Controllers
         
         public virtual async Task<ActionResult> Create(AddAddressViewModel viewModel)
         {
-            if (!_referentialTeacherService.CanManageTeacher(viewModel.TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
             if (!ModelState.IsValid)
             {
                 _addressService.FillAddViewModel(viewModel,IranCitiesPath);
@@ -123,7 +123,7 @@ namespace Decision.Web.Controllers
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var viewModel = await _addressService.GetForEditAsync(id.Value, IranCitiesPath);
             if (viewModel == null) return HttpNotFound();
-            if (!_referentialTeacherService.CanManageTeacher(viewModel.TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
             return PartialView(MVC.Address.Views._Edit, viewModel);
         }
 
@@ -131,10 +131,10 @@ namespace Decision.Web.Controllers
         //[CheckReferrer]
         [AjaxOnly]
         [ValidateAntiForgeryToken]
-        [Audit(Description = "ویرایش آدرس استاد")]
+        [Audit(Description = "ویرایش آدرس متقاضی")]
         public virtual async Task<ActionResult> Edit(EditAddressViewModel viewModel)
         {
-            if (!_referentialTeacherService.CanManageTeacher(viewModel.TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
 
             if (!await _addressService.IsInDb(viewModel.Id))
                 this.AddErrors("Location", "آدرس مورد نظر توسط یکی از کاربران در شبکه،حذف شده است");
@@ -188,12 +188,12 @@ namespace Decision.Web.Controllers
         [AjaxOnly]
         //[CheckReferrer]
         [ValidateAntiForgeryToken]
-        [Audit(Description = "حذف آدرس استاد")]
+        [Audit(Description = "حذف آدرس متقاضی")]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         
-        public virtual async Task<ActionResult> Delete(Guid? id,Guid TeacherId)
+        public virtual async Task<ActionResult> Delete(Guid? id,Guid ApplicantId)
         {
-            if (!_referentialTeacherService.CanManageTeacher(TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             await _addressService.DeleteAsync(id.Value);
             return Content("ok");

@@ -1,4 +1,4 @@
-﻿@using Decision.DomainClasses.Entities.TeacherInfo
+﻿@using Decision.DomainClasses.Entities.ApplicantInfo
 @model Decision.ViewModel.EducationalBackground.EducationalBackgroundViewModel
 <div class="col-md-12 " id="educationalBackground-@Model.Id">
     <div class="panel panel-default">
@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <label class="text-muted">
-                        استاد مشاور:
+                        متقاضی مشاور:
                     </label>
                     <small>@Model.Advisor</small>
                 </div>
@@ -97,7 +97,7 @@
                 </div>
                 <div class="col-md-3">
                     <label class="text-muted">
-                        استاد راهنما:
+                        متقاضی راهنما:
                     </label>
                     <small>@Model.Supervisor</small>
                 </div>
@@ -114,7 +114,7 @@
                 <a class="btn btn-primary btn-sm"
                    href="@Url.Action(MVC.EducationalBackground.Edit(Model.Id))" role="button"><i class="fa fa-edit"></i>ویرایش</a>
                 <button class="btn-sm btn btn-danger"
-                        type="button" data-delete-url="@Url.Action(MVC.EducationalBackground.Delete())" data-Teacher="@Model.TeacherId" data-removal-element="#educationalBackground-@Model.Id" id="remove-@Model.Id">
+                        type="button" data-delete-url="@Url.Action(MVC.EducationalBackground.Delete())" data-Applicant="@Model.ApplicantId" data-removal-element="#educationalBackground-@Model.Id" id="remove-@Model.Id">
                     <i class="fa fa-trash-o"></i>
                     حذف
                 </button>

@@ -1,12 +1,12 @@
 ﻿
-@model IEnumerable<Decision.ViewModel.Teacher.ReferTeacherViewModel>
+@model IEnumerable<Decision.ViewModel.Applicant.ReferApplicantViewModel>
 @{
     ViewBag.Title = "لیست اساتید درحال تکمیل";
 }
 @Html.AntiForgeryToken()
 @foreach (var viewModel in Model)
 {
-    <div class="col-md-12" id="Teacher-@viewModel.Id">
+    <div class="col-md-12" id="Applicant-@viewModel.Id">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">
@@ -54,7 +54,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <label class="text-muted" for="order">پایه استاد:</label>
+                                <label class="text-muted" for="order">پایه متقاضی:</label>
                                 <small id="order">@viewModel.CollegiateOrder.GetPersianNumber()</small>
                             </div>
                             <div class="col-md-3">
@@ -99,22 +99,22 @@
             </div>
             <div class="panel-footer">
                 <div class="pull-left">
-                    <a href="@Url.Action(MVC.Teacher.Edit(viewModel.Id))" class="btn btn-sm btn-primary" type="button">
+                    <a href="@Url.Action(MVC.Applicant.Edit(viewModel.Id))" class="btn btn-sm btn-primary" type="button">
                         <i class="fa fa-edit"></i>
                         ویرایش
                     </a>
-                    <a href="@Url.Action(MVC.Teacher.Details(viewModel.Id))" class="btn btn-sm btn-info" type="button">
+                    <a href="@Url.Action(MVC.Applicant.Details(viewModel.Id))" class="btn btn-sm btn-info" type="button">
                         <i class="fa fa-align-justify"></i>
                         مشاهده اطلاعت بیشتر
                     </a>
                     <button class="btn-sm btn btn-danger"
-                            type="button" data-delete-url="@Url.Action(MVC.Teacher.Delete())" data-removal-element="#Teacher-@viewModel.Id" id="remove-@viewModel.Id">
+                            type="button" data-delete-url="@Url.Action(MVC.Applicant.Delete())" data-removal-element="#Applicant-@viewModel.Id" id="remove-@viewModel.Id">
                         <i class="fa fa-trash-o"></i>
                         حذف
                     </button>
 
                     <button class="btn-sm btn btn-success"
-                            type="button" data-delete-url="@Url.Action(MVC.Teacher.FinishRefer(viewModel.Id))" data-done-msg="استاد مورد نظر با موفقیت ارسال شد." data-removal-element="#Teacher-@viewModel.Id" data-message="آیا از ارسال استاد مطمئن هستید؟" data-type="information" id="remove-@viewModel.Id">
+                            type="button" data-delete-url="@Url.Action(MVC.Applicant.FinishRefer(viewModel.Id))" data-done-msg="متقاضی مورد نظر با موفقیت ارسال شد." data-removal-element="#Applicant-@viewModel.Id" data-message="آیا از ارسال متقاضی مطمئن هستید؟" data-type="information" id="remove-@viewModel.Id">
                         <i class="fa fa-reply"></i>
                         ارسال برای تایید
                     </button>

@@ -6,8 +6,8 @@ namespace Decision.ViewModel.Address
    public class AddressSearchRequest : BaseSearchRequest
     {
         /// <summary>
-        /// آی دی استاد مربوط به آدرس
+        /// آی دی متقاضی مربوط به آدرس
         /// </summary>
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
     }
 }

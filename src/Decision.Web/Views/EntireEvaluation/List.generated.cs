@@ -45,7 +45,7 @@ namespace ASP
             
             #line 2 "..\..\Views\EntireEvaluation\List.cshtml"
   
-    ViewBag.Title = "لیست ارزیابی های استاد";
+    ViewBag.Title = "لیست ارزیابی های متقاضی";
 
             
             #line default
@@ -139,7 +139,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 28 "..\..\Views\EntireEvaluation\List.cshtml"
-               Html.RenderAction(MVC.EntireEvaluation.Create(Model.SearchRequest.TeacherId));
+               Html.RenderAction(MVC.EntireEvaluation.Create(Model.SearchRequest.ApplicantId));
             
             #line default
             #line hidden
@@ -183,11 +183,11 @@ WriteLiteral(">\r\n                <button");
 
 WriteLiteral(" data-page=\"2\"");
 
-WriteLiteral(" data-json=\'{\"TeacherId\":\"");
+WriteLiteral(" data-json=\'{\"ApplicantId\":\"");
 
             
             #line 39 "..\..\Views\EntireEvaluation\List.cshtml"
-                                                          Write(Model.SearchRequest.TeacherId);
+                                                          Write(Model.SearchRequest.ApplicantId);
 
             
             #line default
@@ -252,7 +252,7 @@ WriteLiteral("\r\n");
             #line hidden
             
             #line 55 "..\..\Views\EntireEvaluation\List.cshtml"
-      Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.SearchRequest.TeacherId);
+      Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.SearchRequest.ApplicantId);
             
             #line default
             #line hidden

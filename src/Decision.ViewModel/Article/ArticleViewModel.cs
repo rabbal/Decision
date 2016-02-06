@@ -5,7 +5,7 @@ using Decision.ViewModel.Common;
 namespace Decision.ViewModel.Article
 {
     /// <summary>
-    /// ویومدل نمایش مقاله های صادر شده توسط استاد
+    /// ویومدل نمایش مقاله های صادر شده توسط متقاضی
     /// </summary>
     public class ArticleViewModel :BaseViewModel
     {
@@ -13,7 +13,7 @@ namespace Decision.ViewModel.Article
         [DisplayName("کد مقاله")]
         public string Code { get; set; }
         /// <summary>
-        /// آی دی مقاله صادر شده توسط استاد
+        /// آی دی مقاله صادر شده توسط متقاضی
         /// </summary>
         public Guid Id { get; set; }
 
@@ -35,7 +35,7 @@ namespace Decision.ViewModel.Article
         [DisplayName("تاریخ ارائه")]
         public  DateTime ArticleDate { get; set; }
 
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
 
         #endregion 
     }

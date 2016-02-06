@@ -45,7 +45,7 @@ namespace ASP
             
             #line 2 "..\..\Views\Interview\List.cshtml"
   
-    ViewBag.Title = "لیست مصاحبه های استاد";
+    ViewBag.Title = "لیست مصاحبه های متقاضی";
 
             
             #line default
@@ -139,7 +139,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 29 "..\..\Views\Interview\List.cshtml"
-               Html.RenderAction(MVC.Interview.Create(Model.SearchRequest.TeacherId));
+               Html.RenderAction(MVC.Interview.Create(Model.SearchRequest.ApplicantId));
             
             #line default
             #line hidden
@@ -183,11 +183,11 @@ WriteLiteral(">\r\n                <button");
 
 WriteLiteral(" data-page=\"2\"");
 
-WriteLiteral(" data-json=\'{\"TeacherId\":\"");
+WriteLiteral(" data-json=\'{\"ApplicantId\":\"");
 
             
             #line 40 "..\..\Views\Interview\List.cshtml"
-                                                          Write(Model.SearchRequest.TeacherId);
+                                                          Write(Model.SearchRequest.ApplicantId);
 
             
             #line default
@@ -252,7 +252,7 @@ WriteLiteral("\r\n");
             #line hidden
             
             #line 56 "..\..\Views\Interview\List.cshtml"
-      Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.SearchRequest.TeacherId);
+      Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.SearchRequest.ApplicantId);
             
             #line default
             #line hidden

@@ -1,60 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using Decision.DomainClasses.Entities.Common;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 
 namespace Decision.DomainClasses.Entities.Evaluations
 {
     /// <summary>
-    /// نشان دهنده مصاحبه ای که با استاد شده است
+    /// نشان دهنده مصاحبه ای که با متقاضی شده است
     /// </summary>
     public class Interview : BaseEntity
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public Interview()
-        {
-            Attachment = BitConverter.GetBytes(0);
-        }
         #region Properties
         /// <summary>
         /// تاریخ مصاحبه
         /// </summary>
-        public  DateTime InterviewDate { get; set; }
+        public DateTime InterviewDate { get; set; }
         /// <summary>
         /// متن کامل مصاحبه
         /// </summary>
-        public  string Body { get; set; }
-        /// <summary>
-        /// خلاصه ای از مصاحبه
-        /// </summary>
-        public  string Brief { get; set; }
-        /// <summary>
-        /// فایل ضمیمه مصاحبه
-        /// </summary>
-        public  byte[] Attachment { get; set; }
+        public string Body { get; set; }
         #endregion
 
         #region NavigationProperties
         /// <summary>
-        /// آی دی استاد مصاحبه شده
+        /// آی دی متقاضی مصاحبه شده
         /// </summary>
-        public  Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
         /// <summary>
-        /// استاد مصاحبه شده
+        /// متقاضی مصاحبه شده
         /// </summary>
-        public  Teacher Teacher { get; set; }
-        /// <summary>
-        /// مصاحبه کننده ها
-        /// </summary>
-        public  Appraiser Interviewer { get; set; }
-
-        /// <summary>
-        /// آی دی مصاحبه کننده ها
-        /// </summary>
-        public  Guid InterviewerId { get; set; }
-
+        public Applicant Applicant { get; set; }
         #endregion
     }
 }

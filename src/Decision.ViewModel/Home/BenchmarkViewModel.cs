@@ -15,7 +15,7 @@ namespace Decision.ViewModel.Home
         /// <summary>
         /// تعداد اساتیدی که برای مدیریت ارسال شده اند ولی هنوز تایید نشده اند
         /// </summary>
-       public string  NonApprovedTeachersCount  { get; set; } = "۰";
+       public string  NonApprovedApplicantsCount  { get; set; } = "۰";
         /// <summary>
         /// تاریخ آخرین بک آپ گیری
         /// </summary>
@@ -27,7 +27,7 @@ namespace Decision.ViewModel.Home
         /// <summary>
         /// تعداد اساتید تأیید شده
         /// </summary>
-        public string ApprovedTeachersCount { get; set; } = "۰";
+        public string ApprovedApplicantsCount { get; set; } = "۰";
         /// <summary>
         /// تعداد کل مقالات
         /// </summary>

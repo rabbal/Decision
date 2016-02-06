@@ -11,7 +11,7 @@ using Decision.Common.Helpers.Json;
 using Decision.Common.HtmlCleaner;
 using Decision.DataLayer.Context;
 using Decision.ServiceLayer.Contracts.Evaluations;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Security;
 using Decision.ViewModel.EntireEvaluation;
 using Decision.Web.Extentions;
@@ -21,37 +21,37 @@ using MvcSiteMapProvider;
 namespace Decision.Web.Controllers
 {
     
-    [RoutePrefix("Teacher/EntireEvaluation")]
+    [RoutePrefix("Applicant/EntireEvaluation")]
     [Route("{action}")]
     [Mvc5Authorize(AssignableToRolePermissions.CanManageEntireEvaluation)]
     public partial class EntireEvaluationController : Controller
     {
         #region	Fields
 
-        private readonly IReferentialTeacherService _referentialTeacherService;
+        private readonly IReferentialApplicantService _referentialApplicantService;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IEntireEvaluationService _entireEvaluationService;
         #endregion
 
         #region	Ctor
-        public EntireEvaluationController(IUnitOfWork unitOfWork, IEntireEvaluationService entireEvaluationService,IReferentialTeacherService referentialTeacherService)
+        public EntireEvaluationController(IUnitOfWork unitOfWork, IEntireEvaluationService entireEvaluationService,IReferentialApplicantService referentialApplicantService)
         {
             _unitOfWork = unitOfWork;
             _entireEvaluationService = entireEvaluationService;
-            _referentialTeacherService = referentialTeacherService;
+            _referentialApplicantService = referentialApplicantService;
         }
         #endregion
 
         #region List,ListAjax
         [HttpGet]
-        [Route("List/{TeacherId}")]
-        [TeacherAuthorize]
-        [MvcSiteMapNode(ParentKey = "Teacher_Details", Title = "لیست ارزیابی های به عمل آمده از استاد", PreservedRouteParameters = "TeacherId",Key = "EntireEvaluation_List")]
-        public virtual async Task<ActionResult> List(Guid TeacherId)
+        [Route("List/{ApplicantId}")]
+        [ApplicantAuthorize]
+        [MvcSiteMapNode(ParentKey = "Applicant_Details", Title = "لیست ارزیابی های به عمل آمده از متقاضی", PreservedRouteParameters = "ApplicantId",Key = "EntireEvaluation_List")]
+        public virtual async Task<ActionResult> List(Guid ApplicantId)
         {
             var viewModel = await _entireEvaluationService.GetPagedListAsync(new EntireEvaluationSearchRequest
             {
-                TeacherId = TeacherId
+                ApplicantId = ApplicantId
             });
             return View(viewModel);
         }
@@ -61,7 +61,7 @@ namespace Decision.Web.Controllers
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public virtual async Task<ActionResult> ListAjax(EntireEvaluationSearchRequest request)
         {
-            if (!_referentialTeacherService.CanManageTeacher(request.TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(request.ApplicantId)) return HttpNotFound();
 
             var viewModel = await _entireEvaluationService.GetPagedListAsync(request);
             if (viewModel.EntireEvaluations == null || !viewModel.EntireEvaluations.Any()) return Content("no-more-info");
@@ -71,11 +71,11 @@ namespace Decision.Web.Controllers
 
         #region Create
         [HttpGet]
-        public virtual async Task<ActionResult> Create(Guid TeacherId)
+        public virtual async Task<ActionResult> Create(Guid ApplicantId)
         {
-            if (!_referentialTeacherService.CanManageTeacher(TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
 
-            var viewModel = await _entireEvaluationService.GetForCreate(TeacherId);
+            var viewModel = await _entireEvaluationService.GetForCreate(ApplicantId);
             return PartialView(MVC.EntireEvaluation.Views._Create, viewModel);
         }
 
@@ -87,7 +87,7 @@ namespace Decision.Web.Controllers
         [AllowUploadSpecialFilesOnly(".pdf", justImage: false)]
         public virtual async Task<ActionResult> Create(AddEntireEvaluationViewModel viewModel)
         {
-            if (!_referentialTeacherService.CanManageTeacher(viewModel.TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
 
             if (!ModelState.IsValid)
             {
@@ -126,7 +126,7 @@ namespace Decision.Web.Controllers
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var viewModel = await _entireEvaluationService.GetForEditAsync(id.Value);
             if (viewModel == null) return HttpNotFound();
-            if (!_referentialTeacherService.CanManageTeacher(viewModel.TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
 
             return View( viewModel);
         }
@@ -139,7 +139,7 @@ namespace Decision.Web.Controllers
         
         public virtual async Task<ActionResult> Edit(EditEntireEvaluationViewModel viewModel)
         {
-            if (!_referentialTeacherService.CanManageTeacher(viewModel.TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
 
             if (!await _entireEvaluationService.IsInDb(viewModel.Id))
                 this.AddErrors("Content", "ارزیابی مورد نظر توسط یکی از کاربران در شبکه،حذف شده است");
@@ -159,7 +159,7 @@ namespace Decision.Web.Controllers
             if (message.HasValue())
                 this.AddErrors("Content", string.Format(message, "ارزیابی"));
 
-            if (ModelState.IsValid) return RedirectToAction(MVC.EntireEvaluation.List(viewModel.TeacherId));
+            if (ModelState.IsValid) return RedirectToAction(MVC.EntireEvaluation.List(viewModel.ApplicantId));
             await _entireEvaluationService.FillEditViewModel(viewModel);
             return View(viewModel);
         }
@@ -171,11 +171,11 @@ namespace Decision.Web.Controllers
         [AjaxOnly]
         //[CheckReferrer]
         [ValidateAntiForgeryToken]
-        [Audit(Description = "حذف ارزیابی به عمل آمده از استاد")]
+        [Audit(Description = "حذف ارزیابی به عمل آمده از متقاضی")]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        public virtual async Task<ActionResult> Delete(Guid? id,Guid TeacherId)
+        public virtual async Task<ActionResult> Delete(Guid? id,Guid ApplicantId)
         {
-            if (!_referentialTeacherService.CanManageTeacher(TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
 
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             await _entireEvaluationService.DeleteAsync(id.Value);
@@ -184,9 +184,9 @@ namespace Decision.Web.Controllers
         #endregion
 
         #region GetDocument
-        public virtual async Task<ActionResult> GetDocument(Guid id,Guid TeacherId)
+        public virtual async Task<ActionResult> GetDocument(Guid id,Guid ApplicantId)
         {
-            if (!_referentialTeacherService.CanManageTeacher(TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
 
             var data = await _entireEvaluationService.GaetAttachment(id);
 

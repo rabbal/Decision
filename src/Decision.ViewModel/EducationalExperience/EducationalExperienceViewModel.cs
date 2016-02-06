@@ -14,7 +14,7 @@ namespace Decision.ViewModel.EducationalExperience
         /// آی دی سابقه آموزشی
         /// </summary>
         public  Guid Id { get; set; }
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
 
         /// <summary>
         /// فیلد مشترک برای موارد زیر

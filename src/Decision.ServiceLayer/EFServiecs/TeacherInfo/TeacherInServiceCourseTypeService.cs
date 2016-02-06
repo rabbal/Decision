@@ -7,20 +7,20 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Decision.DataLayer.Context;
 using Decision.DomainClasses.Entities.Common;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Common;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Users;
-using Decision.ViewModel.TeacherInServiceCourseType;
+using Decision.ViewModel.ApplicantInServiceCourseType;
 using EntityFramework.Extensions;
 using Microsoft.AspNet.Identity;
 
-namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
+namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
 {
     /// <summary>
-    /// کلاس ارائه دهنده سروسیس های لازم برای اعمال روی تعداد ساعت یک نوع ضمن خدمت برای استاد
+    /// کلاس ارائه دهنده سروسیس های لازم برای اعمال روی تعداد ساعت یک نوع ضمن خدمت برای متقاضی
     /// </summary>
-    public class TeacherInServiceCourseTypeService : ITeacherInServiceCourseTypeService
+    public class ApplicantInServiceCourseTypeService : IApplicantInServiceCourseTypeService
     {
         #region Fields
 
@@ -28,16 +28,16 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
         private readonly IMappingEngine _mappingEngine;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IApplicationUserManager _userManager;
-        private readonly IDbSet<TeacherInServiceCourseType> _TeacherInServiceCourseTypes;
+        private readonly IDbSet<ApplicantInServiceCourseType> _ApplicantInServiceCourseTypes;
         #endregion
 
         #region Ctor
 
-        public TeacherInServiceCourseTypeService(IUnitOfWork unitOfWork,ITitleService titleService, IApplicationUserManager userManager, IMappingEngine mappingEngine)
+        public ApplicantInServiceCourseTypeService(IUnitOfWork unitOfWork,ITitleService titleService, IApplicationUserManager userManager, IMappingEngine mappingEngine)
         {
             _userManager = userManager;
             _unitOfWork = unitOfWork;
-            _TeacherInServiceCourseTypes = _unitOfWork.Set<TeacherInServiceCourseType>();
+            _ApplicantInServiceCourseTypes = _unitOfWork.Set<ApplicantInServiceCourseType>();
             _mappingEngine = mappingEngine;
             _titleService = titleService;
         }
@@ -46,14 +46,14 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
         #region Delete
         public Task DeleteAsync(Guid id)
         {
-            return _TeacherInServiceCourseTypes.Where(a => a.Id == id).DeleteAsync();
+            return _ApplicantInServiceCourseTypes.Where(a => a.Id == id).DeleteAsync();
         }
         #endregion
 
         #region GetForEdit
-        public async  Task<EditTeacherInServiceCourseTypeViewModel> GetForEditAsync(Guid id)
+        public async  Task<EditApplicantInServiceCourseTypeViewModel> GetForEditAsync(Guid id)
         {
-           var viewModel=await _TeacherInServiceCourseTypes.AsNoTracking().ProjectTo<EditTeacherInServiceCourseTypeViewModel>(_mappingEngine).FirstOrDefaultAsync(a => a.Id == id);
+           var viewModel=await _ApplicantInServiceCourseTypes.AsNoTracking().ProjectTo<EditApplicantInServiceCourseTypeViewModel>(_mappingEngine).FirstOrDefaultAsync(a => a.Id == id);
             if (viewModel == null) return null;
             viewModel.InServiceCourseTypeTitles =
                 await
@@ -64,54 +64,54 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
         #endregion
 
         #region Edit
-        public async Task EditAsync(EditTeacherInServiceCourseTypeViewModel viewModel)
+        public async Task EditAsync(EditApplicantInServiceCourseTypeViewModel viewModel)
         {
-            var TeacherInServiceCourseType = await _TeacherInServiceCourseTypes.FirstAsync(a => a.Id == viewModel.Id);
-            _mappingEngine.Map(viewModel, TeacherInServiceCourseType);
-            TeacherInServiceCourseType.LasModifierId = _userManager.GetCurrentUserId();
+            var ApplicantInServiceCourseType = await _ApplicantInServiceCourseTypes.FirstAsync(a => a.Id == viewModel.Id);
+            _mappingEngine.Map(viewModel, ApplicantInServiceCourseType);
+            ApplicantInServiceCourseType.LasModifierId = _userManager.GetCurrentUserId();
         }
         #endregion
 
         #region Create
 
-        public async Task<TeacherInServiceCourseTypeViewModel> Create(AddTeacherInServiceCourseTypeViewModel viewModel)
+        public async Task<ApplicantInServiceCourseTypeViewModel> Create(AddApplicantInServiceCourseTypeViewModel viewModel)
         {
-            var TeacherInServiceCourseType = _mappingEngine.Map<TeacherInServiceCourseType>(viewModel);
-            TeacherInServiceCourseType.CreatorId = _userManager.GetCurrentUserId();
-            _TeacherInServiceCourseTypes.Add(TeacherInServiceCourseType);
+            var ApplicantInServiceCourseType = _mappingEngine.Map<ApplicantInServiceCourseType>(viewModel);
+            ApplicantInServiceCourseType.CreatorId = _userManager.GetCurrentUserId();
+            _ApplicantInServiceCourseTypes.Add(ApplicantInServiceCourseType);
             await _unitOfWork.SaveChangesAsync();
-            return await GetTeacherInServiceCourseTypeViewModel(TeacherInServiceCourseType.Id);
+            return await GetApplicantInServiceCourseTypeViewModel(ApplicantInServiceCourseType.Id);
 
         }
         #endregion
 
         #region GetPagedList
-        public async  Task<TeacherInServiceCourseTypeListViewModel> GetPagedListAsync(TeacherInServiceCourseTypeSearchRequest request)
+        public async  Task<ApplicantInServiceCourseTypeListViewModel> GetPagedListAsync(ApplicantInServiceCourseTypeSearchRequest request)
         {
-            var TeacherInServiceCourseTypes =
-                _TeacherInServiceCourseTypes.Where(a => a.TeacherId == request.TeacherId).AsNoTracking()
+            var ApplicantInServiceCourseTypes =
+                _ApplicantInServiceCourseTypes.Where(a => a.ApplicantId == request.ApplicantId).AsNoTracking()
                     .Include(a => a.Creator).Include(a => a.LasModifier)
                     .Include(a => a.InServiceCourseTypeTitle).OrderByDescending(a => a.CreateDate).AsQueryable();
 
-            var selectedTeacherInServiceCourseTypes = TeacherInServiceCourseTypes.ProjectTo<TeacherInServiceCourseTypeViewModel>(_mappingEngine);
+            var selectedApplicantInServiceCourseTypes = ApplicantInServiceCourseTypes.ProjectTo<ApplicantInServiceCourseTypeViewModel>(_mappingEngine);
 
-            var query =await   selectedTeacherInServiceCourseTypes
+            var query =await   selectedApplicantInServiceCourseTypes
                 .Skip((request.PageIndex - 1)*10)
                 .Take(10).ToListAsync();
 
-            return new TeacherInServiceCourseTypeListViewModel { SearchRequest = request, TeacherInServiceCourseTypes = query };
+            return new ApplicantInServiceCourseTypeListViewModel { SearchRequest = request, ApplicantInServiceCourseTypes = query };
         }
         #endregion
 
         #region IsInDb
         public Task<bool> IsInDb(Guid id)
         {
-            return _TeacherInServiceCourseTypes.AnyAsync(a => a.Id == id);
+            return _ApplicantInServiceCourseTypes.AnyAsync(a => a.Id == id);
         }
         #endregion
 
 
-        public async  Task FillEditViewModel(EditTeacherInServiceCourseTypeViewModel viewModel)
+        public async  Task FillEditViewModel(EditApplicantInServiceCourseTypeViewModel viewModel)
         {
             viewModel.InServiceCourseTypeTitles =
                await
@@ -119,17 +119,17 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
                        viewModel.InServiceCourseTypeTitleId);
         }
 
-        public Task<TeacherInServiceCourseTypeViewModel> GetTeacherInServiceCourseTypeViewModel(Guid guid)
+        public Task<ApplicantInServiceCourseTypeViewModel> GetApplicantInServiceCourseTypeViewModel(Guid guid)
         {
-            return _TeacherInServiceCourseTypes
+            return _ApplicantInServiceCourseTypes
                 .Include(a => a.Creator).Include(a => a.LasModifier)
                 .Include(a => a.InServiceCourseTypeTitle)
                 .AsNoTracking()
-                .ProjectTo<TeacherInServiceCourseTypeViewModel>(_mappingEngine)
+                .ProjectTo<ApplicantInServiceCourseTypeViewModel>(_mappingEngine)
                 .FirstOrDefaultAsync(a=>a.Id==guid);
         }
 
-        public async  Task FillAddViewModel(AddTeacherInServiceCourseTypeViewModel viewModel)
+        public async  Task FillAddViewModel(AddApplicantInServiceCourseTypeViewModel viewModel)
         {
             viewModel.InServiceCourseTypeTitles =
              await
@@ -137,9 +137,9 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
                      viewModel.InServiceCourseTypeTitleId);
         }
 
-        public async  Task<AddTeacherInServiceCourseTypeViewModel> GetForCreate(Guid TeacherId)
+        public async  Task<AddApplicantInServiceCourseTypeViewModel> GetForCreate(Guid ApplicantId)
         {
-            return new AddTeacherInServiceCourseTypeViewModel
+            return new AddApplicantInServiceCourseTypeViewModel
             {
                 InServiceCourseTypeTitles = await
                     _titleService.GetAsSelectListItemAsync(TitleType.InServiceCourseType, null)

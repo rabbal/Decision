@@ -138,7 +138,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 19 "..\..\Views\Interview\Edit.cshtml"
-               Write(Html.HiddenFor(model => model.TeacherId));
+               Write(Html.HiddenFor(model => model.ApplicantId));
 
             
             #line default
@@ -500,7 +500,7 @@ WriteLiteral(" class=\"btn btn-default btn-md\"");
 WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 4911), Tuple.Create("\"", 4990)
             
             #line 85 "..\..\Views\Interview\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 4942), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Interview.List(Model.TeacherId))
+, Tuple.Create(Tuple.Create("", 4942), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Interview.List(Model.ApplicantId))
             
             #line default
             #line hidden
@@ -532,7 +532,7 @@ WriteLiteral("\r\n");
             #line hidden
             
             #line 98 "..\..\Views\Interview\Edit.cshtml"
-      Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.TeacherId);
+      Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.ApplicantId);
             
             #line default
             #line hidden

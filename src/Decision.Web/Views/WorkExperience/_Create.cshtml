@@ -9,7 +9,7 @@
            @using (Ajax.BeginForm(MVC.WorkExperience.Create(), new AjaxOptions { HttpMethod = "POST", OnComplete = "createOnComplete(xhr, status, 'workExperienceList', '#modal','createWorkExperienceForm','#createWorkExperienceButton')" }, new { @class = "form-horizontal", id = "createWorkExperienceForm", autocomplete = "off" }))
            {
                 @Html.AntiForgeryToken()
-                @Html.HiddenFor(model => model.TeacherId)
+                @Html.HiddenFor(model => model.ApplicantId)
 
 
                 <div class="form-group">

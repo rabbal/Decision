@@ -6,7 +6,7 @@ using System.Web.UI;
 using Decision.Common.Filters;
 using Decision.DataLayer.Context;
 using Decision.ServiceLayer.Contracts.Common;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.Web.Extentions;
 using System.Collections.Generic;
 using System.Linq;

@@ -18,7 +18,7 @@ using Microsoft.AspNet.Identity;
 namespace Decision.ServiceLayer.EFServiecs.Evaluations
 {
     /// <summary>
-    /// کلاس ارائه دهنده سروسیس های لازم برای اعمال روی ارزیابی از مقاله استاد
+    /// کلاس ارائه دهنده سروسیس های لازم برای اعمال روی ارزیابی از مقاله متقاضی
     /// </summary>
     public class ArticleEvaluationService : IArticleEvaluationService
     {

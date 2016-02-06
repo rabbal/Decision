@@ -386,11 +386,11 @@ WriteLiteral(" data-delete-url=\"");
             #line hidden
 WriteLiteral("\"");
 
-WriteLiteral(" data-Teacher=\"");
+WriteLiteral(" data-Applicant=\"");
 
             
             #line 90 "..\..\Views\WorkExperience\_WorkExperienceItem.cshtml"
-                                                                                                          Write(Model.TeacherId);
+                                                                                                          Write(Model.ApplicantId);
 
             
             #line default

@@ -10,8 +10,8 @@ namespace Decision.DomainClasses.Entities.Common
     /// <summary>
     /// Represents the  entity
     /// </summary>
-    /// <typeparam name="TForeignKey">type of user's Id that can be long or long? </typeparam>
-    public abstract class Entity<TForeignKey>
+    
+    public abstract class Entity
     {
         #region Properties
         /// <summary>
@@ -47,14 +47,6 @@ namespace Decision.DomainClasses.Entities.Common
         /// </summary>
         public virtual string CreatorAgent { get; set; }
         /// <summary>
-        /// gets or sets date that this entity repoted last time
-        /// </summary>
-        public virtual DateTime? ReportedOn { get; set; }
-        /// <summary>
-        /// gets or sets counter for Content's report
-        /// </summary>
-        public virtual int ReportsCount { get; set; }
-        /// <summary>
         /// gets or sets count of Modification Default is 1
         /// </summary>
         public virtual int Version { get; set; }
@@ -76,7 +68,7 @@ namespace Decision.DomainClasses.Entities.Common
         /// <summary>
         /// gets ro sets Id of  User that modify this entity
         /// </summary>
-        public virtual TForeignKey ModifiedById { get; set; }
+        public virtual Guid ModifiedById { get; set; }
         /// <summary>
         /// gets ro sets User that Create this entity
         /// </summary>
@@ -84,7 +76,7 @@ namespace Decision.DomainClasses.Entities.Common
         /// <summary>
         /// gets ro sets User that Create this entity
         /// </summary>
-        public virtual TForeignKey CreatedById { get; set; }
+        public virtual Guid CreatedById { get; set; }
         #endregion
     }
 }

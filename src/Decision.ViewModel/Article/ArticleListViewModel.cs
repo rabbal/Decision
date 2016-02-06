@@ -3,7 +3,7 @@
 namespace Decision.ViewModel.Article
 {
     /// <summary>
-    /// ویو مدل نمایش لیست مقاله های صادر شده توسط استاد
+    /// ویو مدل نمایش لیست مقاله های صادر شده توسط متقاضی
     /// </summary>
     public class ArticleListViewModel
     {
@@ -12,7 +12,7 @@ namespace Decision.ViewModel.Article
         /// </summary>
         public ArticleSearchRequest SearchRequest { get; set; }
         /// <summary>
-        /// لیست ویو مدل نمایش مقاله های صادر شده توسط استاد
+        /// لیست ویو مدل نمایش مقاله های صادر شده توسط متقاضی
         /// </summary>
         public IEnumerable<ArticleViewModel> Articles { get; set; }
     }

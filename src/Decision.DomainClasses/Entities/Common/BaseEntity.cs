@@ -7,7 +7,7 @@ namespace Decision.DomainClasses.Entities.Common
     /// <summary>
     /// Represents the base Entity
     /// </summary>
-    public abstract class BaseEntity : Entity<Guid>
+    public abstract class BaseEntity : Entity
     {
         #region Properties
         /// <summary>

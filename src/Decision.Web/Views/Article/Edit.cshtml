@@ -15,7 +15,7 @@
                     @Html.AntiForgeryToken()
                     @Html.HiddenFor(model => model.Id)
                     @Html.HiddenFor(model => model.RowVersion)
-                    @Html.HiddenFor(model => model.TeacherId)
+                    @Html.HiddenFor(model => model.ApplicantId)
                     @Html.HiddenFor(model => model.AttachmentScan)
                     <div class="form-group">
                         @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -80,7 +80,7 @@
                         ذخیره تغییرات
                     </button>
                     <a class="btn btn-default btn-md"
-                       href="@Url.Action(MVC.Article.List(Model.TeacherId))" role="button">
+                       href="@Url.Action(MVC.Article.List(Model.ApplicantId))" role="button">
                         <i class="fa fa-arrow-right"></i>
                         انصراف
                     </a>
@@ -93,7 +93,7 @@
 </div>
 
 @section Menu{
-    @{Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.TeacherId);}
+    @{Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.ApplicantId);}
 }
 @section Scripts{
     @Scripts.Render("~/bundles/jqueryval")

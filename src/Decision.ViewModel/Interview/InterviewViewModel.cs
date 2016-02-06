@@ -14,7 +14,7 @@ namespace Decision.ViewModel.Interview
         /// آی دی مصاحبه
         /// </summary>
         public  Guid Id { get; set; }
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
 
         /// <summary>
         /// تاریخ مصاحبه

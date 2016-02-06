@@ -9,7 +9,7 @@ using Decision.Common.Helpers.Json;
 using Decision.DataLayer.Context;
 using Decision.DomainClasses.Entities.Common;
 using Decision.DomainClasses.Entities.Evaluations;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.DomainClasses.Entities.Users;
 using Decision.IocConfig;
 using Decision.ServiceLayer.Contracts;
@@ -74,7 +74,7 @@ namespace Decision.Web
             auditConfiguration.LoadRelationships = false;
             auditConfiguration.DefaultAuditable = false;
             AuditConfiguration.Default.IsAuditable<User>();
-            AuditConfiguration.Default.IsAuditable<Teacher>();
+            AuditConfiguration.Default.IsAuditable<Applicant>();
             AuditConfiguration.Default.IsAuditable<Article>();
             AuditConfiguration.Default.IsAuditable<EntireEvaluation>();
             AuditConfiguration.Default.IsAuditable<ArticleEvaluation>();

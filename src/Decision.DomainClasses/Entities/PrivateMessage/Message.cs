@@ -30,50 +30,50 @@ namespace Decision.DomainClasses.Entities.PrivateMessage
             /// <summary>
             /// gets or sets identifier of record
             /// </summary>
-            public virtual Guid Id { get; set; }
+            public  Guid Id { get; set; }
             /// <summary>
             /// represents this conversaionReply is seen
             /// </summary>
-            public virtual bool IsRead { get; set; }
+            public  bool IsRead { get; set; }
             /// <summary>
             /// gets or sets body of this conversationReply
             /// </summary>
-            public virtual string Body { get; set; }
+            public  string Body { get; set; }
             /// <summary>
             /// gets or sets Date that this record added
             /// </summary>
-            public virtual DateTime SentOn { get; set; }
+            public  DateTime SentOn { get; set; }
             #endregion
 
             #region NavigationProperties
             /// <summary>
             /// gets or sets  Parent's Id Of this ConversationReply
             /// </summary>
-            public virtual Guid? ParentId { get; set; }
+            public  Guid? ParentId { get; set; }
             /// <summary>
             /// gets or sets Parent Of this ConversationReply
             /// </summary>
-            public virtual Message Parent { get; set; }
+            public  Message Parent { get; set; }
             /// <summary>
             /// get or set Children Of this ConversationReply
             /// </summary>
-            public virtual ICollection<Message> Children { get; set; }
+            public  ICollection<Message> Children { get; set; }
             /// <summary>
             /// gets or sets if of  user that start this conversationReply
             /// </summary>
-            public virtual long SenderId { get; set; }
+            public  long SenderId { get; set; }
             /// <summary>
             /// gets or sets user that start this conversationReply
             /// </summary>
-            public virtual User Sender { get; set; }
+            public  User Sender { get; set; }
             /// <summary>
             /// gets or sets Conversation that this message sent in it 
             /// </summary>
-            public virtual Conversation Conversation { get; set; }
+            public  Conversation Conversation { get; set; }
             /// <summary>
             /// gets or sets Id of Conversation that this message sent in it 
             /// </summary>
-            public virtual Guid ConversationId { get; set; }
+            public  Guid ConversationId { get; set; }
             #endregion
         
     }

@@ -9,15 +9,15 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Decision.Common.Helpers.Extentions;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.TeacherInfo;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.ViewModel.TrainingCourse;
 using EFSecondLevelCache;
 using EntityFramework.Extensions;
 using Microsoft.AspNet.Identity;
 
-namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
+namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
 {
     /// <summary>
     /// کلاس سرویس دهنده کار با کلاس دوره های کارآموزی
@@ -153,7 +153,7 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
         }
         #endregion
 
-        public Task<TrainingCourse> GetTrainingCourseOfTeacher(Guid courseId)
+        public Task<TrainingCourse> GetTrainingCourseOfApplicant(Guid courseId)
         {
             return _courses.Include(a => a.TrainingCenter).FirstOrDefaultAsync(a => a.Id == courseId);
         }

@@ -27,11 +27,19 @@ namespace Decision.DomainClasses.Entities.Evaluations
         /// <summary>
         /// امکان انتخاب چند تایی
         /// </summary>
-        public virtual bool  IsMultiSelect { get; set; }
+        public virtual bool IsMultiSelect { get; set; }
         /// <summary>
         /// وزن ارزشی سوال
         /// </summary>
         public virtual int Weight { get; set; }
+        /// <summary>
+        /// توضیحات اضافی
+        /// </summary>
+        public string Description { get; set; }
+        /// <summary>
+        /// ترتیب نمایش
+        /// </summary>
+        public int DisplayOrder { get; set; }
 
         #endregion
 
@@ -43,7 +51,7 @@ namespace Decision.DomainClasses.Entities.Evaluations
         /// <summary>
         /// لیست ارزیابی هایی که این سوال را جواب داده اند
         /// </summary>
-        public virtual ICollection<ArticleEvaluation> ArticleEvaluations { get; set; }
+        public virtual ICollection<EntireEvaluation> EntireEvaluations { get; set; }
         #endregion
     }
 }

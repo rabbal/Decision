@@ -83,7 +83,7 @@ WriteLiteral(">");
             
             #line default
             #line hidden
-WriteLiteral("</span>\r\n                    استاد ثبت شده\r\n                </h4>\r\n            </" +
+WriteLiteral("</span>\r\n                    متقاضی ثبت شده\r\n                </h4>\r\n            </" +
 "div>\r\n        </div>\r\n    </div>\r\n    <div");
 
 WriteLiteral(" class=\"col-md-2\"");
@@ -192,7 +192,7 @@ WriteLiteral(">");
 
             
             #line 51 "..\..\Views\Home\_Benckmarks.cshtml"
-                                   Write(Model.NonApprovedTeachersCount);
+                                   Write(Model.NonApprovedApplicantsCount);
 
             
             #line default
@@ -230,7 +230,7 @@ WriteLiteral(">");
 
             
             #line 66 "..\..\Views\Home\_Benckmarks.cshtml"
-                                   Write(Model.ApprovedTeachersCount);
+                                   Write(Model.ApprovedApplicantsCount);
 
             
             #line default

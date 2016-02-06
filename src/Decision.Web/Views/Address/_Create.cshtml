@@ -10,7 +10,7 @@
             @using (Ajax.BeginForm(MVC.Address.Create(), new AjaxOptions { HttpMethod = "POST", OnComplete = "createOnComplete(xhr, status, 'addressList', '#modal','createAddressForm','#createAddressButton')" }, new { @class = "form-horizontal", id = "createAddressForm", autocomplete = "off" }))
             {
                 @Html.AntiForgeryToken()
-                @Html.HiddenFor(model => model.TeacherId)
+                @Html.HiddenFor(model => model.ApplicantId)
                 <div class="form-group">
                     @Html.LabelFor(model => model.Location, new { @class = "control-label col-md-2" })
                     <div class="col-md-9">

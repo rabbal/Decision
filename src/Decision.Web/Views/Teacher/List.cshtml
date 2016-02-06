@@ -1,4 +1,4 @@
-﻿@model Decision.ViewModel.Teacher.TeacherListViewModel
+﻿@model Decision.ViewModel.Applicant.ApplicantListViewModel
 @{
     ViewBag.Title = "مشاهده لیست اساتید";
 }
@@ -20,7 +20,7 @@
                 @Html.HelpAlert(@Url.Content("~/Content/Images/lightbulb.png"),
                     "با استفاده از فرم زیر ، امکان جستجوی پیشرفته بین اساتید را خواهید داشت.",
                     "برای لغو فیلتر اعمال شده میتوانید از دکمه لغو استفاده کنید.")
-                @using (Ajax.BeginForm(MVC.Teacher.ListAjax(), new AjaxOptions {AllowCache = false, HttpMethod = "POST", OnComplete = "searchOnComplete(xhr,status,'#progress','#TeacherPager','#TeacherList')"}, new {@class = "form-horizontal", autocomplete = "off", id = "TeacherSearchForm"}))
+                @using (Ajax.BeginForm(MVC.Applicant.ListAjax(), new AjaxOptions {AllowCache = false, HttpMethod = "POST", OnComplete = "searchOnComplete(xhr,status,'#progress','#ApplicantPager','#ApplicantList')"}, new {@class = "form-horizontal", autocomplete = "off", id = "ApplicantSearchForm"}))
                 {
                     @Html.Hidden("PageIndex", Model.SearchRequest.PageIndex)
                     @Html.Hidden("PageSize", Model.SearchRequest.PageSize)
@@ -32,20 +32,20 @@
                                 <div class="form-group">
                                     <label for="FirstName">
                                         <i class="fa fa-align-justify"></i>
-                                        نام استاد
+                                        نام متقاضی
                                     </label>
                                     <input name="FirstName" id="FirstName" class="form-control input-sm"
-                                           placeholder="نام استاد" type="text" value="">
+                                           placeholder="نام متقاضی" type="text" value="">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="LastName">
                                         <i class="fa fa-align-justify"></i>
-                                        نام خانودگی استاد
+                                        نام خانودگی متقاضی
                                     </label>
                                     <input name="LastName" id="LastName" class="form-control input-sm"
-                                           placeholder="نام خانودگی استاد" type="text" value="">
+                                           placeholder="نام خانودگی متقاضی" type="text" value="">
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -72,7 +72,7 @@
                                 <div class="form-group">
                                     <label for="PositionId">
                                         <i class="fa fa-sort-asc"></i>
-                                        سمت استاد
+                                        سمت متقاضی
                                     </label>
                                     @Html.DropDownList("PositionId", Model.Positions, "همه سمت ها", new {@class = "form-control"})
                                 </div>
@@ -138,18 +138,18 @@
                                 <div class="form-group">
                                     <label for="CollegiateOrderFrom">
                                         <i class="fa fa-graduation-cap"></i>
-                                        از پایه استاد
+                                        از پایه متقاضی
                                     </label>
-                                    <input name="CollegiateOrderFrom" id="CollegiateOrderFrom" class="form-control input-sm" placeholder="پایه استاد" type="text" value="">
+                                    <input name="CollegiateOrderFrom" id="CollegiateOrderFrom" class="form-control input-sm" placeholder="پایه متقاضی" type="text" value="">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="CollegiateOrderTo">
                                         <i class="fa fa-graduation-cap"></i>
-                                        تا پایه استاد
+                                        تا پایه متقاضی
                                     </label>
-                                    <input name="CollegiateOrderTo" id="CollegiateOrderTo" class="form-control input-sm" placeholder="تا پایه استاد" type="text" value="">
+                                    <input name="CollegiateOrderTo" id="CollegiateOrderTo" class="form-control input-sm" placeholder="تا پایه متقاضی" type="text" value="">
                                 </div>
                             </div>
                         </div>
@@ -165,20 +165,20 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="TeacherApprovalFilter">
+                                    <label for="ApplicantApprovalFilter">
                                         <i class="fa fa-graduation-cap"></i>
                                         وضعیت تأیید
                                     </label>
-                                    @Html.EditorFor(a => a.SearchRequest.TeacherApprovalFilter, MVC.Shared.Views.EditorTemplates.Enum, "TeacherApprovalFilter")
+                                    @Html.EditorFor(a => a.SearchRequest.ApplicantApprovalFilter, MVC.Shared.Views.EditorTemplates.Enum, "ApplicantApprovalFilter")
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="TeacherReferenceFilter">
+                                    <label for="ApplicantReferenceFilter">
                                         <i class="fa fa-graduation-cap"></i>
                                         وضعیت ارجاع
                                     </label>
-                                    @Html.EditorFor(a => a.SearchRequest.TeacherReferenceFilter, MVC.Shared.Views.EditorTemplates.Enum, "TeacherReferenceFilter")
+                                    @Html.EditorFor(a => a.SearchRequest.ApplicantReferenceFilter, MVC.Shared.Views.EditorTemplates.Enum, "ApplicantReferenceFilter")
                                 </div>
                             </div>
                         </div>
@@ -186,11 +186,11 @@
                             <div class="col-md-12">
                                 <div class="pull-left">
                                     <button type="button" aria-controls="adv-search" aria-expanded="false" class=" btn btn-sm btn-primary" data-target="#adv-search" data-toggle="collapse"
-                                            id="userSearchButton" autocomplete="off" onclick="directSearchPagingSorting('#progress', '#TeacherSearchForm', '#TeacherPager', '#TeacherList', '#SortBy', '#SortOrder', '#PageSizer')" data-loading-text="درخواست">
+                                            id="userSearchButton" autocomplete="off" onclick="directSearchPagingSorting('#progress', '#ApplicantSearchForm', '#ApplicantPager', '#ApplicantList', '#SortBy', '#SortOrder', '#PageSizer')" data-loading-text="درخواست">
                                         <i class="fa fa-ellipsis-h"></i>
                                         اعمال فیلتر
                                     </button>
-                                    <button aria-controls="show-search" aria-expanded="false" onclick="resetSearch('#progress', '#TeacherSearchForm', '#TeacherPager', '#TeacherList', '#SortBy', '#SortOrder', '#PageSizer')"
+                                    <button aria-controls="show-search" aria-expanded="false" onclick="resetSearch('#progress', '#ApplicantSearchForm', '#ApplicantPager', '#ApplicantList', '#SortBy', '#SortOrder', '#PageSizer')"
                                             class=" btn btn-default btn-sm" data-target="#show-search" data-toggle="collapse" type="button">
                                         <i class="fa fa-arrow-up"></i>
                                         لغو فیلتر
@@ -204,28 +204,28 @@
         </div>
     </div>
     <div class="panel-body">
-        <div class="row" id="TeacherList">
-            @{ Html.RenderPartial(MVC.Teacher.Views.ViewNames._ListAjax, Model);}
+        <div class="row" id="ApplicantList">
+            @{ Html.RenderPartial(MVC.Applicant.Views.ViewNames._ListAjax, Model);}
         </div>
     </div>
     <div class="panel-footer padding-5-5">
         <div class="row">
             <div class="col-md-offset-1 col-md-5">
-                <button data-page="2" id="TeacherPager" onclick="paging('#progress', '#TeacherSearchForm', this, '#SortBy', '#SortOrder', '#PageSizer')" class="btn btn-info btn-block btn-sm" type="button">
+                <button data-page="2" id="ApplicantPager" onclick="paging('#progress', '#ApplicantSearchForm', this, '#SortBy', '#SortOrder', '#PageSizer')" class="btn btn-info btn-block btn-sm" type="button">
                     بیشتر
                 </button>
             </div>
             <div class="col-md-2">
                 <i class="fa fa-filter fa-select"></i>
-                @Html.DropDownList("SortBy", Model.SortableList, new {@class = "form-control", onchange = "sorting('progress', 'TeacherSearchForm', 'TeacherPager', 'SortBy', 'SortOrder', 'TeacherList','PageSizer');"})
+                @Html.DropDownList("SortBy", Model.SortableList, new {@class = "form-control", onchange = "sorting('progress', 'ApplicantSearchForm', 'ApplicantPager', 'SortBy', 'SortOrder', 'ApplicantList','PageSizer');"})
             </div>
             <div class="col-md-2">
                 <i class="fa fa-filter fa-sort-alpha-asc fa-select"></i>
-                @Html.DropDownList("SortOrder", Model.SortOrderList, new {@class = "form-control", onchange = "sorting('progress', 'TeacherSearchForm', 'TeacherPager', 'SortBy', 'SortOrder', 'TeacherList','PageSizer');"})
+                @Html.DropDownList("SortOrder", Model.SortOrderList, new {@class = "form-control", onchange = "sorting('progress', 'ApplicantSearchForm', 'ApplicantPager', 'SortBy', 'SortOrder', 'ApplicantList','PageSizer');"})
             </div>
             <div class="col-md-1">
                 <i class="fa fa-th-list fa-select"></i>
-                @Html.DropDownList("PageSizer", Model.PageSizeList, new {@class = "form-control", onchange = "sorting('progress', 'TeacherSearchForm', 'TeacherPager', 'SortBy', 'SortOrder', 'TeacherList','PageSizer');"})
+                @Html.DropDownList("PageSizer", Model.PageSizeList, new {@class = "form-control", onchange = "sorting('progress', 'ApplicantSearchForm', 'ApplicantPager', 'SortBy', 'SortOrder', 'ApplicantList','PageSizer');"})
             </div>
         </div>
         <div id="progress" align="center" style="display: none">
@@ -234,7 +234,7 @@
     </div>
 </div>
 @section Menu{
-    @{Html.RenderPartial(MVC.Shared.Views._TeacherManagementsSidbarMenu);}
+    @{Html.RenderPartial(MVC.Shared.Views._ApplicantManagementsSidbarMenu);}
 }
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

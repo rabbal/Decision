@@ -25,7 +25,7 @@ namespace Decision.DomainClasses.Configurations.Evaluations
                 .WithMany(je => je.AnswerOptions)
                 .Map(
                     a =>
-                        a.ToTable("AnswerOptionTeachermentEvaluation")
+                        a.ToTable("AnswerOptionApplicantmentEvaluation")
                             .MapRightKey("ArticleEvaluationId")
                             .MapLeftKey("AnswerOptionId"));
 

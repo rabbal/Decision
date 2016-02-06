@@ -30,7 +30,7 @@ namespace ASP
     using Decision.Common.MVC;
     
     #line 1 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
-    using Decision.DomainClasses.Entities.TeacherInfo;
+    using Decision.DomainClasses.Entities.ApplicantInfo;
     
     #line default
     #line hidden
@@ -225,7 +225,7 @@ WriteLiteral(">\r\n                    <label");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">\r\n                        استاد مشاور:\r\n                    </label>\r\n          " +
+WriteLiteral(">\r\n                        متقاضی مشاور:\r\n                    </label>\r\n          " +
 "          <small>");
 
             
@@ -355,7 +355,7 @@ WriteLiteral(">\r\n                    <label");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">\r\n                        استاد راهنما:\r\n                    </label>\r\n         " +
+WriteLiteral(">\r\n                        متقاضی راهنما:\r\n                    </label>\r\n         " +
 "           <small>");
 
             
@@ -435,11 +435,11 @@ WriteLiteral(" data-delete-url=\"");
             #line hidden
 WriteLiteral("\"");
 
-WriteLiteral(" data-Teacher=\"");
+WriteLiteral(" data-Applicant=\"");
 
             
             #line 117 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
-                                                                                                                 Write(Model.TeacherId);
+                                                                                                                 Write(Model.ApplicantId);
 
             
             #line default

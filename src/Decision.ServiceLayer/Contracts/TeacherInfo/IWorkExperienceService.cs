@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Decision.ViewModel.WorkExperience;
 
-namespace Decision.ServiceLayer.Contracts.TeacherInfo
+namespace Decision.ServiceLayer.Contracts.ApplicantInfo
 {
     /// <summary>
     /// نشان دهنده الزامات ارائه دهنده سرویس سابقه های کاری
@@ -48,7 +48,7 @@ namespace Decision.ServiceLayer.Contracts.TeacherInfo
         /// <returns></returns>
         Task<bool> IsInDb(Guid id);
 
-        Task<AddWorkExperienceViewModel> GetForCreate(Guid TeacherId, string path);
+        Task<AddWorkExperienceViewModel> GetForCreate(Guid ApplicantId, string path);
 
         Task FillAddViewModel(AddWorkExperienceViewModel viewModel, string path);
 

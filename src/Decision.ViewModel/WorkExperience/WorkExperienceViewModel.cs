@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Common;
 
 namespace Decision.ViewModel.WorkExperience
@@ -16,7 +16,7 @@ namespace Decision.ViewModel.WorkExperience
         /// </summary>
         public  Guid Id { get; set; }
 
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
         /// <summary>
         /// زمان آغاز به‌کار
         /// </summary>

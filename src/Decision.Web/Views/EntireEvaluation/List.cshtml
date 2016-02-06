@@ -1,6 +1,6 @@
 ﻿@model  Decision.ViewModel.EntireEvaluation.EntireEvaluationListViewModel
 @{
-    ViewBag.Title = "لیست ارزیابی های استاد";
+    ViewBag.Title = "لیست ارزیابی های متقاضی";
 }
 @Html.AntiForgeryToken()
 
@@ -25,7 +25,7 @@
         <hr class="margin-bottom-5 margin-top-5" />
 
         <div class="row  collapse" id="create-entireEvaluation">
-            @{ Html.RenderAction(MVC.EntireEvaluation.Create(Model.SearchRequest.TeacherId));}
+            @{ Html.RenderAction(MVC.EntireEvaluation.Create(Model.SearchRequest.ApplicantId));}
         </div>
     </div>
     <div class="panel-body">
@@ -36,7 +36,7 @@
     <div class="panel-footer padding-5-5">
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
-                <button data-page="2" data-json='{"TeacherId":"@Model.SearchRequest.TeacherId"}' data-container="#entireEvaluationList"
+                <button data-page="2" data-json='{"ApplicantId":"@Model.SearchRequest.ApplicantId"}' data-container="#entireEvaluationList"
                         data-progress="#progress"
                         data-load-url="@Url.Action(MVC.EntireEvaluation.ListAjax())"
                         onclick="justPaging(this)" class="btn btn-info btn-block btn-sm" type="button">
@@ -52,7 +52,7 @@
 
 
 @section Menu{
-    @{Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.SearchRequest.TeacherId);}
+    @{Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.SearchRequest.ApplicantId);}
 }
 @section Scripts{
     @Scripts.Render("~/bundles/jqueryval")

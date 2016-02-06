@@ -20,18 +20,16 @@ namespace Decision.DomainClasses.Configurations.Common
         /// </summary>
         public AuditLogConfig()
         {
-            Property(a => a.NewValue).IsOptional().HasColumnType("xml");
-            Property(a => a.OldValue).IsOptional().HasColumnType("xml");
+            Property(a => a.XmlNewValue).IsOptional().HasColumnType("xml");
+            Property(a => a.XmlOldValue).IsOptional().HasColumnType("xml");
             Property(a => a.Description).IsRequired().HasMaxLength(1024);
-            Property(a => a.TableName).IsOptional().HasMaxLength(20)
-                .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_AuditTableName") ));
-            Property(a => a.RecordedEntityId).IsOptional()
+            Property(a => a.Entity).IsRequired().HasMaxLength(20)
+                .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_AuditTableName")));
+            Property(a => a.EntityId).IsOptional()
                 .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_AuditEntityId")));
-            Property(a => a.Type).IsOptional()
-               .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_AuditType")));
-
-            Ignore(a => a.XmlNewValue);
-            Ignore(a => a.XmlOldValue);
+           
+            Ignore(a => a.XmlNewValueWrapper);
+            Ignore(a => a.XmlOldValueWrapper);
 
             HasRequired(a=>a.Creator).WithMany(a=>a.AuditLogs).HasForeignKey(a=>a.CreatorId).WillCascadeOnDelete(false);
 

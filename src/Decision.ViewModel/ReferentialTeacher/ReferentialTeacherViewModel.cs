@@ -1,12 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace Decision.ViewModel.ReferentialTeacher
+namespace Decision.ViewModel.ReferentialApplicant
 {
     /// <summary>
-    /// ویومدل نمایش ارجاعات استاد
+    /// ویومدل نمایش ارجاعات متقاضی
     /// </summary>
-    public class ReferentialTeacherViewModel
+    public class ReferentialApplicantViewModel
     {
         #region Properties
         /// <summary>
@@ -22,22 +22,22 @@ namespace Decision.ViewModel.ReferentialTeacher
         public  DateTime? FinishedDate { get; set; }
 
         /// <summary>
-        /// آی  دی کاربری که این استاد را ارجاع داده است
+        /// آی  دی کاربری که این متقاضی را ارجاع داده است
         /// </summary>
         [DisplayName("کاربر مبدا ارجاع")]
         public  string ReferencedFromName { get; set; }
 
         /// <summary>
-        /// آی  دی کاربری که این استاد برای اصلاح به او ارجاع داده  شده است
+        /// آی  دی کاربری که این متقاضی برای اصلاح به او ارجاع داده  شده است
         /// </summary>
         [DisplayName("کاربر مقصد ارجاع")]
         public  string ReferencedToName { get; set; }
 
         /// <summary>
-        ///  آی دی استاد ارجاع داده شده
+        ///  آی دی متقاضی ارجاع داده شده
         /// </summary>
-        [DisplayName("استاد")]
-        public  string TeacherName { get; set; }
+        [DisplayName("متقاضی")]
+        public  string ApplicantName { get; set; }
         #endregion
     }
 }

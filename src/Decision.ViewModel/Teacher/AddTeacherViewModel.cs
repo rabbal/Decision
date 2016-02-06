@@ -5,19 +5,19 @@ using System.ComponentModel.DataAnnotations;
 using System.Web;
 using System.Web.Mvc;
 using Decision.DomainClasses.Entities.Common;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 
-namespace Decision.ViewModel.Teacher
+namespace Decision.ViewModel.Applicant
 {
     /// <summary>
-    /// ویو مدل درج استاد
+    /// ویو مدل درج متقاضی
     /// </summary>
-    public class AddTeacherViewModel
+    public class AddApplicantViewModel
     {
 
         #region Ctor
 
-        public AddTeacherViewModel()
+        public AddApplicantViewModel()
         {
             CitiesForBirthPlace = new List<SelectListItem>();
             CitiesForTrainingCeneter = new List<SelectListItem>();
@@ -31,79 +31,79 @@ namespace Decision.ViewModel.Teacher
 
         #region Properties
         /// <summary>
-        /// نام استاد
+        /// نام متقاضی
         /// </summary>
         [Required(ErrorMessage = "لطفا نام  را وارد کنید")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "نام باید بین سه تا ۵۰ کاراکتر باشد")]
         [DisplayName("نام")]
-        [RegularExpression(@"^[\u0600-\u06FF,\u0590-\u05FF,۰-۹\s]*$", ErrorMessage = "لطفا فقط ازاعداد و حروف  فارسی برای نام استاد استفاده کنید")]
+        [RegularExpression(@"^[\u0600-\u06FF,\u0590-\u05FF,۰-۹\s]*$", ErrorMessage = "لطفا فقط ازاعداد و حروف  فارسی برای نام متقاضی استفاده کنید")]
         public string FirstName { get; set; }
         /// <summary>
-        /// نام خانوادگی استاد
+        /// نام خانوادگی متقاضی
         /// </summary>
         [Required(ErrorMessage = "لطفا نام خانوادگی را وارد کنید")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "نام خانوادگی باید بین سه تا ۵۰ کاراکتر باشد")]
         [DisplayName("نام خانوادگی")]
-        [RegularExpression(@"^[\u0600-\u06FF,\u0590-\u05FF,۰-۹\s]*$", ErrorMessage = "لطفا فقط ازاعداد و حروف  فارسی برای نام استاد استفاده کنید")]
+        [RegularExpression(@"^[\u0600-\u06FF,\u0590-\u05FF,۰-۹\s]*$", ErrorMessage = "لطفا فقط ازاعداد و حروف  فارسی برای نام متقاضی استفاده کنید")]
         public string LastName { get; set; }
         /// <summary>
-        /// تاریخ تولد استاد
+        /// تاریخ تولد متقاضی
         /// </summary>
         [DisplayName("تاریخ تولد")]
         [Required(ErrorMessage = "لطفا تاریخ تولد را مشخش  کنید")]
 
         public DateTime BirthDate { get; set; }
         /// <summary>
-        /// کد ملی استاد
+        /// کد ملی متقاضی
         /// </summary>
         [Required(ErrorMessage = "لطفا کد ملی را وارد کنید")]
         [DisplayName("کد ملی")]
         [StringLength(10, MinimumLength = 10, ErrorMessage = "کد ملی وارد شده صحیح نمی باشد")]
-        [Remote("IsTeacherNationalCodeExist", "Teacher", "Administrator", ErrorMessage = "یک استاد با این کد ملی قبلا در سیستم ثبت شده است", HttpMethod = "POST")]
+        [Remote("IsApplicantNationalCodeExist", "Applicant", "Administrator", ErrorMessage = "یک متقاضی با این کد ملی قبلا در سیستم ثبت شده است", HttpMethod = "POST")]
         public string NationalCode { get; set; }
         /// <summary>
-        /// شماره شناسنامه استاد
+        /// شماره شناسنامه متقاضی
         /// </summary>
         [DisplayName("شماره شناسنامه")]
         [Required(ErrorMessage = "لطفا شماره شناسنامه را وارد کنید")]
         [StringLength(50, ErrorMessage = "شماره شناسنامه باید کمتر از ۵۰ کاراکتر باشد")]
         public string BirthCertificateNumber { get; set; }
         /// <summary>
-        /// پایه استاد
+        /// پایه متقاضی
         /// </summary>
         [DisplayName("پایه")]
         [Required(ErrorMessage = "لطفا پایه را وارد کنید")]
         [Range(1, 15, ErrorMessage = "پایه عددی در بازه [۱-۱۵] میباشد")]
         public int CollegiateOrder { get; set; }
         /// <summary>
-        /// گروه شغلی استاد
+        /// گروه شغلی متقاضی
         /// </summary>
         [DisplayName("گروه شغلی")]
         [Required(ErrorMessage = "لطفا گروه شغلی را مشخص کنید")]
         [Range(1, 15, ErrorMessage = "گروه شغلی  عددی در بازه [۱-۱۵] میباشد")]
         public int OccupationalGroup { get; set; }
         /// <summary>
-        /// وضعیت تأهل استاد
+        /// وضعیت تأهل متقاضی
         /// </summary>
         [DisplayName("وضعیت تأهل")]
-        [Required(ErrorMessage = "لطفا وضعیت تأهل استاد را مشخص کنید")]
+        [Required(ErrorMessage = "لطفا وضعیت تأهل متقاضی را مشخص کنید")]
         public MarriageStatus MarriageStatus { get; set; }
         /// <summary>
-        /// نام یک بانکی که استاد در آن حساب دارد
+        /// نام یک بانکی که متقاضی در آن حساب دارد
         /// </summary>
         [Required(ErrorMessage = "لطفا نام بانک را وارد کنید")]
         [StringLength(256, MinimumLength = 3, ErrorMessage = "نام بانک باید بین سه تا ۲۵۶ کاراکتر باشد")]
         [DisplayName("نام بانک")]
         public string BankName { get; set; }
         /// <summary>
-        /// نام یک شعبه ای از بانک معرفی شده که استاد در آن حساب دارد
+        /// نام یک شعبه ای از بانک معرفی شده که متقاضی در آن حساب دارد
         /// </summary>
 
         [StringLength(256, ErrorMessage = "نام شعبه بانک باید بین سه تا ۲۵۶ کاراکتر باشد")]
         [DisplayName("نام شعبه بانک")]
         public string BankBranch { get; set; }
         /// <summary>
-        /// شماره حساب استاد در شعبه مربوطه
+        /// شماره حساب متقاضی در شعبه مربوطه
         /// </summary>
         [StringLength(256, MinimumLength = 3, ErrorMessage = "شماره حساب باید بین سه تا ۲۵۶ کاراکتر باشد")]
         [DisplayName("شماره حساب")]
@@ -114,15 +114,15 @@ namespace Decision.ViewModel.Teacher
         [DisplayName("ملبس")]
         public bool IsClothed { get; set; }
         /// <summary>
-        /// سمت استاد
+        /// سمت متقاضی
         /// </summary>
-        [DisplayName("سمت استاد")]
+        [DisplayName("سمت متقاضی")]
         public Guid? PositionId { get; set; }
         /// <summary>
-        /// جنسیت استاد
+        /// جنسیت متقاضی
         /// </summary>
         [DisplayName("جنسیت")]
-        [Required(ErrorMessage = "لطفا جنسیت استاد را مشخص کنید")]
+        [Required(ErrorMessage = "لطفا جنسیت متقاضی را مشخص کنید")]
         public GenderType Gender { get; set; }
         /// <summary>
         /// معدل کار آموزی
@@ -138,13 +138,13 @@ namespace Decision.ViewModel.Teacher
         [Required(ErrorMessage = "لطفا رتبه کارآموزی را وارد کنید")]
         public int TrainigGrade { get; set; }
         /// <summary>
-        ///  عکس استاد اسکن شده استاد
+        ///  عکس متقاضی اسکن شده متقاضی
         /// </summary>
         public string PhotoScan { get; set; }
         /// <summary>
-        /// عکس استاد
+        /// عکس متقاضی
         /// </summary>
-        [DisplayName("عکس استاد")]
+        [DisplayName("عکس متقاضی")]
         public HttpPostedFileBase PhotoFile { get; set; }
         /// <summary>
         /// اسکن کپی کارت ملی
@@ -178,7 +178,7 @@ namespace Decision.ViewModel.Teacher
         public int CollegiateYears { get; set; }
 
         /// <summary>
-        /// آی دی دوره  کارآموزی ای که  استاد شرکت کرده
+        /// آی دی دوره  کارآموزی ای که  متقاضی شرکت کرده
         /// </summary>
         [DisplayName("دوره کارآموزی")]
         public Guid? TrainingCourseId { get; set; }
@@ -234,17 +234,17 @@ namespace Decision.ViewModel.Teacher
         public IEnumerable<SelectListItem> TrainingCourses { get; set; }
 
         /// <summary>
-        /// آی دی مرکز کارآموزی مربوط به دوره کارآموزی استاد
+        /// آی دی مرکز کارآموزی مربوط به دوره کارآموزی متقاضی
         /// </summary>
         [DisplayName("مرکز کارآموزی")]
         public  Guid? TrainingCenterId { get; set; }
         /// <summary>
-        /// آی دی شهر مربوط به مرکز کارآموزی ای که استاد در آن دوره دیده
+        /// آی دی شهر مربوط به مرکز کارآموزی ای که متقاضی در آن دوره دیده
         /// </summary>
         [DisplayName("شهر محل کارآموزی")]
         public  string TrainingCenterCity { get; set; }
         /// <summary>
-        /// آی دی استان مربوط به مرکز کارآموزی ای که استاد در آن دوره دیده
+        /// آی دی استان مربوط به مرکز کارآموزی ای که متقاضی در آن دوره دیده
         /// </summary>
         [DisplayName("استان محل کارآموزی")]
         public  string TrainingCenterState { get; set; }

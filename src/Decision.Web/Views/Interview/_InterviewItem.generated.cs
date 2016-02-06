@@ -173,7 +173,7 @@ WriteLiteral(" class=\"btn btn-sm btn-success \"");
 WriteAttribute("href", Tuple.Create(" href=\"", 1466), Tuple.Create("\"", 1537)
             
             #line 40 "..\..\Views\Interview\_InterviewItem.cshtml"
-, Tuple.Create(Tuple.Create("", 1473), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Interview.GetDocument(Model.Id,Model.TeacherId))
+, Tuple.Create(Tuple.Create("", 1473), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Interview.GetDocument(Model.Id,Model.ApplicantId))
             
             #line default
             #line hidden

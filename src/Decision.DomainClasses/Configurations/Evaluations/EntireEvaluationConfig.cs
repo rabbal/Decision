@@ -9,7 +9,7 @@ using Decision.DomainClasses.Entities.Evaluations;
 namespace Decision.DomainClasses.Configurations.Evaluations
 {
     /// <summary>
-    /// نشان دهنده مپینگ مربوط به کلاس ارزیابی های استاد
+    /// نشان دهنده مپینگ مربوط به کلاس ارزیابی های متقاضی
     /// </summary>
     public class EntireEvaluationConfig : EntityTypeConfiguration<EntireEvaluation>
    {
@@ -24,7 +24,7 @@ namespace Decision.DomainClasses.Configurations.Evaluations
             Property(e=> e.StrongPoint).IsMaxLength().IsRequired();
             Property(e=> e.RowVersion).IsRowVersion();
 
-            HasRequired(e => e.Teacher).WithMany(e => e.EntireEvaluations).HasForeignKey(e => e.TeacherId).WillCascadeOnDelete(true);
+            HasRequired(e => e.Applicant).WithMany(e => e.EntireEvaluations).HasForeignKey(e => e.ApplicantId).WillCascadeOnDelete(true);
             HasRequired(e=>e.Evaluator).WithMany(e=>e.EntireEvaluations).HasForeignKey(e=>e.EvaluatorId).WillCascadeOnDelete(false);
 
             HasRequired(e => e.Creator).WithMany(u => u.CreatedEntireEvaluations).HasForeignKey(e => e.CreatorId).WillCascadeOnDelete(false);

@@ -75,7 +75,7 @@ namespace Decision.ServiceLayer.Security
                         AssignableToRolePermissions.CanManageFavoriteIssuePermission,
                         AssignableToRolePermissions.CanManageInstitutionPermission,
                         AssignableToRolePermissions.CanManageInterviewPermission,
-                        AssignableToRolePermissions.CanManageTeacherInServiceCourseTypePermission,
+                        AssignableToRolePermissions.CanManageApplicantInServiceCourseTypePermission,
                         AssignableToRolePermissions.CanManageArticlePermission,
                         AssignableToRolePermissions.CanManageOrganizationalTeachingPermission,
                         AssignableToRolePermissions.CanManageResearchExperiencePermission,
@@ -85,11 +85,11 @@ namespace Decision.ServiceLayer.Security
                         AssignableToRolePermissions.CanManageWorkExperiencePermission,
                         AssignableToRolePermissions.CanManageAdoptedPriorityPermission,
                         AssignableToRolePermissions.CanManageEntireEvaluationPermission,
-                        AssignableToRolePermissions.CanViewTeacherDetailsPermission,
+                        AssignableToRolePermissions.CanViewApplicantDetailsPermission,
                         AssignableToRolePermissions.CanManageArticleEvaluationPermission,
                         AssignableToRolePermissions.CanUsePrivateMessagePermission,
-                        AssignableToRolePermissions.CanEditTeacherPermission,
-                        AssignableToRolePermissions.CanCreateTeacherPermission
+                        AssignableToRolePermissions.CanEditApplicantPermission,
+                        AssignableToRolePermissions.CanCreateApplicantPermission
                     }
                 }
             };

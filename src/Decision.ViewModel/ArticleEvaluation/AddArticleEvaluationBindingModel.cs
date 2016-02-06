@@ -42,6 +42,6 @@ namespace Decision.ViewModel.ArticleEvaluation
         [Required]
         public Guid ArticleId { get; set; }
         [Required]
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
     }
 }

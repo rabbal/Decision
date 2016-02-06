@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Decision.DomainClasses.Entities.Evaluations;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 
 namespace Decision.DomainClasses.Entities.Common
 {
@@ -19,17 +19,13 @@ namespace Decision.DomainClasses.Entities.Common
         /// نوع عنوان 
         /// </summary>
         public  TitleType Type { get; set; }
-        /// <summary>
-        /// گروه عنوان
-        /// </summary>
-        public  TitleCategory Category { get; set; }
         #endregion
 
         #region NavigationProperties
         /// <summary>
-        /// لیست اساتیدی که این عنوان را به عنوان سمت استاد پذیرفته اند
+        /// لیست اساتیدی که این عنوان را به عنوان سمت متقاضی پذیرفته اند
         /// </summary>
-        public  ICollection<Teacher> Teachers  { get; set; }
+        public  ICollection<Applicant> Applicants  { get; set; }
         /// <summary>
         /// لیست ارزش گذارانی این عنوان را دارند
         /// </summary>
@@ -48,10 +44,6 @@ namespace Decision.DomainClasses.Entities.Common
         /// لیست سوابق کاری که این عنوان را دارند
         /// </summary>
         public  ICollection<WorkExperience> WorkExperiences  { get; set; }
-        /// <summary>
-        /// لیست "استاد_دوره های ضمن خدمت"  که این عنوان را دارند
-        /// </summary>
-        public  ICollection<TeacherInServiceCourseType> TeacherInServiceCourseTypes  { get; set; }
         #endregion
 
     }

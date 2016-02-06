@@ -1,7 +1,7 @@
 ﻿@using AttributeRouting.Helpers
 @using DNT.Extensions
-@model Decision.ViewModel.Teacher.TeacherViewModel
-<div class="col-md-12" id="Teacher-@Model.Id">
+@model Decision.ViewModel.Applicant.ApplicantViewModel
+<div class="col-md-12" id="Applicant-@Model.Id">
     <div class="panel panel-default">
        
         <div class="panel-body">
@@ -13,7 +13,7 @@
                 <div class="col-md-10">
                     <div class="row">
                         <div class="col-md-3">
-                            <label class="text-muted">استاد :</label>
+                            <label class="text-muted">متقاضی :</label>
                             
                             <small>@Model.FullName</small> 
                         </div>
@@ -53,7 +53,7 @@
 
                     <div class="row">
                         <div class="col-md-3">
-                            <label class="text-muted" for="order">پایه استاد:</label>
+                            <label class="text-muted" for="order">پایه متقاضی:</label>
                             <small id="order">@Model.CollegiateOrder.GetPersianNumber()</small>
                         </div>
                         <div class="col-md-3">
@@ -135,16 +135,16 @@
         </div>
         <div class="panel-footer">
             <div class="pull-left">
-                <a href="@Url.Action(MVC.Teacher.Edit(Model.Id))" class="btn btn-sm btn-primary" type="button">
+                <a href="@Url.Action(MVC.Applicant.Edit(Model.Id))" class="btn btn-sm btn-primary" type="button">
                     <i class="fa fa-edit"></i>
                     ویرایش
                 </a>
-                <a href="@Url.Action(MVC.Teacher.Details(Model.Id))" class="btn btn-sm btn-info" type="button">
+                <a href="@Url.Action(MVC.Applicant.Details(Model.Id))" class="btn btn-sm btn-info" type="button">
                     <i class="fa fa-align-justify"></i>
                     مشاهده اطلاعت بیشتر
                 </a>
                 <button class="btn-sm btn btn-danger"
-                        type="button" data-delete-url="@Url.Action(MVC.Teacher.Delete())" data-removal-element="#Teacher-@Model.Id" id="remove-@Model.Id">
+                        type="button" data-delete-url="@Url.Action(MVC.Applicant.Delete())" data-removal-element="#Applicant-@Model.Id" id="remove-@Model.Id">
                     <i class="fa fa-trash-o"></i>
                     حذف
                 </button>
@@ -155,8 +155,8 @@
                        data-ajax-mode="REPLACE-WITH"
                        data-ajax-begin="onBegin(xhr,this)"
                        data-ajax-oncomplete="onComplete(xhr,status)"
-                       data-ajax-update="#Teacher-@Model.Id"
-                       href="@Url.Action(MVC.Teacher.CancelRefer(Model.Id))" role="button">
+                       data-ajax-update="#Applicant-@Model.Id"
+                       href="@Url.Action(MVC.Applicant.CancelRefer(Model.Id))" role="button">
                         <i class="fa fa-reply"></i>
                         لغو ارجاع
                     </a>
@@ -165,7 +165,7 @@
                 else
                 {
                     <a class="btn btn-sm btn-warning" data-ajax="true" data-ajax-mode="replace" data-ajax-method="GET" data-ajax-success="onSuccessFormValidation(data, status, xhr,'referForm','modal')"
-                       data-ajax-update="#modal" data-ajax-url="@Url.Action(MVC.Teacher.Refer(Model.Id))" role="button">
+                       data-ajax-update="#modal" data-ajax-url="@Url.Action(MVC.Applicant.Refer(Model.Id))" role="button">
                         <i class="fa fa-reply"></i>
                         ارجاع دادن
                     </a>
@@ -178,8 +178,8 @@
                        data-ajax-mode="REPLACE-WITH"
                        data-ajax-begin="onBegin(xhr,this)"
                        data-ajax-oncomplete="onComplete(xhr,status)"
-                       data-ajax-update="#Teacher-@Model.Id"
-                       href="@Url.Action(MVC.Teacher.ApproveTeacher(Model.Id))" role="button">
+                       data-ajax-update="#Applicant-@Model.Id"
+                       href="@Url.Action(MVC.Applicant.ApproveApplicant(Model.Id))" role="button">
                         <i class="fa fa-check-square-o"></i>
                         تأیید کردن
                     </a>

@@ -45,7 +45,7 @@ namespace T4MVC
                 public readonly string _NewMessagesCount = "_NewMessagesCount";
                 public readonly string _Noty = "_Noty";
                 public readonly string _PublicSettingSideBarMenu = "_PublicSettingSideBarMenu";
-                public readonly string _TeacherManagementsSidbarMenu = "_TeacherManagementsSidbarMenu";
+                public readonly string _ApplicantManagementsSidbarMenu = "_ApplicantManagementsSidbarMenu";
                 public readonly string _UserManagementsSideBarMenu = "_UserManagementsSideBarMenu";
                 public readonly string _UserProfileSideBarMenu = "_UserProfileSideBarMenu";
                 public readonly string Error = "Error";
@@ -57,7 +57,7 @@ namespace T4MVC
             public readonly string _NewMessagesCount = "~/Views/Shared/_NewMessagesCount.cshtml";
             public readonly string _Noty = "~/Views/Shared/_Noty.cshtml";
             public readonly string _PublicSettingSideBarMenu = "~/Views/Shared/_PublicSettingSideBarMenu.cshtml";
-            public readonly string _TeacherManagementsSidbarMenu = "~/Views/Shared/_TeacherManagementsSidbarMenu.cshtml";
+            public readonly string _ApplicantManagementsSidbarMenu = "~/Views/Shared/_ApplicantManagementsSidbarMenu.cshtml";
             public readonly string _UserManagementsSideBarMenu = "~/Views/Shared/_UserManagementsSideBarMenu.cshtml";
             public readonly string _UserProfileSideBarMenu = "~/Views/Shared/_UserProfileSideBarMenu.cshtml";
             public readonly string Error = "~/Views/Shared/Error.cshtml";

@@ -9,18 +9,18 @@ using Decision.ViewModel.Common;
 namespace Decision.ViewModel.EntireEvaluation
 {
     /// <summary>
-    /// ویومدل ویرایش ارزیابی از استاد
+    /// ویومدل ویرایش ارزیابی از متقاضی
     /// </summary>
     public class EditEntireEvaluationViewModel : BaseRowVersion
     {
         #region Properties
         /// <summary>
-        /// آی دی ارزیابی از استاد
+        /// آی دی ارزیابی از متقاضی
         /// </summary>
         public  Guid Id { get; set; }
 
         /// <summary>
-        ///  نظریه کلی برای استاد
+        ///  نظریه کلی برای متقاضی
         /// </summary>
         [Required(ErrorMessage = "لطفا متن ارزیابی را وارد کنید")]
         [DisplayName("متن ارزیابی")]
@@ -43,17 +43,17 @@ namespace Decision.ViewModel.EntireEvaluation
         public  string Brief { get; set; }
 
         /// <summary>
-        /// نقاط ضعف استاد
+        /// نقاط ضعف متقاضی
         /// </summary>
-        [Required(ErrorMessage = "لطفا نقاط ضعف استاد را وارد کنید")]
+        [Required(ErrorMessage = "لطفا نقاط ضعف متقاضی را وارد کنید")]
         [AllowHtml]
         [DisplayName("نقاط ضعف")]
         public  string Foible { get; set; }
 
         /// <summary>
-        /// نقطه قوت استاد
+        /// نقطه قوت متقاضی
         /// </summary>
-        [Required(ErrorMessage = "لطفا نقاط قوت استاد را وارد کنید")]
+        [Required(ErrorMessage = "لطفا نقاط قوت متقاضی را وارد کنید")]
         [DisplayName("نقاط قوت")]
         [AllowHtml]
         public  string StrongPoint { get; set; }
@@ -71,10 +71,10 @@ namespace Decision.ViewModel.EntireEvaluation
         public  HttpPostedFileBase AttachmentFile { get; set; }
 
         /// <summary>
-        /// آی دی استاد ارزیابی شده
+        /// آی دی متقاضی ارزیابی شده
         /// </summary>
         [Required]
-        public  Guid TeacherId { get; set; }
+        public  Guid ApplicantId { get; set; }
 
         /// <summary>
         /// آی دی ارزیاب

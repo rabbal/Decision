@@ -1,5 +1,5 @@
 ﻿using System;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Common;
 
 namespace Decision.ViewModel.EducationalExperience
@@ -15,8 +15,8 @@ namespace Decision.ViewModel.EducationalExperience
         public EducationalExperienceType? Type { get; set; }
 
         /// <summary>
-        /// آی دی استاد مرتبط با سابقه تدریس
+        /// آی دی متقاضی مرتبط با سابقه تدریس
         /// </summary>
-        public  Guid TeacherId { get; set; }
+        public  Guid ApplicantId { get; set; }
     }
 }

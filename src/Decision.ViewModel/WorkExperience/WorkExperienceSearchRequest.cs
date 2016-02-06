@@ -9,8 +9,8 @@ namespace Decision.ViewModel.WorkExperience
     public class WorkExperienceSearchRequest : BaseSearchRequest
     {
         /// <summary>
-        /// آی دی استاد مربوط به سابقه کاری
+        /// آی دی متقاضی مربوط به سابقه کاری
         /// </summary>
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
     }
 }

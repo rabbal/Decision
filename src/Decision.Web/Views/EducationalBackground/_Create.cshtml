@@ -6,7 +6,7 @@
         @using (Html.BeginForm(MVC.EducationalBackground.Create(), FormMethod.Post, new { @class = "form-horizontal", id = "createEducationalBackgroundForm", autocomplete = "off", enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
-            @Html.HiddenFor(model => model.TeacherId)
+            @Html.HiddenFor(model => model.ApplicantId)
             @Html.HiddenFor(model => model.AttachmentScan)
             <div class="form-group">
                 @Html.LabelFor(model => model.EducationalType, htmlAttributes: new { @class = "control-label col-md-2" })

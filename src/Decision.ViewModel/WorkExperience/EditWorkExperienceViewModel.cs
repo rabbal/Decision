@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Common;
 
 namespace Decision.ViewModel.WorkExperience
@@ -89,7 +89,7 @@ namespace Decision.ViewModel.WorkExperience
         [DisplayName("پست سازمانی")]
         public  Guid TitleId { get; set; }
         [Required]
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
         #endregion
 
         #region SelectListItems

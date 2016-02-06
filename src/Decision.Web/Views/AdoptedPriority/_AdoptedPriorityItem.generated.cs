@@ -248,11 +248,11 @@ WriteLiteral(" data-delete-url=\"");
             #line hidden
 WriteLiteral("\"");
 
-WriteLiteral(" data-Teacher=\"");
+WriteLiteral(" data-Applicant=\"");
 
             
             #line 50 "..\..\Views\AdoptedPriority\_AdoptedPriorityItem.cshtml"
-                                                                                                           Write(Model.TeacherId);
+                                                                                                           Write(Model.ApplicantId);
 
             
             #line default

@@ -9,9 +9,9 @@ using Decision.Common.Filters;
 using Decision.Common.Helpers.Extentions;
 using Decision.Common.Helpers.Json;
 using Decision.DataLayer.Context;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Security;
-using Decision.ViewModel.TeacherInServiceCourseType;
+using Decision.ViewModel.ApplicantInServiceCourseType;
 using Decision.Web.Extentions;
 using Decision.Web.Filters;
 using MvcSiteMapProvider;
@@ -19,37 +19,37 @@ using MvcSiteMapProvider;
 namespace Decision.Web.Controllers
 {
     
-    [RoutePrefix("Teacher/TeacherInServiceCourseType")]
+    [RoutePrefix("Applicant/ApplicantInServiceCourseType")]
     [Route("{action}")]
-    [Mvc5Authorize(AssignableToRolePermissions.CanManageTeacherInServiceCourseType)]
-    public partial class TeacherInServiceCourseTypeController : Controller
+    [Mvc5Authorize(AssignableToRolePermissions.CanManageApplicantInServiceCourseType)]
+    public partial class ApplicantInServiceCourseTypeController : Controller
     {
         #region	Fields
 
-        private readonly IReferentialTeacherService _referentialTeacherService;
+        private readonly IReferentialApplicantService _referentialApplicantService;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ITeacherInServiceCourseTypeService _TeacherInServiceCourseType;
+        private readonly IApplicantInServiceCourseTypeService _ApplicantInServiceCourseType;
         #endregion
 
         #region	Ctor
-        public TeacherInServiceCourseTypeController(IReferentialTeacherService referentialTeacherService,IUnitOfWork unitOfWork, ITeacherInServiceCourseTypeService TeacherInServiceCourseTypeService)
+        public ApplicantInServiceCourseTypeController(IReferentialApplicantService referentialApplicantService,IUnitOfWork unitOfWork, IApplicantInServiceCourseTypeService ApplicantInServiceCourseTypeService)
         {
             _unitOfWork = unitOfWork;
-            _TeacherInServiceCourseType = TeacherInServiceCourseTypeService;
-            _referentialTeacherService = referentialTeacherService;
+            _ApplicantInServiceCourseType = ApplicantInServiceCourseTypeService;
+            _referentialApplicantService = referentialApplicantService;
         }
         #endregion
 
         #region List,ListAjax
-        [Route("List/{TeacherId}")]
+        [Route("List/{ApplicantId}")]
         [HttpGet]
-        [TeacherAuthorize]
-        [MvcSiteMapNode(ParentKey = "Teacher_Details", Title = "لیست دوره های ضمن خدمت", PreservedRouteParameters = "TeacherId")]
-        public virtual async Task<ActionResult> List(Guid TeacherId)
+        [ApplicantAuthorize]
+        [MvcSiteMapNode(ParentKey = "Applicant_Details", Title = "لیست دوره های ضمن خدمت", PreservedRouteParameters = "ApplicantId")]
+        public virtual async Task<ActionResult> List(Guid ApplicantId)
         {
-            var viewModel = await _TeacherInServiceCourseType.GetPagedListAsync(new TeacherInServiceCourseTypeSearchRequest
+            var viewModel = await _ApplicantInServiceCourseType.GetPagedListAsync(new ApplicantInServiceCourseTypeSearchRequest
             {
-                TeacherId = TeacherId
+                ApplicantId = ApplicantId
             });
             return View(viewModel);
         }
@@ -57,27 +57,27 @@ namespace Decision.Web.Controllers
         [HttpPost]
         [AjaxOnly]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        public virtual async Task<ActionResult> ListAjax(TeacherInServiceCourseTypeSearchRequest request)
+        public virtual async Task<ActionResult> ListAjax(ApplicantInServiceCourseTypeSearchRequest request)
         {
-            if (!_referentialTeacherService.CanManageTeacher(request.TeacherId)) return HttpNotFound();
-            var viewModel = await _TeacherInServiceCourseType.GetPagedListAsync(request);
-            if (viewModel.TeacherInServiceCourseTypes == null || !viewModel.TeacherInServiceCourseTypes.Any())
+            if (!_referentialApplicantService.CanManageApplicant(request.ApplicantId)) return HttpNotFound();
+            var viewModel = await _ApplicantInServiceCourseType.GetPagedListAsync(request);
+            if (viewModel.ApplicantInServiceCourseTypes == null || !viewModel.ApplicantInServiceCourseTypes.Any())
                 return Content("no-more-info");
 
-            return PartialView(MVC.TeacherInServiceCourseType.Views._ListAjax, viewModel);
+            return PartialView(MVC.ApplicantInServiceCourseType.Views._ListAjax, viewModel);
         }
         #endregion
 
         #region Create
         [HttpGet]
         [AjaxOnly]
-        public virtual async Task<ActionResult> Create(Guid TeacherId)
+        public virtual async Task<ActionResult> Create(Guid ApplicantId)
         {
-            if (!_referentialTeacherService.CanManageTeacher(TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
             var viewModel =
                 await
-                    _TeacherInServiceCourseType.GetForCreate(TeacherId);
-            return PartialView(MVC.TeacherInServiceCourseType.Views._Create, viewModel);
+                    _ApplicantInServiceCourseType.GetForCreate(ApplicantId);
+            return PartialView(MVC.ApplicantInServiceCourseType.Views._Create, viewModel);
         }
 
         [AjaxOnly]
@@ -85,30 +85,30 @@ namespace Decision.Web.Controllers
         [ValidateAntiForgeryToken]
         //[CheckReferrer]
         [Audit(Description = "درج دوره ضمن خدمت")]
-        public virtual async Task<ActionResult> Create(AddTeacherInServiceCourseTypeViewModel viewModel)
+        public virtual async Task<ActionResult> Create(AddApplicantInServiceCourseTypeViewModel viewModel)
         {
-            if (!_referentialTeacherService.CanManageTeacher(viewModel.TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
             if (!ModelState.IsValid)
             {
-                await _TeacherInServiceCourseType.FillAddViewModel(viewModel);
+                await _ApplicantInServiceCourseType.FillAddViewModel(viewModel);
                 return new JsonNetResult
                 {
                     Data = new
                     {
                         success = false,
                         View =
-                            this.RenderPartialViewToString(MVC.TeacherInServiceCourseType.Views._Create, viewModel)
+                            this.RenderPartialViewToString(MVC.ApplicantInServiceCourseType.Views._Create, viewModel)
                     }
                 };
             }
-            var newTeacherInServiceCourseType = await _TeacherInServiceCourseType.Create(viewModel);
+            var newApplicantInServiceCourseType = await _ApplicantInServiceCourseType.Create(viewModel);
             return new JsonNetResult
             {
                 Data = new
                 {
                     success = true,
                     View =
-                        this.RenderPartialViewToString(MVC.TeacherInServiceCourseType.Views._TeacherInServiceCourseTypeItem, newTeacherInServiceCourseType)
+                        this.RenderPartialViewToString(MVC.ApplicantInServiceCourseType.Views._ApplicantInServiceCourseTypeItem, newApplicantInServiceCourseType)
                 }
             };
         }
@@ -122,10 +122,10 @@ namespace Decision.Web.Controllers
         {
 
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var viewModel = await _TeacherInServiceCourseType.GetForEditAsync(id.Value);
+            var viewModel = await _ApplicantInServiceCourseType.GetForEditAsync(id.Value);
             if (viewModel == null) return HttpNotFound();
-            if (!_referentialTeacherService.CanManageTeacher(viewModel.TeacherId)) return HttpNotFound();
-            return PartialView(MVC.TeacherInServiceCourseType.Views._Edit, viewModel);
+            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
+            return PartialView(MVC.ApplicantInServiceCourseType.Views._Edit, viewModel);
         }
 
         [HttpPost]
@@ -133,51 +133,51 @@ namespace Decision.Web.Controllers
         [AjaxOnly]
         [ValidateAntiForgeryToken]
         [Audit(Description = "ویرایش دوره ضمن خدمت")]
-        public virtual async Task<ActionResult> Edit(EditTeacherInServiceCourseTypeViewModel viewModel)
+        public virtual async Task<ActionResult> Edit(EditApplicantInServiceCourseTypeViewModel viewModel)
         {
-            if (!await _TeacherInServiceCourseType.IsInDb(viewModel.Id))
+            if (!await _ApplicantInServiceCourseType.IsInDb(viewModel.Id))
                 this.AddErrors("TitleId", "دوزه ضمن خدمت مورد نظر توسط یکی از کاربران در شبکه ، حذف  است");
 
             if (!ModelState.IsValid)
             {
-                await _TeacherInServiceCourseType.FillEditViewModel(viewModel);
+                await _ApplicantInServiceCourseType.FillEditViewModel(viewModel);
                 return new JsonNetResult
                 {
                     Data = new
                     {
                         success = false,
                         View =
-                            this.RenderPartialViewToString(MVC.TeacherInServiceCourseType.Views._Edit, viewModel)
+                            this.RenderPartialViewToString(MVC.ApplicantInServiceCourseType.Views._Edit, viewModel)
                     }
                 };
             }
 
-            await _TeacherInServiceCourseType.EditAsync(viewModel);
+            await _ApplicantInServiceCourseType.EditAsync(viewModel);
             var message = await _unitOfWork.ConcurrencySaveChangesAsync();
             if (message.HasValue()) this.AddErrors("TitleId", string.Format(message, "دوره ضمن خدمت"));
 
             if (ModelState.IsValid)
             {
-                var TeacherInServiceCourseType =
-                    await _TeacherInServiceCourseType.GetTeacherInServiceCourseTypeViewModel(viewModel.Id);
+                var ApplicantInServiceCourseType =
+                    await _ApplicantInServiceCourseType.GetApplicantInServiceCourseTypeViewModel(viewModel.Id);
                 return new JsonNetResult
                 {
                     Data = new
                     {
                         success = true,
                         View =
-                            this.RenderPartialViewToString(MVC.TeacherInServiceCourseType.Views._TeacherInServiceCourseTypeItem, TeacherInServiceCourseType)
+                            this.RenderPartialViewToString(MVC.ApplicantInServiceCourseType.Views._ApplicantInServiceCourseTypeItem, ApplicantInServiceCourseType)
                     }
                 };
             }
-            await _TeacherInServiceCourseType.FillEditViewModel(viewModel);
+            await _ApplicantInServiceCourseType.FillEditViewModel(viewModel);
             return new JsonNetResult
             {
                 Data = new
                 {
                     success = false,
                     View =
-                        this.RenderPartialViewToString(MVC.TeacherInServiceCourseType.Views._Edit, viewModel)
+                        this.RenderPartialViewToString(MVC.ApplicantInServiceCourseType.Views._Edit, viewModel)
                 }
             };
         }
@@ -191,10 +191,10 @@ namespace Decision.Web.Controllers
         [ValidateAntiForgeryToken]
         [Audit(Description = "حذف دوره ضمن خدمت")]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        public virtual async Task<ActionResult> Delete(Guid TeacherId)
+        public virtual async Task<ActionResult> Delete(Guid ApplicantId)
         {
-            if (!_referentialTeacherService.CanManageTeacher(TeacherId)) return HttpNotFound();
-            await _TeacherInServiceCourseType.DeleteAsync(TeacherId);
+            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
+            await _ApplicantInServiceCourseType.DeleteAsync(ApplicantId);
             return Content("ok");
         }
         #endregion
@@ -205,9 +205,9 @@ namespace Decision.Web.Controllers
         public virtual async Task<ActionResult> CancelEdit(Guid? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var viewModel = await _TeacherInServiceCourseType.GetTeacherInServiceCourseTypeViewModel(id.Value);
+            var viewModel = await _ApplicantInServiceCourseType.GetApplicantInServiceCourseTypeViewModel(id.Value);
             if (viewModel == null) return HttpNotFound();
-            return PartialView(MVC.TeacherInServiceCourseType.Views._TeacherInServiceCourseTypeItem, viewModel);
+            return PartialView(MVC.ApplicantInServiceCourseType.Views._ApplicantInServiceCourseTypeItem, viewModel);
         }
         #endregion
     }

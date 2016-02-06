@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.TrainingCourse;
 
-namespace Decision.ServiceLayer.Contracts.TeacherInfo
+namespace Decision.ServiceLayer.Contracts.ApplicantInfo
 {
     /// <summary>
     /// نشان دهنده الزامات ارائه دهنده سرویس دوره های کارآموزی
@@ -78,11 +78,11 @@ namespace Decision.ServiceLayer.Contracts.TeacherInfo
         /// <returns></returns>
         Task<bool> IsInDb(Guid id);
         /// <summary>
-        /// واکشی دوره کارآموزی استاد به همراه مرکزی که در آن دوره برگزار شده است
+        /// واکشی دوره کارآموزی متقاضی به همراه مرکزی که در آن دوره برگزار شده است
         /// </summary>
         /// <param name="courseId"></param>
         /// <returns></returns>
-        Task<TrainingCourse> GetTrainingCourseOfTeacher(Guid courseId);
+        Task<TrainingCourse> GetTrainingCourseOfApplicant(Guid courseId);
 
         Task<TrainingCourseViewModel> GetTrainingCourseViewModel(Guid id);
     }

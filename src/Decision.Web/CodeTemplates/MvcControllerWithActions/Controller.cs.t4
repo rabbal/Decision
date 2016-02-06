@@ -18,7 +18,7 @@ using System.Web.Mvc;
 using System.Web.UI;
 using Decision.Common.Filters;
 using Decision.DataLayer.Context;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ViewModel.AdminArea.EducationalBackground;
 using Decision.Web.Filters;
 
@@ -31,7 +31,7 @@ if (!String.IsNullOrWhiteSpace(AreaName)) {
 <#
 }
 #>
-    [RoutePrefix("Teacher/<#= ControllerRootName #>")]
+    [RoutePrefix("Applicant/<#= ControllerRootName #>")]
     [Route("{action}")]
     public class <#= ControllerName #> : Controller
     {

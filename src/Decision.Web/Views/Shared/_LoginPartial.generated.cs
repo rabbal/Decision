@@ -74,7 +74,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 5 "..\..\Views\Shared\_LoginPartial.cshtml"
-         if (User.IsInRole(Auth.CanViewTeacherList))
+         if (User.IsInRole(Auth.CanViewApplicantList))
         {
 
             
@@ -90,7 +90,7 @@ WriteLiteral("                ");
 
             
             #line 8 "..\..\Views\Shared\_LoginPartial.cshtml"
-           Write(Html.SecureActionLink("مدیریت اساتید", MVC.Teacher.List()));
+           Write(Html.SecureActionLink("مدیریت اساتید", MVC.Applicant.List()));
 
             
             #line default
@@ -418,7 +418,7 @@ WriteLiteral("                        <li>\r\n                            <a");
 WriteAttribute("href", Tuple.Create(" href=\"", 3028), Tuple.Create("\"", 3071)
             
             #line 80 "..\..\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 3035), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Teacher.ReferList())
+, Tuple.Create(Tuple.Create("", 3035), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.ReferList())
             
             #line default
             #line hidden
@@ -431,7 +431,7 @@ WriteLiteral(">\r\n                                لیست ارجاعات\r\n  
 WriteAttribute("href", Tuple.Create(" href=\"", 3185), Tuple.Create("\"", 3233)
             
             #line 83 "..\..\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 3192), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Teacher.NewTeacherList())
+, Tuple.Create(Tuple.Create("", 3192), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.NewApplicantList())
             
             #line default
             #line hidden
@@ -446,14 +446,14 @@ WriteLiteral("                        <li>\r\n                            <a");
 WriteAttribute("href", Tuple.Create(" href=\"", 3415), Tuple.Create("\"", 3455)
             
             #line 88 "..\..\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 3422), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Teacher.Create())
+, Tuple.Create(Tuple.Create("", 3422), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.Create())
             
             #line default
             #line hidden
 , 3422), false)
 );
 
-WriteLiteral(">\r\n                                درج استاد\r\n                            </a>\r\n " +
+WriteLiteral(">\r\n                                درج متقاضی\r\n                            </a>\r\n " +
 "                       </li>\r\n");
 
             

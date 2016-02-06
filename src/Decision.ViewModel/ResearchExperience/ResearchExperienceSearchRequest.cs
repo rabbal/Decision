@@ -9,8 +9,8 @@ namespace Decision.ViewModel.ResearchExperience
     public class ResearchExperienceSearchRequest : BaseSearchRequest
     {
         /// <summary>
-        /// آی دی استاد مربوط به سابقه های پژوهشی
+        /// آی دی متقاضی مربوط به سابقه های پژوهشی
         /// </summary>
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
     }
 }

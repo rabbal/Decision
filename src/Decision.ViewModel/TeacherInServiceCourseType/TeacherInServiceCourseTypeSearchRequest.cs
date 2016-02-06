@@ -2,17 +2,17 @@
 using System.ComponentModel;
 using Decision.ViewModel.Common;
 
-namespace Decision.ViewModel.TeacherInServiceCourseType
+namespace Decision.ViewModel.ApplicantInServiceCourseType
 {
     /// <summary>
-    /// کلاسی برای کپسوله سازی اطلاعات جستجو و مرتب سازی تعداد ساعت انواع ضمن خدمت برای استاد
+    /// کلاسی برای کپسوله سازی اطلاعات جستجو و مرتب سازی تعداد ساعت انواع ضمن خدمت برای متقاضی
     /// </summary>
-    public class TeacherInServiceCourseTypeSearchRequest : BaseSearchRequest
+    public class ApplicantInServiceCourseTypeSearchRequest : BaseSearchRequest
     {
         /// <summary>
-        /// آی دی استاد مربوطه
+        /// آی دی متقاضی مربوطه
         /// </summary>
-        [DisplayName("استاد")]
-        public Guid TeacherId { get; set; }
+        [DisplayName("متقاضی")]
+        public Guid ApplicantId { get; set; }
     }
 }

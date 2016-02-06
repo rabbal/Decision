@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using Decision.DomainClasses.Entities.Common;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Common;
 
 namespace Decision.ViewModel.Address
@@ -45,10 +45,10 @@ namespace Decision.ViewModel.Address
         [Required(ErrorMessage = "لطفا نوع آدرس را انتخاب کنید")]
         public AddressType Type { get; set; }
         /// <summary>
-        /// آی دی استاد
+        /// آی دی متقاضی
         /// </summary>
         [Required]
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
         /// <summary>
         /// شهر
         /// </summary>

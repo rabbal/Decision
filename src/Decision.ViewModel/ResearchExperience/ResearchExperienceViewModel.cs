@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Common;
 
 namespace Decision.ViewModel.ResearchExperience
@@ -15,7 +15,7 @@ namespace Decision.ViewModel.ResearchExperience
         /// آی دی 
         /// </summary>
         public Guid Id { get; set; }
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
         /// <summary>
         /// عنوای پژوهش
         /// </summary>
@@ -26,7 +26,7 @@ namespace Decision.ViewModel.ResearchExperience
         /// نوع پژوهش
         /// </summary>
         [DisplayName("نوع پژوهش")]
-        public  ResearchType ResearchType { get; set; }
+        public  PresenterType ResearchType { get; set; }
 
         /// <summary>
         ///  چاپ شده توسط  

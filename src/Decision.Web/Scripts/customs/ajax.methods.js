@@ -29,7 +29,7 @@ function onSuccessFormValidation(data, status, xhr, formId, modal) {
         return;
     }
     if (data == "in-refer") {
-        warningNoty("استاد مورد نظر  قبلا به یک اپراتور ارجاع داده شده است.");
+        warningNoty("متقاضی مورد نظر  قبلا به یک اپراتور ارجاع داده شده است.");
         return;
     }
     $('#' + modal).modal('show');

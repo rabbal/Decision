@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using Decision.ViewModel.Institution;
 
-namespace Decision.ServiceLayer.Contracts.TeacherInfo
+namespace Decision.ServiceLayer.Contracts.ApplicantInfo
 {
     /// <summary>
     /// نشان دهنده الزامات ارائه دهنده سرویس موسسه آموزشی

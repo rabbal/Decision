@@ -34,10 +34,10 @@ namespace ASP
     using MvcSiteMapProvider.Web.Html.Models;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/TeacherInServiceCourseType/List.cshtml")]
-    public partial class _Views_TeacherInServiceCourseType_List_cshtml : System.Web.Mvc.WebViewPage<Decision.ViewModel.TeacherInServiceCourseType.TeacherInServiceCourseTypeListViewModel>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/ApplicantInServiceCourseType/List.cshtml")]
+    public partial class _Views_ApplicantInServiceCourseType_List_cshtml : System.Web.Mvc.WebViewPage<Decision.ViewModel.ApplicantInServiceCourseType.ApplicantInServiceCourseTypeListViewModel>
     {
-        public _Views_TeacherInServiceCourseType_List_cshtml()
+        public _Views_ApplicantInServiceCourseType_List_cshtml()
         {
         }
         public override void Execute()
@@ -45,9 +45,9 @@ namespace ASP
 WriteLiteral("\r\n");
 
             
-            #line 4 "..\..\Views\TeacherInServiceCourseType\List.cshtml"
+            #line 4 "..\..\Views\ApplicantInServiceCourseType\List.cshtml"
   
-    ViewBag.Title = "لیست دوره های ضمن خدمت استاد";
+    ViewBag.Title = "لیست دوره های ضمن خدمت متقاضی";
 
             
             #line default
@@ -55,7 +55,7 @@ WriteLiteral("\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 7 "..\..\Views\TeacherInServiceCourseType\List.cshtml"
+            #line 7 "..\..\Views\ApplicantInServiceCourseType\List.cshtml"
 Write(Html.AntiForgeryToken());
 
             
@@ -85,15 +85,15 @@ WriteLiteral(" data-ajax=\"true\"");
 
 WriteLiteral(" data-ajax-mode=\"replace\"");
 
-WriteLiteral(" data-ajax-success=\"onSuccessFormValidation(data, status, xhr,\'createTeacherInSer" +
+WriteLiteral(" data-ajax-success=\"onSuccessFormValidation(data, status, xhr,\'createApplicantInSer" +
 "viceCourseTypeForm\',\'modal\')\"");
 
 WriteLiteral("\r\n                   data-ajax-update=\"#modal\"");
 
 WriteAttribute("href", Tuple.Create(" href=\"", 568), Tuple.Create("\"", 656)
             
-            #line 14 "..\..\Views\TeacherInServiceCourseType\List.cshtml"
-, Tuple.Create(Tuple.Create("", 575), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.TeacherInServiceCourseType.Create(Model.SearchRequest.TeacherId))
+            #line 14 "..\..\Views\ApplicantInServiceCourseType\List.cshtml"
+, Tuple.Create(Tuple.Create("", 575), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.ApplicantInServiceCourseType.Create(Model.SearchRequest.ApplicantId))
             
             #line default
             #line hidden
@@ -115,19 +115,19 @@ WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(" id=\"TeacherInServiceCourseTypeList\"");
+WriteLiteral(" id=\"ApplicantInServiceCourseTypeList\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 20 "..\..\Views\TeacherInServiceCourseType\List.cshtml"
+            #line 20 "..\..\Views\ApplicantInServiceCourseType\List.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 20 "..\..\Views\TeacherInServiceCourseType\List.cshtml"
-               Html.RenderPartial(MVC.TeacherInServiceCourseType.Views.ViewNames._ListAjax, Model);
+            #line 20 "..\..\Views\ApplicantInServiceCourseType\List.cshtml"
+               Html.RenderPartial(MVC.ApplicantInServiceCourseType.Views.ViewNames._ListAjax, Model);
             
             #line default
             #line hidden
@@ -147,26 +147,26 @@ WriteLiteral(">\r\n                <button");
 
 WriteLiteral(" data-page=\"2\"");
 
-WriteLiteral(" data-json=\'{\"TeacherId\":\"");
+WriteLiteral(" data-json=\'{\"ApplicantId\":\"");
 
             
-            #line 26 "..\..\Views\TeacherInServiceCourseType\List.cshtml"
-                                                          Write(Model.SearchRequest.TeacherId);
+            #line 26 "..\..\Views\ApplicantInServiceCourseType\List.cshtml"
+                                                          Write(Model.SearchRequest.ApplicantId);
 
             
             #line default
             #line hidden
 WriteLiteral("\"}\'");
 
-WriteLiteral(" data-container=\"#TeacherInServiceCourseTypeList\"");
+WriteLiteral(" data-container=\"#ApplicantInServiceCourseTypeList\"");
 
 WriteLiteral("\r\n                        data-progress=\"#progress\"");
 
 WriteLiteral("\r\n                        data-load-url=\"");
 
             
-            #line 28 "..\..\Views\TeacherInServiceCourseType\List.cshtml"
-                                  Write(Url.Action(MVC.TeacherInServiceCourseType.ListAjax()));
+            #line 28 "..\..\Views\ApplicantInServiceCourseType\List.cshtml"
+                                  Write(Url.Action(MVC.ApplicantInServiceCourseType.ListAjax()));
 
             
             #line default
@@ -192,7 +192,7 @@ WriteLiteral(">\r\n            <img");
 
 WriteAttribute("src", Tuple.Create(" src=\"", 1691), Tuple.Create("\"", 1741)
             
-            #line 35 "..\..\Views\TeacherInServiceCourseType\List.cshtml"
+            #line 35 "..\..\Views\ApplicantInServiceCourseType\List.cshtml"
 , Tuple.Create(Tuple.Create("", 1697), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
             
             #line default
@@ -209,14 +209,14 @@ DefineSection("Menu", () => {
 WriteLiteral("\r\n");
 
             
-            #line 40 "..\..\Views\TeacherInServiceCourseType\List.cshtml"
+            #line 40 "..\..\Views\ApplicantInServiceCourseType\List.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 40 "..\..\Views\TeacherInServiceCourseType\List.cshtml"
-      Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.SearchRequest.TeacherId);
+            #line 40 "..\..\Views\ApplicantInServiceCourseType\List.cshtml"
+      Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.SearchRequest.ApplicantId);
             
             #line default
             #line hidden
@@ -231,7 +231,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 43 "..\..\Views\TeacherInServiceCourseType\List.cshtml"
+            #line 43 "..\..\Views\ApplicantInServiceCourseType\List.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             

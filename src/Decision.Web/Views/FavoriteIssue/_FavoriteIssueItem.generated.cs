@@ -240,11 +240,11 @@ WriteLiteral(" data-delete-url=\"");
             #line hidden
 WriteLiteral("\"");
 
-WriteLiteral(" data-Teacher=\"");
+WriteLiteral(" data-Applicant=\"");
 
             
             #line 51 "..\..\Views\FavoriteIssue\_FavoriteIssueItem.cshtml"
-                                                                                                         Write(Model.TeacherId);
+                                                                                                         Write(Model.ApplicantId);
 
             
             #line default

@@ -96,7 +96,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 10 "..\..\Views\Article\_Create.cshtml"
-       Write(Html.EncryptedHiddenFor(model => model.TeacherId));
+       Write(Html.EncryptedHiddenFor(model => model.ApplicantId));
 
             
             #line default

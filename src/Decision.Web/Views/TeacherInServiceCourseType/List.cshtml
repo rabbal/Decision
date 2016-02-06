@@ -1,8 +1,8 @@
 ﻿
-@model Decision.ViewModel.TeacherInServiceCourseType.TeacherInServiceCourseTypeListViewModel
+@model Decision.ViewModel.ApplicantInServiceCourseType.ApplicantInServiceCourseTypeListViewModel
            
 @{
-    ViewBag.Title = "لیست دوره های ضمن خدمت استاد";
+    ViewBag.Title = "لیست دوره های ضمن خدمت متقاضی";
 }
 @Html.AntiForgeryToken()
 
@@ -10,22 +10,22 @@
     <div class="panel-heading">
         <div class="row">
             <div class="col-md-2">
-                <a class="btn btn-default" data-ajax="true" data-ajax-mode="replace" data-ajax-success="onSuccessFormValidation(data, status, xhr,'createTeacherInServiceCourseTypeForm','modal')"
-                   data-ajax-update="#modal" href="@Url.Action(MVC.TeacherInServiceCourseType.Create(Model.SearchRequest.TeacherId))" role="button"><i class="fa fa-plus"></i>درج دوره ضمن خدمت جدید</a>
+                <a class="btn btn-default" data-ajax="true" data-ajax-mode="replace" data-ajax-success="onSuccessFormValidation(data, status, xhr,'createApplicantInServiceCourseTypeForm','modal')"
+                   data-ajax-update="#modal" href="@Url.Action(MVC.ApplicantInServiceCourseType.Create(Model.SearchRequest.ApplicantId))" role="button"><i class="fa fa-plus"></i>درج دوره ضمن خدمت جدید</a>
             </div>
         </div>
     </div>
     <div class="panel-body">
-        <div class="row" id="TeacherInServiceCourseTypeList">
-            @{ Html.RenderPartial(MVC.TeacherInServiceCourseType.Views.ViewNames._ListAjax, Model);}
+        <div class="row" id="ApplicantInServiceCourseTypeList">
+            @{ Html.RenderPartial(MVC.ApplicantInServiceCourseType.Views.ViewNames._ListAjax, Model);}
         </div>
     </div>
     <div class="panel-footer padding-5-5">
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
-                <button data-page="2" data-json='{"TeacherId":"@Model.SearchRequest.TeacherId"}' data-container="#TeacherInServiceCourseTypeList"
+                <button data-page="2" data-json='{"ApplicantId":"@Model.SearchRequest.ApplicantId"}' data-container="#ApplicantInServiceCourseTypeList"
                         data-progress="#progress"
-                        data-load-url="@Url.Action(MVC.TeacherInServiceCourseType.ListAjax())"
+                        data-load-url="@Url.Action(MVC.ApplicantInServiceCourseType.ListAjax())"
                         onclick="justPaging(this)" class="btn btn-info btn-block btn-sm" type="button">
                     بیشتر
                 </button>
@@ -37,7 +37,7 @@
     </div>
 </div>
 @section Menu{
-    @{Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.SearchRequest.TeacherId);}
+    @{Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.SearchRequest.ApplicantId);}
 }
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

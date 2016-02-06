@@ -7,8 +7,8 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Decision.Common.Helpers.Extentions;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.TeacherInfo;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.Utility;
 using Decision.ViewModel.Article;
@@ -16,10 +16,10 @@ using Decision.ViewModel.ArticleEvaluation;
 using EntityFramework.Extensions;
 using Microsoft.AspNet.Identity;
 
-namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
+namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
 {
     /// <summary>
-    /// کلاس ارائه دهنده سروسیس های لازم برای اعمال روی مقاله صادر شده توسط استاد
+    /// کلاس ارائه دهنده سروسیس های لازم برای اعمال روی مقاله صادر شده توسط متقاضی
     /// </summary>
     public class ArticleService : IArticleService
     {
@@ -98,7 +98,7 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
         public async Task<ArticleListViewModel> GetPagedListAsync(ArticleSearchRequest request)
         {
             var Articles =
-                _Articles.Where(a => a.TeacherId == request.TeacherId)
+                _Articles.Where(a => a.ApplicantId == request.ApplicantId)
                     .Include(a => a.Creator)
                     .Include(a => a.LasModifier)
                     .AsNoTracking()
@@ -141,15 +141,15 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
             return _Articles.Where(a => a.Id == id).Select(a => a.Attachment).FirstOrDefaultAsync();
         }
 
-        public Guid GetTeacherId(Guid id)
+        public Guid GetApplicantId(Guid id)
         {
-            return _Articles.Where(a => a.Id == id).Select(a => a.TeacherId).First();
+            return _Articles.Where(a => a.Id == id).Select(a => a.ApplicantId).First();
         }
 
         public async  Task<ArticleDetails> GetDetailes(Guid id)
         {
             return
-               await _Articles.Include(a => a.Teacher)
+               await _Articles.Include(a => a.Applicant)
                     .Where(a => a.Id == id)
                     .ProjectTo<ArticleDetails>(_mappingEngine)
                     .FirstOrDefaultAsync();

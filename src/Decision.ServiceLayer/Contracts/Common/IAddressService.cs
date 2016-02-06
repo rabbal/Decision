@@ -33,7 +33,7 @@ namespace Decision.ServiceLayer.Contracts.Common
         /// <param name="viewModel">ویومدل درج آدرس</param>
         Task<AddressViewModel> Create(AddAddressViewModel viewModel);
         /// <summary>
-        /// دریافت لیست آدرس های یک استاد
+        /// دریافت لیست آدرس های یک متقاضی
         /// </summary>
         Task<AddressListViewModel> GetAddressesAsync(AddressSearchRequest request);
         /// <summary>
@@ -45,7 +45,7 @@ namespace Decision.ServiceLayer.Contracts.Common
 
         void FillAddViewModel(AddAddressViewModel viewModel,string path);
         void FillEditViewModel(EditAddressViewModel viewModel,string path);
-        AddAddressViewModel GetForCreate(Guid TeacherId,string path);
+        AddAddressViewModel GetForCreate(Guid ApplicantId,string path);
 
         Task<AddressViewModel> GetAddressViewModel(Guid guid);
     }

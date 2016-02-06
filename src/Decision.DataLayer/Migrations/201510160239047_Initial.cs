@@ -64,7 +64,7 @@ namespace Decision.DataLayer.Migrations
                 .Index(t => t.UserName, unique: true);
             
             CreateTable(
-                "dbo.Teachers",
+                "dbo.Applicants",
                 c => new
                     {
                         Id = c.Guid(nullable: false),
@@ -110,12 +110,12 @@ namespace Decision.DataLayer.Migrations
                 .ForeignKey("dbo.Users", t => t.LasModifierId)
                 .ForeignKey("dbo.Titles", t => t.PositionId)
                 .ForeignKey("dbo.TrainingCourses", t => t.TrainingCourseId)
-                .Index(t => t.FirstName, name: "IX_TeacherFirstName")
-                .Index(t => t.LastName, name: "IX_TeacherLastName")
-                .Index(t => t.NationalCode, unique: true, name: "IX_TeacherNationalCode")
-                .Index(t => t.BirthCertificateNumber, unique: true, name: "IX_TeacherBirthCertificateNumber")
-                .Index(t => t.BirthPlaceCity, name: "IX_TeacherBirthPlaceCity")
-                .Index(t => t.BirthPlaceState, name: "IX_TeacherBirthPlaceState")
+                .Index(t => t.FirstName, name: "IX_ApplicantFirstName")
+                .Index(t => t.LastName, name: "IX_ApplicantLastName")
+                .Index(t => t.NationalCode, unique: true, name: "IX_ApplicantNationalCode")
+                .Index(t => t.BirthCertificateNumber, unique: true, name: "IX_ApplicantBirthCertificateNumber")
+                .Index(t => t.BirthPlaceCity, name: "IX_ApplicantBirthPlaceCity")
+                .Index(t => t.BirthPlaceState, name: "IX_ApplicantBirthPlaceState")
                 .Index(t => t.PositionId)
                 .Index(t => t.TrainingCourseId)
                 .Index(t => t.ApproveById)
@@ -133,7 +133,7 @@ namespace Decision.DataLayer.Migrations
                         Type = c.Int(nullable: false),
                         City = c.String(nullable: false, maxLength: 50),
                         State = c.String(nullable: false, maxLength: 50),
-                        TeacherId = c.Guid(nullable: false),
+                        ApplicantId = c.Guid(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                         RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
                         CreateDate = c.DateTime(nullable: false),
@@ -144,9 +144,9 @@ namespace Decision.DataLayer.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Users", t => t.CreatorId)
-                .ForeignKey("dbo.Teachers", t => t.TeacherId, cascadeDelete: true)
+                .ForeignKey("dbo.Applicants", t => t.ApplicantId, cascadeDelete: true)
                 .ForeignKey("dbo.Users", t => t.LasModifierId)
-                .Index(t => t.TeacherId)
+                .Index(t => t.ApplicantId)
                 .Index(t => t.CreatorId)
                 .Index(t => t.LasModifierId);
             
@@ -168,7 +168,7 @@ namespace Decision.DataLayer.Migrations
                         ThesisScore = c.Decimal(nullable: false, precision: 7, scale: 2),
                         RelatedToOrganizationPosition = c.Int(nullable: false),
                         Attachment = c.Binary(),
-                        TeacherId = c.Guid(nullable: false),
+                        ApplicantId = c.Guid(nullable: false),
                         InstitutionId = c.Guid(nullable: false),
                         StudyFieldId = c.Guid(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
@@ -184,8 +184,8 @@ namespace Decision.DataLayer.Migrations
                 .ForeignKey("dbo.Institutions", t => t.InstitutionId)
                 .ForeignKey("dbo.Users", t => t.LasModifierId)
                 .ForeignKey("dbo.Titles", t => t.StudyFieldId)
-                .ForeignKey("dbo.Teachers", t => t.TeacherId, cascadeDelete: true)
-                .Index(t => t.TeacherId)
+                .ForeignKey("dbo.Applicants", t => t.ApplicantId, cascadeDelete: true)
+                .Index(t => t.ApplicantId)
                 .Index(t => t.InstitutionId)
                 .Index(t => t.StudyFieldId)
                 .Index(t => t.CreatorId)
@@ -272,7 +272,7 @@ namespace Decision.DataLayer.Migrations
                         Foible = c.String(nullable: false),
                         StrongPoint = c.String(nullable: false),
                         Attachment = c.Binary(),
-                        TeacherId = c.Guid(nullable: false),
+                        ApplicantId = c.Guid(nullable: false),
                         EvaluatorId = c.Guid(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                         RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
@@ -284,10 +284,10 @@ namespace Decision.DataLayer.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Users", t => t.CreatorId)
-                .ForeignKey("dbo.Teachers", t => t.TeacherId, cascadeDelete: true)
+                .ForeignKey("dbo.Applicants", t => t.ApplicantId, cascadeDelete: true)
                 .ForeignKey("dbo.Users", t => t.LasModifierId)
                 .ForeignKey("dbo.Appraisers", t => t.EvaluatorId)
-                .Index(t => t.TeacherId)
+                .Index(t => t.ApplicantId)
                 .Index(t => t.EvaluatorId)
                 .Index(t => t.CreatorId)
                 .Index(t => t.LasModifierId);
@@ -301,7 +301,7 @@ namespace Decision.DataLayer.Migrations
                         Body = c.String(nullable: false),
                         Brief = c.String(nullable: false),
                         Attachment = c.Binary(),
-                        TeacherId = c.Guid(nullable: false),
+                        ApplicantId = c.Guid(nullable: false),
                         InterviewerId = c.Guid(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                         RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
@@ -313,10 +313,10 @@ namespace Decision.DataLayer.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Users", t => t.CreatorId)
-                .ForeignKey("dbo.Teachers", t => t.TeacherId, cascadeDelete: true)
+                .ForeignKey("dbo.Applicants", t => t.ApplicantId, cascadeDelete: true)
                 .ForeignKey("dbo.Users", t => t.LasModifierId)
                 .ForeignKey("dbo.Appraisers", t => t.InterviewerId)
-                .Index(t => t.TeacherId)
+                .Index(t => t.ApplicantId)
                 .Index(t => t.InterviewerId)
                 .Index(t => t.CreatorId)
                 .Index(t => t.LasModifierId);
@@ -421,7 +421,7 @@ namespace Decision.DataLayer.Migrations
                         Brief = c.String(),
                         ArticleDate = c.DateTime(nullable: false),
                         Attachment = c.Binary(),
-                        TeacherId = c.Guid(nullable: false),
+                        ApplicantId = c.Guid(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                         RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
                         CreateDate = c.DateTime(nullable: false),
@@ -433,8 +433,8 @@ namespace Decision.DataLayer.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Users", t => t.CreatorId)
                 .ForeignKey("dbo.Users", t => t.LasModifierId)
-                .ForeignKey("dbo.Teachers", t => t.TeacherId, cascadeDelete: true)
-                .Index(t => t.TeacherId)
+                .ForeignKey("dbo.Applicants", t => t.ApplicantId, cascadeDelete: true)
+                .Index(t => t.ApplicantId)
                 .Index(t => t.CreatorId)
                 .Index(t => t.LasModifierId);
             
@@ -447,7 +447,7 @@ namespace Decision.DataLayer.Migrations
                         BeginYear = c.Int(nullable: false),
                         EndYear = c.Int(nullable: false),
                         Type = c.Int(nullable: false),
-                        TeacherId = c.Guid(nullable: false),
+                        ApplicantId = c.Guid(nullable: false),
                         TitleId = c.Guid(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                         RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
@@ -461,19 +461,19 @@ namespace Decision.DataLayer.Migrations
                 .ForeignKey("dbo.Users", t => t.CreatorId)
                 .ForeignKey("dbo.Users", t => t.LasModifierId)
                 .ForeignKey("dbo.Titles", t => t.TitleId)
-                .ForeignKey("dbo.Teachers", t => t.TeacherId, cascadeDelete: true)
-                .Index(t => t.TeacherId)
+                .ForeignKey("dbo.Applicants", t => t.ApplicantId, cascadeDelete: true)
+                .Index(t => t.ApplicantId)
                 .Index(t => t.TitleId)
                 .Index(t => t.CreatorId)
                 .Index(t => t.LasModifierId);
             
             CreateTable(
-                "dbo.TeacherInServiceCourseTypes",
+                "dbo.ApplicantInServiceCourseTypes",
                 c => new
                     {
                         Id = c.Guid(nullable: false),
                         HoursCount = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        TeacherId = c.Guid(nullable: false),
+                        ApplicantId = c.Guid(nullable: false),
                         InServiceCourseTypeTitleId = c.Guid(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                         RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
@@ -487,8 +487,8 @@ namespace Decision.DataLayer.Migrations
                 .ForeignKey("dbo.Users", t => t.CreatorId)
                 .ForeignKey("dbo.Titles", t => t.InServiceCourseTypeTitleId)
                 .ForeignKey("dbo.Users", t => t.LasModifierId)
-                .ForeignKey("dbo.Teachers", t => t.TeacherId, cascadeDelete: true)
-                .Index(t => t.TeacherId)
+                .ForeignKey("dbo.Applicants", t => t.ApplicantId, cascadeDelete: true)
+                .Index(t => t.ApplicantId)
                 .Index(t => t.InServiceCourseTypeTitleId)
                 .Index(t => t.CreatorId)
                 .Index(t => t.LasModifierId);
@@ -507,7 +507,7 @@ namespace Decision.DataLayer.Migrations
                         OfficeName = c.String(nullable: false, maxLength: 1024),
                         City = c.String(),
                         State = c.String(),
-                        TeacherId = c.Guid(nullable: false),
+                        ApplicantId = c.Guid(nullable: false),
                         TitleId = c.Guid(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                         RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
@@ -521,14 +521,14 @@ namespace Decision.DataLayer.Migrations
                 .ForeignKey("dbo.Users", t => t.CreatorId)
                 .ForeignKey("dbo.Users", t => t.LasModifierId)
                 .ForeignKey("dbo.Titles", t => t.TitleId)
-                .ForeignKey("dbo.Teachers", t => t.TeacherId, cascadeDelete: true)
-                .Index(t => t.TeacherId)
+                .ForeignKey("dbo.Applicants", t => t.ApplicantId, cascadeDelete: true)
+                .Index(t => t.ApplicantId)
                 .Index(t => t.TitleId)
                 .Index(t => t.CreatorId)
                 .Index(t => t.LasModifierId);
             
             CreateTable(
-                "dbo.ReferentialTeachers",
+                "dbo.ReferentialApplicants",
                 c => new
                     {
                         Id = c.Guid(nullable: false),
@@ -536,15 +536,15 @@ namespace Decision.DataLayer.Migrations
                         FinishedDate = c.DateTime(),
                         ReferencedFromId = c.Guid(nullable: false),
                         ReferencedToId = c.Guid(nullable: false),
-                        TeacherId = c.Guid(nullable: false),
+                        ApplicantId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Teachers", t => t.TeacherId, cascadeDelete: true)
+                .ForeignKey("dbo.Applicants", t => t.ApplicantId, cascadeDelete: true)
                 .ForeignKey("dbo.Users", t => t.ReferencedFromId)
                 .ForeignKey("dbo.Users", t => t.ReferencedToId)
                 .Index(t => t.ReferencedFromId)
                 .Index(t => t.ReferencedToId)
-                .Index(t => t.TeacherId);
+                .Index(t => t.ApplicantId);
             
             CreateTable(
                 "dbo.ResearchExperiences",
@@ -556,7 +556,7 @@ namespace Decision.DataLayer.Migrations
                         PublishedIn = c.String(),
                         PublishDate = c.DateTime(nullable: false),
                         Description = c.String(),
-                        TeacherId = c.Guid(nullable: false),
+                        ApplicantId = c.Guid(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                         RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
                         CreateDate = c.DateTime(nullable: false),
@@ -568,8 +568,8 @@ namespace Decision.DataLayer.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Users", t => t.CreatorId)
                 .ForeignKey("dbo.Users", t => t.LasModifierId)
-                .ForeignKey("dbo.Teachers", t => t.TeacherId, cascadeDelete: true)
-                .Index(t => t.TeacherId)
+                .ForeignKey("dbo.Applicants", t => t.ApplicantId, cascadeDelete: true)
+                .Index(t => t.ApplicantId)
                 .Index(t => t.CreatorId)
                 .Index(t => t.LasModifierId);
             
@@ -736,7 +736,7 @@ namespace Decision.DataLayer.Migrations
                 .PrimaryKey(t => t.Name);
             
             CreateTable(
-                "dbo.AnswerOptionTeachermentEvaluation",
+                "dbo.AnswerOptionApplicantmentEvaluation",
                 c => new
                     {
                         AnswerOptionId = c.Guid(nullable: false),
@@ -766,8 +766,8 @@ namespace Decision.DataLayer.Migrations
             Sql("EXEC sp_configure filestream_access_level, 2");
             Sql("RECONFIGURE", true);
 
-            Sql("alter database DecisionDB Add FileGroup FileGroupTeacher contains FileStream", true);
-            Sql("alter database DecisionDB add file ( name = 'TeacherDocuements'  ,  filename = 'C:\\FileStream\\TeacherDocuements') to filegroup FileGroupTeacher", true);
+            Sql("alter database DecisionDB Add FileGroup FileGroupApplicant contains FileStream", true);
+            Sql("alter database DecisionDB add file ( name = 'ApplicantDocuements'  ,  filename = 'C:\\FileStream\\ApplicantDocuements') to filegroup FileGroupApplicant", true);
 
             Sql("alter database DecisionDB Add FileGroup FileGroupArticle contains FileStream", true);
             Sql("alter database DecisionDB add file ( name = 'ArticleDocuements'  ,  filename = 'C:\\FileStream\\ArticleDocuements') to filegroup FileGroupArticle", true);
@@ -789,26 +789,26 @@ namespace Decision.DataLayer.Migrations
             Sql("ALTER DATABASE DecisionDB SET READ_COMMITTED_SNAPSHOT ON", true);
             #endregion
 
-            #region Teacher
-            Sql("alter table [dbo].[Teachers] set(filestream_on ='FileGroupTeacher')");
-            Sql("alter table [dbo].[Teachers] add [RowId] uniqueidentifier rowguidcol not null");
-            Sql("alter table [dbo].[Teachers] add constraint [UQ_Teachers_RowId] UNIQUE NONCLUSTERED ([RowId])");
-            Sql("alter table [dbo].[Teachers] add constraint [DF_Teachers_RowId] default (newid()) for [RowId]");
+            #region Applicant
+            Sql("alter table [dbo].[Applicants] set(filestream_on ='FileGroupApplicant')");
+            Sql("alter table [dbo].[Applicants] add [RowId] uniqueidentifier rowguidcol not null");
+            Sql("alter table [dbo].[Applicants] add constraint [UQ_Applicants_RowId] UNIQUE NONCLUSTERED ([RowId])");
+            Sql("alter table [dbo].[Applicants] add constraint [DF_Applicants_RowId] default (newid()) for [RowId]");
 
-            DropColumn("dbo.Teachers", "Photo");
-            Sql("alter table [dbo].[Teachers] add [PhotoTemp] varbinary(max) FILESTREAM not null");
-            RenameColumn("dbo.Teachers", "PhotoTemp", "Photo");
-            Sql("alter table [dbo].[Teachers] add constraint [DF_Teachers_Photo] default(0x) for [Photo]");
+            DropColumn("dbo.Applicants", "Photo");
+            Sql("alter table [dbo].[Applicants] add [PhotoTemp] varbinary(max) FILESTREAM not null");
+            RenameColumn("dbo.Applicants", "PhotoTemp", "Photo");
+            Sql("alter table [dbo].[Applicants] add constraint [DF_Applicants_Photo] default(0x) for [Photo]");
 
-            DropColumn("dbo.Teachers", "CopyOfBirthCertificate");
-            Sql("alter table [dbo].[Teachers] add [CopyOfBirthCertificateTemp] varbinary(max) FILESTREAM not null");
-            RenameColumn("dbo.Teachers", "CopyOfBirthCertificateTemp", "CopyOfBirthCertificate");
-            Sql("alter table [dbo].[Teachers] add constraint [DF_Teachers_CopyOfBirthCertificate] default(0x) for [CopyOfBirthCertificate]");
+            DropColumn("dbo.Applicants", "CopyOfBirthCertificate");
+            Sql("alter table [dbo].[Applicants] add [CopyOfBirthCertificateTemp] varbinary(max) FILESTREAM not null");
+            RenameColumn("dbo.Applicants", "CopyOfBirthCertificateTemp", "CopyOfBirthCertificate");
+            Sql("alter table [dbo].[Applicants] add constraint [DF_Applicants_CopyOfBirthCertificate] default(0x) for [CopyOfBirthCertificate]");
 
-            DropColumn("dbo.Teachers", "CopyOfNationalCard");
-            Sql("alter table [dbo].[Teachers] add [CopyOfNationalCardTemp] varbinary(max) FILESTREAM not null");
-            RenameColumn("dbo.Teachers", "CopyOfNationalCardTemp", "CopyOfNationalCard");
-            Sql("alter table [dbo].[Teachers] add constraint [DF_Teachers_CopyOfNationalCard] default(0x) for [CopyOfNationalCard]");
+            DropColumn("dbo.Applicants", "CopyOfNationalCard");
+            Sql("alter table [dbo].[Applicants] add [CopyOfNationalCardTemp] varbinary(max) FILESTREAM not null");
+            RenameColumn("dbo.Applicants", "CopyOfNationalCardTemp", "CopyOfNationalCard");
+            Sql("alter table [dbo].[Applicants] add constraint [DF_Applicants_CopyOfNationalCard] default(0x) for [CopyOfNationalCard]");
 
             #endregion
 
@@ -886,33 +886,33 @@ namespace Decision.DataLayer.Migrations
             DropForeignKey("dbo.UserLogins", "UserId", "dbo.Users");
             DropForeignKey("dbo.UserClaims", "UserId", "dbo.Users");
             DropForeignKey("dbo.AuditLogs", "CreatorId", "dbo.Users");
-            DropForeignKey("dbo.WorkExperiences", "TeacherId", "dbo.Teachers");
-            DropForeignKey("dbo.Teachers", "TrainingCourseId", "dbo.TrainingCourses");
+            DropForeignKey("dbo.WorkExperiences", "ApplicantId", "dbo.Applicants");
+            DropForeignKey("dbo.Applicants", "TrainingCourseId", "dbo.TrainingCourses");
             DropForeignKey("dbo.TrainingCenters", "LasModifierId", "dbo.Users");
             DropForeignKey("dbo.TrainingCenters", "CreatorId", "dbo.Users");
             DropForeignKey("dbo.TrainingCourses", "TrainingCenterId", "dbo.TrainingCenters");
             DropForeignKey("dbo.TrainingCourses", "LasModifierId", "dbo.Users");
             DropForeignKey("dbo.TrainingCourses", "CreatorId", "dbo.Users");
-            DropForeignKey("dbo.ResearchExperiences", "TeacherId", "dbo.Teachers");
+            DropForeignKey("dbo.ResearchExperiences", "ApplicantId", "dbo.Applicants");
             DropForeignKey("dbo.ResearchExperiences", "LasModifierId", "dbo.Users");
             DropForeignKey("dbo.ResearchExperiences", "CreatorId", "dbo.Users");
-            DropForeignKey("dbo.ReferentialTeachers", "ReferencedToId", "dbo.Users");
-            DropForeignKey("dbo.ReferentialTeachers", "ReferencedFromId", "dbo.Users");
-            DropForeignKey("dbo.ReferentialTeachers", "TeacherId", "dbo.Teachers");
-            DropForeignKey("dbo.Teachers", "PositionId", "dbo.Titles");
-            DropForeignKey("dbo.Teachers", "LasModifierId", "dbo.Users");
-            DropForeignKey("dbo.Articles", "TeacherId", "dbo.Teachers");
-            DropForeignKey("dbo.TeacherInServiceCourseTypes", "TeacherId", "dbo.Teachers");
-            DropForeignKey("dbo.EducationalExperiences", "TeacherId", "dbo.Teachers");
-            DropForeignKey("dbo.EducationalBackgrounds", "TeacherId", "dbo.Teachers");
+            DropForeignKey("dbo.ReferentialApplicants", "ReferencedToId", "dbo.Users");
+            DropForeignKey("dbo.ReferentialApplicants", "ReferencedFromId", "dbo.Users");
+            DropForeignKey("dbo.ReferentialApplicants", "ApplicantId", "dbo.Applicants");
+            DropForeignKey("dbo.Applicants", "PositionId", "dbo.Titles");
+            DropForeignKey("dbo.Applicants", "LasModifierId", "dbo.Users");
+            DropForeignKey("dbo.Articles", "ApplicantId", "dbo.Applicants");
+            DropForeignKey("dbo.ApplicantInServiceCourseTypes", "ApplicantId", "dbo.Applicants");
+            DropForeignKey("dbo.EducationalExperiences", "ApplicantId", "dbo.Applicants");
+            DropForeignKey("dbo.EducationalBackgrounds", "ApplicantId", "dbo.Applicants");
             DropForeignKey("dbo.EducationalBackgrounds", "StudyFieldId", "dbo.Titles");
             DropForeignKey("dbo.WorkExperiences", "TitleId", "dbo.Titles");
             DropForeignKey("dbo.WorkExperiences", "LasModifierId", "dbo.Users");
             DropForeignKey("dbo.WorkExperiences", "CreatorId", "dbo.Users");
             DropForeignKey("dbo.Titles", "LasModifierId", "dbo.Users");
-            DropForeignKey("dbo.TeacherInServiceCourseTypes", "LasModifierId", "dbo.Users");
-            DropForeignKey("dbo.TeacherInServiceCourseTypes", "InServiceCourseTypeTitleId", "dbo.Titles");
-            DropForeignKey("dbo.TeacherInServiceCourseTypes", "CreatorId", "dbo.Users");
+            DropForeignKey("dbo.ApplicantInServiceCourseTypes", "LasModifierId", "dbo.Users");
+            DropForeignKey("dbo.ApplicantInServiceCourseTypes", "InServiceCourseTypeTitleId", "dbo.Titles");
+            DropForeignKey("dbo.ApplicantInServiceCourseTypes", "CreatorId", "dbo.Users");
             DropForeignKey("dbo.EducationalExperiences", "TitleId", "dbo.Titles");
             DropForeignKey("dbo.EducationalExperiences", "LasModifierId", "dbo.Users");
             DropForeignKey("dbo.EducationalExperiences", "CreatorId", "dbo.Users");
@@ -933,15 +933,15 @@ namespace Decision.DataLayer.Migrations
             DropForeignKey("dbo.ArticleEvaluationQuestions", "CreatorId", "dbo.Users");
             DropForeignKey("dbo.Questions", "CreatorId", "dbo.Users");
             DropForeignKey("dbo.AnswerOptions", "QuestionId", "dbo.Questions");
-            DropForeignKey("dbo.AnswerOptionTeachermentEvaluation", "ArticleEvaluationId", "dbo.ArticleEvaluations");
-            DropForeignKey("dbo.AnswerOptionTeachermentEvaluation", "AnswerOptionId", "dbo.AnswerOptions");
+            DropForeignKey("dbo.AnswerOptionApplicantmentEvaluation", "ArticleEvaluationId", "dbo.ArticleEvaluations");
+            DropForeignKey("dbo.AnswerOptionApplicantmentEvaluation", "AnswerOptionId", "dbo.AnswerOptions");
             DropForeignKey("dbo.Interviews", "InterviewerId", "dbo.Appraisers");
             DropForeignKey("dbo.Interviews", "LasModifierId", "dbo.Users");
-            DropForeignKey("dbo.Interviews", "TeacherId", "dbo.Teachers");
+            DropForeignKey("dbo.Interviews", "ApplicantId", "dbo.Applicants");
             DropForeignKey("dbo.Interviews", "CreatorId", "dbo.Users");
             DropForeignKey("dbo.EntireEvaluations", "EvaluatorId", "dbo.Appraisers");
             DropForeignKey("dbo.EntireEvaluations", "LasModifierId", "dbo.Users");
-            DropForeignKey("dbo.EntireEvaluations", "TeacherId", "dbo.Teachers");
+            DropForeignKey("dbo.EntireEvaluations", "ApplicantId", "dbo.Applicants");
             DropForeignKey("dbo.EntireEvaluations", "CreatorId", "dbo.Users");
             DropForeignKey("dbo.Appraisers", "CreatorId", "dbo.Users");
             DropForeignKey("dbo.Appraisers", "AppraiserTitleId", "dbo.Titles");
@@ -950,16 +950,16 @@ namespace Decision.DataLayer.Migrations
             DropForeignKey("dbo.Institutions", "LasModifierId", "dbo.Users");
             DropForeignKey("dbo.Institutions", "CreatorId", "dbo.Users");
             DropForeignKey("dbo.EducationalBackgrounds", "CreatorId", "dbo.Users");
-            DropForeignKey("dbo.Teachers", "CreatorId", "dbo.Users");
-            DropForeignKey("dbo.Teachers", "ApproveById", "dbo.Users");
+            DropForeignKey("dbo.Applicants", "CreatorId", "dbo.Users");
+            DropForeignKey("dbo.Applicants", "ApproveById", "dbo.Users");
             DropForeignKey("dbo.Addresses", "LasModifierId", "dbo.Users");
-            DropForeignKey("dbo.Addresses", "TeacherId", "dbo.Teachers");
+            DropForeignKey("dbo.Addresses", "ApplicantId", "dbo.Applicants");
             DropForeignKey("dbo.Addresses", "CreatorId", "dbo.Users");
             DropForeignKey("dbo.UserRole", "RoleId", "dbo.Roles");
             DropIndex("dbo.QuestionArticleEvaluation", new[] { "ArticleEvaluationId" });
             DropIndex("dbo.QuestionArticleEvaluation", new[] { "QuestionId" });
-            DropIndex("dbo.AnswerOptionTeachermentEvaluation", new[] { "ArticleEvaluationId" });
-            DropIndex("dbo.AnswerOptionTeachermentEvaluation", new[] { "AnswerOptionId" });
+            DropIndex("dbo.AnswerOptionApplicantmentEvaluation", new[] { "ArticleEvaluationId" });
+            DropIndex("dbo.AnswerOptionApplicantmentEvaluation", new[] { "AnswerOptionId" });
             DropIndex("dbo.MessageAttachments", new[] { "MessageId" });
             DropIndex("dbo.Messages", new[] { "ConversationId" });
             DropIndex("dbo.Messages", new[] { "SenderId" });
@@ -981,25 +981,25 @@ namespace Decision.DataLayer.Migrations
             DropIndex("dbo.TrainingCourses", "IX_UniqueCourseCode");
             DropIndex("dbo.ResearchExperiences", new[] { "LasModifierId" });
             DropIndex("dbo.ResearchExperiences", new[] { "CreatorId" });
-            DropIndex("dbo.ResearchExperiences", new[] { "TeacherId" });
-            DropIndex("dbo.ReferentialTeachers", new[] { "TeacherId" });
-            DropIndex("dbo.ReferentialTeachers", new[] { "ReferencedToId" });
-            DropIndex("dbo.ReferentialTeachers", new[] { "ReferencedFromId" });
+            DropIndex("dbo.ResearchExperiences", new[] { "ApplicantId" });
+            DropIndex("dbo.ReferentialApplicants", new[] { "ApplicantId" });
+            DropIndex("dbo.ReferentialApplicants", new[] { "ReferencedToId" });
+            DropIndex("dbo.ReferentialApplicants", new[] { "ReferencedFromId" });
             DropIndex("dbo.WorkExperiences", new[] { "LasModifierId" });
             DropIndex("dbo.WorkExperiences", new[] { "CreatorId" });
             DropIndex("dbo.WorkExperiences", new[] { "TitleId" });
-            DropIndex("dbo.WorkExperiences", new[] { "TeacherId" });
-            DropIndex("dbo.TeacherInServiceCourseTypes", new[] { "LasModifierId" });
-            DropIndex("dbo.TeacherInServiceCourseTypes", new[] { "CreatorId" });
-            DropIndex("dbo.TeacherInServiceCourseTypes", new[] { "InServiceCourseTypeTitleId" });
-            DropIndex("dbo.TeacherInServiceCourseTypes", new[] { "TeacherId" });
+            DropIndex("dbo.WorkExperiences", new[] { "ApplicantId" });
+            DropIndex("dbo.ApplicantInServiceCourseTypes", new[] { "LasModifierId" });
+            DropIndex("dbo.ApplicantInServiceCourseTypes", new[] { "CreatorId" });
+            DropIndex("dbo.ApplicantInServiceCourseTypes", new[] { "InServiceCourseTypeTitleId" });
+            DropIndex("dbo.ApplicantInServiceCourseTypes", new[] { "ApplicantId" });
             DropIndex("dbo.EducationalExperiences", new[] { "LasModifierId" });
             DropIndex("dbo.EducationalExperiences", new[] { "CreatorId" });
             DropIndex("dbo.EducationalExperiences", new[] { "TitleId" });
-            DropIndex("dbo.EducationalExperiences", new[] { "TeacherId" });
+            DropIndex("dbo.EducationalExperiences", new[] { "ApplicantId" });
             DropIndex("dbo.Articles", new[] { "LasModifierId" });
             DropIndex("dbo.Articles", new[] { "CreatorId" });
-            DropIndex("dbo.Articles", new[] { "TeacherId" });
+            DropIndex("dbo.Articles", new[] { "ApplicantId" });
             DropIndex("dbo.ArticleEvaluationQuestions", new[] { "LasModifierId" });
             DropIndex("dbo.ArticleEvaluationQuestions", new[] { "CreatorId" });
             DropIndex("dbo.ArticleEvaluationQuestions", "IX_ ArticleEvaluationQuestion");
@@ -1013,11 +1013,11 @@ namespace Decision.DataLayer.Migrations
             DropIndex("dbo.Interviews", new[] { "LasModifierId" });
             DropIndex("dbo.Interviews", new[] { "CreatorId" });
             DropIndex("dbo.Interviews", new[] { "InterviewerId" });
-            DropIndex("dbo.Interviews", new[] { "TeacherId" });
+            DropIndex("dbo.Interviews", new[] { "ApplicantId" });
             DropIndex("dbo.EntireEvaluations", new[] { "LasModifierId" });
             DropIndex("dbo.EntireEvaluations", new[] { "CreatorId" });
             DropIndex("dbo.EntireEvaluations", new[] { "EvaluatorId" });
-            DropIndex("dbo.EntireEvaluations", new[] { "TeacherId" });
+            DropIndex("dbo.EntireEvaluations", new[] { "ApplicantId" });
             DropIndex("dbo.Appraisers", new[] { "LasModifierId" });
             DropIndex("dbo.Appraisers", new[] { "CreatorId" });
             DropIndex("dbo.Appraisers", new[] { "AppraiserTitleId" });
@@ -1030,27 +1030,27 @@ namespace Decision.DataLayer.Migrations
             DropIndex("dbo.EducationalBackgrounds", new[] { "CreatorId" });
             DropIndex("dbo.EducationalBackgrounds", new[] { "StudyFieldId" });
             DropIndex("dbo.EducationalBackgrounds", new[] { "InstitutionId" });
-            DropIndex("dbo.EducationalBackgrounds", new[] { "TeacherId" });
+            DropIndex("dbo.EducationalBackgrounds", new[] { "ApplicantId" });
             DropIndex("dbo.Addresses", new[] { "LasModifierId" });
             DropIndex("dbo.Addresses", new[] { "CreatorId" });
-            DropIndex("dbo.Addresses", new[] { "TeacherId" });
-            DropIndex("dbo.Teachers", new[] { "LasModifierId" });
-            DropIndex("dbo.Teachers", new[] { "CreatorId" });
-            DropIndex("dbo.Teachers", new[] { "ApproveById" });
-            DropIndex("dbo.Teachers", new[] { "TrainingCourseId" });
-            DropIndex("dbo.Teachers", new[] { "PositionId" });
-            DropIndex("dbo.Teachers", "IX_TeacherBirthPlaceState");
-            DropIndex("dbo.Teachers", "IX_TeacherBirthPlaceCity");
-            DropIndex("dbo.Teachers", "IX_TeacherBirthCertificateNumber");
-            DropIndex("dbo.Teachers", "IX_TeacherNationalCode");
-            DropIndex("dbo.Teachers", "IX_TeacherLastName");
-            DropIndex("dbo.Teachers", "IX_TeacherFirstName");
+            DropIndex("dbo.Addresses", new[] { "ApplicantId" });
+            DropIndex("dbo.Applicants", new[] { "LasModifierId" });
+            DropIndex("dbo.Applicants", new[] { "CreatorId" });
+            DropIndex("dbo.Applicants", new[] { "ApproveById" });
+            DropIndex("dbo.Applicants", new[] { "TrainingCourseId" });
+            DropIndex("dbo.Applicants", new[] { "PositionId" });
+            DropIndex("dbo.Applicants", "IX_ApplicantBirthPlaceState");
+            DropIndex("dbo.Applicants", "IX_ApplicantBirthPlaceCity");
+            DropIndex("dbo.Applicants", "IX_ApplicantBirthCertificateNumber");
+            DropIndex("dbo.Applicants", "IX_ApplicantNationalCode");
+            DropIndex("dbo.Applicants", "IX_ApplicantLastName");
+            DropIndex("dbo.Applicants", "IX_ApplicantFirstName");
             DropIndex("dbo.Users", new[] { "UserName" });
             DropIndex("dbo.UserRole", new[] { "RoleId" });
             DropIndex("dbo.UserRole", new[] { "UserId" });
             DropIndex("dbo.Roles", "IX_RoleName");
             DropTable("dbo.QuestionArticleEvaluation");
-            DropTable("dbo.AnswerOptionTeachermentEvaluation");
+            DropTable("dbo.AnswerOptionApplicantmentEvaluation");
             DropTable("dbo.Settings");
             DropTable("dbo.MessageAttachments");
             DropTable("dbo.Messages");
@@ -1061,9 +1061,9 @@ namespace Decision.DataLayer.Migrations
             DropTable("dbo.TrainingCenters");
             DropTable("dbo.TrainingCourses");
             DropTable("dbo.ResearchExperiences");
-            DropTable("dbo.ReferentialTeachers");
+            DropTable("dbo.ReferentialApplicants");
             DropTable("dbo.WorkExperiences");
-            DropTable("dbo.TeacherInServiceCourseTypes");
+            DropTable("dbo.ApplicantInServiceCourseTypes");
             DropTable("dbo.EducationalExperiences");
             DropTable("dbo.Articles");
             DropTable("dbo.ArticleEvaluationQuestions");
@@ -1077,7 +1077,7 @@ namespace Decision.DataLayer.Migrations
             DropTable("dbo.Institutions");
             DropTable("dbo.EducationalBackgrounds");
             DropTable("dbo.Addresses");
-            DropTable("dbo.Teachers");
+            DropTable("dbo.Applicants");
             DropTable("dbo.Users");
             DropTable("dbo.UserRole");
             DropTable("dbo.Roles");

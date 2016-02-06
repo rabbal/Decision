@@ -8,13 +8,13 @@ using Decision.ViewModel.Common;
 namespace Decision.ViewModel.Article
 {
     /// <summary>
-    /// ویومدل ویرایش مقاله داده شده توسط استاد
+    /// ویومدل ویرایش مقاله داده شده توسط متقاضی
     /// </summary>
     public class EditArticleViewModel : BaseRowVersion
     {
         #region Properties
         /// <summary>
-        /// آی دی مقاله داده شده توسط استاد
+        /// آی دی مقاله داده شده توسط متقاضی
         /// </summary>
         public  Guid Id { get; set; }
 
@@ -58,11 +58,11 @@ namespace Decision.ViewModel.Article
         public  HttpPostedFileBase AttachmentFile { get; set; }
 
         /// <summary>
-        /// آی دی استاد صدرو کننده مقاله
+        /// آی دی متقاضی صدرو کننده مقاله
         /// </summary>
-        [DisplayName("استاد")]
+        [DisplayName("متقاضی")]
         [Required]
-        public  Guid TeacherId { get; set; }
+        public  Guid ApplicantId { get; set; }
         #endregion
     }
 }

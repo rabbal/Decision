@@ -64,7 +64,7 @@ WriteLiteral(">\r\n            <h6");
 
 WriteLiteral(" class=\"modal-title\"");
 
-WriteLiteral(">درج موضوع مورد علاقه برای استاد</h6>\r\n        </div>\r\n        <div");
+WriteLiteral(">درج موضوع مورد علاقه برای متقاضی</h6>\r\n        </div>\r\n        <div");
 
 WriteLiteral(" class=\"modal-body\"");
 
@@ -100,7 +100,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 12 "..\..\Views\FavoriteIssue\_Create.cshtml"
-           Write(Html.HiddenFor(model => model.TeacherId));
+           Write(Html.HiddenFor(model => model.ApplicantId));
 
             
             #line default

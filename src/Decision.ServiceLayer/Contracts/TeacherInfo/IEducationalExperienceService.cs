@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.EducationalExperience;
 
-namespace Decision.ServiceLayer.Contracts.TeacherInfo
+namespace Decision.ServiceLayer.Contracts.ApplicantInfo
 {
     /// <summary>
     /// نشان دهنده الزامات ارائه دهنده سرویس سابقه آموزشی
@@ -51,7 +51,7 @@ namespace Decision.ServiceLayer.Contracts.TeacherInfo
 
         Task FillAddViewModel(AddEducationalExperienceViewModel viewModel);
         Task FillEditViewModel(EditEducationalExperienceViewModel viewModel);
-        Task<AddEducationalExperienceViewModel> GetForCreate(Guid TeacherId, EducationalExperienceType type);
+        Task<AddEducationalExperienceViewModel> GetForCreate(Guid ApplicantId, EducationalExperienceType type);
 
         Task<EducationalExperienceViewModel> GetEducationalExperienceViewModel(Guid guid);
     }

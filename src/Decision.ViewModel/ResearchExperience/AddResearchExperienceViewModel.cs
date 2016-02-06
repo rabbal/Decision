@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 
 namespace Decision.ViewModel.ResearchExperience
 {
@@ -27,7 +27,7 @@ namespace Decision.ViewModel.ResearchExperience
         /// نوع پژوهش
         /// </summary>
         [DisplayName("نوع پژوهش")]
-        public  ResearchType ResearchType { get; set; }
+        public  PresenterType ResearchType { get; set; }
 
         /// <summary>
         ///  چاپ شده توسط  
@@ -47,7 +47,7 @@ namespace Decision.ViewModel.ResearchExperience
         [DisplayName("توضیحات")]
         public  string Description { get; set; }
         [Required]
-        public  Guid TeacherId { get; set; }
+        public  Guid ApplicantId { get; set; }
         #endregion 
     }
 }

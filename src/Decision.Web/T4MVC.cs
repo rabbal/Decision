@@ -50,8 +50,8 @@ public static partial class MVC
     public static Decision.Web.Controllers.ResearchExperienceController ResearchExperience = new Decision.Web.Controllers.T4MVC_ResearchExperienceController();
     public static Decision.Web.Controllers.RoleController Role = new Decision.Web.Controllers.T4MVC_RoleController();
     public static Decision.Web.Controllers.ScientificTeachingController ScientificTeaching = new Decision.Web.Controllers.T4MVC_ScientificTeachingController();
-    public static Decision.Web.Controllers.TeacherController Teacher = new Decision.Web.Controllers.T4MVC_TeacherController();
-    public static Decision.Web.Controllers.TeacherInServiceCourseTypeController TeacherInServiceCourseType = new Decision.Web.Controllers.T4MVC_TeacherInServiceCourseTypeController();
+    public static Decision.Web.Controllers.ApplicantController Applicant = new Decision.Web.Controllers.T4MVC_ApplicantController();
+    public static Decision.Web.Controllers.ApplicantInServiceCourseTypeController ApplicantInServiceCourseType = new Decision.Web.Controllers.T4MVC_ApplicantInServiceCourseTypeController();
     public static Decision.Web.Controllers.TitleController Title = new Decision.Web.Controllers.T4MVC_TitleController();
     public static Decision.Web.Controllers.TrainingCenterController TrainingCenter = new Decision.Web.Controllers.T4MVC_TrainingCenterController();
     public static Decision.Web.Controllers.TrainingCourseController TrainingCourse = new Decision.Web.Controllers.T4MVC_TrainingCourseController();

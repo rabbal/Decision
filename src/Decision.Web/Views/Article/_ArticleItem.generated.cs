@@ -205,7 +205,7 @@ WriteLiteral(" class=\"btn btn-sm btn-success \"");
 WriteAttribute("href", Tuple.Create(" href=\"", 1812), Tuple.Create("\"", 1881)
             
             #line 46 "..\..\Views\Article\_ArticleItem.cshtml"
-, Tuple.Create(Tuple.Create("", 1819), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Article.GetDocument(Model.Id,Model.TeacherId))
+, Tuple.Create(Tuple.Create("", 1819), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Article.GetDocument(Model.Id,Model.ApplicantId))
             
             #line default
             #line hidden
@@ -253,11 +253,11 @@ WriteLiteral(" data-delete-url=\"");
             #line hidden
 WriteLiteral("\"");
 
-WriteLiteral(" data-Teacher=\"");
+WriteLiteral(" data-Applicant=\"");
 
             
             #line 53 "..\..\Views\Article\_ArticleItem.cshtml"
-                                                                                                   Write(Model.TeacherId);
+                                                                                                   Write(Model.ApplicantId);
 
             
             #line default

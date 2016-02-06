@@ -34,31 +34,31 @@ namespace ASP
     using MvcSiteMapProvider.Web.Html.Models;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/TeacherInServiceCourseType/_ListAjax.cshtml")]
-    public partial class _Views_TeacherInServiceCourseType__ListAjax_cshtml : System.Web.Mvc.WebViewPage<Decision.ViewModel.TeacherInServiceCourseType.TeacherInServiceCourseTypeListViewModel>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/ApplicantInServiceCourseType/_ListAjax.cshtml")]
+    public partial class _Views_ApplicantInServiceCourseType__ListAjax_cshtml : System.Web.Mvc.WebViewPage<Decision.ViewModel.ApplicantInServiceCourseType.ApplicantInServiceCourseTypeListViewModel>
     {
-        public _Views_TeacherInServiceCourseType__ListAjax_cshtml()
+        public _Views_ApplicantInServiceCourseType__ListAjax_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\TeacherInServiceCourseType\_ListAjax.cshtml"
- foreach (var j in Model.TeacherInServiceCourseTypes)
+            #line 3 "..\..\Views\ApplicantInServiceCourseType\_ListAjax.cshtml"
+ foreach (var j in Model.ApplicantInServiceCourseTypes)
 {
   
             
             #line default
             #line hidden
             
-            #line 5 "..\..\Views\TeacherInServiceCourseType\_ListAjax.cshtml"
-Write(Html.Partial(MVC.TeacherInServiceCourseType.Views._TeacherInServiceCourseTypeItem, j));
+            #line 5 "..\..\Views\ApplicantInServiceCourseType\_ListAjax.cshtml"
+Write(Html.Partial(MVC.ApplicantInServiceCourseType.Views._ApplicantInServiceCourseTypeItem, j));
 
             
             #line default
             #line hidden
             
-            #line 5 "..\..\Views\TeacherInServiceCourseType\_ListAjax.cshtml"
+            #line 5 "..\..\Views\ApplicantInServiceCourseType\_ListAjax.cshtml"
                                                                                         
 }
 

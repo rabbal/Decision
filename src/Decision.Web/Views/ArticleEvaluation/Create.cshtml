@@ -31,8 +31,8 @@
             <div class="col-md-12">
                 @Html.HelpAlert(@Url.Content("~/Content/Images/lightbulb.png"),
 
-                               "در این قسمت امکان ارزیابی از مقاله استاد در نظر گرفته شده است ، به طوری که سوالات توسط مدیران تایید شده قبلا و در این قسمت قابل مشاهده خواهند بود."
-                               , "دقت کنید که بر اساس این ارزیابی ها ، امتیاز استاد تغییر خواهد کرد."
+                               "در این قسمت امکان ارزیابی از مقاله متقاضی در نظر گرفته شده است ، به طوری که سوالات توسط مدیران تایید شده قبلا و در این قسمت قابل مشاهده خواهند بود."
+                               , "دقت کنید که بر اساس این ارزیابی ها ، امتیاز متقاضی تغییر خواهد کرد."
                                 )
             </div>
         </div>
@@ -253,7 +253,7 @@
 @section Menu{
 <a href="@Url.Action(MVC.ArticleEvaluation.Create(Model.ArticleId))" class="list-group-item thrid-split"><span class="fa fa-plus"></span> درج ارزیابی</a>
 <a href="@Url.Action(MVC.Appraiser.List())" class="list-group-item second-split"><span class="fa fa-plus"></span>درج ارزیاب</a>
-@{Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.TeacherId);}
+@{Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.ApplicantId);}
 }
 @section Scripts{
     @Scripts.Render("~/bundles/jqueryval")

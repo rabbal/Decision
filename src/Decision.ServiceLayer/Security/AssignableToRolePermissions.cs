@@ -19,14 +19,14 @@ namespace Decision.ServiceLayer.Security
 
         #region permissionNames
 
-        public const string CanViewTeacherList = "CanViewTeacherList";
-        public const string CanEditTeacher = "CanEditTeacher";
-        public const string CanCreateTeacher = "CanCreateTeacher";
-        public const string CanReferTeacher = "CanReferTeacher";
-        public const string CanCancelReferTeacher = "CanCancelReferTeacher";
-        public const string CanDeleteTeacher = "CanDeleteTeacher";
-        public const string CanApproveTeacher = "CanApproveTeacher";
-        public const string CanViewTeacherDetails = "CanViewTeacherDetials";
+        public const string CanViewApplicantList = "CanViewApplicantList";
+        public const string CanEditApplicant = "CanEditApplicant";
+        public const string CanCreateApplicant = "CanCreateApplicant";
+        public const string CanReferApplicant = "CanReferApplicant";
+        public const string CanCancelReferApplicant = "CanCancelReferApplicant";
+        public const string CanDeleteApplicant = "CanDeleteApplicant";
+        public const string CanApproveApplicant = "CanApproveApplicant";
+        public const string CanViewApplicantDetails = "CanViewApplicantDetials";
         public const string CanManageArticleEvaluation = "CanManageArticleEvaluation";
         public const string CanUsePrivateMessage = "CanUsePrivateMessage";
         public const string CanManageEntireEvaluation = "CanManageEntireEvaluation";
@@ -37,7 +37,7 @@ namespace Decision.ServiceLayer.Security
         public const string CanManageFavoriteIssue = "CanManageFavoriteIssued";
         public const string CanManageInstitution = "CanManageInstitution";
         public const string CanManageInterview = "CanManageInterview";
-        public const string CanManageTeacherInServiceCourseType = "CanManageTeacherInServiceCourseType";
+        public const string CanManageApplicantInServiceCourseType = "CanManageApplicantInServiceCourseType";
         public const string CanManageArticle = "CanManageArticle";
         public const string CanManageOrganizationalTeaching = "CanManageOrganizationalTeaching";
         public const string CanManageQuestion = "CanManageQuestion";
@@ -66,16 +66,16 @@ namespace Decision.ServiceLayer.Security
         #endregion
 
         #region Permissions
-        public static readonly PermissionModel CanViewTeacherDetailsPermission = new PermissionModel { Name = CanViewTeacherDetails, Category = CanViewCategory, Description = "میتوانند  فرم جزئیات اساتید را مشاهده کنند" };
-        public static readonly PermissionModel CanViewTeacherListPermission = new PermissionModel { Name = CanViewTeacherList, Category = CanViewCategory, Description = "میتوانند  لیست اساتید را مشاهده کنند" };
+        public static readonly PermissionModel CanViewApplicantDetailsPermission = new PermissionModel { Name = CanViewApplicantDetails, Category = CanViewCategory, Description = "میتوانند  فرم جزئیات اساتید را مشاهده کنند" };
+        public static readonly PermissionModel CanViewApplicantListPermission = new PermissionModel { Name = CanViewApplicantList, Category = CanViewCategory, Description = "میتوانند  لیست اساتید را مشاهده کنند" };
         public static readonly PermissionModel CanManageArticleEvaluationPermission = new PermissionModel { Name = CanManageArticleEvaluation, Category = CanManageCategory, Description = "میتوانند ارزیابی های به عمل آمده از مقالات را مدیریت کنند" };
         public static readonly PermissionModel CanUsePrivateMessagePermission = new PermissionModel { Name = CanUsePrivateMessage, Category = CanManageCategory, Description = "میتوانند از سیستم پیغام خصوصی استفاده کنند" };
-        public static readonly PermissionModel CanEditTeacherPermission = new PermissionModel { Name = CanEditTeacher, Category = CanEditCategory, Description = "میتوانند اساتید را ویرایش کنند" };
-        public static readonly PermissionModel CanCreateTeacherPermission = new PermissionModel { Name = CanCreateTeacher, Category = CanCreateCategory, Description = "میتوانند استاد درج کنند" };
-        public static readonly PermissionModel CanReferTeacherPermission = new PermissionModel { Name = CanReferTeacher, Category = CanEditCategory, Description = "میتوانند اساتید را ارجاع دهند" };
-        public static readonly PermissionModel CanCancelReferTeacherPermission = new PermissionModel { Name = CanCancelReferTeacher, Category = CanEditCategory, Description = "میتوانند استاد ارجاع داده شده را لغو ارجاع کنند" };
-        public static readonly PermissionModel CanDeleteTeacherPermission = new PermissionModel { Name = CanDeleteTeacher, Category = CanDeleteCategroy, Description = "میتواند اساتید را حذف کنند" };
-        public static readonly PermissionModel CanApproveTeacherPermission = new PermissionModel { Name = CanApproveTeacher, Category = CanEditCategory, Description = "میتوانند اساتید درج شده را تأیید کنند" };
+        public static readonly PermissionModel CanEditApplicantPermission = new PermissionModel { Name = CanEditApplicant, Category = CanEditCategory, Description = "میتوانند اساتید را ویرایش کنند" };
+        public static readonly PermissionModel CanCreateApplicantPermission = new PermissionModel { Name = CanCreateApplicant, Category = CanCreateCategory, Description = "میتوانند متقاضی درج کنند" };
+        public static readonly PermissionModel CanReferApplicantPermission = new PermissionModel { Name = CanReferApplicant, Category = CanEditCategory, Description = "میتوانند اساتید را ارجاع دهند" };
+        public static readonly PermissionModel CanCancelReferApplicantPermission = new PermissionModel { Name = CanCancelReferApplicant, Category = CanEditCategory, Description = "میتوانند متقاضی ارجاع داده شده را لغو ارجاع کنند" };
+        public static readonly PermissionModel CanDeleteApplicantPermission = new PermissionModel { Name = CanDeleteApplicant, Category = CanDeleteCategroy, Description = "میتواند اساتید را حذف کنند" };
+        public static readonly PermissionModel CanApproveApplicantPermission = new PermissionModel { Name = CanApproveApplicant, Category = CanEditCategory, Description = "میتوانند اساتید درج شده را تأیید کنند" };
         public static readonly PermissionModel CanManageEntireEvaluationPermission = new PermissionModel { Name = CanManageEntireEvaluation, Category = CanManageCategory, Description = "میتواند ارزیابی های به عمل آمده از اساتید را مدیریت کند" };
         public static readonly PermissionModel CanManageAdoptedPriorityPermission = new PermissionModel { Name = CanManageAddoptedPriority, Category = CanManageCategory, Description = "میتواند الویت های تصویب شده اساتید را مدیریت کند" };
         
@@ -85,7 +85,7 @@ namespace Decision.ServiceLayer.Security
         public static readonly PermissionModel CanManageFavoriteIssuePermission = new PermissionModel { Name = CanManageFavoriteIssue, Category = CanManageCategory, Description = "می توانند موضوعات مورد علاقه را مدیریت کنند" };
         public static readonly PermissionModel CanManageInstitutionPermission = new PermissionModel { Name = CanManageInstitution, Category = CanManageCategory, Description = "می توانند موسسه آموزشی را مدیریت کنند" };
         public static readonly PermissionModel CanManageInterviewPermission = new PermissionModel { Name = CanManageInterview, Category = CanManageCategory, Description = "می توانند مصحاحبه ها را مدیریت کنند" };
-        public static readonly PermissionModel CanManageTeacherInServiceCourseTypePermission = new PermissionModel { Name = CanManageTeacherInServiceCourseType, Category = CanManageCategory, Description = "می توانند دوره های ضمن خدمت را مدیریت کنند" };
+        public static readonly PermissionModel CanManageApplicantInServiceCourseTypePermission = new PermissionModel { Name = CanManageApplicantInServiceCourseType, Category = CanManageCategory, Description = "می توانند دوره های ضمن خدمت را مدیریت کنند" };
         public static readonly PermissionModel CanManageArticlePermission = new PermissionModel { Name = CanManageArticle, Category = CanManageCategory, Description = "می توانند مقالات را مدیریت کنند" };
         public static readonly PermissionModel CanManageOrganizationalTeachingPermission = new PermissionModel { Name = CanManageOrganizationalTeaching, Category = CanManageCategory, Description = "می توانند تدریس های سازمانی را مدیریت کنند" };
         public static readonly PermissionModel CanManageQuestionPermission = new PermissionModel { Name = CanManageQuestion, Category = CanManageCategory, Description = "می توانند سوالات را مدیریت کنند" };
@@ -126,7 +126,7 @@ namespace Decision.ServiceLayer.Security
                 CanManageFavoriteIssuePermission,
                 CanManageInstitutionPermission,
                 CanManageInterviewPermission,
-                CanManageTeacherInServiceCourseTypePermission,
+                CanManageApplicantInServiceCourseTypePermission,
                 CanManageArticlePermission,
                 CanManageOrganizationalTeachingPermission,
                 CanManageQuestionPermission,
@@ -140,16 +140,16 @@ namespace Decision.ServiceLayer.Security
                
                 CanManageAdoptedPriorityPermission,
                 CanManageEntireEvaluationPermission,
-                CanViewTeacherDetailsPermission ,
-                CanViewTeacherListPermission ,
+                CanViewApplicantDetailsPermission ,
+                CanViewApplicantListPermission ,
                 CanManageArticleEvaluationPermission,
                 CanUsePrivateMessagePermission ,
-                CanEditTeacherPermission ,
-                CanCreateTeacherPermission,
-                CanReferTeacherPermission ,
-                CanCancelReferTeacherPermission ,
-                CanDeleteTeacherPermission ,
-                CanApproveTeacherPermission ,
+                CanEditApplicantPermission ,
+                CanCreateApplicantPermission,
+                CanReferApplicantPermission ,
+                CanCancelReferApplicantPermission ,
+                CanDeleteApplicantPermission ,
+                CanApproveApplicantPermission ,
                 CanAccessToSystemMaintenancePermission,
                CanAccessReportsPermission
             };
@@ -159,14 +159,14 @@ namespace Decision.ServiceLayer.Security
         {
             return new List<string>()
             {
-                CanViewTeacherList,
-                CanEditTeacher,
-                CanCreateTeacher,
-                CanReferTeacher,
-                CanCancelReferTeacher,
-                CanDeleteTeacher,
-                CanApproveTeacher,
-                CanViewTeacherDetails,
+                CanViewApplicantList,
+                CanEditApplicant,
+                CanCreateApplicant,
+                CanReferApplicant,
+                CanCancelReferApplicant,
+                CanDeleteApplicant,
+                CanApproveApplicant,
+                CanViewApplicantDetails,
                 CanManageArticleEvaluation,
                 CanUsePrivateMessage,
                 CanManageEntireEvaluation,
@@ -177,7 +177,7 @@ namespace Decision.ServiceLayer.Security
                 CanManageFavoriteIssue,
                 CanManageInstitution,
                 CanManageInterview,
-                CanManageTeacherInServiceCourseType,
+                CanManageApplicantInServiceCourseType,
                 CanManageArticle,
                 CanManageOrganizationalTeaching,
                 CanManageQuestion,

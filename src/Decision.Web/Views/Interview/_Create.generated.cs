@@ -90,7 +90,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 11 "..\..\Views\Interview\_Create.cshtml"
-       Write(Html.HiddenFor(model => model.TeacherId));
+       Write(Html.HiddenFor(model => model.ApplicantId));
 
             
             #line default

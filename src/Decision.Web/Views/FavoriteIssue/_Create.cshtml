@@ -3,13 +3,13 @@
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header alert alert-success">
-            <h6 class="modal-title">درج موضوع مورد علاقه برای استاد</h6>
+            <h6 class="modal-title">درج موضوع مورد علاقه برای متقاضی</h6>
         </div>
         <div class="modal-body">
             @using (Ajax.BeginForm(MVC.FavoriteIssue.Create(), new AjaxOptions { HttpMethod = "POST", OnComplete = "createOnComplete(xhr, status, 'favoriteIssueList', '#modal','createFavoriteIssueForm','#createFavoriteIssueButton')" }, new { @class = "form-horizontal", id = "createFavoriteIssueForm", autocomplete = "off" }))
             {
                 @Html.AntiForgeryToken()
-                @Html.HiddenFor(model => model.TeacherId)
+                @Html.HiddenFor(model => model.ApplicantId)
                 @Html.HiddenFor(model => model.Type)
                 <div class="form-group">
                     @Html.LabelFor(model => model.TitleId, new { @class = "control-label col-md-2" })

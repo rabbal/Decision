@@ -293,11 +293,11 @@ WriteLiteral(" data-delete-url=\"");
             #line hidden
 WriteLiteral("\"");
 
-WriteLiteral(" data-Teacher=\"");
+WriteLiteral(" data-Applicant=\"");
 
             
             #line 60 "..\..\Views\Address\_AddressItem.cshtml"
-                                                                                                   Write(Model.TeacherId);
+                                                                                                   Write(Model.ApplicantId);
 
             
             #line default

@@ -6,50 +6,50 @@ using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.TeacherInfo;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Users;
-using Decision.ViewModel.ReferentialTeacher;
+using Decision.ViewModel.ReferentialApplicant;
 using EntityFramework.Extensions;
 
-namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
+namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
 {
     /// <summary>
-    /// کلاس ارائه دهنده سروسیس های لازم برای اعمال روی ارجاع استاد
+    /// کلاس ارائه دهنده سروسیس های لازم برای اعمال روی ارجاع متقاضی
     /// </summary>
-    public class ReferentialTeacherService : IReferentialTeacherService
+    public class ReferentialApplicantService : IReferentialApplicantService
     {
         #region Fields
 
         private readonly IMappingEngine _mappingEngine;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IApplicationUserManager _userManager;
-        private readonly IDbSet<ReferentialTeacher> _referentialTeachers;
+        private readonly IDbSet<ReferentialApplicant> _referentialApplicants;
         #endregion
 
         #region Ctor
 
-        public ReferentialTeacherService(IUnitOfWork unitOfWork, IApplicationUserManager userManager, IMappingEngine mappingEngine)
+        public ReferentialApplicantService(IUnitOfWork unitOfWork, IApplicationUserManager userManager, IMappingEngine mappingEngine)
         {
             _userManager = userManager;
             _unitOfWork = unitOfWork;
-            _referentialTeachers = _unitOfWork.Set<ReferentialTeacher>();
+            _referentialApplicants = _unitOfWork.Set<ReferentialApplicant>();
             _mappingEngine = mappingEngine;
         }
         #endregion
 
         #region GetForEdit
-        public Task<EditReferentialTeacherViewModel> GetForEditAsync(Guid id)
+        public Task<EditReferentialApplicantViewModel> GetForEditAsync(Guid id)
         {
-            return _referentialTeachers.AsNoTracking().ProjectTo<EditReferentialTeacherViewModel>(_mappingEngine).FirstOrDefaultAsync(a => a.Id == id);
+            return _referentialApplicants.AsNoTracking().ProjectTo<EditReferentialApplicantViewModel>(_mappingEngine).FirstOrDefaultAsync(a => a.Id == id);
         }
         #endregion
 
         #region Delete
         public Task DeleteAsync(Guid id)
         {
-            return _referentialTeachers.Where(a => a.TeacherId == id && !a.FinishedDate.HasValue)
-                .UpdateAsync(a => new ReferentialTeacher
+            return _referentialApplicants.Where(a => a.ApplicantId == id && !a.FinishedDate.HasValue)
+                .UpdateAsync(a => new ReferentialApplicant
             {
                 FinishedDate = DateTime.Now
             });
@@ -57,42 +57,42 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
         #endregion
 
         #region Edit
-        public async Task EditAsync(EditReferentialTeacherViewModel viewModel)
+        public async Task EditAsync(EditReferentialApplicantViewModel viewModel)
         {
-            var referentialTeacher = await _referentialTeachers.FirstAsync(a => a.Id == viewModel.Id);
-            _mappingEngine.Map(viewModel, referentialTeacher);
+            var referentialApplicant = await _referentialApplicants.FirstAsync(a => a.Id == viewModel.Id);
+            _mappingEngine.Map(viewModel, referentialApplicant);
         }
         #endregion
 
         #region Create
-        public void Create(AddReferentialTeacherViewModel viewModel)
+        public void Create(AddReferentialApplicantViewModel viewModel)
         {
-            var referentialTeacher = _mappingEngine.Map<ReferentialTeacher>(viewModel);
-            referentialTeacher.ReferencedFromId = _userManager.GetCurrentUserId();
-            _referentialTeachers.Add(referentialTeacher);
+            var referentialApplicant = _mappingEngine.Map<ReferentialApplicant>(viewModel);
+            referentialApplicant.ReferencedFromId = _userManager.GetCurrentUserId();
+            _referentialApplicants.Add(referentialApplicant);
         }
 
-        public async Task<IEnumerable<Guid>> GetRefersTeacherIds()
+        public async Task<IEnumerable<Guid>> GetRefersApplicantIds()
         {
             var currentUser = _userManager.GetCurrentUserId();
             return
                 await
-                    _referentialTeachers.Where(a => a.ReferencedToId == currentUser).Select(a => a.TeacherId).ToListAsync();
+                    _referentialApplicants.Where(a => a.ReferencedToId == currentUser).Select(a => a.ApplicantId).ToListAsync();
         }
 
-        public bool CanManageTeacher(Guid TeacherId)
+        public bool CanManageApplicant(Guid ApplicantId)
         {
             var currentUserId = _userManager.GetCurrentUserId();
             var isOperator = _userManager.IsOperator();
-            return !isOperator || _referentialTeachers.Any(
-                a => a.TeacherId == TeacherId && a.ReferencedToId == currentUserId && !a.FinishedDate.HasValue);
+            return !isOperator || _referentialApplicants.Any(
+                a => a.ApplicantId == ApplicantId && a.ReferencedToId == currentUserId && !a.FinishedDate.HasValue);
         }
 
 
         #endregion
-        public Task FinishReferTeacher(Guid TeacherId)
+        public Task FinishReferApplicant(Guid ApplicantId)
         {
-            return DeleteAsync(TeacherId);
+            return DeleteAsync(ApplicantId);
         }
     }
 }

@@ -3,19 +3,19 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Decision.ViewModel.Common;
 
-namespace Decision.ViewModel.Teacher
+namespace Decision.ViewModel.Applicant
 {
     /// <summary>
-    /// کلاسی برای کپسوله سازی اطلاعات جستجو و مرتب سازی استاد ها
+    /// کلاسی برای کپسوله سازی اطلاعات جستجو و مرتب سازی متقاضی ها
     /// </summary>
-    public class TeacherSearchRequest : BaseSearchRequest
+    public class ApplicantSearchRequest : BaseSearchRequest
     {
-        public TeacherSearchRequest()
+        public ApplicantSearchRequest()
         {
-            CurrentSort = TeacherSortBy.CreateDate;
+            CurrentSort = ApplicantSortBy.CreateDate;
         }
         /// <summary>
-        /// آی دی سمت استاد
+        /// آی دی سمت متقاضی
         /// </summary>
         [DisplayName("سمت")]
         public Guid? PositionId { get; set; }
@@ -36,7 +36,7 @@ namespace Decision.ViewModel.Teacher
         [DisplayName("مرکز کارآموزی")]
         public Guid? TrainingCenter { get; set; }
         /// <summary>
-        /// نام استاد
+        /// نام متقاضی
         /// </summary>
         [DisplayName("نام")]
         public string FirstName { get; set; }
@@ -46,12 +46,12 @@ namespace Decision.ViewModel.Teacher
         [DisplayName("نام خانوادگی")]
         public string LastName { get; set; }
         /// <summary>
-        /// کد ملی استاد
+        /// کد ملی متقاضی
         /// </summary>
         [DisplayName("کد ملی")]
         public string NationalCode { get; set; }
         /// <summary>
-        /// شماره شناسنامه استاد
+        /// شماره شناسنامه متقاضی
         /// </summary>
         [DisplayName("شماره شناسنامه")]
         public string BirthCertificateNumber { get; set; }
@@ -66,12 +66,12 @@ namespace Decision.ViewModel.Teacher
         [DisplayName("تا پایه")]
         public int? CollegiateOrderTo { get; set; }
         /// <summary>
-        /// گروه شغلی استاد از
+        /// گروه شغلی متقاضی از
         /// </summary>
         [DisplayName("از گروه شغلی")]
         public  int? OccupationalGroupFrom { get; set; }
         /// <summary>
-        /// گروه شغلی استاد تا
+        /// گروه شغلی متقاضی تا
         /// </summary>
         [DisplayName("تا گروه شغلی")]
         public  int? OccupationalGroupTo { get; set; }
@@ -80,19 +80,19 @@ namespace Decision.ViewModel.Teacher
         /// فیلتر بر اساس تأیید شده یا نشده
         /// </summary>
         [DisplayName("وضعیت تأیید")]
-        public TeacherApprovalFilter TeacherApprovalFilter { get; set; }
+        public ApplicantApprovalFilter ApplicantApprovalFilter { get; set; }
         /// <summary>
         /// فیلتر بر اساس ارجاع داده شده یا نشده
         /// </summary>
         [DisplayName("وضعیت ارجاع")]
-        public TeacherReferenceFilter TeacherReferenceFilter { get; set; }
+        public ApplicantReferenceFilter ApplicantReferenceFilter { get; set; }
         /// <summary>
         /// کد پرسنلی
         /// </summary>
         public string PersonnelCode { get; set; }
     }
 
-    public enum TeacherApprovalFilter
+    public enum ApplicantApprovalFilter
     {
         /// <summary>
         /// همه
@@ -110,7 +110,7 @@ namespace Decision.ViewModel.Teacher
         [Display(Name = "در انتظار تأیید")]
         NonApproved,
     }
-    public enum TeacherReferenceFilter
+    public enum ApplicantReferenceFilter
     {
         /// <summary>
         /// همه
@@ -128,7 +128,7 @@ namespace Decision.ViewModel.Teacher
         [Display(Name = "تثبیت شده ها")]
         NonReferenced,
     }
-    public static class TeacherSortBy
+    public static class ApplicantSortBy
     {
         public const string FirstName = "FirstName";
         public const string LastName = "LastName";

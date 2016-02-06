@@ -7,7 +7,7 @@ using System.Web.Mvc;
 namespace Decision.ViewModel.Article
 {
     /// <summary>
-    /// ویومدل درج مقاله داده شده توسط استاد
+    /// ویومدل درج مقاله داده شده توسط متقاضی
     /// </summary>
     public class AddArticleViewModel
     {
@@ -56,11 +56,11 @@ namespace Decision.ViewModel.Article
         public  HttpPostedFileBase AttachmentFile { get; set; }
 
         /// <summary>
-        /// آی دی استاد صدرو کننده مقاله
+        /// آی دی متقاضی صدرو کننده مقاله
         /// </summary>
-        [DisplayName("استاد")]
+        [DisplayName("متقاضی")]
         [Required]
-        public  Guid TeacherId { get; set; }
+        public  Guid ApplicantId { get; set; }
         #endregion
     }
 }

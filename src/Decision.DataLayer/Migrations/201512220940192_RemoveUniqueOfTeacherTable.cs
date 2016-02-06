@@ -3,11 +3,11 @@ namespace Decision.DataLayer.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class RemoveUniqueOfTeacherTable : DbMigration
+    public partial class RemoveUniqueOfApplicantTable : DbMigration
     {
         public override void Up()
         {
-            DropIndex("dbo.Teachers", "IX_TeacherBirthCertificateNumber");
+            DropIndex("dbo.Applicants", "IX_ApplicantBirthCertificateNumber");
             CreateTable(
                 "dbo.Notifications",
                 c => new
@@ -22,16 +22,16 @@ namespace Decision.DataLayer.Migrations
                 .ForeignKey("dbo.Users", t => t.OwnerId, cascadeDelete: true)
                 .Index(t => t.OwnerId);
             
-            CreateIndex("dbo.Teachers", "BirthCertificateNumber", name: "IX_TeacherBirthCertificateNumber");
+            CreateIndex("dbo.Applicants", "BirthCertificateNumber", name: "IX_ApplicantBirthCertificateNumber");
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Notifications", "OwnerId", "dbo.Users");
             DropIndex("dbo.Notifications", new[] { "OwnerId" });
-            DropIndex("dbo.Teachers", "IX_TeacherBirthCertificateNumber");
+            DropIndex("dbo.Applicants", "IX_ApplicantBirthCertificateNumber");
             DropTable("dbo.Notifications");
-            CreateIndex("dbo.Teachers", "BirthCertificateNumber", unique: true, name: "IX_TeacherBirthCertificateNumber");
+            CreateIndex("dbo.Applicants", "BirthCertificateNumber", unique: true, name: "IX_ApplicantBirthCertificateNumber");
         }
     }
 }

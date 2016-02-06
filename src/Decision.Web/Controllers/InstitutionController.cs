@@ -9,7 +9,7 @@ using Decision.Common.Filters;
 using Decision.Common.Helpers.Extentions;
 using Decision.Common.Helpers.Json;
 using Decision.DataLayer.Context;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Security;
 using Decision.ViewModel.Institution;
 using Decision.Web.Extentions;

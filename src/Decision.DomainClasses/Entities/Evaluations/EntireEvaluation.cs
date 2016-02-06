@@ -1,63 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
 using Decision.DomainClasses.Entities.Common;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 
 namespace Decision.DomainClasses.Entities.Evaluations
 {
     /// <summary>
-    /// نشان دهنده ارزیابی از خود استاد
+    /// نشان دهنده ارزیابی از  متقاضی
     /// </summary>
     public class EntireEvaluation : BaseEntity
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public EntireEvaluation()
-        {
-            Attachment = BitConverter.GetBytes(0);
-        }
         #region Properties
         /// <summary>
-        ///  نظریه کلی برای استاد
+        ///  نظریه کلی برای متقاضی
         /// </summary>
-        public  string Content { get; set; }
+        public string Content { get; set; }
         /// <summary>
         /// تاریخ ارزیابی
         /// </summary>
-        public  DateTime EvaluationDate { get; set; }
+        public DateTime EvaluationDate { get; set; }
         /// <summary>
-        /// نقاط ضعف استاد
+        /// نقاط ضعف متقاضی
         /// </summary>
-        public  string Foible { get; set; }
+        public string Foible { get; set; }
         /// <summary>
-        /// نقطه قوت استاد
+        /// نقطه قوت متقاضی
         /// </summary>
-        public  string StrongPoint { get; set; }
-        /// <summary>
-        /// فایل ضمیمه ارزیابی
-        /// </summary>
-        public  byte[] Attachment { get; set; }
-
+        public string StrongPoint { get; set; }
         #endregion
 
         #region NavigationProperties
         /// <summary>
-        /// آی دی استاد ارزیابی شده
+        /// آی دی متقاضی ارزیابی شده
         /// </summary>
-        public  Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
         /// <summary>
-        /// استاد ارزیابی شده
+        /// متقاضی ارزیابی شده
         /// </summary>
-        public  Teacher Teacher { get; set; }
-        /// <summary>
-        /// ارزیاب  استاد
-        /// </summary>
-        public  Appraiser Evaluator  { get; set; }
-        /// <summary>
-        /// آی دی ارزیاب
-        /// </summary>
-        public  Guid EvaluatorId { get; set; }
+        public Applicant Applicant { get; set; }
         #endregion
     }
 }

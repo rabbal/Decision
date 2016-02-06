@@ -8,7 +8,7 @@ namespace Decision.DomainClasses.Entities.Common
     public enum TitleType : int
     {
         /// <summary>
-        ///شامل عنوان تدریس/درس/عنوان اولویت تصویب شده برای آموزش توسط استاد/عنوان موضوع مورد علاقه برای آموزش توسط استاد
+        ///شامل عنوان تدریس/درس/عنوان اولویت تصویب شده برای آموزش توسط متقاضی/عنوان موضوع مورد علاقه برای آموزش توسط متقاضی
         /// </summary>
         [Display(Name = "آموزشی")]
         CourseContent = 1,
@@ -34,9 +34,9 @@ namespace Decision.DomainClasses.Entities.Common
         [Display(Name = "رشته دانشگاهی")]
         StudyField = 5,
         /// <summary>
-        /// سمت استاد
+        /// سمت متقاضی
         /// </summary>
-        [Display(Name = "سمت استاد")]
-        TeacherPosition = 6
+        [Display(Name = "سمت متقاضی")]
+        ApplicantPosition = 6
     }
 }

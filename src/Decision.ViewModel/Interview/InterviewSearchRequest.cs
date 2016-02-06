@@ -9,8 +9,8 @@ namespace Decision.ViewModel.Interview
     public class InterviewSearchRequest : BaseSearchRequest
     {
         /// <summary>
-        /// آی دی استاد مربوطه
+        /// آی دی متقاضی مربوطه
         /// </summary>
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
     }
 }

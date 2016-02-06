@@ -1,47 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Home;
-using Decision.ViewModel.Teacher;
-using Decision.ViewModel.ReferentialTeacher;
+using Decision.ViewModel.Applicant;
+using Decision.ViewModel.ReferentialApplicant;
 
-namespace Decision.ServiceLayer.Contracts.TeacherInfo
+namespace Decision.ServiceLayer.Contracts.ApplicantInfo
 {
     /// <summary>
-    /// نشان دهنده الزامات ارائه دهنده سرویس استاد
+    /// نشان دهنده الزامات ارائه دهنده سرویس متقاضی
     /// </summary>
-    public interface ITeacherService
+    public interface IApplicantService
     {
         /// <summary>
-        /// واکشی استاد برای ویرایش
+        /// واکشی متقاضی برای ویرایش
         /// </summary>
-        /// <param name="id">آی دی استاد</param>
+        /// <param name="id">آی دی متقاضی</param>
         /// <param name="path">مسیر مخزن شهرها</param>
         /// <returns></returns>
-        Task<EditTeacherViewModel> GetForEditAsync(Guid id, string path);
+        Task<EditApplicantViewModel> GetForEditAsync(Guid id, string path);
         /// <summary>
-        /// حذف استاد
+        /// حذف متقاضی
         /// </summary>
-        /// <param name="id">آی دی استاد</param>
+        /// <param name="id">آی دی متقاضی</param>
         Task DeleteAsync(Guid id);
         /// <summary>
-        /// ویرایش استاد
+        /// ویرایش متقاضی
         /// </summary>
-        /// <param name="viewModel">ویو مدل ویرایش استاد</param>
+        /// <param name="viewModel">ویو مدل ویرایش متقاضی</param>
         /// <returns></returns>
-        Task EditAsync(EditTeacherViewModel viewModel);
+        Task EditAsync(EditApplicantViewModel viewModel);
         /// <summary>
-        /// درج استاد جدید
+        /// درج متقاضی جدید
         /// </summary>
-        /// <param name="viewModel">ویو مدل درج استاد</param>
-        void Create(AddTeacherViewModel viewModel);
+        /// <param name="viewModel">ویو مدل درج متقاضی</param>
+        void Create(AddApplicantViewModel viewModel);
         /// <summary>
-        /// نمایش لیست استاد ها با امکان جستجو و مرتب سازی
+        /// نمایش لیست متقاضی ها با امکان جستجو و مرتب سازی
         /// </summary>
         /// <param name="request">اطلاعات مرتب سازی و جستجو</param>
         /// <returns></returns>
-        Task<TeacherListViewModel> GetPagedListAsync(TeacherSearchRequest request);
+        Task<ApplicantListViewModel> GetPagedListAsync(ApplicantSearchRequest request);
 
         /// <summary>
         /// چک کردن برای موچود بود در دیتابیس
@@ -51,20 +51,20 @@ namespace Decision.ServiceLayer.Contracts.TeacherInfo
         Task<bool> IsInDb(Guid id);
 
         /// <summary>
-        /// چک کردن موجود بودن کدملی استاد
+        /// چک کردن موجود بودن کدملی متقاضی
         /// </summary>
         /// <param name="nationalCode">کدملی</param>
         /// <param name="id">آی دی <c>میتواند نال باشد</c></param>
         /// <returns></returns>
-        Task<bool> IsTeacherNationalCodeExist(string nationalCode, Guid? id);
+        Task<bool> IsApplicantNationalCodeExist(string nationalCode, Guid? id);
 
         /// <summary>
-        /// چک کردن موجود بودن شماره شناسنامه استاد
+        /// چک کردن موجود بودن شماره شناسنامه متقاضی
         /// </summary>
         /// <param name="birthCertificateNumber">شماره شناسنامه</param>
         /// <param name="id">آی دی <c>میتواند نال باشد</c></param>
         /// <returns></returns>
-        Task<bool> IsTeacherBirthCertificateNumberExist(string birthCertificateNumber, Guid? id);
+        Task<bool> IsApplicantBirthCertificateNumberExist(string birthCertificateNumber, Guid? id);
 
         /// <summary>
         /// مقدار دهی لیست های مربوط به ویو مدل ویرایش
@@ -72,34 +72,34 @@ namespace Decision.ServiceLayer.Contracts.TeacherInfo
         /// <param name="viewModel"></param>
         /// <param name="path">مسیر مخزن شهرها</param>
         /// <returns></returns>
-        Task FillEditViewMoel(EditTeacherViewModel viewModel,string path);
+        Task FillEditViewMoel(EditApplicantViewModel viewModel,string path);
         /// <summary>
         /// مقدار دهی لیست های مربوط به ویو مدل درج
         /// </summary>
         /// <param name="path">مسیر مخزن شهرها</param>
         /// <returns></returns>
-        Task FillAddViewMoel(AddTeacherViewModel viewModel,string path);
+        Task FillAddViewMoel(AddApplicantViewModel viewModel,string path);
         /// <summary>
         /// مقدار دهی لیست ها مربوطه
         /// </summary>
         /// <param name="path">مسیر مخزن شهرها</param>
         /// <returns></returns>
-        Task<AddTeacherViewModel> GetForCreate(string path);
-        Task<byte[]> GetTeacherDocument(Guid id,string type);
-        Task<TeacherDetailsViewModel> GetTeacherDetails(Guid id);
-        Task<TeacherViewModel> Approve(Guid id);
+        Task<AddApplicantViewModel> GetForCreate(string path);
+        Task<byte[]> GetApplicantDocument(Guid id,string type);
+        Task<ApplicantDetailsViewModel> GetApplicantDetails(Guid id);
+        Task<ApplicantViewModel> Approve(Guid id);
 
-        Task<TeacherViewModel> ReferTeacher(AddReferentialTeacherViewModel viewModel);
-        Task<TeacherViewModel> CancelRefer(Guid id);
+        Task<ApplicantViewModel> ReferApplicant(AddReferentialApplicantViewModel viewModel);
+        Task<ApplicantViewModel> CancelRefer(Guid id);
 
         Task<bool> IsInRefer(Guid guid);
-        Task<IEnumerable<TeacherViewModel>> GetRefersTeachers();
-        Task<IEnumerable<ReferTeacherViewModel>> GetRefersTeachers(bool withReferer);
+        Task<IEnumerable<ApplicantViewModel>> GetRefersApplicants();
+        Task<IEnumerable<ReferApplicantViewModel>> GetRefersApplicants(bool withReferer);
         Task FinishedRefer(Guid id);
         long Count();
         long ApprovedCount();
         long NonApprovedCount();
-        IList<TeacherWithTopScoreViewModel> GetTenTopScoreTeachers();
-        IList<NewAddedTeacherViewModel> GetTenNewAddedTeachers();
+        IList<ApplicantWithTopScoreViewModel> GetTenTopScoreApplicants();
+        IList<NewAddedApplicantViewModel> GetTenNewAddedApplicants();
     }
 }

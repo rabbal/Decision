@@ -129,7 +129,7 @@ namespace Decision.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_List
         {
-            public readonly string TeacherId = ("TeacherId").ToLowerInvariant();
+            public readonly string ApplicantId = ("ApplicantId").ToLowerInvariant();
         }
         static readonly ActionParamsClass_ListAjax s_params_ListAjax = new ActionParamsClass_ListAjax();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -145,7 +145,7 @@ namespace Decision.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Create
         {
-            public readonly string TeacherId = ("TeacherId").ToLowerInvariant();
+            public readonly string ApplicantId = ("ApplicantId").ToLowerInvariant();
             public readonly string viewModel = ("viewModel").ToLowerInvariant();
         }
         static readonly ActionParamsClass_Edit s_params_Edit = new ActionParamsClass_Edit();
@@ -164,7 +164,7 @@ namespace Decision.Web.Controllers
         public class ActionParamsClass_Delete
         {
             public readonly string id = ("id").ToLowerInvariant();
-            public readonly string TeacherId = ("TeacherId").ToLowerInvariant();
+            public readonly string ApplicantId = ("ApplicantId").ToLowerInvariant();
         }
         static readonly ActionParamsClass_CancelEdit s_params_CancelEdit = new ActionParamsClass_CancelEdit();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -204,14 +204,14 @@ namespace Decision.Web.Controllers
         public T4MVC_AdoptedPriorityController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void ListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid TeacherId);
+        partial void ListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid ApplicantId);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> List(System.Guid TeacherId)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> List(System.Guid ApplicantId)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.List);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "TeacherId", TeacherId);
-            ListOverride(callInfo, TeacherId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "ApplicantId", ApplicantId);
+            ListOverride(callInfo, ApplicantId);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 
@@ -228,14 +228,14 @@ namespace Decision.Web.Controllers
         }
 
         [NonAction]
-        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid TeacherId);
+        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid ApplicantId);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Create(System.Guid TeacherId)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Create(System.Guid ApplicantId)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Create);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "TeacherId", TeacherId);
-            CreateOverride(callInfo, TeacherId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "ApplicantId", ApplicantId);
+            CreateOverride(callInfo, ApplicantId);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 
@@ -276,15 +276,15 @@ namespace Decision.Web.Controllers
         }
 
         [NonAction]
-        partial void DeleteOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid? id, System.Guid TeacherId);
+        partial void DeleteOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid? id, System.Guid ApplicantId);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Delete(System.Guid? id, System.Guid TeacherId)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Delete(System.Guid? id, System.Guid ApplicantId)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Delete);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "TeacherId", TeacherId);
-            DeleteOverride(callInfo, id, TeacherId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "ApplicantId", ApplicantId);
+            DeleteOverride(callInfo, id, ApplicantId);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 

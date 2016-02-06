@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using AutoMapper;
 using Decision.AutoMapperProfiles.Extentions;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.Utility;
 using Decision.ViewModel.Home;
-using Decision.ViewModel.Teacher;
+using Decision.ViewModel.Applicant;
 using DNT.Extensions;
 
 namespace Decision.AutoMapperProfiles
 {
-    public class TeacherProfile : Profile
+    public class ApplicantProfile : Profile
     {
         protected override void Configure()
         {
-            CreateMap<AddTeacherViewModel, Teacher>()
+            CreateMap<AddApplicantViewModel, Applicant>()
                   .ForMember(d => d.AccountNumber, m => m.MapFrom(a => a.AccountNumber.GetPersianNumber()))
                  .ForMember(d => d.BankBranch, m => m.MapFrom(a => a.BankBranch.ToPersianContent(true)))
                  .ForMember(d => d.BankName, m => m.MapFrom(a => a.BankName.ToPersianContent(true)))
@@ -26,7 +26,7 @@ namespace Decision.AutoMapperProfiles
                  .ForMember(d => d.NationalCode, m => m.MapFrom(a => a.NationalCode))
                 .IgnoreAllNonExisting();
 
-            CreateMap<EditTeacherViewModel, Teacher>()
+            CreateMap<EditApplicantViewModel, Applicant>()
                   .ForMember(d => d.AccountNumber, m => m.MapFrom(a => a.AccountNumber.GetPersianNumber()))
                  .ForMember(d => d.BankBranch, m => m.MapFrom(a => a.BankBranch.ToPersianContent(true)))
                  .ForMember(d => d.BankName, m => m.MapFrom(a => a.BankName.ToPersianContent(true)))
@@ -34,9 +34,9 @@ namespace Decision.AutoMapperProfiles
                  .ForMember(d => d.NationalCode, m => m.MapFrom(a => a.NationalCode))
                 .ForMember(d => d.LastModifiedDate, m => m.MapFrom(a => DateTime.Now)).IgnoreAllNonExisting();
 
-            CreateMap<Teacher, EditTeacherViewModel>().IgnoreAllNonExisting();
+            CreateMap<Applicant, EditApplicantViewModel>().IgnoreAllNonExisting();
 
-            CreateMap<Teacher, TeacherDetailsViewModel>()
+            CreateMap<Applicant, ApplicantDetailsViewModel>()
                 .ForMember(a => a.TrainingCourseDetails, m => m.Ignore())
               .ForMember(a => a.PositionName, m => m.MapFrom(s => s.Position.Name))
               .ForMember(a => a.CreatorUserName, m => m.MapFrom(s => s.Creator.UserName))
@@ -44,21 +44,21 @@ namespace Decision.AutoMapperProfiles
               .ForMember(a => a.ApproveByName, m => m.MapFrom(s => s.ApproveBy.UserName))
               .ForMember(d => d.FullName, m => m.MapFrom(s => s.FirstName + " " + s.LastName)).IgnoreAllNonExisting();
 
-            CreateMap<Teacher, TeacherViewModel>()
+            CreateMap<Applicant, ApplicantViewModel>()
                 .ForMember(a => a.PositionName, m => m.MapFrom(s => s.Position.Name))
                 .ForMember(a => a.CreatorUserName, m => m.MapFrom(s => s.Creator.UserName))
                 .ForMember(a => a.LastModifierUserName, m => m.MapFrom(s => s.LasModifier.UserName))
                 .ForMember(a => a.ApproveByName, m => m.MapFrom(s => s.ApproveBy.UserName))
                 .ForMember(d => d.FullName, m => m.MapFrom(s => s.FirstName + " " + s.LastName)).IgnoreAllNonExisting();
 
-            CreateMap<Teacher, ReferTeacherViewModel>()
+            CreateMap<Applicant, ReferApplicantViewModel>()
                .ForMember(a => a.PositionName, m => m.MapFrom(s => s.Position.Name))
                .ForMember(d => d.FullName, m => m.MapFrom(s => s.FirstName + " " + s.LastName)).IgnoreAllNonExisting();
 
-            CreateMap<Teacher, NewAddedTeacherViewModel>()
+            CreateMap<Applicant, NewAddedApplicantViewModel>()
               .ForMember(d => d.FullName, m => m.MapFrom(s => s.FirstName + " " + s.LastName)).IgnoreAllNonExisting();
 
-            CreateMap<Teacher, TeacherWithTopScoreViewModel>()
+            CreateMap<Applicant, ApplicantWithTopScoreViewModel>()
             .ForMember(d => d.FullName, m => m.MapFrom(s => s.FirstName + " " + s.LastName)).IgnoreAllNonExisting();
 
 

@@ -10,7 +10,7 @@
             @using (Ajax.BeginForm(MVC.ResearchExperience.Create(), new AjaxOptions { HttpMethod = "POST", OnComplete = "createOnComplete(xhr, status, 'researchExperienceList', '#modal','createResearchExperienceForm','#createResearchExperienceButton')" }, new { @class = "form-horizontal", id = "createResearchExperienceForm", autocomplete = "off" }))
             {
                 @Html.AntiForgeryToken()
-                @Html.HiddenFor(model => model.TeacherId)
+                @Html.HiddenFor(model => model.ApplicantId)
                 <div class="form-group">
                     @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
                     <div class="col-md-10">

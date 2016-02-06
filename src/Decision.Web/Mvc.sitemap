@@ -5,10 +5,10 @@
 
   <mvcSiteMapNode action="Index" controller="Home" title="پنل مدیریتی" key="Home_Index">
     
-    <mvcSiteMapNode action="List" controller="Teacher"  title="مدیریت اساتید" key="Teachers">
-      <mvcSiteMapNode action="Create" controller="Teacher" title="درج استاد"/>
-      <mvcSiteMapNode action="Details" controller="Teacher" key="Teacher_Details" title="جزئیات استاد" preservedRouteParameters="TeacherId"/>
-      <mvcSiteMapNode action="Edit" controller="Teacher" title="ویرایش استاد" preservedRouteParameters="TeacherId"/>
+    <mvcSiteMapNode action="List" controller="Applicant"  title="مدیریت اساتید" key="Applicants">
+      <mvcSiteMapNode action="Create" controller="Applicant" title="درج متقاضی"/>
+      <mvcSiteMapNode action="Details" controller="Applicant" key="Applicant_Details" title="جزئیات متقاضی" preservedRouteParameters="ApplicantId"/>
+      <mvcSiteMapNode action="Edit" controller="Applicant" title="ویرایش متقاضی" preservedRouteParameters="ApplicantId"/>
     </mvcSiteMapNode>
   </mvcSiteMapNode>
 </mvcSiteMap>

@@ -1,5 +1,5 @@
 ﻿
-@model IList<Decision.ViewModel.Home.NewAddedTeacherViewModel>
+@model IList<Decision.ViewModel.Home.NewAddedApplicantViewModel>
     
 
     <div class="panel panel-default">
@@ -11,12 +11,12 @@
         </div>
         <div class="panel-body">
             <ul class="list-group">
-                @foreach (var newAddedTeacherViewModel in Model)
+                @foreach (var newAddedApplicantViewModel in Model)
                 {
                     <li class="list-group-item log-list">
-                        <span>@newAddedTeacherViewModel.FullName</span>
+                        <span>@newAddedApplicantViewModel.FullName</span>
                         
-                        <span class="badge">@newAddedTeacherViewModel.CreateDate.ToRemainingDateTime()</span>
+                        <span class="badge">@newAddedApplicantViewModel.CreateDate.ToRemainingDateTime()</span>
                     </li>
                 }
                
@@ -24,7 +24,7 @@
             </ul>
         </div>
         <div class="panel-footer">
-            <a href="@Url.Action(MVC.Teacher.List())">
+            <a href="@Url.Action(MVC.Applicant.List())">
                 موارد بیشتر
                 <span class="fa fa-arrow-left"></span>
             </a>

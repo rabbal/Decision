@@ -81,7 +81,7 @@ WriteLiteral("\r\n                   data-ajax-update=\"#modal\"");
 WriteAttribute("href", Tuple.Create(" href=\"", 437), Tuple.Create("\"", 500)
             
             #line 9 "..\..\Views\Address\List.cshtml"
-, Tuple.Create(Tuple.Create("", 444), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Address.Create(Model.Request.TeacherId))
+, Tuple.Create(Tuple.Create("", 444), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Address.Create(Model.Request.ApplicantId))
             
             #line default
             #line hidden
@@ -134,11 +134,11 @@ WriteLiteral(">\r\n                <button");
 
 WriteLiteral(" data-page=\"2\"");
 
-WriteLiteral(" data-json=\'{\"TeacherId\":\"");
+WriteLiteral(" data-json=\'{\"ApplicantId\":\"");
 
             
             #line 21 "..\..\Views\Address\List.cshtml"
-                                                          Write(Model.Request.TeacherId);
+                                                          Write(Model.Request.ApplicantId);
 
             
             #line default
@@ -209,7 +209,7 @@ WriteLiteral("\r\n");
             #line hidden
             
             #line 35 "..\..\Views\Address\List.cshtml"
-          Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.Request.TeacherId);
+          Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.Request.ApplicantId);
             
             #line default
             #line hidden

@@ -7,13 +7,13 @@ namespace Decision.DataLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class RemoveUniqueOfTeacherTable : IMigrationMetadata
+    public sealed partial class RemoveUniqueOfApplicantTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RemoveUniqueOfTeacherTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RemoveUniqueOfApplicantTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201512220940192_RemoveUniqueOfTeacherTable"; }
+            get { return "201512220940192_RemoveUniqueOfApplicantTable"; }
         }
         
         string IMigrationMetadata.Source

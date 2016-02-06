@@ -1,52 +1,52 @@
 ﻿using System;
 using Decision.DomainClasses.Entities.Common;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Common;
 
-namespace Decision.ViewModel.Teacher
+namespace Decision.ViewModel.Applicant
 {
-    public class TeacherDetailsViewModel:BaseViewModel
+    public class ApplicantDetailsViewModel:BaseViewModel
     {
         #region Properties
         public Guid Id { get; set; }
         /// <summary>
-        /// نام استاد
+        /// نام متقاضی
         /// </summary>
         public  string FullName { get; set; }
         /// <summary>
-        /// تاریخ تولد استاد
+        /// تاریخ تولد متقاضی
         /// </summary>
         public  DateTime BirthDate { get; set; }
         /// <summary>
-        /// کد ملی استاد
+        /// کد ملی متقاضی
         /// </summary>
         public  string NationalCode { get; set; }
         /// <summary>
-        /// شماره شناسنامه استاد
+        /// شماره شناسنامه متقاضی
         /// </summary>
         public  string BirthCertificateNumber { get; set; }
         /// <summary>
-        /// پایه استاد
+        /// پایه متقاضی
         /// </summary>
         public  int CollegiateOrder { get; set; }
         /// <summary>
-        /// گروه شغلی استاد
+        /// گروه شغلی متقاضی
         /// </summary>
         public  int OccupationalGroup { get; set; }
         /// <summary>
-        /// وضعیت تأهل استاد
+        /// وضعیت تأهل متقاضی
         /// </summary>
         public  MarriageStatus MarriageStatus { get; set; }
         /// <summary>
-        /// نام یک بانکی که استاد در آن حساب دارد
+        /// نام یک بانکی که متقاضی در آن حساب دارد
         /// </summary>
         public  string BankName { get; set; }
         /// <summary>
-        /// نام یک شعبه ای از بانک معرفی شده که استاد در آن حساب دارد
+        /// نام یک شعبه ای از بانک معرفی شده که متقاضی در آن حساب دارد
         /// </summary>
         public  string BankBranch { get; set; }
         /// <summary>
-        /// شما حساب استاد در شعبه مربوطه
+        /// شما حساب متقاضی در شعبه مربوطه
         /// </summary>
         public  string AccountNumber { get; set; }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Decision.ViewModel.Teacher
         /// </summary>
         public  bool IsClothed { get; set; }
         /// <summary>
-        /// جنسیت استاد
+        /// جنسیت متقاضی
         /// </summary>
         public  GenderType Gender { get; set; }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Decision.ViewModel.Teacher
         public  int TrainigGrade { get; set; }
 
         /// <summary>
-        ///  عکس استاد
+        ///  عکس متقاضی
         /// </summary>
         public  byte[] Photo { get; set; }
         /// <summary>
@@ -79,11 +79,11 @@ namespace Decision.ViewModel.Teacher
         /// </summary>
         public  int CollegiateYears { get; set; }
         /// <summary>
-        /// استاد برای ویرایش ، به یک کاربر دیگر ارجاع  داده شده است؟
+        /// متقاضی برای ویرایش ، به یک کاربر دیگر ارجاع  داده شده است؟
         /// </summary>
         public  bool IsInReference { get; set; }
         /// <summary>
-        /// آیا استاد توسط یکی از مدیران تایید شده است؟
+        /// آیا متقاضی توسط یکی از مدیران تایید شده است؟
         /// </summary>
         public  bool IsApproved { get; set; }
         /// <summary>
@@ -99,15 +99,15 @@ namespace Decision.ViewModel.Teacher
         /// </summary>
         public string PersonnelCode { get; set; }
         /// <summary>
-        /// سمت استاد
+        /// سمت متقاضی
         /// </summary>
         public  string PositionName { get; set; }
         /// <summary>
-        /// نام کاربری مدیری که نگارش این استاد را تایید  کرده است
+        /// نام کاربری مدیری که نگارش این متقاضی را تایید  کرده است
         /// </summary>
         public  string ApproveByName { get; set; }
         /// <summary>
-        /// مشخص کننده دوره کاراموزی استاد  
+        /// مشخص کننده دوره کاراموزی متقاضی  
         /// </summary>
         public string  TrainingCourseDetails { get; set; }
 

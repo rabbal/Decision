@@ -8,15 +8,15 @@ using AutoMapper.QueryableExtensions;
 using Decision.Common.Helpers.Extentions;
 using Decision.DataLayer.Context;
 using Decision.DomainClasses.Entities.Common;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Common;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.ViewModel.EducationalExperience;
 using EntityFramework.Extensions;
 using Microsoft.AspNet.Identity;
 
-namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
+namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
 {
     /// <summary>
     /// کلاس ارائه دهنده سروسیس های لازم برای اعمال روی سابقه آموزشی
@@ -76,7 +76,7 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
         public async Task<EducationalExperienceListViewModel> GetPagedListAsync(EducationalExperienceSearchRequest request)
         {
             var educationalExperiences =
-                _educationalExperiences.Where(a => a.TeacherId == request.TeacherId & a.Type == request.Type)
+                _educationalExperiences.Where(a => a.ApplicantId == request.ApplicantId & a.Type == request.Type)
                     .AsNoTracking()
                     .Include(a => a.Title)
                     .Include(a => a.Creator)
@@ -110,12 +110,12 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
             viewModel.Titles = await _titleService.GetAsSelectListItemAsync(TitleType.CourseContent, viewModel.TitleId);
         }
 
-        public async Task<AddEducationalExperienceViewModel> GetForCreate(Guid TeacherId, EducationalExperienceType type)
+        public async Task<AddEducationalExperienceViewModel> GetForCreate(Guid ApplicantId, EducationalExperienceType type)
         {
             return new AddEducationalExperienceViewModel
             {
                 Type = type,
-                TeacherId = TeacherId,
+                ApplicantId = ApplicantId,
                 Titles = await _titleService.GetAsSelectListItemAsync(TitleType.CourseContent, null)
             };
         }

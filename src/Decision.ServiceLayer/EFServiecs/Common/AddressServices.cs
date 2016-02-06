@@ -9,7 +9,7 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Decision.DataLayer.Context;
 using Decision.DomainClasses.Entities.Common;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Common;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.ViewModel.Address;
@@ -86,7 +86,7 @@ namespace Decision.ServiceLayer.EFServiecs.Common
             return new AddressListViewModel
             {
                 Addresses = await _addresses.AsNoTracking()
-                    .Where(a => a.TeacherId == request.TeacherId)
+                    .Where(a => a.ApplicantId == request.ApplicantId)
                     .ProjectTo<AddressViewModel>(_mappingEngine)
                     .OrderByDescending(a => a.CreateDate)
                     .Skip((request.PageIndex - 1)*5)
@@ -120,13 +120,13 @@ namespace Decision.ServiceLayer.EFServiecs.Common
             viewModel.Cities = _cityService.GetAsSelectListByStateNameAsync(viewModel.State, viewModel.City, path);
         }
 
-        public AddAddressViewModel GetForCreate(Guid TeacherId,string path)
+        public AddAddressViewModel GetForCreate(Guid ApplicantId,string path)
         {
             return new AddAddressViewModel
             {
                 States = _stateService.GetAsSelectListItemAsync(null, path),
                 Cities = new List<SelectListItem>(),
-                TeacherId = TeacherId
+                ApplicantId = ApplicantId
                 
             };
         }

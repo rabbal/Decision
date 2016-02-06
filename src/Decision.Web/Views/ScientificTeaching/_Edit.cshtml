@@ -11,7 +11,7 @@
             @using (Ajax.BeginForm(MVC.ScientificTeaching.Edit(), new AjaxOptions { HttpMethod = "POST", OnComplete = "editOnComplete(xhr, status, '" + Model.Id + "','#editButton" + Model.Id + "')" }, new { @class = "form-horizontal", id = Model.Id, autocomplete = "off", data_ajax_update = "scientificTeaching-" + Model.Id }))
             {
                 @Html.AntiForgeryToken()
-                @Html.HiddenFor(model => model.TeacherId)
+                @Html.HiddenFor(model => model.ApplicantId)
                 @Html.HiddenFor(model => model.Id)
                 @Html.HiddenFor(model => model.RowVersion)
                 @Html.HiddenFor(model => model.Type)

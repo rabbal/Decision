@@ -2,9 +2,9 @@
 
 @using System.Web.Mvc
 @using Decision.ServiceLayer.Security
-@Html.SideBarSecureActionLink("فرم مشخصات استاد", Url.Action(MVC.Teacher.Details(Model)), "list-group-item thrid-split", "fa fa-eye",AssignableToRolePermissions.CanViewTeacherDetails)
+@Html.SideBarSecureActionLink("فرم مشخصات متقاضی", Url.Action(MVC.Applicant.Details(Model)), "list-group-item thrid-split", "fa fa-eye",AssignableToRolePermissions.CanViewApplicantDetails)
 
-@Html.SideBarSecureActionLink("فرم ویرایش استاد", Url.Action(MVC.Teacher.Edit(Model)), "list-group-item thrid-split", "fa fa-edit", AssignableToRolePermissions.CanEditTeacher)
+@Html.SideBarSecureActionLink("فرم ویرایش متقاضی", Url.Action(MVC.Applicant.Edit(Model)), "list-group-item thrid-split", "fa fa-edit", AssignableToRolePermissions.CanEditApplicant)
 
 @Html.SideBarSecureActionLink("آدرس ها", Url.Action(MVC.Address.List(Model)), "list-group-item second-split", "fa fa-map-marker", AssignableToRolePermissions.CanManageAddress)
 
@@ -28,6 +28,6 @@
 
 @Html.SideBarSecureActionLink("ارزیابی های به عمل آمده", Url.Action(MVC.EntireEvaluation.List(Model)), "list-group-item second-split", "fa fa-list", AssignableToRolePermissions.CanManageWorkExperience)
 
-@Html.SideBarSecureActionLink("دوره های ضمن خدمت", Url.Action(MVC.TeacherInServiceCourseType.List(Model)), "list-group-item second-split", "fa fa-list", AssignableToRolePermissions.CanManageTeacherInServiceCourseType)
+@Html.SideBarSecureActionLink("دوره های ضمن خدمت", Url.Action(MVC.ApplicantInServiceCourseType.List(Model)), "list-group-item second-split", "fa fa-list", AssignableToRolePermissions.CanManageApplicantInServiceCourseType)
 
 

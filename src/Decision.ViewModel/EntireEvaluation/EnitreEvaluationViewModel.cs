@@ -5,19 +5,19 @@ using Decision.ViewModel.Common;
 namespace Decision.ViewModel.EntireEvaluation
 {
     /// <summary>
-    /// ویومدل نمایش ارزیابی از استاد
+    /// ویومدل نمایش ارزیابی از متقاضی
     /// </summary>
     public class EntireEvaluationViewModel :BaseViewModel
     {
         #region Properties
         /// <summary>
-        /// آی دی ارزیابی از استاد
+        /// آی دی ارزیابی از متقاضی
         /// </summary>
         public  Guid Id { get; set; }
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
 
         /// <summary>
-        ///  نظریه کلی برای استاد
+        ///  نظریه کلی برای متقاضی
         /// </summary>
         [DisplayName("متن ارزیابی")]
         public  string Content { get; set; }
@@ -35,13 +35,13 @@ namespace Decision.ViewModel.EntireEvaluation
         public  string Brief { get; set; }
 
         /// <summary>
-        /// نقاط ضعف استاد
+        /// نقاط ضعف متقاضی
         /// </summary>
         [DisplayName("نقاط ضعف")]
         public  string Foible { get; set; }
 
         /// <summary>
-        /// نقطه قوت استاد
+        /// نقطه قوت متقاضی
         /// </summary>
         [DisplayName("نقاط قوت")]
         public  string StrongPoint { get; set; }

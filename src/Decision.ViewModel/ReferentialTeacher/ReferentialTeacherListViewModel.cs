@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 
-namespace Decision.ViewModel.ReferentialTeacher
+namespace Decision.ViewModel.ReferentialApplicant
 {
     /// <summary>
-    /// ویو مدل نمایش لیست ارجاعات استاد
+    /// ویو مدل نمایش لیست ارجاعات متقاضی
     /// </summary>
-    public class ReferentialTeacherListViewModel
+    public class ReferentialApplicantListViewModel
     {
         /// <summary>
-        /// لیست ویو مدل نمایش ارجاعات استاد
+        /// لیست ویو مدل نمایش ارجاعات متقاضی
         /// </summary>
-        public IEnumerable<ReferentialTeacherViewModel> ReferentialTeachers { get; set; }
+        public IEnumerable<ReferentialApplicantViewModel> ReferentialApplicants { get; set; }
     }
 }

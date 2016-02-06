@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web;
 using System.Web.Mvc;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Common;
 
 // ReSharper disable InconsistentNaming
@@ -12,14 +12,14 @@ using Decision.ViewModel.Common;
 namespace Decision.ViewModel.EducationalBackground
 {
     /// <summary>
-    /// ویومدل ویرایش سوابق استاد
+    /// ویومدل ویرایش سوابق متقاضی
     /// </summary>
     public class EditEducationalBackgroundViewModel : BaseRowVersion
     {
      
         #region Properties
         /// <summary>
-        /// آی دی سوابق استاد
+        /// آی دی سوابق متقاضی
         /// </summary>
         public Guid Id { get; set; }
         /// <summary>
@@ -62,19 +62,19 @@ namespace Decision.ViewModel.EducationalBackground
         public DateTime EntryDate { get; set; }
 
         /// <summary>
-        /// استاد مشاور
+        /// متقاضی مشاور
         /// </summary>
 
-        [StringLength(50, ErrorMessage = "نام استاد مشاور باید بین دو تا 50 کاراکتر باشد")]
-        [DisplayName("استاد مشاور")]
+        [StringLength(50, ErrorMessage = "نام متقاضی مشاور باید بین دو تا 50 کاراکتر باشد")]
+        [DisplayName("متقاضی مشاور")]
         public string Advisor { get; set; }
 
         /// <summary>
-        /// استاد راهنما
+        /// متقاضی راهنما
         /// </summary>
 
-        [StringLength(50, ErrorMessage = "نام استاد راهنما باید بین دو تا 50 کاراکتر باشد")]
-        [DisplayName("استاد راهنما")]
+        [StringLength(50, ErrorMessage = "نام متقاضی راهنما باید بین دو تا 50 کاراکتر باشد")]
+        [DisplayName("متقاضی راهنما")]
         public string Supervisor { get; set; }
 
         /// <summary>
@@ -118,10 +118,10 @@ namespace Decision.ViewModel.EducationalBackground
         public HttpPostedFileBase AttachmentFile { get; set; }
 
         /// <summary>
-        /// آی دی استاد صاحب مدرک
+        /// آی دی متقاضی صاحب مدرک
         /// </summary>
-        [DisplayName("استاد")]
-        public Guid TeacherId { get; set; }
+        [DisplayName("متقاضی")]
+        public Guid ApplicantId { get; set; }
 
         /// <summary>
         /// آی دی موسسه آموزشی

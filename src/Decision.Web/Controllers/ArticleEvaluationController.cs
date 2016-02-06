@@ -8,7 +8,7 @@ using Decision.Common.Controller;
 using Decision.Common.Filters;
 using Decision.DataLayer.Context;
 using Decision.ServiceLayer.Contracts.Evaluations;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Security;
 using Decision.ViewModel.ArticleEvaluation;
 using Decision.Web.Filters;
@@ -17,14 +17,14 @@ using MvcSiteMapProvider;
 namespace Decision.Web.Controllers
 {
 
-    [RoutePrefix("Teacher/ArticleEvaluation")]
+    [RoutePrefix("Applicant/ArticleEvaluation")]
     [Route("{action}")]
     [Mvc5Authorize(AssignableToRolePermissions.CanManageArticleEvaluation)]
     public partial class ArticleEvaluationController : Controller
     {
         #region	Fields
 
-        private readonly IReferentialTeacherService _referentialTeacherService;
+        private readonly IReferentialApplicantService _referentialApplicantService;
         private readonly IArticleService _ArticleService;
         private readonly IAppraiserService _appraiserService;
         private readonly IQuestionService _questionService;
@@ -33,14 +33,14 @@ namespace Decision.Web.Controllers
         #endregion
 
         #region	Ctor
-        public ArticleEvaluationController(IReferentialTeacherService referentialTeacherService, IArticleService ArticleService, IAppraiserService appraiserService, IUnitOfWork unitOfWork, IArticleEvaluationService evaluationService, IQuestionService questionService)
+        public ArticleEvaluationController(IReferentialApplicantService referentialApplicantService, IArticleService ArticleService, IAppraiserService appraiserService, IUnitOfWork unitOfWork, IArticleEvaluationService evaluationService, IQuestionService questionService)
         {
             _unitOfWork = unitOfWork;
             _evaluationService = evaluationService;
             _questionService = questionService;
             _appraiserService = appraiserService;
             _ArticleService = ArticleService;
-            _referentialTeacherService = referentialTeacherService;
+            _referentialApplicantService = referentialApplicantService;
         }
         #endregion
 
@@ -50,8 +50,8 @@ namespace Decision.Web.Controllers
        
         public virtual async Task<ActionResult> List(Guid ArticleId)
         {
-            if (!_referentialTeacherService.CanManageTeacher(
-                 _ArticleService.GetTeacherId(ArticleId)
+            if (!_referentialApplicantService.CanManageApplicant(
+                 _ArticleService.GetApplicantId(ArticleId)
                 ))
                 return HttpNotFound();
 
@@ -71,7 +71,7 @@ namespace Decision.Web.Controllers
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public virtual async Task<ActionResult> ListAjax(ArticleEvaluationSearchRequest request)
         {
-            if (!_referentialTeacherService.CanManageTeacher(request.TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(request.ApplicantId)) return HttpNotFound();
             var viewModel =
               await
                   _evaluationService.GetPagedList(request);
@@ -88,12 +88,12 @@ namespace Decision.Web.Controllers
         
         public virtual async Task<ActionResult> Create(Guid ArticleId)
         {
-            var TeacherId = _ArticleService.GetTeacherId(ArticleId);
-            if (!_referentialTeacherService.CanManageTeacher(TeacherId)) return HttpNotFound();
+            var ApplicantId = _ArticleService.GetApplicantId(ArticleId);
+            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
             var viewModel = new AddArticleEvaluationViewModel
             {
                 ArticleId = ArticleId,
-                TeacherId = TeacherId,
+                ApplicantId = ApplicantId,
                 Questions = await _questionService.GelAllActive(),
                 Evaluators = await _appraiserService.GetAsSelectedListItem(null)
             };
@@ -108,7 +108,7 @@ namespace Decision.Web.Controllers
        
         public virtual async Task<ActionResult> Create(AddArticleEvaluationBindingModel bindingModel)
         {
-            if (!_referentialTeacherService.CanManageTeacher(bindingModel.TeacherId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(bindingModel.ApplicantId)) return HttpNotFound();
 
             if (!ModelState.IsValid)
             {
@@ -130,7 +130,7 @@ namespace Decision.Web.Controllers
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public virtual async Task<ActionResult> Delete(Guid id, Guid jdugeId)
         {
-            if (!_referentialTeacherService.CanManageTeacher(jdugeId)) return HttpNotFound();
+            if (!_referentialApplicantService.CanManageApplicant(jdugeId)) return HttpNotFound();
             await _evaluationService.DeleteAsync(id);
             return Content("ok");
         }

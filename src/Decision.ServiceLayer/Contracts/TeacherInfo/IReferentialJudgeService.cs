@@ -1,44 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Decision.ViewModel.ReferentialTeacher;
+using Decision.ViewModel.ReferentialApplicant;
 
-namespace Decision.ServiceLayer.Contracts.TeacherInfo
+namespace Decision.ServiceLayer.Contracts.ApplicantInfo
 {
     /// <summary>
-    /// نشان دهنده الزامات ارائه دهنده سرویس ارجاع استاد
+    /// نشان دهنده الزامات ارائه دهنده سرویس ارجاع متقاضی
     /// </summary>
-    public interface IReferentialTeacherService
+    public interface IReferentialApplicantService
     {
         /// <summary>
-        /// واکشی ارجاع استاد برای ویرایش
+        /// واکشی ارجاع متقاضی برای ویرایش
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<EditReferentialTeacherViewModel> GetForEditAsync(Guid id);
+        Task<EditReferentialApplicantViewModel> GetForEditAsync(Guid id);
 
         /// <summary>
-        /// حذف ارجاع استاد
+        /// حذف ارجاع متقاضی
         /// </summary>
-        /// <param name="id">آی دی  استاد</param>
+        /// <param name="id">آی دی  متقاضی</param>
         Task DeleteAsync(Guid id);
 
         /// <summary>
-        /// ویرایش ارجاع استاد
+        /// ویرایش ارجاع متقاضی
         /// </summary>
-        /// <param name="viewModel">ویو مدل ویرایش ارجاع استاد</param>
+        /// <param name="viewModel">ویو مدل ویرایش ارجاع متقاضی</param>
         /// <returns></returns>
-        Task EditAsync(EditReferentialTeacherViewModel viewModel);
+        Task EditAsync(EditReferentialApplicantViewModel viewModel);
 
         /// <summary>
-        /// درج ارجاع استاد جدید
+        /// درج ارجاع متقاضی جدید
         /// </summary>
-        /// <param name="viewModel">ویو مدل درج ارجاع استاد</param>
-        void Create(AddReferentialTeacherViewModel viewModel);
+        /// <param name="viewModel">ویو مدل درج ارجاع متقاضی</param>
+        void Create(AddReferentialApplicantViewModel viewModel);
 
-        Task<IEnumerable<Guid>> GetRefersTeacherIds();
+        Task<IEnumerable<Guid>> GetRefersApplicantIds();
 
-        bool CanManageTeacher(Guid TeacherId);
-        Task FinishReferTeacher(Guid TeacherId);
+        bool CanManageApplicant(Guid ApplicantId);
+        Task FinishReferApplicant(Guid ApplicantId);
     }
 }

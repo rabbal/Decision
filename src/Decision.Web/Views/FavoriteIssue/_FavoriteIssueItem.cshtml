@@ -48,7 +48,7 @@
                    href="@Url.Action(MVC.FavoriteIssue.Edit(Model.Id))" role="button"><i class="fa fa-edit"></i>ویرایش</a>
 
                 <button class="btn-sm btn btn-danger"
-                        type="button" data-delete-url="@Url.Action(MVC.FavoriteIssue.Delete())" data-Teacher="@Model.TeacherId" data-removal-element="#favoriteIssue-@Model.Id" id="remove-@Model.Id">
+                        type="button" data-delete-url="@Url.Action(MVC.FavoriteIssue.Delete())" data-Applicant="@Model.ApplicantId" data-removal-element="#favoriteIssue-@Model.Id" id="remove-@Model.Id">
                     <i class="fa fa-trash-o"></i>
                     حذف
                 </button>

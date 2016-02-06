@@ -1,46 +1,46 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Decision.ViewModel.TeacherInServiceCourseType;
+using Decision.ViewModel.ApplicantInServiceCourseType;
 
-namespace Decision.ServiceLayer.Contracts.TeacherInfo
+namespace Decision.ServiceLayer.Contracts.ApplicantInfo
 {
     /// <summary>
-    /// نشان دهنده الزامات ارائه دهنده سرویس تعداد ساعت یک نوع ضمن خدمت برای استاد
+    /// نشان دهنده الزامات ارائه دهنده سرویس تعداد ساعت یک نوع ضمن خدمت برای متقاضی
     /// </summary>
-    public interface ITeacherInServiceCourseTypeService
+    public interface IApplicantInServiceCourseTypeService
     {
         /// <summary>
-        /// واکشی تعداد ساعت یک نوع ضمن خدمت برای استاد برای ویرایش
+        /// واکشی تعداد ساعت یک نوع ضمن خدمت برای متقاضی برای ویرایش
         /// </summary>
-        /// <param name="id">آی دی تعداد ساعت یک نوع ضمن خدمت برای استاد</param>
+        /// <param name="id">آی دی تعداد ساعت یک نوع ضمن خدمت برای متقاضی</param>
         /// <returns></returns>
-        Task<EditTeacherInServiceCourseTypeViewModel> GetForEditAsync(Guid id);
+        Task<EditApplicantInServiceCourseTypeViewModel> GetForEditAsync(Guid id);
 
         /// <summary>
-        /// حذف تعداد ساعت یک نوع ضمن خدمت برای استاد
+        /// حذف تعداد ساعت یک نوع ضمن خدمت برای متقاضی
         /// </summary>
-        /// <param name="id">آی دی تعداد ساعت یک نوع ضمن خدمت برای استاد</param>
+        /// <param name="id">آی دی تعداد ساعت یک نوع ضمن خدمت برای متقاضی</param>
         Task DeleteAsync(Guid id);
 
         /// <summary>
-        /// ویرایش تعداد ساعت یک نوع ضمن خدمت برای استاد
+        /// ویرایش تعداد ساعت یک نوع ضمن خدمت برای متقاضی
         /// </summary>
-        /// <param name="viewModel">ویو مدل ویرایش تعداد ساعت یک نوع ضمن خدمت برای استاد</param>
+        /// <param name="viewModel">ویو مدل ویرایش تعداد ساعت یک نوع ضمن خدمت برای متقاضی</param>
         /// <returns></returns>
-        Task EditAsync(EditTeacherInServiceCourseTypeViewModel viewModel);
+        Task EditAsync(EditApplicantInServiceCourseTypeViewModel viewModel);
 
         /// <summary>
-        /// درج تعداد ساعت یک نوع ضمن خدمت برای استاد جدید
+        /// درج تعداد ساعت یک نوع ضمن خدمت برای متقاضی جدید
         /// </summary>
-        /// <param name="viewModel">ویو مدل درج تعداد ساعت یک نوع ضمن خدمت برای استاد</param>
-        Task<TeacherInServiceCourseTypeViewModel> Create(AddTeacherInServiceCourseTypeViewModel viewModel);
+        /// <param name="viewModel">ویو مدل درج تعداد ساعت یک نوع ضمن خدمت برای متقاضی</param>
+        Task<ApplicantInServiceCourseTypeViewModel> Create(AddApplicantInServiceCourseTypeViewModel viewModel);
 
         /// <summary>
-        /// نمایش لیست تعداد ساعت انواع ضمن خدمت برای استاد ها با امکان جستجو و مرتب سازی
+        /// نمایش لیست تعداد ساعت انواع ضمن خدمت برای متقاضی ها با امکان جستجو و مرتب سازی
         /// </summary>
         /// <param name="request">اطلاعات مرتب سازی و جستجو</param>
         /// <returns></returns>
-        Task<TeacherInServiceCourseTypeListViewModel> GetPagedListAsync(TeacherInServiceCourseTypeSearchRequest request);
+        Task<ApplicantInServiceCourseTypeListViewModel> GetPagedListAsync(ApplicantInServiceCourseTypeSearchRequest request);
 
         /// <summary>
         /// چک کردن برای موچود بود در دیتابیس
@@ -49,12 +49,12 @@ namespace Decision.ServiceLayer.Contracts.TeacherInfo
         /// <returns></returns>
         Task<bool> IsInDb(Guid id);
 
-        Task FillEditViewModel(EditTeacherInServiceCourseTypeViewModel viewModel);
+        Task FillEditViewModel(EditApplicantInServiceCourseTypeViewModel viewModel);
 
-        Task<TeacherInServiceCourseTypeViewModel> GetTeacherInServiceCourseTypeViewModel(Guid guid);
+        Task<ApplicantInServiceCourseTypeViewModel> GetApplicantInServiceCourseTypeViewModel(Guid guid);
 
-        Task FillAddViewModel(AddTeacherInServiceCourseTypeViewModel viewModel);
+        Task FillAddViewModel(AddApplicantInServiceCourseTypeViewModel viewModel);
 
-        Task<AddTeacherInServiceCourseTypeViewModel> GetForCreate(Guid TeacherId);
+        Task<AddApplicantInServiceCourseTypeViewModel> GetForCreate(Guid ApplicantId);
     }
 }

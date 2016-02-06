@@ -8,18 +8,18 @@ using AutoMapper.QueryableExtensions;
 using Decision.Common.Helpers.Extentions;
 using Decision.DataLayer.Context;
 using Decision.DomainClasses.Entities.Common;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Common;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.ViewModel.EducationalBackground;
 using EntityFramework.Extensions;
 using Microsoft.AspNet.Identity;
 
-namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
+namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
 {
     /// <summary>
-    /// کلاس ارائه دهنده سروسیس های لازم برای اعمال روی سابقه تحصیلی استاد
+    /// کلاس ارائه دهنده سروسیس های لازم برای اعمال روی سابقه تحصیلی متقاضی
     /// </summary>
     public class EducationalBackgroundService : IEducationalBackgroundService
     {
@@ -118,7 +118,7 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
         public async  Task<EducationalBackgroundListViewModel> GetPagedListAsync(EducationalBackgroundSearchRequest request)
         {
             var educationalBackgrounds =
-                _educationalBackgrounds.Where(a => a.TeacherId == request.TeacherId)
+                _educationalBackgrounds.Where(a => a.ApplicantId == request.ApplicantId)
                     .Include(a => a.Creator)
                     .Include(a => a.LasModifier)
                     .Include(a => a.StudyField)
@@ -150,11 +150,11 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
             viewModel.Institutions = await _institutionService.GetAsSelectListItemAsync(viewModel.InstitutionId);
         }
 
-        public async  Task<AddEducationalBackgroundViewModel> GetForCreate(Guid TeacherId)
+        public async  Task<AddEducationalBackgroundViewModel> GetForCreate(Guid ApplicantId)
         {
             return new AddEducationalBackgroundViewModel
             {
-                TeacherId = TeacherId,
+                ApplicantId = ApplicantId,
                 StudyFields =
                     await _titleService.GetAsSelectListItemAsync(TitleType.StudyField, null),
                 Institutions = await _institutionService.GetAsSelectListItemAsync(null)

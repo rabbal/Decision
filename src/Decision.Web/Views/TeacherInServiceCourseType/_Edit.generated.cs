@@ -34,10 +34,10 @@ namespace ASP
     using MvcSiteMapProvider.Web.Html.Models;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/TeacherInServiceCourseType/_Edit.cshtml")]
-    public partial class _Views_TeacherInServiceCourseType__Edit_cshtml : System.Web.Mvc.WebViewPage<Decision.ViewModel.TeacherInServiceCourseType.EditTeacherInServiceCourseTypeViewModel>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/ApplicantInServiceCourseType/_Edit.cshtml")]
+    public partial class _Views_ApplicantInServiceCourseType__Edit_cshtml : System.Web.Mvc.WebViewPage<Decision.ViewModel.ApplicantInServiceCourseType.EditApplicantInServiceCourseTypeViewModel>
     {
-        public _Views_TeacherInServiceCourseType__Edit_cshtml()
+        public _Views_ApplicantInServiceCourseType__Edit_cshtml()
         {
         }
         public override void Execute()
@@ -47,9 +47,9 @@ WriteLiteral("<div");
 WriteLiteral(" class=\"col-md-12\"");
 
 WriteAttribute("id", Tuple.Create(" id=\"", 118), Tuple.Create("\"", 159)
-, Tuple.Create(Tuple.Create("", 123), Tuple.Create("TeacherInServiceCourseType-", 123), true)
+, Tuple.Create(Tuple.Create("", 123), Tuple.Create("ApplicantInServiceCourseType-", 123), true)
             
-            #line 3 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 3 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
 , Tuple.Create(Tuple.Create("", 150), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
@@ -80,70 +80,70 @@ WriteLiteral(" class=\"panel-body\"");
 WriteLiteral(">\r\n");
 
             
-            #line 11 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 11 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 11 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
-             using (Ajax.BeginForm(MVC.TeacherInServiceCourseType.Edit(), new AjaxOptions { HttpMethod = "POST", OnComplete = "editOnComplete(xhr, status, '" + Model.Id + "','#editButton" + Model.Id + "')" }, new { @class = "form-horizontal", id = Model.Id, autocomplete = "off", data_ajax_update = "TeacherInServiceCourseType-" + Model.Id }))
+            #line 11 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
+             using (Ajax.BeginForm(MVC.ApplicantInServiceCourseType.Edit(), new AjaxOptions { HttpMethod = "POST", OnComplete = "editOnComplete(xhr, status, '" + Model.Id + "','#editButton" + Model.Id + "')" }, new { @class = "form-horizontal", id = Model.Id, autocomplete = "off", data_ajax_update = "ApplicantInServiceCourseType-" + Model.Id }))
             {
                 
             
             #line default
             #line hidden
             
-            #line 13 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 13 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
            Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 13 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 13 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
                                         
                 
             
             #line default
             #line hidden
             
-            #line 14 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
-           Write(Html.HiddenFor(model => model.TeacherId));
+            #line 14 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
+           Write(Html.HiddenFor(model => model.ApplicantId));
 
             
             #line default
             #line hidden
             
-            #line 14 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 14 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
                                                          
                 
             
             #line default
             #line hidden
             
-            #line 15 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 15 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
            Write(Html.HiddenFor(model => model.Id));
 
             
             #line default
             #line hidden
             
-            #line 15 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 15 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
                                                   
                 
             
             #line default
             #line hidden
             
-            #line 16 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 16 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
            Write(Html.HiddenFor(model => model.RowVersion));
 
             
             #line default
             #line hidden
             
-            #line 16 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 16 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
                                                           
 
 
@@ -159,7 +159,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 19 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 19 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
                Write(Html.LabelFor(model => model.HoursCount, htmlAttributes: new { @class = "control-label col-md-3" }));
 
             
@@ -174,7 +174,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 21 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 21 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
                    Write(Html.TextBoxFor(model => model.HoursCount, new { @class = "form-control" }));
 
             
@@ -185,7 +185,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                        ");
 
             
-            #line 22 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 22 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
                    Write(Html.ValidationMessageFor(model => model.HoursCount, "", new { @class = "text-danger" }));
 
             
@@ -194,7 +194,7 @@ WriteLiteral("                        ");
 WriteLiteral("\r\n                    </div>\r\n                </div>\r\n");
 
             
-            #line 25 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 25 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
 
 
             
@@ -209,7 +209,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 27 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 27 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
                Write(Html.LabelFor(model => model.InServiceCourseTypeTitleId, htmlAttributes: new { @class = "control-label col-md-3" }));
 
             
@@ -224,7 +224,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 29 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 29 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
                    Write(Html.DropDownListFor(model => model.InServiceCourseTypeTitleId, Model.InServiceCourseTypeTitles, new { @class = "form-control" }));
 
             
@@ -235,7 +235,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                        ");
 
             
-            #line 30 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 30 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
                    Write(Html.ValidationMessageFor(model => model.InServiceCourseTypeTitleId, "", new { @class = "text-danger" }));
 
             
@@ -244,7 +244,7 @@ WriteLiteral("                        ");
 WriteLiteral("\r\n                    </div>\r\n                </div>\r\n");
 
             
-            #line 33 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 33 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
 
             }
 
@@ -265,7 +265,7 @@ WriteLiteral(" type=\"button\"");
 
 WriteAttribute("id", Tuple.Create(" id=\"", 2151), Tuple.Create("\"", 2196)
             
-            #line 38 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 38 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
 , Tuple.Create(Tuple.Create("", 2156), Tuple.Create<System.Object, System.Int32>(string.Format("editButton{0}",Model.Id)
             
             #line default
@@ -279,7 +279,7 @@ WriteAttribute("onclick", Tuple.Create(" onclick=\"", 2216), Tuple.Create("\"", 
 , Tuple.Create(Tuple.Create("", 2226), Tuple.Create("AjaxForm.CustomSubmit(this,", 2226), true)
 , Tuple.Create(Tuple.Create(" ", 2253), Tuple.Create("\'", 2254), true)
             
-            #line 38 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 38 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
                                                              , Tuple.Create(Tuple.Create("", 2255), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
@@ -307,10 +307,10 @@ WriteLiteral("\r\n                   data-ajax-mode=\"REPLACE-WITH\"");
 
 WriteLiteral(" data-ajax-complete=\"cancelEditOnComplete(xhr, status)\"");
 
-WriteLiteral("\r\n                   data-ajax-update=\"#TeacherInServiceCourseType-");
+WriteLiteral("\r\n                   data-ajax-update=\"#ApplicantInServiceCourseType-");
 
             
-            #line 44 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
+            #line 44 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
                                                             Write(Model.Id);
 
             
@@ -322,8 +322,8 @@ WriteLiteral(" data-ajax-method=\"POST\"");
 
 WriteAttribute("href", Tuple.Create("\r\n                   href=\"", 2734), Tuple.Create("\"", 2825)
             
-            #line 45 "..\..\Views\TeacherInServiceCourseType\_Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 2761), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.TeacherInServiceCourseType.CancelEdit(Model.Id))
+            #line 45 "..\..\Views\ApplicantInServiceCourseType\_Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 2761), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.ApplicantInServiceCourseType.CancelEdit(Model.Id))
             
             #line default
             #line hidden

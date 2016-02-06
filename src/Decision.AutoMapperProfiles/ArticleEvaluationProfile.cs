@@ -13,7 +13,7 @@ namespace Decision.AutoMapperProfiles
     /// <summary>
     /// تنظیمات مربوط به
     /// AutoMapper 
-    /// برای کلاس ارزیابی ار مقاله استاد 
+    /// برای کلاس ارزیابی ار مقاله متقاضی 
     /// </summary>
     public class ArticleEvaluationProfile : Profile
     {

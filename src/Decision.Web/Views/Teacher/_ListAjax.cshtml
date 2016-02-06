@@ -1,7 +1,7 @@
 ﻿@* GeneratePrettyNames: true*@
-@model  Decision.ViewModel.Teacher.TeacherListViewModel
+@model  Decision.ViewModel.Applicant.ApplicantListViewModel
 
-@foreach (var Teacher in Model.Teachers)
+@foreach (var Applicant in Model.Applicants)
 {
-    @Html.Partial(MVC.Teacher.Views._TeacherItem, Teacher)
+    @Html.Partial(MVC.Applicant.Views._ApplicantItem, Applicant)
 }

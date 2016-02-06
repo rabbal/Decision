@@ -160,8 +160,8 @@ WriteLiteral("                ");
             #line 32 "..\..\Views\ArticleEvaluation\Create.cshtml"
            Write(Html.HelpAlert(@Url.Content("~/Content/Images/lightbulb.png"),
 
-                               "در این قسمت امکان ارزیابی از مقاله استاد در نظر گرفته شده است ، به طوری که سوالات توسط مدیران تایید شده قبلا و در این قسمت قابل مشاهده خواهند بود."
-                               , "دقت کنید که بر اساس این ارزیابی ها ، امتیاز استاد تغییر خواهد کرد."
+                               "در این قسمت امکان ارزیابی از مقاله متقاضی در نظر گرفته شده است ، به طوری که سوالات توسط مدیران تایید شده قبلا و در این قسمت قابل مشاهده خواهند بود."
+                               , "دقت کنید که بر اساس این ارزیابی ها ، امتیاز متقاضی تغییر خواهد کرد."
                                 ));
 
             
@@ -1132,7 +1132,7 @@ WriteLiteral("></span>درج ارزیاب</a>\r\n");
 
             
             #line 256 "..\..\Views\ArticleEvaluation\Create.cshtml"
-  Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.TeacherId);
+  Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.ApplicantId);
             
             #line default
             #line hidden

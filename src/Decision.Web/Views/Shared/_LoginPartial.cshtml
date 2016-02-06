@@ -2,10 +2,10 @@
 @using Auth=Decision.ServiceLayer.Security.AssignableToRolePermissions
 <div class="navbar-collapse collapse" id="navbar-main">
     <ul class="nav navbar-nav">
-        @if (User.IsInRole(Auth.CanViewTeacherList))
+        @if (User.IsInRole(Auth.CanViewApplicantList))
         {
             <li class="main">
-                @Html.SecureActionLink("مدیریت اساتید", MVC.Teacher.List())
+                @Html.SecureActionLink("مدیریت اساتید", MVC.Applicant.List())
             </li>
         }
        
@@ -77,16 +77,16 @@
                     @if (User.IsInRole(StandardRoles.Operators))
                     {
                         <li>
-                            <a href="@Url.Action(MVC.Teacher.ReferList())">
+                            <a href="@Url.Action(MVC.Applicant.ReferList())">
                                 لیست ارجاعات
                             </a>
-                            <a href="@Url.Action(MVC.Teacher.NewTeacherList())">
+                            <a href="@Url.Action(MVC.Applicant.NewApplicantList())">
                                 اساتید در حال تکمیل
                             </a>
                         </li>
                         <li>
-                            <a href="@Url.Action(MVC.Teacher.Create())">
-                                درج استاد
+                            <a href="@Url.Action(MVC.Applicant.Create())">
+                                درج متقاضی
                             </a>
                         </li>
                     }

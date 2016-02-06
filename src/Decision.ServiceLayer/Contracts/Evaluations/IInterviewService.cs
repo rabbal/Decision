@@ -55,7 +55,7 @@ namespace Decision.ServiceLayer.Contracts.Evaluations
 
         Task FillAddViewModel(AddInterviewViewModel viewModel);
 
-        Task<AddInterviewViewModel> GetForCreate(Guid TeacherId);
+        Task<AddInterviewViewModel> GetForCreate(Guid ApplicantId);
 
         Task<byte[]> GetAttachment(Guid id);
     }

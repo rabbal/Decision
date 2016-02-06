@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-2">
                 <a class="btn btn-default" data-ajax="true" data-ajax-mode="replace" data-ajax-success="onSuccessFormValidation(data, status, xhr,'createResearchExperienceForm','modal')"
-                   data-ajax-update="#modal" href="@Url.Action(MVC.ResearchExperience.Create(Model.SearchRequest.TeacherId))" role="button"><i class="fa fa-plus"></i>درج سابقه پژوهشی جدید</a>
+                   data-ajax-update="#modal" href="@Url.Action(MVC.ResearchExperience.Create(Model.SearchRequest.ApplicantId))" role="button"><i class="fa fa-plus"></i>درج سابقه پژوهشی جدید</a>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
     <div class="panel-footer padding-5-5">
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
-                <button data-page="2" data-json='{"TeacherId":"@Model.SearchRequest.TeacherId"}' data-container="#researchExperienceList"
+                <button data-page="2" data-json='{"ApplicantId":"@Model.SearchRequest.ApplicantId"}' data-container="#researchExperienceList"
                         data-progress="#progress"
                         data-load-url="@Url.Action(MVC.ResearchExperience.ListAjax())"
                         onclick="justPaging(this)" class="btn btn-info btn-block btn-sm" type="button">
@@ -36,7 +36,7 @@
     </div>
 </div>
 @section Menu{
-    @{Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.SearchRequest.TeacherId);}
+    @{Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.SearchRequest.ApplicantId);}
 }
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

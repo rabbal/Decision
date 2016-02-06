@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Decision.ViewModel.ResearchExperience;
 
-namespace Decision.ServiceLayer.Contracts.TeacherInfo
+namespace Decision.ServiceLayer.Contracts.ApplicantInfo
 {
     public interface IResearchExperienceService
     {

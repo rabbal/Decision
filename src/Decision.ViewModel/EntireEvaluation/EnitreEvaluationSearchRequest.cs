@@ -4,14 +4,14 @@ using Decision.ViewModel.Common;
 namespace Decision.ViewModel.EntireEvaluation
 {
     /// <summary>
-    /// کلاسی برای کپسوله سازی اطلاعات جستجو و مرتب سازی ارزیابی های انجام شده از استاد ها
+    /// کلاسی برای کپسوله سازی اطلاعات جستجو و مرتب سازی ارزیابی های انجام شده از متقاضی ها
     /// </summary>
     public class EntireEvaluationSearchRequest : BaseSearchRequest
     {
         /// <summary>
-        /// آی دی استاد ارزیابی شده
+        /// آی دی متقاضی ارزیابی شده
         /// </summary>
-        public  Guid  TeacherId { get; set; }
+        public  Guid  ApplicantId { get; set; }
 
     }
 }

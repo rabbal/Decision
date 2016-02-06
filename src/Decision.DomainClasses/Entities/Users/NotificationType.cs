@@ -17,6 +17,5 @@ namespace Decision.DomainClasses.Entities.Users
         /// </summary>
         [Display(Name = "پاسخ جدید به گفتگو")]
         NewConversationReply,
-
     }
 }

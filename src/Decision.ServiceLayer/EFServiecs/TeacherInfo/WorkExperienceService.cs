@@ -9,15 +9,15 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Decision.DataLayer.Context;
 using Decision.DomainClasses.Entities.Common;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Common;
-using Decision.ServiceLayer.Contracts.TeacherInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.ViewModel.WorkExperience;
 using EntityFramework.Extensions;
 using Microsoft.AspNet.Identity;
 
-namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
+namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
 {
     /// <summary>
     /// کلاس ارائه دهنده سروسیس های لازم برای اعمال روی سابقه کاری
@@ -91,7 +91,7 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
         #region GetPagedList
         public  async Task<WorkExperienceListViewModel> GetPagedListAsync(WorkExperienceSearchRequest request)
         {
-            var cities = _workExperiences.Include(a=>a.Creator).Include(a=>a.LasModifier).Include(a=>a.Title).Where(a => a.TeacherId == request.TeacherId).AsNoTracking().OrderByDescending(a => a.TenureBeginDate).AsQueryable();
+            var cities = _workExperiences.Include(a=>a.Creator).Include(a=>a.LasModifier).Include(a=>a.Title).Where(a => a.ApplicantId == request.ApplicantId).AsNoTracking().OrderByDescending(a => a.TenureBeginDate).AsQueryable();
           
             var selectedCities = cities.ProjectTo<WorkExperienceViewModel>(_mappingEngine);
 
@@ -109,11 +109,11 @@ namespace Decision.ServiceLayer.EFServiecs.TeacherInfo
             return _workExperiences.AnyAsync(a => a.Id == id);
         }
 
-        public async Task<AddWorkExperienceViewModel> GetForCreate(Guid TeacherId, string path)
+        public async Task<AddWorkExperienceViewModel> GetForCreate(Guid ApplicantId, string path)
         {
             return new AddWorkExperienceViewModel
             {
-                TeacherId = TeacherId,
+                ApplicantId = ApplicantId,
                 States = _stateService.GetAsSelectListItemAsync(null, path),
                 Cities = new List<SelectListItem>(),
                 Titles = await _titleService.GetAsSelectListItemAsync(TitleType.OrganizationPostTitle, null)

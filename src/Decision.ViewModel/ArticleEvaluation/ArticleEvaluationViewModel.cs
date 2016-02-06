@@ -5,7 +5,7 @@ using Decision.ViewModel.Common;
 namespace Decision.ViewModel.ArticleEvaluation
 {
     /// <summary>
-    /// ویومدل نمایش ارزیابی از مقاله استاد
+    /// ویومدل نمایش ارزیابی از مقاله متقاضی
     /// </summary>
     public class ArticleEvaluationViewModel : BaseViewModel
     {

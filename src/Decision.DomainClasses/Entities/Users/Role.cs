@@ -25,27 +25,19 @@ namespace Decision.DomainClasses.Entities.Users
         /// <summary>
         /// آیا گروه سیستمی هستند؟
         /// </summary>
-        public  bool IsSystemRole { get; set; }
+        public bool IsSystemRole { get; set; }
         /// <summary>
         /// برای مسائل همزمانی 
         /// </summary>
-        public  byte[] RowVersion { get; set; }
+        public byte[] RowVersion { get; set; }
         /// <summary>
         /// آیا حساب  کاربران این گروه کاربری مسدود شود؟
         /// </summary>
-        public  bool IsBanned { get; set; }
+        public bool IsBanned { get; set; }
         /// <summary>
         /// لیست دسترسی های گروه کاربری
         /// </summary>
-        public  string Permissions { get; set; }
-        /// <summary>
-        ///ساختار ایکس ام ال لیست دسترسی های گروه کاربری
-        /// </summary>
-        public XElement XmlPermission
-        {
-            get { return XElement.Parse(Permissions); }
-            set { Permissions = value.ToString(); }
-        }
+        public string Permissions { get; set; }
         #endregion
     }
 }

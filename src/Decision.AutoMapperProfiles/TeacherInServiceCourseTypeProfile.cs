@@ -2,27 +2,27 @@
 using System.Web.Mvc;
 using AutoMapper;
 using Decision.AutoMapperProfiles.Extentions;
-using Decision.DomainClasses.Entities.TeacherInfo;
-using Decision.ViewModel.TeacherInServiceCourseType;
+using Decision.DomainClasses.Entities.ApplicantInfo;
+using Decision.ViewModel.ApplicantInServiceCourseType;
 
 namespace Decision.AutoMapperProfiles
 {
     /// <summary>
     /// تنظیمات مربوط به
     /// AutoMapper 
-    /// برای کلاس تعداد ساعت یک نوع ضمن خدمت برای استاد 
+    /// برای کلاس تعداد ساعت یک نوع ضمن خدمت برای متقاضی 
     /// </summary>
-    public class TeacherInServiceCourseTypeProfile : Profile
+    public class ApplicantInServiceCourseTypeProfile : Profile
     {
         protected override void Configure()
         {
-            CreateMap<AddTeacherInServiceCourseTypeViewModel, TeacherInServiceCourseType>()
+            CreateMap<AddApplicantInServiceCourseTypeViewModel, ApplicantInServiceCourseType>()
                   
                 .IgnoreAllNonExisting();
-            CreateMap<EditTeacherInServiceCourseTypeViewModel, TeacherInServiceCourseType>().ForMember(d => d.LastModifiedDate, m => m.MapFrom(a => DateTime.Now)).IgnoreAllNonExisting();
-            CreateMap<TeacherInServiceCourseType, EditTeacherInServiceCourseTypeViewModel>().IgnoreAllNonExisting();
+            CreateMap<EditApplicantInServiceCourseTypeViewModel, ApplicantInServiceCourseType>().ForMember(d => d.LastModifiedDate, m => m.MapFrom(a => DateTime.Now)).IgnoreAllNonExisting();
+            CreateMap<ApplicantInServiceCourseType, EditApplicantInServiceCourseTypeViewModel>().IgnoreAllNonExisting();
 
-            CreateMap<TeacherInServiceCourseType, TeacherInServiceCourseTypeViewModel>()
+            CreateMap<ApplicantInServiceCourseType, ApplicantInServiceCourseTypeViewModel>()
                 .ForMember(d => d.CreatorUserName, m => m.MapFrom(s => s.Creator.UserName))
                 .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.LasModifier.UserName))
                 .ForMember(d => d.InServiceCourseTypeTitleName, m => m.MapFrom(s => s.InServiceCourseTypeTitle.Name));

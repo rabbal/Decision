@@ -6,7 +6,7 @@
         @using (Html.BeginForm(MVC.EntireEvaluation.Create(), FormMethod.Post, new { @class = "form-horizontal", id = "createEntireEvaluationForm", autocomplete = "off", enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
-            @Html.HiddenFor(model => model.TeacherId)
+            @Html.HiddenFor(model => model.ApplicantId)
             @Html.HiddenFor(model => model.AttachmentScan)
 
             <div class="form-group">

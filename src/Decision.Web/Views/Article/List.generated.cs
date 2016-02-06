@@ -51,7 +51,7 @@ namespace ASP
             
             #line 3 "..\..\Views\Article\List.cshtml"
   
-    ViewBag.Title = "لیست مقالات استاد";
+    ViewBag.Title = "لیست مقالات متقاضی";
 
             
             #line default
@@ -145,7 +145,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 29 "..\..\Views\Article\List.cshtml"
-               Html.RenderPartial(MVC.Article.Views.ViewNames._Create, new AddArticleViewModel { TeacherId = Model.SearchRequest.TeacherId });
+               Html.RenderPartial(MVC.Article.Views.ViewNames._Create, new AddArticleViewModel { ApplicantId = Model.SearchRequest.ApplicantId });
             
             #line default
             #line hidden
@@ -189,11 +189,11 @@ WriteLiteral(">\r\n                <button");
 
 WriteLiteral(" data-page=\"2\"");
 
-WriteLiteral(" data-json=\'{\"TeacherId\":\"");
+WriteLiteral(" data-json=\'{\"ApplicantId\":\"");
 
             
             #line 40 "..\..\Views\Article\List.cshtml"
-                                                          Write(Model.SearchRequest.TeacherId);
+                                                          Write(Model.SearchRequest.ApplicantId);
 
             
             #line default
@@ -258,7 +258,7 @@ WriteLiteral("\r\n");
             #line hidden
             
             #line 57 "..\..\Views\Article\List.cshtml"
-      Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.SearchRequest.TeacherId);
+      Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.SearchRequest.ApplicantId);
             
             #line default
             #line hidden

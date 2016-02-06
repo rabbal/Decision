@@ -6,7 +6,7 @@ namespace Decision.ViewModel.ArticleEvaluation
     public class ArticleEvaluationSearchRequest : BaseSearchRequest
     {
         public Guid ArticleId { get; set; }
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
 
     }
 }

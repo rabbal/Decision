@@ -22,8 +22,8 @@
                 <small>@Model.ArticleDetails.ArticleCode.GetPersianNumber()</small>
             </div>
             <div class="col-md-3">
-                <label class="text-muted">استاد مربوطه :</label>
-                <small>@Model.ArticleDetails.TeacherFullName</small>
+                <label class="text-muted">متقاضی مربوطه :</label>
+                <small>@Model.ArticleDetails.ApplicantFullName</small>
             </div>
             <div class="col-md-3">
                 <label class="text-muted">کل امتیاز :</label>
@@ -41,7 +41,7 @@
             <div class="col-md-offset-2 col-md-8">
                 <button data-page="2" data-container="#evaluationList"
                         data-progress="#progress"
-                        data-json='{"ArticleId":"@Model.Request.ArticleId","TeacherId":"@Model.ArticleDetails.TeacherId"}'
+                        data-json='{"ArticleId":"@Model.Request.ArticleId","ApplicantId":"@Model.ArticleDetails.ApplicantId"}'
                         data-load-url="@Url.Action(MVC.ArticleEvaluation.ListAjax())"
                         onclick="justPaging(this)" class="btn btn-info btn-block btn-sm" type="button">
                     بیشتر
@@ -60,6 +60,6 @@
 
 @Html.SideBarSecureActionLink("درج ارزیاب", Url.Action(MVC.Appraiser.List()), "list-group-item second-split", "fa fa-plus", AssignableToRolePermissions.CanManageAppraiser)
 
- @{Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.ArticleDetails.TeacherId);}
+ @{Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.ArticleDetails.ApplicantId);}
 
 }

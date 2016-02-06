@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
-using Decision.DomainClasses.Entities.TeacherInfo;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Common;
 
 namespace Decision.ViewModel.EducationalExperience
@@ -57,10 +57,10 @@ namespace Decision.ViewModel.EducationalExperience
         public EducationalExperienceType Type { get; set; }
 
         /// <summary>
-        /// آی دی استاد مرتبط با سابقه تدریس
+        /// آی دی متقاضی مرتبط با سابقه تدریس
         /// </summary>
         [Required]
-        public Guid TeacherId { get; set; }
+        public Guid ApplicantId { get; set; }
 
         /// <summary>
         ///آی دی عنوان تدریس شده یا درس

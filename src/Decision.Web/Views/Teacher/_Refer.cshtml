@@ -1,16 +1,16 @@
 ﻿
-@model Decision.ViewModel.ReferentialTeacher.AddReferentialTeacherViewModel
+@model Decision.ViewModel.ReferentialApplicant.AddReferentialApplicantViewModel
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header  alert alert-success">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h6 class="modal-title">ارجاع استاد</h6>
+            <h6 class="modal-title">ارجاع متقاضی</h6>
         </div>
         <div class="modal-body">
-            @using (Ajax.BeginForm(MVC.Teacher.Refer(), new AjaxOptions { HttpMethod = "POST", OnComplete = "postOnComplete(xhr, status,'Teacher-"+Model.TeacherId+"', '#modal','referForm','#referButton')" }, new { @class = "form-horizontal", id = "referForm", autocomplete = "off" }))
+            @using (Ajax.BeginForm(MVC.Applicant.Refer(), new AjaxOptions { HttpMethod = "POST", OnComplete = "postOnComplete(xhr, status,'Applicant-"+Model.ApplicantId+"', '#modal','referForm','#referButton')" }, new { @class = "form-horizontal", id = "referForm", autocomplete = "off" }))
             {
                 @Html.AntiForgeryToken()
-                @Html.HiddenFor(a=>a.TeacherId)
+                @Html.HiddenFor(a=>a.ApplicantId)
                 <div class="row">
                     <div class="form-group">
                         @Html.LabelFor(m => m.ReferencedToId, new { @class = "col-md-2 control-label" })

@@ -55,10 +55,10 @@ namespace Decision.ViewModel.Interview
         public  HttpPostedFileBase AttachmentFile { get; set; }
 
         /// <summary>
-        /// آی دی استاد مصاحبه شده
+        /// آی دی متقاضی مصاحبه شده
         /// </summary>
        [Required]
-        public  Guid TeacherId { get; set; }
+        public  Guid ApplicantId { get; set; }
 
         /// <summary>
         /// آی دی مصاحبه کننده ها

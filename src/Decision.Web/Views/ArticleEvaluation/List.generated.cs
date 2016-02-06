@@ -132,11 +132,11 @@ WriteLiteral(">\r\n                <label");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">استاد مربوطه :</label>\r\n                <small>");
+WriteLiteral(">متقاضی مربوطه :</label>\r\n                <small>");
 
             
             #line 26 "..\..\Views\ArticleEvaluation\List.cshtml"
-                  Write(Model.ArticleDetails.TeacherFullName);
+                  Write(Model.ArticleDetails.ApplicantFullName);
 
             
             #line default
@@ -211,11 +211,11 @@ WriteLiteral("\r\n                        data-json=\'{\"ArticleId\":\"");
             
             #line default
             #line hidden
-WriteLiteral("\",\"TeacherId\":\"");
+WriteLiteral("\",\"ApplicantId\":\"");
 
             
             #line 44 "..\..\Views\ArticleEvaluation\List.cshtml"
-                                                                                   Write(Model.ArticleDetails.TeacherId);
+                                                                                   Write(Model.ArticleDetails.ApplicantId);
 
             
             #line default
@@ -294,7 +294,7 @@ WriteLiteral("\r\n\r\n");
             #line hidden
             
             #line 63 "..\..\Views\ArticleEvaluation\List.cshtml"
-   Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder, Model.ArticleDetails.TeacherId);
+   Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.ArticleDetails.ApplicantId);
             
             #line default
             #line hidden

@@ -1,15 +1,15 @@
 ﻿@using AttributeRouting.Helpers
 @using Decision.DomainClasses.Entities.Common
-@using Decision.DomainClasses.Entities.TeacherInfo
+@using Decision.DomainClasses.Entities.ApplicantInfo
 
 
-@model Decision.ViewModel.Teacher.TeacherDetailsViewModel
+@model Decision.ViewModel.Applicant.ApplicantDetailsViewModel
 @{
-    ViewBag.Title = "مشاهده جزئیات استاد";
+    ViewBag.Title = "مشاهده جزئیات متقاضی";
 }
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">اطلاعات استاد</h3>
+        <h3 class="panel-title">اطلاعات متقاضی</h3>
     </div>
     <div class="panel-body">
         <div class="row">
@@ -78,13 +78,13 @@
                             <div class="col-md-3">
                                 <label for="birthCertificate">لینک دانلود کپی شناسنامه:</label>
                                 <small id="birthCertificate">
-                                    @Html.ActionLink("بارگذاری", MVC.Teacher.GetTeacherFile(Model.Id, "birthCertificate"))
+                                    @Html.ActionLink("بارگذاری", MVC.Applicant.GetApplicantFile(Model.Id, "birthCertificate"))
                                 </small>
                             </div>
                             <div class="col-md-3">
                                 <label for="nationalCode">لینک دانلود کپی کارت ملی:</label>
                                 <small id="nationalCode">
-                                    @Html.ActionLink("بارگذاری", MVC.Teacher.GetTeacherFile(Model.Id, "nationalCode"))
+                                    @Html.ActionLink("بارگذاری", MVC.Applicant.GetApplicantFile(Model.Id, "nationalCode"))
                                 </small>
                             </div>
                             <div class="col-md-3">
@@ -113,7 +113,7 @@
                         </h3>
                         <div class="row">
                             <div class="col-md-3">
-                                <label for="CollegiateOrder">پایه استاد:</label>
+                                <label for="CollegiateOrder">پایه متقاضی:</label>
                                 <small id="CollegiateOrder">@Model.CollegiateOrder.GetPersianNumber()</small>
                             </div>
                             <div class="col-md-3">
@@ -155,7 +155,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <label for="PositionName">سمت استاد:</label>
+                                <label for="PositionName">سمت متقاضی:</label>
                                 <small id="PositionName">@Model.PositionName</small>
                             </div>
                             <div class="col-md-6">
@@ -233,5 +233,5 @@
 </div>
 
 @section Menu{
-    @{Html.RenderPartial(MVC.Teacher.Views._TeacherRelatedLinksBuilder,Model.Id);}
+    @{Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder,Model.Id);}
 }

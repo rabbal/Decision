@@ -26,62 +26,62 @@ namespace Decision.DomainClasses.Entities.PrivateMessage
         /// <summary>
         /// gets or sets identifier of record
         /// </summary>
-        public virtual Guid Id { get; set; }
+        public  Guid Id { get; set; }
         /// <summary>
         /// represents this conversaion is seen
         /// </summary>
-        public virtual bool IsRead { get; set; }
+        public  bool IsRead { get; set; }
         /// <summary>
         /// gets or sets subject of this conversation
         /// </summary>
-        public virtual string Subject { get; set; }
+        public  string Subject { get; set; }
         /// <summary>
         /// gets or sets Date that this record added
         /// </summary>
-        public virtual DateTime SentOn { get; set; }
+        public  DateTime SentOn { get; set; }
         /// <summary>
         /// indicate this record deleted by sender
         /// </summary>
-        public virtual bool DeletedBySender { get; set; }
+        public  bool DeletedBySender { get; set; }
         /// <summary>
         /// indicate this record deleted by receiver
         /// </summary>
-        public virtual bool DeletedByReceiver { get; set; }
+        public  bool DeletedByReceiver { get; set; }
         /// <summary>
         /// gets or sets Messagescount that Unread  by sender of this conversation
         /// </summary>
-        public virtual int UnReadSenderMessagesCount { get; set; }
+        public  int UnReadSenderMessagesCount { get; set; }
         /// <summary>
         /// gets or sets Messagescount that Unread  by receiver of this conversation
         /// </summary>
-        public virtual int UnReadReceiverMessagesCount { get; set; }
+        public  int UnReadReceiverMessagesCount { get; set; }
         /// <summary>
         /// gets or sets Messagescount of this conversation for increase performance
         /// </summary>
-        public virtual int MessagesCount { get; set; }
+        public  int MessagesCount { get; set; }
         #endregion
 
         #region NavigationProperties
         /// <summary>
         /// gets or sets if of  user that start this conversation
         /// </summary>
-        public virtual long SenderId { get; set; }
+        public  long SenderId { get; set; }
         /// <summary>
         /// gets or sets user that start this conversation
         /// </summary>
-        public virtual User Sender { get; set; }
+        public  User Sender { get; set; }
         /// <summary>
         /// gets or sets id of  user that is recipient
         /// </summary>
-        public virtual long ReceiverId { get; set; }
+        public  long ReceiverId { get; set; }
         /// <summary>
         /// gets or sets   user that is recipient
         /// </summary>
-        public virtual User Receiver { get; set; }
+        public  User Receiver { get; set; }
         /// <summary>
         /// get or set Messages of this conversation
         /// </summary>
-        public virtual ICollection<Message> Messages { get; set; }
+        public  ICollection<Message> Messages { get; set; }
         #endregion
     }
 }

@@ -3,7 +3,7 @@
 namespace Decision.ViewModel.EntireEvaluation
 {
     /// <summary>
-    /// ویو مدل نمایش لیست ارزیابی از استاد ها
+    /// ویو مدل نمایش لیست ارزیابی از متقاضی ها
     /// </summary>
     public class EntireEvaluationListViewModel
     {
@@ -12,7 +12,7 @@ namespace Decision.ViewModel.EntireEvaluation
         /// </summary>
         public EntireEvaluationSearchRequest SearchRequest { get; set; }
         /// <summary>
-        /// لیست ویو مدل نمایش ارزیابی از استاد
+        /// لیست ویو مدل نمایش ارزیابی از متقاضی
         /// </summary>
         public IEnumerable<EntireEvaluationViewModel> EntireEvaluations { get; set; }
     }

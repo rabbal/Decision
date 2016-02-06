@@ -20,7 +20,7 @@ namespace ASP
     using System.Web;
     using System.Web.Helpers;
     
-    #line 3 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
+    #line 3 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
     using System.Web.Mvc;
     
     #line default
@@ -34,7 +34,7 @@ namespace ASP
     using System.Web.WebPages;
     using Decision.Common.MVC;
     
-    #line 4 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
+    #line 4 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
     using Decision.ServiceLayer.Security;
     
     #line default
@@ -45,17 +45,17 @@ namespace ASP
     using MvcSiteMapProvider.Web.Html.Models;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Teacher/_TeacherRelatedLinksBuilder.cshtml")]
-    public partial class _Views_Teacher__TeacherRelatedLinksBuilder_cshtml : System.Web.Mvc.WebViewPage<Guid>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Applicant/_ApplicantRelatedLinksBuilder.cshtml")]
+    public partial class _Views_Applicant__ApplicantRelatedLinksBuilder_cshtml : System.Web.Mvc.WebViewPage<Guid>
     {
-        public _Views_Teacher__TeacherRelatedLinksBuilder_cshtml()
+        public _Views_Applicant__ApplicantRelatedLinksBuilder_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 5 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
-Write(Html.SideBarSecureActionLink("فرم مشخصات استاد", Url.Action(MVC.Teacher.Details(Model)), "list-group-item thrid-split", "fa fa-eye",AssignableToRolePermissions.CanViewTeacherDetails));
+            #line 5 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
+Write(Html.SideBarSecureActionLink("فرم مشخصات متقاضی", Url.Action(MVC.Applicant.Details(Model)), "list-group-item thrid-split", "fa fa-eye",AssignableToRolePermissions.CanViewApplicantDetails));
 
             
             #line default
@@ -63,8 +63,8 @@ Write(Html.SideBarSecureActionLink("فرم مشخصات استاد", Url.Action(
 WriteLiteral("\r\n\r\n");
 
             
-            #line 7 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
-Write(Html.SideBarSecureActionLink("فرم ویرایش استاد", Url.Action(MVC.Teacher.Edit(Model)), "list-group-item thrid-split", "fa fa-edit", AssignableToRolePermissions.CanEditTeacher));
+            #line 7 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
+Write(Html.SideBarSecureActionLink("فرم ویرایش متقاضی", Url.Action(MVC.Applicant.Edit(Model)), "list-group-item thrid-split", "fa fa-edit", AssignableToRolePermissions.CanEditApplicant));
 
             
             #line default
@@ -72,7 +72,7 @@ Write(Html.SideBarSecureActionLink("فرم ویرایش استاد", Url.Action(
 WriteLiteral("\r\n\r\n");
 
             
-            #line 9 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
+            #line 9 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
 Write(Html.SideBarSecureActionLink("آدرس ها", Url.Action(MVC.Address.List(Model)), "list-group-item second-split", "fa fa-map-marker", AssignableToRolePermissions.CanManageAddress));
 
             
@@ -81,7 +81,7 @@ Write(Html.SideBarSecureActionLink("آدرس ها", Url.Action(MVC.Address.List(
 WriteLiteral("\r\n\r\n");
 
             
-            #line 11 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
+            #line 11 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
 Write(Html.SideBarSecureActionLink("اولویت های تصویب شده", Url.Action(MVC.AdoptedPriority.List(Model)), "list-group-item second-split", "fa fa-list-ul", AssignableToRolePermissions.CanManageAddoptedPriority));
 
             
@@ -90,7 +90,7 @@ Write(Html.SideBarSecureActionLink("اولویت های تصویب شده", Url.
 WriteLiteral("\r\n\r\n");
 
             
-            #line 13 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
+            #line 13 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
 Write(Html.SideBarSecureActionLink("سوابق تحصیلی", Url.Action(MVC.EducationalBackground.List(Model)), "list-group-item second-split", "fa fa-graduation-cap", AssignableToRolePermissions.CanManageEducationalBackground));
 
             
@@ -99,7 +99,7 @@ Write(Html.SideBarSecureActionLink("سوابق تحصیلی", Url.Action(MVC.Edu
 WriteLiteral("\r\n\r\n");
 
             
-            #line 15 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
+            #line 15 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
 Write(Html.SideBarSecureActionLink("لیست مقالات", Url.Action(MVC.Article.List(Model)), "list-group-item second-split", "fa fa-th-list", AssignableToRolePermissions.CanManageArticle));
 
             
@@ -108,7 +108,7 @@ Write(Html.SideBarSecureActionLink("لیست مقالات", Url.Action(MVC.Artic
 WriteLiteral("\r\n\r\n");
 
             
-            #line 17 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
+            #line 17 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
 Write(Html.SideBarSecureActionLink("موضوعات مورد علاقه", Url.Action(MVC.FavoriteIssue.List(Model)), "list-group-item second-split", "fa fa-gratipay", AssignableToRolePermissions.CanManageFavoriteIssue));
 
             
@@ -117,7 +117,7 @@ Write(Html.SideBarSecureActionLink("موضوعات مورد علاقه", Url.Act
 WriteLiteral("\r\n\r\n");
 
             
-            #line 19 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
+            #line 19 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
 Write(Html.SideBarSecureActionLink("مصاحبه ها", Url.Action(MVC.Interview.List(Model)), "list-group-item second-split", "fa fa-comments", AssignableToRolePermissions.CanManageInterview));
 
             
@@ -126,7 +126,7 @@ Write(Html.SideBarSecureActionLink("مصاحبه ها", Url.Action(MVC.Interview
 WriteLiteral("\r\n\r\n");
 
             
-            #line 21 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
+            #line 21 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
 Write(Html.SideBarSecureActionLink("سوابق تدریس سازمانی", Url.Action(MVC.OrganizationalTeaching.List(Model)), "list-group-item second-split", "fa fa-balance-scale", AssignableToRolePermissions.CanManageOrganizationalTeaching));
 
             
@@ -135,7 +135,7 @@ Write(Html.SideBarSecureActionLink("سوابق تدریس سازمانی", Url.A
 WriteLiteral("\r\n\r\n");
 
             
-            #line 23 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
+            #line 23 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
 Write(Html.SideBarSecureActionLink("سوابق تدریس علمی", Url.Action(MVC.ScientificTeaching.List(Model)), "list-group-item second-split", "fa fa-university", AssignableToRolePermissions.CanManageScientificTeaching));
 
             
@@ -144,7 +144,7 @@ Write(Html.SideBarSecureActionLink("سوابق تدریس علمی", Url.Action(
 WriteLiteral("\r\n\r\n");
 
             
-            #line 25 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
+            #line 25 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
 Write(Html.SideBarSecureActionLink("سوابق پژوهشی", Url.Action(MVC.ResearchExperience.List(Model)), "list-group-item second-split", "fa fa-leanpub", AssignableToRolePermissions.CanManageResearchExperience));
 
             
@@ -153,7 +153,7 @@ Write(Html.SideBarSecureActionLink("سوابق پژوهشی", Url.Action(MVC.Res
 WriteLiteral("\r\n\r\n");
 
             
-            #line 27 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
+            #line 27 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
 Write(Html.SideBarSecureActionLink("سوابق کاری", Url.Action(MVC.WorkExperience.List(Model)), "list-group-item second-split", "fa fa-list-alt", AssignableToRolePermissions.CanManageWorkExperience));
 
             
@@ -162,7 +162,7 @@ Write(Html.SideBarSecureActionLink("سوابق کاری", Url.Action(MVC.WorkExp
 WriteLiteral("\r\n\r\n");
 
             
-            #line 29 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
+            #line 29 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
 Write(Html.SideBarSecureActionLink("ارزیابی های به عمل آمده", Url.Action(MVC.EntireEvaluation.List(Model)), "list-group-item second-split", "fa fa-list", AssignableToRolePermissions.CanManageWorkExperience));
 
             
@@ -171,8 +171,8 @@ Write(Html.SideBarSecureActionLink("ارزیابی های به عمل آمده",
 WriteLiteral("\r\n\r\n");
 
             
-            #line 31 "..\..\Views\Teacher\_TeacherRelatedLinksBuilder.cshtml"
-Write(Html.SideBarSecureActionLink("دوره های ضمن خدمت", Url.Action(MVC.TeacherInServiceCourseType.List(Model)), "list-group-item second-split", "fa fa-list", AssignableToRolePermissions.CanManageTeacherInServiceCourseType));
+            #line 31 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
+Write(Html.SideBarSecureActionLink("دوره های ضمن خدمت", Url.Action(MVC.ApplicantInServiceCourseType.List(Model)), "list-group-item second-split", "fa fa-list", AssignableToRolePermissions.CanManageApplicantInServiceCourseType));
 
             
             #line default
