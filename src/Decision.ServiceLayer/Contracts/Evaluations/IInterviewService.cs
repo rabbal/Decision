@@ -21,7 +21,6 @@ namespace Decision.ServiceLayer.Contracts.Evaluations
         /// </summary>
         /// <param name="id">آی دی مصاحبه</param>
         Task DeleteAsync(Guid id);
-
         /// <summary>
         /// ویرایش مصاحبه
         /// </summary>

@@ -21,13 +21,13 @@ namespace Decision.Common.Controller
             object actualValue = null;
             try
             {
-                var value = valueResult.AttemptedValue.Replace("/",".");
+                var value = valueResult.AttemptedValue.GetEnglishNumber();
                 actualValue = decimal.Parse(value,
                     CultureInfo.InvariantCulture);
             }
             catch (FormatException e)
             {
-                modelState.Errors.Add("عدد مورد نظر به شکل صحیح (به عنوان مثال 4.44) وارد کنید");
+                modelState.Errors.Add("عدد مورد نظر به شکل صحیح (به عنوان مثال [۱۲/۱۱]) وارد کنید");
             }
 
             bindingContext.ModelState.Add(bindingContext.ModelName, modelState);

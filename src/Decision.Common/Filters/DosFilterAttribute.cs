@@ -4,8 +4,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Decision.Common.Caching;
-using Decision.Common.Helpers.Extentions;
-using Decision.Common.Helpers.Http;
+using Decision.Common.Extentions;
 
 namespace Decision.Common.Filters
 {
@@ -39,30 +38,25 @@ namespace Decision.Common.Filters
         /// show this.Seconds in the message, e.g. "Wait {n} seconds before trying again".
         /// </summary>
         public string Message { get; set; }
-        static readonly object ProcessLocker = new object();
         public override void OnActionExecuting(ActionExecutingContext actionContext)
         {
             var key = string.Concat(Name, "-", actionContext.HttpContext.Request.GetIp());
             var allowExecute = false;
 
-            lock (ProcessLocker)
+            if (ContextBase.CacheRead(key) == null)
             {
-                if (ContextBase.CacheRead(key) == null)
-                {
-                    ContextBase.CacheInsertWithSeconds(key, true, Seconds);
-                    allowExecute = true;
-                }
-
-                if (allowExecute) return;
-
-                if (!Message.HasValue())
-                    Message = "You may only perform this action every {n} seconds.";
-
-                actionContext.Result = new ContentResult { Content = Message.Replace("{n}", Seconds.ToString(CultureInfo.InvariantCulture)) };
-                // see 429 - Rate Limit Exceeded HTTP error
-                actionContext.HttpContext.Response.StatusCode = 429;
+                ContextBase.CacheInsertWithSeconds(key, true, Seconds);
+                allowExecute = true;
             }
-            
+
+            if (allowExecute) return;
+
+            if (!Message.HasValue())
+                Message = "You may only perform this action every {n} seconds.";
+
+            actionContext.Result = new ContentResult { Content = Message.Replace("{n}", Seconds.ToString(CultureInfo.InvariantCulture)) };
+            // see 429 - Rate Limit Exceeded HTTP error
+            actionContext.HttpContext.Response.StatusCode = 429;
         }
 
     }

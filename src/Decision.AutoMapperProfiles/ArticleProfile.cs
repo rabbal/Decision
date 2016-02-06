@@ -16,31 +16,26 @@ namespace Decision.AutoMapperProfiles
         {
             CreateMap<AddArticleViewModel, Article>()
                 .ForMember(d => d.Brief, m => m.MapFrom(a => a.Brief.ToPersianContent(true)))
-                .ForMember(d => d.Content, m => m.MapFrom(a => a.Content.ToPersianContent(true)))
-                .ForMember(d => d.Code, m => m.MapFrom(a => a.Code.GetPersianNumbers()))
                 .IgnoreAllNonExisting();
+
             CreateMap<EditArticleViewModel, Article>()
-                  .ForMember(d => d.Brief, m => m.MapFrom(a => a.Brief.ToPersianContent(true)))
-                .ForMember(d => d.Content, m => m.MapFrom(a => a.Content.ToPersianContent(true)))
-                .ForMember(d => d.Code, m => m.MapFrom(a => a.Code.GetPersianNumbers()))
-                .ForMember(d => d.LastModifiedDate, m => m.MapFrom(a => DateTime.Now)).IgnoreAllNonExisting();
+                .ForMember(d => d.Brief, m => m.MapFrom(a => a.Brief.ToPersianContent(true)))
+                .IgnoreAllNonExisting();
+
             CreateMap<Article, EditArticleViewModel>()
                 .IgnoreAllNonExisting();
+
             CreateMap<Article, ArticleDetails>()
                 .ForMember(d => d.ApplicantFullName, m => m.MapFrom(s => s.Applicant.FirstName + " " + s.Applicant.LastName))
-                .ForMember(d => d.ArticleCode, m => m.MapFrom(s => s.Code))
                 .ForMember(d => d.TotalScore, m => m.UseValue(100f)).IgnoreAllNonExisting();
 
             CreateMap<Article, ArticleViewModel>()
-                .ForMember(d => d.CreatorUserName, m => m.MapFrom(s => s.Creator.UserName))
-                .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.LasModifier.UserName))
+                .ForMember(d => d.CreatorUserName, m => m.MapFrom(s => s.CreatedBy.UserName))
+                .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.ModifiedBy.UserName))
                 .IgnoreAllNonExisting();
 
         }
 
-        public override string ProfileName
-        {
-            get { return GetType().Name; }
-        }
+        public override string ProfileName => GetType().Name;
     }
 }

@@ -1,10 +1,9 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Timers;
 using System.Web;
-using Decision.Common.Helpers.Extentions;
-using Decision.Common.Helpers.Http;
+using Decision.Common.Extentions;
 using Timer = System.Timers.Timer;
 
 namespace Decision.Common.HttpModules

@@ -47,10 +47,7 @@ namespace Decision.Common.Filters
         #endregion
 
         #region IsLocalRequest
-        private bool IsLocalRequest
-        {
-            get { return _request.IsLocal; }
-        }
+        private bool IsLocalRequest => _request.IsLocal;
 
         #endregion
 

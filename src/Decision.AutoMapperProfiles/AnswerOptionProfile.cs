@@ -22,9 +22,6 @@ namespace Decision.AutoMapperProfiles
             CreateMap<AnswerOption, AnswerOptionViewModel>().IgnoreAllNonExisting();
         }
 
-        public override string ProfileName
-        {
-            get { return GetType().Name; }
-        }
+        public override string ProfileName => GetType().Name;
     }
 }

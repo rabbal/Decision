@@ -31,9 +31,6 @@ namespace Decision.AutoMapperProfiles
                 .ForMember(d => d.Value, m => m.MapFrom(s => s.Id)).IgnoreAllNonExisting();
         }
 
-        public override string ProfileName
-        {
-            get { return this.GetType().Name; }
-        }
+        public override string ProfileName => this.GetType().Name;
     }
 }

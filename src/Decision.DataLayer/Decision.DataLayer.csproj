@@ -63,8 +63,10 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\BaseDbContext.cs" />
     <Compile Include="Context\ApplicationDbContext.cs" />
     <Compile Include="Context\IUnitOfWork.cs" />
     <Compile Include="Migrations\201510160239047_Initial.cs" />

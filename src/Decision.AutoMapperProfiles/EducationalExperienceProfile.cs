@@ -20,17 +20,18 @@ namespace Decision.AutoMapperProfiles
         protected override void Configure()
         {
             CreateMap<AddEducationalExperienceViewModel, EducationalExperience>()
-                .ForMember(d => d.Description, m => m.MapFrom(a => a.Description.ToPersianContent(true)))
                 .IgnoreAllNonExisting();
+
             CreateMap<EditEducationalExperienceViewModel, EducationalExperience>()
-                .ForMember(d => d.Description, m => m.MapFrom(a => a.Description.ToPersianContent(true)))
-                .ForMember(d => d.LastModifiedDate, m => m.MapFrom(a => DateTime.Now)).IgnoreAllNonExisting();
+                .ForMember(d => d.InstitutionAddress, m => m.MapFrom(a => a.Description.ToPersianContent(true)))
+                .IgnoreAllNonExisting();
+
             CreateMap<EducationalExperience, EditEducationalExperienceViewModel>().IgnoreAllNonExisting();
 
             CreateMap<EducationalExperience, EducationalExperienceViewModel>()
-                .ForMember(d=>d.CreatorUserName,m=>m.MapFrom(s=>s.Creator.UserName))
-                .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.LasModifier.UserName))
-                .ForMember(d => d.TitleName, m => m.MapFrom(s => s.Title.Name)).IgnoreAllNonExisting();
+                .ForMember(d=>d.CreatorUserName,m=>m.MapFrom(s=>s.CreatedBy.UserName))
+                .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.ModifiedBy.UserName))
+                .IgnoreAllNonExisting();
         }
 
         public override string ProfileName

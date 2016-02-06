@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using System.Web;
 using System.Web.Mvc;
 
@@ -23,17 +19,34 @@ namespace Decision.Common.Controller
 
             if (!string.IsNullOrEmpty(_resouceType))
             {
-                var pathInfo = "." + _resouceType;
-                HttpContext.Current.RewritePath(PathForStylesheet(), pathInfo, HttpContext.Current.Request.QueryString.ToString());
+                var pathInfo = "/" + _resouceType;
+                context.HttpContext.RewritePath(FilePath(context), pathInfo,
+                    context.HttpContext.Request.QueryString.ToString());
             }
 
-            var httpHandler = factory.GetHandler(HttpContext.Current, null, null, null);
-            httpHandler?.ProcessRequest(HttpContext.Current);
+            var currentApplication = (HttpApplication) context.HttpContext.GetService(typeof (HttpApplication));
+            if (currentApplication == null) return;
+            var currentContext = currentApplication.Context;
+
+            var httpHandler = factory.GetHandler(currentContext, null, null, null);
+            var handler = httpHandler as IHttpAsyncHandler;
+            if (handler != null)
+            {
+                var asyncHttpHandler = handler;
+                asyncHttpHandler.BeginProcessRequest(currentContext, r => { }, null);
+            }
+            else
+            {
+                httpHandler?.ProcessRequest(currentContext);
+            }
         }
 
-        private string PathForStylesheet()
+        private string FilePath(ControllerContext context)
         {
-            return _resouceType != "stylesheet" ? HttpContext.Current.Request.Path.Replace($"/{_resouceType}", string.Empty) : HttpContext.Current.Request.Path;
+            return _resouceType != "stylesheet"
+                ? context.HttpContext.Request.Path.Replace($"/{_resouceType}", string.Empty)
+                : context.HttpContext.Request.Path;
         }
+
     }
 }

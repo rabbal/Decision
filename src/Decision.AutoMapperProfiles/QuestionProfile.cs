@@ -16,19 +16,16 @@ namespace Decision.AutoMapperProfiles
         protected override void Configure()
         {
             CreateMap<AddQuestionViewModel, Question>().IgnoreAllNonExisting();
-            CreateMap<EditQuestionViewModel, Question>().ForMember(d => d.LastModifiedDate, m => m.MapFrom(a => DateTime.Now)).IgnoreAllNonExisting();
+            CreateMap<EditQuestionViewModel, Question>().IgnoreAllNonExisting();
             CreateMap<Question, EditQuestionViewModel>().IgnoreAllNonExisting();
 
             CreateMap<Question, QuestionViewModel>()
-                .ForMember(d => d.CreatorUserName, m => m.MapFrom(s => s.Creator.UserName))
-                .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.LasModifier.UserName))
+                .ForMember(d => d.CreatorUserName, m => m.MapFrom(s => s.CreatedBy.UserName))
+                .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.ModifiedBy.UserName))
                 .ForMember(d => d.Options, m => m.MapFrom(s => s.AnswerOptions))
                 .IgnoreAllNonExisting();
         }
 
-        public override string ProfileName
-        {
-            get { return GetType().Name; }
-        }
+        public override string ProfileName => GetType().Name;
     }
 }

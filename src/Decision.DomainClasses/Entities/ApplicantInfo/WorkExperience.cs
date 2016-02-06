@@ -62,14 +62,6 @@ namespace Decision.DomainClasses.Entities.ApplicantInfo
         /// آی دی متقاضی مربوط به این سابقه کاری
         /// </summary>
         public Guid ApplicantId { get; set; }
-        /// <summary>
-        /// عنوان پست سازمانی
-        /// </summary>
-        public Title Title { get; set; }
-        /// <summary>
-        /// آی دی عنوان پست سازمانی
-        /// </summary>
-        public Guid TitleId { get; set; }
         #endregion
     }
 }

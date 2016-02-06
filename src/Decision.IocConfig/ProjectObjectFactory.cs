@@ -22,10 +22,8 @@ namespace Decision.IocConfig
         #endregion
 
         #region Container
-        public static IContainer Container
-        {
-            get { return ContainerBuilder.Value; }
-        }
+        public static IContainer Container => ContainerBuilder.Value;
+
         #endregion
 
         #region DefaultContainer

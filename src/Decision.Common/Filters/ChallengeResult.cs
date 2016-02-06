@@ -17,12 +17,8 @@ namespace Decision.Common.Filters
 
 
         #region Constructors
-        public ChallengeResult(string provider, string redirectUri)
-            : this(provider, redirectUri, null)
-        {
-        }
 
-        public ChallengeResult(string provider, string redirectUri, string userId)
+        public ChallengeResult(string provider, string redirectUri, string userId = null)
         {
             LoginProvider = provider;
             RedirectUri = redirectUri;

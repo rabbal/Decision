@@ -22,7 +22,7 @@ namespace Decision.Utility
         public static string GetEnglishNumber(this string data)
         {
             if (string.IsNullOrEmpty(data)) return string.Empty;
-            for (var i = 1776; i < 1786; i++)
+            for (var i = 1777; i < 1786; i++)
             {
                 data = data.Replace(Convert.ToChar(i), Convert.ToChar(i - 1728));
             }

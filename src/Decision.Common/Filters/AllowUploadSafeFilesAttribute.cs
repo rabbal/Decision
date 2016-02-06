@@ -44,7 +44,8 @@ namespace Decision.Common.Filters
             var files = filterContext.HttpContext.Request.Files;
             foreach (var postedFile in from string file in files select files[file] into postedFile where postedFile != null && postedFile.ContentLength != 0 where !CanUpload(postedFile.FileName) select postedFile)
             {
-                throw new InvalidOperationException(string.Format("You are not allowed to upload {0} file.", Path.GetFileName(postedFile.FileName)));
+                throw new InvalidOperationException(
+                    $"You are not allowed to upload {Path.GetFileName(postedFile.FileName)} file.");
             }
 
             base.OnActionExecuting(filterContext);

@@ -62,6 +62,10 @@ namespace Decision.DomainClasses.Entities.ApplicantInfo
         /// دانشگاه
         /// </summary>
         public string University { get; set; }
+        /// <summary>
+        /// رشته تحصیلی
+        /// </summary>
+        public string Field { get; set; }
         #endregion
 
         #region NavigationProperties
@@ -69,18 +73,6 @@ namespace Decision.DomainClasses.Entities.ApplicantInfo
         /// آی دی متقاضی صاحب مدرک
         /// </summary>
         public Guid ApplicantId { get; set; }
-        /// <summary>
-        /// آی دی موسسه آموزشی
-        /// </summary>
-        public Guid InstitutionId { get; set; }
-        /// <summary>
-        /// آی دی رشته تحصیلی
-        /// </summary>
-        public Guid StudyFieldId { get; set; }
-        /// <summary>
-        /// رشته تحصیلی
-        /// </summary>
-        public Title StudyField { get; set; }
         /// <summary>
         /// متقاضی صاحب مدرک
         /// </summary>

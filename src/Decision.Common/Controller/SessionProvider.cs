@@ -1,5 +1,5 @@
 using System.Web;
-using Decision.Common.Helpers.Extentions;
+using Decision.Common.Extentions;
 
 namespace Decision.Common.Controller
 {

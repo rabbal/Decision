@@ -18,17 +18,17 @@ namespace Decision.AutoMapperProfiles
         {
             CreateMap<AddWorkExperienceViewModel, WorkExperience>()
                 .ForMember(d => d.OfficeName, m => m.MapFrom(a => a.OfficeName.ToPersianContent(true)))
-                .
-                IgnoreAllNonExisting();
+                .IgnoreAllNonExisting();
+
             CreateMap<EditWorkExperienceViewModel, WorkExperience>()
                 .ForMember(d => d.OfficeName, m => m.MapFrom(a => a.OfficeName.ToPersianContent(true)))
-                .ForMember(d => d.LastModifiedDate, m => m.MapFrom(a => DateTime.Now)).IgnoreAllNonExisting();
+                .IgnoreAllNonExisting();
+
             CreateMap<WorkExperience, EditWorkExperienceViewModel>().IgnoreAllNonExisting();
 
             CreateMap<WorkExperience, WorkExperienceViewModel>()
-                .ForMember(d => d.TitleName, m => m.MapFrom(s => s.Title.Name))
-                .ForMember(d => d.CreatorUserName, m => m.MapFrom(s => s.Creator.UserName))
-                .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.LasModifier.UserName)).IgnoreAllNonExisting();
+                .ForMember(d => d.CreatorUserName, m => m.MapFrom(s => s.CreatedBy.UserName))
+                .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.ModifiedBy.UserName)).IgnoreAllNonExisting();
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Xml.Linq;
 using Decision.DomainClasses.Entities.Common;
 
 namespace Decision.DomainClasses.Entities.Evaluations

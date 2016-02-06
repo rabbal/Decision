@@ -4,10 +4,6 @@ using Decision.AutoMapperProfiles.Extentions;
 using Decision.DomainClasses.Entities.Evaluations;
 using Decision.ViewModel.Interview;
 using DNT.Extensions;
-
-// ReSharper disable UseStringInterpolation
-// ReSharper disable ConvertPropertyToExpressionBody
-
 namespace Decision.AutoMapperProfiles
 {
     /// <summary>
@@ -21,25 +17,18 @@ namespace Decision.AutoMapperProfiles
         {
             CreateMap<AddInterviewViewModel, Interview>()
                  .ForMember(d => d.Body, m => m.MapFrom(a => a.Body.ToPersianContent(true)))
-                 .ForMember(d => d.Brief, m => m.MapFrom(a => a.Brief.ToPersianContent(true)))
-                 
                 .IgnoreAllNonExisting();
             CreateMap<EditInterviewViewModel, Interview>()
                   .ForMember(d => d.Body, m => m.MapFrom(a => a.Body.ToPersianContent(true)))
-                 .ForMember(d => d.Brief, m => m.MapFrom(a => a.Brief.ToPersianContent(true)))
-                .ForMember(d => d.LastModifiedDate, m => m.MapFrom(a => DateTime.Now)).IgnoreAllNonExisting();
+                .IgnoreAllNonExisting();
             CreateMap<Interview, EditInterviewViewModel>().IgnoreAllNonExisting();
 
             CreateMap<Interview, InterviewViewModel>()
-                .ForMember(d => d.CreatorUserName, m => m.MapFrom(s => s.Creator.UserName))
-                .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.LasModifier.UserName))
-                .ForMember(d => d.InterviewerName,
-                    m => m.MapFrom(s => s.Interviewer.FirstName + " " + s.Interviewer.LastName)).IgnoreAllNonExisting();
+                .ForMember(d => d.CreatorUserName, m => m.MapFrom(s => s.CreatedBy.UserName))
+                .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.ModifiedBy.UserName))
+                .IgnoreAllNonExisting();
         }
 
-        public override string ProfileName
-        {
-            get { return GetType().Name; }
-        }
+        public override string ProfileName => GetType().Name;
     }
 }

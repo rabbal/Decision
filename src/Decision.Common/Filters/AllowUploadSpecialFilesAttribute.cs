@@ -22,7 +22,7 @@ namespace Decision.Common.Filters
         public AllowUploadSpecialFilesOnlyAttribute(string extensionsWhiteList, bool justImage)
         {
             if (string.IsNullOrWhiteSpace(extensionsWhiteList))
-                throw new ArgumentNullException("extensionsWhiteList");
+                throw new ArgumentNullException(nameof(extensionsWhiteList));
             _justImage = justImage;
             _extensionsWhiteList = extensionsWhiteList;
             var extensions = extensionsWhiteList.Split(',');
@@ -55,9 +55,7 @@ namespace Decision.Common.Filters
 
                 if (!CanUpload(postedFile.FileName))
                     throw new InvalidOperationException(
-                        string.Format("You are not allowed to upload {0} file. Please upload only these files: {1}.",
-                            Path.GetFileName(postedFile.FileName),
-                            _extensionsWhiteList));
+                        $"You are not allowed to upload {Path.GetFileName(postedFile.FileName)} file. Please upload only these files: {_extensionsWhiteList}.");
              
             }
 

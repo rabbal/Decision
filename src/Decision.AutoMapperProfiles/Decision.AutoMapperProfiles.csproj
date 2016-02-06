@@ -61,7 +61,6 @@
   <ItemGroup>
     <Compile Include="AddressProfile.cs" />
     <Compile Include="AnswerOptionProfile.cs" />
-    <Compile Include="AppraiserProfile.cs" />
     <Compile Include="EducationalBackgroundProfile.cs" />
     <Compile Include="EducationalExperienceProfile.cs" />
     <Compile Include="EnitreEvaluationProfile.cs" />
@@ -71,21 +70,14 @@
     <Compile Include="Extentions\StringToDateConverter.cs" />
     <Compile Include="Extentions\DateTimeToStringResolver.cs" />
     <Compile Include="Extentions\ToPersianDateTimeConverter.cs" />
-    <Compile Include="InstitutionProfile.cs" />
     <Compile Include="InterviewProfile.cs" />
-    <Compile Include="TeacherInServiceCourseTypeProfile.cs" />
-    <Compile Include="TeacherProfile.cs" />
-    <Compile Include="ArticleEvaluationProfile.cs" />
+    <Compile Include="ApplicantProfile.cs" />
     <Compile Include="ArticleProfile.cs" />
     <Compile Include="PrivateMessageProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionProfile.cs" />
-    <Compile Include="ReferentialJudgeProfile.cs" />
     <Compile Include="ResearchExperienceProfile.cs" />
     <Compile Include="RoleProfile.cs" />
-    <Compile Include="TitleProfile.cs" />
-    <Compile Include="TrainingCenterProfile.cs" />
-    <Compile Include="TrainingCourseProfile.cs" />
     <Compile Include="UserProfile.cs" />
     <Compile Include="WorkExperienceProfile.cs" />
   </ItemGroup>

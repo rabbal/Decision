@@ -17,12 +17,14 @@ namespace Decision.Common.Controller
             object actualValue = new DateTime(1900, 1, 1); //todo: توصيه شده تاريخ تولد خودتان را در اينجا قرار دهيد
             try
             {
+                var minute = int.Parse(bindingContext.ValueProvider.GetValue("Minute").AttemptedValue);
+                var hour = int.Parse(bindingContext.ValueProvider.GetValue("Hour").AttemptedValue);
                 var parts = valueResult.AttemptedValue.Split('/'); //ex. 1391/1/19
                 if (parts.Length != 3) return actualValue;
                 var year = int.Parse(parts[0]);
                 var month = int.Parse(parts[1]);
                 var day = int.Parse(parts[2]);
-                actualValue = new DateTime(year, month, day, new PersianCalendar());
+                actualValue = new DateTime(year, month, day, hour, minute, 0, new PersianCalendar());
             }
             catch (FormatException e)
             {

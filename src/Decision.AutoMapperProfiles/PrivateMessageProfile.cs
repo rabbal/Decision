@@ -17,14 +17,11 @@ namespace Decision.AutoMapperProfiles
         protected override void Configure()
         {
             CreateMap<Message, MessageViewModel>()
-                .ForMember(d => d.Attachments, m => m.MapFrom(s => s.Attachments))
                 .ForMember(d => d.SenderUserName, m => m.MapFrom(s => s.Sender.UserName))
                 .IgnoreAllNonExisting();
 
             CreateMap<List<Message>, List<MessageViewModel>>().IgnoreAllNonExisting();
-
-            CreateMap<MessageAttachment, AttachmentViewModel>().IgnoreAllNonExisting();
-           
+            
             CreateMap<Conversation, InBoxViewModel>()
                 .ForMember(d => d.SenderUserName, m => m.MapFrom(s => s.Sender.UserName)).IgnoreAllNonExisting();
 

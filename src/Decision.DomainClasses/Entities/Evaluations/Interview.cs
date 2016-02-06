@@ -11,6 +11,7 @@ namespace Decision.DomainClasses.Entities.Evaluations
     public class Interview : BaseEntity
     {
         #region Properties
+
         /// <summary>
         /// تاریخ مصاحبه
         /// </summary>

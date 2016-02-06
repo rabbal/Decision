@@ -59,7 +59,7 @@ namespace Decision.Common.HttpCompress
         /// </summary>
         /// <param name="sender">The <see cref="HttpApplication"/> that is firing this event.</param>
         /// <param name="e">Arguments to the event</param>
-        void CompressContent(object sender, EventArgs e)
+        static void CompressContent(object sender, EventArgs e)
         {
 
             var app = (HttpApplication)sender;
@@ -69,85 +69,82 @@ namespace Decision.Common.HttpCompress
             // also, we use the context to store whether or not we've attempted an add, as it's thread-safe and
             // scoped to the request.  An instance of this module can service multiple requests at the same time,
             // so we cannot use a member variable.
-            if (!app.Context.Items.Contains(InstalledKey))
+            if (app.Context.Items.Contains(InstalledKey)) return;
+            // log the install attempt in the HttpContext
+            // must do this first as several IF statements
+            // below skip full processing of this method
+            app.Context.Items.Add(InstalledKey, InstalledTag);
+
+            // get the config settings
+            var settings = Settings.GetSettings();
+
+            if (settings.CompressionLevel == CompressionLevels.None)
             {
-                // log the install attempt in the HttpContext
-                // must do this first as several IF statements
-                // below skip full processing of this method
-                app.Context.Items.Add(InstalledKey, InstalledTag);
-
-                // get the config settings
-                var settings = Settings.GetSettings();
-
-                if (settings.CompressionLevel == CompressionLevels.None)
-                {
-                    // skip if the CompressionLevel is set to 'None'
-                    return;
-                }
-
-                if (app.Request.ApplicationPath != null)
-                {
-                    var realPath = app.Request.Path.Remove(0, app.Request.ApplicationPath.Length);
-                    if (realPath.StartsWith("/"))
-                    {
-                        realPath = realPath.Substring(1);
-                    }
-                    if (settings.IsExcludedPath(realPath))
-                    {
-                        // skip if the file path excludes compression
-                        return;
-                    }
-                }
-
-                if (IsBinaryFile(app))
-                {
-                    // skip if the MimeType excludes compression
-                    return;
-                }
-
-                if (settings.IsExcludedMimeType(app.Response.ContentType))
-                {
-                    // skip if the MimeType excludes compression
-                    return;
-                }
-
-                // fix to handle caching appropriately
-                // see http://www.pocketsoap.com/weblog/2003/07/1330.html
-                // Note, this header is added only when the request
-                // has the possibility of being compressed...
-                // i.e. it is not added when the request is excluded from
-                // compression by CompressionLevel, Path, or MimeType
-                app.Response.Cache.VaryByHeaders["Accept-Encoding"] = true;
-
-                // grab an array of algorithm;q=x, algorith;q=x style values
-                var acceptedTypes = app.Request.Headers["Accept-Encoding"];
-                // if we couldn't find the header, bail out
-                if (acceptedTypes == null)
-                {
-                    return;
-                }
-
-                // the actual types could be , delimited.  split 'em out.
-                var types = acceptedTypes.Split(',');
-
-                var filter = GetFilterForScheme(types, app.Response.Filter, settings);
-
-                if (filter == null)
-                {
-                    // if we didn't find a filter, bail out
-                    return;
-                }
-
-                // if we get here, we found a viable filter.
-                // set the filter and change the Content-Encoding header to match so the client can decode the response
-                app.Response.Filter = filter;
-
+                // skip if the CompressionLevel is set to 'None'
+                return;
             }
+
+            if (app.Request.ApplicationPath != null)
+            {
+                var realPath = app.Request.Path.Remove(0, app.Request.ApplicationPath.Length);
+                if (realPath.StartsWith("/"))
+                {
+                    realPath = realPath.Substring(1);
+                }
+                if (settings.IsExcludedPath(realPath))
+                {
+                    // skip if the file path excludes compression
+                    return;
+                }
+            }
+
+            if (IsBinaryFile(app))
+            {
+                // skip if the MimeType excludes compression
+                return;
+            }
+
+            if (settings.IsExcludedMimeType(app.Response.ContentType))
+            {
+                // skip if the MimeType excludes compression
+                return;
+            }
+
+            // fix to handle caching appropriately
+            // see http://www.pocketsoap.com/weblog/2003/07/1330.html
+            // Note, this header is added only when the request
+            // has the possibility of being compressed...
+            // i.e. it is not added when the request is excluded from
+            // compression by CompressionLevel, Path, or MimeType
+            app.Response.Cache.VaryByHeaders["Accept-Encoding"] = true;
+
+            // grab an array of algorithm;q=x, algorith;q=x style values
+            var acceptedTypes = app.Request.Headers["Accept-Encoding"];
+            // if we couldn't find the header, bail out
+            if (acceptedTypes == null)
+            {
+                return;
+            }
+
+            // the actual types could be , delimited.  split 'em out.
+            var types = acceptedTypes.Split(',');
+
+            var filter = GetFilterForScheme(types, app.Response.Filter, settings);
+
+            if (filter == null)
+            {
+                // if we didn't find a filter, bail out
+                return;
+            }
+
+            // if we get here, we found a viable filter.
+            // set the filter and change the Content-Encoding header to match so the client can decode the response
+            app.Response.Filter = filter;
         }
 
         private static bool IsBinaryFile(HttpApplication app)
         {
-            if (app == null || string.IsNullOrWhiteSpace(app.Response.ContentType))
+            if (string.IsNullOrWhiteSpace(app?.Response.ContentType))
                 return false;
 
             return app.Response.ContentType.StartsWith("application", StringComparison.InvariantCultureIgnoreCase) ||
@@ -177,10 +174,6 @@ namespace Decision.Common.HttpCompress
             var gZipQuality = 0f;
             var starQuality = 0f;
 
-            bool isAcceptableDeflate;
-            bool isAcceptableGZip;
-            bool isAcceptableStar;
-
             foreach (var acceptEncodingValue in schemes.Select(t => t.Trim().ToLower()))
             {
                 if (acceptEncodingValue.StartsWith("deflate"))
@@ -191,7 +184,6 @@ namespace Decision.Common.HttpCompress
                     if (deflateQuality < newDeflateQuality)
                         deflateQuality = newDeflateQuality;
                 }
-
                 else if (acceptEncodingValue.StartsWith("gzip") || acceptEncodingValue.StartsWith("x-gzip"))
                 {
                     foundGZip = true;
@@ -211,9 +203,9 @@ namespace Decision.Common.HttpCompress
                 }
             }
 
-            isAcceptableStar = foundStar && (starQuality > 0);
-            isAcceptableDeflate = (foundDeflate && (deflateQuality > 0)) || (!foundDeflate && isAcceptableStar);
-            isAcceptableGZip = (foundGZip && (gZipQuality > 0)) || (!foundGZip && isAcceptableStar);
+            var isAcceptableStar = foundStar && (starQuality > 0);
+            var isAcceptableDeflate = (foundDeflate && (deflateQuality > 0)) || (!foundDeflate && isAcceptableStar);
+            var isAcceptableGZip = (foundGZip && (gZipQuality > 0)) || (!foundGZip && isAcceptableStar);
 
             if (isAcceptableDeflate && !foundDeflate)
                 deflateQuality = starQuality;
@@ -247,28 +239,24 @@ namespace Decision.Common.HttpCompress
                 return new DeflateFilter(output, prefs.CompressionLevel);
 
             return isAcceptableGZip ? new GZipFilter(output) : null;
-
-            // return null.  we couldn't find a filter.
+            
         }
 
         static float GetQuality(string acceptEncodingValue)
         {
             var qParam = acceptEncodingValue.IndexOf("q=", StringComparison.Ordinal);
 
-            if (qParam >= 0)
+            if (qParam < 0) return 1;
+            var val = 0.0f;
+            try
             {
-                var val = 0.0f;
-                try
-                {
-                    val = float.Parse(acceptEncodingValue.Substring(qParam + 2, acceptEncodingValue.Length - (qParam + 2)));
-                }
-                catch (FormatException)
-                {
-
-                }
-                return val;
+                val = float.Parse(acceptEncodingValue.Substring(qParam + 2, acceptEncodingValue.Length - (qParam + 2)));
             }
-            return 1;
+            catch (FormatException)
+            {
+
+            }
+            return val;
         }
     }
 }

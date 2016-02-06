@@ -4,7 +4,7 @@ using System.IO;
 using System.Threading;
 using System.Web;
 using System.Web.Caching;
-using Decision.Common.Helpers.Http;
+using Decision.Common.Extentions;
 
 namespace Decision.Common.HttpModules
 {

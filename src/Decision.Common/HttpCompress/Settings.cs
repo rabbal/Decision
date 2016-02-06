@@ -51,30 +51,24 @@ namespace Decision.Common.HttpCompress
             if (node == null)
                 return;
 
-            if (node.Attributes != null)
+            var preferredAlgorithm = node.Attributes?["preferredAlgorithm"];
+            if (preferredAlgorithm != null)
             {
-                var preferredAlgorithm = node.Attributes["preferredAlgorithm"];
-                if (preferredAlgorithm != null)
+                try
                 {
-                    try
-                    {
-                        _preferredAlgorithm = (Algorithms)Enum.Parse(typeof(Algorithms), preferredAlgorithm.Value, true);
-                    }
-                    catch (ArgumentException) { }
+                    _preferredAlgorithm = (Algorithms)Enum.Parse(typeof(Algorithms), preferredAlgorithm.Value, true);
                 }
+                catch (ArgumentException) { }
             }
 
-            if (node.Attributes != null)
+            var compressionLevel = node.Attributes?["compressionLevel"];
+            if (compressionLevel != null)
             {
-                var compressionLevel = node.Attributes["compressionLevel"];
-                if (compressionLevel != null)
+                try
                 {
-                    try
-                    {
-                        _compressionLevel = (CompressionLevels)Enum.Parse(typeof(CompressionLevels), compressionLevel.Value, true);
-                    }
-                    catch (ArgumentException) { }
+                    _compressionLevel = (CompressionLevels)Enum.Parse(typeof(CompressionLevels), compressionLevel.Value, true);
                 }
+                catch (ArgumentException) { }
             }
 
             ParseExcludedTypes(node.SelectSingleNode("excludedMimeTypes"));
@@ -97,27 +91,18 @@ namespace Decision.Common.HttpCompress
         /// <summary>
         /// The default settings.  Deflate + normal.
         /// </summary>
-        public static Settings Default
-        {
-            get { return new Settings(); }
-        }
+        public static Settings Default => new Settings();
 
         /// <summary>
         /// The preferred algorithm to use for compression
         /// </summary>
-        public Algorithms PreferredAlgorithm
-        {
-            get { return _preferredAlgorithm; }
-        }
+        public Algorithms PreferredAlgorithm => _preferredAlgorithm;
 
 
         /// <summary>
         /// The preferred compression level
         /// </summary>
-        public CompressionLevels CompressionLevel
-        {
-            get { return _compressionLevel; }
-        }
+        public CompressionLevels CompressionLevel => _compressionLevel;
 
 
         /// <summary>
@@ -127,8 +112,7 @@ namespace Decision.Common.HttpCompress
         /// <returns>true if the mime type passed in is excluded from compression, false otherwise</returns>
         public bool IsExcludedMimeType(string mimetype)
         {
-            if (mimetype == null) return true;
-            return _excludedTypes.Contains(mimetype.ToLower());
+            return mimetype == null || _excludedTypes.Contains(mimetype.ToLower());
         }
 
         /// <summary>
@@ -151,7 +135,7 @@ namespace Decision.Common.HttpCompress
                 {
                     case "add":
                         var xmlAttributeCollection = node.ChildNodes[i].Attributes;
-                        if (xmlAttributeCollection != null && xmlAttributeCollection["type"] != null)
+                        if (xmlAttributeCollection?["type"] != null)
                         {
                             var collection = node.ChildNodes[i].Attributes;
                             if (collection != null)
@@ -160,7 +144,7 @@ namespace Decision.Common.HttpCompress
                         break;
                     case "delete":
                         var attributeCollection = node.ChildNodes[i].Attributes;
-                        if (attributeCollection != null && attributeCollection["type"] != null)
+                        if (attributeCollection?["type"] != null)
                         {
                             var attributes = node.ChildNodes[i].Attributes;
                             if (attributes != null)
@@ -181,7 +165,7 @@ namespace Decision.Common.HttpCompress
                 {
                     case "add":
                         var xmlAttributeCollection = node.ChildNodes[i].Attributes;
-                        if (xmlAttributeCollection != null && xmlAttributeCollection["path"] != null)
+                        if (xmlAttributeCollection?["path"] != null)
                         {
                             var attributes = node.ChildNodes[i].Attributes;
                             if (attributes != null)
@@ -190,7 +174,7 @@ namespace Decision.Common.HttpCompress
                         break;
                     case "delete":
                         var attributeCollection = node.ChildNodes[i].Attributes;
-                        if (attributeCollection != null && attributeCollection["path"] != null)
+                        if (attributeCollection?["path"] != null)
                         {
                             var collection = node.ChildNodes[i].Attributes;
                             if (collection != null)

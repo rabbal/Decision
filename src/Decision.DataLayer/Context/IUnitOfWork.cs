@@ -13,23 +13,6 @@ namespace Decision.DataLayer.Context
     public interface IUnitOfWork
     {
         /// <summary>
-        /// مشخص کننده مشخصه رکورد تغییر کرده
-        /// </summary>
-        string CharacteristicOfLogedEntity { get; }
-        /// <summary>
-        /// آی دی  رکوردی که لاگش گرفته شده است
-        /// </summary>
-        Guid RecordedEntityKey { get; }
-        /// <summary>
-        /// مقدار های قبل از ذخیره سازی
-        /// </summary>
-        string AuditOldValue { get; }
-        /// <summary>
-        /// مقدار های بعد از ذخیره سازی
-        /// </summary>
-        string AuditNewValue { get; }
-        
-        /// <summary>
         /// متدی برای استفاده از الگوی مخزن توکار 
         /// EF
         /// </summary>
@@ -46,16 +29,6 @@ namespace Decision.DataLayer.Context
         /// </summary>
         /// <returns></returns>
         Task<int> SaveChangesAsync();
-        /// <summary>
-        /// متد ذخیره سازی
-        /// </summary>
-        /// <returns></returns>
-        int SaveChanges(bool loggable,string field);
-        /// <summary>
-        /// متد ذخیره سازی به صورت ناهمزمان
-        /// </summary>
-        /// <returns></returns>
-        Task<int> SaveChangesAsync(bool loggable,string field);
         /// <summary>
         /// برای نشانه گذاری یک آبجکت که ویرایش شده است
         /// </summary>
@@ -93,14 +66,22 @@ namespace Decision.DataLayer.Context
         /// </summary>
         /// <param name="invalidateCacheDependencies"></param>
         /// <returns></returns>
-        int SaveAllChanges(bool invalidateCacheDependencies = true);
+        string SaveAllChanges(bool invalidateCacheDependencies = true, Guid? aduitUserId = null);
         /// <summary>
         /// ذخیره سازی ناهمزمان با امکان مشخص کردن تکلیف داده های کش شده 
         /// </summary>
         /// <param name="invalidateCacheDependencies"></param>
         /// <returns></returns>
-        Task<int> SaveAllChangesAsync(bool invalidateCacheDependencies = true);
+        Task<string> SaveAllChangesAsync(bool invalidateCacheDependencies = true, Guid? aduitUserId = null);
+        /// <summary>
+        /// برای درج لیستی از موجودیت ها استفاده میشود
+        /// </summary>
+        /// <typeparam name="TEntity">نوع مدل</typeparam>
+        /// <param name="entities">لیستی از مدل مورد نظر</param>
         void AddThisRange<TEntity>(IEnumerable<TEntity> entities) where TEntity : class;
+        /// <summary>
+        /// به منظور ایجاد سریع دیتابیس
+        /// </summary>
         void ForceDatabaseInitialize();
         void EnableFiltering(string name);
         void EnableFiltering(string name, string parameter, object value);
@@ -110,11 +91,16 @@ namespace Decision.DataLayer.Context
         bool ProxyCreationEnabled { get; set; }
         bool AutoDetectChangesEnabled { get; set; }
         bool ForceNoTracking { get; set; }
+        /// <summary>
+        /// برای ویرایش ارتباط های چند به چند استفاده میشود
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity"></param>
+        /// <param name="mapping"></param>
+        /// <returns></returns>
         T Update<T>(T entity,
-            Expression<Func<IUpdateConfiguration<T>, object>> mapping) where T : class,new();
+            Expression<Func<IUpdateConfiguration<T>, object>> mapping) where T : class, new();
         Database Database { get; }
-        Task<string> ConcurrencySaveChangesAsync();
-        Task<string> ConcurrencySaveChangesAsync(bool loggable,string field);
 
     }
 }

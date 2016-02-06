@@ -21,23 +21,24 @@ namespace Decision.AutoMapperProfiles
         protected override void Configure()
         {
             CreateMap<AddEntireEvaluationViewModel, EntireEvaluation>()
-                .ForMember(d => d.Brief, m => m.MapFrom(a => a.Brief.ToPersianContent(true)))
                 .ForMember(d => d.Content, m => m.MapFrom(a => a.Content.ToPersianContent(true)))
                 .ForMember(d => d.StrongPoint, m => m.MapFrom(a => a.StrongPoint.ToPersianContent(true)))
                 .ForMember(d => d.Foible, m => m.MapFrom(a => a.Foible.ToPersianContent(true)))
                 .IgnoreAllNonExisting();
+
             CreateMap<EditEntireEvaluationViewModel, EntireEvaluation>()
-                   .ForMember(d => d.Brief, m => m.MapFrom(a => a.Brief.ToPersianContent(true)))
+
                 .ForMember(d => d.Content, m => m.MapFrom(a => a.Content.ToPersianContent(true)))
                 .ForMember(d => d.StrongPoint, m => m.MapFrom(a => a.StrongPoint.ToPersianContent(true)))
                 .ForMember(d => d.Foible, m => m.MapFrom(a => a.Foible.ToPersianContent(true)))
-                .ForMember(d => d.LastModifiedDate, m => m.MapFrom(a => DateTime.Now)).IgnoreAllNonExisting();
+                .IgnoreAllNonExisting();
+
             CreateMap<EntireEvaluation, EditEntireEvaluationViewModel>().IgnoreAllNonExisting();
 
             CreateMap<EntireEvaluation, EntireEvaluationViewModel>()
-                .ForMember(d => d.CreatorUserName, m => m.MapFrom(s => s.Creator.UserName))
-                .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.LasModifier.UserName))
-                .ForMember(d => d.EvaluatorName, m => m.MapFrom(s => s.Evaluator.FirstName + " " + s.Evaluator.LastName)).IgnoreAllNonExisting();
+                .ForMember(d => d.CreatorUserName, m => m.MapFrom(s => s.CreatedBy.UserName))
+                .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.ModifiedBy.UserName))
+                .IgnoreAllNonExisting();
         }
 
         public override string ProfileName

@@ -97,8 +97,6 @@
     <Compile Include="Entities\ApplicantInfo\AddressType.cs" />
     <Compile Include="Entities\Evaluations\AnswerOption.cs" />
     <Compile Include="Entities\ApplicantInfo\EducationalExperience.cs" />
-    <Compile Include="Entities\Common\Title.cs" />
-    <Compile Include="Entities\Common\TitleType.cs" />
     <Compile Include="Entities\ApplicantInfo\EducationalBackground.cs" />
     <Compile Include="Entities\ApplicantInfo\EducationalType.cs" />
     <Compile Include="Entities\Evaluations\EntireEvaluation.cs" />

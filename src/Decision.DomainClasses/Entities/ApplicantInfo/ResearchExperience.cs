@@ -19,7 +19,7 @@ namespace Decision.DomainClasses.Entities.ApplicantInfo
         /// </summary>
         public double Score { get; set; }
         /// <summary>
-        /// نام موسسه یا مرکز آموزشی
+        /// نام موسسه یا مرکز آموزشی و پژوهشی
         /// </summary>
         public string Institution { get; set; }
         ///<summary>

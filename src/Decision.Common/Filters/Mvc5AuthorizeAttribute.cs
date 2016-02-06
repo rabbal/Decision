@@ -9,21 +9,20 @@ namespace Decision.Common.Filters
     public sealed class Mvc5AuthorizeAttribute : AuthorizeAttribute
     {
         #region Ctor
-
         public Mvc5AuthorizeAttribute(params string[] permissions)
             : base()
         {
             Roles = string.Join(",", permissions);
         }
-
         #endregion
+
 
         #region HandleUnauthorizedRequest
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
             if (filterContext.HttpContext.Request.IsAuthenticated)
             {
-                filterContext.Result=new HttpStatusCodeResult(403);
+                filterContext.Result = new HttpStatusCodeResult(403);
                 // throw new UnauthorizedAccessException(); //to avoid multiple redirects
             }
             else

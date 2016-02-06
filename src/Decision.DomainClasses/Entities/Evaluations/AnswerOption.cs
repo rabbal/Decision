@@ -8,24 +8,9 @@ namespace Decision.DomainClasses.Entities.Evaluations
     /// <summary>
     /// نشان دهنده یک پاسخ برای سوال
     /// </summary>
-    public class AnswerOption
+    public class AnswerOption : BaseEntity
     {
-        #region Ctor
-
-        /// <summary>
-        /// سازنده پیش فرض
-        /// </summary>
-        public AnswerOption()
-        {
-            Id = SequentialGuidGenerator.NewSequentialGuid();
-        }
-        #endregion
-
         #region Properties
-        /// <summary>
-        /// آی دی
-        /// </summary>
-        public virtual Guid Id { get; set; }
         /// <summary>
         /// عنوان گزینه پاسخ
         /// </summary>

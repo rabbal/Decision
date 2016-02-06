@@ -24,7 +24,7 @@ namespace Decision.AutoMapperProfiles
                 .ForMember(d => d.PhoneNumber, m => m.MapFrom(a => a.PhoneNumber.GetPersianNumber()))
                 .IgnoreAllNonExisting();
 
-            CreateMap<EditAddressViewModel, Address>().ForMember(d => d.LastModifiedDate, m => m.MapFrom(a => DateTime.Now))
+            CreateMap<EditAddressViewModel, Address>()
                  .ForMember(d => d.Location, m => m.MapFrom(a => a.Location.ToPersianContent(true)))
                 .ForMember(d => d.PhoneNumber, m => m.MapFrom(a => a.PhoneNumber.GetPersianNumber()))
                 .IgnoreAllNonExisting();
@@ -32,8 +32,8 @@ namespace Decision.AutoMapperProfiles
             CreateMap<Address, EditAddressViewModel>().IgnoreAllNonExisting();
 
             CreateMap<Address, AddressViewModel>()
-                .ForMember(d => d.CreatorUserName, m => m.MapFrom(s => s.Creator.UserName))
-                .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.LasModifier.UserName)).IgnoreAllNonExisting();
+                .ForMember(d => d.CreatorUserName, m => m.MapFrom(s => s.CreatedBy.UserName))
+                .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.ModifiedBy.UserName)).IgnoreAllNonExisting();
 
         }
 
