@@ -46,7 +46,7 @@ namespace Decision.DomainClasses.Configurations.ApplicantInfo
             HasMany(j => j.Articles).WithRequired(e => e.Applicant).HasForeignKey(e => e.ApplicantId).WillCascadeOnDelete(true);
         
            
-            HasRequired(e => e.CreatedBy).WithMany().HasForeignKey(e => e.CreatedBy).WillCascadeOnDelete(false);
+            HasRequired(e => e.CreatedBy).WithMany().HasForeignKey(e => e.CreatedById).WillCascadeOnDelete(false);
             HasRequired(e => e.ModifiedBy).WithMany().HasForeignKey(e => e.ModifiedById).WillCascadeOnDelete(false);
 
         }

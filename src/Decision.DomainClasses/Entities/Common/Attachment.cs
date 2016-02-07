@@ -28,23 +28,23 @@ namespace Decision.DomainClasses.Entities.Common
         /// <summary>
         /// sets or gets identifier for attachment
         /// </summary>
-        public virtual Guid Id { get; set; }
+        public Guid Id { get; set; }
         /// <summary>
         /// sets or gets name for attachment
         /// </summary>
-        public virtual string FileName { get; set; }
+        public string FileName { get; set; }
         /// <summary>
         /// sets or gets type of attachment
         /// </summary>
-        public virtual string ContentType { get; set; }
+        public string ContentType { get; set; }
         /// <summary>
         /// sets or gets size of attachment
         /// </summary>
-        public virtual long Size { get; set; }
+        public long Size { get; set; }
         /// <summary>
         /// sets or gets Extention of attachment
         /// </summary>
-        public virtual string Extension { get; set; }
+        public string Extension { get; set; }
         /// <summary>
         /// sets or gets bytes of data
         /// </summary>
@@ -52,30 +52,30 @@ namespace Decision.DomainClasses.Entities.Common
         /// <summary>
         /// sets or gets Creation Date
         /// </summary>
-        public virtual DateTime AttachedOn { get; set; }
+        public DateTime AttachedOn { get; set; }
         /// <summary>
         /// gets or sets counts of download this file
         /// </summary>
-        public virtual long DownloadsCount { get; set; }
+        public long DownloadsCount { get; set; }
         /// <summary>
         /// gets or sets datetime that is modified
         /// </summary>
-        public virtual DateTime ModifiedOn { get; set; }
+        public DateTime ModifiedOn { get; set; }
         /// <summary>
         /// gets or sets information of user agent 
         /// </summary>
-        public virtual string Agent { get; set; }
+        public string Agent { get; set; }
         #endregion
 
         #region NavigationProperties
         /// <summary>
         /// sets or gets identifier of attachment's owner
         /// </summary>
-        public virtual long OwnerId { get; set; }
+        public Guid OwnerId { get; set; }
         /// <summary>
         /// sets or gets identifier of attachment's owner
         /// </summary>
-        public virtual User Owner { get; set; }
+        public User Owner { get; set; }
         #endregion
     }
 }

@@ -51,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\ApplicantInfo\AddressConfig.cs" />
+    <Compile Include="Configurations\ApplicantInfo\PresenterConfig.cs" />
+    <Compile Include="Configurations\Common\AttachmentConfig.cs" />
     <Compile Include="Configurations\Common\AuditLogConfig.cs" />
     <Compile Include="Configurations\Evaluations\AnswerOptionConfig.cs" />
     <Compile Include="Configurations\Evaluations\EntireEvaluationConfig.cs" />

@@ -33,38 +33,38 @@ namespace Decision.DomainClasses.Entities.Users
         /// <summary>
         /// gets or sets Total Size of user's Attachments
         /// </summary>
-        public  long AttachmentsSize { get; set; }
+        public long AttachmentsSize { get; set; }
         /// <summary>
         /// gets or sets Total Space That this user can Upload File/image.
         /// this space total retrive from user's role when user login
         /// </summary>
-        public  long Space { get; set; }
+        public long Space { get; set; }
         /// <summary>
         /// نشانده دهنده قفل بودن کاربر است
         /// 
         /// </summary>
-        public  bool IsBanned { get; set; }
+        public bool IsBanned { get; set; }
 
         /// <summary>
         /// آیا کاربر سیستمی است؟
         /// </summary>
-        public  bool IsSystemAccount { get; set; }
+        public bool IsSystemAccount { get; set; }
         /// <summary>
         /// آخرین آی پی که ثبت شده برای کاربر
         /// </summary>
-        public  string LastIp { get; set; }
+        public string LastIp { get; set; }
         /// <summary>
         /// تاریخ آخرین ورود کاربر
         /// </summary>
-        public  DateTime? LastLoginDate { get; set; }
+        public DateTime? LastLoginDate { get; set; }
         /// <summary>
         /// نشان دهنده این است که آیا دسترسی های کاربر تغییر کرده است ؟
         /// </summary>
-        public  bool IsChangedPermissions { get; set; }
+        public bool IsChangedPermissions { get; set; }
         /// <summary>
         /// دسترسی های مستقیم کاربر بدون وابستی به گروه های کاربری او
         /// </summary>
-        public  string DirectPermissions { get; set; }
+        public string DirectPermissions { get; set; }
         /// <summary>
         ///  ساختار اکس ام ال دسترسی های مستقیم کاربر بدون وابستی به گروه های کاربری او
         /// </summary>
@@ -83,82 +83,83 @@ namespace Decision.DomainClasses.Entities.Users
         /// <summary>
         /// indicate this user is Approved Or not
         /// </summary>
-        public  bool IsApproved { get; set; }
+        public bool IsApproved { get; set; }
         /// <summary>
         /// gets or sets the last Date that password was changed
         /// </summary>
-        public  DateTime LastPasswordChangedDate { get; set; }
+        public DateTime? LastPasswordChangedDate { get; set; }
         /// <summary>
         /// gets or sets date that this user was banned
         /// </summary>
-        public  DateTime? BannedDate { get; set; }
+        public DateTime? BannedDate { get; set; }
         /// <summary>
         /// gets or sets the reason of ban
         /// </summary>
-        public  string BannedReason { get; set; }
+        public string BannedReason { get; set; }
         /// <summary>
         /// gets or sets That Date of User's Last Activity
         /// </summary>
-        public  DateTime? LastActivityOn { get; set; }
+        public DateTime? LastActivityOn { get; set; }
         /// <summary>
         /// gets or sets Name Of User For Show in System
         /// </summary>
-        public  string DisplayName { get; set; }
+        public string DisplayName { get; set; }
         /// <summary>
         /// Indicate That User is Soft Deleted
         /// </summary>
-        public  bool IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
         /// <summary>
         /// gets or sets one Comment from  Administrator to User
         /// </summary>
-        public  string AdminComment { get; set; }
+        public string AdminComment { get; set; }
         /// <summary>
         /// gets or sets name of avatar's file
         /// </summary>
-        public  string Avatar { get; set; }
+        public string Avatar { get; set; }
         /// <summary>
         /// gets or sets BirthDay
         /// </summary>
-        public  DateTime? BirthDay { get; set; }
+        public DateTime? BirthDay { get; set; }
         /// <summary>
         /// gets or sets date that this user registerd
         /// </summary>
-        public  DateTime RegisterDate { get; set; }
+        public DateTime RegisterDate { get; set; }
         /// <summary>
         /// gets or sets the page url that use is there now , used for indicate where is user
         /// </summary>
-        public  string CurrentPageUrl { get; set; }
+        public string CurrentPageUrl { get; set; }
         /// <summary>
         /// برای مسائل مربوط به همزمانی ها
         /// </summary>
-        public  byte[] RowVersion { get; set; }
+        public byte[] RowVersion { get; set; }
         #endregion
 
         #region NavigationProperties
         /// <summary>
-        /// لیست لاگ های داده ،کاربر
+        /// لیست فعالیت های کاربر
         /// </summary>
-        public  ICollection<AuditLog> AuditLogs { get; set; }
+        public ICollection<ActivityLog> Activities { get; set; }
         /// <summary>
         /// لیست اساتیدی که این کاربر به عنوان مدیر نگارش آنها را تایید کرده است
         /// </summary>
-        public  ICollection<Applicant> ApprovedApplicants { get; set; }
+        public ICollection<Applicant> ApprovedApplicants { get; set; }
         /// <summary>
         /// لیست گفتگوهای ارسالی کاربر
         /// </summary>
-        public  ICollection<Conversation> SentConversations { get; set; }
+        public ICollection<Conversation> SentConversations { get; set; }
         /// <summary>
         /// لیست گفتگوهای دریافتی کاربر
         /// </summary>
-        public  ICollection<Conversation> ReceivedConversations { get; set; }
+        public ICollection<Conversation> ReceivedConversations { get; set; }
         /// <summary>
         /// لیست پیغام های ارسال شده توسط کاربر
         /// </summary>
-        public  ICollection<Message> SentMessages { get; set; }
+        public ICollection<Message> SentMessages { get; set; }
         /// <summary>
         /// لیست آگاه سازی های مربوط به کاربر
         /// </summary>
-        public  ICollection<Notification> Notifications { get; set; }
+        public ICollection<Notification> Notifications { get; set; }
+
         #endregion
 
     }

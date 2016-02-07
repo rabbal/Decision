@@ -73,29 +73,9 @@
     <Compile Include="Context\BaseDbContext.cs" />
     <Compile Include="Context\ApplicationDbContext.cs" />
     <Compile Include="Context\IUnitOfWork.cs" />
-    <Compile Include="Migrations\201510160239047_Initial.cs" />
-    <Compile Include="Migrations\201510160239047_Initial.Designer.cs">
-      <DependentUpon>201510160239047_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510182128076_AddCodeToArticle.cs" />
-    <Compile Include="Migrations\201510182128076_AddCodeToArticle.Designer.cs">
-      <DependentUpon>201510182128076_AddCodeToArticle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510221124200_AddedScoreProperty.cs" />
-    <Compile Include="Migrations\201510221124200_AddedScoreProperty.Designer.cs">
-      <DependentUpon>201510221124200_AddedScoreProperty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512220940192_RemoveUniqueOfTeacherTable.cs" />
-    <Compile Include="Migrations\201512220940192_RemoveUniqueOfTeacherTable.Designer.cs">
-      <DependentUpon>201512220940192_RemoveUniqueOfTeacherTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512221245065_RemoveConstraint.cs" />
-    <Compile Include="Migrations\201512221245065_RemoveConstraint.Designer.cs">
-      <DependentUpon>201512221245065_RemoveConstraint.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512221428430_removeNotification.cs" />
-    <Compile Include="Migrations\201512221428430_removeNotification.Designer.cs">
-      <DependentUpon>201512221428430_removeNotification.cs</DependentUpon>
+    <Compile Include="Migrations\201602072159421_Initial.cs" />
+    <Compile Include="Migrations\201602072159421_Initial.Designer.cs">
+      <DependentUpon>201602072159421_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\MigrationExtensions.cs" />
@@ -118,24 +98,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510160239047_Initial.resx">
-      <DependentUpon>201510160239047_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510182128076_AddCodeToArticle.resx">
-      <DependentUpon>201510182128076_AddCodeToArticle.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510221124200_AddedScoreProperty.resx">
-      <DependentUpon>201510221124200_AddedScoreProperty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512220940192_RemoveUniqueOfTeacherTable.resx">
-      <DependentUpon>201512220940192_RemoveUniqueOfTeacherTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512221245065_RemoveConstraint.resx">
-      <DependentUpon>201512221245065_RemoveConstraint.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512221428430_removeNotification.resx">
-      <DependentUpon>201512221428430_removeNotification.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602072159421_Initial.resx">
+      <DependentUpon>201602072159421_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -27,13 +27,13 @@ namespace Decision.DomainClasses.Configurations.Common
             Property(a => a.Entity).IsRequired().HasMaxLength(20)
                 .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_AuditTableName")));
 
-            Property(a => a.EntityId).IsOptional()
+            Property(a => a.EntityId).IsRequired().HasMaxLength(20)
                 .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_AuditEntityId")));
            
             Ignore(a => a.XmlNewValueWrapper);
             Ignore(a => a.XmlOldValueWrapper);
 
-            HasRequired(a=>a.Operant).WithMany(a=>a.AuditLogs).HasForeignKey(a=>a.OperantId).WillCascadeOnDelete(false);
+            HasRequired(a=>a.Operant).WithMany().HasForeignKey(a=>a.OperantId).WillCascadeOnDelete(false);
 
         }
     }

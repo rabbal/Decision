@@ -112,29 +112,27 @@ namespace Decision.ServiceLayer.EFServiecs.Users
         #endregion
 
         #region SeedDatabase
-
         public void SeedDatabase()
         {
             const string systemAdminUserName = "Admin";
             const string systemAdminPassword = "Admin1234@example.com";
-
+            const string systemAdminEmail = "Admin@gmail.com";
             const string systemAdminDisplayName = "مدیر سیستم";
-
-
-
 
             var user = _users.FirstOrDefault(a => a.IsSystemAccount);
             if (user == null)
             {
-                var newUser = new User
+                user = new User
                 {
                     DisplayName = systemAdminDisplayName,
                     UserName = systemAdminUserName,
                     IsSystemAccount = true,
-                    Email = aspNetIdentityRequiredEmail
+                    Email = systemAdminEmail.FixGmailDots(),
+                    IsApproved = true
+
                 };
-                this.Create(newUser, systemAdminPassword);
-                this.SetLockoutEnabled(newUser.Id, false);
+                this.Create(user, systemAdminPassword);
+                this.SetLockoutEnabled(user.Id, false);
             }
 
             var userRoles = _roleManager.FindUserRoles(user.Id);
@@ -233,7 +231,6 @@ namespace Decision.ServiceLayer.EFServiecs.Users
         #region GetPageList
         public async Task<UserListViewModel> GetPageList(UserSearchRequest search)
         {
-
             var users = _users.AsNoTracking().OrderBy(a => a.UserName).AsQueryable();
 
             if (search.RoleId.HasValue)
@@ -427,9 +424,7 @@ namespace Decision.ServiceLayer.EFServiecs.Users
             return _users.Any(a => a.IsSystemAccount);
         }
         #endregion
-
-
-
+        
         #region IsEmailAvailableForConfirm
         public bool IsEmailAvailableForConfirm(string email)
         {
