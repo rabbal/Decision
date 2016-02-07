@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Decision.Common.Helpers.Extentions;
+
 using Decision.DataLayer.Context;
 using Decision.DomainClasses.Entities.Common;
 using Decision.DomainClasses.Entities.Evaluations;
@@ -64,7 +64,6 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
         {
             var question = await _questions.FirstAsync(a => a.Id == viewModel.Id);
             _mappingEngine.Map(viewModel, question);
-            question.LasModifierId = _userManager.GetCurrentUserId();
         }
         #endregion
 
@@ -72,13 +71,10 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
         public async Task<QuestionViewModel> CreateAsync(AddQuestionViewModel viewModel)
         {
             var question = _mappingEngine.Map<Question>(viewModel);
-            question.CreatorId = _userManager.GetCurrentUserId();
-            if ((viewModel.Type == QuestionType.CheckBoxList || viewModel.Type == QuestionType.RadioButtonList) && viewModel.Options != null && viewModel.Options.Count > 0)
+
+            foreach (var option in viewModel.Options)
             {
-                foreach (var option in viewModel.Options)
-                {
-                    question.AnswerOptions.Add(_mappingEngine.Map<AnswerOption>(option));
-                }
+                question.AnswerOptions.Add(_mappingEngine.Map<AnswerOption>(option));
             }
             _questions.Add(question);
             await _unitOfWork.SaveChangesAsync();
@@ -89,8 +85,8 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
         #region GetPagedList
         public async Task<QuestionListViewModel> GetPagedListAsync(QuestionSearchRequest request)
         {
-            var questions = _questions.AsNoTracking().Include(a => a.Creator)
-                .Include(a => a.LasModifier).OrderByDescending(a => a.CreateDate).AsQueryable();
+            var questions = _questions.AsNoTracking().Include(a => a.CreatedBy)
+                .Include(a => a.ModifiedBy).OrderByDescending(a => a.CreatedOn).AsQueryable();
 
 
             var query = await questions.ProjectTo<QuestionViewModel>(_mappingEngine)
@@ -110,8 +106,8 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
         public Task<QuestionViewModel> GetQuestionViewModel(Guid id)
         {
             return _questions.AsNoTracking()
-                 .Include(a => a.Creator)
-                 .Include(a => a.LasModifier).ProjectTo<QuestionViewModel>(_mappingEngine)
+                 .Include(a => a.CreatedBy)
+                 .Include(a => a.ModifiedBy).ProjectTo<QuestionViewModel>(_mappingEngine)
                  .FirstOrDefaultAsync(a => a.Id == id);
         }
 
@@ -126,14 +122,14 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
             return _questions.Where(a => a.Id == guid).UpdateAsync(a => new Question { IsDeleted = false });
         }
 
-        public async  Task<IEnumerable<Question>> GetQuestionsByIdsAsync(IEnumerable<Guid> ids)
+        public async Task<IEnumerable<Question>> GetQuestionsByIdsAsync(IEnumerable<Guid> ids)
         {
-            return await  _questions.Where(a => ids.Contains(a.Id)).ToListAsync();
+            return await _questions.Where(a => ids.Contains(a.Id)).ToListAsync();
         }
 
-        public async  Task<IEnumerable<Question>> GelAllActive()
+        public async Task<IEnumerable<Question>> GelAllActive()
         {
-            return await  _questions.AsNoTracking().Where(a => !a.IsDeleted).Include(a => a.AnswerOptions).ToListAsync();
+            return await _questions.AsNoTracking().Where(a => !a.IsDeleted).Include(a => a.AnswerOptions).ToListAsync();
         }
     }
 }

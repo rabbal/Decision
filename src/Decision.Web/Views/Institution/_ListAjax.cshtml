@@ -1,7 +1,0 @@
-﻿
-@* GeneratePrettyNames: true*@
-@model  Decision.ViewModel.Institution.InstitutionListViewModel
-@foreach (var institution in Model.Institutions)
-{
-    @Html.Partial(MVC.Institution.Views._InstitutionItem, institution)
-}

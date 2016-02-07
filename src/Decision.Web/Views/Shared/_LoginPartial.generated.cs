@@ -33,7 +33,6 @@ namespace ASP
     
     #line default
     #line hidden
-    using Decision.Common.MVC;
     
     #line 1 "..\..\Views\Shared\_LoginPartial.cshtml"
     using Decision.ServiceLayer.Security;
@@ -126,14 +125,14 @@ WriteLiteral(" class=\"main\"");
 
 WriteLiteral(">\r\n                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 525), Tuple.Create("\"", 564)
+WriteAttribute("href", Tuple.Create(" href=\"", 529), Tuple.Create("\"", 568)
             
             #line 15 "..\..\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 532), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Report.Design())
+, Tuple.Create(Tuple.Create("", 536), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Report.Design())
             
             #line default
             #line hidden
-, 532), false)
+, 536), false)
 );
 
 WriteLiteral(">گزارشات</a>\r\n            </li>\r\n");
@@ -195,14 +194,14 @@ WriteLiteral(" class=\"main\"");
 
 WriteLiteral(">\r\n                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 929), Tuple.Create("\"", 966)
+WriteAttribute("href", Tuple.Create(" href=\"", 933), Tuple.Create("\"", 970)
             
             #line 27 "..\..\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 936), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Elmah.Index())
+, Tuple.Create(Tuple.Create("", 940), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Elmah.Index())
             
             #line default
             #line hidden
-, 936), false)
+, 940), false)
 );
 
 WriteLiteral(">نگهداری سیستم</a>\r\n            </li>\r\n");
@@ -274,14 +273,14 @@ WriteLiteral(" class=\"dropdown noti-dropdown main\"");
 
 WriteLiteral(">\r\n                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1416), Tuple.Create("\"", 1462)
+WriteAttribute("href", Tuple.Create(" href=\"", 1420), Tuple.Create("\"", 1466)
             
             #line 42 "..\..\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 1423), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.PrivateMessage.InBox())
+, Tuple.Create(Tuple.Create("", 1427), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.PrivateMessage.InBox())
             
             #line default
             #line hidden
-, 1423), false)
+, 1427), false)
 );
 
 WriteLiteral(">\r\n                    <span");
@@ -359,38 +358,38 @@ WriteLiteral(" class=\"dl-submenu\"");
 
 WriteLiteral(">\r\n                                <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2494), Tuple.Create("\"", 2545)
+WriteAttribute("href", Tuple.Create(" href=\"", 2498), Tuple.Create("\"", 2549)
             
             #line 69 "..\..\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 2501), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.PrivateMessage.NewMessage())
+, Tuple.Create(Tuple.Create("", 2505), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.PrivateMessage.NewMessage())
             
             #line default
             #line hidden
-, 2501), false)
+, 2505), false)
 );
 
 WriteLiteral(">پیغام جدید</a></li>\r\n                                <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2606), Tuple.Create("\"", 2652)
+WriteAttribute("href", Tuple.Create(" href=\"", 2610), Tuple.Create("\"", 2656)
             
             #line 70 "..\..\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 2613), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.PrivateMessage.InBox())
+, Tuple.Create(Tuple.Create("", 2617), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.PrivateMessage.InBox())
             
             #line default
             #line hidden
-, 2613), false)
+, 2617), false)
 );
 
 WriteLiteral(">صندوق دریافت</a></li>\r\n                                <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2715), Tuple.Create("\"", 2762)
+WriteAttribute("href", Tuple.Create(" href=\"", 2719), Tuple.Create("\"", 2766)
             
             #line 71 "..\..\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 2722), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.PrivateMessage.OutBox())
+, Tuple.Create(Tuple.Create("", 2726), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.PrivateMessage.OutBox())
             
             #line default
             #line hidden
-, 2722), false)
+, 2726), false)
 );
 
 WriteLiteral(">صندوق ارسال</a></li>\r\n                            </ul>\r\n\r\n\r\n                   " +
@@ -399,80 +398,27 @@ WriteLiteral(">صندوق ارسال</a></li>\r\n                            </u
             
             #line 76 "..\..\Views\Shared\_LoginPartial.cshtml"
                     }
-
+                    
             
             #line default
             #line hidden
-WriteLiteral("                    ");
-
-            
-            #line 77 "..\..\Views\Shared\_LoginPartial.cshtml"
-                     if (User.IsInRole(StandardRoles.Operators))
-                    {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                        <li>\r\n                            <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 3028), Tuple.Create("\"", 3071)
-            
-            #line 80 "..\..\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 3035), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.ReferList())
-            
-            #line default
-            #line hidden
-, 3035), false)
-);
-
-WriteLiteral(">\r\n                                لیست ارجاعات\r\n                            </a>" +
-"\r\n                            <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 3185), Tuple.Create("\"", 3233)
-            
-            #line 83 "..\..\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 3192), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.NewApplicantList())
-            
-            #line default
-            #line hidden
-, 3192), false)
-);
-
-WriteLiteral(">\r\n                                اساتید در حال تکمیل\r\n                         " +
-"   </a>\r\n                        </li>\r\n");
-
-WriteLiteral("                        <li>\r\n                            <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 3415), Tuple.Create("\"", 3455)
-            
-            #line 88 "..\..\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 3422), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.Create())
-            
-            #line default
-            #line hidden
-, 3422), false)
-);
-
-WriteLiteral(">\r\n                                درج متقاضی\r\n                            </a>\r\n " +
-"                       </li>\r\n");
-
             
             #line 92 "..\..\Views\Shared\_LoginPartial.cshtml"
-                    }
+                       
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n                    <li>\r\n                        <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3644), Tuple.Create("\"", 3684)
+WriteAttribute("href", Tuple.Create(" href=\"", 3661), Tuple.Create("\"", 3701)
             
             #line 95 "..\..\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 3651), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.LogOff())
+, Tuple.Create(Tuple.Create("", 3668), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.LogOff())
             
             #line default
             #line hidden
-, 3651), false)
+, 3668), false)
 );
 
 WriteLiteral(">\r\n                            خروج\r\n                        </a>\r\n              " +

@@ -27,7 +27,6 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using Decision.Common.MVC;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -161,55 +160,18 @@ WriteLiteral(">\r\n            <div");
 
 WriteLiteral(" class=\"pull-left\"");
 
-WriteLiteral(">\r\n                <a");
-
-WriteLiteral(" class=\"btn btn-sm btn-info \"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 1384), Tuple.Create("\"", 1440)
-            
-            #line 38 "..\..\Views\Article\_ArticleItem.cshtml"
-, Tuple.Create(Tuple.Create("", 1391), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.ArticleEvaluation.List(Model.Id))
-            
-            #line default
-            #line hidden
-, 1391), false)
-);
-
-WriteLiteral(">\r\n                    <i");
-
-WriteLiteral(" class=\"fa fa-list\"");
-
-WriteLiteral("></i>\r\n                    لیست ارزیابی ها\r\n                </a>\r\n               " +
-" <a");
-
-WriteLiteral(" class=\"btn btn-sm btn-default \"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 1601), Tuple.Create("\"", 1659)
-            
-            #line 42 "..\..\Views\Article\_ArticleItem.cshtml"
-, Tuple.Create(Tuple.Create("", 1608), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.ArticleEvaluation.Create(Model.Id))
-            
-            #line default
-            #line hidden
-, 1608), false)
-);
-
-WriteLiteral(">\r\n                    <i");
-
-WriteLiteral(" class=\"fa fa-plus\"");
-
-WriteLiteral("></i>\r\n                    ارزیابی\r\n                </a>\r\n                <a");
+WriteLiteral(">\r\n               \r\n                <a");
 
 WriteLiteral(" class=\"btn btn-sm btn-success \"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1812), Tuple.Create("\"", 1881)
+WriteAttribute("href", Tuple.Create(" href=\"", 1404), Tuple.Create("\"", 1475)
             
-            #line 46 "..\..\Views\Article\_ArticleItem.cshtml"
-, Tuple.Create(Tuple.Create("", 1819), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Article.GetDocument(Model.Id,Model.ApplicantId))
+            #line 39 "..\..\Views\Article\_ArticleItem.cshtml"
+, Tuple.Create(Tuple.Create("", 1411), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Article.GetDocument(Model.Id,Model.ApplicantId))
             
             #line default
             #line hidden
-, 1819), false)
+, 1411), false)
 );
 
 WriteLiteral(">\r\n                    <i");
@@ -220,14 +182,14 @@ WriteLiteral("></i>\r\n                    بارگذاری\r\n                <
 
 WriteLiteral(" class=\"btn btn-primary btn-sm\"");
 
-WriteAttribute("href", Tuple.Create("\r\n                   href=\"", 2038), Tuple.Create("\"", 2104)
+WriteAttribute("href", Tuple.Create("\r\n                   href=\"", 1632), Tuple.Create("\"", 1698)
             
-            #line 51 "..\..\Views\Article\_ArticleItem.cshtml"
-, Tuple.Create(Tuple.Create("", 2065), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Article.Edit(Model.Id))
+            #line 44 "..\..\Views\Article\_ArticleItem.cshtml"
+, Tuple.Create(Tuple.Create("", 1659), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Article.Edit(Model.Id))
             
             #line default
             #line hidden
-, 2065), false)
+, 1659), false)
 );
 
 WriteLiteral(" role=\"button\"");
@@ -245,7 +207,7 @@ WriteLiteral("\r\n                        type=\"button\"");
 WriteLiteral(" data-delete-url=\"");
 
             
-            #line 53 "..\..\Views\Article\_ArticleItem.cshtml"
+            #line 46 "..\..\Views\Article\_ArticleItem.cshtml"
                                                   Write(Url.Action(MVC.Article.Delete()));
 
             
@@ -256,8 +218,8 @@ WriteLiteral("\"");
 WriteLiteral(" data-Applicant=\"");
 
             
-            #line 53 "..\..\Views\Article\_ArticleItem.cshtml"
-                                                                                                   Write(Model.ApplicantId);
+            #line 46 "..\..\Views\Article\_ArticleItem.cshtml"
+                                                                                                     Write(Model.ApplicantId);
 
             
             #line default
@@ -267,23 +229,23 @@ WriteLiteral("\"");
 WriteLiteral(" data-removal-element=\"#Article-");
 
             
-            #line 53 "..\..\Views\Article\_ArticleItem.cshtml"
-                                                                                                                                                    Write(Model.Id);
+            #line 46 "..\..\Views\Article\_ArticleItem.cshtml"
+                                                                                                                                                        Write(Model.Id);
 
             
             #line default
             #line hidden
 WriteLiteral("\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 2376), Tuple.Create("\"", 2397)
-, Tuple.Create(Tuple.Create("", 2381), Tuple.Create("remove-", 2381), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 1974), Tuple.Create("\"", 1995)
+, Tuple.Create(Tuple.Create("", 1979), Tuple.Create("remove-", 1979), true)
             
-            #line 53 "..\..\Views\Article\_ArticleItem.cshtml"
-                                                                                               , Tuple.Create(Tuple.Create("", 2388), Tuple.Create<System.Object, System.Int32>(Model.Id
+            #line 46 "..\..\Views\Article\_ArticleItem.cshtml"
+                                                                                                   , Tuple.Create(Tuple.Create("", 1986), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 2388), false)
+, 1986), false)
 );
 
 WriteLiteral(">\r\n                    <i");

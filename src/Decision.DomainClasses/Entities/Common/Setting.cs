@@ -11,23 +11,16 @@ namespace Decision.DomainClasses.Entities.Common
         /// <summary>
         /// نام تنظیمات
         /// </summary>
-        public  string Name { get; set; }
+        public string Name { get; set; }
         /// <summary>
         /// محتوای تنظیمات
         /// </summary>
-        public  string Value { get; set; }
-        /// <summary>
-        /// xml محتوای تنظیمات به شکل 
-        /// </summary>
-        public XElement XmlValue
-        {
-            get { return XElement.Parse(Value); }
-            set { Value = value.ToString(); }
-        }
+        public string Value { get; set; }
+        
         /// <summary>
         /// برای مباحث همزمانی
         /// </summary>
-        public  byte[] RowVersion { get; set; }
+        public byte[] RowVersion { get; set; }
         #endregion
     }
 }

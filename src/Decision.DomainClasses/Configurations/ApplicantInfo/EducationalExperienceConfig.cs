@@ -21,13 +21,9 @@ namespace Decision.DomainClasses.Configurations.ApplicantInfo
             
             Property(t => t.RowVersion).IsRowVersion();
 
-            HasRequired(t => t.Title)
-              .WithMany(t => t.EducationalExperiences)
-              .HasForeignKey(t => t.TitleId)
-              .WillCascadeOnDelete(false);
-
-            HasRequired(t => t.Creator).WithMany(u => u.CreatedEducationalExperiences).HasForeignKey(e => e.CreatorId).WillCascadeOnDelete(false);
-            HasOptional(t => t.LasModifier).WithMany(u => u.ModifiedEducationalExperiences).HasForeignKey(e => e.LasModifierId).WillCascadeOnDelete(false);
+          
+            HasRequired(t => t.CreatedBy).WithMany().HasForeignKey(e => e.CreatedById).WillCascadeOnDelete(false);
+            HasRequired(t => t.ModifiedBy).WithMany().HasForeignKey(e => e.ModifiedById).WillCascadeOnDelete(false);
         }
     }
 }

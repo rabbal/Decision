@@ -27,8 +27,8 @@ namespace Decision.Web.RazorHelpers
     using System.Web.UI;
     using System.Web.WebPages;
     
-    #line 2 "..\..\RazorHelpers\NotyBuilder.cshtml"
-    using Decision.Common.Controller.NotyHelper;
+    #line 3 "..\..\RazorHelpers\NotyBuilder.cshtml"
+    using Decision.Common.Noty;
     
     #line default
     #line hidden
@@ -37,14 +37,14 @@ namespace Decision.Web.RazorHelpers
     public class NotyBuilder : System.Web.WebPages.HelperPage
     {
 
-#line 9 "..\..\RazorHelpers\NotyBuilder.cshtml"
+#line 10 "..\..\RazorHelpers\NotyBuilder.cshtml"
 public static System.Web.WebPages.HelperResult ShowNotyMessages(Noty notyInput)
 {
 #line default
 #line hidden
 return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
 
-#line 10 "..\..\RazorHelpers\NotyBuilder.cshtml"
+#line 11 "..\..\RazorHelpers\NotyBuilder.cshtml"
  
     if (notyInput == null)
     {
@@ -58,13 +58,13 @@ return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
 WriteLiteralTo(__razor_helper_writer, "    <script>\r\n    $(function() {\r\n\r\n");
 
 
-#line 19 "..\..\RazorHelpers\NotyBuilder.cshtml"
+#line 20 "..\..\RazorHelpers\NotyBuilder.cshtml"
         
 
 #line default
 #line hidden
 
-#line 19 "..\..\RazorHelpers\NotyBuilder.cshtml"
+#line 20 "..\..\RazorHelpers\NotyBuilder.cshtml"
          foreach (var message in notyInput.NotyMessages)
             {
                 
@@ -72,7 +72,7 @@ WriteLiteralTo(__razor_helper_writer, "    <script>\r\n    $(function() {\r\n\r\
 #line default
 #line hidden
 
-#line 61 "..\..\RazorHelpers\NotyBuilder.cshtml"
+#line 62 "..\..\RazorHelpers\NotyBuilder.cshtml"
                                            
 
 
@@ -83,7 +83,7 @@ WriteLiteralTo(__razor_helper_writer, "            ");
 WriteLiteralTo(__razor_helper_writer, "infoNoty(\'");
 
 
-#line 62 "..\..\RazorHelpers\NotyBuilder.cshtml"
+#line 63 "..\..\RazorHelpers\NotyBuilder.cshtml"
 WriteTo(__razor_helper_writer, message.Message);
 
 
@@ -92,7 +92,7 @@ WriteTo(__razor_helper_writer, message.Message);
 WriteLiteralTo(__razor_helper_writer, "\');\r\n");
 
 
-#line 63 "..\..\RazorHelpers\NotyBuilder.cshtml"
+#line 64 "..\..\RazorHelpers\NotyBuilder.cshtml"
                 }
 
 
@@ -101,14 +101,14 @@ WriteLiteralTo(__razor_helper_writer, "\');\r\n");
 WriteLiteralTo(__razor_helper_writer, "\r\n    });\r\n\r\n    </script>\r\n");
 
 
-#line 68 "..\..\RazorHelpers\NotyBuilder.cshtml"
+#line 69 "..\..\RazorHelpers\NotyBuilder.cshtml"
 
 
 #line default
 #line hidden
 });
 
-#line 68 "..\..\RazorHelpers\NotyBuilder.cshtml"
+#line 69 "..\..\RazorHelpers\NotyBuilder.cshtml"
 }
 #line default
 #line hidden

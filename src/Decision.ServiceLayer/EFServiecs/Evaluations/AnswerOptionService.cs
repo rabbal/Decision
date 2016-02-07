@@ -22,8 +22,7 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
     public class AnswerOptionService : IAnswerOptionService
     {
         #region Fields
-
-        private readonly ITitleService _titleService;
+        
         private readonly IMappingEngine _mappingEngine;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IApplicationUserManager _userManager;
@@ -32,12 +31,12 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
 
         #region Ctor
 
-        public AnswerOptionService(IUnitOfWork unitOfWork, ITitleService titleService, IApplicationUserManager userManager, IMappingEngine mappingEngine)
+        public AnswerOptionService(IUnitOfWork unitOfWork, IApplicationUserManager userManager, IMappingEngine mappingEngine)
         {
             _userManager = userManager;
             _unitOfWork = unitOfWork;
             _answerOptions = _unitOfWork.Set<AnswerOption>();
-            _titleService = titleService;
+            
             _mappingEngine = mappingEngine;
         }
         #endregion

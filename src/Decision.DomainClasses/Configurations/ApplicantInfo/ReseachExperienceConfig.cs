@@ -18,13 +18,11 @@ namespace Decision.DomainClasses.Configurations.ApplicantInfo
         /// </summary>
         public ReseachExperienceConfig()
         {
-            Property(r => r.Title).IsMaxLength().IsRequired();
-            Property(r => r.Description).IsMaxLength().IsOptional();
-            Property(r => r.RowVersion).IsRowVersion();
+                        Property(r => r.RowVersion).IsRowVersion();
 
 
-            HasRequired(e => e.Creator).WithMany(u => u.CreatedReseachExperiences).HasForeignKey(e => e.CreatorId).WillCascadeOnDelete(false);
-            HasOptional(e => e.LasModifier).WithMany(u => u.ModifiedReseachExperiences).HasForeignKey(e => e.LasModifierId).WillCascadeOnDelete(false);
+            HasRequired(e => e.CreatedBy).WithMany().HasForeignKey(e => e.CreatedById).WillCascadeOnDelete(false);
+            HasRequired(e => e.ModifiedBy).WithMany().HasForeignKey(e => e.ModifiedById).WillCascadeOnDelete(false);
         }
     }
 }

@@ -27,13 +27,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using Decision.Common.MVC;
-    
-    #line 2 "..\..\Views\Question\_QuestionItem.cshtml"
-    using Decision.DomainClasses.Entities.Evaluations;
-    
-    #line default
-    #line hidden
+    using Decision.Common.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -54,31 +48,31 @@ WriteLiteral("\r\n<div");
 
 WriteLiteral(" class=\"col-md-12 \"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 135), Tuple.Create("\"", 158)
-, Tuple.Create(Tuple.Create("", 140), Tuple.Create("question-", 140), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 83), Tuple.Create("\"", 106)
+, Tuple.Create(Tuple.Create("", 88), Tuple.Create("question-", 88), true)
             
-            #line 6 "..\..\Views\Question\_QuestionItem.cshtml"
-, Tuple.Create(Tuple.Create("", 149), Tuple.Create<System.Object, System.Int32>(Model.Id
+            #line 5 "..\..\Views\Question\_QuestionItem.cshtml"
+, Tuple.Create(Tuple.Create("", 97), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 149), false)
+, 97), false)
 );
 
 WriteLiteral(">\r\n    <div");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 170), Tuple.Create("\"", 234)
-, Tuple.Create(Tuple.Create("", 178), Tuple.Create("panel", 178), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 118), Tuple.Create("\"", 182)
+, Tuple.Create(Tuple.Create("", 126), Tuple.Create("panel", 126), true)
             
-            #line 7 "..\..\Views\Question\_QuestionItem.cshtml"
-, Tuple.Create(Tuple.Create(" ", 183), Tuple.Create<System.Object, System.Int32>(Model.IsDeleted?"panel-warning":"panel-default"
+            #line 6 "..\..\Views\Question\_QuestionItem.cshtml"
+, Tuple.Create(Tuple.Create(" ", 131), Tuple.Create<System.Object, System.Int32>(Model.IsDeleted?"panel-warning":"panel-default"
             
             #line default
             #line hidden
-, 184), false)
+, 132), false)
 );
 
-WriteLiteral(">\r\n\r\n        <div");
+WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" class=\"panel-body\"");
 
@@ -104,7 +98,7 @@ WriteLiteral(">\r\n                        عنوان سوال:\r\n             
 WriteLiteral("                            ");
 
             
-            #line 17 "..\..\Views\Question\_QuestionItem.cshtml"
+            #line 15 "..\..\Views\Question\_QuestionItem.cshtml"
                        Write(Model.Title);
 
             
@@ -125,57 +119,14 @@ WriteLiteral(">\r\n                        وزن ارزشی:\r\n               
 WriteLiteral("                            ");
 
             
-            #line 26 "..\..\Views\Question\_QuestionItem.cshtml"
+            #line 24 "..\..\Views\Question\_QuestionItem.cshtml"
                        Write(Model.Weight.GetPersianNumber());
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n                    </small>\r\n                </div>\r\n            </div>\r\n     " +
-"       <div");
-
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"col-md-12\"");
-
-WriteLiteral(">\r\n                    <label");
-
-WriteLiteral(" class=\"text-muted\"");
-
-WriteLiteral(">\r\n                        نوع سوال :\r\n                    </label>\r\n            " +
-"        <small");
-
-WriteLiteral(" class=\"text-success\"");
-
-WriteLiteral(">\r\n                        <strong>");
-
-            
-            #line 36 "..\..\Views\Question\_QuestionItem.cshtml"
-                           Write(Html.DisplayFor(a => a.Type));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</strong>\r\n                    </small>\r\n                </div>\r\n            </di" +
-"v>\r\n");
-
-            
-            #line 40 "..\..\Views\Question\_QuestionItem.cshtml"
-            
-            
-            #line default
-            #line hidden
-            
-            #line 40 "..\..\Views\Question\_QuestionItem.cshtml"
-             if (Model.Type == QuestionType.CheckBoxList || Model.Type == QuestionType.RadioButtonList)
-            {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                <div");
+"      \r\n               <div");
 
 WriteLiteral(" class=\"row\"");
 
@@ -199,13 +150,13 @@ WriteLiteral(" class=\"row\"");
 WriteLiteral(">\r\n");
 
             
-            #line 49 "..\..\Views\Question\_QuestionItem.cshtml"
+            #line 36 "..\..\Views\Question\_QuestionItem.cshtml"
                             
             
             #line default
             #line hidden
             
-            #line 49 "..\..\Views\Question\_QuestionItem.cshtml"
+            #line 36 "..\..\Views\Question\_QuestionItem.cshtml"
                              foreach (var option in Model.Options)
                             {
 
@@ -218,11 +169,11 @@ WriteLiteral(" class=\"col-md-6\"");
 
 WriteLiteral(">\r\n                                    <small>\r\n");
 
-WriteLiteral("                                            ");
+WriteLiteral("                                        ");
 
             
-            #line 53 "..\..\Views\Question\_QuestionItem.cshtml"
-                                       Write(option.Name);
+            #line 40 "..\..\Views\Question\_QuestionItem.cshtml"
+                                   Write(option.Name);
 
             
             #line default
@@ -238,7 +189,7 @@ WriteLiteral(">\r\n                                        وزن ارزشی:\r\
 WriteLiteral("                                        ");
 
             
-            #line 59 "..\..\Views\Question\_QuestionItem.cshtml"
+            #line 46 "..\..\Views\Question\_QuestionItem.cshtml"
                                    Write(option.Weight.GetPersianNumber());
 
             
@@ -248,32 +199,23 @@ WriteLiteral("\r\n                                    </small>\r\n              
 "/div>\r\n");
 
             
-            #line 62 "..\..\Views\Question\_QuestionItem.cshtml"
+            #line 49 "..\..\Views\Question\_QuestionItem.cshtml"
                             }
 
             
             #line default
             #line hidden
 WriteLiteral("                        </div>\r\n                    </div>\r\n                </div" +
-">\r\n");
+">\r\n            \r\n\r\n");
 
             
-            #line 66 "..\..\Views\Question\_QuestionItem.cshtml"
-            }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-            
-            #line 68 "..\..\Views\Question\_QuestionItem.cshtml"
+            #line 55 "..\..\Views\Question\_QuestionItem.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 68 "..\..\Views\Question\_QuestionItem.cshtml"
+            #line 55 "..\..\Views\Question\_QuestionItem.cshtml"
               Html.RenderPartial(MVC.Shared.Views._AuditLog, Model);
             
             #line default
@@ -290,14 +232,14 @@ WriteLiteral(">\r\n                <a");
 
 WriteLiteral(" class=\"btn btn-primary btn-sm\"");
 
-WriteAttribute("href", Tuple.Create("\r\n                   href=\"", 2809), Tuple.Create("\"", 2876)
+WriteAttribute("href", Tuple.Create("\r\n                   href=\"", 2260), Tuple.Create("\"", 2327)
             
-            #line 74 "..\..\Views\Question\_QuestionItem.cshtml"
-, Tuple.Create(Tuple.Create("", 2836), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Question.Edit(Model.Id))
+            #line 61 "..\..\Views\Question\_QuestionItem.cshtml"
+, Tuple.Create(Tuple.Create("", 2287), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Question.Edit(Model.Id))
             
             #line default
             #line hidden
-, 2836), false)
+, 2287), false)
 );
 
 WriteLiteral(" role=\"button\"");
@@ -309,13 +251,13 @@ WriteLiteral(" class=\"fa fa-edit\"");
 WriteLiteral("></i>ویرایش</a>\r\n\r\n");
 
             
-            #line 76 "..\..\Views\Question\_QuestionItem.cshtml"
+            #line 63 "..\..\Views\Question\_QuestionItem.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 76 "..\..\Views\Question\_QuestionItem.cshtml"
+            #line 63 "..\..\Views\Question\_QuestionItem.cshtml"
                  if (!Model.IsDeleted)
                 {
 
@@ -339,7 +281,7 @@ WriteLiteral("\r\n                       data-ajax-oncomplete=\"onComplete(xhr,s
 WriteLiteral("\r\n                       data-ajax-update=\"#question-");
 
             
-            #line 83 "..\..\Views\Question\_QuestionItem.cshtml"
+            #line 70 "..\..\Views\Question\_QuestionItem.cshtml"
                                               Write(Model.Id);
 
             
@@ -347,14 +289,14 @@ WriteLiteral("\r\n                       data-ajax-update=\"#question-");
             #line hidden
 WriteLiteral("\"");
 
-WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 3356), Tuple.Create("\"", 3430)
+WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 2807), Tuple.Create("\"", 2881)
             
-            #line 84 "..\..\Views\Question\_QuestionItem.cshtml"
-, Tuple.Create(Tuple.Create("", 3387), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Question.Disable(Model.Id))
+            #line 71 "..\..\Views\Question\_QuestionItem.cshtml"
+, Tuple.Create(Tuple.Create("", 2838), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Question.Disable(Model.Id))
             
             #line default
             #line hidden
-, 3387), false)
+, 2838), false)
 );
 
 WriteLiteral(" role=\"button\"");
@@ -366,7 +308,7 @@ WriteLiteral(" class=\"fa fa-ban\"");
 WriteLiteral("></i>\r\n                        غیر فعال کردن\r\n                    </a>\r\n");
 
             
-            #line 88 "..\..\Views\Question\_QuestionItem.cshtml"
+            #line 75 "..\..\Views\Question\_QuestionItem.cshtml"
                 }
                 else
                 {
@@ -391,7 +333,7 @@ WriteLiteral("\r\n                       data-ajax-oncomplete=\"onComplete(xhr,s
 WriteLiteral("\r\n                       data-ajax-update=\"#question-");
 
             
-            #line 96 "..\..\Views\Question\_QuestionItem.cshtml"
+            #line 83 "..\..\Views\Question\_QuestionItem.cshtml"
                                               Write(Model.Id);
 
             
@@ -399,14 +341,14 @@ WriteLiteral("\r\n                       data-ajax-update=\"#question-");
             #line hidden
 WriteLiteral("\"");
 
-WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 3990), Tuple.Create("\"", 4063)
+WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 3441), Tuple.Create("\"", 3514)
             
-            #line 97 "..\..\Views\Question\_QuestionItem.cshtml"
-, Tuple.Create(Tuple.Create("", 4021), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Question.Enable(Model.Id))
+            #line 84 "..\..\Views\Question\_QuestionItem.cshtml"
+, Tuple.Create(Tuple.Create("", 3472), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Question.Enable(Model.Id))
             
             #line default
             #line hidden
-, 4021), false)
+, 3472), false)
 );
 
 WriteLiteral(" role=\"button\"");
@@ -418,7 +360,7 @@ WriteLiteral(" class=\"fa fa-check-square-o\"");
 WriteLiteral("></i>\r\n                        فعال سازی\r\n                    </a>\r\n");
 
             
-            #line 101 "..\..\Views\Question\_QuestionItem.cshtml"
+            #line 88 "..\..\Views\Question\_QuestionItem.cshtml"
                 }
 
             

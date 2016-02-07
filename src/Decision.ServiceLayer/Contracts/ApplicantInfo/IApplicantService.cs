@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Home;
 using Decision.ViewModel.Applicant;
-using Decision.ViewModel.ReferentialApplicant;
 
 namespace Decision.ServiceLayer.Contracts.ApplicantInfo
 {
@@ -89,17 +88,5 @@ namespace Decision.ServiceLayer.Contracts.ApplicantInfo
         Task<ApplicantDetailsViewModel> GetApplicantDetails(Guid id);
         Task<ApplicantViewModel> Approve(Guid id);
 
-        Task<ApplicantViewModel> ReferApplicant(AddReferentialApplicantViewModel viewModel);
-        Task<ApplicantViewModel> CancelRefer(Guid id);
-
-        Task<bool> IsInRefer(Guid guid);
-        Task<IEnumerable<ApplicantViewModel>> GetRefersApplicants();
-        Task<IEnumerable<ReferApplicantViewModel>> GetRefersApplicants(bool withReferer);
-        Task FinishedRefer(Guid id);
-        long Count();
-        long ApprovedCount();
-        long NonApprovedCount();
-        IList<ApplicantWithTopScoreViewModel> GetTenTopScoreApplicants();
-        IList<NewAddedApplicantViewModel> GetTenNewAddedApplicants();
     }
 }

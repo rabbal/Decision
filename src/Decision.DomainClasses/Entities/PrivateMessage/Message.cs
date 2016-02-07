@@ -61,7 +61,7 @@ namespace Decision.DomainClasses.Entities.PrivateMessage
             /// <summary>
             /// gets or sets if of  user that start this conversationReply
             /// </summary>
-            public  long SenderId { get; set; }
+            public  Guid SenderId { get; set; }
             /// <summary>
             /// gets or sets user that start this conversationReply
             /// </summary>

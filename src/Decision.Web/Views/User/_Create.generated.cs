@@ -27,13 +27,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
-    #line 1 "..\..\Views\User\_Create.cshtml"
-    using Decision.Common.Helpers;
-    
-    #line default
-    #line hidden
-    using Decision.Common.MVC;
+    using Decision.Common.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -48,6 +42,8 @@ namespace ASP
         }
         public override void Execute()
         {
+WriteLiteral("\r\n");
+
 WriteLiteral("<div");
 
 WriteLiteral(" class=\"modal-dialog\"");

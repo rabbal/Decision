@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using System.Web.UI;
 using CaptchaMvc.Attributes;
 using Decision.Common.Controller;
+using Decision.Common.Extentions;
 using Decision.Common.Filters;
 using Decision.DataLayer.Context;
 using Decision.DomainClasses.Entities.Common;
@@ -57,7 +58,7 @@ namespace Decision.Web.Controllers
         //[CheckReferrer]
         [ValidateAntiForgeryToken]
         [CaptchaVerify("تصویر امنیتی را درست وارد کنید")]
-        [Audit(Description = "ورود به حساب کاربری",LogType = AuditLogType.Login)]
+        [Activity(Description = "ورود به حساب کاربری",LogType = AuditLogType.Login)]
         public virtual async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
 
@@ -104,7 +105,7 @@ namespace Decision.Web.Controllers
         [HttpGet]
         // [CheckReferrer]
         [Mvc5Authorize]
-        [Audit(Description ="خروج از حساب کاربری")]
+        [Activity(Description ="خروج از حساب کاربری")]
         public virtual ActionResult LogOff()
         {
             _authenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);

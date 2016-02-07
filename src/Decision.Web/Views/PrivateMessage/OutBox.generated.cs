@@ -27,7 +27,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using Decision.Common.MVC;
+    using Decision.Common.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -42,10 +42,10 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("\r\n");
+WriteLiteral("\r\n\r\n");
 
             
-            #line 3 "..\..\Views\PrivateMessage\OutBox.cshtml"
+            #line 4 "..\..\Views\PrivateMessage\OutBox.cshtml"
   
     ViewBag.Title = "لیست پیغام های ارسالی";
 
@@ -55,7 +55,7 @@ WriteLiteral("\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 6 "..\..\Views\PrivateMessage\OutBox.cshtml"
+            #line 7 "..\..\Views\PrivateMessage\OutBox.cshtml"
 Write(Html.AntiForgeryToken());
 
             
@@ -82,8 +82,8 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 11 "..\..\Views\PrivateMessage\OutBox.cshtml"
-           Write(Html.HelpAlert(@Url.Content("~/Content/Images/lightbulb.png"),
+            #line 12 "..\..\Views\PrivateMessage\OutBox.cshtml"
+           Write(Html.HelpAlert(Url.Content("~/Content/Images/lightbulb.png"),
                     "توجه کنید که حذف توسط گیرنده/فرستنده به معنای انصراف کلی است",
                     "اگر در لیست پیغام های ورودی یا خروجی ، پیغامی  توسط فرستنده یا گیرنده حذف شده باشد ،برای کاربر مقابل هم غیر فابل دسترس خواهد بود"));
 
@@ -99,13 +99,13 @@ WriteLiteral(" id=\"conversationList\"");
 WriteLiteral(">\r\n");
 
             
-            #line 21 "..\..\Views\PrivateMessage\OutBox.cshtml"
+            #line 22 "..\..\Views\PrivateMessage\OutBox.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 21 "..\..\Views\PrivateMessage\OutBox.cshtml"
+            #line 22 "..\..\Views\PrivateMessage\OutBox.cshtml"
           Html.RenderPartial(MVC.PrivateMessage.Views._OutBoxListAjax, Model);
             
             #line default
@@ -135,7 +135,7 @@ WriteLiteral("\r\n                        data-json=\'{}\'");
 WriteLiteral("\r\n                        data-load-url=\"");
 
             
-            #line 29 "..\..\Views\PrivateMessage\OutBox.cshtml"
+            #line 30 "..\..\Views\PrivateMessage\OutBox.cshtml"
                                   Write(Url.Action(MVC.PrivateMessage.OutBoxAjax()));
 
             
@@ -160,14 +160,14 @@ WriteLiteral(" style=\"display: none\"");
 
 WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1453), Tuple.Create("\"", 1503)
+WriteAttribute("src", Tuple.Create(" src=\"", 1454), Tuple.Create("\"", 1504)
             
-            #line 36 "..\..\Views\PrivateMessage\OutBox.cshtml"
-, Tuple.Create(Tuple.Create("", 1459), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
+            #line 37 "..\..\Views\PrivateMessage\OutBox.cshtml"
+, Tuple.Create(Tuple.Create("", 1460), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
             
             #line default
             #line hidden
-, 1459), false)
+, 1460), false)
 );
 
 WriteLiteral(" alt=\"loading...\"");
@@ -179,13 +179,13 @@ DefineSection("Menu", () => {
 WriteLiteral("\r\n");
 
             
-            #line 42 "..\..\Views\PrivateMessage\OutBox.cshtml"
+            #line 43 "..\..\Views\PrivateMessage\OutBox.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 42 "..\..\Views\PrivateMessage\OutBox.cshtml"
+            #line 43 "..\..\Views\PrivateMessage\OutBox.cshtml"
       Html.RenderPartial(MVC.Shared.Views._UserProfileSideBarMenu);
             
             #line default

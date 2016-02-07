@@ -29,11 +29,10 @@ namespace ASP
     using System.Web.WebPages;
     
     #line 2 "..\..\Views\Article\Edit.cshtml"
-    using Decision.Common.Helpers;
+    using Decision.Common.HtmlHelpers;
     
     #line default
     #line hidden
-    using Decision.Common.MVC;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -145,7 +144,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 18 "..\..\Views\Article\Edit.cshtml"
-                                                             
+                                                               
                     
             
             #line default
@@ -387,17 +386,17 @@ WriteLiteral(" data-type=\"pdf\"");
 
 WriteLiteral(" data-container=\"AttachmentScan\"");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3423), Tuple.Create("\"", 3527)
-, Tuple.Create(Tuple.Create("", 3431), Tuple.Create("btn", 3431), true)
-, Tuple.Create(Tuple.Create(" ", 3434), Tuple.Create("btn-primary", 3435), true)
-, Tuple.Create(Tuple.Create("   ", 3446), Tuple.Create("btn-sm", 3449), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3429), Tuple.Create("\"", 3533)
+, Tuple.Create(Tuple.Create("", 3437), Tuple.Create("btn", 3437), true)
+, Tuple.Create(Tuple.Create(" ", 3440), Tuple.Create("btn-primary", 3441), true)
+, Tuple.Create(Tuple.Create("   ", 3452), Tuple.Create("btn-sm", 3455), true)
             
             #line 55 "..\..\Views\Article\Edit.cshtml"
-                                                                     , Tuple.Create(Tuple.Create(" ", 3455), Tuple.Create<System.Object, System.Int32>(!string.IsNullOrEmpty(Model.AttachmentScan) ? "scan-remove" : "scan"
+                                                                     , Tuple.Create(Tuple.Create(" ", 3461), Tuple.Create<System.Object, System.Int32>(!string.IsNullOrEmpty(Model.AttachmentScan) ? "scan-remove" : "scan"
             
             #line default
             #line hidden
-, 3456), false)
+, 3462), false)
 );
 
 WriteLiteral(">\r\n\r\n");
@@ -490,14 +489,14 @@ WriteLiteral("></i>\r\n                        ذخیره تغییرات\r\n    
 
 WriteLiteral(" class=\"btn btn-default btn-md\"");
 
-WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 4770), Tuple.Create("\"", 4847)
+WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 4776), Tuple.Create("\"", 4855)
             
             #line 83 "..\..\Views\Article\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 4801), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Article.List(Model.ApplicantId))
+, Tuple.Create(Tuple.Create("", 4807), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Article.List(Model.ApplicantId))
             
             #line default
             #line hidden
-, 4801), false)
+, 4807), false)
 );
 
 WriteLiteral(" role=\"button\"");

@@ -45,12 +45,6 @@ namespace Decision.ServiceLayer.Contracts.Evaluations
         /// <returns></returns>
         Task<bool> IsInDb(Guid id);
 
-        Task<AddEntireEvaluationViewModel> GetForCreate(Guid ApplicantId);
-
-        Task FillEditViewModel(EditEntireEvaluationViewModel viewModel);
-
-        Task FillAddViewModel(AddEntireEvaluationViewModel viewModel);
-
-        Task<byte[]> GaetAttachment(Guid id);
+      
     }
 }

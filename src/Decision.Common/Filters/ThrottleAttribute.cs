@@ -8,6 +8,7 @@ using System.Web.Caching;
 using System.Web.Mvc;
 using Decision.Common.Caching;
 using Decision.Common.Extentions;
+using Decision.Utility;
 
 namespace Decision.Common.Filters
 {

@@ -9,10 +9,6 @@ namespace Decision.ViewModel.EducationalExperience
     /// </summary>
     public class EducationalExperienceSearchRequest : BaseSearchRequest
     {
-        /// <summary>
-        /// نوع سابقه آموزشی
-        /// </summary>
-        public EducationalExperienceType? Type { get; set; }
 
         /// <summary>
         /// آی دی متقاضی مرتبط با سابقه تدریس

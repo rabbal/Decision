@@ -83,45 +83,32 @@ namespace Decision.DataLayer.Context
         #endregion
 
         #region SaveChanges
-        public string SaveAllChanges(bool invalidateCacheDependencies = true, Guid? auditUserId = null)
+        public int SaveAllChanges(bool invalidateCacheDependencies = true, Guid? auditUserId = null)
         {
-            try
-            {
-                if (auditUserId.HasValue)
-                    AuditFields(auditUserId.Value);
-                SaveChanges();
-                if (!invalidateCacheDependencies) return string.Empty;
-                var changedEntityNames = GetChangedEntityNames();
-                new EFCacheServiceProvider().InvalidateCacheDependencies(changedEntityNames);
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                return ConcurrencyMessage;
-            }
-            return string.Empty;
+            if (auditUserId.HasValue)
+                UpdateAuditFields(auditUserId.Value);
+            var result = SaveChanges();
+            if (!invalidateCacheDependencies) return result;
+            var changedEntityNames = GetChangedEntityNames();
+            new EFCacheServiceProvider().InvalidateCacheDependencies(changedEntityNames);
+            return result;
         }
-        public async Task<string> SaveAllChangesAsync(bool invalidateCacheDependencies = true, Guid? auditUserId = null)
+        public Task<int> SaveAllChangesAsync(bool invalidateCacheDependencies = true, Guid? auditUserId = null)
         {
-            try
-            {
-                if (auditUserId.HasValue)
-                    AuditFields(auditUserId.Value);
-                await SaveChangesAsync();
-                if (!invalidateCacheDependencies) return string.Empty;
-                var changedEntityNames = GetChangedEntityNames();
-                new EFCacheServiceProvider().InvalidateCacheDependencies(changedEntityNames);
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                return ConcurrencyMessage;
-            }
-            return string.Empty;
+            if (auditUserId.HasValue)
+                UpdateAuditFields(auditUserId.Value);
+            var result = SaveChangesAsync();
+            if (!invalidateCacheDependencies) return result;
+            var changedEntityNames = GetChangedEntityNames();
+            new EFCacheServiceProvider().InvalidateCacheDependencies(changedEntityNames);
+
+            return result;
         }
 
         #endregion
 
-        #region AuditFields
-        private void AuditFields(Guid auditUserId)
+        #region UpdateAuditFields
+        private void UpdateAuditFields(Guid auditUserId)
         {
             var auditUserIp = HttpContext.Current.Request.GetIp();
             var auditUserAgent = HttpContext.Current.Request.GetBrowser();

@@ -19,12 +19,7 @@ namespace Decision.ViewModel.EducationalBackground
         /// </summary>
         [DisplayName("نوع تحصیلات")]
         public  EducationalType EducationalType { get; set; }
-
-        /// <summary>
-        /// مقطع تحصیلات حوزوی
-        /// </summary>
-        [DisplayName("مقطع تحصیلات حوزی")]
-        public  HozeDegrees HosDegree { get; set; }
+        
 
         /// <summary>
         /// مقطع تحصیلی دانشگاهی

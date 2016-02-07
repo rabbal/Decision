@@ -45,7 +45,7 @@ namespace Decision.ServiceLayer.Contracts.Common
 
         void FillAddViewModel(AddAddressViewModel viewModel,string path);
         void FillEditViewModel(EditAddressViewModel viewModel,string path);
-        AddAddressViewModel GetForCreate(Guid ApplicantId,string path);
+        AddAddressViewModel GetForCreate(Guid applicantId,string path);
 
         Task<AddressViewModel> GetAddressViewModel(Guid guid);
     }

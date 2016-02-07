@@ -38,6 +38,14 @@ namespace Decision.DomainClasses.Entities.Users
         /// لیست دسترسی های گروه کاربری
         /// </summary>
         public string Permissions { get; set; }
+        /// <summary>
+        /// فرمت ایکس ام ال دسترسی ها
+        /// </summary>
+        public XElement XmlPermissions
+        {
+            get { return XElement.Parse(Permissions); }
+            set { Permissions = value.ToString(); }
+        }
         #endregion
     }
 }

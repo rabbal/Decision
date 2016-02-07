@@ -226,16 +226,10 @@
     <Compile Include="AddressController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="AdoptedPriorityController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AppraiserController.generated.cs">
+    <Compile Include="ApplicantController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="ArticleController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ArticleEvaluationController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="BaseSettingController.generated.cs">
@@ -245,30 +239,23 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AddressController.cs" />
-    <Compile Include="Controllers\AdoptedPriorityController.cs" />
-    <Compile Include="Controllers\AppraiserController.cs" />
     <Compile Include="Controllers\BaseSettingController.cs" />
     <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\EducationalBackgroundController.cs" />
     <Compile Include="Controllers\ElmahController.cs" />
     <Compile Include="Controllers\EntireEvaluationController.cs" />
-    <Compile Include="Controllers\FavoriteIssueController.cs" />
-    <Compile Include="Controllers\InstitutionController.cs" />
     <Compile Include="Controllers\InterviewController.cs" />
-    <Compile Include="Controllers\TeacherInServiceCourseTypeController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
-    <Compile Include="Controllers\ArticleEvaluationController.cs" />
-    <Compile Include="Controllers\OrganizationalTeachingController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ResearchExperienceController.cs" />
-    <Compile Include="Controllers\ScientificTeachingController.cs" />
-    <Compile Include="Controllers\TitleController.cs" />
-    <Compile Include="Controllers\TrainingCenterController.cs" />
-    <Compile Include="Controllers\TrainingCourseController.cs" />
+    <Compile Include="Controllers\EducationalExperienceController.cs" />
     <Compile Include="Controllers\WorkExperienceController.cs" />
     <Compile Include="Controllers\PrivateMessageController.cs" />
     <Compile Include="EducationalBackgroundController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EducationalExperienceController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="ElmahController.generated.cs">
@@ -280,22 +267,13 @@
     <Compile Include="ErrorController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="FavoriteIssueController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\LazySingleton.cs" />
     <Compile Include="HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Hubs\HomeHub.cs" />
     <Compile Include="Hubs\NotificationHub.cs" />
-    <Compile Include="InstitutionController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="InterviewController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrganizationalTeachingController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="PrivateMessageController.generated.cs">
@@ -313,30 +291,12 @@
     <Compile Include="RoleController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="ScientificTeachingController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="T4MVC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TeacherController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TeacherInServiceCourseTypeController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TitleController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TrainingCenterController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TrainingCourseController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="UserController.generated.cs">
@@ -346,16 +306,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_AddressItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AdoptedPriority\_AdoptedPriorityItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_AdoptedPriorityItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Appraiser\_AppraiserItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_AppraiserItem.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\BaseSetting\Index.generated.cs">
       <AutoGen>True</AutoGen>
@@ -427,11 +377,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Unauthorized.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FavoriteIssue\_FavoriteIssueItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_FavoriteIssueItem.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Home\_Benckmarks.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -447,55 +392,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_NewTeachersList.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Institution\_InstitutionItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_InstitutionItem.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Interview\_InterviewItem.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_InterviewItem.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TeacherInServiceCourseType\List.generated.cs">
+    <Compile Include="Views\Applicant\_ApplicantRelatedLinksBuilder.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TeacherInServiceCourseType\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TeacherInServiceCourseType\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TeacherInServiceCourseType\_TeacherInServiceCourseTypeItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_TeacherInServiceCourseTypeItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TeacherInServiceCourseType\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Teacher\NewTeacherList.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NewTeacherList.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Teacher\ReferList.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReferList.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Teacher\_TeacherRelatedLinksBuilder.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_TeacherRelatedLinksBuilder.cshtml</DependentUpon>
+      <DependentUpon>_ApplicantRelatedLinksBuilder.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Address\List.generated.cs">
       <AutoGen>True</AutoGen>
@@ -513,46 +418,6 @@
       <DependentUpon>_Edit.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Address\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AdoptedPriority\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AdoptedPriority\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AdoptedPriority\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AdoptedPriority\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Appraiser\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Appraiser\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Appraiser\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Appraiser\_ListAjax.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_ListAjax.cshtml</DependentUpon>
@@ -577,46 +442,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_ListAjax.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FavoriteIssue\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FavoriteIssue\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FavoriteIssue\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FavoriteIssue\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Institution\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Institution\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Institution\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Institution\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Interview\List.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -637,57 +462,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_ListAjax.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Teacher\Create.generated.cs">
+    <Compile Include="Views\Applicant\Create.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Create.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Teacher\Details.generated.cs">
+    <Compile Include="Views\Applicant\Details.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Details.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Teacher\Edit.generated.cs">
+    <Compile Include="Views\Applicant\Edit.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Edit.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Teacher\List.generated.cs">
+    <Compile Include="Views\Applicant\List.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>List.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Teacher\_TeacherItem.generated.cs">
+    <Compile Include="Views\Applicant\_ApplicantItem.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>_TeacherItem.cshtml</DependentUpon>
+      <DependentUpon>_ApplicantItem.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Teacher\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Teacher\_Refer.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Refer.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ArticleEvaluation\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ArticleEvaluation\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ArticleEvaluation\_ArticleEvaluationSidbarMenu.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ArticleEvaluationSidbarMenu.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ArticleEvaluation\_ListAjax.generated.cs">
+    <Compile Include="Views\Applicant\_ListAjax.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_ListAjax.cshtml</DependentUpon>
@@ -716,31 +516,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\OrganizationalTeaching\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\OrganizationalTeaching\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\OrganizationalTeaching\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\OrganizationalTeaching\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\OrganizationalTeaching\_OrganizationalTeachingItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_OrganizationalTeachingItem.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\PrivateMessage\InBox.generated.cs">
       <AutoGen>True</AutoGen>
@@ -837,30 +612,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_RoleItem.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ScientificTeaching\List.generated.cs">
+    <Compile Include="Views\EducationalExperience\List.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>List.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ScientificTeaching\_Create.generated.cs">
+    <Compile Include="Views\EducationalExperience\_Create.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_Create.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ScientificTeaching\_Edit.generated.cs">
+    <Compile Include="Views\EducationalExperience\_Edit.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_Edit.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ScientificTeaching\_ListAjax.generated.cs">
+    <Compile Include="Views\EducationalExperience\_ListAjax.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_ListAjax.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ScientificTeaching\_ScientificTeachingItem.generated.cs">
+    <Compile Include="Views\EducationalExperience\_EducationalExperienceItem.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>_ScientificTeachingItem.cshtml</DependentUpon>
+      <DependentUpon>_EducationalExperienceItem.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.generated.cs">
       <AutoGen>True</AutoGen>
@@ -917,10 +692,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_AuditLog.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Shared\_TeacherManagementsSidbarMenu.generated.cs">
+    <Compile Include="Views\Shared\_ApplicantManagementsSidbarMenu.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>_TeacherManagementsSidbarMenu.cshtml</DependentUpon>
+      <DependentUpon>_ApplicantManagementsSidbarMenu.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\_LoginPartial.generated.cs">
       <AutoGen>True</AutoGen>
@@ -946,81 +721,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_UserProfileSideBarMenu.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Title\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Title\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Title\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Title\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Title\_TitleItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_TitleItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TrainingCenter\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TrainingCenter\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TrainingCenter\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TrainingCenter\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TrainingCenter\_TrainingCenterItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_TrainingCenterItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TrainingCourse\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TrainingCourse\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TrainingCourse\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TrainingCourse\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TrainingCourse\_TrainingCourseItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_TrainingCourseItem.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\User\_UserItem.generated.cs">
       <AutoGen>True</AutoGen>
@@ -1052,10 +752,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_WorkExperienceItem.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Filters\AuditAttribute.cs" />
+    <Compile Include="Filters\ActivityAttribute.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TeacherController.cs" />
+    <Compile Include="Controllers\ApplicantController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Views\Home\Index.generated.cs">
@@ -1125,7 +825,6 @@
     </Compile>
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Extentions\ControllerExtentions.cs" />
-    <Compile Include="Filters\TeacherAuthorizeAttribute.cs" />
     <Compile Include="Helpers\TreeView.cs" />
     <Compile Include="Hubs\BaseHub.cs" />
     <Compile Include="App_Start\RoutingConfig.cs" />
@@ -2279,7 +1978,7 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>List.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Teacher\Create.cshtml">
+    <Content Include="Views\Applicant\Create.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Create.generated.cs</LastGenOutput>
     </Content>
@@ -2287,7 +1986,7 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>PersianDatePicker.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Teacher\List.cshtml">
+    <Content Include="Views\Applicant\List.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>List.generated.cs</LastGenOutput>
     </Content>
@@ -2359,69 +2058,21 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>DatePickerInitial.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\TrainingCenter\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\TrainingCenter\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\TrainingCenter\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\TrainingCenter\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\Shared\_PublicSettingSideBarMenu.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_PublicSettingSideBarMenu.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Title\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Title\_ListAjax.cshtml">
+    <Content Include="Views\Applicant\_ListAjax.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Title\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Title\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\TrainingCourse\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\TrainingCourse\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\TrainingCourse\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\TrainingCourse\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Teacher\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Teacher\Edit.cshtml">
+    <Content Include="Views\Applicant\Edit.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Edit.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Shared\_TeacherManagementsSidbarMenu.cshtml">
+    <Content Include="Views\Shared\_ApplicantManagementsSidbarMenu.cshtml">
       <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_TeacherManagementsSidbarMenu.generated.cs</LastGenOutput>
+      <LastGenOutput>_ApplicantManagementsSidbarMenu.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\customs\noty.alerts.min.js.map">
       <DependentUpon>noty.alerts.min.js</DependentUpon>
@@ -2430,7 +2081,7 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_UserManagementsSideBarMenu.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Teacher\Details.cshtml">
+    <Content Include="Views\Applicant\Details.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Details.generated.cs</LastGenOutput>
     </Content>
@@ -2450,22 +2101,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Create.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Appraiser\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Appraiser\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Appraiser\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Appraiser\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\EducationalBackground\List.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>List.generated.cs</LastGenOutput>
@@ -2479,38 +2114,6 @@
       <LastGenOutput>Edit.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\EducationalBackground\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\FavoriteIssue\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\FavoriteIssue\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\FavoriteIssue\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\FavoriteIssue\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Institution\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Institution\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Institution\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Institution\_ListAjax.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
     </Content>
@@ -2546,22 +2149,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\OrganizationalTeaching\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\OrganizationalTeaching\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\OrganizationalTeaching\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\OrganizationalTeaching\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\ResearchExperience\List.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>List.generated.cs</LastGenOutput>
@@ -2578,19 +2165,19 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\ScientificTeaching\List.cshtml">
+    <Content Include="Views\EducationalExperience\List.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>List.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\ScientificTeaching\_Create.cshtml">
+    <Content Include="Views\EducationalExperience\_Create.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Create.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\ScientificTeaching\_Edit.cshtml">
+    <Content Include="Views\EducationalExperience\_Edit.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Edit.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\ScientificTeaching\_ListAjax.cshtml">
+    <Content Include="Views\EducationalExperience\_ListAjax.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
     </Content>
@@ -2610,22 +2197,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_ListAjax1.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\AdoptedPriority\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\AdoptedPriority\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\AdoptedPriority\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\AdoptedPriority\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\Role\_RoleItem.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_RoleItem.generated.cs</LastGenOutput>
@@ -2634,41 +2205,21 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_UserItem.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Teacher\_TeacherItem.cshtml">
+    <Content Include="Views\Applicant\_ApplicantItem.cshtml">
       <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_TeacherItem.generated.cs</LastGenOutput>
+      <LastGenOutput>_ApplicantItem.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Teacher\_Refer.cshtml">
+    <Content Include="Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml">
       <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Refer.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Teacher\_TeacherRelatedLinksBuilder.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_TeacherRelatedLinksBuilder.generated.cs</LastGenOutput>
+      <LastGenOutput>_ApplicantRelatedLinksBuilder.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Address\_AddressItem.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_AddressItem.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\AdoptedPriority\_AdoptedPriorityItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_AdoptedPriorityItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Appraiser\_AppraiserItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_AppraiserItem.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\EducationalBackground\_EducationalBackgroundItem.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_EducationalBackgroundItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\FavoriteIssue\_FavoriteIssueItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_FavoriteIssueItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Institution\_InstitutionItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_InstitutionItem.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Interview\_InterviewItem.cshtml">
       <Generator>RazorGenerator</Generator>
@@ -2678,29 +2229,13 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_ArticleItem.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\OrganizationalTeaching\_OrganizationalTeachingItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_OrganizationalTeachingItem.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\ResearchExperience\_ResearchExperienceItem.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_ResearchExperienceItem.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\ScientificTeaching\_ScientificTeachingItem.cshtml">
+    <Content Include="Views\EducationalExperience\_EducationalExperienceItem.cshtml">
       <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ScientificTeachingItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Title\_TitleItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_TitleItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\TrainingCenter\_TrainingCenterItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_TrainingCenterItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\TrainingCourse\_TrainingCourseItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_TrainingCourseItem.generated.cs</LastGenOutput>
+      <LastGenOutput>_EducationalExperienceItem.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\WorkExperience\_WorkExperienceItem.cshtml">
       <Generator>RazorGenerator</Generator>
@@ -2804,26 +2339,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_EntireEvaluationItem.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\TeacherInServiceCourseType\_TeacherInServiceCourseTypeItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_TeacherInServiceCourseTypeItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\TeacherInServiceCourseType\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\TeacherInServiceCourseType\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\TeacherInServiceCourseType\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\TeacherInServiceCourseType\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\Question\List.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>List.generated.cs</LastGenOutput>
@@ -2875,14 +2390,6 @@
     <Content Include="Views\PrivateMessage\_Reply.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Reply.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Teacher\ReferList.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ReferList.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\ArticleEvaluation\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\BaseSetting\Index.cshtml">
       <Generator>RazorGenerator</Generator>
@@ -3058,18 +2565,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_LoginPartial.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\ArticleEvaluation\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\ArticleEvaluation\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\ArticleEvaluation\_ArticleEvaluationSidbarMenu.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ArticleEvaluationSidbarMenu.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>SiteMapTitleHelperModel.generated.cs</LastGenOutput>
@@ -3105,10 +2600,6 @@
     <Content Include="Views\Shared\DisplayTemplates\SiteMapPath.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>SiteMapPath.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Teacher\NewTeacherList.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NewTeacherList.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Home\_Benckmarks.cshtml">
       <Generator>RazorGenerator</Generator>

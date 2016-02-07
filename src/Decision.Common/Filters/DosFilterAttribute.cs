@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Decision.Common.Caching;
 using Decision.Common.Extentions;
+using Decision.Utility;
 
 namespace Decision.Common.Filters
 {

@@ -15,14 +15,13 @@ namespace Decision.DomainClasses.Configurations.Users
         /// </summary>
         public UserConfig()
         {
-            ToTable("Users");
+            ToTable(nameof(Users));
             HasMany(u => u.Roles).WithRequired().HasForeignKey(ur => ur.UserId);
             HasMany(u => u.Claims).WithRequired().HasForeignKey(uc => uc.UserId);
             HasMany(u => u.Logins).WithRequired().HasForeignKey(ul => ul.UserId);
             Property(u => u.LastIp).IsOptional().HasMaxLength(20);
             Property(u => u.RowVersion).IsRowVersion();
-            Property(u => u.FirstName).IsRequired().HasMaxLength(50);
-            Property(u => u.LastName).IsRequired().HasMaxLength(50);
+            Property(u => u.DisplayName).IsRequired().HasMaxLength(50);
             Property(u => u.PhoneNumber).IsOptional().HasMaxLength(20);
             Property(u => u.DirectPermissions).HasColumnType("xml");
             Ignore(u => u.XmlDirectPermissions);

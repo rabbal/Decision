@@ -44,11 +44,6 @@ namespace Decision.ServiceLayer.Contracts.ApplicantInfo
 
 
         Task<bool> IsInDb(Guid guid);
-
-        Task FillEditViewModel(EditEducationalBackgroundViewModel viewModel);
-
-        Task<AddEducationalBackgroundViewModel> GetForCreate(Guid ApplicantId);
-
-        Task FillAddViewModel(AddEducationalBackgroundViewModel viewModel);
+        
     }
 }

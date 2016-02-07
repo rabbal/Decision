@@ -23,15 +23,17 @@ namespace Decision.DomainClasses.Configurations.Common
             Property(a => a.XmlNewValue).IsOptional().HasColumnType("xml");
             Property(a => a.XmlOldValue).IsOptional().HasColumnType("xml");
             Property(a => a.Description).IsRequired().HasMaxLength(1024);
+
             Property(a => a.Entity).IsRequired().HasMaxLength(20)
                 .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_AuditTableName")));
+
             Property(a => a.EntityId).IsOptional()
                 .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_AuditEntityId")));
            
             Ignore(a => a.XmlNewValueWrapper);
             Ignore(a => a.XmlOldValueWrapper);
 
-            HasRequired(a=>a.Creator).WithMany(a=>a.AuditLogs).HasForeignKey(a=>a.CreatorId).WillCascadeOnDelete(false);
+            HasRequired(a=>a.Operant).WithMany(a=>a.AuditLogs).HasForeignKey(a=>a.OperantId).WillCascadeOnDelete(false);
 
         }
     }

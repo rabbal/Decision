@@ -1,5 +1,7 @@
-﻿@using Decision.Common.Helpers
-@using Decision.Common.Helpers.Extentions
+﻿
+
+@using AttributeRouting.Helpers
+@using Decision.Common.HtmlHelpers
 @model Decision.ViewModel.EducationalBackground.EditEducationalBackgroundViewModel
 
 
@@ -33,13 +35,7 @@
                             @Html.ValidationMessageFor(model => model.AcademicDegree, "", new { @class = "text-danger" })
                         </div>
                     </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.HosDegree, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-4">
-                            @Html.EditorFor(model => model.HosDegree)
-                            @Html.ValidationMessageFor(model => model.HosDegree, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                    
                     <div class="form-group">
                         @Html.LabelFor(model => model.StudyFieldId, new { @class = "control-label col-md-2" })
                         <div class="col-md-4">

@@ -6,8 +6,7 @@ using System.Web.Mvc;
 using System.Web.UI;
 using Decision.Common.Controller;
 using Decision.Common.Filters;
-using Decision.Common.Helpers.Extentions;
-using Decision.Common.Helpers.Json;
+using Decision.Common.Json;
 using Decision.DataLayer.Context;
 using Decision.ServiceLayer.Contracts.Common;
 using Decision.ServiceLayer.Contracts.ApplicantInfo;
@@ -16,10 +15,10 @@ using Decision.ViewModel.Address;
 using Decision.Web.Extentions;
 using Decision.Web.Filters;
 using MvcSiteMapProvider;
-
+using Decision.Common.Extentions;
 namespace Decision.Web.Controllers
 {
-    
+
     [RoutePrefix("Applicant/Address")]
     [Route("{action}")]
     [Mvc5Authorize(AssignableToRolePermissions.CanManageAddress)]
@@ -27,18 +26,17 @@ namespace Decision.Web.Controllers
     {
         #region	Fields
 
-        private readonly IReferentialApplicantService _referentialApplicantService;
         private const string IranCitiesPath = "~/App_Data/IranCities.xml";
         private readonly IUnitOfWork _unitOfWork;
         private readonly IAddressService _addressService;
         #endregion
 
         #region	Ctor
-        public AddressController(IUnitOfWork unitOfWork, IAddressService addressService,IReferentialApplicantService referentialApplicantService)
+        public AddressController(IUnitOfWork unitOfWork, IAddressService addressService)
         {
             _unitOfWork = unitOfWork;
             _addressService = addressService;
-            _referentialApplicantService = referentialApplicantService;
+
         }
         #endregion
 
@@ -46,24 +44,22 @@ namespace Decision.Web.Controllers
         [HttpGet]
         [Route("List/{ApplicantId}")]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        [ApplicantAuthorize]
-        [MvcSiteMapNode(ParentKey = "Applicant_Details", Title = "لیست آدرس ها",PreservedRouteParameters = "ApplicantId")]
-        public virtual async Task<ActionResult> List(Guid ApplicantId)
+        [MvcSiteMapNode(ParentKey = "Applicant_Details", Title = "لیست آدرس ها", PreservedRouteParameters = "ApplicantId")]
+        public virtual async Task<ActionResult> List(Guid applicantId)
         {
             var viewModel = await _addressService.GetAddressesAsync(new AddressSearchRequest
             {
-                ApplicantId = ApplicantId
+                ApplicantId = applicantId
             });
-            return View( viewModel);
+            return View(viewModel);
         }
         //[CheckReferrer]
         [HttpPost]
         [AjaxOnly]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        
+
         public virtual async Task<ActionResult> ListAjax(AddressSearchRequest request)
         {
-            if (!_referentialApplicantService.CanManageApplicant(request.ApplicantId)) return HttpNotFound();
             var viewModel = await _addressService.GetAddressesAsync(request);
             if (viewModel.Addresses == null || !viewModel.Addresses.Any()) return Content("no-more-info");
             return PartialView(MVC.Address.Views._ListAjax, viewModel);
@@ -73,11 +69,10 @@ namespace Decision.Web.Controllers
         #region Create
         [HttpGet]
         [AjaxOnly]
-        
-        public virtual ActionResult Create(Guid ApplicantId)
+
+        public virtual ActionResult Create(Guid applicantId)
         {
-            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
-            var viewModel = _addressService.GetForCreate(ApplicantId,IranCitiesPath);
+            var viewModel = _addressService.GetForCreate(applicantId, IranCitiesPath);
             return PartialView(MVC.Address.Views._Create, viewModel);
         }
 
@@ -85,14 +80,13 @@ namespace Decision.Web.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //[CheckReferrer]
-        [Audit(Description = "درج آدرس جدید")]
-        
+        [Activity(Description = "درج آدرس جدید")]
+
         public virtual async Task<ActionResult> Create(AddAddressViewModel viewModel)
         {
-            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
             if (!ModelState.IsValid)
             {
-                _addressService.FillAddViewModel(viewModel,IranCitiesPath);
+                _addressService.FillAddViewModel(viewModel, IranCitiesPath);
                 return new JsonNetResult
                 {
                     Data = new
@@ -102,7 +96,7 @@ namespace Decision.Web.Controllers
                     }
                 };
             }
-            var newAdress=await _addressService.Create(viewModel);
+            var newAdress = await _addressService.Create(viewModel);
             return new JsonNetResult
             {
                 Data = new
@@ -123,7 +117,7 @@ namespace Decision.Web.Controllers
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var viewModel = await _addressService.GetForEditAsync(id.Value, IranCitiesPath);
             if (viewModel == null) return HttpNotFound();
-            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
+          
             return PartialView(MVC.Address.Views._Edit, viewModel);
         }
 
@@ -131,14 +125,9 @@ namespace Decision.Web.Controllers
         //[CheckReferrer]
         [AjaxOnly]
         [ValidateAntiForgeryToken]
-        [Audit(Description = "ویرایش آدرس متقاضی")]
+        [Activity(Description = "ویرایش آدرس متقاضی")]
         public virtual async Task<ActionResult> Edit(EditAddressViewModel viewModel)
         {
-            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
-
-            if (!await _addressService.IsInDb(viewModel.Id))
-                this.AddErrors("Location", "آدرس مورد نظر توسط یکی از کاربران در شبکه،حذف شده است");
-
             if (!ModelState.IsValid)
             {
                 _addressService.FillEditViewModel(viewModel, IranCitiesPath);
@@ -151,12 +140,8 @@ namespace Decision.Web.Controllers
                     }
                 };
             }
-
-            
             await _addressService.EditAsync(viewModel);
-            var message = await _unitOfWork.ConcurrencySaveChangesAsync();
-            if (message.HasValue())
-                this.AddErrors("Location", string.Format(message, "آدرس"));
+            await _unitOfWork.SaveAllChangesAsync();
 
             if (ModelState.IsValid)
             {
@@ -188,12 +173,11 @@ namespace Decision.Web.Controllers
         [AjaxOnly]
         //[CheckReferrer]
         [ValidateAntiForgeryToken]
-        [Audit(Description = "حذف آدرس متقاضی")]
+        [Activity(Description = "حذف آدرس متقاضی")]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        
-        public virtual async Task<ActionResult> Delete(Guid? id,Guid ApplicantId)
+
+        public virtual async Task<ActionResult> Delete(Guid? id, Guid applicantId)
         {
-            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             await _addressService.DeleteAsync(id.Value);
             return Content("ok");

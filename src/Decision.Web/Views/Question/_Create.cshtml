@@ -1,10 +1,7 @@
-﻿@using Decision.Common.Helpers
-@using Decision.DomainClasses.Entities.Evaluations
-@model Decision.ViewModel.Question.AddQuestionViewModel
+﻿@model Decision.ViewModel.Question.AddQuestionViewModel
 @{
     var optionId = Model.Options != null && Model.Options.Any() ? Model.Options.Count : 0;
-    var display = Model.Type == QuestionType.CheckBoxList || Model.Type == QuestionType.RadioButtonList?"block":"none";
-}
+  }
 <div class="row">
     <div class="col-md-12">
         @using (Html.BeginForm(MVC.Question.Create(), FormMethod.Post, new { @class = "form-horizontal", id = "createQuestionForm", autocomplete = "off" }))
@@ -27,13 +24,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-5">
-                    @Html.EnumDropDownListFor(model => model.Type, htmlAttributes: new { @class = "form-control input-sm", onchange = "onquestiontype('Type');" }) 
-                    @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
-                </div>
-            </div>
+           
             if (Model.Options != null && Model.Options.Any())
             {
                 for (var i = 0; i < Model.Options.Count; i++)
@@ -59,8 +50,8 @@
                     <button type="button" id="createQuestionButton" autocomplete="off" onclick="formDataSubmitWidOutEditor(this, 'createQuestionForm', '#questionList', '#create-question')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">
                         ثبت سوال جدید
                     </button>
-                    <button onclick="generateOption(this, @optionId, '#questionSubmit')" style="display: @display;" type="button"
-                            class="btn btn-default btn-md option">افزودن گزینه</button>
+                    @*<button onclick="generateOption(this, @optionId, '#questionSubmit')" style="display: @display;" type="button"
+                            class="btn btn-default btn-md option">افزودن گزینه</button>*@
                   
                 </div>
                

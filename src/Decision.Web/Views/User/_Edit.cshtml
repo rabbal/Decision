@@ -1,4 +1,4 @@
-﻿@using Decision.Common.Helpers
+﻿
 @model Decision.ViewModel.User.EditUserViewModel
 <div class="col-md-6" id="user-@Model.Id">
     @using (Ajax.BeginForm(MVC.User.Edit(), new AjaxOptions { HttpMethod = "POST", OnComplete = "editOnComplete(xhr, status, '" + Model.Id + "','#editButton" + Model.Id + "')" }, new { @class = "form-horizontal", id = Model.Id, autocomplete = "off", data_ajax_update = "user-" + Model.Id }))
@@ -67,7 +67,7 @@
             </div>
             <div class="panel-footer block">
                 <div class="pull-left">
-                    <button type="button" id="@($"editButton{Model.Id}")" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, '@Model.Id')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-sm">
+                    <button type="button" id="@*@($"editButton{Model.Id}")*@" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, '@Model.Id')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-sm">
                         <i class="fa fa-check-square-o"></i>
                         ذخیره تغییرات
                     </button>

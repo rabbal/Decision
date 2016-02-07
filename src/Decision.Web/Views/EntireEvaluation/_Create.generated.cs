@@ -27,13 +27,6 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
-    #line 1 "..\..\Views\EntireEvaluation\_Create.cshtml"
-    using Decision.Common.Helpers.Extentions;
-    
-    #line default
-    #line hidden
-    using Decision.Common.MVC;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -48,6 +41,8 @@ namespace ASP
         }
         public override void Execute()
         {
+WriteLiteral("\r\n");
+
 WriteLiteral("<div");
 
 WriteLiteral(" class=\"row\"");
@@ -95,7 +90,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 9 "..\..\Views\EntireEvaluation\_Create.cshtml"
-                                                     
+                                                       
             
             
             #line default
@@ -395,114 +390,9 @@ WriteLiteral("                    ");
             #line hidden
 WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
 
-WriteLiteral("            <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
-
             
-            #line 59 "..\..\Views\EntireEvaluation\_Create.cshtml"
-           Write(Html.LabelFor(model => model.AttachmentFile, htmlAttributes: new { @class = "control-label col-md-1" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                <div");
-
-WriteLiteral(" class=\"col-md-6\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 61 "..\..\Views\EntireEvaluation\_Create.cshtml"
-               Write(Html.TextBoxFor(model => model.AttachmentFile, new { type = "file", @class = "form-control" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                </div>\r\n                <div");
-
-WriteLiteral(" class=\"col-md-4\"");
-
-WriteLiteral(">\r\n                    <button");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" autocomplete=\"off\"");
-
-WriteLiteral(" data-type=\"pdf\"");
-
-WriteLiteral(" data-container=\"AttachmentScan\"");
-
-WriteAttribute("class", Tuple.Create(" class=\"", 3838), Tuple.Create("\"", 3930)
-, Tuple.Create(Tuple.Create("", 3846), Tuple.Create("btn", 3846), true)
-, Tuple.Create(Tuple.Create(" ", 3849), Tuple.Create("btn-primary", 3850), true)
-, Tuple.Create(Tuple.Create("   ", 3861), Tuple.Create("btn-sm", 3864), true)
-            
-            #line 64 "..\..\Views\EntireEvaluation\_Create.cshtml"
-                                                             , Tuple.Create(Tuple.Create(" ", 3870), Tuple.Create<System.Object, System.Int32>(Model.AttachmentScan.HasValue() ? "scan-remove" : "scan"
-            
-            #line default
-            #line hidden
-, 3871), false)
-);
-
-WriteLiteral(">\r\n\r\n");
-
-            
-            #line 66 "..\..\Views\EntireEvaluation\_Create.cshtml"
-                        
-            
-            #line default
-            #line hidden
-            
-            #line 66 "..\..\Views\EntireEvaluation\_Create.cshtml"
-                         if (Model.AttachmentScan.HasValue())
-                        {
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                            <i");
-
-WriteLiteral(" class=\"fa fa-remove\"");
-
-WriteLiteral("></i>\r\n                            حذف فایل اسکن شده\r\n                        ");
-
-WriteLiteral("\r\n");
-
-            
-            #line 71 "..\..\Views\EntireEvaluation\_Create.cshtml"
-                        }
-                        else
-                        {
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                            <i");
-
-WriteLiteral(" class=\"fa fa-file-photo-o\"");
-
-WriteLiteral("></i>\r\n                            افزودن اسکن\r\n                        ");
-
-WriteLiteral("\r\n");
-
-            
-            #line 77 "..\..\Views\EntireEvaluation\_Create.cshtml"
-                        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                    </button>\r\n                </div>\r\n            </div>\r\n");
-
-            
-            #line 81 "..\..\Views\EntireEvaluation\_Create.cshtml"
-
+            #line 58 "..\..\Views\EntireEvaluation\_Create.cshtml"
+        
 
             
             #line default
@@ -534,7 +424,7 @@ WriteLiteral(">\r\n                        ثبت ارزیابی جدید\r\n   
 "           </div>\r\n            </div>\r\n");
 
             
-            #line 89 "..\..\Views\EntireEvaluation\_Create.cshtml"
+            #line 66 "..\..\Views\EntireEvaluation\_Create.cshtml"
         }
 
             

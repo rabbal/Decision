@@ -18,25 +18,16 @@ namespace Decision.DomainClasses.Configurations.Evaluations
         /// </summary>
         public QuestionConfig()
         {
-            Property(q => q.DefaultValue).IsMaxLength().IsOptional();
             Property(q => q.Title).IsMaxLength().IsRequired();
             Property(q => q.RowVersion).IsRowVersion();
-
-            HasMany(q => q.ArticleEvaluations)
-                .WithMany(jeq => jeq.Questions)
-                .Map(
-                    jq =>
-                        jq.ToTable("QuestionArticleEvaluation")
-                            .MapLeftKey("QuestionId")
-                            .MapRightKey("ArticleEvaluationId"));
-
+            
             HasMany(q => q.AnswerOptions)
                 .WithRequired(a => a.Question)
                 .HasForeignKey(a => a.QuestionId)
                 .WillCascadeOnDelete(true);
 
-            HasRequired(e => e.Creator).WithMany(u => u.CreatedQuestions).HasForeignKey(e => e.CreatorId).WillCascadeOnDelete(false);
-            HasOptional(e => e.LasModifier).WithMany(u => u.ModifiedQuestions).HasForeignKey(e => e.LasModifierId).WillCascadeOnDelete(false);
+            HasRequired(e => e.CreatedBy).WithMany().HasForeignKey(e => e.CreatedById).WillCascadeOnDelete(false);
+            HasRequired(e => e.ModifiedBy).WithMany().HasForeignKey(e => e.ModifiedById).WillCascadeOnDelete(false);
         }
     }
 }

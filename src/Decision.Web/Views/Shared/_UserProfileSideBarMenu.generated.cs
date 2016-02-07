@@ -27,7 +27,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using Decision.Common.MVC;
+    using Decision.Common.HtmlHelpers;
     
     #line 1 "..\..\Views\Shared\_UserProfileSideBarMenu.cshtml"
     using Decision.ServiceLayer.Security;
@@ -62,24 +62,6 @@ WriteLiteral("></span>تنظیمات کاربری</a>\r\n");
 
             
             #line 3 "..\..\Views\Shared\_UserProfileSideBarMenu.cshtml"
-Write(Html.SideBarSecureActionLink("لیست ارجاعات", Url.Action(MVC.Applicant.ReferList()), "list-group-item thrid-split", "fa fa-list-ol", StandardRoles.Operators));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-            
-            #line 4 "..\..\Views\Shared\_UserProfileSideBarMenu.cshtml"
-Write(Html.SideBarSecureActionLink("اساتید در حال تکمیل", Url.Action(MVC.Applicant.NewApplicantList()), "list-group-item thrid-split", "fa fa-list-ol", StandardRoles.Operators));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-            
-            #line 5 "..\..\Views\Shared\_UserProfileSideBarMenu.cshtml"
 Write(Html.SideBarSecureActionLink("درج متقاضی جدید", Url.Action(MVC.Applicant.Create()), "list-group-item thrid-split", "fa fa-plus", AssignableToRolePermissions.CanCreateApplicant));
 
             
@@ -88,7 +70,7 @@ Write(Html.SideBarSecureActionLink("درج متقاضی جدید", Url.Action(MV
 WriteLiteral("\r\n");
 
             
-            #line 6 "..\..\Views\Shared\_UserProfileSideBarMenu.cshtml"
+            #line 4 "..\..\Views\Shared\_UserProfileSideBarMenu.cshtml"
 Write(Html.SideBarSecureActionLink("پیغام های دریافتی", Url.Action(MVC.PrivateMessage.InBox()), "list-group-item second-split", "fa fa-list", AssignableToRolePermissions.CanUsePrivateMessage));
 
             
@@ -97,7 +79,7 @@ Write(Html.SideBarSecureActionLink("پیغام های دریافتی", Url.Actio
 WriteLiteral("\r\n");
 
             
-            #line 7 "..\..\Views\Shared\_UserProfileSideBarMenu.cshtml"
+            #line 5 "..\..\Views\Shared\_UserProfileSideBarMenu.cshtml"
 Write(Html.SideBarSecureActionLink("پیغام های ارسالی", Url.Action(MVC.PrivateMessage.OutBox()), "list-group-item second-split", "fa fa-list", AssignableToRolePermissions.CanUsePrivateMessage));
 
             
@@ -106,7 +88,7 @@ Write(Html.SideBarSecureActionLink("پیغام های ارسالی", Url.Action(
 WriteLiteral("\r\n");
 
             
-            #line 8 "..\..\Views\Shared\_UserProfileSideBarMenu.cshtml"
+            #line 6 "..\..\Views\Shared\_UserProfileSideBarMenu.cshtml"
 Write(Html.SideBarSecureActionLink("پیغام جدید", Url.Action(MVC.PrivateMessage.NewMessage()), "list-group-item second-split", "fa fa-commenting-o", AssignableToRolePermissions.CanUsePrivateMessage));
 
             

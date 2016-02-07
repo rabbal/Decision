@@ -1,5 +1,5 @@
-﻿@using Decision.Common.Helpers
-@using Decision.Common.Helpers.Extentions
+﻿
+@using Decision.Common.HtmlHelpers
 @model Decision.ViewModel.EducationalBackground.AddEducationalBackgroundViewModel
 <div class="row">
     <div class="col-md-12">
@@ -23,13 +23,7 @@
                     @Html.ValidationMessageFor(model => model.AcademicDegree, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.HosDegree, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-4">
-                    @Html.EditorFor(model => model.HosDegree)
-                    @Html.ValidationMessageFor(model => model.HosDegree, "", new { @class = "text-danger" })
-                </div>
-            </div>
+            
             <div class="form-group">
                 @Html.LabelFor(model => model.StudyFieldId, new { @class = "control-label col-md-2" })
                 <div class="col-md-4">
@@ -112,30 +106,7 @@
                     @Html.ValidationMessageFor(model => model.RelatedToOrganizationPosition, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.AttachmentFile, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-6">
-                    @Html.TextBoxFor(model => model.AttachmentFile, new { type = "file", @class = "form-control" })
-                </div>
-                <div class="col-md-4">
-                    <button type="button" autocomplete="off" data-type="image" data-container="AttachmentScan" class="btn btn-primary   btn-sm @(Model.AttachmentScan.HasValue() ? "scan-remove" : "scan")">
-
-                        @if (Model.AttachmentScan.HasValue())
-                        {<text>
-                            <i class="fa fa-remove"></i>
-                            حذف فایل اسکن شده
-                        </text>
-                        }
-                        else
-                        {<text>
-                            <i class="fa fa-file-photo-o"></i>
-                            افزودن اسکن
-                        </text>
-                        }
-                    </button>
-                </div>
-            </div>
-
+    
             <div class="form-group">
                 <div class="col-md-6 col-md-offset-2">
                     <button type="button" id="createEducationalBackgroundButton" autocomplete="off" onclick="formDataSubmitWidOutEditor(this, 'createEducationalBackgroundForm', '#educationalBackgroundList', '#create-educationalBackground')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">

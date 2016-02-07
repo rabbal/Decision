@@ -86,13 +86,6 @@ namespace Decision.Web.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> GetFile()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetFile);
-            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
-        }
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Delete()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Delete);
@@ -121,7 +114,6 @@ namespace Decision.Web.Controllers
             public readonly string Messages = ("Messages").ToLowerInvariant();
             public readonly string NewMessage = ("NewMessage").ToLowerInvariant();
             public readonly string Reply = ("Reply").ToLowerInvariant();
-            public readonly string GetFile = ("GetFile").ToLowerInvariant();
             public readonly string Delete = ("Delete").ToLowerInvariant();
         }
 
@@ -165,14 +157,6 @@ namespace Decision.Web.Controllers
         public class ActionParamsClass_Reply
         {
             public readonly string viewModel = ("viewModel").ToLowerInvariant();
-        }
-        static readonly ActionParamsClass_GetFile s_params_GetFile = new ActionParamsClass_GetFile();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_GetFile GetFileParams { get { return s_params_GetFile; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_GetFile
-        {
-            public readonly string id = ("id").ToLowerInvariant();
         }
         static readonly ActionParamsClass_Delete s_params_Delete = new ActionParamsClass_Delete();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -305,18 +289,6 @@ namespace Decision.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Reply);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "viewModel", viewModel);
             ReplyOverride(callInfo, viewModel);
-            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
-        }
-
-        [NonAction]
-        partial void GetFileOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid id);
-
-        [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> GetFile(System.Guid id)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetFile);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            GetFileOverride(callInfo, id);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 

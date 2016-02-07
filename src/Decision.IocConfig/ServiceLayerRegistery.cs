@@ -7,6 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using Decision.ServiceLayer.Contracts.Common;
 using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.EFServiecs.Users;
+using Decision.ServiceLayer.Contracts.Users;
 
 namespace Decision.IocConfig
 {
@@ -16,8 +17,7 @@ namespace Decision.IocConfig
         {
             Policies.SetAllProperties(y =>
             {
-                y.OfType<IAuditLogService>();
-                y.OfType<IReferentialApplicantService>();
+                y.OfType<IActivityLogService>();
             });
             Scan(scanner =>
             {

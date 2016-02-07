@@ -21,8 +21,8 @@ namespace Decision.DomainClasses.Configurations.ApplicantInfo
             Property(a => a.RowVersion).IsRowVersion();
 
             HasRequired(a=>a.Applicant).WithMany(j=>j.Addresses).HasForeignKey(a=>a.ApplicantId).WillCascadeOnDelete(true);
-            HasRequired(e => e.Creator).WithMany(u => u.CreatedAddresses).HasForeignKey(e => e.CreatorId).WillCascadeOnDelete(false);
-            HasOptional(e => e.LasModifier).WithMany(u => u.ModifiedAddresses).HasForeignKey(e => e.LasModifierId).WillCascadeOnDelete(false);
+            HasRequired(e => e.CreatedBy).WithMany().HasForeignKey(e => e.CreatedById).WillCascadeOnDelete(false);
+            HasRequired(e => e.ModifiedBy).WithMany().HasForeignKey(e => e.ModifiedById).WillCascadeOnDelete(false);
         }
     }
 }

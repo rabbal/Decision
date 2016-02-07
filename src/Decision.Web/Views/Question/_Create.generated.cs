@@ -27,19 +27,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
-    #line 1 "..\..\Views\Question\_Create.cshtml"
-    using Decision.Common.Helpers;
-    
-    #line default
-    #line hidden
-    using Decision.Common.MVC;
-    
-    #line 2 "..\..\Views\Question\_Create.cshtml"
-    using Decision.DomainClasses.Entities.Evaluations;
-    
-    #line default
-    #line hidden
+    using Decision.Common.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -55,11 +43,10 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 4 "..\..\Views\Question\_Create.cshtml"
+            #line 2 "..\..\Views\Question\_Create.cshtml"
   
     var optionId = Model.Options != null && Model.Options.Any() ? Model.Options.Count : 0;
-    var display = Model.Type == QuestionType.CheckBoxList || Model.Type == QuestionType.RadioButtonList?"block":"none";
-
+  
             
             #line default
             #line hidden
@@ -74,13 +61,13 @@ WriteLiteral(" class=\"col-md-12\"");
 WriteLiteral(">\r\n");
 
             
-            #line 10 "..\..\Views\Question\_Create.cshtml"
+            #line 7 "..\..\Views\Question\_Create.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 10 "..\..\Views\Question\_Create.cshtml"
+            #line 7 "..\..\Views\Question\_Create.cshtml"
          using (Html.BeginForm(MVC.Question.Create(), FormMethod.Post, new { @class = "form-horizontal", id = "createQuestionForm", autocomplete = "off" }))
         {
             
@@ -88,14 +75,14 @@ WriteLiteral(">\r\n");
             #line default
             #line hidden
             
-            #line 12 "..\..\Views\Question\_Create.cshtml"
+            #line 9 "..\..\Views\Question\_Create.cshtml"
        Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 12 "..\..\Views\Question\_Create.cshtml"
+            #line 9 "..\..\Views\Question\_Create.cshtml"
                                     
 
 
@@ -111,7 +98,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 15 "..\..\Views\Question\_Create.cshtml"
+            #line 12 "..\..\Views\Question\_Create.cshtml"
            Write(Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -126,7 +113,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 17 "..\..\Views\Question\_Create.cshtml"
+            #line 14 "..\..\Views\Question\_Create.cshtml"
                Write(Html.NoAutoCompleteTextBoxFor(model => model.Title));
 
             
@@ -137,7 +124,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 18 "..\..\Views\Question\_Create.cshtml"
+            #line 15 "..\..\Views\Question\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" }));
 
             
@@ -146,7 +133,7 @@ WriteLiteral("                    ");
 WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
 
             
-            #line 21 "..\..\Views\Question\_Create.cshtml"
+            #line 18 "..\..\Views\Question\_Create.cshtml"
 
 
             
@@ -161,7 +148,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 23 "..\..\Views\Question\_Create.cshtml"
+            #line 20 "..\..\Views\Question\_Create.cshtml"
            Write(Html.LabelFor(model => model.Weight, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -176,7 +163,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 25 "..\..\Views\Question\_Create.cshtml"
+            #line 22 "..\..\Views\Question\_Create.cshtml"
                Write(Html.NoAutoCompleteTextBoxForNumber(model => model.Weight));
 
             
@@ -187,7 +174,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 26 "..\..\Views\Question\_Create.cshtml"
+            #line 23 "..\..\Views\Question\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" }));
 
             
@@ -196,57 +183,9 @@ WriteLiteral("                    ");
 WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
 
             
-            #line 29 "..\..\Views\Question\_Create.cshtml"
+            #line 26 "..\..\Views\Question\_Create.cshtml"
 
-
-            
-            #line default
-            #line hidden
-WriteLiteral("            <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
-
-            
-            #line 31 "..\..\Views\Question\_Create.cshtml"
-           Write(Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                <div");
-
-WriteLiteral(" class=\"col-md-5\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 33 "..\..\Views\Question\_Create.cshtml"
-               Write(Html.EnumDropDownListFor(model => model.Type, htmlAttributes: new { @class = "form-control input-sm", onchange = "onquestiontype('Type');" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral(" \r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 34 "..\..\Views\Question\_Create.cshtml"
-               Write(Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
-
-            
-            #line 37 "..\..\Views\Question\_Create.cshtml"
+           
             if (Model.Options != null && Model.Options.Any())
             {
                 for (var i = 0; i < Model.Options.Count; i++)
@@ -264,7 +203,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 42 "..\..\Views\Question\_Create.cshtml"
+            #line 33 "..\..\Views\Question\_Create.cshtml"
                    Write(Html.Label("Options[" + i + "].Name","متن گزینه", htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -279,7 +218,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 44 "..\..\Views\Question\_Create.cshtml"
+            #line 35 "..\..\Views\Question\_Create.cshtml"
                        Write(Html.TextBox("Options[" + i + "].Name",Model.Options.ElementAt(i).Name, new { @class = "form-control" }));
 
             
@@ -290,7 +229,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 45 "..\..\Views\Question\_Create.cshtml"
+            #line 36 "..\..\Views\Question\_Create.cshtml"
                        Write(Html.ValidationMessage("Options[" + i + "].Name", "", new { @class = "text-danger" }));
 
             
@@ -301,7 +240,7 @@ WriteLiteral("\r\n                        </div>\r\n");
 WriteLiteral("                        ");
 
             
-            #line 47 "..\..\Views\Question\_Create.cshtml"
+            #line 38 "..\..\Views\Question\_Create.cshtml"
                    Write(Html.Label("Options[" + i + "].Weight","وزن ارزش گزینه", htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -316,7 +255,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 49 "..\..\Views\Question\_Create.cshtml"
+            #line 40 "..\..\Views\Question\_Create.cshtml"
                        Write(Html.TextBox("Options[" + i + "].Weight", Model.Options.ElementAt(i).Weight, new { @class = "form-control" ,dir="ltr"}));
 
             
@@ -327,7 +266,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 50 "..\..\Views\Question\_Create.cshtml"
+            #line 41 "..\..\Views\Question\_Create.cshtml"
                        Write(Html.ValidationMessage("Options[" + i + "].Weight", "", new { @class = "text-danger" }));
 
             
@@ -336,7 +275,7 @@ WriteLiteral("                            ");
 WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n");
 
             
-            #line 53 "..\..\Views\Question\_Create.cshtml"
+            #line 44 "..\..\Views\Question\_Create.cshtml"
 
                 }
             }
@@ -371,42 +310,13 @@ WriteLiteral(" data-loading-text=\"در حال ارسال اطلاعات\"");
 WriteLiteral(" class=\"btn btn-success btn-md\"");
 
 WriteLiteral(">\r\n                        ثبت سوال جدید\r\n                    </button>\r\n        " +
-"            <button");
+"            ");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3685), Tuple.Create("\"", 3745)
-, Tuple.Create(Tuple.Create("", 3695), Tuple.Create("generateOption(this,", 3695), true)
-            
-            #line 62 "..\..\Views\Question\_Create.cshtml"
-, Tuple.Create(Tuple.Create(" ", 3715), Tuple.Create<System.Object, System.Int32>(optionId
-            
-            #line default
-            #line hidden
-, 3716), false)
-, Tuple.Create(Tuple.Create("", 3725), Tuple.Create(",", 3725), true)
-, Tuple.Create(Tuple.Create(" ", 3726), Tuple.Create("\'#questionSubmit\')", 3727), true)
-);
-
-WriteAttribute("style", Tuple.Create(" style=\"", 3746), Tuple.Create("\"", 3772)
-, Tuple.Create(Tuple.Create("", 3754), Tuple.Create("display:", 3754), true)
-            
-            #line 62 "..\..\Views\Question\_Create.cshtml"
-                        , Tuple.Create(Tuple.Create(" ", 3762), Tuple.Create<System.Object, System.Int32>(display
-            
-            #line default
-            #line hidden
-, 3763), false)
-, Tuple.Create(Tuple.Create("", 3771), Tuple.Create(";", 3771), true)
-);
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral("\r\n                            class=\"btn btn-default btn-md option\"");
-
-WriteLiteral(">افزودن گزینه</button>\r\n                  \r\n                </div>\r\n             " +
-"  \r\n            </div>\r\n");
+WriteLiteral("\r\n                  \r\n                </div>\r\n               \r\n            </div>" +
+"\r\n");
 
             
-            #line 68 "..\..\Views\Question\_Create.cshtml"
+            #line 59 "..\..\Views\Question\_Create.cshtml"
         }
 
             

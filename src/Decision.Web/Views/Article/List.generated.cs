@@ -27,10 +27,15 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using Decision.Common.MVC;
+    
+    #line 2 "..\..\Views\Article\List.cshtml"
+    using Decision.Common.HtmlHelpers;
+    
+    #line default
+    #line hidden
     using Decision.Utility;
     
-    #line 1 "..\..\Views\Article\List.cshtml"
+    #line 3 "..\..\Views\Article\List.cshtml"
     using Decision.ViewModel.Article;
     
     #line default
@@ -41,15 +46,17 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Article/List.cshtml")]
-    public partial class _Views_Article_List_cshtml : System.Web.Mvc.WebViewPage<Decision.ViewModel.Article.ArticleListViewModel>
+    public partial class _Views_Article_List_cshtml : System.Web.Mvc.WebViewPage<ArticleListViewModel>
     {
         public _Views_Article_List_cshtml()
         {
         }
         public override void Execute()
         {
+WriteLiteral("\r\n");
+
             
-            #line 3 "..\..\Views\Article\List.cshtml"
+            #line 5 "..\..\Views\Article\List.cshtml"
   
     ViewBag.Title = "لیست مقالات متقاضی";
 
@@ -59,7 +66,7 @@ namespace ASP
 WriteLiteral("\r\n");
 
             
-            #line 6 "..\..\Views\Article\List.cshtml"
+            #line 8 "..\..\Views\Article\List.cshtml"
 Write(Html.AntiForgeryToken());
 
             
@@ -86,7 +93,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 13 "..\..\Views\Article\List.cshtml"
+            #line 15 "..\..\Views\Article\List.cshtml"
            Write(Html.HelpAlert(Url.Content("~/Content/images/lightbulb.png"), "برای درج مقاله جدید از دکمه (افزودن مقاله جدید) استفاده کنید.",
                     "دقت کنید در صورت حجیم بودن فایل ضمیمه ، صبر کنید تا عملیات با موفقیت انجام شود."
                     , "در صورت استفاده از امکان آپلود فایل ضمیمه ، از فرمت pdf استفاده کنید."));
@@ -138,13 +145,13 @@ WriteLiteral(" id=\"create-Article\"");
 WriteLiteral(">\r\n");
 
             
-            #line 29 "..\..\Views\Article\List.cshtml"
+            #line 31 "..\..\Views\Article\List.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 29 "..\..\Views\Article\List.cshtml"
+            #line 31 "..\..\Views\Article\List.cshtml"
                Html.RenderPartial(MVC.Article.Views.ViewNames._Create, new AddArticleViewModel { ApplicantId = Model.SearchRequest.ApplicantId });
             
             #line default
@@ -162,13 +169,13 @@ WriteLiteral(" id=\"ArticleList\"");
 WriteLiteral(">\r\n");
 
             
-            #line 34 "..\..\Views\Article\List.cshtml"
+            #line 36 "..\..\Views\Article\List.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 34 "..\..\Views\Article\List.cshtml"
+            #line 36 "..\..\Views\Article\List.cshtml"
                Html.RenderPartial(MVC.Article.Views.ViewNames._ListAjax, Model);
             
             #line default
@@ -192,8 +199,8 @@ WriteLiteral(" data-page=\"2\"");
 WriteLiteral(" data-json=\'{\"ApplicantId\":\"");
 
             
-            #line 40 "..\..\Views\Article\List.cshtml"
-                                                          Write(Model.SearchRequest.ApplicantId);
+            #line 42 "..\..\Views\Article\List.cshtml"
+                                                            Write(Model.SearchRequest.ApplicantId);
 
             
             #line default
@@ -207,7 +214,7 @@ WriteLiteral("\r\n                        data-progress=\"#progress\"");
 WriteLiteral("\r\n                        data-load-url=\"");
 
             
-            #line 42 "..\..\Views\Article\List.cshtml"
+            #line 44 "..\..\Views\Article\List.cshtml"
                                   Write(Url.Action(MVC.Article.ListAjax()));
 
             
@@ -232,14 +239,14 @@ WriteLiteral(" style=\"display: none\"");
 
 WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2239), Tuple.Create("\"", 2289)
+WriteAttribute("src", Tuple.Create(" src=\"", 2259), Tuple.Create("\"", 2309)
             
-            #line 49 "..\..\Views\Article\List.cshtml"
-, Tuple.Create(Tuple.Create("", 2245), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
+            #line 51 "..\..\Views\Article\List.cshtml"
+, Tuple.Create(Tuple.Create("", 2265), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
             
             #line default
             #line hidden
-, 2245), false)
+, 2265), false)
 );
 
 WriteLiteral(" alt=\"loading...\"");
@@ -251,13 +258,13 @@ DefineSection("Menu", () => {
 WriteLiteral("\r\n");
 
             
-            #line 57 "..\..\Views\Article\List.cshtml"
+            #line 59 "..\..\Views\Article\List.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 57 "..\..\Views\Article\List.cshtml"
+            #line 59 "..\..\Views\Article\List.cshtml"
       Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.SearchRequest.ApplicantId);
             
             #line default
@@ -273,7 +280,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 60 "..\..\Views\Article\List.cshtml"
+            #line 62 "..\..\Views\Article\List.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             
@@ -284,7 +291,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 61 "..\..\Views\Article\List.cshtml"
+            #line 63 "..\..\Views\Article\List.cshtml"
 Write(Scripts.Render("~/bundles/datePicker"));
 
             
@@ -295,7 +302,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 62 "..\..\Views\Article\List.cshtml"
+            #line 64 "..\..\Views\Article\List.cshtml"
 Write(Scripts.Render("~/bundles/editor"));
 
             
@@ -306,7 +313,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 63 "..\..\Views\Article\List.cshtml"
+            #line 65 "..\..\Views\Article\List.cshtml"
 Write(Scripts.Render("~/bundles/formData"));
 
             

@@ -29,8 +29,6 @@ namespace Decision.ViewModel.Question
         [DisplayName("وزن ارزش سوال")]
         public byte Weight { get; set; }
 
-        public QuestionType Type { get; set; }
-
         /// <summary>
         /// گزینه های سوال چند گزینه ای
         /// </summary>

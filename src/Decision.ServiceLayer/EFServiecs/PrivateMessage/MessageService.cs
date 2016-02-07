@@ -6,7 +6,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Decision.Common.Helpers.Extentions;
 using Decision.Common.HtmlCleaner;
 using Decision.DataLayer.Context;
 using Decision.DomainClasses.Entities.PrivateMessage;
@@ -27,7 +26,6 @@ namespace Decision.ServiceLayer.EFServiecs.PrivateMessage
         private readonly IDbSet<Conversation> _conversations;
         private readonly IDbSet<Message> _messages;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IDbSet<MessageAttachment> _attachments;
         #endregion
 
         #region Ctor
@@ -38,7 +36,6 @@ namespace Decision.ServiceLayer.EFServiecs.PrivateMessage
             _unitOfWork = unitOfWork;
             _conversations = _unitOfWork.Set<Conversation>();
             _messages = _unitOfWork.Set<Message>();
-            _attachments = _unitOfWork.Set<MessageAttachment>();
             _mappingEngine = mappingEngine;
 
         }
@@ -47,37 +44,24 @@ namespace Decision.ServiceLayer.EFServiecs.PrivateMessage
         #region Create
         public void Create(AddConversationViewModel viewModel)
         {
+            var currentUserId = _userManager.GetCurrentUserId();
+            var sentOn = DateTime.Now;
             var conversation = new Conversation
             {
                 Subject = viewModel.Subject,
-                SenderId = _userManager.GetCurrentUserId(),
+                SenderId = currentUserId,
                 ReceiverId = viewModel.ReciverId,
-                StartDate = DateTime.Now
+                SentOn = sentOn
             };
-
             _conversations.Add(conversation);
-
             var message = new Message
             {
-                SenderId = _userManager.GetCurrentUserId(),
-                Content = viewModel.Content.ToSafeHtml(),
-                SendDate = DateTime.Now,
+                SenderId = currentUserId,
+                Body = viewModel.Content.ToSafeHtml(),
+                SentOn = sentOn,
                 ConversationId = conversation.Id
             };
             _messages.Add(message);
-            if (viewModel.Attachments == null || !viewModel.Attachments.Any()) return;
-
-            foreach (var newFile in viewModel.Attachments.Where(attachment => attachment.HasFile()).Select(attachment => new MessageAttachment
-            {
-                ContentType = attachment.ContentType,
-                Extension = Path.GetExtension(attachment.FileName),
-                FriendlyName = Path.GetFileNameWithoutExtension(attachment.FileName),
-                Data = attachment.InputStream.ConvertToByteArrary(attachment.ContentLength),
-                MessageId = message.Id
-            }))
-            {
-                _attachments.Add(newFile);
-            }
         }
 
         public void Create(AddMessageViewModel viewModel)
@@ -85,26 +69,12 @@ namespace Decision.ServiceLayer.EFServiecs.PrivateMessage
             var newMessageToConversation = new Message
             {
                 ConversationId = viewModel.ConversationId,
-                Content = viewModel.Content.ToSafeHtml(),
-                ReplyId = viewModel.ReplyId,
-                SendDate = DateTime.Now,
+                Body = viewModel.Content.ToSafeHtml(),
+                ParentId = viewModel.ReplyId,
+                SentOn = DateTime.Now,
                 SenderId = _userManager.GetCurrentUserId()
             };
             _messages.Add(newMessageToConversation);
-
-            if (viewModel.Attachments == null || !viewModel.Attachments.Any()) return;
-
-            foreach (var newFile in viewModel.Attachments.Where(attachment => attachment.HasFile()).Select(attachment => new MessageAttachment
-            {
-                ContentType = attachment.ContentType,
-                Extension = Path.GetExtension(Path.GetFileName(attachment.FileName)),
-                FriendlyName = Path.GetFileNameWithoutExtension(attachment.FileName),
-                Data = attachment.InputStream.ConvertToByteArrary(attachment.ContentLength),
-                MessageId = newMessageToConversation.Id
-            }))
-            {
-                _attachments.Add(newFile);
-            }
         }
 
         #endregion
@@ -149,9 +119,8 @@ namespace Decision.ServiceLayer.EFServiecs.PrivateMessage
             var messages =
                 await
                     _messages.Where(a => a.ConversationId == conversationId)
-                        .Include(a => a.Attachments)
                         .Include(a=>a.Sender)
-                        .OrderBy(a => a.SendDate)
+                        .OrderBy(a => a.SentOn)
                         .ProjectTo<MessageViewModel>(_mappingEngine)
                         .ToListAsync();
             
@@ -167,16 +136,7 @@ namespace Decision.ServiceLayer.EFServiecs.PrivateMessage
         }
         #endregion
 
-        #region Attachment
-        public System.Threading.Tasks.Task<MessageAttachment> GetAttachment(Guid attachmentId)
-        {
-            return _attachments.FirstOrDefaultAsync(a => a.Id == attachmentId);
-        }
-        public async System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<AttachmentViewModel>> GetAttachments(Guid messageId)
-        {
-            return await _attachments.ProjectTo<AttachmentViewModel>(_mappingEngine).ToListAsync();
-        }
-        #endregion
+       
 
         #region CheckAccess
         public Task<bool> CheckAccess(Guid conversationId)
@@ -202,13 +162,13 @@ namespace Decision.ServiceLayer.EFServiecs.PrivateMessage
         private Task MakeAsSeen(Guid conversationId)
         {
             var currentUser = _userManager.GetCurrentUserId();
-            return _conversations.Where(a => a.Id == conversationId & a.SenderId != currentUser).UpdateAsync(a => new Conversation { IsSeen = true });
+            return _conversations.Where(a => a.Id == conversationId & a.SenderId != currentUser).UpdateAsync(a => new Conversation { IsRead = true });
         }
 
         public long NewMessgesCount()
         {
             var currentUserId = _userManager.GetCurrentUserId();
-            return _conversations.Where(a => a.ReceiverId == currentUserId && !a.IsSeen).LongCount();
+            return _conversations.Where(a => a.ReceiverId == currentUserId && !a.IsRead).LongCount();
         }
         #endregion
     }

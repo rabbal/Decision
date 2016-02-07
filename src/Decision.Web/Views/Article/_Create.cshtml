@@ -1,13 +1,12 @@
 ﻿
-@using Decision.Common.Helpers
-@using Decision.Common.Security.HiddenField
+@using Decision.Common.HtmlHelpers
 @model Decision.ViewModel.Article.AddArticleViewModel
 <div class="row">
     <div class="col-md-12">
         @using (Html.BeginForm(MVC.Article.Create(), FormMethod.Post, new { @class = "form-horizontal", id = "createArticleForm", autocomplete = "off", enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
-            @Html.EncryptedHiddenFor(model => model.ApplicantId)
+            @Html.HiddenFor(model => model.ApplicantId)
             @Html.HiddenFor(model => model.AttachmentScan)
             <div class="form-group">
                 @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-1" })

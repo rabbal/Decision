@@ -27,7 +27,6 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using Decision.Common.MVC;
     
     #line 1 "..\..\Views\Shared\_PublicSettingSideBarMenu.cshtml"
     using Decision.ServiceLayer.Security;
@@ -52,42 +51,6 @@ WriteLiteral("\r\n");
 
             
             #line 3 "..\..\Views\Shared\_PublicSettingSideBarMenu.cshtml"
-Write(Html.SideBarSecureActionLink("مدیریت مراکز کارآموزی", Url.Action(MVC.TrainingCenter.List()), "list-group-item second-split", "fa fa-graduation-cap", AssignableToRolePermissions.CanManageTrainingCenter));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n\r\n");
-
-            
-            #line 5 "..\..\Views\Shared\_PublicSettingSideBarMenu.cshtml"
-Write(Html.SideBarSecureActionLink("مدیریت عنوان ها", Url.Action(MVC.Title.List()), "list-group-item second-split", "fa fa-list-ul", AssignableToRolePermissions.CanManageTitle));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-            
-            #line 6 "..\..\Views\Shared\_PublicSettingSideBarMenu.cshtml"
-Write(Html.SideBarSecureActionLink("مدیریت ارزش گذارن", Url.Action(MVC.Appraiser.List()), "list-group-item second-split", "fa fa-certificate", AssignableToRolePermissions.CanManageAppraiser));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-            
-            #line 7 "..\..\Views\Shared\_PublicSettingSideBarMenu.cshtml"
-Write(Html.SideBarSecureActionLink("مدیریت مراکز آموزش عالی", Url.Action(MVC.Institution.List()), "list-group-item second-split", "fa fa-university", AssignableToRolePermissions.CanManageInstitution));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-            
-            #line 8 "..\..\Views\Shared\_PublicSettingSideBarMenu.cshtml"
 Write(Html.SideBarSecureActionLink("مدیریت سوالات", Url.Action(MVC.Question.List()), "list-group-item second-split", "fa fa-list-ol", AssignableToRolePermissions.CanManageQuestion));
 
             

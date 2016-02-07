@@ -19,16 +19,15 @@ namespace Decision.DomainClasses.Configurations.Evaluations
         public EntireEvaluationConfig()
         {
             Property(e=> e.Content).IsMaxLength().IsRequired();
-            Property(e=> e.Brief).IsMaxLength().IsRequired();
+            
             Property(e=> e.Foible).IsMaxLength().IsRequired();
             Property(e=> e.StrongPoint).IsMaxLength().IsRequired();
             Property(e=> e.RowVersion).IsRowVersion();
 
             HasRequired(e => e.Applicant).WithMany(e => e.EntireEvaluations).HasForeignKey(e => e.ApplicantId).WillCascadeOnDelete(true);
-            HasRequired(e=>e.Evaluator).WithMany(e=>e.EntireEvaluations).HasForeignKey(e=>e.EvaluatorId).WillCascadeOnDelete(false);
-
-            HasRequired(e => e.Creator).WithMany(u => u.CreatedEntireEvaluations).HasForeignKey(e => e.CreatorId).WillCascadeOnDelete(false);
-            HasOptional(e => e.LasModifier).WithMany(u => u.ModifiedEntireEvaluations).HasForeignKey(e => e.LasModifierId).WillCascadeOnDelete(false);
+           
+            HasRequired(e => e.CreatedBy).WithMany().HasForeignKey(e => e.CreatedById).WillCascadeOnDelete(false);
+            HasRequired(e => e.ModifiedBy).WithMany().HasForeignKey(e => e.ModifiedById).WillCascadeOnDelete(false);
         }
     }
 }

@@ -4,11 +4,10 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
-
+using Decision.Common.Extentions;
 using Decision.Common.Controller;
 using Decision.Common.Filters;
-using Decision.Common.Helpers.Extentions;
-using Decision.Common.Helpers.Json;
+using Decision.Common.Json;
 using Decision.DataLayer.Context;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.ServiceLayer.Security;
@@ -19,8 +18,8 @@ using MvcSiteMapProvider;
 
 namespace Decision.Web.Controllers
 {
-    
-    
+
+
     [RoutePrefix("UserManagement/Role")]
     [Route("{action}")]
     [Mvc5Authorize(AssignableToRolePermissions.CanManageUser)]
@@ -45,7 +44,7 @@ namespace Decision.Web.Controllers
 
         #region ListAjax , List
         [HttpGet]
-        [Audit(Description = "مشاده گروه های کاربری")]
+        [Activity(Description = "مشاده گروه های کاربری")]
         [MvcSiteMapNode(ParentKey = "User_List", Title = "مدیریت گروه های کاربری")]
         public virtual async Task<ActionResult> List()
         {
@@ -76,7 +75,7 @@ namespace Decision.Web.Controllers
         [ValidateAntiForgeryToken]
         [AjaxOnly]
         //[CheckReferrer]
-        [Audit(Description = "درج گروه کاربری")]
+        [Activity(Description = "درج گروه کاربری")]
         public virtual async Task<ActionResult> Create(AddRoleViewModel viewModel)
         {
             if (_roleManager.CheckForExisByName(viewModel.Name, null))
@@ -111,7 +110,7 @@ namespace Decision.Web.Controllers
         #region Edit
         [HttpGet]
         [AjaxOnly]
-        [Audit(Description = " ویرایش گروه کاربری")]
+        [Activity(Description = " ویرایش گروه کاربری")]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public virtual async Task<ActionResult> Edit(Guid? id)
         {
@@ -169,36 +168,19 @@ namespace Decision.Web.Controllers
                         }
                 };
             }
-            var message = await _unitOfWork.ConcurrencySaveChangesAsync();
-            if (message.HasValue())
-            {
-                this.AddErrors("Name", string.Format(message, "گروه کاربری"));
-            }
+            await _unitOfWork.SaveAllChangesAsync();
 
-            if (ModelState.IsValid)
-            {
-                var editedRole = await _roleManager.GetRole(viewModel.Id);
-                return new JsonNetResult
-                {
-                    Data =
-                        new
-                        {
-                            success = true,
-                            View = this.RenderPartialViewToString(MVC.Role.Views._RoleItem, editedRole)
-                        }
-                };
-            }
-
-            _roleManager.FillForEdit(viewModel);
+            var editedRole = await _roleManager.GetRole(viewModel.Id);
             return new JsonNetResult
             {
                 Data =
                     new
                     {
-                        success = false,
-                        View = this.RenderPartialViewToString(MVC.Role.Views._Edit, viewModel)
+                        success = true,
+                        View = this.RenderPartialViewToString(MVC.Role.Views._RoleItem, editedRole)
                     }
             };
+
         }
 
         #endregion
@@ -222,7 +204,7 @@ namespace Decision.Web.Controllers
         [ValidateAntiForgeryToken]
         //[CheckReferrer]
         [AjaxOnly]
-        [Audit(Description = " حذف گروه کاربری")]
+        [Activity(Description = " حذف گروه کاربری")]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public virtual async Task<ActionResult> Delete(Guid? id)
         {

@@ -27,7 +27,12 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using Decision.Common.MVC;
+    
+    #line 1 "..\..\Views\EducationalBackground\List.cshtml"
+    using Decision.Common.HtmlHelpers;
+    
+    #line default
+    #line hidden
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -43,7 +48,7 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 2 "..\..\Views\EducationalBackground\List.cshtml"
+            #line 3 "..\..\Views\EducationalBackground\List.cshtml"
   
     ViewBag.Title = "لیست سوابق تحصیلی متقاضی";
 
@@ -53,7 +58,7 @@ namespace ASP
 WriteLiteral("\r\n");
 
             
-            #line 5 "..\..\Views\EducationalBackground\List.cshtml"
+            #line 6 "..\..\Views\EducationalBackground\List.cshtml"
 Write(Html.AntiForgeryToken());
 
             
@@ -80,7 +85,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 11 "..\..\Views\EducationalBackground\List.cshtml"
+            #line 12 "..\..\Views\EducationalBackground\List.cshtml"
            Write(Html.HelpAlert(Url.Content("~/Content/images/lightbulb.png"), "برای درج سابقه تحصیلی جدید از دکمه (افزودن سابقه تحصیلی جدید) استفاده کنید."
                     , "در صورت استفاده از امکان آپلود فایل ضمیمه ، از تصویر استفاده کنید."));
 
@@ -131,13 +136,13 @@ WriteLiteral(" id=\"create-educationalBackground\"");
 WriteLiteral(">\r\n");
 
             
-            #line 25 "..\..\Views\EducationalBackground\List.cshtml"
+            #line 26 "..\..\Views\EducationalBackground\List.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 25 "..\..\Views\EducationalBackground\List.cshtml"
+            #line 26 "..\..\Views\EducationalBackground\List.cshtml"
                Html.RenderAction(MVC.EducationalBackground.Create(Model.SearchRequest.ApplicantId));
             
             #line default
@@ -155,13 +160,13 @@ WriteLiteral(" id=\"educationalBackgroundList\"");
 WriteLiteral(">\r\n");
 
             
-            #line 30 "..\..\Views\EducationalBackground\List.cshtml"
+            #line 31 "..\..\Views\EducationalBackground\List.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 30 "..\..\Views\EducationalBackground\List.cshtml"
+            #line 31 "..\..\Views\EducationalBackground\List.cshtml"
                Html.RenderPartial(MVC.EducationalBackground.Views.ViewNames._ListAjax, Model);
             
             #line default
@@ -185,8 +190,8 @@ WriteLiteral(" data-page=\"2\"");
 WriteLiteral(" data-json=\'{\"ApplicantId\":\"");
 
             
-            #line 36 "..\..\Views\EducationalBackground\List.cshtml"
-                                                          Write(Model.SearchRequest.ApplicantId);
+            #line 37 "..\..\Views\EducationalBackground\List.cshtml"
+                                                            Write(Model.SearchRequest.ApplicantId);
 
             
             #line default
@@ -200,7 +205,7 @@ WriteLiteral("\r\n                        data-progress=\"#progress\"");
 WriteLiteral("\r\n                        data-load-url=\"");
 
             
-            #line 38 "..\..\Views\EducationalBackground\List.cshtml"
+            #line 39 "..\..\Views\EducationalBackground\List.cshtml"
                                   Write(Url.Action(MVC.EducationalBackground.ListAjax()));
 
             
@@ -225,14 +230,14 @@ WriteLiteral(" style=\"display: none\"");
 
 WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2196), Tuple.Create("\"", 2246)
+WriteAttribute("src", Tuple.Create(" src=\"", 2239), Tuple.Create("\"", 2289)
             
-            #line 45 "..\..\Views\EducationalBackground\List.cshtml"
-, Tuple.Create(Tuple.Create("", 2202), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
+            #line 46 "..\..\Views\EducationalBackground\List.cshtml"
+, Tuple.Create(Tuple.Create("", 2245), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
             
             #line default
             #line hidden
-, 2202), false)
+, 2245), false)
 );
 
 WriteLiteral(" alt=\"loading...\"");
@@ -244,13 +249,13 @@ DefineSection("Menu", () => {
 WriteLiteral("\r\n");
 
             
-            #line 53 "..\..\Views\EducationalBackground\List.cshtml"
+            #line 54 "..\..\Views\EducationalBackground\List.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 53 "..\..\Views\EducationalBackground\List.cshtml"
+            #line 54 "..\..\Views\EducationalBackground\List.cshtml"
       Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.SearchRequest.ApplicantId);
             
             #line default
@@ -266,7 +271,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 56 "..\..\Views\EducationalBackground\List.cshtml"
+            #line 57 "..\..\Views\EducationalBackground\List.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             
@@ -277,7 +282,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 57 "..\..\Views\EducationalBackground\List.cshtml"
+            #line 58 "..\..\Views\EducationalBackground\List.cshtml"
 Write(Scripts.Render("~/bundles/datePicker"));
 
             
@@ -288,7 +293,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 58 "..\..\Views\EducationalBackground\List.cshtml"
+            #line 59 "..\..\Views\EducationalBackground\List.cshtml"
 Write(Scripts.Render("~/bundles/formData"));
 
             

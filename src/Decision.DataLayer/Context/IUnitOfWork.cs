@@ -66,13 +66,13 @@ namespace Decision.DataLayer.Context
         /// </summary>
         /// <param name="invalidateCacheDependencies"></param>
         /// <returns></returns>
-        string SaveAllChanges(bool invalidateCacheDependencies = true, Guid? aduitUserId = null);
+        int SaveAllChanges(bool invalidateCacheDependencies = true, Guid? aduitUserId = null);
         /// <summary>
         /// ذخیره سازی ناهمزمان با امکان مشخص کردن تکلیف داده های کش شده 
         /// </summary>
         /// <param name="invalidateCacheDependencies"></param>
         /// <returns></returns>
-        Task<string> SaveAllChangesAsync(bool invalidateCacheDependencies = true, Guid? aduitUserId = null);
+        Task<int> SaveAllChangesAsync(bool invalidateCacheDependencies = true, Guid? aduitUserId = null);
         /// <summary>
         /// برای درج لیستی از موجودیت ها استفاده میشود
         /// </summary>

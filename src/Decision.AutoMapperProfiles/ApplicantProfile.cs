@@ -44,9 +44,6 @@ namespace Decision.AutoMapperProfiles
                 .ForMember(a => a.LastModifierUserName, m => m.MapFrom(s => s.ModifiedBy.UserName))
                 .ForMember(d => d.FullName, m => m.MapFrom(s => s.FirstName + " " + s.LastName)).IgnoreAllNonExisting();
 
-            CreateMap<Applicant, ReferApplicantViewModel>()
-               .ForMember(d => d.FullName, m => m.MapFrom(s => s.FirstName + " " + s.LastName)).IgnoreAllNonExisting();
-
             CreateMap<Applicant, NewAddedApplicantViewModel>()
               .ForMember(d => d.FullName, m => m.MapFrom(s => s.FirstName + " " + s.LastName)).IgnoreAllNonExisting();
 

@@ -1,7 +1,5 @@
 ﻿@using Decision.ServiceLayer.Security
 <a href="#" class="list-group-item"><span class="fa fa-cogs"></span>تنظیمات کاربری</a>
-@Html.SideBarSecureActionLink("لیست ارجاعات", Url.Action(MVC.Applicant.ReferList()), "list-group-item thrid-split", "fa fa-list-ol", StandardRoles.Operators)
-@Html.SideBarSecureActionLink("اساتید در حال تکمیل", Url.Action(MVC.Applicant.NewApplicantList()), "list-group-item thrid-split", "fa fa-list-ol", StandardRoles.Operators)
 @Html.SideBarSecureActionLink("درج متقاضی جدید", Url.Action(MVC.Applicant.Create()), "list-group-item thrid-split", "fa fa-plus", AssignableToRolePermissions.CanCreateApplicant)
 @Html.SideBarSecureActionLink("پیغام های دریافتی", Url.Action(MVC.PrivateMessage.InBox()), "list-group-item second-split", "fa fa-list", AssignableToRolePermissions.CanUsePrivateMessage)
 @Html.SideBarSecureActionLink("پیغام های ارسالی", Url.Action(MVC.PrivateMessage.OutBox()), "list-group-item second-split", "fa fa-list", AssignableToRolePermissions.CanUsePrivateMessage)

@@ -28,15 +28,8 @@ namespace ASP
     using System.Web.UI;
     using System.Web.WebPages;
     
-    #line 1 "..\..\Views\Address\_Create.cshtml"
-    using Decision.Common.Helpers;
-    
-    #line default
-    #line hidden
-    using Decision.Common.MVC;
-    
     #line 2 "..\..\Views\Address\_Create.cshtml"
-    using Decision.Common.Security.HiddenField;
+    using Decision.Common.HtmlHelpers;
     
     #line default
     #line hidden
@@ -54,6 +47,8 @@ namespace ASP
         }
         public override void Execute()
         {
+WriteLiteral("\r\n");
+
 WriteLiteral("<div");
 
 WriteLiteral(" class=\"modal-dialog\"");
@@ -113,7 +108,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 13 "..\..\Views\Address\_Create.cshtml"
-                                                         
+                                                           
 
             
             #line default

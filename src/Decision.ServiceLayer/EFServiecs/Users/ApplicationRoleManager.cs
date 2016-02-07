@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using System.Xml.Linq;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Decision.Common.Helpers.Extentions;
+using Decision.Common.Extentions;
 using Decision.DataLayer.Context;
 using Decision.DomainClasses.Entities.Users;
 using Decision.ServiceLayer.Contracts.Users;
@@ -177,7 +177,7 @@ namespace Decision.ServiceLayer.EFServiecs.Users
                                      {
                                          Name = record.RoleName,
                                          IsSystemRole = true,
-                                         XmlPermission =
+                                         XmlPermissions =
                                              _permissionService.GetPermissionsAsXml(record.Permissions.Select(a => a.Name).ToArray())
                                      })
             {
@@ -222,7 +222,7 @@ namespace Decision.ServiceLayer.EFServiecs.Users
             var role = await _roles.FirstOrDefaultAsync(r => r.Id == id);
             var viewModel = _mappingEngine.Map<EditRoleViewModel>(role);
             if (role.Permissions != null)
-                viewModel.PermissionNames = _permissionService.GetUserPermissionsAsList(role.XmlPermission).ToArray();
+                viewModel.PermissionNames = _permissionService.GetUserPermissionsAsList(role.XmlPermissions).ToArray();
             return viewModel;
         }
 
@@ -236,7 +236,7 @@ namespace Decision.ServiceLayer.EFServiecs.Users
                 return false;
             var role = await ((DbSet<Role>)_roles).FindAsync(viewModel.Id);
             _mappingEngine.Map(viewModel, role);
-            role.XmlPermission = _permissionService.GetPermissionsAsXml(viewModel.PermissionNames);
+            role.XmlPermissions = _permissionService.GetPermissionsAsXml(viewModel.PermissionNames);
             return true;
         }
         #endregion

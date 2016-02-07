@@ -18,14 +18,11 @@ namespace Decision.DomainClasses.Configurations.PrivateMessage
         /// </summary>
         public MessageConfig()
         {
-            Property(m => m.Content).IsMaxLength().IsRequired();
+            Property(m => m.Body).IsMaxLength().IsRequired();
 
-            HasMany(m => m.Attachments)
-                .WithRequired(a => a.Message)
-                .HasForeignKey(a => a.MessageId)
-                .WillCascadeOnDelete(true);
+          
 
-            HasMany(m => m.Children).WithOptional(m => m.Reply).HasForeignKey(m => m.ReplyId).WillCascadeOnDelete(false);
+            HasMany(m => m.Children).WithOptional(m => m.Parent).HasForeignKey(m => m.ParentId).WillCascadeOnDelete(false);
             HasRequired(m => m.Sender).WithMany(u => u.SentMessages).HasForeignKey(m => m.SenderId).WillCascadeOnDelete(true);
 
         }

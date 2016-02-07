@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using System.Web;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Decision.Common.Helpers.Extentions;
 using Decision.DataLayer.Context;
 using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.ApplicantInfo;
@@ -59,7 +58,6 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
         {
             var researchExperience = await _researchExperiences.FirstAsync(a => a.Id == viewModel.Id);
             _mappingEngine.Map(viewModel, researchExperience);
-            researchExperience.LasModifierId = _userManager.GetCurrentUserId();
         }
         #endregion
 
@@ -67,7 +65,6 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
         public async  Task<ResearchExperienceViewModel> Create(AddResearchExperienceViewModel viewModel)
         {
             var researchExperience = _mappingEngine.Map<ResearchExperience>(viewModel);
-            researchExperience.CreatorId = _userManager.GetCurrentUserId();
             _researchExperiences.Add(researchExperience);
             await _unitOfWork.SaveChangesAsync();
             return await GetResearchExperienceViewModel(researchExperience.Id);
@@ -78,11 +75,10 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
         public async Task<ResearchExperienceListViewModel> GetPagedListAsync(ResearchExperienceSearchRequest request)
         {
             var cities =
-                _researchExperiences.Include(a => a.Creator)
-                    .Include(a => a.LasModifier)
+                _researchExperiences.Include(a => a.CreatedBy)
+                    .Include(a => a.ModifiedBy)
                     .Where(a => a.ApplicantId == request.ApplicantId)
                     .AsNoTracking()
-                    .OrderByDescending(a => a.Title)
                     .AsQueryable();
 
             var selectedCities = cities.ProjectTo<ResearchExperienceViewModel>(_mappingEngine);
@@ -105,8 +101,8 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
         public Task<ResearchExperienceViewModel> GetResearchExperienceViewModel(Guid guid)
         {
             return
-                _researchExperiences.Include(a => a.Creator)
-                    .Include(a => a.LasModifier)
+                _researchExperiences.Include(a => a.CreatedBy)
+                    .Include(a => a.ModifiedBy)
                     .ProjectTo<ResearchExperienceViewModel>(_mappingEngine)
                     .FirstOrDefaultAsync(a => a.Id == guid);
         }

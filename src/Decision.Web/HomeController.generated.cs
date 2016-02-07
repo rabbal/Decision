@@ -75,8 +75,6 @@ namespace Decision.Web.Controllers
             public readonly string Index = ("Index").ToLowerInvariant();
             public readonly string GetBenckMarks = ("GetBenckMarks").ToLowerInvariant();
             public readonly string GetNewMessagesCount = ("GetNewMessagesCount").ToLowerInvariant();
-            public readonly string GetTopScoreApplicants = ("GetTopScoreApplicants").ToLowerInvariant();
-            public readonly string GetNewAddedApplicants = ("GetNewAddedApplicants").ToLowerInvariant();
         }
 
 
@@ -91,13 +89,13 @@ namespace Decision.Web.Controllers
             public class _ViewNamesClass
             {
                 public readonly string _Benckmarks = "_Benckmarks";
-                public readonly string _NewApplicantsList = "_NewApplicantsList";
-                public readonly string _ApplicantWithTopScoreList = "_ApplicantWithTopScoreList";
+                public readonly string _NewTeachersList = "_NewTeachersList";
+                public readonly string _TeacherWithTopScoreList = "_TeacherWithTopScoreList";
                 public readonly string Index = "Index";
             }
             public readonly string _Benckmarks = "~/Views/Home/_Benckmarks.cshtml";
-            public readonly string _NewApplicantsList = "~/Views/Home/_NewApplicantsList.cshtml";
-            public readonly string _ApplicantWithTopScoreList = "~/Views/Home/_ApplicantWithTopScoreList.cshtml";
+            public readonly string _NewTeachersList = "~/Views/Home/_NewTeachersList.cshtml";
+            public readonly string _TeacherWithTopScoreList = "~/Views/Home/_TeacherWithTopScoreList.cshtml";
             public readonly string Index = "~/Views/Home/Index.cshtml";
         }
     }
@@ -137,28 +135,6 @@ namespace Decision.Web.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetNewMessagesCount);
             GetNewMessagesCountOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void GetTopScoreApplicantsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult GetTopScoreApplicants()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetTopScoreApplicants);
-            GetTopScoreApplicantsOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void GetNewAddedApplicantsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult GetNewAddedApplicants()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetNewAddedApplicants);
-            GetNewAddedApplicantsOverride(callInfo);
             return callInfo;
         }
 

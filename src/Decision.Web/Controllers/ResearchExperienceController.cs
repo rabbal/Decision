@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
 using Decision.Common.Controller;
+using Decision.Common.Extentions;
 using Decision.Common.Filters;
-using Decision.Common.Helpers.Extentions;
-using Decision.Common.Helpers.Json;
+using Decision.Common.Json;
 using Decision.DataLayer.Context;
 using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Security;
@@ -25,31 +25,27 @@ namespace Decision.Web.Controllers
     public partial class ResearchExperienceController : Controller
     {
 	    #region	Fields
-
-        private readonly IReferentialApplicantService _referentialApplicantService;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IResearchExperienceService _researchExperienceService;
         #endregion
 
         #region	Ctor
-        public ResearchExperienceController(IReferentialApplicantService referentialApplicantService,IUnitOfWork unitOfWork, IResearchExperienceService ResearchExperienceService)
+        public ResearchExperienceController(IUnitOfWork unitOfWork, IResearchExperienceService researchExperienceService)
         {
             _unitOfWork = unitOfWork;
-            _researchExperienceService = ResearchExperienceService;
-            _referentialApplicantService = referentialApplicantService;
+            _researchExperienceService = researchExperienceService;
         }
         #endregion
 
         #region List,ListAjax
         [HttpGet]
         [Route("List/{ApplicantId}")]
-        [ApplicantAuthorize]
         [MvcSiteMapNode(ParentKey = "Applicant_Details", Title = "لیست سوابق پژوهشی متقاضی", PreservedRouteParameters = "ApplicantId")]
-        public virtual async Task<ActionResult> List(Guid ApplicantId)
+        public virtual async Task<ActionResult> List(Guid applicantId)
         {
             var viewModel = await _researchExperienceService.GetPagedListAsync(new ResearchExperienceSearchRequest
             {
-                ApplicantId =  ApplicantId
+                ApplicantId =  applicantId
             });
             return View(viewModel);
         }
@@ -59,7 +55,6 @@ namespace Decision.Web.Controllers
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public virtual async Task<ActionResult> ListAjax(ResearchExperienceSearchRequest request)
         {
-            if (!_referentialApplicantService.CanManageApplicant(request.ApplicantId)) return HttpNotFound();
             var viewModel = await _researchExperienceService.GetPagedListAsync(request);
             if (viewModel.ResearchExperiences == null || !viewModel.ResearchExperiences.Any())
                 return Content("no-more-info");
@@ -71,12 +66,12 @@ namespace Decision.Web.Controllers
         #region Create
         [HttpGet]
         [AjaxOnly]
-        public virtual ActionResult Create(Guid ApplicantId)
+        public virtual ActionResult Create(Guid applicantId)
         {
-            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
+            
             var viewModel = new AddResearchExperienceViewModel
             {
-                ApplicantId = ApplicantId
+                ApplicantId = applicantId
             };
             return PartialView(MVC.ResearchExperience.Views._Create,viewModel);
         }
@@ -85,10 +80,10 @@ namespace Decision.Web.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //[CheckReferrer]
-        [Audit(Description = "درج سابقه پروژهشی برای متقاضی")]
+        [Activity(Description = "درج سابقه پروژهشی برای متقاضی")]
         public virtual async Task<ActionResult> Create(AddResearchExperienceViewModel viewModel)
         {
-            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
+            
             if (!ModelState.IsValid)
             {
                 return new JsonNetResult
@@ -125,7 +120,7 @@ namespace Decision.Web.Controllers
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var viewModel = await _researchExperienceService.GetForEditAsync(id.Value);
             if (viewModel == null) return HttpNotFound();
-            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
+            
             return PartialView(MVC.ResearchExperience.Views._Edit, viewModel);
         }
 
@@ -133,14 +128,10 @@ namespace Decision.Web.Controllers
         //[CheckReferrer]
         [AjaxOnly]
         [ValidateAntiForgeryToken]
-        [Audit(Description = "ویرایش  ")]
+        [Activity(Description = "ویرایش  ")]
         
         public virtual async Task<ActionResult> Edit(EditResearchExperienceViewModel viewModel)
         {
-            if (!_referentialApplicantService.CanManageApplicant(viewModel.ApplicantId)) return HttpNotFound();
-            if (!await _researchExperienceService.IsInDb(viewModel.Id))
-                this.AddErrors("Title", "سابقه پژوهشی مورد نظر توسط یکی از کاربران در شبکه،حذف شده است");
-
             if (!ModelState.IsValid)
             {
                 return new JsonNetResult
@@ -155,19 +146,7 @@ namespace Decision.Web.Controllers
             }
 
             await _researchExperienceService.EditAsync(viewModel);
-            var message = await _unitOfWork.ConcurrencySaveChangesAsync();
-            if (message.HasValue()) this.AddErrors("Title", string.Format(message, "سابقه پژوهشی"));
-
-            if (!ModelState.IsValid)
-                return new JsonNetResult
-                {
-                    Data = new
-                    {
-                        success = false,
-                        View =
-                            this.RenderPartialViewToString(MVC.ResearchExperience.Views._Edit, viewModel)
-                    }
-                };
+            await _unitOfWork.SaveAllChangesAsync();
 
             var research = await _researchExperienceService.GetResearchExperienceViewModel(viewModel.Id);
             return new JsonNetResult
@@ -188,11 +167,10 @@ namespace Decision.Web.Controllers
         [AjaxOnly]
         //[CheckReferrer]
         [ValidateAntiForgeryToken]
-        [Audit(Description = "سابقه پژوهشی ")]
+        [Activity(Description = "سابقه پژوهشی ")]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        public virtual async Task<ActionResult> Delete(Guid id,Guid ApplicantId)
+        public virtual async Task<ActionResult> Delete(Guid id,Guid applicantId)
         {
-            if (!_referentialApplicantService.CanManageApplicant(ApplicantId)) return HttpNotFound();
             await _researchExperienceService.DeleteAsync(id);
             return Content("ok");
         }

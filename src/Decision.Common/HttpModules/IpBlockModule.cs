@@ -5,6 +5,7 @@ using System.Threading;
 using System.Web;
 using System.Web.Caching;
 using Decision.Common.Extentions;
+using Decision.Utility;
 
 namespace Decision.Common.HttpModules
 {
@@ -70,8 +71,7 @@ namespace Decision.Common.HttpModules
         {
             var app = sender as HttpApplication;
 
-            if (app == null) return;
-            var ipAddr = app.Context.Request.GetIp();
+            var ipAddr = app?.Context.Request.GetIp();
             if (string.IsNullOrEmpty(ipAddr))
             {
                 return;

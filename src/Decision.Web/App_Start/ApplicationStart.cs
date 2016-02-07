@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web.Mvc;
 using CaptchaMvc.Infrastructure;
 using Decision.Common.Controller;
-using Decision.Common.Helpers.Json;
+using Decision.Common.Json;
 using Decision.DataLayer.Context;
 using Decision.DomainClasses.Entities.Common;
 using Decision.DomainClasses.Entities.Evaluations;
@@ -77,8 +77,7 @@ namespace Decision.Web
             AuditConfiguration.Default.IsAuditable<Applicant>();
             AuditConfiguration.Default.IsAuditable<Article>();
             AuditConfiguration.Default.IsAuditable<EntireEvaluation>();
-            AuditConfiguration.Default.IsAuditable<ArticleEvaluation>();
-
+            
             //ad interception for logg EF errors
             DbInterception.Add(new ElmahEfInterceptor());
         }

@@ -27,7 +27,6 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using Decision.Common.MVC;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -54,40 +53,25 @@ WriteLiteral("\r\n");
 
             
             #line 4 "..\..\Views\Home\Index.cshtml"
-        
+  Html.RenderAction(MVC.Home.GetBenckMarks());
             
             #line default
             #line hidden
-            
-            #line 4 "..\..\Views\Home\Index.cshtml"
-          Html.RenderAction(MVC.Home.GetBenckMarks());
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n\r\n        <hr/>\r\n        <div");
+WriteLiteral("\r\n\r\n<hr />\r\n<div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n            <div");
+WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"col-md-4 asyncLoad\"");
 
 WriteLiteral(" id=\"TopScoreApplicants\"");
 
-WriteLiteral(" data-load-url=\"");
-
-            
-            #line 8 "..\..\Views\Home\Index.cshtml"
-                                                                            Write(Url.Action(MVC.Home.GetTopScoreApplicants()));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\"");
+WriteLiteral(" data-load-url=\"\"");
 
 WriteLiteral(" data-progress-div=\"progressOne\"");
 
-WriteLiteral(">\r\n                <div");
+WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" id=\"progressOne\"");
 
@@ -95,40 +79,31 @@ WriteLiteral(" align=\"center\"");
 
 WriteLiteral(" style=\"display: none\"");
 
-WriteLiteral(">\r\n                    <img");
+WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 405), Tuple.Create("\"", 455)
+WriteAttribute("src", Tuple.Create(" src=\"", 317), Tuple.Create("\"", 367)
             
             #line 10 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 411), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
+, Tuple.Create(Tuple.Create("", 323), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
             
             #line default
             #line hidden
-, 411), false)
+, 323), false)
 );
 
 WriteLiteral(" alt=\"loading...\"");
 
-WriteLiteral(" />\r\n                </div>\r\n            </div>\r\n\r\n            <div");
+WriteLiteral(" />\r\n        </div>\r\n    </div>\r\n\r\n    <div");
 
 WriteLiteral(" class=\"col-md-4 asyncLoad\"");
 
 WriteLiteral(" id=\"NewAddedApplicants\"");
 
-WriteLiteral(" data-load-url=\"");
-
-            
-            #line 14 "..\..\Views\Home\Index.cshtml"
-                                                                            Write(Url.Action(MVC.Home.GetNewAddedApplicants()));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\"");
+WriteLiteral(" data-load-url=\"\"");
 
 WriteLiteral(" data-progress-div=\"progressTwo\"");
 
-WriteLiteral(">\r\n                <div");
+WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" id=\"progressTwo\"");
 
@@ -136,21 +111,21 @@ WriteLiteral(" align=\"center\"");
 
 WriteLiteral(" style=\"display: none\"");
 
-WriteLiteral(">\r\n                    <img");
+WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 785), Tuple.Create("\"", 835)
+WriteAttribute("src", Tuple.Create(" src=\"", 616), Tuple.Create("\"", 666)
             
             #line 16 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 791), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
+, Tuple.Create(Tuple.Create("", 622), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
             
             #line default
             #line hidden
-, 791), false)
+, 622), false)
 );
 
 WriteLiteral(" alt=\"loading...\"");
 
-WriteLiteral(" />\r\n                </div>\r\n            </div>\r\n        </div>\r\n  ");
+WriteLiteral(" />\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
         }
     }

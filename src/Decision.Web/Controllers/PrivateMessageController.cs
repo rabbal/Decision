@@ -118,16 +118,7 @@ namespace Decision.Web.Controllers
             return RedirectToAction(MVC.PrivateMessage.Messages(viewModel.ConversationId));
         }
         #endregion
-
-        #region GetAttachment
-        public virtual async Task<ActionResult> GetFile(Guid id)
-        {
-            var file = await _messageService.GetAttachment(id);
-            return File(file.Data, file.ContentType, $"{file.FriendlyName}{file.Extension}");
-        }
         
-        #endregion
-
         #region Delete
         [HttpPost]
         //[CheckReferrer]

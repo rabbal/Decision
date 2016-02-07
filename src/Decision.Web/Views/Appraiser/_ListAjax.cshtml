@@ -1,7 +1,0 @@
-﻿@* GeneratePrettyNames: true*@
-@model  Decision.ViewModel.Appraiser.AppraiserListViewModel
-            
-@foreach (var appraiser in Model.Appraisers)
-{
-    @Html.Partial(MVC.Appraiser.Views._AppraiserItem, appraiser)
-}

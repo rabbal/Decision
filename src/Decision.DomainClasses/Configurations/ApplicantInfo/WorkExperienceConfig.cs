@@ -20,15 +20,8 @@ namespace Decision.DomainClasses.Configurations.ApplicantInfo
         {
             Property(w => w.OfficeName).HasMaxLength(1024).IsRequired();
             Property(w => w.RowVersion).IsRowVersion();
-
-
-            HasRequired(w => w.Title)
-                .WithMany(a => a.WorkExperiences)
-                .HasForeignKey(w => w.TitleId)
-                .WillCascadeOnDelete(false);
-
-            HasRequired(w =>w.Creator).WithMany(u => u.CreatedWorkExperiences).HasForeignKey(e => e.CreatorId).WillCascadeOnDelete(false);
-            HasOptional(w => w.LasModifier).WithMany(u => u.ModifiedWorkExperiences).HasForeignKey(e => e.LasModifierId).WillCascadeOnDelete(false);
+            HasRequired(w =>w.CreatedBy).WithMany().HasForeignKey(e => e.CreatedById).WillCascadeOnDelete(false);
+            HasRequired(w => w.ModifiedBy).WithMany().HasForeignKey(e => e.ModifiedById).WillCascadeOnDelete(false);
         }
     }
 }

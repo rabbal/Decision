@@ -18,18 +18,11 @@ namespace Decision.DomainClasses.Configurations.Evaluations
         /// </summary>
         public AnswerOptionConfig()
         {
-            Property(a => a.Name).HasMaxLength(1024).IsRequired();
-            
+            Property(a => a.Title).HasMaxLength(1024).IsRequired();
+            Property(q => q.RowVersion).IsRowVersion();
+            HasRequired(a => a.CreatedBy).WithMany().HasForeignKey(a => a.CreatedById).WillCascadeOnDelete(false);
+            HasRequired(a => a.ModifiedBy).WithMany().HasForeignKey(a => a.ModifiedById).WillCascadeOnDelete(false);
 
-            HasMany(a => a.ArticleEvaluations)
-                .WithMany(je => je.AnswerOptions)
-                .Map(
-                    a =>
-                        a.ToTable("AnswerOptionApplicantmentEvaluation")
-                            .MapRightKey("ArticleEvaluationId")
-                            .MapLeftKey("AnswerOptionId"));
-
-           
         }
     }
 }

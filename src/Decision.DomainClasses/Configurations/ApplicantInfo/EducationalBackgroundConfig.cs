@@ -27,18 +27,8 @@ namespace Decision.DomainClasses.Configurations.ApplicantInfo
             Property(e => e.GPA).IsRequired().HasPrecision(7, 2);
             Property(e => e.ThesisScore).IsRequired().HasPrecision(7, 2);
 
-            HasRequired(e => e.Institution)
-                .WithMany(i => i.EducationalBackgrounds)
-                .HasForeignKey(e => e.InstitutionId)
-                .WillCascadeOnDelete(false);
-
-            HasRequired(e => e.StudyField)
-              .WithMany(i => i.EducationalBackgrounds)
-              .HasForeignKey(e => e.StudyFieldId)
-              .WillCascadeOnDelete(false);
-            
-            HasRequired(e => e.Creator).WithMany(u => u.CreatedEducationalBackgrounds).HasForeignKey(e => e.CreatorId).WillCascadeOnDelete(false);
-            HasOptional(e => e.LasModifier).WithMany(u => u.ModifiedEducationalBackgrounds).HasForeignKey(e => e.LasModifierId).WillCascadeOnDelete(false);
+            HasRequired(e => e.CreatedBy).WithMany().HasForeignKey(e => e.CreatedById).WillCascadeOnDelete(false);
+            HasRequired(e => e.ModifiedBy).WithMany().HasForeignKey(e => e.ModifiedById).WillCascadeOnDelete(false);
         }
     }
 }

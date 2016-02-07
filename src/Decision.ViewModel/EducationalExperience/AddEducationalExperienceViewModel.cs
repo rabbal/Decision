@@ -45,12 +45,6 @@ namespace Decision.ViewModel.EducationalExperience
         public int EndYear { get; set; }
 
         /// <summary>
-        /// نوع سابقه آموزشی
-        /// </summary>
-        [DisplayName("نوع سابقه آموزشی")]
-        public EducationalExperienceType Type { get; set; }
-
-        /// <summary>
         /// آی دی متقاضی مرتبط با سابقه تدریس
         /// </summary>
         [Required]

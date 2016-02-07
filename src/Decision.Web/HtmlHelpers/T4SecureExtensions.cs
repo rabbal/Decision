@@ -811,15 +811,15 @@ namespace Decision.Web.HtmlHelpers
             return result;
         }
 
-        public static void InitMVCT4Result(this IT4MVCActionResult result, string area, string controller, string SecureAction, string protocol = null)
+        public static void InitMVCT4Result(this IT4MVCActionResult result, string area, string controller, string secureAction, string protocol = null)
         {
             result.Controller = controller;
-            result.Action = SecureAction;
+            result.Action = secureAction;
             result.Protocol = protocol;
             result.RouteValueDictionary = new RouteValueDictionary();
             result.RouteValueDictionary.Add("Area", area ?? "");
             result.RouteValueDictionary.Add("Controller", controller);
-            result.RouteValueDictionary.Add("SecureAction", SecureAction);
+            result.RouteValueDictionary.Add("SecureAction", secureAction);
         }
 
         public static bool FileExists(string virtualPath)

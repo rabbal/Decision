@@ -3,7 +3,7 @@ using AutoMapper;
 using Decision.AutoMapperProfiles.Extentions;
 using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Article;
-using Decision.ViewModel.ArticleEvaluation;
+
 using DNT.Extensions;
 
 // ReSharper disable UseStringInterpolation
@@ -25,10 +25,7 @@ namespace Decision.AutoMapperProfiles
             CreateMap<Article, EditArticleViewModel>()
                 .IgnoreAllNonExisting();
 
-            CreateMap<Article, ArticleDetails>()
-                .ForMember(d => d.ApplicantFullName, m => m.MapFrom(s => s.Applicant.FirstName + " " + s.Applicant.LastName))
-                .ForMember(d => d.TotalScore, m => m.UseValue(100f)).IgnoreAllNonExisting();
-
+         
             CreateMap<Article, ArticleViewModel>()
                 .ForMember(d => d.CreatorUserName, m => m.MapFrom(s => s.CreatedBy.UserName))
                 .ForMember(d => d.LastModifierUserName, m => m.MapFrom(s => s.ModifiedBy.UserName))

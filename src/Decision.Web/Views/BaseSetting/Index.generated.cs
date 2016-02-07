@@ -27,7 +27,12 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using Decision.Common.MVC;
+    
+    #line 1 "..\..\Views\BaseSetting\Index.cshtml"
+    using Decision.Common.HtmlHelpers;
+    
+    #line default
+    #line hidden
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -42,7 +47,7 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("\r\n\r\n");
+WriteLiteral("\r\n");
 
             
             #line 3 "..\..\Views\BaseSetting\Index.cshtml"

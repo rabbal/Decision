@@ -18,12 +18,11 @@ namespace Decision.DomainClasses.Configurations.ApplicantInfo
         /// </summary>
         public ArticleConfig()
         {
-            Property(j => j.Code).HasMaxLength(50).IsRequired();
+            
             Property(j => j.Brief).IsMaxLength().IsOptional();
-            Property(j => j.Content).IsMaxLength().IsRequired();
             Property(j => j.RowVersion).IsRowVersion();
-            HasRequired(e => e.Creator).WithMany(u => u.CreatedArticles).HasForeignKey(e => e.CreatorId).WillCascadeOnDelete(false);
-            HasOptional(e => e.LasModifier).WithMany(u => u.ModifiedArticles).HasForeignKey(e => e.LasModifierId).WillCascadeOnDelete(false);
+            HasRequired(e => e.CreatedBy).WithMany().HasForeignKey(e => e.CreatedById).WillCascadeOnDelete(false);
+            HasRequired(e => e.ModifiedBy).WithMany().HasForeignKey(e => e.ModifiedById).WillCascadeOnDelete(false);
         }
     }
 }

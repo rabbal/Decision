@@ -17,10 +17,7 @@ namespace Decision.DomainClasses.Configurations.Common
             {
                 a.Name
             });
-
             Property(s => s.Name).HasMaxLength(50).IsRequired();
-            Ignore(s => s.XmlValue);
-            Property(s => s.Value).HasColumnType("xml");
         }
     }
 }

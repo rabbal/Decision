@@ -27,7 +27,6 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using Decision.Common.MVC;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -296,37 +295,18 @@ WriteLiteral(">\r\n            <div");
 
 WriteLiteral(" class=\"pull-left\"");
 
-WriteLiteral(">\r\n                <a");
-
-WriteLiteral(" class=\"btn btn-sm btn-success \"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 2835), Tuple.Create("\"", 2913)
-            
-            #line 75 "..\..\Views\EntireEvaluation\_EntireEvaluationItem.cshtml"
-, Tuple.Create(Tuple.Create("", 2842), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.EntireEvaluation.GetDocument(Model.Id,Model.ApplicantId))
-            
-            #line default
-            #line hidden
-, 2842), false)
-);
-
-WriteLiteral(">\r\n                    <i");
-
-WriteLiteral(" class=\"fa fa-download\"");
-
-WriteLiteral("></i>\r\n                    بارگذاری ضمیمه\r\n                </a>\r\n                " +
-"<a");
+WriteLiteral(">\r\n               \r\n                <a");
 
 WriteLiteral(" class=\"btn btn-primary btn-sm\"");
 
-WriteAttribute("href", Tuple.Create("\r\n                   href=\"", 3076), Tuple.Create("\"", 3151)
+WriteAttribute("href", Tuple.Create("\r\n                   href=\"", 2851), Tuple.Create("\"", 2926)
             
-            #line 80 "..\..\Views\EntireEvaluation\_EntireEvaluationItem.cshtml"
-, Tuple.Create(Tuple.Create("", 3103), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.EntireEvaluation.Edit(Model.Id))
+            #line 77 "..\..\Views\EntireEvaluation\_EntireEvaluationItem.cshtml"
+, Tuple.Create(Tuple.Create("", 2878), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.EntireEvaluation.Edit(Model.Id))
             
             #line default
             #line hidden
-, 3103), false)
+, 2878), false)
 );
 
 WriteLiteral(" role=\"button\"");
@@ -344,7 +324,7 @@ WriteLiteral("\r\n                        type=\"button\"");
 WriteLiteral(" data-delete-url=\"");
 
             
-            #line 82 "..\..\Views\EntireEvaluation\_EntireEvaluationItem.cshtml"
+            #line 79 "..\..\Views\EntireEvaluation\_EntireEvaluationItem.cshtml"
                                                   Write(Url.Action(MVC.EntireEvaluation.Delete()));
 
             
@@ -355,8 +335,8 @@ WriteLiteral("\"");
 WriteLiteral(" data-Applicant=\"");
 
             
-            #line 82 "..\..\Views\EntireEvaluation\_EntireEvaluationItem.cshtml"
-                                                                                                            Write(Model.ApplicantId);
+            #line 79 "..\..\Views\EntireEvaluation\_EntireEvaluationItem.cshtml"
+                                                                                                              Write(Model.ApplicantId);
 
             
             #line default
@@ -366,23 +346,23 @@ WriteLiteral("\"");
 WriteLiteral(" data-removal-element=\"#entireEvaluation-");
 
             
-            #line 82 "..\..\Views\EntireEvaluation\_EntireEvaluationItem.cshtml"
-                                                                                                                                                                      Write(Model.Id);
+            #line 79 "..\..\Views\EntireEvaluation\_EntireEvaluationItem.cshtml"
+                                                                                                                                                                          Write(Model.Id);
 
             
             #line default
             #line hidden
 WriteLiteral("\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 3441), Tuple.Create("\"", 3462)
-, Tuple.Create(Tuple.Create("", 3446), Tuple.Create("remove-", 3446), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 3220), Tuple.Create("\"", 3241)
+, Tuple.Create(Tuple.Create("", 3225), Tuple.Create("remove-", 3225), true)
             
-            #line 82 "..\..\Views\EntireEvaluation\_EntireEvaluationItem.cshtml"
-                                                                                                                 , Tuple.Create(Tuple.Create("", 3453), Tuple.Create<System.Object, System.Int32>(Model.Id
+            #line 79 "..\..\Views\EntireEvaluation\_EntireEvaluationItem.cshtml"
+                                                                                                                     , Tuple.Create(Tuple.Create("", 3232), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 3453), false)
+, 3232), false)
 );
 
 WriteLiteral(">\r\n                    <i");

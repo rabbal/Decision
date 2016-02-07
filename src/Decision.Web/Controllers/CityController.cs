@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.UI;
 using Decision.Common.Filters;
-using Decision.Common.Helpers.Json;
+using Decision.Common.Json;
 using Decision.DataLayer.Context;
 using Decision.ServiceLayer.Contracts.Common;
 

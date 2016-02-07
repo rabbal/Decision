@@ -20,13 +20,6 @@ namespace Decision.ViewModel.Question
         public  string Title { get; set; }
 
         /// <summary>
-        /// نوع سوال
-        /// </summary>
-        [DisplayName("نوع سوال")]
-        [Required(ErrorMessage = "لطفا نوع سوال را مشخص کنید")]
-        public  QuestionType Type { get; set; }
-
-        /// <summary>
         /// وزن ارزشی سوال
         /// </summary>
         [DisplayName("وزن ارزش سوال")]

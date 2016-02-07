@@ -52,27 +52,17 @@
   <ItemGroup>
     <Compile Include="Configurations\ApplicantInfo\AddressConfig.cs" />
     <Compile Include="Configurations\Common\AuditLogConfig.cs" />
-    <Compile Include="Configurations\Common\TitleConfig.cs" />
     <Compile Include="Configurations\Evaluations\AnswerOptionConfig.cs" />
-    <Compile Include="Configurations\Evaluations\AppraiserConfig.cs" />
     <Compile Include="Configurations\Evaluations\EntireEvaluationConfig.cs" />
     <Compile Include="Configurations\Evaluations\InterviewConfig.cs" />
-    <Compile Include="Configurations\Evaluations\ArticleEvaluationConfig.cs" />
-    <Compile Include="Configurations\Evaluations\ArticleEvaluationQuestionConfig.cs" />
     <Compile Include="Configurations\Evaluations\QuestionConfig.cs" />
     <Compile Include="Configurations\ApplicantInfo\EducationalBackgroundConfig.cs" />
-    <Compile Include="Configurations\ApplicantInfo\InstitutionConfig.cs" />
     <Compile Include="Configurations\ApplicantInfo\ApplicantConfig.cs" />
-    <Compile Include="Configurations\ApplicantInfo\TeacherInServiceCourseTypeConfig.cs" />
     <Compile Include="Configurations\ApplicantInfo\ArticleConfig.cs" />
-    <Compile Include="Configurations\ApplicantInfo\ReferentialJudgeConfig.cs" />
     <Compile Include="Configurations\ApplicantInfo\ReseachExperienceConfig.cs" />
     <Compile Include="Configurations\ApplicantInfo\EducationalExperienceConfig.cs" />
-    <Compile Include="Configurations\ApplicantInfo\TrainingCenterConfig.cs" />
-    <Compile Include="Configurations\ApplicantInfo\TrainingCourseConfig.cs" />
     <Compile Include="Configurations\ApplicantInfo\WorkExperienceConfig.cs" />
     <Compile Include="Configurations\PrivateMessage\ConversationConfig.cs" />
-    <Compile Include="Configurations\PrivateMessage\MessageAttachmentConfig.cs" />
     <Compile Include="Configurations\PrivateMessage\MessageConfig.cs" />
     <Compile Include="Configurations\Users\RoleConfig.cs" />
     <Compile Include="Configurations\Common\SettingConfig.cs" />

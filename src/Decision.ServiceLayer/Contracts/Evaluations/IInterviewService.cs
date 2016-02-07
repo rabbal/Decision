@@ -47,15 +47,6 @@ namespace Decision.ServiceLayer.Contracts.Evaluations
         /// <param name="id">آی دی</param>
         /// <returns></returns>
         Task<bool> IsInDb(Guid id);
-
-        Task FillEditViewModel(EditInterviewViewModel viewModel);
-
         
-
-        Task FillAddViewModel(AddInterviewViewModel viewModel);
-
-        Task<AddInterviewViewModel> GetForCreate(Guid ApplicantId);
-
-        Task<byte[]> GetAttachment(Guid id);
     }
 }

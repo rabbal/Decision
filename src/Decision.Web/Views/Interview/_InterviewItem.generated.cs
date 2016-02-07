@@ -27,7 +27,6 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using Decision.Common.MVC;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -166,37 +165,18 @@ WriteLiteral(">\r\n            <div");
 
 WriteLiteral(" class=\"pull-left\"");
 
-WriteLiteral(">\r\n                <a");
-
-WriteLiteral(" class=\"btn btn-sm btn-success \"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 1466), Tuple.Create("\"", 1537)
-            
-            #line 40 "..\..\Views\Interview\_InterviewItem.cshtml"
-, Tuple.Create(Tuple.Create("", 1473), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Interview.GetDocument(Model.Id,Model.ApplicantId))
-            
-            #line default
-            #line hidden
-, 1473), false)
-);
-
-WriteLiteral(">\r\n                    <i");
-
-WriteLiteral(" class=\"fa fa-download\"");
-
-WriteLiteral("></i>\r\n                    بارگذاری ضمیمه\r\n                </a>\r\n                " +
-"<a");
+WriteLiteral(">\r\n              \r\n                <a");
 
 WriteLiteral(" class=\"btn btn-primary btn-sm\"");
 
-WriteAttribute("href", Tuple.Create("\r\n                   href=\"", 1700), Tuple.Create("\"", 1768)
+WriteAttribute("href", Tuple.Create("\r\n                   href=\"", 1481), Tuple.Create("\"", 1549)
             
-            #line 45 "..\..\Views\Interview\_InterviewItem.cshtml"
-, Tuple.Create(Tuple.Create("", 1727), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Interview.Edit(Model.Id))
+            #line 42 "..\..\Views\Interview\_InterviewItem.cshtml"
+, Tuple.Create(Tuple.Create("", 1508), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Interview.Edit(Model.Id))
             
             #line default
             #line hidden
-, 1727), false)
+, 1508), false)
 );
 
 WriteLiteral(" role=\"button\"");
@@ -214,7 +194,7 @@ WriteLiteral("\r\n                        type=\"button\"");
 WriteLiteral(" data-delete-url=\"");
 
             
-            #line 47 "..\..\Views\Interview\_InterviewItem.cshtml"
+            #line 44 "..\..\Views\Interview\_InterviewItem.cshtml"
                                                   Write(Url.Action(MVC.Interview.Delete()));
 
             
@@ -225,7 +205,7 @@ WriteLiteral("\"");
 WriteLiteral(" data-removal-element=\"#interview-");
 
             
-            #line 47 "..\..\Views\Interview\_InterviewItem.cshtml"
+            #line 44 "..\..\Views\Interview\_InterviewItem.cshtml"
                                                                                                                         Write(Model.Id);
 
             
@@ -233,15 +213,15 @@ WriteLiteral(" data-removal-element=\"#interview-");
             #line hidden
 WriteLiteral("\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 2012), Tuple.Create("\"", 2033)
-, Tuple.Create(Tuple.Create("", 2017), Tuple.Create("remove-", 2017), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 1793), Tuple.Create("\"", 1814)
+, Tuple.Create(Tuple.Create("", 1798), Tuple.Create("remove-", 1798), true)
             
-            #line 47 "..\..\Views\Interview\_InterviewItem.cshtml"
-                                                                   , Tuple.Create(Tuple.Create("", 2024), Tuple.Create<System.Object, System.Int32>(Model.Id
+            #line 44 "..\..\Views\Interview\_InterviewItem.cshtml"
+                                                                   , Tuple.Create(Tuple.Create("", 1805), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 2024), false)
+, 1805), false)
 );
 
 WriteLiteral(">\r\n                    <i");

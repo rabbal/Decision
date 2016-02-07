@@ -21,7 +21,7 @@ namespace Decision.AutoMapperProfiles
         {
             CreateMap<User, UserViewModel>()
 
-                .ForMember(d => d.FullName, m => m.MapFrom(s => s.FirstName + " " + s.LastName))
+                .ForMember(d => d.FullName, m => m.MapFrom(s => s.DisplayName))
                 .IgnoreAllNonExisting();
 
             CreateMap<AddUserViewModel, User>()

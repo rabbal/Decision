@@ -27,7 +27,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using Decision.Common.MVC;
+    using Decision.Common.HtmlHelpers;
     using Decision.Utility;
     
     #line 1 "..\..\Views\Question\List.cshtml"
@@ -227,14 +227,14 @@ WriteLiteral(" style=\"display: none\"");
 
 WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2495), Tuple.Create("\"", 2545)
+WriteAttribute("src", Tuple.Create(" src=\"", 2496), Tuple.Create("\"", 2546)
             
             #line 55 "..\..\Views\Question\List.cshtml"
-, Tuple.Create(Tuple.Create("", 2501), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
+, Tuple.Create(Tuple.Create("", 2502), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
             
             #line default
             #line hidden
-, 2501), false)
+, 2502), false)
 );
 
 WriteLiteral(" alt=\"loading...\"");

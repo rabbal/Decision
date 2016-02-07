@@ -27,13 +27,6 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using Decision.Common.MVC;
-    
-    #line 3 "..\..\Views\Interview\_Create.cshtml"
-    using Decision.Common.Security.HiddenField;
-    
-    #line default
-    #line hidden
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -48,7 +41,7 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("\r\n\r\n");
+WriteLiteral("\r\n");
 
 WriteLiteral("<div");
 
@@ -61,13 +54,13 @@ WriteLiteral(" class=\"col-md-12\"");
 WriteLiteral(">\r\n");
 
             
-            #line 8 "..\..\Views\Interview\_Create.cshtml"
+            #line 6 "..\..\Views\Interview\_Create.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 8 "..\..\Views\Interview\_Create.cshtml"
+            #line 6 "..\..\Views\Interview\_Create.cshtml"
          using (Html.BeginForm(MVC.Interview.Create(), FormMethod.Post, new { @class = "form-horizontal", id = "createInterviewForm", autocomplete = "off", enctype = "multipart/form-data" }))
         {
             
@@ -75,42 +68,42 @@ WriteLiteral(">\r\n");
             #line default
             #line hidden
             
-            #line 10 "..\..\Views\Interview\_Create.cshtml"
+            #line 8 "..\..\Views\Interview\_Create.cshtml"
        Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 10 "..\..\Views\Interview\_Create.cshtml"
+            #line 8 "..\..\Views\Interview\_Create.cshtml"
                                     
             
             
             #line default
             #line hidden
             
-            #line 11 "..\..\Views\Interview\_Create.cshtml"
+            #line 9 "..\..\Views\Interview\_Create.cshtml"
        Write(Html.HiddenFor(model => model.ApplicantId));
 
             
             #line default
             #line hidden
             
-            #line 11 "..\..\Views\Interview\_Create.cshtml"
-                                                     
+            #line 9 "..\..\Views\Interview\_Create.cshtml"
+                                                       
             
             
             #line default
             #line hidden
             
-            #line 12 "..\..\Views\Interview\_Create.cshtml"
+            #line 10 "..\..\Views\Interview\_Create.cshtml"
        Write(Html.HiddenFor(model => model.AttachmentScan));
 
             
             #line default
             #line hidden
             
-            #line 12 "..\..\Views\Interview\_Create.cshtml"
+            #line 10 "..\..\Views\Interview\_Create.cshtml"
                                                           
 
 
@@ -126,7 +119,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 15 "..\..\Views\Interview\_Create.cshtml"
+            #line 13 "..\..\Views\Interview\_Create.cshtml"
            Write(Html.LabelFor(model => model.Brief, htmlAttributes: new { @class = "control-label col-md-1" }));
 
             
@@ -141,7 +134,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 17 "..\..\Views\Interview\_Create.cshtml"
+            #line 15 "..\..\Views\Interview\_Create.cshtml"
                Write(Html.TextAreaFor(model => model.Brief, new { @class = "form-control ckeditor",rows=3 }));
 
             
@@ -152,7 +145,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 18 "..\..\Views\Interview\_Create.cshtml"
+            #line 16 "..\..\Views\Interview\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.Brief, "", new { @class = "text-danger" }));
 
             
@@ -161,7 +154,7 @@ WriteLiteral("                    ");
 WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
 
             
-            #line 21 "..\..\Views\Interview\_Create.cshtml"
+            #line 19 "..\..\Views\Interview\_Create.cshtml"
 
 
             
@@ -176,7 +169,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 23 "..\..\Views\Interview\_Create.cshtml"
+            #line 21 "..\..\Views\Interview\_Create.cshtml"
            Write(Html.LabelFor(model => model.Body, htmlAttributes: new { @class = "control-label col-md-1" }));
 
             
@@ -191,7 +184,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 25 "..\..\Views\Interview\_Create.cshtml"
+            #line 23 "..\..\Views\Interview\_Create.cshtml"
                Write(Html.TextAreaFor(model => model.Body, new { @class = "form-control ckeditor",rows=10 }));
 
             
@@ -202,7 +195,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 26 "..\..\Views\Interview\_Create.cshtml"
+            #line 24 "..\..\Views\Interview\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.Brief, "", new { @class = "text-danger" }));
 
             
@@ -211,7 +204,7 @@ WriteLiteral("                    ");
 WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
 
             
-            #line 29 "..\..\Views\Interview\_Create.cshtml"
+            #line 27 "..\..\Views\Interview\_Create.cshtml"
 
 
             
@@ -226,7 +219,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 31 "..\..\Views\Interview\_Create.cshtml"
+            #line 29 "..\..\Views\Interview\_Create.cshtml"
            Write(Html.LabelFor(model => model.InterviewerId, htmlAttributes: new { @class = "control-label col-md-1" }));
 
             
@@ -241,7 +234,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 33 "..\..\Views\Interview\_Create.cshtml"
+            #line 31 "..\..\Views\Interview\_Create.cshtml"
                Write(Html.DropDownListFor(model => model.InterviewerId, Model.Interviewers, new { @class = "form-control" }));
 
             
@@ -252,7 +245,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 34 "..\..\Views\Interview\_Create.cshtml"
+            #line 32 "..\..\Views\Interview\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.InterviewerId, "", new { @class = "text-danger" }));
 
             
@@ -269,7 +262,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 38 "..\..\Views\Interview\_Create.cshtml"
+            #line 36 "..\..\Views\Interview\_Create.cshtml"
            Write(Html.LabelFor(model => model.InterviewDate, htmlAttributes: new { @class = "control-label col-md-1" }));
 
             
@@ -284,7 +277,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 40 "..\..\Views\Interview\_Create.cshtml"
+            #line 38 "..\..\Views\Interview\_Create.cshtml"
                Write(Html.EditorFor(model => model.InterviewDate, MVC.Shared.Views.EditorTemplates.PersianDatePicker));
 
             
@@ -295,7 +288,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 41 "..\..\Views\Interview\_Create.cshtml"
+            #line 39 "..\..\Views\Interview\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.InterviewDate, "", new { @class = "text-danger" }));
 
             
@@ -312,7 +305,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 45 "..\..\Views\Interview\_Create.cshtml"
+            #line 43 "..\..\Views\Interview\_Create.cshtml"
            Write(Html.LabelFor(model => model.AttachmentFile, htmlAttributes: new { @class = "control-label col-md-1" }));
 
             
@@ -327,7 +320,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 47 "..\..\Views\Interview\_Create.cshtml"
+            #line 45 "..\..\Views\Interview\_Create.cshtml"
                Write(Html.TextBoxFor(model => model.AttachmentFile, new { type = "file", @class = "form-control" }));
 
             
@@ -347,29 +340,29 @@ WriteLiteral(" data-type=\"pdf\"");
 
 WriteLiteral(" data-container=\"AttachmentScan\"");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 2872), Tuple.Create("\"", 2976)
-, Tuple.Create(Tuple.Create("", 2880), Tuple.Create("btn", 2880), true)
-, Tuple.Create(Tuple.Create(" ", 2883), Tuple.Create("btn-primary", 2884), true)
-, Tuple.Create(Tuple.Create("   ", 2895), Tuple.Create("btn-sm", 2898), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 2827), Tuple.Create("\"", 2931)
+, Tuple.Create(Tuple.Create("", 2835), Tuple.Create("btn", 2835), true)
+, Tuple.Create(Tuple.Create(" ", 2838), Tuple.Create("btn-primary", 2839), true)
+, Tuple.Create(Tuple.Create("   ", 2850), Tuple.Create("btn-sm", 2853), true)
             
-            #line 50 "..\..\Views\Interview\_Create.cshtml"
-                                                             , Tuple.Create(Tuple.Create(" ", 2904), Tuple.Create<System.Object, System.Int32>(!string.IsNullOrEmpty(Model.AttachmentScan) ? "scan-remove" : "scan"
+            #line 48 "..\..\Views\Interview\_Create.cshtml"
+                                                             , Tuple.Create(Tuple.Create(" ", 2859), Tuple.Create<System.Object, System.Int32>(!string.IsNullOrEmpty(Model.AttachmentScan) ? "scan-remove" : "scan"
             
             #line default
             #line hidden
-, 2905), false)
+, 2860), false)
 );
 
 WriteLiteral(">\r\n\r\n");
 
             
-            #line 52 "..\..\Views\Interview\_Create.cshtml"
+            #line 50 "..\..\Views\Interview\_Create.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 52 "..\..\Views\Interview\_Create.cshtml"
+            #line 50 "..\..\Views\Interview\_Create.cshtml"
                          if (!string.IsNullOrEmpty(Model.AttachmentScan))
                         {
             
@@ -384,7 +377,7 @@ WriteLiteral("></i>\r\n                            حذف فایل اسکن شد
 WriteLiteral("\r\n");
 
             
-            #line 57 "..\..\Views\Interview\_Create.cshtml"
+            #line 55 "..\..\Views\Interview\_Create.cshtml"
                         }
                         else
                         {
@@ -400,7 +393,7 @@ WriteLiteral("></i>\r\n                            افزودن اسکن\r\n    
 WriteLiteral("\r\n");
 
             
-            #line 63 "..\..\Views\Interview\_Create.cshtml"
+            #line 61 "..\..\Views\Interview\_Create.cshtml"
                         }
 
             
@@ -409,7 +402,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    </button>\r\n                </div>\r\n            </div>\r\n");
 
             
-            #line 67 "..\..\Views\Interview\_Create.cshtml"
+            #line 65 "..\..\Views\Interview\_Create.cshtml"
 
 
             
@@ -442,7 +435,7 @@ WriteLiteral(">\r\n                        ثبت مصاحبه جدید\r\n     
 "          </div>\r\n            </div>\r\n");
 
             
-            #line 75 "..\..\Views\Interview\_Create.cshtml"
+            #line 73 "..\..\Views\Interview\_Create.cshtml"
         }
 
             

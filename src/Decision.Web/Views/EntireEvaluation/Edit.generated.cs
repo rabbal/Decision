@@ -27,13 +27,6 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
-    #line 1 "..\..\Views\EntireEvaluation\Edit.cshtml"
-    using Decision.Common.Helpers.Extentions;
-    
-    #line default
-    #line hidden
-    using Decision.Common.MVC;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -48,6 +41,8 @@ namespace ASP
         }
         public override void Execute()
         {
+WriteLiteral("\r\n");
+
 WriteLiteral("\r\n<div");
 
 WriteLiteral(" class=\"row\"");
@@ -143,7 +138,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 19 "..\..\Views\EntireEvaluation\Edit.cshtml"
-                                                             
+                                                               
                     
             
             #line default
@@ -443,116 +438,9 @@ WriteLiteral("                            ");
             #line hidden
 WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n");
 
-WriteLiteral("                    <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                        ");
-
             
-            #line 69 "..\..\Views\EntireEvaluation\Edit.cshtml"
-                   Write(Html.LabelFor(model => model.AttachmentFile, htmlAttributes: new { @class = "control-label col-md-1" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                        <div");
-
-WriteLiteral(" class=\"col-md-6\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                            ");
-
-            
-            #line 71 "..\..\Views\EntireEvaluation\Edit.cshtml"
-                       Write(Html.TextBoxFor(model => model.AttachmentFile, new { type = "file", @class = "form-control" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                        </div>\r\n                        <div");
-
-WriteLiteral(" class=\"col-md-4\"");
-
-WriteLiteral(">\r\n                            <button");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" autocomplete=\"off\"");
-
-WriteLiteral(" data-type=\"pdf\"");
-
-WriteLiteral(" data-container=\"AttachmentScan\"");
-
-WriteAttribute("class", Tuple.Create(" class=\"", 4644), Tuple.Create("\"", 4736)
-, Tuple.Create(Tuple.Create("", 4652), Tuple.Create("btn", 4652), true)
-, Tuple.Create(Tuple.Create(" ", 4655), Tuple.Create("btn-primary", 4656), true)
-, Tuple.Create(Tuple.Create("   ", 4667), Tuple.Create("btn-sm", 4670), true)
-            
-            #line 74 "..\..\Views\EntireEvaluation\Edit.cshtml"
-                                                                     , Tuple.Create(Tuple.Create(" ", 4676), Tuple.Create<System.Object, System.Int32>(Model.AttachmentScan.HasValue() ? "scan-remove" : "scan"
-            
-            #line default
-            #line hidden
-, 4677), false)
-);
-
-WriteLiteral(">\r\n\r\n");
-
-            
-            #line 76 "..\..\Views\EntireEvaluation\Edit.cshtml"
-                                
-            
-            #line default
-            #line hidden
-            
-            #line 76 "..\..\Views\EntireEvaluation\Edit.cshtml"
-                                 if (Model.AttachmentScan.HasValue())
-                                {
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                    <i");
-
-WriteLiteral(" class=\"fa fa-remove\"");
-
-WriteLiteral("></i>\r\n                                    حذف فایل اسکن شده\r\n                   " +
-"             ");
-
-WriteLiteral("\r\n");
-
-            
-            #line 81 "..\..\Views\EntireEvaluation\Edit.cshtml"
-                                }
-                                else
-                                {
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                    <i");
-
-WriteLiteral(" class=\"fa fa-file-photo-o\"");
-
-WriteLiteral("></i>\r\n                                    افزودن اسکن\r\n                         " +
-"       ");
-
-WriteLiteral("\r\n");
-
-            
-            #line 87 "..\..\Views\EntireEvaluation\Edit.cshtml"
-                                }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                            </button>\r\n                        </div>\r\n          " +
-"          </div>\r\n");
-
-            
-            #line 91 "..\..\Views\EntireEvaluation\Edit.cshtml"
+            #line 68 "..\..\Views\EntireEvaluation\Edit.cshtml"
+              
                 }
 
             
@@ -589,14 +477,14 @@ WriteLiteral("></i>\r\n                        ذخیره تغییرات\r\n    
 
 WriteLiteral(" class=\"btn btn-default btn-md\"");
 
-WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 5977), Tuple.Create("\"", 6063)
+WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 4627), Tuple.Create("\"", 4715)
             
-            #line 101 "..\..\Views\EntireEvaluation\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 6008), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.EntireEvaluation.List(Model.ApplicantId))
+            #line 79 "..\..\Views\EntireEvaluation\Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 4658), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.EntireEvaluation.List(Model.ApplicantId))
             
             #line default
             #line hidden
-, 6008), false)
+, 4658), false)
 );
 
 WriteLiteral(" role=\"button\"");
@@ -617,13 +505,13 @@ DefineSection("Menu", () => {
 WriteLiteral("\r\n");
 
             
-            #line 114 "..\..\Views\EntireEvaluation\Edit.cshtml"
+            #line 92 "..\..\Views\EntireEvaluation\Edit.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 114 "..\..\Views\EntireEvaluation\Edit.cshtml"
+            #line 92 "..\..\Views\EntireEvaluation\Edit.cshtml"
       Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.ApplicantId);
             
             #line default
@@ -639,7 +527,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 117 "..\..\Views\EntireEvaluation\Edit.cshtml"
+            #line 95 "..\..\Views\EntireEvaluation\Edit.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             
@@ -650,7 +538,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 118 "..\..\Views\EntireEvaluation\Edit.cshtml"
+            #line 96 "..\..\Views\EntireEvaluation\Edit.cshtml"
 Write(Scripts.Render("~/bundles/datePicker"));
 
             
@@ -661,7 +549,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 119 "..\..\Views\EntireEvaluation\Edit.cshtml"
+            #line 97 "..\..\Views\EntireEvaluation\Edit.cshtml"
 Write(Scripts.Render("~/bundles/editor"));
 
             

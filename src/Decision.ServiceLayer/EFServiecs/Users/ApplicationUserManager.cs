@@ -10,7 +10,7 @@ using System.Web.Mvc;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Decision.Common.Controller;
-using Decision.Common.Helpers.Extentions;
+using Decision.Common.Extentions;
 using Decision.DataLayer.Context;
 using Decision.DomainClasses.Entities.Users;
 using Decision.ServiceLayer.Contracts.Users;
@@ -118,8 +118,8 @@ namespace Decision.ServiceLayer.EFServiecs.Users
             const string systemAdminUserName = "Admin";
             const string systemAdminPassword = "Admin1234@example.com";
 
-            const string firstName = "مدیر";
-            const string lastName = "مدیری";
+            const string systemAdminDisplayName = "مدیر سیستم";
+
 
 
 
@@ -128,8 +128,7 @@ namespace Decision.ServiceLayer.EFServiecs.Users
             {
                 var newUser = new User
                 {
-                    FirstName = firstName,
-                    LastName = lastName,
+                    DisplayName = systemAdminDisplayName,
                     UserName = systemAdminUserName,
                     IsSystemAccount = true,
                     Email = aspNetIdentityRequiredEmail
@@ -249,7 +248,7 @@ namespace Decision.ServiceLayer.EFServiecs.Users
                 users = users.Where(a => a.UserName.Contains(search.UserName));
 
             var query = await users
-                    .Skip((search.PageIndex - 1)*10).Take(10).ProjectTo<UserViewModel>(_mappingEngine)
+                    .Skip((search.PageIndex - 1) * 10).Take(10).ProjectTo<UserViewModel>(_mappingEngine)
                     .ToListAsync();
 
             return new UserListViewModel
@@ -397,7 +396,7 @@ namespace Decision.ServiceLayer.EFServiecs.Users
             return _users.Any(a => a.Email == email.FixGmailDots() && (a.IsBanned));
         }
 
-       
+
         #endregion
 
         #region GetEmailStore
@@ -429,7 +428,7 @@ namespace Decision.ServiceLayer.EFServiecs.Users
         }
         #endregion
 
-      
+
 
         #region IsEmailAvailableForConfirm
         public bool IsEmailAvailableForConfirm(string email)

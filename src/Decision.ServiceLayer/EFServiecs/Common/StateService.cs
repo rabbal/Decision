@@ -3,7 +3,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml.Linq;
-using Decision.Common.Helpers.Extentions;
+using Decision.Common.Extentions;
 using Decision.ServiceLayer.Contracts.Common;
 using Decision.ServiceLayer.Settings;
 

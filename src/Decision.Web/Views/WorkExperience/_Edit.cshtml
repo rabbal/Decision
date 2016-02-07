@@ -1,4 +1,5 @@
 ﻿@using Decision.Common.Helpers
+@using Decision.Common.HtmlHelpers
 @model Decision.ViewModel.WorkExperience.EditWorkExperienceViewModel
 
 <div class="col-md-12" id="workExperience-@Model.Id">
@@ -24,31 +25,7 @@
                         @Html.ValidationMessageFor(model => model.OfficeName, null, new { @class = "text-danger" })
                     </div>
                 </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.ClosedProjectCount, new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.NoAutoCompleteTextBoxForNumber(model => model.ClosedProjectCount)
-                        @Html.ValidationMessageFor(model => model.ClosedProjectCount, null, new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.OpenProjectCount, new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.NoAutoCompleteTextBoxForNumber(model => model.OpenProjectCount)
-                        @Html.ValidationMessageFor(model => model.OpenProjectCount, null, new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.ReferentialProjectCount, new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.NoAutoCompleteTextBoxForNumber(model => model.ReferentialProjectCount)
-                        @Html.ValidationMessageFor(model => model.ReferentialProjectCount, null, new { @class = "text-danger" })
-                    </div>
-                </div>
-
+                
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.TenureBeginDate, new { @class = "control-label col-md-2" })

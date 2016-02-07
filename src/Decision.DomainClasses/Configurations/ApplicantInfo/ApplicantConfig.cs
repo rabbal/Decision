@@ -20,12 +20,6 @@ namespace Decision.DomainClasses.Configurations.ApplicantInfo
         /// </summary>
         public ApplicantConfig()
         {
-            Property(j => j.AccountNumber).HasMaxLength(256).IsOptional();
-            Property(j => j.BankBranch).HasMaxLength(256).IsOptional();
-            Property(j => j.BankName).HasMaxLength(256).IsRequired();
-            Property(j => j.PersonnelCode).HasMaxLength(50).IsRequired();
-            Property(j => j.Score).HasPrecision(7,2);
-            Property(j => j.TrainingGPA).HasPrecision(7, 2);
             Property(j => j.BirthCertificateNumber).HasMaxLength(20)
                 .IsRequired()
                 .HasColumnAnnotation("Index",
@@ -42,28 +36,18 @@ namespace Decision.DomainClasses.Configurations.ApplicantInfo
                 .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_ApplicantNationalCode") { IsUnique = true }));
 
             Property(j => j.RowVersion).IsRowVersion();
-
-            HasOptional(j=>j.Position).WithMany(t=>t.Applicants).HasForeignKey(j=>j.PositionId).WillCascadeOnDelete(false);
-            HasOptional(j=>j.TrainingCourse).WithMany(t=>t.Applicants).HasForeignKey(j=>j.TrainingCourseId).WillCascadeOnDelete(false);
             
-           
-            HasOptional(j => j.ApproveBy)
-                .WithMany(u => u.ApprovedApplicants)
-                .HasForeignKey(j => j.ApproveById)
-                .WillCascadeOnDelete(false);
-
 
             HasMany(j => j.EducationalExperiences).WithRequired(e => e.Applicant).HasForeignKey(e => e.ApplicantId).WillCascadeOnDelete(true);
             HasMany(j=>j.EducationalBackgrounds).WithRequired(e=>e.Applicant).HasForeignKey(e=>e.ApplicantId).WillCascadeOnDelete(true);
             HasMany(j => j.WorkExperiences).WithRequired(e => e.Applicant).HasForeignKey(e => e.ApplicantId).WillCascadeOnDelete(true);
             HasMany(j => j.ReseachExperiences).WithRequired(e => e.Applicant).HasForeignKey(e => e.ApplicantId).WillCascadeOnDelete(true);
-            HasMany(j => j.ApplicantInServiceCourseTypes).WithRequired(e => e.Applicant).HasForeignKey(e => e.ApplicantId).WillCascadeOnDelete(true);         
-
+           
             HasMany(j => j.Articles).WithRequired(e => e.Applicant).HasForeignKey(e => e.ApplicantId).WillCascadeOnDelete(true);
         
            
-            HasRequired(e => e.Creator).WithMany(u => u.CreatedApplicants).HasForeignKey(e => e.CreatorId).WillCascadeOnDelete(false);
-            HasOptional(e => e.LasModifier).WithMany(u => u.ModifiedApplicants).HasForeignKey(e => e.LasModifierId).WillCascadeOnDelete(false);
+            HasRequired(e => e.CreatedBy).WithMany().HasForeignKey(e => e.CreatedBy).WillCascadeOnDelete(false);
+            HasRequired(e => e.ModifiedBy).WithMany().HasForeignKey(e => e.ModifiedById).WillCascadeOnDelete(false);
 
         }
     }

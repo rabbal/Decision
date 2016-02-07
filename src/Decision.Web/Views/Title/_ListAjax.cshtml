@@ -1,7 +1,0 @@
-﻿@* GeneratePrettyNames: true*@
-@using Decision.DomainClasses.Entities.Common
-@model  Decision.ViewModel.Title.TitleListViewModel
-@foreach (var title in Model.Titles)
-{
-    @Html.Partial(MVC.Title.Views._TitleItem, title)
-}

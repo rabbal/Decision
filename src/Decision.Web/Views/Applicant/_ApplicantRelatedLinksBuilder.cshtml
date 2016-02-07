@@ -1,0 +1,27 @@
+﻿@model Guid
+
+@using System.Web.Mvc
+@using Decision.ServiceLayer.Security
+@Html.SideBarSecureActionLink("فرم مشخصات متقاضی", Url.Action(MVC.Applicant.Details(Model)), "list-group-item thrid-split", "fa fa-eye",AssignableToRolePermissions.CanViewApplicantDetails)
+
+@Html.SideBarSecureActionLink("فرم ویرایش متقاضی", Url.Action(MVC.Applicant.Edit(Model)), "list-group-item thrid-split", "fa fa-edit", AssignableToRolePermissions.CanEditApplicant)
+
+@Html.SideBarSecureActionLink("آدرس ها", Url.Action(MVC.Address.List(Model)), "list-group-item second-split", "fa fa-map-marker", AssignableToRolePermissions.CanManageAddress)
+
+
+@Html.SideBarSecureActionLink("سوابق تحصیلی", Url.Action(MVC.EducationalBackground.List(Model)), "list-group-item second-split", "fa fa-graduation-cap", AssignableToRolePermissions.CanManageEducationalBackground)
+
+@Html.SideBarSecureActionLink("لیست مقالات", Url.Action(MVC.Article.List(Model)), "list-group-item second-split", "fa fa-th-list", AssignableToRolePermissions.CanManageArticle)
+
+
+@Html.SideBarSecureActionLink("مصاحبه ها", Url.Action(MVC.Interview.List(Model)), "list-group-item second-split", "fa fa-comments", AssignableToRolePermissions.CanManageInterview)
+
+
+@Html.SideBarSecureActionLink("سوابق تدریس علمی", Url.Action(MVC.EducationalExperience.List(Model)), "list-group-item second-split", "fa fa-university", AssignableToRolePermissions.CanManageScientificTeaching)
+
+@Html.SideBarSecureActionLink("سوابق پژوهشی", Url.Action(MVC.ResearchExperience.List(Model)), "list-group-item second-split", "fa fa-leanpub", AssignableToRolePermissions.CanManageResearchExperience)
+
+@Html.SideBarSecureActionLink("سوابق کاری", Url.Action(MVC.WorkExperience.List(Model)), "list-group-item second-split", "fa fa-list-alt", AssignableToRolePermissions.CanManageWorkExperience)
+
+@Html.SideBarSecureActionLink("ارزیابی های به عمل آمده", Url.Action(MVC.EntireEvaluation.List(Model)), "list-group-item second-split", "fa fa-list", AssignableToRolePermissions.CanManageWorkExperience)
+

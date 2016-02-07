@@ -1,11 +1,9 @@
 ﻿
-@using Decision.DomainClasses.Entities.Evaluations
 @model Decision.ViewModel.Question.QuestionViewModel
 
 
 <div class="col-md-12 " id="question-@Model.Id">
     <div class="panel @(Model.IsDeleted?"panel-warning":"panel-default")">
-
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-3">
@@ -27,19 +25,8 @@
                     </small>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <label class="text-muted">
-                        نوع سوال :
-                    </label>
-                    <small class="text-success">
-                        <strong>@Html.DisplayFor(a => a.Type)</strong>
-                    </small>
-                </div>
-            </div>
-            @if (Model.Type == QuestionType.CheckBoxList || Model.Type == QuestionType.RadioButtonList)
-            {
-                <div class="row">
+           
+               <div class="row">
                     <div class="col-md-12">
                         <label class="text-muted">
                             گزینه ها
@@ -50,7 +37,7 @@
                             {
                                 <div class="col-md-6">
                                     <small>
-                                            @option.Name
+                                        @option.Name
                                     </small>
                                     <label class="text-muted">
                                         وزن ارزشی:
@@ -63,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-            }
+            
 
             @{Html.RenderPartial(MVC.Shared.Views._AuditLog, Model);}
         </div>

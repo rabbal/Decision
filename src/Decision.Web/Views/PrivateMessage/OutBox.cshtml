@@ -1,4 +1,5 @@
 ﻿
+
 @model IEnumerable<Decision.ViewModel.PrivateMessage.OutBoxViewModel>
 @{
     ViewBag.Title = "لیست پیغام های ارسالی";
@@ -8,7 +9,7 @@
     <div class="panel-heading">
         <div class="row">
             <div class="col-md-12">
-                @Html.HelpAlert(@Url.Content("~/Content/Images/lightbulb.png"),
+                @Html.HelpAlert(Url.Content("~/Content/Images/lightbulb.png"),
                     "توجه کنید که حذف توسط گیرنده/فرستنده به معنای انصراف کلی است",
                     "اگر در لیست پیغام های ورودی یا خروجی ، پیغامی  توسط فرستنده یا گیرنده حذف شده باشد ،برای کاربر مقابل هم غیر فابل دسترس خواهد بود")
 

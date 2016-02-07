@@ -21,19 +21,19 @@ namespace Decision.Web.Controllers
 
         private readonly IMessageService _messageService;
         private readonly IApplicationUserManager _userManager;
-        private readonly IArticleEvaluationService _ArticleEvaluationService;
-        private readonly IApplicantService _ApplicantService;
-        private readonly IArticleService _ArticleService;
+        
+        private readonly IApplicantService _applicantService;
+        private readonly IArticleService _articleService;
 
         #endregion
 
         #region Ctor
 
-        public HomeController(IMessageService messageService, IApplicationUserManager userManager, IArticleService ArticleService, IApplicantService ApplicantService, IArticleEvaluationService ArticleEvaluation)
+        public HomeController(IMessageService messageService, IApplicationUserManager userManager, IArticleService articleService, IApplicantService applicantService)
         {
-            _ApplicantService = ApplicantService;
-            _ArticleEvaluationService = ArticleEvaluation;
-            _ArticleService = ArticleService;
+            _applicantService = applicantService;
+           
+            _articleService = articleService;
             _userManager = userManager;
             _messageService = messageService;
         }
@@ -47,11 +47,8 @@ namespace Decision.Web.Controllers
         {
             var viewModel = new BenchmarkViewModel
             {
-                ApprovedApplicantsCount = _ApplicantService.ApprovedCount().GetPersianNumber(),
-                NonApprovedApplicantsCount = _ApplicantService.NonApprovedCount().GetPersianNumber(),
-                JugesCount = _ApplicantService.Count().GetPersianNumber(),
                 UsersCount = _userManager.Count().GetPersianNumber(),
-                ArticlesCount = _ArticleService.Count().GetPersianNumber()
+                ArticlesCount = _articleService.Count().GetPersianNumber()
             };
             return PartialView(MVC.Home.Views._Benckmarks, viewModel);
         }
@@ -63,22 +60,22 @@ namespace Decision.Web.Controllers
             return PartialView(MVC.Shared.Views._NewMessagesCount, messagesCount);
         }
 
-        #region Sections
-        [AjaxOnly]
-        [HttpPost]
-        public virtual ActionResult GetTopScoreApplicants()
-        {
-            var viewModel = _ApplicantService.GetTenTopScoreApplicants();
-            return PartialView(MVC.Home.Views._ApplicantWithTopScoreList, viewModel);
-        }
+        //#region Sections
+        //[AjaxOnly]
+        //[HttpPost]
+        //public virtual ActionResult GetTopScoreApplicants()
+        //{
+        //    var viewModel = _applicantService.GetTenTopScoreApplicants();
+        //    return PartialView(MVC.Home.Views._ApplicantWithTopScoreList, viewModel);
+        //}
 
-        [AjaxOnly]
-        [HttpPost]
-        public virtual ActionResult GetNewAddedApplicants()
-        {
-            var viewModel = _ApplicantService.GetTenNewAddedApplicants();
-            return PartialView(MVC.Home.Views._NewApplicantsList, viewModel);
-        }
-        #endregion
+        //[AjaxOnly]
+        //[HttpPost]
+        //public virtual ActionResult GetNewAddedApplicants()
+        //{
+        //    var viewModel = _applicantService.GetTenNewAddedApplicants();
+        //    return PartialView(MVC.Home.Views._NewApplicantsList, viewModel);
+        //}
+        //#endregion
     }
 }

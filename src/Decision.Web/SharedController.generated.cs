@@ -38,6 +38,7 @@ namespace T4MVC
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string _ApplicantManagementsSidbarMenu = "_ApplicantManagementsSidbarMenu";
                 public readonly string _AuditLog = "_AuditLog";
                 public readonly string _CaptchaPartial = "_CaptchaPartial";
                 public readonly string _Layout = "_Layout";
@@ -45,11 +46,11 @@ namespace T4MVC
                 public readonly string _NewMessagesCount = "_NewMessagesCount";
                 public readonly string _Noty = "_Noty";
                 public readonly string _PublicSettingSideBarMenu = "_PublicSettingSideBarMenu";
-                public readonly string _ApplicantManagementsSidbarMenu = "_ApplicantManagementsSidbarMenu";
                 public readonly string _UserManagementsSideBarMenu = "_UserManagementsSideBarMenu";
                 public readonly string _UserProfileSideBarMenu = "_UserProfileSideBarMenu";
                 public readonly string Error = "Error";
             }
+            public readonly string _ApplicantManagementsSidbarMenu = "~/Views/Shared/_ApplicantManagementsSidbarMenu.cshtml";
             public readonly string _AuditLog = "~/Views/Shared/_AuditLog.cshtml";
             public readonly string _CaptchaPartial = "~/Views/Shared/_CaptchaPartial.cshtml";
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
@@ -57,7 +58,6 @@ namespace T4MVC
             public readonly string _NewMessagesCount = "~/Views/Shared/_NewMessagesCount.cshtml";
             public readonly string _Noty = "~/Views/Shared/_Noty.cshtml";
             public readonly string _PublicSettingSideBarMenu = "~/Views/Shared/_PublicSettingSideBarMenu.cshtml";
-            public readonly string _ApplicantManagementsSidbarMenu = "~/Views/Shared/_ApplicantManagementsSidbarMenu.cshtml";
             public readonly string _UserManagementsSideBarMenu = "~/Views/Shared/_UserManagementsSideBarMenu.cshtml";
             public readonly string _UserProfileSideBarMenu = "~/Views/Shared/_UserProfileSideBarMenu.cshtml";
             public readonly string Error = "~/Views/Shared/Error.cshtml";

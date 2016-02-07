@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Decision.ViewModel.Article;
-using Decision.ViewModel.ArticleEvaluation;
-
 namespace Decision.ServiceLayer.Contracts.ApplicantInfo
 {
     /// <summary>
@@ -53,7 +51,6 @@ namespace Decision.ServiceLayer.Contracts.ApplicantInfo
 
         Task<byte[]> GetAttachment(Guid id);
         Guid GetApplicantId(Guid id);
-        Task<ArticleDetails> GetDetailes(Guid id);
         long Count();
     }
 }

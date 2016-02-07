@@ -33,7 +33,12 @@ namespace ASP
     
     #line default
     #line hidden
-    using Decision.Common.MVC;
+    
+    #line 2 "..\..\Views\WorkExperience\_Edit.cshtml"
+    using Decision.Common.HtmlHelpers;
+    
+    #line default
+    #line hidden
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -52,15 +57,15 @@ WriteLiteral("<div");
 
 WriteLiteral(" class=\"col-md-12\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 126), Tuple.Create("\"", 155)
-, Tuple.Create(Tuple.Create("", 131), Tuple.Create("workExperience-", 131), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 162), Tuple.Create("\"", 191)
+, Tuple.Create(Tuple.Create("", 167), Tuple.Create("workExperience-", 167), true)
             
-            #line 4 "..\..\Views\WorkExperience\_Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 146), Tuple.Create<System.Object, System.Int32>(Model.Id
+            #line 5 "..\..\Views\WorkExperience\_Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 182), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 146), false)
+, 182), false)
 );
 
 WriteLiteral(">\r\n    <div");
@@ -87,13 +92,13 @@ WriteLiteral(" class=\"panel-body\"");
 WriteLiteral(">\r\n");
 
             
-            #line 14 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 15 "..\..\Views\WorkExperience\_Edit.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 14 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 15 "..\..\Views\WorkExperience\_Edit.cshtml"
              using (Ajax.BeginForm(MVC.WorkExperience.Edit(), new AjaxOptions { HttpMethod = "POST", OnComplete = "editOnComplete(xhr, status, '" + Model.Id + "','#editButton" + Model.Id + "')" }, new { @class = "form-horizontal", id = Model.Id, autocomplete = "off", data_ajax_update = "workExperience-" + Model.Id }))
             {
                 
@@ -101,56 +106,56 @@ WriteLiteral(">\r\n");
             #line default
             #line hidden
             
-            #line 16 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 17 "..\..\Views\WorkExperience\_Edit.cshtml"
            Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 16 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 17 "..\..\Views\WorkExperience\_Edit.cshtml"
                                         
                 
             
             #line default
             #line hidden
             
-            #line 17 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 18 "..\..\Views\WorkExperience\_Edit.cshtml"
            Write(Html.HiddenFor(model => model.ApplicantId));
 
             
             #line default
             #line hidden
             
-            #line 17 "..\..\Views\WorkExperience\_Edit.cshtml"
-                                                         
+            #line 18 "..\..\Views\WorkExperience\_Edit.cshtml"
+                                                           
                 
             
             #line default
             #line hidden
             
-            #line 18 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 19 "..\..\Views\WorkExperience\_Edit.cshtml"
            Write(Html.HiddenFor(model => model.Id));
 
             
             #line default
             #line hidden
             
-            #line 18 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 19 "..\..\Views\WorkExperience\_Edit.cshtml"
                                                   
                 
             
             #line default
             #line hidden
             
-            #line 19 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 20 "..\..\Views\WorkExperience\_Edit.cshtml"
            Write(Html.HiddenFor(model => model.RowVersion));
 
             
             #line default
             #line hidden
             
-            #line 19 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 20 "..\..\Views\WorkExperience\_Edit.cshtml"
                                                           
 
             
@@ -165,7 +170,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 21 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 22 "..\..\Views\WorkExperience\_Edit.cshtml"
                Write(Html.LabelFor(model => model.OfficeName, new { @class = "control-label col-md-2" }));
 
             
@@ -180,7 +185,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 23 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 24 "..\..\Views\WorkExperience\_Edit.cshtml"
                    Write(Html.NoAutoCompleteTextBoxFor(model => model.OfficeName));
 
             
@@ -191,7 +196,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                        ");
 
             
-            #line 24 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 25 "..\..\Views\WorkExperience\_Edit.cshtml"
                    Write(Html.ValidationMessageFor(model => model.OfficeName, null, new { @class = "text-danger" }));
 
             
@@ -200,7 +205,8 @@ WriteLiteral("                        ");
 WriteLiteral("\r\n                    </div>\r\n                </div>\r\n");
 
             
-            #line 27 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 28 "..\..\Views\WorkExperience\_Edit.cshtml"
+                
 
 
             
@@ -213,160 +219,9 @@ WriteLiteral(" class=\"form-group\"");
 WriteLiteral(">\r\n");
 
 WriteLiteral("                    ");
-
-            
-            #line 29 "..\..\Views\WorkExperience\_Edit.cshtml"
-               Write(Html.LabelFor(model => model.ClosedProjectCount, new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                    <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                        ");
 
             
             #line 31 "..\..\Views\WorkExperience\_Edit.cshtml"
-                   Write(Html.NoAutoCompleteTextBoxForNumber(model => model.ClosedProjectCount));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                        ");
-
-            
-            #line 32 "..\..\Views\WorkExperience\_Edit.cshtml"
-                   Write(Html.ValidationMessageFor(model => model.ClosedProjectCount, null, new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                    </div>\r\n                </div>\r\n");
-
-            
-            #line 35 "..\..\Views\WorkExperience\_Edit.cshtml"
-
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 37 "..\..\Views\WorkExperience\_Edit.cshtml"
-               Write(Html.LabelFor(model => model.OpenProjectCount, new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                    <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                        ");
-
-            
-            #line 39 "..\..\Views\WorkExperience\_Edit.cshtml"
-                   Write(Html.NoAutoCompleteTextBoxForNumber(model => model.OpenProjectCount));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                        ");
-
-            
-            #line 40 "..\..\Views\WorkExperience\_Edit.cshtml"
-                   Write(Html.ValidationMessageFor(model => model.OpenProjectCount, null, new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                    </div>\r\n                </div>\r\n");
-
-            
-            #line 43 "..\..\Views\WorkExperience\_Edit.cshtml"
-
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 45 "..\..\Views\WorkExperience\_Edit.cshtml"
-               Write(Html.LabelFor(model => model.ReferentialProjectCount, new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                    <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                        ");
-
-            
-            #line 47 "..\..\Views\WorkExperience\_Edit.cshtml"
-                   Write(Html.NoAutoCompleteTextBoxForNumber(model => model.ReferentialProjectCount));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                        ");
-
-            
-            #line 48 "..\..\Views\WorkExperience\_Edit.cshtml"
-                   Write(Html.ValidationMessageFor(model => model.ReferentialProjectCount, null, new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                    </div>\r\n                </div>\r\n");
-
-            
-            #line 51 "..\..\Views\WorkExperience\_Edit.cshtml"
-
-
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 54 "..\..\Views\WorkExperience\_Edit.cshtml"
                Write(Html.LabelFor(model => model.TenureBeginDate, new { @class = "control-label col-md-2" }));
 
             
@@ -381,7 +236,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 56 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 33 "..\..\Views\WorkExperience\_Edit.cshtml"
                    Write(Html.EditorFor(model => model.TenureBeginDate, MVC.Shared.Views.EditorTemplates.PersianDatePicker));
 
             
@@ -392,7 +247,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                        ");
 
             
-            #line 57 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 34 "..\..\Views\WorkExperience\_Edit.cshtml"
                    Write(Html.ValidationMessageFor(model => model.TenureBeginDate, null, new { @class = "text-danger" }));
 
             
@@ -403,7 +258,7 @@ WriteLiteral("\r\n                    </div>\r\n");
 WriteLiteral("                    ");
 
             
-            #line 59 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 36 "..\..\Views\WorkExperience\_Edit.cshtml"
                Write(Html.LabelFor(model => model.TenureEndDate, new { @class = "control-label col-md-2" }));
 
             
@@ -418,7 +273,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 61 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 38 "..\..\Views\WorkExperience\_Edit.cshtml"
                    Write(Html.EditorFor(model => model.TenureEndDate, MVC.Shared.Views.EditorTemplates.PersianDatePicker));
 
             
@@ -429,7 +284,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                        ");
 
             
-            #line 62 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 39 "..\..\Views\WorkExperience\_Edit.cshtml"
                    Write(Html.ValidationMessageFor(model => model.TenureEndDate, null, new { @class = "text-danger" }));
 
             
@@ -438,7 +293,7 @@ WriteLiteral("                        ");
 WriteLiteral("\r\n                    </div>\r\n                </div>\r\n");
 
             
-            #line 65 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 42 "..\..\Views\WorkExperience\_Edit.cshtml"
 
 
             
@@ -453,7 +308,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 67 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 44 "..\..\Views\WorkExperience\_Edit.cshtml"
                Write(Html.LabelFor(model => model.CooperationType, new { @class = "control-label col-md-2" }));
 
             
@@ -468,7 +323,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 69 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 46 "..\..\Views\WorkExperience\_Edit.cshtml"
                    Write(Html.EditorFor(model => model.CooperationType));
 
             
@@ -479,7 +334,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                        ");
 
             
-            #line 70 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 47 "..\..\Views\WorkExperience\_Edit.cshtml"
                    Write(Html.ValidationMessageFor(model => model.CooperationType, null, new { @class = "text-danger" }));
 
             
@@ -490,7 +345,7 @@ WriteLiteral("\r\n                    </div>\r\n\r\n");
 WriteLiteral("                    ");
 
             
-            #line 73 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 50 "..\..\Views\WorkExperience\_Edit.cshtml"
                Write(Html.LabelFor(model => model.TitleId, new { @class = "control-label col-md-2" }));
 
             
@@ -505,7 +360,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 75 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 52 "..\..\Views\WorkExperience\_Edit.cshtml"
                    Write(Html.DropDownListFor(model => model.TitleId, Model.Titles, "انتخاب  پست سازمانی", new { @class = "form-control", rows = 2 }));
 
             
@@ -516,7 +371,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                        ");
 
             
-            #line 76 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 53 "..\..\Views\WorkExperience\_Edit.cshtml"
                    Write(Html.ValidationMessageFor(model => model.TitleId, null, new { @class = "text-danger" }));
 
             
@@ -525,7 +380,7 @@ WriteLiteral("                        ");
 WriteLiteral("\r\n\r\n                    </div>\r\n                </div>\r\n");
 
             
-            #line 80 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 57 "..\..\Views\WorkExperience\_Edit.cshtml"
 
 
             
@@ -540,7 +395,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 82 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 59 "..\..\Views\WorkExperience\_Edit.cshtml"
                Write(Html.LabelFor(model => Model.State, new { @class = "control-label col-md-2" }));
 
             
@@ -555,7 +410,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 84 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 61 "..\..\Views\WorkExperience\_Edit.cshtml"
                    Write(Html.DropDownListFor(model => model.State, Model.States, "انتخاب استان محل خدمت", new
                         {
                             data_url = Url.Action(MVC.City.GetCities()),
@@ -573,7 +428,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                        ");
 
             
-            #line 92 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 69 "..\..\Views\WorkExperience\_Edit.cshtml"
                    Write(Html.ValidationMessageFor(model => model.State, null, new { @class = "text-danger" }));
 
             
@@ -584,7 +439,7 @@ WriteLiteral("\r\n                    </div>\r\n");
 WriteLiteral("                    ");
 
             
-            #line 94 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 71 "..\..\Views\WorkExperience\_Edit.cshtml"
                Write(Html.LabelFor(model => model.City, new { @class = "control-label col-md-2" }));
 
             
@@ -599,7 +454,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 96 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 73 "..\..\Views\WorkExperience\_Edit.cshtml"
                    Write(Html.DropDownListFor(model => model.City, Model.Cities, "انتخاب شهر محل خدمت", new { @class = "form-control", rows = 2 }));
 
             
@@ -610,7 +465,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                        ");
 
             
-            #line 97 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 74 "..\..\Views\WorkExperience\_Edit.cshtml"
                    Write(Html.ValidationMessageFor(model => model.City, null, new { @class = "text-danger" }));
 
             
@@ -619,7 +474,7 @@ WriteLiteral("                        ");
 WriteLiteral("\r\n                    </div>\r\n                </div>\r\n");
 
             
-            #line 100 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 77 "..\..\Views\WorkExperience\_Edit.cshtml"
 
 
             }
@@ -639,29 +494,29 @@ WriteLiteral(">\r\n                <button");
 
 WriteLiteral(" type=\"button\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 6087), Tuple.Create("\"", 6132)
+WriteAttribute("id", Tuple.Create(" id=\"", 4701), Tuple.Create("\"", 4746)
             
-            #line 107 "..\..\Views\WorkExperience\_Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 6092), Tuple.Create<System.Object, System.Int32>(string.Format("editButton{0}",Model.Id)
+            #line 84 "..\..\Views\WorkExperience\_Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 4706), Tuple.Create<System.Object, System.Int32>(string.Format("editButton{0}",Model.Id)
             
             #line default
             #line hidden
-, 6092), false)
+, 4706), false)
 );
 
 WriteLiteral(" autocomplete=\"off\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 6152), Tuple.Create("\"", 6202)
-, Tuple.Create(Tuple.Create("", 6162), Tuple.Create("AjaxForm.CustomSubmit(this,", 6162), true)
-, Tuple.Create(Tuple.Create(" ", 6189), Tuple.Create("\'", 6190), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 4766), Tuple.Create("\"", 4816)
+, Tuple.Create(Tuple.Create("", 4776), Tuple.Create("AjaxForm.CustomSubmit(this,", 4776), true)
+, Tuple.Create(Tuple.Create(" ", 4803), Tuple.Create("\'", 4804), true)
             
-            #line 107 "..\..\Views\WorkExperience\_Edit.cshtml"
-                                                             , Tuple.Create(Tuple.Create("", 6191), Tuple.Create<System.Object, System.Int32>(Model.Id
+            #line 84 "..\..\Views\WorkExperience\_Edit.cshtml"
+                                                             , Tuple.Create(Tuple.Create("", 4805), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 6191), false)
-, Tuple.Create(Tuple.Create("", 6200), Tuple.Create("\')", 6200), true)
+, 4805), false)
+, Tuple.Create(Tuple.Create("", 4814), Tuple.Create("\')", 4814), true)
 );
 
 WriteLiteral(" data-loading-text=\"در حال ارسال اطلاعات\"");
@@ -686,7 +541,7 @@ WriteLiteral(" data-ajax-complete=\"cancelEditOnComplete(xhr, status)\"");
 WriteLiteral("\r\n                   data-ajax-update=\"#workExperience-");
 
             
-            #line 114 "..\..\Views\WorkExperience\_Edit.cshtml"
+            #line 91 "..\..\Views\WorkExperience\_Edit.cshtml"
                                                 Write(Model.Id);
 
             
@@ -696,14 +551,14 @@ WriteLiteral("\"");
 
 WriteLiteral(" data-ajax-method=\"POST\"");
 
-WriteAttribute("href", Tuple.Create("\r\n                   href=\"", 6660), Tuple.Create("\"", 6739)
+WriteAttribute("href", Tuple.Create("\r\n                   href=\"", 5274), Tuple.Create("\"", 5353)
             
-            #line 115 "..\..\Views\WorkExperience\_Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 6687), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.WorkExperience.CancelEdit(Model.Id))
+            #line 92 "..\..\Views\WorkExperience\_Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 5301), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.WorkExperience.CancelEdit(Model.Id))
             
             #line default
             #line hidden
-, 6687), false)
+, 5301), false)
 );
 
 WriteLiteral(" rol");

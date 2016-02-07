@@ -65,7 +65,6 @@ namespace Decision.ServiceLayer.EFServiecs.Common
         {
             var address = await _addresses.FirstAsync(a => a.Id == viewModel.Id);
             _mappingEngine.Map(viewModel, address);
-            address.LasModifierId = _userManager.GetCurrentUserId();
         }
         #endregion
 
@@ -73,7 +72,6 @@ namespace Decision.ServiceLayer.EFServiecs.Common
         public async  Task<AddressViewModel> Create(AddAddressViewModel viewModel)
         {
             var address = _mappingEngine.Map<Address>(viewModel);
-            address.CreatorId = _userManager.GetCurrentUserId();
             _addresses.Add(address);
             await _unitOfWork.SaveChangesAsync();
             return await GetAddressViewModel(address.Id);

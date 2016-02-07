@@ -36,8 +36,6 @@ namespace Decision.ServiceLayer.Contracts.PrivateMessage
         /// <param name="conversationId"></param>
         /// <returns></returns>
         Task<MessageListViewModel> GetMessages(Guid conversationId);
-        
-        Task<IEnumerable<AttachmentViewModel>> GetAttachments(Guid messageId);
         Task<bool> CheckAccess(Guid conversationId);
         Task DeleteAsync(Guid value);
         long NewMessgesCount();

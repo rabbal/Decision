@@ -33,7 +33,6 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using Decision.Common.MVC;
     using Decision.Utility;
     
     #line 3 "..\..\Views\PrivateMessage\Messages.cshtml"
@@ -160,111 +159,16 @@ WriteLiteral("                    ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n                   \r\n\r\n");
-
-            
-            #line 34 "..\..\Views\PrivateMessage\Messages.cshtml"
-                    
-            
-            #line default
-            #line hidden
-            
-            #line 34 "..\..\Views\PrivateMessage\Messages.cshtml"
-                     if (parent.Attachments != null)
-                    {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                        <hr");
-
-WriteLiteral(" class=\"margin-bottom-5\"");
-
-WriteLiteral(" />\r\n");
-
-            
-            #line 37 "..\..\Views\PrivateMessage\Messages.cshtml"
-                       
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                        <ul");
-
-WriteLiteral(" style=\"list-style-type: circle;\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 39 "..\..\Views\PrivateMessage\Messages.cshtml"
-                            
-            
-            #line default
-            #line hidden
-            
-            #line 39 "..\..\Views\PrivateMessage\Messages.cshtml"
-                             foreach (var attachment in parent.Attachments)
-                            {
-
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                ");
-
-WriteLiteral("\r\n                                    <li>\r\n                                     " +
-"   <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 1749), Tuple.Create("\"", 1810)
-            
-            #line 44 "..\..\Views\PrivateMessage\Messages.cshtml"
-, Tuple.Create(Tuple.Create("", 1756), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.PrivateMessage.GetFile(attachment.Id))
-            
-            #line default
-            #line hidden
-, 1756), false)
-);
-
-WriteLiteral(">");
-
-            
-            #line 44 "..\..\Views\PrivateMessage\Messages.cshtml"
-                                                                                                    Write(attachment.FriendlyName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</a>\r\n                                    </li>\r\n                                " +
-"");
-
-WriteLiteral("\r\n");
-
-            
-            #line 47 "..\..\Views\PrivateMessage\Messages.cshtml"
-                            }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                        </ul>\r\n");
-
-            
-            #line 49 "..\..\Views\PrivateMessage\Messages.cshtml"
-                    }
-
-            
-            #line default
-            #line hidden
 WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n");
 
             
-            #line 55 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 36 "..\..\Views\PrivateMessage\Messages.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 55 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 36 "..\..\Views\PrivateMessage\Messages.cshtml"
          foreach (var item in children)
         {
 
@@ -300,7 +204,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 64 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 45 "..\..\Views\PrivateMessage\Messages.cshtml"
                                Write(item.SenderUserName);
 
             
@@ -317,7 +221,7 @@ WriteLiteral(" class=\"fa fa-calendar\"");
 WriteLiteral("></i>\r\n                                        <time>");
 
             
-            #line 67 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 48 "..\..\Views\PrivateMessage\Messages.cshtml"
                                          Write(item.SendDate.ToRemainingDateTime());
 
             
@@ -326,7 +230,7 @@ WriteLiteral("></i>\r\n                                        <time>");
 WriteLiteral(",");
 
             
-            #line 67 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 48 "..\..\Views\PrivateMessage\Messages.cshtml"
                                                                               Write(item.SendDate.ToPersianString(PersianDateTimeFormat.Date));
 
             
@@ -340,7 +244,7 @@ WriteLiteral(" class=\"fa fa-clock-o\"");
 WriteLiteral("></i>\r\n                                            <span>");
 
             
-            #line 71 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 52 "..\..\Views\PrivateMessage\Messages.cshtml"
                                              Write(item.SendDate.ToPersianTimeString());
 
             
@@ -357,105 +261,18 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 77 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 58 "..\..\Views\PrivateMessage\Messages.cshtml"
                            Write(Html.Raw(item.Content));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                               \r\n");
+WriteLiteral("\r\n                               \r\n                                \r\n\r\n          " +
+"                  </div>\r\n                        </div>\r\n                    </" +
+"div>\r\n                </li>\r\n\r\n            </ul>\r\n");
 
             
-            #line 79 "..\..\Views\PrivateMessage\Messages.cshtml"
-                                
-            
-            #line default
-            #line hidden
-            
-            #line 79 "..\..\Views\PrivateMessage\Messages.cshtml"
-                                 if (item.Attachments != null)
-                                {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                    <hr");
-
-WriteLiteral(" class=\"margin-bottom-5\"");
-
-WriteLiteral(" />\r\n");
-
-WriteLiteral("                                    <ul");
-
-WriteLiteral(" style=\"list-style-type: circle;\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 83 "..\..\Views\PrivateMessage\Messages.cshtml"
-                                        
-            
-            #line default
-            #line hidden
-            
-            #line 83 "..\..\Views\PrivateMessage\Messages.cshtml"
-                                         foreach (var attachment in item.Attachments)
-                                        {
-
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                            ");
-
-WriteLiteral("\r\n                                                <li>\r\n                         " +
-"                        <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 3947), Tuple.Create("\"", 4008)
-            
-            #line 88 "..\..\Views\PrivateMessage\Messages.cshtml"
-, Tuple.Create(Tuple.Create("", 3954), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.PrivateMessage.GetFile(attachment.Id))
-            
-            #line default
-            #line hidden
-, 3954), false)
-);
-
-WriteLiteral(">");
-
-            
-            #line 88 "..\..\Views\PrivateMessage\Messages.cshtml"
-                                                                                                             Write(attachment.FriendlyName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</a>\r\n                                                </li>\r\n                    " +
-"                        ");
-
-WriteLiteral("\r\n");
-
-            
-            #line 91 "..\..\Views\PrivateMessage\Messages.cshtml"
-                                        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                    </ul>\r\n");
-
-            
-            #line 93 "..\..\Views\PrivateMessage\Messages.cshtml"
-                                }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                            </div>\r\n                        </div>\r\n           " +
-"         </div>\r\n                </li>\r\n\r\n            </ul>\r\n");
-
-            
-            #line 101 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 68 "..\..\Views\PrivateMessage\Messages.cshtml"
         }
 
             
@@ -464,7 +281,7 @@ WriteLiteral("\r\n                            </div>\r\n                        
 WriteLiteral("    </li>\r\n\r\n</ul>\r\n\r\n");
 
             
-            #line 106 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 73 "..\..\Views\PrivateMessage\Messages.cshtml"
   Html.RenderPartial(MVC.PrivateMessage.Views._Reply, Model.AddMessageViewModel);
             
             #line default
@@ -476,13 +293,13 @@ DefineSection("Menu", () => {
 WriteLiteral("\r\n");
 
             
-            #line 109 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 76 "..\..\Views\PrivateMessage\Messages.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 109 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 76 "..\..\Views\PrivateMessage\Messages.cshtml"
       Html.RenderPartial(MVC.Shared.Views._UserProfileSideBarMenu);
             
             #line default
@@ -500,7 +317,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 113 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 80 "..\..\Views\PrivateMessage\Messages.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             
@@ -511,7 +328,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 114 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 81 "..\..\Views\PrivateMessage\Messages.cshtml"
 Write(Scripts.Render("~/bundles/editor"));
 
             
@@ -522,7 +339,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 115 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 82 "..\..\Views\PrivateMessage\Messages.cshtml"
 Write(Scripts.Render("~/bundles/formData"));
 
             

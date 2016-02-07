@@ -27,17 +27,17 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
+    using Decision.Common.HtmlHelpers;
     
-    #line 1 "..\..\Views\Shared\_Noty.cshtml"
-    using Decision.Common.Controller.NotyHelper;
+    #line 2 "..\..\Views\Shared\_Noty.cshtml"
+    using Decision.Common.Noty;
     
     #line default
     #line hidden
-    using Decision.Common.MVC;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     
-    #line 2 "..\..\Views\Shared\_Noty.cshtml"
+    #line 3 "..\..\Views\Shared\_Noty.cshtml"
     using Decision.Web.RazorHelpers;
     
     #line default
@@ -54,8 +54,10 @@ namespace ASP
         }
         public override void Execute()
         {
+WriteLiteral("\r\n");
+
             
-            #line 3 "..\..\Views\Shared\_Noty.cshtml"
+            #line 4 "..\..\Views\Shared\_Noty.cshtml"
  if (TempData.ContainsKey(Noty.TempDataKey))
 {
     var noty = TempData[Noty.TempDataKey] as Noty;
@@ -64,14 +66,14 @@ namespace ASP
             #line default
             #line hidden
             
-            #line 6 "..\..\Views\Shared\_Noty.cshtml"
+            #line 7 "..\..\Views\Shared\_Noty.cshtml"
 Write(NotyBuilder.ShowNotyMessages(noty));
 
             
             #line default
             #line hidden
             
-            #line 6 "..\..\Views\Shared\_Noty.cshtml"
+            #line 7 "..\..\Views\Shared\_Noty.cshtml"
                                        
 }
 

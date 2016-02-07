@@ -2,7 +2,7 @@
 @model Decision.ViewModel.EducationalBackground.EducationalBackgroundViewModel
 <div class="col-md-12 " id="educationalBackground-@Model.Id">
     <div class="panel panel-default">
-        
+
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-3">
@@ -11,16 +11,7 @@
                         مقطع تحصیلی :
                     </label>
                     <small>
-                        @if (Model.EducationalType == EducationalType.Academic)
-                        {<text>
                         @Html.DisplayFor(a => a.AcademicDegree)
-                        </text>
-                        }
-                        else
-                        {<text>
-                        @Html.DisplayFor(a => a.HosDegree)
-                        </text>
-                        }
 
                     </small>
                 </div>
@@ -46,7 +37,7 @@
                     </label>
                     <small>@Model.GraduationDate.ToPersianString(PersianDateTimeFormat.Date)</small>
                 </div>
-               
+
             </div>
 
             <div class="row">
@@ -84,7 +75,7 @@
                 </div>
                 <div class="col-md-3">
                     <label class="text-muted">
-                       رشته تحصیلی :
+                        رشته تحصیلی :
                     </label>
                     <small>@Model.StudyFieldName</small>
                 </div>
@@ -106,10 +97,10 @@
         </div>
         <div class="panel-footer ">
             <div class="pull-left">
-              
+
                 <a class="btn btn-sm btn-success " href="#">
                     <i class="fa fa-download"></i>
-                    مشاهده ضمیمه 
+                    مشاهده ضمیمه
                 </a>
                 <a class="btn btn-primary btn-sm"
                    href="@Url.Action(MVC.EducationalBackground.Edit(Model.Id))" role="button"><i class="fa fa-edit"></i>ویرایش</a>

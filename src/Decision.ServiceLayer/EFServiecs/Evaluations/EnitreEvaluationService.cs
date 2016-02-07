@@ -21,8 +21,7 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
     public class EntireEvaluationService : IEntireEvaluationService
     {
         #region Fields
-
-        private readonly IAppraiserService _appraiserService;
+        
         private readonly IMappingEngine _mappingEngine;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IApplicationUserManager _userManager;
@@ -31,13 +30,12 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
 
         #region Ctor
 
-        public EntireEvaluationService(IUnitOfWork unitOfWork,IAppraiserService appraiserService, IApplicationUserManager userManager, IMappingEngine mappingEngine)
+        public EntireEvaluationService(IUnitOfWork unitOfWork, IApplicationUserManager userManager, IMappingEngine mappingEngine)
         {
             _userManager = userManager;
             _unitOfWork = unitOfWork;
             _entireEvaluations = _unitOfWork.Set<EntireEvaluation>();
             _mappingEngine = mappingEngine;
-            _appraiserService = appraiserService;
         }
         #endregion
 
@@ -56,8 +54,8 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
                     _entireEvaluations.AsNoTracking()
                         .ProjectTo<EditEntireEvaluationViewModel>(_mappingEngine)
                         .FirstOrDefaultAsync(a => a.Id == id);
-            if (viewModel == null) return null;
-            viewModel.Evaluators = await _appraiserService.GetAsSelectedListItem(viewModel.EvaluatorId);
+            //if (viewModel == null)
+            //    throw new EntityNotFoundException("Failed to find user with id " + id);
             return viewModel;
         }
         #endregion
@@ -65,34 +63,32 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
         #region Edit
         public async Task EditAsync(EditEntireEvaluationViewModel viewModel)
         {
-            var EntireEvaluation = await _entireEvaluations.FirstAsync(a => a.Id == viewModel.Id);
-            _mappingEngine.Map(viewModel, EntireEvaluation);
-            EntireEvaluation.LasModifierId = _userManager.GetCurrentUserId();
+            var entireEvaluation = await _entireEvaluations.FirstAsync(a => a.Id == viewModel.Id);
+            _mappingEngine.Map(viewModel, entireEvaluation);
         }
         #endregion
 
         #region Create
         public async  Task<EntireEvaluationViewModel> Create(AddEntireEvaluationViewModel viewModel)
         {
-            var EntireEvaluation = _mappingEngine.Map<EntireEvaluation>(viewModel);
-            EntireEvaluation.CreatorId = _userManager.GetCurrentUserId();
-            _entireEvaluations.Add(EntireEvaluation);
+            var entireEvaluation = _mappingEngine.Map<EntireEvaluation>(viewModel);
+            _entireEvaluations.Add(entireEvaluation);
             await _unitOfWork.SaveChangesAsync();
-            return await _entireEvaluations.Include(a => a.Evaluator)
-                .Include(a => a.Creator).Include(a => a.LasModifier).AsNoTracking()
+            return await _entireEvaluations
+                .Include(a => a.CreatedBy).Include(a => a.ModifiedBy).AsNoTracking()
                 .ProjectTo<EntireEvaluationViewModel>(_mappingEngine)
-                .FirstOrDefaultAsync(a => a.Id == EntireEvaluation.Id);
+                .FirstOrDefaultAsync(a => a.Id == entireEvaluation.Id);
         }
         #endregion
 
         #region GetPagedList
         public async  Task<EntireEvaluationListViewModel> GetPagedListAsync(EntireEvaluationSearchRequest request)
         {
-            var EntireEvaluations = _entireEvaluations.Where(a=>a.ApplicantId==request.ApplicantId).Include(a => a.Evaluator)
-                .Include(a => a.Creator).Include(a => a.LasModifier).AsNoTracking()
+            var entireEvaluations = _entireEvaluations.Where(a=>a.ApplicantId==request.ApplicantId)
+                .Include(a => a.CreatedBy).Include(a => a.ModifiedBy).AsNoTracking()
                 .OrderByDescending(a => a.EvaluationDate).AsQueryable();
 
-            var selectedEntireEvaluations = EntireEvaluations.ProjectTo<EntireEvaluationViewModel>(_mappingEngine);
+            var selectedEntireEvaluations = entireEvaluations.ProjectTo<EntireEvaluationViewModel>(_mappingEngine);
 
             var query =await  selectedEntireEvaluations
                 .Skip((request.PageIndex - 1)*10)
@@ -108,31 +104,5 @@ namespace Decision.ServiceLayer.EFServiecs.Evaluations
             return _entireEvaluations.AnyAsync(a => a.Id == id);
         }
         #endregion
-
-
-
-        public async  Task<AddEntireEvaluationViewModel> GetForCreate(Guid ApplicantId)
-        {
-            return new AddEntireEvaluationViewModel
-            {
-                Evaluators = await _appraiserService.GetAsSelectedListItem(null)
-            };
-        }
-
-        public async  Task FillEditViewModel(EditEntireEvaluationViewModel viewModel)
-        {
-            viewModel.Evaluators = await _appraiserService.GetAsSelectedListItem(viewModel.EvaluatorId);
-        }
-
-        public async  Task FillAddViewModel(AddEntireEvaluationViewModel viewModel)
-        {
-            viewModel.Evaluators = await _appraiserService.GetAsSelectedListItem(viewModel.EvaluatorId);
-        }
-
-
-        public Task<byte[]> GaetAttachment(Guid id)
-        {
-            return _entireEvaluations.Where(a => a.Id == id).Select(a => a.Attachment).FirstOrDefaultAsync();
-        }
     }
 }

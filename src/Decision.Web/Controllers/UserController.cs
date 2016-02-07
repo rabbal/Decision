@@ -6,9 +6,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
 using Decision.Common.Controller;
+using Decision.Common.Extentions;
 using Decision.Common.Filters;
-using Decision.Common.Helpers.Extentions;
-using Decision.Common.Helpers.Json;
+using Decision.Common.Json;
 using Decision.DataLayer.Context;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.ServiceLayer.Security;
@@ -51,7 +51,7 @@ namespace Decision.Web.Controllers
 
         #region List,ListAjax
         [HttpGet]
-        [Audit(Description = "مشاهده کاربران")]
+        [Activity(Description = "مشاهده کاربران")]
         [MvcSiteMapNode(ParentKey = "Home_Index" , Title = "مدیریت کاربران",Key = "User_List")]
         public virtual async Task<ActionResult> List()
         {
@@ -77,7 +77,7 @@ namespace Decision.Web.Controllers
         [Route("Edit/{id}")]
         [HttpGet]
         [AjaxOnly]
-        [Audit(Description = "ویرایش کاربر")]
+        [Activity(Description = "ویرایش کاربر")]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]
         public virtual async Task<ActionResult> Edit(Guid? id)
         {
@@ -142,7 +142,7 @@ namespace Decision.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Audit(Description = "درج کاربر جدید")]
+        [Activity(Description = "درج کاربر جدید")]
         [AjaxOnly]
         //[CheckReferrer]
         public virtual async Task<ActionResult> Create(AddUserViewModel viewModel)
@@ -200,7 +200,7 @@ namespace Decision.Web.Controllers
         [HttpPost]
         [AjaxOnly]
         //[CheckReferrer]
-        [Audit(Description = "مسدود کردن حساب کاربر")]
+        [Activity(Description = "مسدود کردن حساب کاربر")]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]
         public virtual async Task<ActionResult> BanUser(Guid? id)
         {
@@ -218,7 +218,7 @@ namespace Decision.Web.Controllers
         [AjaxOnly]
         //[CheckReferrer]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]
-        [Audit(Description = "مسدود کردن حساب کاربر")]
+        [Activity(Description = "مسدود کردن حساب کاربر")]
         public virtual async Task<ActionResult> EnableUser(Guid? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

@@ -29,14 +29,7 @@ namespace ASP
     using System.Web.WebPages;
     
     #line 2 "..\..\Views\Article\_Create.cshtml"
-    using Decision.Common.Helpers;
-    
-    #line default
-    #line hidden
-    using Decision.Common.MVC;
-    
-    #line 3 "..\..\Views\Article\_Create.cshtml"
-    using Decision.Common.Security.HiddenField;
+    using Decision.Common.HtmlHelpers;
     
     #line default
     #line hidden
@@ -67,13 +60,13 @@ WriteLiteral(" class=\"col-md-12\"");
 WriteLiteral(">\r\n");
 
             
-            #line 7 "..\..\Views\Article\_Create.cshtml"
+            #line 6 "..\..\Views\Article\_Create.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 7 "..\..\Views\Article\_Create.cshtml"
+            #line 6 "..\..\Views\Article\_Create.cshtml"
          using (Html.BeginForm(MVC.Article.Create(), FormMethod.Post, new { @class = "form-horizontal", id = "createArticleForm", autocomplete = "off", enctype = "multipart/form-data" }))
         {
             
@@ -81,42 +74,42 @@ WriteLiteral(">\r\n");
             #line default
             #line hidden
             
-            #line 9 "..\..\Views\Article\_Create.cshtml"
+            #line 8 "..\..\Views\Article\_Create.cshtml"
        Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 9 "..\..\Views\Article\_Create.cshtml"
+            #line 8 "..\..\Views\Article\_Create.cshtml"
                                     
             
             
             #line default
             #line hidden
             
-            #line 10 "..\..\Views\Article\_Create.cshtml"
-       Write(Html.EncryptedHiddenFor(model => model.ApplicantId));
+            #line 9 "..\..\Views\Article\_Create.cshtml"
+       Write(Html.HiddenFor(model => model.ApplicantId));
 
             
             #line default
             #line hidden
             
-            #line 10 "..\..\Views\Article\_Create.cshtml"
-                                                              
+            #line 9 "..\..\Views\Article\_Create.cshtml"
+                                                       
             
             
             #line default
             #line hidden
             
-            #line 11 "..\..\Views\Article\_Create.cshtml"
+            #line 10 "..\..\Views\Article\_Create.cshtml"
        Write(Html.HiddenFor(model => model.AttachmentScan));
 
             
             #line default
             #line hidden
             
-            #line 11 "..\..\Views\Article\_Create.cshtml"
+            #line 10 "..\..\Views\Article\_Create.cshtml"
                                                           
 
             
@@ -131,7 +124,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 13 "..\..\Views\Article\_Create.cshtml"
+            #line 12 "..\..\Views\Article\_Create.cshtml"
            Write(Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-1" }));
 
             
@@ -146,7 +139,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 15 "..\..\Views\Article\_Create.cshtml"
+            #line 14 "..\..\Views\Article\_Create.cshtml"
                Write(Html.NoAutoCompleteTextBoxForLtr(model => model.Code));
 
             
@@ -157,7 +150,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 16 "..\..\Views\Article\_Create.cshtml"
+            #line 15 "..\..\Views\Article\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" }));
 
             
@@ -174,7 +167,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 20 "..\..\Views\Article\_Create.cshtml"
+            #line 19 "..\..\Views\Article\_Create.cshtml"
            Write(Html.LabelFor(model => model.ArticleDate, htmlAttributes: new { @class = "control-label col-md-1" }));
 
             
@@ -189,7 +182,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 22 "..\..\Views\Article\_Create.cshtml"
+            #line 21 "..\..\Views\Article\_Create.cshtml"
                Write(Html.EditorFor(model => model.ArticleDate, MVC.Shared.Views.EditorTemplates.PersianDatePicker));
 
             
@@ -200,7 +193,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 23 "..\..\Views\Article\_Create.cshtml"
+            #line 22 "..\..\Views\Article\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.ArticleDate, "", new { @class = "text-danger" }));
 
             
@@ -217,7 +210,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 27 "..\..\Views\Article\_Create.cshtml"
+            #line 26 "..\..\Views\Article\_Create.cshtml"
            Write(Html.LabelFor(model => model.Brief, new { @class = "control-label col-md-1" }));
 
             
@@ -232,7 +225,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 29 "..\..\Views\Article\_Create.cshtml"
+            #line 28 "..\..\Views\Article\_Create.cshtml"
                Write(Html.TextAreaFor(model => model.Brief, new { @class = "ckeditor form-control", rows = 3 }));
 
             
@@ -243,7 +236,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 30 "..\..\Views\Article\_Create.cshtml"
+            #line 29 "..\..\Views\Article\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.Brief, null, new { @class = "text-danger" }));
 
             
@@ -252,7 +245,7 @@ WriteLiteral("                    ");
 WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
 
             
-            #line 33 "..\..\Views\Article\_Create.cshtml"
+            #line 32 "..\..\Views\Article\_Create.cshtml"
 
 
             
@@ -267,7 +260,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 35 "..\..\Views\Article\_Create.cshtml"
+            #line 34 "..\..\Views\Article\_Create.cshtml"
            Write(Html.LabelFor(model => model.Content, new { @class = "control-label col-md-1" }));
 
             
@@ -282,7 +275,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 37 "..\..\Views\Article\_Create.cshtml"
+            #line 36 "..\..\Views\Article\_Create.cshtml"
                Write(Html.TextAreaFor(model => model.Content, new { @class = "ckeditor form-control", rows = 10 }));
 
             
@@ -293,7 +286,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 38 "..\..\Views\Article\_Create.cshtml"
+            #line 37 "..\..\Views\Article\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.Content, null, new { @class = "text-danger" }));
 
             
@@ -310,7 +303,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 42 "..\..\Views\Article\_Create.cshtml"
+            #line 41 "..\..\Views\Article\_Create.cshtml"
            Write(Html.LabelFor(model => model.AttachmentFile, htmlAttributes: new { @class = "control-label col-md-1" }));
 
             
@@ -325,7 +318,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 44 "..\..\Views\Article\_Create.cshtml"
+            #line 43 "..\..\Views\Article\_Create.cshtml"
                Write(Html.TextBoxFor(model => model.AttachmentFile, new { type = "file", @class = "form-control" }));
 
             
@@ -345,29 +338,29 @@ WriteLiteral(" data-type=\"pdf\"");
 
 WriteLiteral(" data-container=\"AttachmentScan\"");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 2809), Tuple.Create("\"", 2913)
-, Tuple.Create(Tuple.Create("", 2817), Tuple.Create("btn", 2817), true)
-, Tuple.Create(Tuple.Create(" ", 2820), Tuple.Create("btn-primary", 2821), true)
-, Tuple.Create(Tuple.Create("   ", 2832), Tuple.Create("btn-sm", 2835), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 2761), Tuple.Create("\"", 2865)
+, Tuple.Create(Tuple.Create("", 2769), Tuple.Create("btn", 2769), true)
+, Tuple.Create(Tuple.Create(" ", 2772), Tuple.Create("btn-primary", 2773), true)
+, Tuple.Create(Tuple.Create("   ", 2784), Tuple.Create("btn-sm", 2787), true)
             
-            #line 47 "..\..\Views\Article\_Create.cshtml"
-                                                             , Tuple.Create(Tuple.Create(" ", 2841), Tuple.Create<System.Object, System.Int32>(!string.IsNullOrEmpty(Model.AttachmentScan) ? "scan-remove" : "scan"
+            #line 46 "..\..\Views\Article\_Create.cshtml"
+                                                             , Tuple.Create(Tuple.Create(" ", 2793), Tuple.Create<System.Object, System.Int32>(!string.IsNullOrEmpty(Model.AttachmentScan) ? "scan-remove" : "scan"
             
             #line default
             #line hidden
-, 2842), false)
+, 2794), false)
 );
 
 WriteLiteral(">\r\n\r\n");
 
             
-            #line 49 "..\..\Views\Article\_Create.cshtml"
+            #line 48 "..\..\Views\Article\_Create.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 49 "..\..\Views\Article\_Create.cshtml"
+            #line 48 "..\..\Views\Article\_Create.cshtml"
                          if (!string.IsNullOrEmpty(Model.AttachmentScan))
                         {
             
@@ -382,7 +375,7 @@ WriteLiteral("></i>\r\n                            حذف فایل اسکن شد
 WriteLiteral("\r\n");
 
             
-            #line 54 "..\..\Views\Article\_Create.cshtml"
+            #line 53 "..\..\Views\Article\_Create.cshtml"
                         }
                         else
                         {
@@ -398,7 +391,7 @@ WriteLiteral("></i>\r\n                            افزودن اسکن\r\n    
 WriteLiteral("\r\n");
 
             
-            #line 60 "..\..\Views\Article\_Create.cshtml"
+            #line 59 "..\..\Views\Article\_Create.cshtml"
                         }
 
             
@@ -407,7 +400,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    </button>\r\n                </div>\r\n            </div>\r\n");
 
             
-            #line 64 "..\..\Views\Article\_Create.cshtml"
+            #line 63 "..\..\Views\Article\_Create.cshtml"
 
 
             
@@ -440,7 +433,7 @@ WriteLiteral(">\r\n                        ثبت مقاله جدید\r\n       
 "         </div>\r\n            </div>\r\n");
 
             
-            #line 72 "..\..\Views\Article\_Create.cshtml"
+            #line 71 "..\..\Views\Article\_Create.cshtml"
         }
 
             

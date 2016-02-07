@@ -65,7 +65,7 @@ namespace Decision.DomainClasses.Entities.PrivateMessage
         /// <summary>
         /// gets or sets if of  user that start this conversation
         /// </summary>
-        public  long SenderId { get; set; }
+        public  Guid SenderId { get; set; }
         /// <summary>
         /// gets or sets user that start this conversation
         /// </summary>
@@ -73,7 +73,7 @@ namespace Decision.DomainClasses.Entities.PrivateMessage
         /// <summary>
         /// gets or sets id of  user that is recipient
         /// </summary>
-        public  long ReceiverId { get; set; }
+        public  Guid ReceiverId { get; set; }
         /// <summary>
         /// gets or sets   user that is recipient
         /// </summary>

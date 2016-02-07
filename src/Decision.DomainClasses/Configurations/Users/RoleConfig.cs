@@ -17,13 +17,13 @@ namespace Decision.DomainClasses.Configurations.Users
         {
             ToTable("Roles");
             Property(r => r.RowVersion).IsRowVersion();
+            Ignore(r => r.XmlPermissions);
             Property(r => r.Name)
                  .IsRequired()
                  .HasMaxLength(50)
                  .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_RoleName") { IsUnique = true }));
             Property(r => r.RowVersion).IsRowVersion();
             Property(r => r.Permissions).HasColumnType("xml");
-            Ignore(r => r.XmlPermission);
             HasMany(r => r.Users).WithRequired().HasForeignKey(ur => ur.RoleId);
         }
     }

@@ -28,12 +28,11 @@ namespace ASP
     using System.Web.UI;
     using System.Web.WebPages;
     
-    #line 1 "..\..\Views\PrivateMessage\NewMessage.cshtml"
-    using Decision.Common.Helpers;
+    #line 2 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+    using Decision.Common.HtmlHelpers;
     
     #line default
     #line hidden
-    using Decision.Common.MVC;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -48,8 +47,10 @@ namespace ASP
         }
         public override void Execute()
         {
+WriteLiteral("\r\n");
+
             
-            #line 4 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 5 "..\..\Views\PrivateMessage\NewMessage.cshtml"
  using (Html.BeginForm(MVC.PrivateMessage.NewMessage(), FormMethod.Post, new { role = "form", @class = "form-horizontal", autocomplete = "off", id = "createConversationForm", enctype = "multipart/form-data" }))
 {
     
@@ -57,14 +58,14 @@ namespace ASP
             #line default
             #line hidden
             
-            #line 6 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 7 "..\..\Views\PrivateMessage\NewMessage.cshtml"
 Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 6 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 7 "..\..\Views\PrivateMessage\NewMessage.cshtml"
                             
 
             
@@ -91,8 +92,8 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 11 "..\..\Views\PrivateMessage\NewMessage.cshtml"
-               Write(Html.HelpAlert(@Url.Content("~/Content/Images/lightbulb.png"),
+            #line 12 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+               Write(Html.HelpAlert(Url.Content("~/Content/Images/lightbulb.png"),
                     "در این قسمت این امکان وجود دارد تا بتوانید با سایر کاربران گفتگو داشته باشید"
                    ));
 
@@ -135,7 +136,7 @@ WriteLiteral(">\r\n\r\n");
 WriteLiteral("                            ");
 
             
-            #line 27 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 28 "..\..\Views\PrivateMessage\NewMessage.cshtml"
                        Write(Html.DropDownListFor(a => a.ReciverId, Model.Users, "دریافت کننده", new {@class = "form-control"}));
 
             
@@ -146,7 +147,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 28 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 29 "..\..\Views\PrivateMessage\NewMessage.cshtml"
                        Write(Html.ValidationMessageFor(model => model.ReciverId, "", new {@class = "text-danger"}));
 
             
@@ -177,7 +178,7 @@ WriteLiteral(">\r\n\r\n");
 WriteLiteral("                            ");
 
             
-            #line 38 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 39 "..\..\Views\PrivateMessage\NewMessage.cshtml"
                        Write(Html.NoAutoCompleteTextBoxFor(a => a.Subject));
 
             
@@ -188,7 +189,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 39 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 40 "..\..\Views\PrivateMessage\NewMessage.cshtml"
                        Write(Html.ValidationMessageFor(model => model.Subject, "", new {@class = "text-danger"}));
 
             
@@ -219,7 +220,7 @@ WriteLiteral(">\r\n\r\n");
 WriteLiteral("                            ");
 
             
-            #line 49 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 50 "..\..\Views\PrivateMessage\NewMessage.cshtml"
                        Write(Html.TextAreaFor(a => a.Content, new {@class = "ckeditor form-control", rows = 10}));
 
             
@@ -230,7 +231,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 50 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 51 "..\..\Views\PrivateMessage\NewMessage.cshtml"
                        Write(Html.ValidationMessageFor(model => model.Content, "", new {@class = "text-danger"}));
 
             
@@ -261,7 +262,7 @@ WriteLiteral(">\r\n\r\n");
 WriteLiteral("                            ");
 
             
-            #line 60 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 61 "..\..\Views\PrivateMessage\NewMessage.cshtml"
                        Write(Html.TextBoxFor(model => model.Attachments, new {type = "file", @class = "form-control", multiple = "true"}));
 
             
@@ -292,7 +293,7 @@ WriteLiteral("></i>\r\n                ارسال پیغام\r\n\r\n            
 "   </div>\r\n");
 
             
-            #line 76 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 77 "..\..\Views\PrivateMessage\NewMessage.cshtml"
    
 }
 
@@ -304,13 +305,13 @@ DefineSection("Menu", () => {
 WriteLiteral("\r\n");
 
             
-            #line 79 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 80 "..\..\Views\PrivateMessage\NewMessage.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 79 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 80 "..\..\Views\PrivateMessage\NewMessage.cshtml"
       Html.RenderPartial(MVC.Shared.Views._UserProfileSideBarMenu);
             
             #line default
@@ -326,7 +327,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 82 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 83 "..\..\Views\PrivateMessage\NewMessage.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             
@@ -337,7 +338,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 83 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 84 "..\..\Views\PrivateMessage\NewMessage.cshtml"
 Write(Scripts.Render("~/bundles/editor"));
 
             
