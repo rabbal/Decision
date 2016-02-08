@@ -27,7 +27,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
+    using Decision.Common.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     
@@ -161,20 +161,20 @@ WriteAttribute("href", Tuple.Create(" href=\"", 1149), Tuple.Create("\"", 1185)
 
 WriteLiteral("><img");
 
-WriteLiteral(" alt=\"سامانه اساتید\"");
+WriteLiteral(" alt=\"سامانه جذب هئیت علمی\"");
 
 WriteLiteral(" class=\"navbar-brand\"");
 
 WriteLiteral(" id=\"logo\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1242), Tuple.Create("\"", 1289)
+WriteAttribute("src", Tuple.Create(" src=\"", 1249), Tuple.Create("\"", 1296)
             
             #line 30 "..\..\Views\Shared\_Layout.cshtml"
-                                     , Tuple.Create(Tuple.Create("", 1248), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/Images/Logo.png")
+                                            , Tuple.Create(Tuple.Create("", 1255), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/Images/logo.gif")
             
             #line default
             #line hidden
-, 1248), false)
+, 1255), false)
 );
 
 WriteLiteral(" /></a>\r\n                <button");
@@ -199,7 +199,7 @@ WriteLiteral("></span>\r\n                    <span");
 
 WriteLiteral(" class=\"icon-bar\"");
 
-WriteLiteral("></span>\r\n                </button>\r\n            </div>\r\n\r\n");
+WriteLiteral("></span>\r\n                </button>\r\n            </div>\r\n            \r\n");
 
             
             #line 38 "..\..\Views\Shared\_Layout.cshtml"

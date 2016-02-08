@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.Common;
 using Decision.DomainClasses.Entities.ApplicantInfo;
+using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Common;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.ViewModel.Address;
 using EntityFramework.Extensions;
-using Microsoft.AspNet.Identity;
 
-namespace Decision.ServiceLayer.EFServiecs.Common
+namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
 {
     public class AddressService : IAddressService
     {
@@ -73,7 +71,7 @@ namespace Decision.ServiceLayer.EFServiecs.Common
         {
             var address = _mappingEngine.Map<Address>(viewModel);
             _addresses.Add(address);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveAllChangesAsync(auditUserId:_userManager.GetCurrentUserId());
             return await GetAddressViewModel(address.Id);
         }
         #endregion
@@ -86,7 +84,7 @@ namespace Decision.ServiceLayer.EFServiecs.Common
                 Addresses = await _addresses.AsNoTracking()
                     .Where(a => a.ApplicantId == request.ApplicantId)
                     .ProjectTo<AddressViewModel>(_mappingEngine)
-                    .OrderByDescending(a => a.CreateDate)
+                    .OrderByDescending(a => a.CreatedOn)
                     .Skip((request.PageIndex - 1)*5)
                     .Take(5)
                     .ToListAsync(),
@@ -118,13 +116,13 @@ namespace Decision.ServiceLayer.EFServiecs.Common
             viewModel.Cities = _cityService.GetAsSelectListByStateNameAsync(viewModel.State, viewModel.City, path);
         }
 
-        public AddAddressViewModel GetForCreate(Guid ApplicantId,string path)
+        public AddAddressViewModel GetForCreate(Guid applicantId,string path)
         {
             return new AddAddressViewModel
             {
                 States = _stateService.GetAsSelectListItemAsync(null, path),
                 Cities = new List<SelectListItem>(),
-                ApplicantId = ApplicantId
+                ApplicantId = applicantId
                 
             };
         }

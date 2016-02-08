@@ -25,8 +25,7 @@ namespace Decision.Common.Helpers
             nationalCode = nationalCode.GetEnglishNumber();
             if (string.IsNullOrEmpty(nationalCode))
                 throw new Exception("لطفا کد ملی را صحیح وارد نمایید");
-
-
+            
             //در صورتی که کد ملی وارد شده طولش کمتر از 10 رقم باشد
             if (nationalCode.Length != 10)
                 throw new Exception("طول کد ملی باید ده کاراکتر باشد");

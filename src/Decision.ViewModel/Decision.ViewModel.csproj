@@ -98,6 +98,11 @@
     <Compile Include="Article\ArticleListViewModel.cs" />
     <Compile Include="Article\ArticleSearchRequest.cs" />
     <Compile Include="Article\ArticleViewModel.cs" />
+    <Compile Include="Presenter\AddPresenterViewModel.cs" />
+    <Compile Include="Presenter\EditPresenterViewModel.cs" />
+    <Compile Include="Presenter\PresenterListViewModel.cs" />
+    <Compile Include="Presenter\PresenterSearchRequest.cs" />
+    <Compile Include="Presenter\PresenterViewModel.cs" />
     <Compile Include="PrivateMessage\AddConversationViewModel.cs" />
     <Compile Include="PrivateMessage\AddMessageViewModel.cs" />
     <Compile Include="PrivateMessage\AttachmentViewModel.cs" />
@@ -133,7 +138,7 @@
     <Compile Include="Common\BaseIsDelete.cs" />
     <Compile Include="Common\BaseRowVersion.cs" />
     <Compile Include="Common\BaseSearchRequest.cs" />
-    <Compile Include="Common\BaseSortByMode.cs" />
+    <Compile Include="Common\SortByMode.cs" />
     <Compile Include="Common\BaseViewModel.cs" />
     <Compile Include="Common\PageSize.cs" />
     <Compile Include="Common\SortDirectionMode.cs" />

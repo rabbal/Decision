@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <IncludeIisSettings>false</IncludeIisSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -246,6 +247,7 @@
     <Compile Include="Controllers\EntireEvaluationController.cs" />
     <Compile Include="Controllers\InterviewController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\PresenterController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ResearchExperienceController.cs" />
@@ -274,6 +276,9 @@
     <Compile Include="Hubs\HomeHub.cs" />
     <Compile Include="Hubs\NotificationHub.cs" />
     <Compile Include="InterviewController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PresenterController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="PrivateMessageController.generated.cs">
@@ -516,6 +521,31 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Presenter\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Presenter\_Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Presenter\_Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Presenter\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Presenter\_PresenterItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_PresenterItem.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\PrivateMessage\InBox.generated.cs">
       <AutoGen>True</AutoGen>
@@ -896,7 +926,7 @@
     <Content Include="Content\Images\default-avatar.png" />
     <Content Include="Content\Images\lightbulb.png" />
     <Content Include="Content\Images\loading.gif" />
-    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\logo.gif" />
     <Content Include="Content\Images\Overlays\01.png" />
     <Content Include="Content\Images\Overlays\02.png" />
     <Content Include="Content\Images\Overlays\03.png" />
@@ -2415,6 +2445,7 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <None Include="Properties\PublishProfiles\Decision.pubxml" />
     <None Include="Scripts\libs\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\libs\jquery-2.1.4.js" />
     <Content Include="Scripts\libs\jquery-2.1.4.min.js" />
@@ -2652,6 +2683,26 @@
     <Content Include="Views\Error\Unauthorized.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Unauthorized.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Presenter\_Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Presenter\_Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Presenter\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Presenter\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Presenter\_PresenterItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_PresenterItem.generated.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

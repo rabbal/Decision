@@ -136,7 +136,7 @@ WriteLiteral("\r\n");
             #line hidden
             
             #line 24 "..\..\Views\Applicant\List.cshtml"
-                 using (Ajax.BeginForm(MVC.Applicant.ListAjax(), new AjaxOptions {AllowCache = false, HttpMethod = "POST", OnComplete = "searchOnComplete(xhr,status,'#progress','#ApplicantPager','#ApplicantList')"}, new {@class = "form-horizontal", autocomplete = "off", id = "ApplicantSearchForm"}))
+                 using (Ajax.BeginForm(MVC.Applicant.ListAjax(), new AjaxOptions { AllowCache = false, HttpMethod = "POST", OnComplete = "searchOnComplete(xhr,status,'#progress','#ApplicantPager','#ApplicantList')" }, new { @class = "form-horizontal", autocomplete = "off", id = "ApplicantSearchForm" }))
                 {
                     
             
@@ -333,37 +333,8 @@ WriteLiteral(" type=\"text\"");
 
 WriteLiteral(" value=\"\"");
 
-WriteLiteral(">\r\n                                </div>\r\n                            </div>\r\n  " +
-"                          <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" for=\"PositionId\"");
-
-WriteLiteral(">\r\n                                        <i");
-
-WriteLiteral(" class=\"fa fa-sort-asc\"");
-
-WriteLiteral("></i>\r\n                                        سمت متقاضی\r\n                      " +
-"              </label>\r\n");
-
-WriteLiteral("                                    ");
-
-            
-            #line 78 "..\..\Views\Applicant\List.cshtml"
-                               Write(Html.DropDownList("PositionId", Model.Positions, "همه سمت ها", new {@class = "form-control"}));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                </div>\r\n                            </div>\r\n   " +
-"                     </div>\r\n                        <div");
+WriteLiteral(">\r\n                                </div>\r\n                            </div>\r\n\r\n" +
+"                        </div>\r\n                        <div");
 
 WriteLiteral(" class=\"row\"");
 
@@ -389,7 +360,7 @@ WriteLiteral("></i>\r\n                                        استان تول
 WriteLiteral("                                    ");
 
             
-            #line 89 "..\..\Views\Applicant\List.cshtml"
+            #line 81 "..\..\Views\Applicant\List.cshtml"
                                Write(Html.DropDownList("State",
                                         Model.States, "همه", new
                                         {
@@ -426,263 +397,8 @@ WriteLiteral("></i>\r\n                                        شهر تولد\r
 WriteLiteral("                                    ");
 
             
-            #line 106 "..\..\Views\Applicant\List.cshtml"
-                               Write(Html.DropDownList("City", Model.Cities, "همه", new {@class = "form-control", id = "city"}));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                </div>\r\n                            </div>\r\n   " +
-"                         <div");
-
-WriteLiteral(" class=\"col-md-4\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" for=\"TrainingCenter\"");
-
-WriteLiteral(">\r\n                                        <i");
-
-WriteLiteral(" class=\"fa fa-university\"");
-
-WriteLiteral("></i>\r\n                                        نام محل کارآموزی\r\n                " +
-"                    </label>\r\n");
-
-WriteLiteral("                                    ");
-
-            
-            #line 115 "..\..\Views\Applicant\List.cshtml"
-                               Write(Html.DropDownList("TrainingCenter", Model.TrainingCenters, "همه", new {@class = "form-control"}));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                </div>\r\n                            </div>\r\n   " +
-"                     </div>\r\n                        <div");
-
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n                            <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" for=\"OccupationalGroupFrom\"");
-
-WriteLiteral(">\r\n                                        <i");
-
-WriteLiteral(" class=\"fa fa-male\"");
-
-WriteLiteral("></i>\r\n                                        از گروه شغلی\r\n                    " +
-"                </label>\r\n                                    <input");
-
-WriteLiteral(" name=\"OccupationalGroupFrom\"");
-
-WriteLiteral(" id=\"OccupationalGroupFrom\"");
-
-WriteLiteral(" class=\"form-control input-sm\"");
-
-WriteLiteral(" placeholder=\"از گروه شغلی\"");
-
-WriteLiteral(" type=\"text\"");
-
-WriteLiteral(" value=\"\"");
-
-WriteLiteral(">\r\n                                </div>\r\n                            </div>\r\n  " +
-"                          <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" for=\"OccupationalGroupTo\"");
-
-WriteLiteral(">\r\n                                        <i");
-
-WriteLiteral(" class=\"fa fa-male\"");
-
-WriteLiteral("></i>\r\n                                        تا گروه شغلی\r\n                    " +
-"                </label>\r\n                                    <input");
-
-WriteLiteral(" name=\"OccupationalGroupTo\"");
-
-WriteLiteral(" id=\"OccupationalGroupTo\"");
-
-WriteLiteral(" class=\"form-control input-sm\"");
-
-WriteLiteral(" placeholder=\"تا گروه شغلی\"");
-
-WriteLiteral(" type=\"text\"");
-
-WriteLiteral(" value=\"\"");
-
-WriteLiteral(">\r\n                                </div>\r\n                            </div>\r\n  " +
-"                          <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" for=\"CollegiateOrderFrom\"");
-
-WriteLiteral(">\r\n                                        <i");
-
-WriteLiteral(" class=\"fa fa-graduation-cap\"");
-
-WriteLiteral("></i>\r\n                                        از پایه متقاضی\r\n                  " +
-"                  </label>\r\n                                    <input");
-
-WriteLiteral(" name=\"CollegiateOrderFrom\"");
-
-WriteLiteral(" id=\"CollegiateOrderFrom\"");
-
-WriteLiteral(" class=\"form-control input-sm\"");
-
-WriteLiteral(" placeholder=\"پایه متقاضی\"");
-
-WriteLiteral(" type=\"text\"");
-
-WriteLiteral(" value=\"\"");
-
-WriteLiteral(">\r\n                                </div>\r\n                            </div>\r\n  " +
-"                          <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" for=\"CollegiateOrderTo\"");
-
-WriteLiteral(">\r\n                                        <i");
-
-WriteLiteral(" class=\"fa fa-graduation-cap\"");
-
-WriteLiteral("></i>\r\n                                        تا پایه متقاضی\r\n                  " +
-"                  </label>\r\n                                    <input");
-
-WriteLiteral(" name=\"CollegiateOrderTo\"");
-
-WriteLiteral(" id=\"CollegiateOrderTo\"");
-
-WriteLiteral(" class=\"form-control input-sm\"");
-
-WriteLiteral(" placeholder=\"تا پایه متقاضی\"");
-
-WriteLiteral(" type=\"text\"");
-
-WriteLiteral(" value=\"\"");
-
-WriteLiteral(">\r\n                                </div>\r\n                            </div>\r\n  " +
-"                      </div>\r\n                        <div");
-
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n                            <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" for=\"PersonnelCode\"");
-
-WriteLiteral(">\r\n                                        <i");
-
-WriteLiteral(" class=\"fa fa-male\"");
-
-WriteLiteral("></i>\r\n                                        کد پرسنلی\r\n                       " +
-"             </label>\r\n                                    <input");
-
-WriteLiteral(" name=\"PersonnelCode\"");
-
-WriteLiteral(" id=\"PersonnelCode\"");
-
-WriteLiteral(" class=\"form-control input-sm\"");
-
-WriteLiteral(" placeholder=\"کد پرسنلی\"");
-
-WriteLiteral(" type=\"text\"");
-
-WriteLiteral(" value=\"\"");
-
-WriteLiteral(">\r\n                                </div>\r\n                            </div>\r\n  " +
-"                          <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" for=\"ApplicantApprovalFilter\"");
-
-WriteLiteral(">\r\n                                        <i");
-
-WriteLiteral(" class=\"fa fa-graduation-cap\"");
-
-WriteLiteral("></i>\r\n                                        وضعیت تأیید\r\n                     " +
-"               </label>\r\n");
-
-WriteLiteral("                                    ");
-
-            
-            #line 173 "..\..\Views\Applicant\List.cshtml"
-                               Write(Html.EditorFor(a => a.SearchRequest.ApplicantApprovalFilter, MVC.Shared.Views.EditorTemplates.Enum, "ApplicantApprovalFilter"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                </div>\r\n                            </div>\r\n   " +
-"                         <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" for=\"ApplicantReferenceFilter\"");
-
-WriteLiteral(">\r\n                                        <i");
-
-WriteLiteral(" class=\"fa fa-graduation-cap\"");
-
-WriteLiteral("></i>\r\n                                        وضعیت ارجاع\r\n                     " +
-"               </label>\r\n");
-
-WriteLiteral("                                    ");
-
-            
-            #line 182 "..\..\Views\Applicant\List.cshtml"
-                               Write(Html.EditorFor(a => a.SearchRequest.ApplicantReferenceFilter, MVC.Shared.Views.EditorTemplates.Enum, "ApplicantReferenceFilter"));
+            #line 98 "..\..\Views\Applicant\List.cshtml"
+                               Write(Html.DropDownList("City", Model.Cities, "همه", new { @class = "form-control", id = "city" }));
 
             
             #line default
@@ -755,7 +471,7 @@ WriteLiteral("></i>\r\n                                        لغو فیلتر
 "");
 
             
-            #line 203 "..\..\Views\Applicant\List.cshtml"
+            #line 119 "..\..\Views\Applicant\List.cshtml"
                 }
 
             
@@ -774,13 +490,13 @@ WriteLiteral(" id=\"ApplicantList\"");
 WriteLiteral(">\r\n");
 
             
-            #line 209 "..\..\Views\Applicant\List.cshtml"
+            #line 125 "..\..\Views\Applicant\List.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 209 "..\..\Views\Applicant\List.cshtml"
+            #line 125 "..\..\Views\Applicant\List.cshtml"
                Html.RenderPartial(MVC.Applicant.Views.ViewNames._ListAjax, Model);
             
             #line default
@@ -824,8 +540,8 @@ WriteLiteral("></i>\r\n");
 WriteLiteral("                ");
 
             
-            #line 221 "..\..\Views\Applicant\List.cshtml"
-           Write(Html.DropDownList("SortBy", Model.SortableList, new {@class = "form-control", onchange = "sorting('progress', 'ApplicantSearchForm', 'ApplicantPager', 'SortBy', 'SortOrder', 'ApplicantList','PageSizer');"}));
+            #line 137 "..\..\Views\Applicant\List.cshtml"
+           Write(Html.DropDownList("SortBy", Model.SortableList, new { @class = "form-control", onchange = "sorting('progress', 'ApplicantSearchForm', 'ApplicantPager', 'SortBy', 'SortOrder', 'ApplicantList','PageSizer');" }));
 
             
             #line default
@@ -843,8 +559,8 @@ WriteLiteral("></i>\r\n");
 WriteLiteral("                ");
 
             
-            #line 225 "..\..\Views\Applicant\List.cshtml"
-           Write(Html.DropDownList("SortOrder", Model.SortOrderList, new {@class = "form-control", onchange = "sorting('progress', 'ApplicantSearchForm', 'ApplicantPager', 'SortBy', 'SortOrder', 'ApplicantList','PageSizer');"}));
+            #line 141 "..\..\Views\Applicant\List.cshtml"
+           Write(Html.DropDownList("SortOrder", Model.SortOrderList, new { @class = "form-control", onchange = "sorting('progress', 'ApplicantSearchForm', 'ApplicantPager', 'SortBy', 'SortOrder', 'ApplicantList','PageSizer');" }));
 
             
             #line default
@@ -862,8 +578,8 @@ WriteLiteral("></i>\r\n");
 WriteLiteral("                ");
 
             
-            #line 229 "..\..\Views\Applicant\List.cshtml"
-           Write(Html.DropDownList("PageSizer", Model.PageSizeList, new {@class = "form-control", onchange = "sorting('progress', 'ApplicantSearchForm', 'ApplicantPager', 'SortBy', 'SortOrder', 'ApplicantList','PageSizer');"}));
+            #line 145 "..\..\Views\Applicant\List.cshtml"
+           Write(Html.DropDownList("PageSizer", Model.PageSizeList, new { @class = "form-control", onchange = "sorting('progress', 'ApplicantSearchForm', 'ApplicantPager', 'SortBy', 'SortOrder', 'ApplicantList','PageSizer');" }));
 
             
             #line default
@@ -878,32 +594,32 @@ WriteLiteral(" style=\"display: none\"");
 
 WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 14668), Tuple.Create("\"", 14718)
+WriteAttribute("src", Tuple.Create(" src=\"", 9207), Tuple.Create("\"", 9257)
             
-            #line 233 "..\..\Views\Applicant\List.cshtml"
-, Tuple.Create(Tuple.Create("", 14674), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
+            #line 149 "..\..\Views\Applicant\List.cshtml"
+, Tuple.Create(Tuple.Create("", 9213), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
             
             #line default
             #line hidden
-, 14674), false)
+, 9213), false)
 );
 
 WriteLiteral(" alt=\"loading...\"");
 
-WriteLiteral("/>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+WriteLiteral(" />\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 DefineSection("Menu", () => {
 
 WriteLiteral("\r\n");
 
             
-            #line 238 "..\..\Views\Applicant\List.cshtml"
+            #line 154 "..\..\Views\Applicant\List.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 238 "..\..\Views\Applicant\List.cshtml"
+            #line 154 "..\..\Views\Applicant\List.cshtml"
       Html.RenderPartial(MVC.Shared.Views._ApplicantManagementsSidbarMenu);
             
             #line default
@@ -919,7 +635,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 241 "..\..\Views\Applicant\List.cshtml"
+            #line 157 "..\..\Views\Applicant\List.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             

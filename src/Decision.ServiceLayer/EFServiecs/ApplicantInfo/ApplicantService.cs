@@ -177,10 +177,10 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
             applicants = applicants.OrderBy($"{request.CurrentSort} {request.SortDirection}");
 
             var selectedApplicants = applicants.ProjectTo<ApplicantViewModel>(_mappingEngine);
-
+            var resultsToSkip = (request.PageIndex - 1)*request.PageSize;
             var query = await selectedApplicants
-                .Skip((request.PageIndex - 1) * request.PageSize)
-                .Take(request.PageSize)
+                .Skip(() => resultsToSkip)
+                .Take(() => request.PageSize)
                 .ToListAsync();
 
             return new ApplicantListViewModel { SearchRequest = request, Applicants = query };
@@ -248,8 +248,7 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
         {
             var viewModel = new AddApplicantViewModel
             {
-                StatesForBirthPlace = _stateService.GetAsSelectListItemAsync(null, path),
-                StatesForTrainingCeneter = _stateService.GetAsSelectListItemAsync(null, path)
+                StatesForBirthPlace = _stateService.GetAsSelectListItemAsync(null, path)
             };
             return viewModel;
         }

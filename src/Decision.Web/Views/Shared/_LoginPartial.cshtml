@@ -5,7 +5,7 @@
         @if (User.IsInRole(Auth.CanViewApplicantList))
         {
             <li class="main">
-                @Html.SecureActionLink("مدیریت اساتید", MVC.Applicant.List())
+                @Html.SecureActionLink("مدیریت متقاضیان", MVC.Applicant.List())
             </li>
         }
        

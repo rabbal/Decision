@@ -8,22 +8,23 @@
         <small>@Model.CreatorUserName</small><br>
         <i class="fa fa-calendar-o"></i>
         <small>در :</small>
-        <time>@Model.CreateDate.ToPersianString(PersianDateTimeFormat.Date)</time>
+        <time>@Model.CreatedOn.ToPersianString(PersianDateTimeFormat.Date)</time>
         <i class="fa fa-clock-o "></i>
-        <time>@Model.CreateDate.ToPersianTimeString()</time>
+        <time>@Model.CreatedOn.ToPersianTimeString()</time>
     </div>
-    @if (Model.LastModifierUserName.HasValue())
-    {
-        <div class="col-md-3">
-            <i class="fa fa-edit text-info"></i>
-            <small class="text-muted">ویرایش شده توسط:</small>
-            <small>@Model.LastModifierUserName</small><br>
-            <i class="fa fa-calendar-o"></i>
-            <small>در :</small>
-            <time>@Model.LastModifiedDate.ToPersianString(PersianDateTimeFormat.Date)</time>
-            <i class="fa fa-clock-o"></i>
-            <time>@Model.LastModifiedDate.ToPersianTimeString()</time>
-        </div>
-    }
-   
+    <div class="col-md-3">
+        <i class="fa fa-edit text-info"></i>
+        <small class="text-muted">ویرایش شده توسط:</small>
+        <small>@Model.LastModifierUserName</small><br>
+        <i class="fa fa-calendar-o"></i>
+        <small>در :</small>
+        <time>@Model.ModifiedOn.ToPersianString(PersianDateTimeFormat.Date)</time>
+        <i class="fa fa-clock-o"></i>
+        <time>@Model.ModifiedOn.ToPersianTimeString()</time>
+    </div>
+    <div class="col-md-3">
+        <i class="fa fa-edit text-info"></i>
+        <small class="text-muted">نوع علمیات:</small>
+        <small>@Html.DisplayFor(a=>a.Action)</small><br>
+    </div>
 </div>

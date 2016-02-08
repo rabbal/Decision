@@ -7,8 +7,8 @@ namespace Decision.ViewModel.Common
 {
    public static class SortDirectionMode
    {
-       public const string Asc = "Asc";
-       public const string Desc = "Desc";
-       public const string Non = "Non";
+       public const string Asc = nameof(Asc);
+       public const string Desc = nameof(Desc);
+       public const string Non = nameof(Non);
    }
 }

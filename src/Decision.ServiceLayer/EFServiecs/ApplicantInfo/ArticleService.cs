@@ -73,7 +73,7 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
 
         #region Create
 
-        public async  Task<ArticleViewModel> Create(AddArticleViewModel viewModel)
+        public async Task<ArticleViewModel> Create(AddArticleViewModel viewModel)
         {
             var article = _mappingEngine.Map<Article>(viewModel);
 
@@ -103,9 +103,9 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
                     .AsQueryable();
 
             var selectedArticles = articles.ProjectTo<ArticleViewModel>(_mappingEngine);
-            
+
             var query = await selectedArticles
-                .Skip((request.PageIndex - 1) * 5)
+                .Skip(() => (request.PageIndex - 1) * 5)
                 .Take(5)
                 .ToListAsync();
 
@@ -139,7 +139,7 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
             return _articles.Where(a => a.Id == id).Select(a => a.ApplicantId).First();
         }
 
-      
+
         public long Count()
         {
             return _articles.LongCount();

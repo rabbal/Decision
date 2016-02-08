@@ -89,7 +89,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\Common\IAddressService.cs" />
+    <Compile Include="Contracts\ApplicantInfo\IAddressService.cs" />
+    <Compile Include="Contracts\ApplicantInfo\IPresenterService.cs" />
     <Compile Include="Contracts\Users\IActivityLogService.cs" />
     <Compile Include="Contracts\Common\ICityService.cs" />
     <Compile Include="Contracts\Evaluations\IAnswerOptionService.cs" />
@@ -117,7 +118,8 @@
     <Compile Include="Contracts\Common\IRunOnError.cs" />
     <Compile Include="Contracts\Common\ISettingService.cs" />
     <Compile Include="CustomAspNetIdentity\CustomSecurityStampValidator.cs" />
-    <Compile Include="EFServiecs\Common\AddressServices.cs" />
+    <Compile Include="EFServiecs\ApplicantInfo\AddressServices.cs" />
+    <Compile Include="EFServiecs\ApplicantInfo\PresenterService.cs" />
     <Compile Include="EFServiecs\Users\ActivityLogService.cs" />
     <Compile Include="EFServiecs\Common\CityService.cs" />
     <Compile Include="EFServiecs\Common\StateService.cs" />
@@ -125,12 +127,12 @@
     <Compile Include="EFServiecs\Evaluations\EnitreEvaluationService.cs" />
     <Compile Include="EFServiecs\Evaluations\InterviewService.cs" />
     <Compile Include="EFServiecs\Evaluations\QuestionService.cs" />
-    <Compile Include="EFServiecs\TeacherInfo\EducationalBackgroundService.cs" />
-    <Compile Include="EFServiecs\TeacherInfo\EducationalExperienceService.cs" />
-    <Compile Include="EFServiecs\TeacherInfo\TeacherService.cs" />
-    <Compile Include="EFServiecs\TeacherInfo\ArticleService.cs" />
-    <Compile Include="EFServiecs\TeacherInfo\ResearchExperienceService.cs" />
-    <Compile Include="EFServiecs\TeacherInfo\WorkExperienceService.cs" />
+    <Compile Include="EFServiecs\ApplicantInfo\EducationalBackgroundService.cs" />
+    <Compile Include="EFServiecs\ApplicantInfo\EducationalExperienceService.cs" />
+    <Compile Include="EFServiecs\ApplicantInfo\ApplicantService.cs" />
+    <Compile Include="EFServiecs\ApplicantInfo\ArticleService.cs" />
+    <Compile Include="EFServiecs\ApplicantInfo\ResearchExperienceService.cs" />
+    <Compile Include="EFServiecs\ApplicantInfo\WorkExperienceService.cs" />
     <Compile Include="EFServiecs\PrivateMessage\MessageService.cs" />
     <Compile Include="EFServiecs\Users\ApplicationRoleManager.cs" />
     <Compile Include="EFServiecs\Common\ApplicationSignInManager.cs" />

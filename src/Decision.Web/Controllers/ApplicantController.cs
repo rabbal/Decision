@@ -1,26 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
-using Decision.Common.Controller;
 using Decision.Common.Extentions;
 using Decision.Common.Filters;
 using Decision.Common.Helpers;
-using Decision.Common.Json;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.Common;
 using Decision.ServiceLayer.Contracts.Common;
 using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Users;
-using Decision.ServiceLayer.Security;
 using Decision.ViewModel.Applicant;
-
-using Decision.Web.Extentions;
 using Decision.Web.Filters;
-using MvcSiteMapProvider;
 using MvcSiteMapProvider.Web.Mvc.Filters;
 using Auth = Decision.ServiceLayer.Security.AssignableToRolePermissions;
 namespace Decision.Web.Controllers
@@ -33,8 +24,6 @@ namespace Decision.Web.Controllers
     public partial class ApplicantController : Controller
     {
         #region Fields
-
-
         private const string IranCitiesPath = "~/App_Data/IranCities.xml";
         private readonly IUnitOfWork _unitOfWork;
         private readonly IApplicantService _applicantService;
@@ -110,7 +99,7 @@ namespace Decision.Web.Controllers
             }
 
             _applicantService.Create(viewModel);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveAllChangesAsync(auditUserId:_userManager.GetCurrentUserId());
             this.NotyInformation("متقاضی جدید با موفقیت ثبت شد.");
             return RedirectToAction(MVC.Applicant.Create());
         }
@@ -182,7 +171,7 @@ namespace Decision.Web.Controllers
         [HttpGet]
         [Mvc5Authorize(Auth.CanViewApplicantDetails)]
         [Route("Details/{ApplicantId}")]
-        
+
         [SiteMapTitle("FullName", Target = AttributeTarget.CurrentNode)]
         public virtual async Task<ActionResult> Details(Guid applicantId)
         {
@@ -192,14 +181,12 @@ namespace Decision.Web.Controllers
         }
         #endregion
 
-  
-
         #region RemoteValidations
         [HttpPost]
         [AjaxOnly]
         [Mvc5Authorize(Auth.CanEditApplicant, Auth.CanCreateApplicant)]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        public virtual async Task<JsonResult> IsApplicantBirthCertificateNumberExist(string birthCertificateNumber, Guid? id)
+        public async Task<JsonResult> IsApplicantBirthCertificateNumberExist(string birthCertificateNumber, Guid? id)
         {
             return Json(!await _applicantService.IsApplicantBirthCertificateNumberExist(birthCertificateNumber, id));
         }
@@ -208,11 +195,12 @@ namespace Decision.Web.Controllers
         [AjaxOnly]
         [Mvc5Authorize(Auth.CanEditApplicant, Auth.CanCreateApplicant)]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        public virtual async Task<JsonResult> IsApplicantNationalCodeExist(string nationalCode, Guid? id)
+        public async Task<JsonResult> IsApplicantNationalCodeExist(string nationalCode, Guid? id)
         {
             var validation = nationalCode.IsValidNationalCode();
-            if (!validation) return Json(false);
-            return Json(!await _applicantService.IsApplicantNationalCodeExist(nationalCode, id));
+            return !validation
+                ? Json(false)
+                : Json(!await _applicantService.IsApplicantNationalCodeExist(nationalCode, id));
         }
 
         #endregion
@@ -221,7 +209,7 @@ namespace Decision.Web.Controllers
         [HttpGet]
         [Route("File/{ApplicantId}/{type}")]
         [Mvc5Authorize(Auth.CanViewApplicantDetails)]
-        
+
         public virtual async Task<ActionResult> GetApplicantFile(Guid applicantId, string type)
         {
             var file = await _applicantService.GetApplicantDocument(applicantId, type);

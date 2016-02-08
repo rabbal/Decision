@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using Decision.DomainClasses.Entities.Common;
 
 namespace Decision.ViewModel.Common
 {
@@ -22,17 +23,20 @@ namespace Decision.ViewModel.Common
         /// </summary>
         [DisplayName("حذف شده")]
         public bool IsDeleted { get; set; }
-
         /// <summary>
         /// تاریخ درج
         /// </summary>
         [DisplayName("تاریخ درج")]
-        public DateTime CreateDate { get; set; }
-
+        public DateTime CreatedOn { get; set; }
         /// <summary>
         /// آخرین تاریخ ویرایش
         /// </summary>
         [DisplayName("تاریخ آخرین ویرایش")]
-        public DateTime? LastModifiedDate { get; set; }
+        public DateTime ModifiedOn { get; set; }
+        /// <summary>
+        /// نوع اکشن انجام شده
+        /// </summary>
+        [DisplayName("نوع عملیات")]
+        public AuditAction Action { get; set; }
     }
 }

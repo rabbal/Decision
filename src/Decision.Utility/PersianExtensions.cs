@@ -32,6 +32,10 @@ namespace Decision.Utility
         {
             return data.ToString(CultureInfo.InvariantCulture).GetPersianNumber();
         }
+        public static string GetPersianNumber(this double data)
+        {
+            return string.Format(CultureInfo.InvariantCulture,"{0:0.00}", data).GetPersianNumber();
+        }
         public static string GetPersianNumber(this int data)
         {
             return data.ToString(CultureInfo.InvariantCulture).GetPersianNumber();

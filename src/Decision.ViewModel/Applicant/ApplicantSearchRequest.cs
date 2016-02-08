@@ -12,7 +12,7 @@ namespace Decision.ViewModel.Applicant
     {
         public ApplicantSearchRequest()
         {
-            CurrentSort = ApplicantSortBy.CreateDate;
+            CurrentSort = SortByMode.CreatedOn;
         }
         /// <summary>
         /// آی دی سمت متقاضی
@@ -130,11 +130,7 @@ namespace Decision.ViewModel.Applicant
     }
     public static class ApplicantSortBy
     {
-        public const string FirstName = "FirstName";
-        public const string LastName = "LastName";
-        public const string CollegiateOrder = "CollegiateOrder";
-        public const string OccupationalGroup = "OccupationalGroup";
-        public const string CreateDate = "CreateDate";
-        public const string LastModifiedDate = "LastModifiedDate";
+        public const string FirstName = nameof(FirstName);
+        public const string LastName = nameof(LastName);
     }
 }

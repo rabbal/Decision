@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Decision.ViewModel.Address;
 
-namespace Decision.ServiceLayer.Contracts.Common
+namespace Decision.ServiceLayer.Contracts.ApplicantInfo
 {
     public interface IAddressService
     {

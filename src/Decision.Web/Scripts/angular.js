@@ -20769,8 +20769,8 @@ var inputType = {
      </file>
      </example>
      */
-  'date': createDateInputType('date', DATE_REGEXP,
-         createDateParser(DATE_REGEXP, ['yyyy', 'MM', 'dd']),
+  'date': CreatedOnInputType('date', DATE_REGEXP,
+         CreatedOnParser(DATE_REGEXP, ['yyyy', 'MM', 'dd']),
          'yyyy-MM-dd'),
 
    /**
@@ -20872,8 +20872,8 @@ var inputType = {
     </file>
     </example>
     */
-  'datetime-local': createDateInputType('datetimelocal', DATETIMELOCAL_REGEXP,
-      createDateParser(DATETIMELOCAL_REGEXP, ['yyyy', 'MM', 'dd', 'HH', 'mm', 'ss', 'sss']),
+  'datetime-local': CreatedOnInputType('datetimelocal', DATETIMELOCAL_REGEXP,
+      CreatedOnParser(DATETIMELOCAL_REGEXP, ['yyyy', 'MM', 'dd', 'HH', 'mm', 'ss', 'sss']),
       'yyyy-MM-ddTHH:mm:ss.sss'),
 
   /**
@@ -20976,8 +20976,8 @@ var inputType = {
    </file>
    </example>
    */
-  'time': createDateInputType('time', TIME_REGEXP,
-      createDateParser(TIME_REGEXP, ['HH', 'mm', 'ss', 'sss']),
+  'time': CreatedOnInputType('time', TIME_REGEXP,
+      CreatedOnParser(TIME_REGEXP, ['HH', 'mm', 'ss', 'sss']),
      'HH:mm:ss.sss'),
 
    /**
@@ -21081,7 +21081,7 @@ var inputType = {
     </file>
     </example>
     */
-  'week': createDateInputType('week', WEEK_REGEXP, weekParser, 'yyyy-Www'),
+  'week': CreatedOnInputType('week', WEEK_REGEXP, weekParser, 'yyyy-Www'),
 
   /**
    * @ngdoc input
@@ -21185,8 +21185,8 @@ var inputType = {
    </file>
    </example>
    */
-  'month': createDateInputType('month', MONTH_REGEXP,
-     createDateParser(MONTH_REGEXP, ['yyyy', 'MM']),
+  'month': CreatedOnInputType('month', MONTH_REGEXP,
+     CreatedOnParser(MONTH_REGEXP, ['yyyy', 'MM']),
      'yyyy-MM'),
 
   /**
@@ -21759,7 +21759,7 @@ function weekParser(isoWeek, existingDate) {
   return NaN;
 }
 
-function createDateParser(regexp, mapping) {
+function CreatedOnParser(regexp, mapping) {
   return function(iso, date) {
     var parts, map;
 
@@ -21809,7 +21809,7 @@ function createDateParser(regexp, mapping) {
   };
 }
 
-function createDateInputType(type, regexp, parseDate, format) {
+function CreatedOnInputType(type, regexp, parseDate, format) {
   return function dynamicDateInputType(scope, element, attr, ctrl, $sniffer, $browser, $filter) {
     badInputChecker(scope, element, attr, ctrl);
     baseInputType(scope, element, attr, ctrl, $sniffer, $browser);

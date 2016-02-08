@@ -777,189 +777,34 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</small>\r\n                            </div>\r\n                        </div>\r\n   " +
 "                 </div>\r\n                </div>\r\n\r\n            </div>\r\n        <" +
-"/div>\r\n        <hr>\r\n        <div");
-
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                <i");
-
-WriteLiteral(" class=\"fa fa-check-square-o text-success\"");
-
-WriteLiteral("></i>\r\n                <small");
-
-WriteLiteral(" class=\"text-muted\"");
-
-WriteLiteral(">ثبت شده توسط:</small>\r\n                <small>");
+"/div>\r\n");
 
             
-            #line 201 "..\..\Views\Applicant\Details.cshtml"
-                  Write(Model.CreatorUserName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</small><br>\r\n                <i");
-
-WriteLiteral(" class=\"fa fa-calendar-o\"");
-
-WriteLiteral("></i>\r\n                <small>در :</small>\r\n                <time>");
-
-            
-            #line 204 "..\..\Views\Applicant\Details.cshtml"
-                 Write(Model.CreateDate.ToPersianString(PersianDateTimeFormat.Date));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</time>\r\n                <i");
-
-WriteLiteral(" class=\"fa fa-clock-o \"");
-
-WriteLiteral("></i>\r\n                <time>");
-
-            
-            #line 206 "..\..\Views\Applicant\Details.cshtml"
-                 Write(Model.CreateDate.ToPersianTimeString());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</time>\r\n            </div>\r\n");
-
-            
-            #line 208 "..\..\Views\Applicant\Details.cshtml"
-            
+            #line 196 "..\..\Views\Applicant\Details.cshtml"
+        
             
             #line default
             #line hidden
             
-            #line 208 "..\..\Views\Applicant\Details.cshtml"
-             if (Model.LastModifierUserName.HasValue())
-            {
-
+            #line 196 "..\..\Views\Applicant\Details.cshtml"
+          Html.RenderPartial(MVC.Shared.Views._AuditLog, Model);
             
             #line default
             #line hidden
-WriteLiteral("                <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                    <i");
-
-WriteLiteral(" class=\"fa fa-edit text-info\"");
-
-WriteLiteral("></i>\r\n                    <small");
-
-WriteLiteral(" class=\"text-muted\"");
-
-WriteLiteral(">ویرایش شده توسط:</small>\r\n                    <small>");
-
-            
-            #line 213 "..\..\Views\Applicant\Details.cshtml"
-                      Write(Model.LastModifierUserName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</small><br>\r\n                    <i");
-
-WriteLiteral(" class=\"fa fa-calendar-o\"");
-
-WriteLiteral("></i>\r\n                    <small>در :</small>\r\n                    <time>");
-
-            
-            #line 216 "..\..\Views\Applicant\Details.cshtml"
-                     Write(Model.LastModifiedDate.ToPersianString(PersianDateTimeFormat.Date));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</time>\r\n                    <i");
-
-WriteLiteral(" class=\"fa fa-clock-o\"");
-
-WriteLiteral("></i>\r\n                    <time>");
-
-            
-            #line 218 "..\..\Views\Applicant\Details.cshtml"
-                     Write(Model.LastModifiedDate.ToPersianTimeString());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</time>\r\n                </div>\r\n");
-
-            
-            #line 220 "..\..\Views\Applicant\Details.cshtml"
-            }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("         \r\n");
-
-            
-            #line 222 "..\..\Views\Applicant\Details.cshtml"
-            
-            
-            #line default
-            #line hidden
-            
-            #line 222 "..\..\Views\Applicant\Details.cshtml"
-             if (Model.IsApproved)
-            {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("            <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                <i");
-
-WriteLiteral(" class=\"fa fa-check text-info\"");
-
-WriteLiteral("></i>\r\n                <small");
-
-WriteLiteral(" class=\"text-muted\"");
-
-WriteLiteral(">تأیید شده توسط:</small>\r\n                <small>");
-
-            
-            #line 227 "..\..\Views\Applicant\Details.cshtml"
-                  Write(Model.ApproveByName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</small><br>\r\n            </div>\r\n");
-
-            
-            #line 229 "..\..\Views\Applicant\Details.cshtml"
-            }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n\r\n");
+WriteLiteral("\r\n    </div>\r\n\r\n</div>\r\n\r\n");
 
 DefineSection("Menu", () => {
 
 WriteLiteral("\r\n");
 
             
-            #line 237 "..\..\Views\Applicant\Details.cshtml"
+            #line 202 "..\..\Views\Applicant\Details.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 237 "..\..\Views\Applicant\Details.cshtml"
+            #line 202 "..\..\Views\Applicant\Details.cshtml"
       Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder,Model.Id);
             
             #line default

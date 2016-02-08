@@ -27,6 +27,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
+    using Decision.Common.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -63,7 +64,7 @@ WriteLiteral(" class=\"row\"");
 
 WriteLiteral(">\r\n    <div");
 
-WriteLiteral(" class=\"col-md-4 asyncLoad\"");
+WriteLiteral(" class=\"col-md-4\"");
 
 WriteLiteral(" id=\"TopScoreApplicants\"");
 
@@ -81,21 +82,21 @@ WriteLiteral(" style=\"display: none\"");
 
 WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 317), Tuple.Create("\"", 367)
+WriteAttribute("src", Tuple.Create(" src=\"", 307), Tuple.Create("\"", 357)
             
             #line 10 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 323), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
+, Tuple.Create(Tuple.Create("", 313), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
             
             #line default
             #line hidden
-, 323), false)
+, 313), false)
 );
 
 WriteLiteral(" alt=\"loading...\"");
 
 WriteLiteral(" />\r\n        </div>\r\n    </div>\r\n\r\n    <div");
 
-WriteLiteral(" class=\"col-md-4 asyncLoad\"");
+WriteLiteral(" class=\"col-md-4\"");
 
 WriteLiteral(" id=\"NewAddedApplicants\"");
 
@@ -113,14 +114,14 @@ WriteLiteral(" style=\"display: none\"");
 
 WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 616), Tuple.Create("\"", 666)
+WriteAttribute("src", Tuple.Create(" src=\"", 596), Tuple.Create("\"", 646)
             
             #line 16 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 622), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
+, Tuple.Create(Tuple.Create("", 602), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
             
             #line default
             #line hidden
-, 622), false)
+, 602), false)
 );
 
 WriteLiteral(" alt=\"loading...\"");

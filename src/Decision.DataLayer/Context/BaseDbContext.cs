@@ -120,6 +120,7 @@ namespace Decision.DataLayer.Context
                 switch (entry.State)
                 {
                     case EntityState.Added:
+                        entry.Entity.Id = SequentialGuidGenerator.NewSequentialGuid();
                         entry.Entity.CreatedOn = auditDate;
                         entry.Entity.CreatedById = auditUserId;
                         entry.Entity.ModifiedOn = auditDate;

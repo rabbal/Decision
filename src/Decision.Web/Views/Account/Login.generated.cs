@@ -35,12 +35,6 @@ namespace ASP
     #line hidden
     
     #line 2 "..\..\Views\Account\Login.cshtml"
-    using Decision.Common.Helpers;
-    
-    #line default
-    #line hidden
-    
-    #line 3 "..\..\Views\Account\Login.cshtml"
     using Decision.Common.HtmlHelpers;
     
     #line default
@@ -60,7 +54,7 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 5 "..\..\Views\Account\Login.cshtml"
+            #line 4 "..\..\Views\Account\Login.cshtml"
   
     ViewBag.Title = "ورود به سیستم";
 
@@ -74,13 +68,13 @@ WriteLiteral(" class=\"row margin-top-5\"");
 WriteLiteral(">\r\n");
 
             
-            #line 9 "..\..\Views\Account\Login.cshtml"
+            #line 8 "..\..\Views\Account\Login.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 9 "..\..\Views\Account\Login.cshtml"
+            #line 8 "..\..\Views\Account\Login.cshtml"
      using (Html.BeginForm(MVC.Account.Login((string)ViewBag.ReturnUrl), FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", role = "form", id = "loginForm", autocomplete = "off" }))
     {
         
@@ -88,14 +82,14 @@ WriteLiteral(">\r\n");
             #line default
             #line hidden
             
-            #line 11 "..\..\Views\Account\Login.cshtml"
+            #line 10 "..\..\Views\Account\Login.cshtml"
    Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 11 "..\..\Views\Account\Login.cshtml"
+            #line 10 "..\..\Views\Account\Login.cshtml"
                                 
 
             
@@ -118,7 +112,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 15 "..\..\Views\Account\Login.cshtml"
+            #line 14 "..\..\Views\Account\Login.cshtml"
                Write(Html.HelpAlert(Url.Content("~/Content/Images/lightbulb.png"),
                     "کاربر گرامی بعد از ورود به حساب کاربری خود ، خواهید توانست از امکانات سیستم بهره مند شوید."));
 
@@ -138,7 +132,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 20 "..\..\Views\Account\Login.cshtml"
+            #line 19 "..\..\Views\Account\Login.cshtml"
                    Write(Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" }));
 
             
@@ -153,7 +147,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 22 "..\..\Views\Account\Login.cshtml"
+            #line 21 "..\..\Views\Account\Login.cshtml"
                        Write(Html.NoAutoCompleteTextBoxForLtr(m => m.UserName));
 
             
@@ -164,7 +158,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 23 "..\..\Views\Account\Login.cshtml"
+            #line 22 "..\..\Views\Account\Login.cshtml"
                        Write(Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" }));
 
             
@@ -180,7 +174,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 27 "..\..\Views\Account\Login.cshtml"
+            #line 26 "..\..\Views\Account\Login.cshtml"
                    Write(Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" }));
 
             
@@ -195,7 +189,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 29 "..\..\Views\Account\Login.cshtml"
+            #line 28 "..\..\Views\Account\Login.cshtml"
                        Write(Html.FormControlPasswordFor(m => m.Password));
 
             
@@ -206,7 +200,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 30 "..\..\Views\Account\Login.cshtml"
+            #line 29 "..\..\Views\Account\Login.cshtml"
                        Write(Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" }));
 
             
@@ -226,7 +220,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 35 "..\..\Views\Account\Login.cshtml"
+            #line 34 "..\..\Views\Account\Login.cshtml"
                        Write(Html.CheckBoxFor(m => m.RememberMe, new { @class = "checkbox-inline" }));
 
             
@@ -237,7 +231,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 36 "..\..\Views\Account\Login.cshtml"
+            #line 35 "..\..\Views\Account\Login.cshtml"
                        Write(Html.LabelFor(m => m.RememberMe, new { @class = "control-label" }));
 
             
@@ -253,7 +247,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 40 "..\..\Views\Account\Login.cshtml"
+            #line 39 "..\..\Views\Account\Login.cshtml"
                    Write(Html.MathCaptcha(MVC.Shared.Views._CaptchaPartial));
 
             
@@ -269,7 +263,7 @@ WriteLiteral(" type=\"button\"");
 
 WriteLiteral(" autocomplete=\"off\"");
 
-WriteLiteral(" onclick=\" AjaxForm.CustomSubmit(this, \'loginForm\')\"");
+WriteLiteral(" onclick=\"AjaxForm.CustomSubmit(this, \'loginForm\')\"");
 
 WriteLiteral(" data-loading-text=\"در حال ارسال اطلاعات\"");
 
@@ -279,7 +273,7 @@ WriteLiteral(">\r\n                        ورو به حساب کاربری\r\n
 "               </div>\r\n            </div>\r\n        </div>\r\n");
 
             
-            #line 51 "..\..\Views\Account\Login.cshtml"
+            #line 50 "..\..\Views\Account\Login.cshtml"
     }
 
             
@@ -294,7 +288,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 54 "..\..\Views\Account\Login.cshtml"
+            #line 53 "..\..\Views\Account\Login.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             

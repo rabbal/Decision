@@ -1,9 +1,10 @@
 ﻿using System;
+using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Common;
 
 namespace Decision.ViewModel.Applicant
 {
-    public class ApplicantViewModel :BaseViewModel
+    public class ApplicantViewModel : BaseViewModel
     {
         #region Properties
 
@@ -11,79 +12,88 @@ namespace Decision.ViewModel.Applicant
         /// <summary>
         /// نام متقاضی
         /// </summary>
-        public  string FullName { get; set; }
+        public string FullName { get; set; }
         /// <summary>
         /// تاریخ تولد متقاضی
         /// </summary>
-        public  DateTime BirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
         /// <summary>
         /// کد ملی متقاضی
         /// </summary>
-        public  string NationalCode { get; set; }
+        public string NationalCode { get; set; }
         /// <summary>
         /// شماره شناسنامه متقاضی
         /// </summary>
-        public  string BirthCertificateNumber { get; set; }
-        /// <summary>
-        /// پایه متقاضی
-        /// </summary>
-        public  int CollegiateOrder { get; set; }
-        /// <summary>
-        /// گروه شغلی متقاضی
-        /// </summary>
-        public  int OccupationalGroup { get; set; }
-        /// <summary>
-        /// لباس آخوندی پوشیده است یا خیر؟
-        /// </summary>
-        public  bool IsClothed { get; set; }
-        /// <summary>
-        /// معدل کار آموزی
-        /// </summary>
-        public  decimal TrainingGPA { get; set; }
-        /// <summary>
-        /// رتبه کارآموزی
-        /// </summary>
-        public  int TrainigGrade { get; set; }
+        public string BirthCertificateNumber { get; set; }
         /// <summary>
         ///  عکس متقاضی
         /// </summary>
-        public  byte[] Photo { get; set; }
-        /// <summary>
-        /// سنوات اداری
-        /// </summary>
-        public  int OfficialYears { get; set; }
-        /// <summary>
-        /// سنوات
-        /// </summary>
-        public  int CollegiateYears { get; set; }
-        /// <summary>
-        /// متقاضی برای ویرایش ، به یک کاربر دیگر ارجاع  داده شده است؟
-        /// </summary>
-        public  bool IsInReference { get; set; }
-        /// <summary>
-        /// آیا متقاضی توسط یکی از مدیران تایید شده است؟
-        /// </summary>
-        public  bool IsApproved { get; set; }
+        public byte[] Photo { get; set; }
+
         /// <summary>
         /// شهر محل تولد
         /// </summary>
-        public  string BirthPlaceCity { get; set; }
+        public string BirthPlaceCity { get; set; }
         /// <summary>
         /// استان محل تولد
         /// </summary>
-        public  string BirthPlaceState { get; set; }
+        public string BirthPlaceState { get; set; }
         /// <summary>
-        /// کد پرسنلی
+        /// نام پدر
         /// </summary>
-        public string PersonnelCode { get; set; }
+        public string FatherName { get; set; }
         /// <summary>
-        /// سمت متقاضی
+        /// مذهب
         /// </summary>
-        public  string PositionName { get; set; }
+        public string Gilder { get; set; }
         /// <summary>
-        /// نام کاربری مدیری که نگارش این متقاضی را تایید  کرده است
+        /// ملیت
         /// </summary>
-        public  string  ApproveByName { get; set; }
-        #endregion
+        public string Nationality { get; set; }
+        /// <summary>
+        /// شماره تلفن ثابت
+        /// </summary>
+        public string PhoneNumber { get; set; }
+        /// <summary>
+        /// آدرس ایمیل
+        /// </summary>
+        public string Email { get; set; }
+        /// <summary>
+        /// تلفن همراه
+        /// </summary>
+        public string CellphoneNumber { get; set; }
+        /// <summary>
+        /// شماره تلفن ضروری
+        /// </summary>
+        public string NumberIndispensable { get; set; }
+        /// <summary>
+        /// وضعیت نظام وظیفه
+        /// </summary>
+        public MilitaryStatus MilitaryStatus { get; set; }
+        /// <summary>
+        /// تاریخ پایان خدمت
+        /// </summary>
+        public DateTime? ServedEndOn { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public MembershipType MembershipType { get; set; }
+        /// <summary>
+        /// وضعیت تأهل متقاضی
+        /// </summary>
+        public MarriageStatus MarriageStatus { get; set; }
+        /// <summary>
+        /// جنسیت متقاضی
+        /// </summary>
+        public GenderType Gender { get; set; }
+        /// <summary>
+        /// کل شهرت متقاضی
+        /// </summary>
+        public double TotalReputation { get; set; }
+        /// <summary>
+        /// وضعیت رسیدگی
+        /// </summary>
+        public ApplicantStatus Status { get; set; }
+        #endregion 
     }
 }

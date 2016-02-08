@@ -14,7 +14,7 @@ namespace Decision.DomainClasses.Configurations.Users
         public UserRoleConfig()
         {
             HasKey(r => new { r.UserId, r.RoleId });
-            ToTable("UserRole");
+            ToTable(nameof(UserRole));
         }
     }
 }

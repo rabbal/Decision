@@ -14,18 +14,12 @@ namespace Decision.ViewModel.Applicant
     /// </summary>
     public class AddApplicantViewModel
     {
-
         #region Ctor
 
         public AddApplicantViewModel()
         {
             CitiesForBirthPlace = new List<SelectListItem>();
-            CitiesForTrainingCeneter = new List<SelectListItem>();
-            TrainingCenters = new List<SelectListItem>();
-            TrainingCourses = new List<SelectListItem>();
             BirthDate = DateTime.Now;
-            BankName = "ملی";
-            CollegiateOrder = OccupationalGroup = 1;
         }
         #endregion
 
@@ -51,7 +45,6 @@ namespace Decision.ViewModel.Applicant
         /// </summary>
         [DisplayName("تاریخ تولد")]
         [Required(ErrorMessage = "لطفا تاریخ تولد را مشخش  کنید")]
-
         public DateTime BirthDate { get; set; }
         /// <summary>
         /// کد ملی متقاضی
@@ -59,7 +52,7 @@ namespace Decision.ViewModel.Applicant
         [Required(ErrorMessage = "لطفا کد ملی را وارد کنید")]
         [DisplayName("کد ملی")]
         [StringLength(10, MinimumLength = 10, ErrorMessage = "کد ملی وارد شده صحیح نمی باشد")]
-        [Remote("IsApplicantNationalCodeExist", "Applicant", "Administrator", ErrorMessage = "یک متقاضی با این کد ملی قبلا در سیستم ثبت شده است", HttpMethod = "POST")]
+        [Remote("IsApplicantNationalCodeExist", nameof(Applicant), "Administrator", ErrorMessage = "یک متقاضی با این کد ملی قبلا در سیستم ثبت شده است", HttpMethod = "POST")]
         public string NationalCode { get; set; }
         /// <summary>
         /// شماره شناسنامه متقاضی
@@ -69,74 +62,17 @@ namespace Decision.ViewModel.Applicant
         [StringLength(50, ErrorMessage = "شماره شناسنامه باید کمتر از ۵۰ کاراکتر باشد")]
         public string BirthCertificateNumber { get; set; }
         /// <summary>
-        /// پایه متقاضی
-        /// </summary>
-        [DisplayName("پایه")]
-        [Required(ErrorMessage = "لطفا پایه را وارد کنید")]
-        [Range(1, 15, ErrorMessage = "پایه عددی در بازه [۱-۱۵] میباشد")]
-        public int CollegiateOrder { get; set; }
-        /// <summary>
-        /// گروه شغلی متقاضی
-        /// </summary>
-        [DisplayName("گروه شغلی")]
-        [Required(ErrorMessage = "لطفا گروه شغلی را مشخص کنید")]
-        [Range(1, 15, ErrorMessage = "گروه شغلی  عددی در بازه [۱-۱۵] میباشد")]
-        public int OccupationalGroup { get; set; }
-        /// <summary>
         /// وضعیت تأهل متقاضی
         /// </summary>
         [DisplayName("وضعیت تأهل")]
         [Required(ErrorMessage = "لطفا وضعیت تأهل متقاضی را مشخص کنید")]
         public MarriageStatus MarriageStatus { get; set; }
         /// <summary>
-        /// نام یک بانکی که متقاضی در آن حساب دارد
-        /// </summary>
-        [Required(ErrorMessage = "لطفا نام بانک را وارد کنید")]
-        [StringLength(256, MinimumLength = 3, ErrorMessage = "نام بانک باید بین سه تا ۲۵۶ کاراکتر باشد")]
-        [DisplayName("نام بانک")]
-        public string BankName { get; set; }
-        /// <summary>
-        /// نام یک شعبه ای از بانک معرفی شده که متقاضی در آن حساب دارد
-        /// </summary>
-
-        [StringLength(256, ErrorMessage = "نام شعبه بانک باید بین سه تا ۲۵۶ کاراکتر باشد")]
-        [DisplayName("نام شعبه بانک")]
-        public string BankBranch { get; set; }
-        /// <summary>
-        /// شماره حساب متقاضی در شعبه مربوطه
-        /// </summary>
-        [StringLength(256, MinimumLength = 3, ErrorMessage = "شماره حساب باید بین سه تا ۲۵۶ کاراکتر باشد")]
-        [DisplayName("شماره حساب")]
-        public string AccountNumber { get; set; }
-        /// <summary>
-        /// لباس آخوندی پوشیده است یا خیر؟
-        /// </summary>
-        [DisplayName("ملبس")]
-        public bool IsClothed { get; set; }
-        /// <summary>
-        /// سمت متقاضی
-        /// </summary>
-        [DisplayName("سمت متقاضی")]
-        public Guid? PositionId { get; set; }
-        /// <summary>
         /// جنسیت متقاضی
         /// </summary>
         [DisplayName("جنسیت")]
         [Required(ErrorMessage = "لطفا جنسیت متقاضی را مشخص کنید")]
         public GenderType Gender { get; set; }
-        /// <summary>
-        /// معدل کار آموزی
-        /// </summary>
-        [DisplayName("معدل کار آموزی")]
-        [Required(ErrorMessage = "لطفا معدل کارآموزی را وارد کنید")]
-        [Range(0.00,20.00, ErrorMessage = "معدل کارآموزی میبایست بین صفر تا ۲۰ باشد")]
-        public decimal TrainingGPA { get; set; }
-        /// <summary>
-        /// رتبه کارآموزی
-        /// </summary>
-        [DisplayName("رتبه کارآموزی")]
-        [Required(ErrorMessage = "لطفا رتبه کارآموزی را وارد کنید")]
-        public int TrainigGrade { get; set; }
         /// <summary>
         ///  عکس متقاضی اسکن شده متقاضی
         /// </summary>
@@ -165,42 +101,84 @@ namespace Decision.ViewModel.Applicant
         /// </summary>
         public string CopyOfBirthCertificateScan { get; set; }
         /// <summary>
-        /// سنوات اداری
-        /// </summary>
-        [DisplayName("سنوات اداری")]
-        [Required(ErrorMessage = "لطفا سنوات اداری را  وارد کنید")]
-        public int OfficialYears { get; set; }
-        /// <summary>
-        /// سنوات
-        /// </summary>
-        [DisplayName("سنوات")]
-        [Required(ErrorMessage = "لطفا سنوات را وارد کنید")]
-        public int CollegiateYears { get; set; }
-
-        /// <summary>
-        /// آی دی دوره  کارآموزی ای که  متقاضی شرکت کرده
-        /// </summary>
-        [DisplayName("دوره کارآموزی")]
-        public Guid? TrainingCourseId { get; set; }
-        /// <summary>
         /// شهر محل تولد
         /// </summary>
         [DisplayName("شهر محل تولد")]
-
-        public  string BirthPlaceCity { get; set; }
+        public string BirthPlaceCity { get; set; }
         /// <summary>
         /// استان محل تولد
         /// </summary>
         [DisplayName("استان محل تولد")]
-
-        public  string BirthPlaceState { get; set; }
+        public string BirthPlaceState { get; set; }
         /// <summary>
-        /// کد پرسنلی
+        /// نام پدر
         /// </summary>
-        [Required(ErrorMessage = "لطفا کد پرسنلی  را وارد کنید")]
-        [StringLength(50, ErrorMessage = "کد پرسنلی نباید بیشتر از ۵۰  کاراکتر باشد")]
-        [DisplayName("کد پرسنلی")]
-        public string PersonnelCode { get; set; }
+        [DisplayName("نام پدر")]
+        [Required(ErrorMessage = "لطفا نام پدر متقاضی را وارد کنید")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "نام خانوادگی باید بین سه تا ۵۰ کاراکتر باشد")]
+        [RegularExpression(@"^[\u0600-\u06FF,\u0590-\u05FF,۰-۹\s]*$", ErrorMessage = "لطفا فقط ازاعداد و حروف  فارسی برای نام پدر متقاضی استفاده کنید")]
+        public string FatherName { get; set; }
+        /// <summary>
+        /// مذهب
+        /// </summary>
+        [DisplayName("مذهب")]
+        [Required(ErrorMessage = "لطفا مذهب متقاضی را وارد کنید")]
+        [StringLength(20, ErrorMessage = "مذهب متقاضی نباید بیش از20 کاراکتر باشد")]
+        [RegularExpression(@"^[\u0600-\u06FF,\u0590-\u05FF,۰-۹\s]*$", ErrorMessage = "لطفا فقط ازاعداد و حروف  فارسی برای مذهب متقاضی استفاده کنید")]
+        public string Gilder { get; set; }
+        /// <summary>
+        /// ملیت
+        /// </summary>
+        [DisplayName("ملیت")]
+        [Required(ErrorMessage = "لطفا ملیت متقاضی را وارد کنید")]
+        [StringLength(20, ErrorMessage = "ملیت متقاضی نباید بیش از20 کاراکتر باشد")]
+        [RegularExpression(@"^[\u0600-\u06FF,\u0590-\u05FF,۰-۹\s]*$", ErrorMessage = "لطفا فقط ازاعداد و حروف  فارسی برای ملیت متقاضی استفاده کنید")]
+        public string Nationality { get; set; }
+        /// <summary>
+        /// شماره تلفن ثابت
+        /// </summary>
+        [DisplayName("شماره تلفن ثابت")]
+        [Required(ErrorMessage = "لطفا شماره تلفن ثابت متقاضی را وارد کنید")]
+        public string PhoneNumber { get; set; }
+        /// <summary>
+        /// آدرس ایمیل
+        /// </summary>
+        [Required(ErrorMessage = "لطفا ایمیل متقاضی را وارد کنید")]
+        [EmailAddress(ErrorMessage = "ایمیل را به شکل صحیح وارد کنید")]
+        [DisplayName("ایمیل")]
+        [StringLength(256, ErrorMessage = "حداکثر طول ایمیل 256 حرف است")]
+       // [Remote("IsEmailExist", nameof(Applicant), "", ErrorMessage = "این ایمیل قبلا در سیستم ثبت شده است", HttpMethod = "POST")]
+        public string Email { get; set; }
+        /// <summary>
+        /// تلفن همراه
+        /// </summary>
+        [DisplayName("شماره همراه")]
+        [Required(ErrorMessage = "لطفا شماره همراه متقاضی را وارد کنید")]
+        [RegularExpression("09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}", ErrorMessage = "لطفا شماره همراه را به شکل صحیح وارد کنید")]
+        public string CellphoneNumber { get; set; }
+        /// <summary>
+        /// شماره تلفن ضروری
+        /// </summary>
+        [DisplayName("شماره تلفن ضروری")]
+        [Required(ErrorMessage = "لطفا برای مواقع ضروری یک شماره تلفن وارد کنید")]
+        public string NumberIndispensable { get; set; }
+        /// <summary>
+        /// وضعیت نظام وظیفه
+        /// </summary>
+        [DisplayName("وضیعت نظام وظیفه")]
+        [Required(ErrorMessage = "لطفا وضعیت نظام وظیفه متقاضی را مشخص کنید")]
+        public MilitaryStatus MilitaryStatus { get; set; }
+        /// <summary>
+        /// تاریخ پایان خدمت
+        /// </summary>
+        [DisplayName("تاریخ پایان خدمت")]
+        public DateTime? ServedEndOn { get; set; }
+        /// <summary>
+        /// نوع عضویت
+        /// </summary>
+        [DisplayName("نوع عضویت")]
+        [Required(ErrorMessage = "لطفا نوع عضویت متقاضی را مشخص کنید")]
+        public MembershipType MembershipType { get; set; }
         #endregion
 
         #region SelectListItems
@@ -212,42 +190,8 @@ namespace Decision.ViewModel.Applicant
         /// لیست شهر ها برای محل تولد
         /// </summary>
         public IEnumerable<SelectListItem> CitiesForBirthPlace { get; set; }
-        /// <summary>
-        /// لیست استان ها برای مرکز کارآموزی
-        /// </summary>
-        public IEnumerable<SelectListItem> StatesForTrainingCeneter { get; set; }
-        /// <summary>
-        /// لیست شهر ها برای مرکز کارآموزی
-        /// </summary>
-        public IEnumerable<SelectListItem> CitiesForTrainingCeneter { get; set; }
-        /// <summary>
-        /// لیست مراکز کارآموزی برای لیست آبشاری در ویو
-        /// </summary>
-        public IEnumerable<SelectListItem> TrainingCenters { get; set; }
-        /// <summary>
-        /// لیست سمت ها برای لیست آبشاری در ویو
-        /// </summary>
-        public IEnumerable<SelectListItem> Positions { get; set; }
-        /// <summary>
-        /// لیست دوره ها
-        /// </summary>
-        public IEnumerable<SelectListItem> TrainingCourses { get; set; }
-
-        /// <summary>
-        /// آی دی مرکز کارآموزی مربوط به دوره کارآموزی متقاضی
-        /// </summary>
-        [DisplayName("مرکز کارآموزی")]
-        public  Guid? TrainingCenterId { get; set; }
-        /// <summary>
-        /// آی دی شهر مربوط به مرکز کارآموزی ای که متقاضی در آن دوره دیده
-        /// </summary>
-        [DisplayName("شهر محل کارآموزی")]
-        public  string TrainingCenterCity { get; set; }
-        /// <summary>
-        /// آی دی استان مربوط به مرکز کارآموزی ای که متقاضی در آن دوره دیده
-        /// </summary>
-        [DisplayName("استان محل کارآموزی")]
-        public  string TrainingCenterState { get; set; }
         #endregion
+
+
     }
 }

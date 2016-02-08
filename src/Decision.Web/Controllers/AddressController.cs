@@ -16,6 +16,8 @@ using Decision.Web.Extentions;
 using Decision.Web.Filters;
 using MvcSiteMapProvider;
 using Decision.Common.Extentions;
+using Decision.ServiceLayer.Contracts.Users;
+
 namespace Decision.Web.Controllers
 {
 
@@ -25,17 +27,19 @@ namespace Decision.Web.Controllers
     public partial class AddressController : Controller
     {
         #region	Fields
-
+        
         private const string IranCitiesPath = "~/App_Data/IranCities.xml";
         private readonly IUnitOfWork _unitOfWork;
         private readonly IAddressService _addressService;
+        private readonly IApplicationUserManager _userManager;
         #endregion
 
         #region	Ctor
-        public AddressController(IUnitOfWork unitOfWork, IAddressService addressService)
+        public AddressController(IUnitOfWork unitOfWork, IAddressService addressService,IApplicationUserManager userManager)
         {
             _unitOfWork = unitOfWork;
             _addressService = addressService;
+            _userManager = userManager;
 
         }
         #endregion
@@ -141,7 +145,7 @@ namespace Decision.Web.Controllers
                 };
             }
             await _addressService.EditAsync(viewModel);
-            await _unitOfWork.SaveAllChangesAsync();
+            await _unitOfWork.SaveAllChangesAsync(auditUserId: _userManager.GetCurrentUserId());
 
             if (ModelState.IsValid)
             {

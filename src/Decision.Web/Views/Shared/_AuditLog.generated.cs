@@ -33,7 +33,7 @@ namespace ASP
     
     #line default
     #line hidden
-    
+    using Decision.Common.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -85,7 +85,7 @@ WriteLiteral("></i>\r\n        <small>در :</small>\r\n        <time>");
 
             
             #line 11 "..\..\Views\Shared\_AuditLog.cshtml"
-         Write(Model.CreateDate.ToPersianString(PersianDateTimeFormat.Date));
+         Write(Model.CreatedOn.ToPersianString(PersianDateTimeFormat.Date));
 
             
             #line default
@@ -98,84 +98,80 @@ WriteLiteral("></i>\r\n        <time>");
 
             
             #line 13 "..\..\Views\Shared\_AuditLog.cshtml"
-         Write(Model.CreateDate.ToPersianTimeString());
+         Write(Model.CreatedOn.ToPersianTimeString());
 
             
             #line default
             #line hidden
-WriteLiteral("</time>\r\n    </div>\r\n");
-
-            
-            #line 15 "..\..\Views\Shared\_AuditLog.cshtml"
-    
-            
-            #line default
-            #line hidden
-            
-            #line 15 "..\..\Views\Shared\_AuditLog.cshtml"
-     if (Model.LastModifierUserName.HasValue())
-    {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("        <div");
+WriteLiteral("</time>\r\n    </div>\r\n    <div");
 
 WriteLiteral(" class=\"col-md-3\"");
 
-WriteLiteral(">\r\n            <i");
+WriteLiteral(">\r\n        <i");
 
 WriteLiteral(" class=\"fa fa-edit text-info\"");
 
-WriteLiteral("></i>\r\n            <small");
+WriteLiteral("></i>\r\n        <small");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">ویرایش شده توسط:</small>\r\n            <small>");
+WriteLiteral(">ویرایش شده توسط:</small>\r\n        <small>");
 
             
-            #line 20 "..\..\Views\Shared\_AuditLog.cshtml"
-              Write(Model.LastModifierUserName);
+            #line 18 "..\..\Views\Shared\_AuditLog.cshtml"
+          Write(Model.LastModifierUserName);
 
             
             #line default
             #line hidden
-WriteLiteral("</small><br>\r\n            <i");
+WriteLiteral("</small><br>\r\n        <i");
 
 WriteLiteral(" class=\"fa fa-calendar-o\"");
 
-WriteLiteral("></i>\r\n            <small>در :</small>\r\n            <time>");
+WriteLiteral("></i>\r\n        <small>در :</small>\r\n        <time>");
 
             
-            #line 23 "..\..\Views\Shared\_AuditLog.cshtml"
-             Write(Model.LastModifiedDate.ToPersianString(PersianDateTimeFormat.Date));
+            #line 21 "..\..\Views\Shared\_AuditLog.cshtml"
+         Write(Model.ModifiedOn.ToPersianString(PersianDateTimeFormat.Date));
 
             
             #line default
             #line hidden
-WriteLiteral("</time>\r\n            <i");
+WriteLiteral("</time>\r\n        <i");
 
 WriteLiteral(" class=\"fa fa-clock-o\"");
 
-WriteLiteral("></i>\r\n            <time>");
+WriteLiteral("></i>\r\n        <time>");
 
             
-            #line 25 "..\..\Views\Shared\_AuditLog.cshtml"
-             Write(Model.LastModifiedDate.ToPersianTimeString());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</time>\r\n        </div>\r\n");
-
-            
-            #line 27 "..\..\Views\Shared\_AuditLog.cshtml"
-    }
+            #line 23 "..\..\Views\Shared\_AuditLog.cshtml"
+         Write(Model.ModifiedOn.ToPersianTimeString());
 
             
             #line default
             #line hidden
-WriteLiteral("   \r\n</div>\r\n");
+WriteLiteral("</time>\r\n    </div>\r\n    <div");
+
+WriteLiteral(" class=\"col-md-3\"");
+
+WriteLiteral(">\r\n        <i");
+
+WriteLiteral(" class=\"fa fa-edit text-info\"");
+
+WriteLiteral("></i>\r\n        <small");
+
+WriteLiteral(" class=\"text-muted\"");
+
+WriteLiteral(">نوع علمیات:</small>\r\n        <small>");
+
+            
+            #line 28 "..\..\Views\Shared\_AuditLog.cshtml"
+          Write(Html.DisplayFor(a=>a.Action));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small><br>\r\n    </div>\r\n</div>\r\n");
 
         }
     }

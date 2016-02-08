@@ -40,6 +40,7 @@ public static partial class MVC
     public static Decision.Web.Controllers.ErrorController Error = new Decision.Web.Controllers.T4MVC_ErrorController();
     public static Decision.Web.Controllers.HomeController Home = new Decision.Web.Controllers.T4MVC_HomeController();
     public static Decision.Web.Controllers.InterviewController Interview = new Decision.Web.Controllers.T4MVC_InterviewController();
+    public static Decision.Web.Controllers.PresenterController Presenter = new Decision.Web.Controllers.T4MVC_PresenterController();
     public static Decision.Web.Controllers.PrivateMessageController PrivateMessage = new Decision.Web.Controllers.T4MVC_PrivateMessageController();
     public static Decision.Web.Controllers.QuestionController Question = new Decision.Web.Controllers.T4MVC_QuestionController();
     public static Decision.Web.Controllers.ReportController Report = new Decision.Web.Controllers.T4MVC_ReportController();
@@ -1753,7 +1754,7 @@ namespace Links
             public static readonly string default_avatar_png = Url("default-avatar.png");
             public static readonly string lightbulb_png = Url("lightbulb.png");
             public static readonly string loading_gif = Url("loading.gif");
-            public static readonly string logo_png = Url("logo.png");
+            public static readonly string logo_gif = Url("logo.gif");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class Overlays {
                 private const string URLPATH = "~/Content/Images/Overlays";

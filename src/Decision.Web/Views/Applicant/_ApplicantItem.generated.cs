@@ -64,7 +64,7 @@ WriteLiteral("<div");
 WriteLiteral(" class=\"col-md-12\"");
 
 WriteAttribute("id", Tuple.Create(" id=\"", 170), Tuple.Create("\"", 194)
-, Tuple.Create(Tuple.Create("", 175), Tuple.Create("Applicant-", 175), true)
+, Tuple.Create(Tuple.Create("", 175), Tuple.Create("applicant-", 175), true)
             
             #line 5 "..\..\Views\Applicant\_ApplicantItem.cshtml"
 , Tuple.Create(Tuple.Create("", 185), Tuple.Create<System.Object, System.Int32>(Model.Id
@@ -117,11 +117,10 @@ WriteLiteral(">\r\n                            <label");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">متقاضی :</label>\r\n                            \r\n                            <sma" +
-"ll>");
+WriteLiteral(">متقاضی :</label>\r\n                            <small>");
 
             
-            #line 19 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+            #line 18 "..\..\Views\Applicant\_ApplicantItem.cshtml"
                               Write(Model.FullName);
 
             
@@ -131,13 +130,11 @@ WriteLiteral("</small> \r\n                        </div>\r\n                   
 
 WriteLiteral(" class=\"col-md-3\"");
 
-WriteLiteral(">\r\n\r\n                            <label");
+WriteLiteral(">\r\n                            <i");
 
-WriteLiteral(" for=\"PersonnelCode\"");
+WriteLiteral(" class=\"fa fa-star\"");
 
-WriteLiteral(" class=\"text-muted\"");
-
-WriteLiteral(">کد پرسنلی:</label>\r\n                            <small");
+WriteLiteral("></i>\r\n                            <small");
 
 WriteLiteral(" id=\"PersonnelCode\"");
 
@@ -146,40 +143,49 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 25 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                           Write(Model.PersonnelCode);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                            </small>\r\n\r\n                        </div>\r\n       " +
-"                 <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                            <label");
-
-WriteLiteral(" for=\"PositionName\"");
-
-WriteLiteral(" class=\"text-muted\"");
-
-WriteLiteral(">سمت:</label>\r\n                            <small");
-
-WriteLiteral(" id=\"PositionName\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                                ");
-
-            
-            #line 32 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                           Write(Model.PositionName);
+            #line 23 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+                           Write(Model.TotalReputation.GetPersianNumber());
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n                            </small>\r\n                        </div>\r\n         " +
-"           </div>\r\n                    <div");
+"               <div");
+
+WriteLiteral(" class=\"col-md-3\"");
+
+WriteLiteral(">\r\n                            <label");
+
+WriteLiteral(" class=\"text-muted\"");
+
+WriteLiteral(">وضعیت رسیدگی :</label>\r\n                            <small>");
+
+            
+            #line 28 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+                              Write(Html.DisplayFor(a => a.Status));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small>\r\n                        </div>\r\n                        <div");
+
+WriteLiteral(" class=\"col-md-3\"");
+
+WriteLiteral(">\r\n                            <label");
+
+WriteLiteral(" class=\"text-muted\"");
+
+WriteLiteral(">نوع عضویت :</label>\r\n                            <small>");
+
+            
+            #line 32 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+                              Write(Html.DisplayFor(a => a.MembershipType));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small>\r\n                        </div>\r\n                    </div>\r\n           " +
+"         <div");
 
 WriteLiteral(" class=\"row\"");
 
@@ -200,7 +206,7 @@ WriteLiteral(" id=\"birthDate\"");
 WriteLiteral(">");
 
             
-            #line 39 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+            #line 38 "..\..\Views\Applicant\_ApplicantItem.cshtml"
                                              Write(Model.BirthDate.ToPersianString(PersianDateTimeFormat.Date));
 
             
@@ -223,7 +229,7 @@ WriteLiteral(" id=\"Code\"");
 WriteLiteral(">");
 
             
-            #line 43 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+            #line 42 "..\..\Views\Applicant\_ApplicantItem.cshtml"
                                         Write(Model.BirthCertificateNumber);
 
             
@@ -246,7 +252,7 @@ WriteLiteral(" id=\"birthPlace\"");
 WriteLiteral(">");
 
             
-            #line 47 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+            #line 46 "..\..\Views\Applicant\_ApplicantItem.cshtml"
                                               Write(Model.BirthPlaceCity);
 
             
@@ -255,7 +261,7 @@ WriteLiteral(">");
 WriteLiteral(" - ");
 
             
-            #line 47 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+            #line 46 "..\..\Views\Applicant\_ApplicantItem.cshtml"
                                                                       Write(Model.BirthPlaceState);
 
             
@@ -278,7 +284,7 @@ WriteLiteral(" id=\"nationalCode\"");
 WriteLiteral(">");
 
             
-            #line 51 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+            #line 50 "..\..\Views\Applicant\_ApplicantItem.cshtml"
                                                 Write(Model.NationalCode.GetPersianNumbers());
 
             
@@ -299,15 +305,15 @@ WriteLiteral(" class=\"text-muted\"");
 
 WriteLiteral(" for=\"order\"");
 
-WriteLiteral(">پایه متقاضی:</label>\r\n                            <small");
+WriteLiteral(">شماره همراه:</label>\r\n                            <small");
 
 WriteLiteral(" id=\"order\"");
 
 WriteLiteral(">");
 
             
-            #line 58 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                                         Write(Model.CollegiateOrder.GetPersianNumber());
+            #line 57 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+                                         Write(Model.CellphoneNumber.GetPersianNumber());
 
             
             #line default
@@ -322,15 +328,15 @@ WriteLiteral(" class=\"text-muted\"");
 
 WriteLiteral(" for=\"group\"");
 
-WriteLiteral(">گروه شغلی:</label>\r\n                            <small");
+WriteLiteral(">تلفن ثابت:</label>\r\n                            <small");
 
 WriteLiteral(" id=\"group\"");
 
 WriteLiteral(">");
 
             
-            #line 62 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                                         Write(Model.OccupationalGroup.GetPersianNumber());
+            #line 61 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+                                         Write(Model.PhoneNumber.GetPersianNumber());
 
             
             #line default
@@ -343,66 +349,16 @@ WriteLiteral(">\r\n                            <label");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(" for=\"trainingRank\"");
-
-WriteLiteral(">رتبه کارآموزی:</label>\r\n                            <small");
-
-WriteLiteral(" id=\"trainingRank\"");
-
-WriteLiteral(">\r\n");
+WriteLiteral(">تلفن ضروری:</label>\r\n                            <small>");
 
             
-            #line 67 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                                
-            
-            #line default
-            #line hidden
-            
-            #line 67 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                                 if (Model.TrainigGrade > 0)
-                                {
+            #line 65 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+                              Write(Model.NumberIndispensable.GetPersianNumber());
 
             
             #line default
             #line hidden
-WriteLiteral("                                ");
-
-WriteLiteral("\r\n");
-
-WriteLiteral("                                    ");
-
-            
-            #line 70 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                               Write(Model.TrainigGrade.GetPersianNumber());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                ");
-
-WriteLiteral("\r\n");
-
-            
-            #line 72 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                                }
-                                else
-                                {
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                    ثبت نشده\r\n                                ");
-
-WriteLiteral("\r\n");
-
-            
-            #line 77 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                                }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                            </small>\r\n                        </div>\r\n           " +
-"             <div");
+WriteLiteral("</small>\r\n                        </div>\r\n                        <div");
 
 WriteLiteral(" class=\"col-md-3\"");
 
@@ -410,240 +366,31 @@ WriteLiteral(">\r\n                            <label");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(" for=\"gpa\"");
-
-WriteLiteral(">معدل کارآموزی:</label>\r\n                            <small");
-
-WriteLiteral(" id=\"gpa\"");
-
-WriteLiteral(">\r\n");
+WriteLiteral("> نظام وظیفه:</label>\r\n                            <small>");
 
             
-            #line 83 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                                
-            
-            #line default
-            #line hidden
-            
-            #line 83 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                                 if (Model.TrainingGPA > decimal.Zero)
-                                {
+            #line 69 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+                              Write(Html.DisplayFor(a => a.MilitaryStatus));
 
             
             #line default
             #line hidden
-WriteLiteral("                                ");
-
-WriteLiteral("\r\n");
-
-WriteLiteral("                                    ");
+WriteLiteral("</small>\r\n                        </div>\r\n                    </div>\r\n           " +
+"     </div>\r\n            </div>\r\n");
 
             
-            #line 86 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                               Write(Model.TrainingGPA.GetPersianNumber());
-
+            #line 74 "..\..\Views\Applicant\_ApplicantItem.cshtml"
             
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                ");
-
-WriteLiteral("\r\n");
-
-            
-            #line 88 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                                }
-                                else
-                                {
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                    ثبت نشده\r\n                                ");
-
-WriteLiteral("\r\n");
-
-            
-            #line 93 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                                }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                            </small>\r\n                        </div>\r\n\r\n         " +
-"           </div>\r\n                </div>\r\n            </div>\r\n            <hr");
-
-WriteLiteral(" class=\"margin-bottom-5 margin-top-5\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                    <i");
-
-WriteLiteral(" class=\"fa fa-check-square-o text-success\"");
-
-WriteLiteral("></i>\r\n                    <small");
-
-WriteLiteral(" class=\"text-muted\"");
-
-WriteLiteral(">ثبت شده توسط:</small>\r\n                    <small>");
-
-            
-            #line 105 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                      Write(Model.CreatorUserName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</small><br>\r\n                    <i");
-
-WriteLiteral(" class=\"fa fa-calendar-o\"");
-
-WriteLiteral("></i>\r\n                    <small>در :</small>\r\n                    <time>");
-
-            
-            #line 108 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                     Write(Model.CreateDate.ToPersianString(PersianDateTimeFormat.Date));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</time>\r\n                    <i");
-
-WriteLiteral(" class=\"fa fa-clock-o \"");
-
-WriteLiteral("></i>\r\n                    <time>");
-
-            
-            #line 110 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                     Write(Model.CreateDate.ToPersianTimeString());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</time>\r\n                </div>\r\n");
-
-            
-            #line 112 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                
             
             #line default
             #line hidden
             
-            #line 112 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                 if (Model.LastModifierUserName.HasValue())
-                {
-
+            #line 74 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+              Html.RenderPartial(MVC.Shared.Views._AuditLog, Model);
             
             #line default
             #line hidden
-WriteLiteral("                    <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                        <i");
-
-WriteLiteral(" class=\"fa fa-edit text-info\"");
-
-WriteLiteral("></i>\r\n                        <small");
-
-WriteLiteral(" class=\"text-muted\"");
-
-WriteLiteral(">ویرایش شده توسط:</small>\r\n                        <small>");
-
-            
-            #line 117 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                          Write(Model.LastModifierUserName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</small><br>\r\n                        <i");
-
-WriteLiteral(" class=\"fa fa-calendar-o\"");
-
-WriteLiteral("></i>\r\n                        <small>در :</small>\r\n                        <time" +
-">");
-
-            
-            #line 120 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                         Write(Model.LastModifiedDate.ToPersianString(PersianDateTimeFormat.Date));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</time>\r\n                        <i");
-
-WriteLiteral(" class=\"fa fa-clock-o\"");
-
-WriteLiteral("></i>\r\n                        <time>");
-
-            
-            #line 122 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                         Write(Model.LastModifiedDate.ToPersianTimeString());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</time>\r\n                    </div>\r\n");
-
-            
-            #line 124 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("               \r\n");
-
-            
-            #line 126 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                
-            
-            #line default
-            #line hidden
-            
-            #line 126 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                 if (Model.IsApproved)
-                {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                    <i");
-
-WriteLiteral(" class=\"fa fa-check text-info\"");
-
-WriteLiteral("></i>\r\n                    <small");
-
-WriteLiteral(" class=\"text-muted\"");
-
-WriteLiteral(">تأیید شده توسط:</small>\r\n                    <small>");
-
-            
-            #line 131 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                      Write(Model.ApproveByName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</small><br>\r\n                </div>\r\n");
-
-            
-            #line 133 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n        <div");
+WriteLiteral("\r\n        </div>\r\n        <div");
 
 WriteLiteral(" class=\"panel-footer\"");
 
@@ -653,14 +400,14 @@ WriteLiteral(" class=\"pull-left\"");
 
 WriteLiteral(">\r\n                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6673), Tuple.Create("\"", 6721)
+WriteAttribute("href", Tuple.Create(" href=\"", 4048), Tuple.Create("\"", 4096)
             
-            #line 139 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-, Tuple.Create(Tuple.Create("", 6680), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.Edit(Model.Id))
+            #line 78 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+, Tuple.Create(Tuple.Create("", 4055), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.Edit(Model.Id))
             
             #line default
             #line hidden
-, 6680), false)
+, 4055), false)
 );
 
 WriteLiteral(" class=\"btn btn-sm btn-primary\"");
@@ -673,14 +420,14 @@ WriteLiteral(" class=\"fa fa-edit\"");
 
 WriteLiteral("></i>\r\n                    ویرایش\r\n                </a>\r\n                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6886), Tuple.Create("\"", 6937)
+WriteAttribute("href", Tuple.Create(" href=\"", 4261), Tuple.Create("\"", 4312)
             
-            #line 143 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-, Tuple.Create(Tuple.Create("", 6893), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.Details(Model.Id))
+            #line 82 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+, Tuple.Create(Tuple.Create("", 4268), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.Details(Model.Id))
             
             #line default
             #line hidden
-, 6893), false)
+, 4268), false)
 );
 
 WriteLiteral(" class=\"btn btn-sm btn-info\"");
@@ -701,7 +448,7 @@ WriteLiteral("\r\n                        type=\"button\"");
 WriteLiteral(" data-delete-url=\"");
 
             
-            #line 148 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+            #line 87 "..\..\Views\Applicant\_ApplicantItem.cshtml"
                                                   Write(Url.Action(MVC.Applicant.Delete()));
 
             
@@ -709,10 +456,10 @@ WriteLiteral(" data-delete-url=\"");
             #line hidden
 WriteLiteral("\"");
 
-WriteLiteral(" data-removal-element=\"#Applicant-");
+WriteLiteral(" data-removal-element=\"#applicant-");
 
             
-            #line 148 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+            #line 87 "..\..\Views\Applicant\_ApplicantItem.cshtml"
                                                                                                                         Write(Model.Id);
 
             
@@ -720,88 +467,23 @@ WriteLiteral(" data-removal-element=\"#Applicant-");
             #line hidden
 WriteLiteral("\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 7293), Tuple.Create("\"", 7314)
-, Tuple.Create(Tuple.Create("", 7298), Tuple.Create("remove-", 7298), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 4668), Tuple.Create("\"", 4689)
+, Tuple.Create(Tuple.Create("", 4673), Tuple.Create("remove-", 4673), true)
             
-            #line 148 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                                                                   , Tuple.Create(Tuple.Create("", 7305), Tuple.Create<System.Object, System.Int32>(Model.Id
+            #line 87 "..\..\Views\Applicant\_ApplicantItem.cshtml"
+                                                                   , Tuple.Create(Tuple.Create("", 4680), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 7305), false)
+, 4680), false)
 );
 
 WriteLiteral(">\r\n                    <i");
 
 WriteLiteral(" class=\"fa fa-trash-o\"");
 
-WriteLiteral("></i>\r\n                    حذف\r\n                </button>\r\n              \r\n");
-
-            
-            #line 153 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                
-            
-            #line default
-            #line hidden
-            
-            #line 153 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                 if (!Model.IsApproved && !Model.IsInReference)
-                {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                    <a");
-
-WriteLiteral(" class=\"btn btn-success btn-sm\"");
-
-WriteLiteral("\r\n                       data-ajax=\"true\"");
-
-WriteLiteral(" data-ajax-method=\"POST\"");
-
-WriteLiteral("\r\n                       data-ajax-mode=\"REPLACE-WITH\"");
-
-WriteLiteral("\r\n                       data-ajax-begin=\"onBegin(xhr,this)\"");
-
-WriteLiteral("\r\n                       data-ajax-oncomplete=\"onComplete(xhr,status)\"");
-
-WriteLiteral("\r\n                       data-ajax-update=\"#Applicant-");
-
-            
-            #line 160 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                                               Write(Model.Id);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\"");
-
-WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 7887), Tuple.Create("\"", 7971)
-            
-            #line 161 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-, Tuple.Create(Tuple.Create("", 7918), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.ApproveApplicant(Model.Id))
-            
-            #line default
-            #line hidden
-, 7918), false)
-);
-
-WriteLiteral(" role=\"button\"");
-
-WriteLiteral(">\r\n                        <i");
-
-WriteLiteral(" class=\"fa fa-check-square-o\"");
-
-WriteLiteral("></i>\r\n                        تأیید کردن\r\n                    </a>\r\n");
-
-            
-            #line 165 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("             \r\n            </div>\r\n            <div");
+WriteLiteral("></i>\r\n                    حذف\r\n                </button>\r\n            </div>\r\n  " +
+"          <div");
 
 WriteLiteral(" class=\"clearfix\"");
 

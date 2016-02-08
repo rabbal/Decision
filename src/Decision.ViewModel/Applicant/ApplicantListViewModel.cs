@@ -37,12 +37,12 @@ namespace Decision.ViewModel.Applicant
             {
                 new SelectListItem
                 {
-                    Value = ApplicantSortBy.CreateDate,
+                    Value = SortByMode.CreatedOn,
                     Text = "تاریخ درج"
                 },
                 new SelectListItem
                 {
-                    Value = ApplicantSortBy.LastModifiedDate,
+                    Value = SortByMode.ModifiedOn,
                     Text = "تاریخ آخرین تغییر"
                 },
                 new SelectListItem
@@ -54,19 +54,7 @@ namespace Decision.ViewModel.Applicant
                 {
                     Value = ApplicantSortBy.LastName,
                     Text = "نام خانوادگی"
-                },
-
-                new SelectListItem
-                {
-                    Value = ApplicantSortBy.CollegiateOrder,
-                    Text = "پایه"
-                },
-                new SelectListItem
-                {
-                    Value = ApplicantSortBy.OccupationalGroup,
-                    Text = "گروه شغلی"
                 }
-
             };
 
             #endregion
@@ -120,20 +108,11 @@ namespace Decision.ViewModel.Applicant
         /// لیست استان ها برای لیست آبشاری
         /// </summary>
         public IEnumerable<SelectListItem> States { get; set; }
-
-        /// <summary>
-        /// لیست سمت ها برای لیست آبشاری در ویو
-        /// </summary>
-        public IEnumerable<SelectListItem> Positions { get; set; }
-
         /// <summary>
         /// لیست شهرها برای لیست آبشاری در ویو
         /// </summary>
         public IEnumerable<SelectListItem> Cities { get; set; }
-        /// <summary>
-        /// لیست مراکز کارآموزی برای لیست آبشاری
-        /// </summary>
-        public IEnumerable<SelectListItem> TrainingCenters { get; set; }
+       
         /// <summary>
         /// لیست فیلد هایی که برای مرتب سازی استفاده  خواهند شد
         /// </summary>

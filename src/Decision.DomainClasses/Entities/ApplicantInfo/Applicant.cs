@@ -19,6 +19,7 @@ namespace Decision.DomainClasses.Entities.ApplicantInfo
             Photo = BitConverter.GetBytes(0);
             CopyOfBirthCertificate = Photo = BitConverter.GetBytes(0);
             CopyOfNationalCard = Photo = BitConverter.GetBytes(0);
+            Status = ApplicantStatus.Pending;
         }
         #endregion
 
