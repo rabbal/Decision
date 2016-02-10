@@ -20,8 +20,7 @@ namespace Decision.AutoMapperProfiles
         protected override void Configure()
         {
             CreateMap<User, UserViewModel>()
-
-                .ForMember(d => d.FullName, m => m.MapFrom(s => s.DisplayName))
+                
                 .IgnoreAllNonExisting();
 
             CreateMap<AddUserViewModel, User>()
@@ -32,8 +31,7 @@ namespace Decision.AutoMapperProfiles
                 .ForMember(d => d.Roles, m => m.Ignore())
                  .IgnoreAllNonExisting();
 
-            CreateMap<User, EditUserViewModel>().ForMember(d=>d.Roles,m=>m.Ignore())
-                .ForMember(d=>d.RoleIds,m=>m.MapFrom(s=>s.Roles.Select(a=>a.RoleId))).IgnoreAllNonExisting();
+            CreateMap<User, EditUserViewModel>().ForMember(d=>d.Roles,m=>m.Ignore()).IgnoreAllNonExisting();
 
             CreateMap<User, SelectListItem>()
                .ForMember(d => d.Text, m => m.MapFrom(s => s.UserName))

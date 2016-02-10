@@ -18,18 +18,12 @@
                             @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
                         </div>
                     </div>
+                  
                     <div class="form-group">
-                        @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
+                        @Html.LabelFor(m => m.DisplayName, new { @class = "col-md-2 control-label" })
                         <div class="col-md-9">
-                            @Html.NoAutoCompleteTextBoxFor(m => m.FirstName)
-                            @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-9">
-                            @Html.NoAutoCompleteTextBoxFor(m => m.LastName)
-                            @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                            @Html.NoAutoCompleteTextBoxFor(m => m.DisplayName)
+                            @Html.ValidationMessageFor(m => m.DisplayName, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">

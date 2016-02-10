@@ -149,8 +149,8 @@ WriteLiteral("                            ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                   " +
-" <div");
+WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                  \r" +
+"\n                    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -159,8 +159,8 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 22 "..\..\Views\User\_Create.cshtml"
-                   Write(Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" }));
+            #line 23 "..\..\Views\User\_Create.cshtml"
+                   Write(Html.LabelFor(m => m.DisplayName, new { @class = "col-md-2 control-label" }));
 
             
             #line default
@@ -170,54 +170,12 @@ WriteLiteral("\r\n                        <div");
 WriteLiteral(" class=\"col-md-9\"");
 
 WriteLiteral(">\r\n");
-
-WriteLiteral("                            ");
-
-            
-            #line 24 "..\..\Views\User\_Create.cshtml"
-                       Write(Html.NoAutoCompleteTextBoxFor(m => m.FirstName));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
 
 WriteLiteral("                            ");
 
             
             #line 25 "..\..\Views\User\_Create.cshtml"
-                       Write(Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                   " +
-" <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                        ");
-
-            
-            #line 29 "..\..\Views\User\_Create.cshtml"
-                   Write(Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                        <div");
-
-WriteLiteral(" class=\"col-md-9\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                            ");
-
-            
-            #line 31 "..\..\Views\User\_Create.cshtml"
-                       Write(Html.NoAutoCompleteTextBoxFor(m => m.LastName));
+                       Write(Html.NoAutoCompleteTextBoxFor(m => m.DisplayName));
 
             
             #line default
@@ -227,8 +185,8 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 32 "..\..\Views\User\_Create.cshtml"
-                       Write(Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" }));
+            #line 26 "..\..\Views\User\_Create.cshtml"
+                       Write(Html.ValidationMessageFor(m => m.DisplayName, "", new { @class = "text-danger" }));
 
             
             #line default
@@ -243,7 +201,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 36 "..\..\Views\User\_Create.cshtml"
+            #line 30 "..\..\Views\User\_Create.cshtml"
                    Write(Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" }));
 
             
@@ -258,7 +216,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 38 "..\..\Views\User\_Create.cshtml"
+            #line 32 "..\..\Views\User\_Create.cshtml"
                        Write(Html.FormControlPasswordFor(m => m.Password));
 
             
@@ -269,7 +227,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 39 "..\..\Views\User\_Create.cshtml"
+            #line 33 "..\..\Views\User\_Create.cshtml"
                        Write(Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" }));
 
             
@@ -285,7 +243,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 43 "..\..\Views\User\_Create.cshtml"
+            #line 37 "..\..\Views\User\_Create.cshtml"
                    Write(Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" }));
 
             
@@ -300,7 +258,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 45 "..\..\Views\User\_Create.cshtml"
+            #line 39 "..\..\Views\User\_Create.cshtml"
                        Write(Html.FormControlPasswordFor(m => m.ConfirmPassword));
 
             
@@ -311,7 +269,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 46 "..\..\Views\User\_Create.cshtml"
+            #line 40 "..\..\Views\User\_Create.cshtml"
                        Write(Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" }));
 
             
@@ -360,7 +318,7 @@ WriteLiteral(">\r\n                                انصراف\r\n             
 "iv>\r\n");
 
             
-            #line 62 "..\..\Views\User\_Create.cshtml"
+            #line 56 "..\..\Views\User\_Create.cshtml"
             }
 
             

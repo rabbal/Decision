@@ -133,24 +133,13 @@ namespace Decision.Web.Controllers
             if (!ModelState.IsValid)
             {
                 await _applicantService.FillEditViewMoel(viewModel, IranCitiesPath);
-                return View(viewModel);
-            }
-
-            if (!await _applicantService.IsInDb(viewModel.Id))
-                this.AddErrors("FirstName", "متقاضی مورد نظر توسط یکی از کاربران در شبکه، حذف شده است");
-
-            if (!ModelState.IsValid)
-            {
-                await _applicantService.FillEditViewMoel(viewModel, IranCitiesPath);
                 return View(MVC.Applicant.Views.Edit, viewModel);
             }
-
+           this.NotySuccess("علمیات ویرایش متقاضی با موفقیت انجام شد");
             await _applicantService.EditAsync(viewModel);
-            await _unitOfWork.SaveAllChangesAsync();
-
-            return _userManager.IsOperator()
-                ? RedirectToAction(MVC.Applicant.Details(viewModel.Id))
-                : RedirectToAction(MVC.Applicant.List());
+            await _unitOfWork.SaveAllChangesAsync(auditUserId:_userManager.GetCurrentUserId());
+            return
+                RedirectToAction(MVC.Applicant.Details(viewModel.Id));
         }
         #endregion
 

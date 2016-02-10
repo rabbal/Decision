@@ -28,26 +28,14 @@ namespace ASP
     using System.Web.UI;
     using System.Web.WebPages;
     
-    #line 1 "..\..\Views\Applicant\Details.cshtml"
-    using AttributeRouting.Helpers;
-    
-    #line default
-    #line hidden
-    
     #line 2 "..\..\Views\Applicant\Details.cshtml"
     using Decision.Common.HtmlHelpers;
     
     #line default
     #line hidden
     
-    #line 4 "..\..\Views\Applicant\Details.cshtml"
-    using Decision.DomainClasses.Entities.ApplicantInfo;
-    
-    #line default
-    #line hidden
-    
     #line 3 "..\..\Views\Applicant\Details.cshtml"
-    using Decision.DomainClasses.Entities.Common;
+    using Decision.DomainClasses.Entities.ApplicantInfo;
     
     #line default
     #line hidden
@@ -65,10 +53,12 @@ namespace ASP
         }
         public override void Execute()
         {
+WriteLiteral("\r\n");
+
 WriteLiteral("\r\n\r\n");
 
             
-            #line 8 "..\..\Views\Applicant\Details.cshtml"
+            #line 7 "..\..\Views\Applicant\Details.cshtml"
   
     ViewBag.Title = "مشاهده جزئیات متقاضی";
 
@@ -111,13 +101,13 @@ WriteLiteral(">\r\n                        <div");
 
 WriteLiteral(" class=\"center-block text-center\"");
 
-WriteLiteral(">\r\n                            <figure>\r\n                                \r\n");
+WriteLiteral(">\r\n                            <figure>\r\n");
 
 WriteLiteral("                                ");
 
             
-            #line 23 "..\..\Views\Applicant\Details.cshtml"
-                           Write(Html.Image(Model.Photo, Model.FullName, "img-circle img-responsive img-thumbnail",200));
+            #line 21 "..\..\Views\Applicant\Details.cshtml"
+                           Write(Html.Image(Model.Photo, Model.FullName, "img-circle img-responsive img-thumbnail", 200));
 
             
             #line default
@@ -128,40 +118,23 @@ WriteLiteral("\r\n                                <figcaption>\r\n              
 WriteLiteral("                                        ");
 
             
-            #line 26 "..\..\Views\Applicant\Details.cshtml"
+            #line 24 "..\..\Views\Applicant\Details.cshtml"
                                    Write(Model.FullName);
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n                                        <br>\r\n                                 " +
-"       <small");
-
-WriteLiteral(" class=\"text-muted\"");
-
-WriteLiteral(">کد پرسنلی :</small>\r\n                                        <small><strong");
-
-WriteLiteral(" class=\"text-primary\"");
-
-WriteLiteral(">");
+"   </h5>\r\n");
 
             
-            #line 29 "..\..\Views\Applicant\Details.cshtml"
-                                                                       Write(Model.PersonnelCode);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</strong></small>\r\n                                    </h5>\r\n");
-
-            
-            #line 31 "..\..\Views\Applicant\Details.cshtml"
+            #line 27 "..\..\Views\Applicant\Details.cshtml"
                                     
             
             #line default
             #line hidden
             
-            #line 31 "..\..\Views\Applicant\Details.cshtml"
+            #line 27 "..\..\Views\Applicant\Details.cshtml"
                                      if (Model.Gender == GenderType.Male)
                                     {
 
@@ -177,7 +150,7 @@ WriteLiteral(" title=\"مرد\"");
 WriteLiteral("></i>\r\n");
 
             
-            #line 34 "..\..\Views\Applicant\Details.cshtml"
+            #line 30 "..\..\Views\Applicant\Details.cshtml"
                                     }
                                     else
                                     {
@@ -194,7 +167,7 @@ WriteLiteral(" title=\"زن\"");
 WriteLiteral("></i>\r\n");
 
             
-            #line 38 "..\..\Views\Applicant\Details.cshtml"
+            #line 34 "..\..\Views\Applicant\Details.cshtml"
                                     }
 
             
@@ -246,7 +219,7 @@ WriteLiteral(" id=\"BirthDate\"");
 WriteLiteral(">");
 
             
-            #line 59 "..\..\Views\Applicant\Details.cshtml"
+            #line 55 "..\..\Views\Applicant\Details.cshtml"
                                                  Write(Model.BirthDate.ToPersianString(PersianDateTimeFormat.Date));
 
             
@@ -267,7 +240,7 @@ WriteLiteral(" id=\"BirthPlaceState\"");
 WriteLiteral(">");
 
             
-            #line 63 "..\..\Views\Applicant\Details.cshtml"
+            #line 59 "..\..\Views\Applicant\Details.cshtml"
                                                        Write(Model.BirthPlaceState);
 
             
@@ -276,7 +249,7 @@ WriteLiteral(">");
 WriteLiteral(" - ");
 
             
-            #line 63 "..\..\Views\Applicant\Details.cshtml"
+            #line 59 "..\..\Views\Applicant\Details.cshtml"
                                                                                 Write(Model.BirthPlaceCity);
 
             
@@ -297,7 +270,7 @@ WriteLiteral(" id=\"NationalCode\"");
 WriteLiteral(">");
 
             
-            #line 67 "..\..\Views\Applicant\Details.cshtml"
+            #line 63 "..\..\Views\Applicant\Details.cshtml"
                                                     Write(Model.NationalCode.GetPersianNumber());
 
             
@@ -318,7 +291,7 @@ WriteLiteral(" id=\"BirthCertificateNumber\"");
 WriteLiteral(">");
 
             
-            #line 71 "..\..\Views\Applicant\Details.cshtml"
+            #line 67 "..\..\Views\Applicant\Details.cshtml"
                                                               Write(Model.BirthCertificateNumber);
 
             
@@ -344,7 +317,7 @@ WriteLiteral(" id=\"MarriageStatus\"");
 WriteLiteral(">");
 
             
-            #line 77 "..\..\Views\Applicant\Details.cshtml"
+            #line 73 "..\..\Views\Applicant\Details.cshtml"
                                                       Write(Html.DisplayFor(a => a.MarriageStatus));
 
             
@@ -367,8 +340,8 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 82 "..\..\Views\Applicant\Details.cshtml"
-                               Write(Html.ActionLink("بارگذاری", MVC.Applicant.GetApplicantFile(Model.Id, "birthCertificate")));
+            #line 78 "..\..\Views\Applicant\Details.cshtml"
+                               Write(Html.ActionLink("بارگیری", MVC.Applicant.GetApplicantFile(Model.Id, "birthCertificate")));
 
             
             #line default
@@ -391,8 +364,8 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 88 "..\..\Views\Applicant\Details.cshtml"
-                               Write(Html.ActionLink("بارگذاری", MVC.Applicant.GetApplicantFile(Model.Id, "nationalCode")));
+            #line 84 "..\..\Views\Applicant\Details.cshtml"
+                               Write(Html.ActionLink("بارگیری", MVC.Applicant.GetApplicantFile(Model.Id, "nationalCode")));
 
             
             #line default
@@ -402,47 +375,47 @@ WriteLiteral("\r\n                                </small>\r\n                  
 
 WriteLiteral(" class=\"col-md-3\"");
 
-WriteLiteral(">\r\n                                <label >ملبس </label>\r\n                       " +
-"         <small >\r\n");
+WriteLiteral(">\r\n                                <label>ملبس </label>\r\n                        " +
+"        <small>\r\n");
 
             
-            #line 94 "..\..\Views\Applicant\Details.cshtml"
-                                 
+            #line 90 "..\..\Views\Applicant\Details.cshtml"
+                                    
             
             #line default
             #line hidden
             
-            #line 94 "..\..\Views\Applicant\Details.cshtml"
-                                  if (Model.IsClothed)
-                                 {
+            #line 90 "..\..\Views\Applicant\Details.cshtml"
+                                     if (Model.IsClothed)
+                                    {
 
             
             #line default
             #line hidden
-WriteLiteral("                                     <i");
+WriteLiteral("                                        <i");
 
 WriteLiteral(" class=\"fa fa-check-square text-success\"");
 
 WriteLiteral("></i>\r\n");
 
             
-            #line 97 "..\..\Views\Applicant\Details.cshtml"
-                                 }
-                                 else
-                                 {
+            #line 93 "..\..\Views\Applicant\Details.cshtml"
+                                    }
+                                    else
+                                    {
 
             
             #line default
             #line hidden
-WriteLiteral("                                    <i");
+WriteLiteral("                                        <i");
 
 WriteLiteral(" class=\"fa fa-check-square-o text-muted\"");
 
 WriteLiteral("></i>\r\n");
 
             
-            #line 101 "..\..\Views\Applicant\Details.cshtml"
-                                 }
+            #line 97 "..\..\Views\Applicant\Details.cshtml"
+                                    }
 
             
             #line default
@@ -461,7 +434,7 @@ WriteLiteral(">\r\n                        <h3");
 
 WriteLiteral(" class=\"line-status\"");
 
-WriteLiteral(">\r\n                            <small >\r\n                                <i");
+WriteLiteral(">\r\n                            <small>\r\n                                <i");
 
 WriteLiteral(" class=\"fa fa-graduation-cap\"");
 
@@ -470,228 +443,13 @@ WriteLiteral("></i>\r\n                                وضعیت شغلی تح�
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n                            <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <label");
-
-WriteLiteral(" for=\"CollegiateOrder\"");
-
-WriteLiteral(">پایه متقاضی:</label>\r\n                                <small");
-
-WriteLiteral(" id=\"CollegiateOrder\"");
-
-WriteLiteral(">");
-
-            
-            #line 118 "..\..\Views\Applicant\Details.cshtml"
-                                                       Write(Model.CollegiateOrder.GetPersianNumber());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</small>\r\n                            </div>\r\n                            <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <label");
-
-WriteLiteral(" for=\"OccupationalGroup\"");
-
-WriteLiteral(">گروه شغلی:</label>\r\n                                <small");
-
-WriteLiteral(" id=\"OccupationalGroup\"");
-
-WriteLiteral(">");
-
-            
-            #line 122 "..\..\Views\Applicant\Details.cshtml"
-                                                         Write(Model.OccupationalGroup.GetPersianNumber());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</small>\r\n                            </div>\r\n                            <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <label");
-
-WriteLiteral(" for=\"TrainigGrade\"");
-
-WriteLiteral(">رتبه کارآموزی:</label>\r\n                                <small");
-
-WriteLiteral(" id=\"TrainigGrade\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 127 "..\..\Views\Applicant\Details.cshtml"
-                                    
-            
-            #line default
-            #line hidden
-            
-            #line 127 "..\..\Views\Applicant\Details.cshtml"
-                                     if (Model.TrainigGrade > 0)
-                                    {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                    ");
-
-WriteLiteral("\r\n");
-
-WriteLiteral("                                        ");
-
-            
-            #line 130 "..\..\Views\Applicant\Details.cshtml"
-                                   Write(Model.TrainigGrade.GetPersianNumber());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                    ");
-
-WriteLiteral("\r\n");
-
-            
-            #line 132 "..\..\Views\Applicant\Details.cshtml"
-                                    }
-                                    else
-                                    {
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                        ثبت نشده\r\n                             " +
-"       ");
-
-WriteLiteral("\r\n");
-
-            
-            #line 137 "..\..\Views\Applicant\Details.cshtml"
-                                    }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                </small>\r\n                            </div>\r\n   " +
-"                         <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <label");
-
-WriteLiteral(" for=\"TrainingGPA\"");
-
-WriteLiteral(">معدل کارآموزی:</label>\r\n                                <small");
-
-WriteLiteral(" id=\"TrainingGPA\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 143 "..\..\Views\Applicant\Details.cshtml"
-                                    
-            
-            #line default
-            #line hidden
-            
-            #line 143 "..\..\Views\Applicant\Details.cshtml"
-                                     if (Model.TrainingGPA > decimal.Zero)
-                                    {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                    ");
-
-WriteLiteral("\r\n");
-
-WriteLiteral("                                        ");
-
-            
-            #line 146 "..\..\Views\Applicant\Details.cshtml"
-                                   Write(Model.TrainingGPA.GetPersianNumber());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                    ");
-
-WriteLiteral("\r\n");
-
-            
-            #line 148 "..\..\Views\Applicant\Details.cshtml"
-                                    }
-                                    else
-                                    {
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                        ثبت نشده\r\n                             " +
-"       ");
-
-WriteLiteral("\r\n");
-
-            
-            #line 153 "..\..\Views\Applicant\Details.cshtml"
-                                    }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                </small>\r\n                            </div>\r\n   " +
-"                     </div>\r\n                        <div");
+WriteLiteral(">\r\n                           \r\n                           \r\n                    " +
+"    </div>\r\n                        <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n                            <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <label");
-
-WriteLiteral(" for=\"PositionName\"");
-
-WriteLiteral(">سمت متقاضی:</label>\r\n                                <small");
-
-WriteLiteral(" id=\"PositionName\"");
-
-WriteLiteral(">");
-
-            
-            #line 160 "..\..\Views\Applicant\Details.cshtml"
-                                                    Write(Model.PositionName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</small>\r\n                            </div>\r\n                            <div");
-
-WriteLiteral(" class=\"col-md-6\"");
-
-WriteLiteral(">\r\n                                <label");
-
-WriteLiteral(" for=\"TrainingCourseDetails\"");
-
-WriteLiteral(">دوره کارآموزی:</label>\r\n                                <small");
-
-WriteLiteral(" id=\"TrainingCourseDetails\"");
-
-WriteLiteral(">");
-
-            
-            #line 164 "..\..\Views\Applicant\Details.cshtml"
-                                                             Write(Model.TrainingCourseDetails);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</small>\r\n                            </div>\r\n                        </div>\r\n   " +
-"                 </div>\r\n                </div>\r\n                <div");
+WriteLiteral(">\r\n                           \r\n                        </div>\r\n                 " +
+"   </div>\r\n                </div>\r\n                <div");
 
 WriteLiteral(" class=\"row\"");
 
@@ -703,90 +461,26 @@ WriteLiteral(">\r\n                        <h3");
 
 WriteLiteral(" class=\"line-status\"");
 
-WriteLiteral(">\r\n                            <small >\r\n                                <i");
+WriteLiteral(">\r\n                            <small>\r\n                                <i");
 
 WriteLiteral(" class=\"fa fa-credit-card\"");
 
-WriteLiteral("></i>\r\n                                مشخصات بانکی\r\n                            " +
-"</small>\r\n                        </h3>\r\n                        <div");
+WriteLiteral("></i>\r\n                                سایر مشخصات\r\n                            <" +
+"/small>\r\n                        </h3>\r\n                        <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n                            <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <label");
-
-WriteLiteral(" for=\"BankName\"");
-
-WriteLiteral(">نام بانک دارای حساب</label>\r\n                                <small");
-
-WriteLiteral(" id=\"BankName\"");
-
-WriteLiteral(">");
+WriteLiteral(">\r\n                           \r\n                        </div>\r\n                 " +
+"   </div>\r\n                </div>\r\n\r\n            </div>\r\n        </div>\r\n");
 
             
-            #line 180 "..\..\Views\Applicant\Details.cshtml"
-                                                Write(Model.BankName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</small>\r\n                            </div>\r\n                            <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <label");
-
-WriteLiteral(" for=\"BankBranch\"");
-
-WriteLiteral(">شعبه:</label>\r\n                                <small");
-
-WriteLiteral(" id=\"BankBranch\"");
-
-WriteLiteral(">");
-
-            
-            #line 184 "..\..\Views\Applicant\Details.cshtml"
-                                                  Write(Model.BankBranch);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</small>\r\n                            </div>\r\n                            <div");
-
-WriteLiteral(" class=\"col-md-3\"");
-
-WriteLiteral(">\r\n                                <label");
-
-WriteLiteral(" for=\"AccountNumber\"");
-
-WriteLiteral(">شماره حساب:</label>\r\n                                <small");
-
-WriteLiteral(" id=\"AccountNumber\"");
-
-WriteLiteral(">");
-
-            
-            #line 188 "..\..\Views\Applicant\Details.cshtml"
-                                                     Write(Model.AccountNumber);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</small>\r\n                            </div>\r\n                        </div>\r\n   " +
-"                 </div>\r\n                </div>\r\n\r\n            </div>\r\n        <" +
-"/div>\r\n");
-
-            
-            #line 196 "..\..\Views\Applicant\Details.cshtml"
+            #line 136 "..\..\Views\Applicant\Details.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 196 "..\..\Views\Applicant\Details.cshtml"
+            #line 136 "..\..\Views\Applicant\Details.cshtml"
           Html.RenderPartial(MVC.Shared.Views._AuditLog, Model);
             
             #line default
@@ -798,14 +492,14 @@ DefineSection("Menu", () => {
 WriteLiteral("\r\n");
 
             
-            #line 202 "..\..\Views\Applicant\Details.cshtml"
+            #line 142 "..\..\Views\Applicant\Details.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 202 "..\..\Views\Applicant\Details.cshtml"
-      Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder,Model.Id);
+            #line 142 "..\..\Views\Applicant\Details.cshtml"
+      Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.Id);
             
             #line default
             #line hidden

@@ -1,8 +1,7 @@
 ﻿@using Decision.Common.Extentions
-@using Decision.Common.Helpers
+
 @using Decision.Common.HtmlHelpers
 
-@using Decision.Web.RazorHelpers
 @model Decision.ViewModel.Applicant.EditApplicantViewModel
 @{
     ViewBag.Title = "ویرایش متقاضی";
@@ -21,11 +20,11 @@
             <div class="row">
                 <div class="col-md-12">
                     @Html.HelpAlert(Url.Content("~/Content/Images/lightbulb.png"),
-                    "در صورت عمل نکردن دکمه ثبت،توجه داشته باشید که تمام اطلاعات را در تمام تب های موجود صحیح وارد کرده باشید",
+                        "در صورت عمل نکردن دکمه ثبت،توجه داشته باشید که تمام اطلاعات را در تمام تب های موجود صحیح وارد کرده باشید",
 
-         "برای فایل های ضمیمه مربوط به متقاضی از امکان آپلود تصاویر یا اسکن  میتوانید بهره مند شوید.",
-                    "دقت کنید در صورت انتخاب فایل جدید،جایگزین فایل های جدید خواهد شد"
-           )
+                        "برای فایل های ضمیمه مربوط به متقاضی از امکان آپلود تصاویر یا اسکن  میتوانید بهره مند شوید.",
+                        "دقت کنید در صورت انتخاب فایل جدید،جایگزین فایل های جدید خواهد شد"
+                        )
                 </div>
             </div>
         </div>
@@ -33,7 +32,7 @@
             <div class="row">
                 <div class="col-md-1">
                     <button type="button" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'editApplicantForm')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-md">
-                        ذخیره تغییرات انجام شده
+                        ویرایش اطلاعات متقاضی
                     </button>
                 </div>
             </div>
@@ -43,14 +42,9 @@
                     <a href="#baseInfo" data-toggle="tab">اطلاعات پایه</a>
                 </li>
                 <li>
-                    <a href="#bank" data-toggle="tab">اطلاعات بانکی</a>
+                    <a href="#other" data-toggle="tab">سایر اطلاعات</a>
                 </li>
-                <li>
-                    <a href="#certificate" data-toggle="tab">اطلاعات شغلی</a>
-                </li>
-                <li>
-                    <a href="#trainingCourse" data-toggle="tab">دوره کارآموزی</a>
-                </li>
+
                 <li>
                     <a href="#files" data-toggle="tab">فایل های ضمیمه</a>
                 </li>
@@ -73,13 +67,7 @@
                                     @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.PersonnelCode, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-9">
-                                    @Html.NoAutoCompleteTextBoxForLtr(model => model.PersonnelCode)
-                                    @Html.ValidationMessageFor(model => model.PersonnelCode, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
+
                             <div class="form-group">
                                 @Html.LabelFor(model => model.NationalCode, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-9">
@@ -136,109 +124,104 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" id="bank">
+                <div class="tab-pane" id="other">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                @Html.LabelFor(model => model.BankName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.LabelFor(model => model.FatherName, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-9">
-                                    @Html.NoAutoCompleteTextBoxFor(model => model.BankName)
-                                    @Html.ValidationMessageFor(model => model.BankName, "", new { @class = "text-danger" })
+                                    @Html.NoAutoCompleteTextBoxFor(model => model.FatherName)
+                                    @Html.ValidationMessageFor(model => model.FatherName, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="form-group">
-                                @Html.LabelFor(model => model.BankBranch, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-9">
-                                    @Html.NoAutoCompleteTextBoxFor(model => model.BankBranch)
-                                    @Html.ValidationMessageFor(model => model.BankBranch, "", new { @class = "text-danger" })
+                                    @Html.NoAutoCompleteTextBoxForLtr(model => model.Email)
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="form-group">
-                                @Html.LabelFor(model => model.AccountNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.LabelFor(model => model.CellphoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-9">
-                                    @Html.NoAutoCompleteTextBoxFor(model => model.AccountNumber)
-                                    @Html.ValidationMessageFor(model => model.AccountNumber, "", new { @class = "text-danger" })
+                                    @Html.NoAutoCompleteTextBoxForLtr(model => model.CellphoneNumber)
+                                    @Html.ValidationMessageFor(model => model.CellphoneNumber, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-9">
+                                    @Html.NoAutoCompleteTextBoxForLtr(model => model.PhoneNumber)
+                                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.NumberIndispensable, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-9">
+                                    @Html.NoAutoCompleteTextBoxForLtr(model => model.NumberIndispensable)
+                                    @Html.ValidationMessageFor(model => model.NumberIndispensable, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.MilitaryStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.MilitaryStatus, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.MilitaryStatus, "", new { @class = "text-danger" })
+                                </div>
+                                @Html.LabelFor(model => model.MembershipType, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-3">
+                                    @Html.EditorFor(model => model.MembershipType, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.MembershipType, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ServedEndOn, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.ServedEndOn, MVC.Shared.Views.EditorTemplates.PersianDatePicker)
+                                    @Html.ValidationMessageFor(model => model.ServedEndOn, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Gilder, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-9">
+                                    @Html.NoAutoCompleteTextBoxFor(model => model.Gilder)
+                                    @Html.ValidationMessageFor(model => model.Gilder, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Nationality, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-9">
+                                    @Html.NoAutoCompleteTextBoxFor(model => model.Nationality)
+                                    @Html.ValidationMessageFor(model => model.Nationality, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" id="certificate">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.TrainingGPA, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-4">
-                                    @Html.EditorFor(model => model.TrainingGPA)
-                                    @Html.ValidationMessageFor(model => model.TrainingGPA, "", new { @class = "text-danger" })
-                                </div>
-                                @Html.LabelFor(model => model.TrainigGrade, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-4">
-                                    @Html.NoAutoCompleteTextBoxForLtr(model => model.TrainigGrade)
-                                    @Html.ValidationMessageFor(model => model.TrainigGrade, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.CollegiateOrder, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-4">
-                                    @Html.NoAutoCompleteTextBoxForNumber(model => model.CollegiateOrder)
-                                    @Html.ValidationMessageFor(model => model.CollegiateOrder, "", new { @class = "text-danger" })
-                                </div>
-                                @Html.LabelFor(model => model.OccupationalGroup, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-4">
-                                    @Html.NoAutoCompleteTextBoxForNumber(model => model.OccupationalGroup)
-                                    @Html.ValidationMessageFor(model => model.OccupationalGroup, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.OfficialYears, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-4">
-                                    @Html.NoAutoCompleteTextBoxForNumber(model => model.OfficialYears)
-                                    @Html.ValidationMessageFor(model => model.OfficialYears, "", new { @class = "text-danger" })
-                                </div>
-                                @Html.LabelFor(model => model.CollegiateYears, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-4">
-                                    @Html.NoAutoCompleteTextBoxForNumber(model => model.CollegiateYears)
-                                    @Html.ValidationMessageFor(model => model.CollegiateYears, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.PositionId, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-4">
-                                    @Html.DropDownListFor(model => model.PositionId, Model.Positions, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.PositionId, "", new { @class = "text-danger" })
-                                </div>
-                               
-                                <div class="col-md-4 col-md-offset-2">
 
-                                    @Html.CheckBoxFor(model => model.IsClothed, new { @class = "checkbox-inline" })
-                                    @Html.LabelFor(a => a.IsClothed, new { @class = "control-label" })
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="tab-pane" id="files">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.CopyOfNationalCardFile, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-6">
-                                    @Html.TextBoxFor(model => model.CopyOfNationalCardFile, new { type = "file", @class = "form-control " })
+                                    @Html.TextBoxFor(model => model.CopyOfNationalCardFile, new { type = "file", @class = "form-control" })
                                 </div>
                                 <div class="col-md-4">
                                     <button type="button" autocomplete="off" data-type="image" data-container="CopyOfNationalCardScan" class="btn btn-primary   btn-sm @(Model.CopyOfNationalCardScan.HasValue() ? "scan-remove" : "scan")">
                                         @if (Model.CopyOfNationalCardScan.HasValue())
                                         {<text>
-                                <i class="fa fa-remove"></i>
-                                حذف فایل اسکن شده
+                                            <i class="fa fa-remove"></i>
+                                            حذف فایل اسکن شده
                                         </text>
                                         }
                                         else
                                         {<text>
-                                <i class="fa fa-file-photo-o"></i>
-                                افزودن اسکن
+                                            <i class="fa fa-file-photo-o"></i>
+                                            افزودن اسکن
                                         </text>
                                         }
                                     </button>
@@ -247,20 +230,20 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.CopyOfBirthCertificateFile, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-6">
-                                    @Html.TextBoxFor(model => model.CopyOfBirthCertificateFile, new { type = "file", @class = "form-control " })
+                                    @Html.TextBoxFor(model => model.CopyOfBirthCertificateFile, new { type = "file", @class = "form-control" })
                                 </div>
                                 <div class="col-md-4">
                                     <button type="button" autocomplete="off" data-type="image" data-container="CopyOfBirthCertificateScan" class="btn btn-primary   btn-sm @(Model.CopyOfNationalCardScan.HasValue() ? "scan-remove" : "scan")">
                                         @if (Model.CopyOfBirthCertificateScan.HasValue())
                                         {<text>
-                                <i class="fa fa-remove"></i>
-                                حذف فایل اسکن شده
+                                            <i class="fa fa-remove"></i>
+                                            حذف فایل اسکن شده
                                         </text>
                                         }
                                         else
                                         {<text>
-                                <i class="fa  fa-file-photo-o"></i>
-                                افزودن اسکن
+                                            <i class="fa  fa-file-photo-o"></i>
+                                            افزودن اسکن
                                         </text>
                                         }
                                     </button>
@@ -269,20 +252,20 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.PhotoFile, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-6">
-                                    @Html.TextBoxFor(model => model.PhotoFile, new { type = "file", @class = "form-control " })
+                                    @Html.TextBoxFor(model => model.PhotoFile, new { type = "file", @class = "form-control" })
                                 </div>
                                 <div class="col-md-4">
                                     <button type="button" autocomplete="off" data-type="image" data-container="PhotoScan" class="btn btn-primary   btn-sm @(Model.CopyOfNationalCardScan.HasValue() ? "scan-remove" : "scan")">
                                         @if (Model.PhotoScan.HasValue())
                                         {<text>
-                                <i class="fa fa-remove"></i>
-                                حذف فایل اسکن شده
+                                            <i class="fa fa-remove"></i>
+                                            حذف فایل اسکن شده
                                         </text>
                                         }
                                         else
                                         {<text>
-                                <i class="fa fa-file-photo-o"></i>
-                                افزودن اسکن
+                                            <i class="fa fa-file-photo-o"></i>
+                                            افزودن اسکن
                                         </text>
                                         }
                                     </button>

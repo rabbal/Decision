@@ -199,7 +199,7 @@ WriteLiteral("></span>\r\n                    <span");
 
 WriteLiteral(" class=\"icon-bar\"");
 
-WriteLiteral("></span>\r\n                </button>\r\n            </div>\r\n            \r\n");
+WriteLiteral("></span>\r\n                </button>\r\n            </div>\r\n\r\n");
 
             
             #line 38 "..\..\Views\Shared\_Layout.cshtml"
@@ -419,6 +419,8 @@ WriteLiteral("\r\n");
             
             #line default
             #line hidden
+WriteLiteral("\r\n    ");
+
 WriteLiteral("\r\n</body>\r\n</html>\r\n");
 
         }

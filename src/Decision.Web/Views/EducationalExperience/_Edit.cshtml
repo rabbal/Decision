@@ -1,4 +1,4 @@
-﻿@using Decision.Common.Helpers
+﻿
 @using Decision.Common.HtmlHelpers
 @model Decision.ViewModel.EducationalExperience.EditEducationalExperienceViewModel
 <div class="col-md-12" id="educationalExperience-@Model.Id">
@@ -16,32 +16,48 @@
                 @Html.HiddenFor(model => model.Id)
                 @Html.HiddenFor(model => model.RowVersion)
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="TitleId">عنوان تدریس شده</label>
+                    @Html.LabelFor(model => model.Lessons, new { @class = "control-label col-md-2" })
                     <div class="col-md-9">
-                        @Html.DropDownListFor(model => model.TitleId, Model.Titles, "انتخاب عنوان تدریس شده", new { @class = "form-control", rows = 2 })
-                        @Html.ValidationMessageFor(model => model.TitleId, null, new { @class = "text-danger" })
+                        @Html.NoAutoCompleteTextBoxFor(model => model.Lessons)
+                        @Html.ValidationMessageFor(model => model.Lessons, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Institution, new { @class = "control-label col-md-2" })
+                    <div class="col-md-9">
+                        @Html.NoAutoCompleteTextBoxFor(model => model.Institution)
+                        @Html.ValidationMessageFor(model => model.Institution, null, new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.BeginYear, new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.InstitutionAddress, new { @class = "control-label col-md-2" })
                     <div class="col-md-9">
-                        @Html.NoAutoCompleteTextBoxForNumber(model => model.BeginYear)
-                        @Html.ValidationMessageFor(model => model.BeginYear, null, new { @class = "text-danger" })
+                        @Html.NoAutoCompleteTextBoxFor(model => model.InstitutionAddress)
+                        @Html.ValidationMessageFor(model => model.InstitutionAddress, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.InstitutionPhoneNumber, new { @class = "control-label col-md-2" })
+                    <div class="col-md-9">
+                        @Html.NoAutoCompleteTextBoxForLtr(model => model.InstitutionPhoneNumber)
+                        @Html.ValidationMessageFor(model => model.InstitutionPhoneNumber, null, new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.EndYear, new { @class = "control-label col-md-2" })
-                    <div class="col-md-9">
-                        @Html.NoAutoCompleteTextBoxForNumber(model => model.EndYear)
-                        @Html.ValidationMessageFor(model => model.EndYear, null, new { @class = "text-danger" })
+                    @Html.LabelFor(model => model.BeginYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.BeginYear, MVC.Shared.Views.EditorTemplates.PersianDatePicker)
+                        @Html.ValidationMessageFor(model => model.BeginYear, "", new { @class = "text-danger" })
                     </div>
                 </div>
+
                 <div class="form-group">
-                    <label for="#Description" class="control-label col-md-2">نام مرکز علمی</label>
-                    <div class="col-md-9">
-                        @Html.TextAreaFor(model => model.Description, new { @class = "form-control", rows = 3 })
+                    @Html.LabelFor(model => model.Score, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-6">
+                        @Html.NoAutoCompleteTextBoxForNumber(model => model.Score)
+                        @Html.ValidationMessageFor(model => model.Score, "", new { @class = "text-danger" })
                     </div>
                 </div>
             }

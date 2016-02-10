@@ -34,7 +34,7 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
-            
+
             @if (User.Identity.IsAuthenticated)
             {
                 @Html.Partial(MVC.Shared.Views._LoginPartial)
@@ -81,5 +81,19 @@
     @Scripts.Render("~/bundles/admin")
     @RenderSection("scripts", required: false)
     @{Html.RenderPartial(MVC.Shared.Views._Noty);}
+    @*<script>
+        var notify = $.connection.notificationHub;
+        notify.client.newConversation = function (data) {
+            infoNoty("گفتگوی جدیدی از طرف");
+        };
+        $.connection.hub.start().done(function () {
+            @{
+                if (ViewBag.NotifyUsers)
+                {
+                    <text>notify.server.notifyConversation();</text>
+                }
+            }
+        });
+    </script>*@
 </body>
 </html>

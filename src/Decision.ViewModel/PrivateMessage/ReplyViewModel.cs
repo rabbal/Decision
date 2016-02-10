@@ -10,11 +10,10 @@ namespace Decision.ViewModel.PrivateMessage
     {
         [DisplayName("محتوای پیغام")]
         [Required(ErrorMessage = "لطفا محتوای پیغام را مشخص کنید")]
-        public string Content { get; set; }
+        public string Body { get; set; }
         [Required]
         public Guid ConversationId { get; set; }
         [Required]
         public Guid ReplyId { get; set; }
-        public IEnumerable<HttpPostedFileBase> Attachments { get; set; }
     }
 }

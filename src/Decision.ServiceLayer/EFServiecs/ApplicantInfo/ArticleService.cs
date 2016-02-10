@@ -103,9 +103,9 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
                     .AsQueryable();
 
             var selectedArticles = articles.ProjectTo<ArticleViewModel>(_mappingEngine);
-
+            var resultsToSkip = (request.PageIndex - 1)*5;
             var query = await selectedArticles
-                .Skip(() => (request.PageIndex - 1) * 5)
+                .Skip(() => resultsToSkip)
                 .Take(5)
                 .ToListAsync();
 

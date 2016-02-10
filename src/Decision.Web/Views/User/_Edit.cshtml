@@ -19,17 +19,10 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="form-group">
-                        @Html.LabelFor(m => m.FirstName, new { @class = "col-md-3 control-label" })
+                        @Html.LabelFor(m => m.DisplayName, new { @class = "col-md-3 control-label" })
                         <div class="col-md-8">
-                            @Html.NoAutoCompleteTextBoxFor(m => m.FirstName)
-                            @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.LastName, new { @class = "col-md-3 control-label" })
-                        <div class="col-md-8">
-                            @Html.NoAutoCompleteTextBoxFor(m => m.LastName)
-                            @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                            @Html.NoAutoCompleteTextBoxFor(m => m.DisplayName)
+                            @Html.ValidationMessageFor(m => m.DisplayName, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">
@@ -46,22 +39,12 @@
                             @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
                         </div>
                     </div>
-                    <div class="col-md-10 col-md-offset-2">
-                        <ul class="list-group row margin-bottom-0">
-                            @foreach (var role in Model.Roles)
-                            {
-                                <li class="list-group-item non-border col-xs-6 text-primary">
-
-                                    <div class="col-md-12">
-                                        <input type="checkbox" @if (role.Selected) { <text> checked="checked" </text> }
-                                               id="@role.Value" name="RoleIds" value="@(role.Value)" class="checkbox-inline" />
-                                        <label class="control-label" for="@role.Value">@role.Text</label>
-                                    </div>
-
-                                </li>
-
-                            }
-                        </ul>
+                    <div class="form-group">
+                        @Html.LabelFor(model => Model.RoleId, new { @class = "control-label col-md-3" })
+                        <div class="col-md-8">
+                            @Html.DropDownListFor(model => model.RoleId, Model.Roles, "انتخاب گروه کاربری", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.RoleId, null, new { @class = "text-danger" })
+                        </div>
                     </div>
                 </div>
             </div>

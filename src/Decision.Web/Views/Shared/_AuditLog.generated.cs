@@ -27,12 +27,6 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
-    #line 1 "..\..\Views\Shared\_AuditLog.cshtml"
-    using AttributeRouting.Helpers;
-    
-    #line default
-    #line hidden
     using Decision.Common.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
@@ -48,6 +42,8 @@ namespace ASP
         }
         public override void Execute()
         {
+WriteLiteral("\r\n");
+
 WriteLiteral("<hr");
 
 WriteLiteral(" class=\"margin-bottom-5 margin-top-5\"");
@@ -162,11 +158,28 @@ WriteLiteral("></i>\r\n        <small");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">نوع علمیات:</small>\r\n        <small>");
+WriteLiteral(">آخرین علمیات:</small>\r\n        <small>");
 
             
             #line 28 "..\..\Views\Shared\_AuditLog.cshtml"
-          Write(Html.DisplayFor(a=>a.Action));
+          Write(Html.DisplayFor(a => a.Action));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small><br>\r\n        <i");
+
+WriteLiteral(" class=\"fa fa-edit text-info\"");
+
+WriteLiteral("></i>\r\n        <small");
+
+WriteLiteral(" class=\"text-muted\"");
+
+WriteLiteral(">ورژن رکورد:</small>\r\n        <small>");
+
+            
+            #line 31 "..\..\Views\Shared\_AuditLog.cshtml"
+          Write(Model.Version.GetPersianNumber());
 
             
             #line default

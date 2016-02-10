@@ -2,18 +2,14 @@
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.Common;
 using Decision.DomainClasses.Entities.ApplicantInfo;
-using Decision.ServiceLayer.Contracts.Common;
 using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.ViewModel.EducationalBackground;
 using EntityFramework.Extensions;
-using Microsoft.AspNet.Identity;
 
 namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
 {
@@ -77,7 +73,7 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
             var educationalBackground = _mappingEngine.Map<EducationalBackground>(viewModel);
            
             _educationalBackgrounds.Add(educationalBackground);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveAllChangesAsync(auditUserId:_userManager.GetCurrentUserId());
 
             return await _educationalBackgrounds
                 .Include(a => a.CreatedBy)
@@ -94,20 +90,20 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
                     .Include(a => a.CreatedBy)
                     .Include(a => a.ModifiedBy)
                     .AsNoTracking()
-                    .OrderByDescending(a => a.GraduationDate)
+                    .OrderByDescending(a => a.CreatedOn)
                     .AsQueryable();
 
             var selectedEducationalBackgrounds = educationalBackgrounds.ProjectTo<EducationalBackgroundViewModel>(_mappingEngine);
 
+            var resultToSkip = (request.PageIndex - 1)*10;
             var query = await selectedEducationalBackgrounds
-                .Skip((request.PageIndex - 1) * 10)
+                .Skip(()=>resultToSkip)
                 .Take(10).ToListAsync();
 
             return new EducationalBackgroundListViewModel { SearchRequest = request, EducationalBackgrounds = query };
         }
         #endregion
-
-
+        
         public Task<bool> IsInDb(Guid guid)
         {
             return _educationalBackgrounds.AnyAsync(a => a.Id == guid);

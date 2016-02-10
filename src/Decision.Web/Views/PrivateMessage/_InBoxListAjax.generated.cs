@@ -27,7 +27,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
+    using Decision.Common.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -163,7 +163,7 @@ WriteLiteral(">فرستنده :</label>\r\n                        <small>");
 
             
             #line 25 "..\..\Views\PrivateMessage\_InBoxListAjax.cshtml"
-                          Write(conversation.SenderUserName);
+                          Write(conversation.DisplayName);
 
             
             #line default
@@ -183,7 +183,7 @@ WriteLiteral("                            ");
 
             
             #line 32 "..\..\Views\PrivateMessage\_InBoxListAjax.cshtml"
-                       Write(conversation.StartDate.ToRemainingDateTime());
+                       Write(conversation.SentOn.ToRemainingDateTime());
 
             
             #line default
@@ -194,7 +194,7 @@ WriteLiteral("                            ");
 
             
             #line 34 "..\..\Views\PrivateMessage\_InBoxListAjax.cshtml"
-                       Write(conversation.StartDate.ToPersianString(PersianDateTimeFormat.FullDate));
+                       Write(conversation.SentOn.ToPersianString(PersianDateTimeFormat.FullDate));
 
             
             #line default
@@ -207,7 +207,7 @@ WriteLiteral("></i>\r\n                        <time>");
 
             
             #line 37 "..\..\Views\PrivateMessage\_InBoxListAjax.cshtml"
-                         Write(conversation.StartDate.ToPersianTimeString());
+                         Write(conversation.SentOn.ToPersianTimeString());
 
             
             #line default
@@ -249,15 +249,15 @@ WriteLiteral(" data-removal-element=\"#conversation-");
             #line hidden
 WriteLiteral("\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 2057), Tuple.Create("\"", 2085)
-, Tuple.Create(Tuple.Create("", 2062), Tuple.Create("remove-", 2062), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 2045), Tuple.Create("\"", 2073)
+, Tuple.Create(Tuple.Create("", 2050), Tuple.Create("remove-", 2050), true)
             
             #line 44 "..\..\Views\PrivateMessage\_InBoxListAjax.cshtml"
-                                                                                      , Tuple.Create(Tuple.Create("", 2069), Tuple.Create<System.Object, System.Int32>(conversation.Id
+                                                                                      , Tuple.Create(Tuple.Create("", 2057), Tuple.Create<System.Object, System.Int32>(conversation.Id
             
             #line default
             #line hidden
-, 2069), false)
+, 2057), false)
 );
 
 WriteLiteral(">\r\n                        <i");

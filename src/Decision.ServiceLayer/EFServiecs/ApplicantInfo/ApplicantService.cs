@@ -106,8 +106,7 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
             {
                 applicant.CopyOfBirthCertificate = viewModel.CopyOfBirthCertificateFile.InputStream.ResizeImageFile(A5Width, A5Height);
             }
-
-
+            
             if (viewModel.CopyOfNationalCardScan.HasValue())
                 applicant.CopyOfNationalCard = Convert.FromBase64String(viewModel.CopyOfNationalCardScan).ResizeImageFile(A6Width, A6Height);
             else if (viewModel.CopyOfNationalCardFile.HasFile())

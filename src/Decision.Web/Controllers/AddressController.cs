@@ -4,15 +4,12 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
-using Decision.Common.Controller;
 using Decision.Common.Filters;
 using Decision.Common.Json;
 using Decision.DataLayer.Context;
-using Decision.ServiceLayer.Contracts.Common;
 using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Security;
 using Decision.ViewModel.Address;
-using Decision.Web.Extentions;
 using Decision.Web.Filters;
 using MvcSiteMapProvider;
 using Decision.Common.Extentions;
@@ -20,7 +17,6 @@ using Decision.ServiceLayer.Contracts.Users;
 
 namespace Decision.Web.Controllers
 {
-
     [RoutePrefix("Applicant/Address")]
     [Route("{action}")]
     [Mvc5Authorize(AssignableToRolePermissions.CanManageAddress)]
@@ -177,9 +173,7 @@ namespace Decision.Web.Controllers
         [AjaxOnly]
         //[CheckReferrer]
         [ValidateAntiForgeryToken]
-        [Activity(Description = "حذف آدرس متقاضی")]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-
         public virtual async Task<ActionResult> Delete(Guid? id, Guid applicantId)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

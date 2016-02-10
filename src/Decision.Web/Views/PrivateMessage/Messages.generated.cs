@@ -33,6 +33,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
+    using Decision.Common.HtmlHelpers;
     using Decision.Utility;
     
     #line 3 "..\..\Views\PrivateMessage\Messages.cshtml"
@@ -59,17 +60,26 @@ WriteLiteral("\r\n");
             #line 5 "..\..\Views\PrivateMessage\Messages.cshtml"
   
     ViewBag.Title = "گفتگو";
-    var parent = Model.Messages.First(a => a.ReplyId == null);
-    var children = Model.Messages.Where(a => a.ReplyId != null);
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<ul");
+WriteLiteral("\r\n\r\n");
+
+            
+            #line 9 "..\..\Views\PrivateMessage\Messages.cshtml"
+ foreach (var item in Model.Messages)
+{
+    
+
+            
+            #line default
+            #line hidden
+WriteLiteral("<ul");
 
 WriteLiteral(" class=\"media-list\"");
 
-WriteLiteral(">\r\n\r\n    <li");
+WriteLiteral(">\r\n    <li");
 
 WriteLiteral(" class=\"media\"");
 
@@ -99,7 +109,7 @@ WriteLiteral("                        ");
 
             
             #line 19 "..\..\Views\PrivateMessage\Messages.cshtml"
-                   Write(parent.SenderUserName);
+                   Write(item.Sender.DisplayName);
 
             
             #line default
@@ -116,7 +126,7 @@ WriteLiteral("></i>\r\n                            <time>");
 
             
             #line 22 "..\..\Views\PrivateMessage\Messages.cshtml"
-                             Write(parent.SendDate.ToRemainingDateTime());
+                             Write(item.SentOn.ToRemainingDateTime());
 
             
             #line default
@@ -125,7 +135,7 @@ WriteLiteral(",");
 
             
             #line 22 "..\..\Views\PrivateMessage\Messages.cshtml"
-                                                                    Write(parent.SendDate.ToPersianString(PersianDateTimeFormat.Date));
+                                                                Write(item.SentOn.ToPersianString(PersianDateTimeFormat.Date));
 
             
             #line default
@@ -138,7 +148,7 @@ WriteLiteral("></i>\r\n                                <span>");
 
             
             #line 25 "..\..\Views\PrivateMessage\Messages.cshtml"
-                                 Write(parent.SendDate.ToPersianTimeString());
+                                 Write(item.SentOn.ToPersianTimeString());
 
             
             #line default
@@ -154,134 +164,24 @@ WriteLiteral("                    ");
 
             
             #line 31 "..\..\Views\PrivateMessage\Messages.cshtml"
-               Write(Html.Raw(parent.Content));
+               Write(Html.Raw(item.Body));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n");
+WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </li>\r\n\r\n</ul>\r" +
+"\n");
 
             
-            #line 36 "..\..\Views\PrivateMessage\Messages.cshtml"
-        
-            
-            #line default
-            #line hidden
-            
-            #line 36 "..\..\Views\PrivateMessage\Messages.cshtml"
-         foreach (var item in children)
-        {
+            #line 38 "..\..\Views\PrivateMessage\Messages.cshtml"
+
+}
 
             
             #line default
             #line hidden
-WriteLiteral("            <ul >\r\n                <li");
-
-WriteLiteral(" class=\"media margin-top-minus-35\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"media-body\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"panel panel-default\"");
-
-WriteLiteral(">\r\n                            <div");
-
-WriteLiteral(" class=\"panel-heading\"");
-
-WriteLiteral(">\r\n                                <h6");
-
-WriteLiteral(" class=\" media-heading\"");
-
-WriteLiteral(">\r\n                                    <span");
-
-WriteLiteral(" class=\"fa fa-user\"");
-
-WriteLiteral("></span>\r\n");
-
-WriteLiteral("                                    ");
-
             
-            #line 45 "..\..\Views\PrivateMessage\Messages.cshtml"
-                               Write(item.SenderUserName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                    <small");
-
-WriteLiteral(" class=\"pull-left\"");
-
-WriteLiteral(">\r\n                                        <i");
-
-WriteLiteral(" class=\"fa fa-calendar\"");
-
-WriteLiteral("></i>\r\n                                        <time>");
-
-            
-            #line 48 "..\..\Views\PrivateMessage\Messages.cshtml"
-                                         Write(item.SendDate.ToRemainingDateTime());
-
-            
-            #line default
-            #line hidden
-WriteLiteral(",");
-
-            
-            #line 48 "..\..\Views\PrivateMessage\Messages.cshtml"
-                                                                              Write(item.SendDate.ToPersianString(PersianDateTimeFormat.Date));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</time>\r\n                                        <time>\r\n                        " +
-"                    \r\n                                            <i");
-
-WriteLiteral(" class=\"fa fa-clock-o\"");
-
-WriteLiteral("></i>\r\n                                            <span>");
-
-            
-            #line 52 "..\..\Views\PrivateMessage\Messages.cshtml"
-                                             Write(item.SendDate.ToPersianTimeString());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span>\r\n                                        </time>\r\n                       " +
-"             </small>\r\n                                </h6>\r\n                  " +
-"          </div>\r\n                            <div");
-
-WriteLiteral(" class=\"panel-body\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                                ");
-
-            
-            #line 58 "..\..\Views\PrivateMessage\Messages.cshtml"
-                           Write(Html.Raw(item.Content));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                               \r\n                                \r\n\r\n          " +
-"                  </div>\r\n                        </div>\r\n                    </" +
-"div>\r\n                </li>\r\n\r\n            </ul>\r\n");
-
-            
-            #line 68 "..\..\Views\PrivateMessage\Messages.cshtml"
-        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("    </li>\r\n\r\n</ul>\r\n\r\n");
-
-            
-            #line 73 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 40 "..\..\Views\PrivateMessage\Messages.cshtml"
   Html.RenderPartial(MVC.PrivateMessage.Views._Reply, Model.AddMessageViewModel);
             
             #line default
@@ -293,13 +193,13 @@ DefineSection("Menu", () => {
 WriteLiteral("\r\n");
 
             
-            #line 76 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 43 "..\..\Views\PrivateMessage\Messages.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 76 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 43 "..\..\Views\PrivateMessage\Messages.cshtml"
       Html.RenderPartial(MVC.Shared.Views._UserProfileSideBarMenu);
             
             #line default
@@ -317,7 +217,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 80 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 47 "..\..\Views\PrivateMessage\Messages.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             
@@ -328,7 +228,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 81 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 48 "..\..\Views\PrivateMessage\Messages.cshtml"
 Write(Scripts.Render("~/bundles/editor"));
 
             
@@ -339,7 +239,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 82 "..\..\Views\PrivateMessage\Messages.cshtml"
+            #line 49 "..\..\Views\PrivateMessage\Messages.cshtml"
 Write(Scripts.Render("~/bundles/formData"));
 
             

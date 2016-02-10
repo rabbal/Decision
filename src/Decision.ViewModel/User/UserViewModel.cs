@@ -23,6 +23,6 @@ namespace Decision.ViewModel.User
         /// <summary>
         /// نام /نام خانوادگی
         /// </summary>
-        public string FullName { get; set; }
+        public string DisplayName { get; set; }
     }
 }

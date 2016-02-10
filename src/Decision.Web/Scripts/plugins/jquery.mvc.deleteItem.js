@@ -17,8 +17,8 @@
         if (button.data('doneMsg') !== undefined)
             doneMsg = button.data('doneMsg');
         function addToken(data) {
-            if ($(button).data("Applicant") !== undefined)
-                data.ApplicantId = $(button).data("Applicant");
+            if ($(button).data("applicant") !== undefined)
+                data.applicantId = $(button).data("applicant");
             data.__RequestVerificationToken = $("input[name=__RequestVerificationToken]").val();
             return data;
         }

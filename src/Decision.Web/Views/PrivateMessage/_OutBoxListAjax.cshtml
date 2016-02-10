@@ -23,19 +23,19 @@
                     <div class="col-md-2">
                         <i class="fa fa-user"></i>
                         <label class="text-muted">گیرنده :</label>
-                        <small >@conversation.RecieverUserName</small>
+                        <small >@conversation.DisPlayName</small>
                     </div>
                     <div class="col-md-5">
                         <i class="fa fa-calendar-o"></i>
                         <small>در :</small>
 
                         <time>
-                            @conversation.StartDate.ToRemainingDateTime()
+                            @conversation.SentOn.ToRemainingDateTime()
                             ,
-                            @conversation.StartDate.ToPersianString(PersianDateTimeFormat.FullDate)
+                            @conversation.SentOn.ToPersianString(PersianDateTimeFormat.FullDate)
                         </time>
                         <i class="fa fa-clock-o"></i>
-                        <time>@conversation.StartDate.ToPersianTimeString()</time>
+                        <time>@conversation.SentOn.ToPersianTimeString()</time>
                     </div>
                 </div>
             </div>

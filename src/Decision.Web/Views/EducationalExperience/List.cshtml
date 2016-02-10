@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="panel-body">
-        <div class="row" id="scientificTeachingList">
+        <div class="row" id="educationalExperienceList">
             @{ Html.RenderPartial(MVC.EducationalExperience.Views.ViewNames._ListAjax, Model);}
         </div>
     </div>
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div id="progress" align="center" style="display: none">
-            <img src="@Url.Content("~/Content/images/loading.gif")" alt="loading..."/>
+            <img src="@Url.Content("~/Content/images/loading.gif")" alt="loading..." />
         </div>
     </div>
 </div>
@@ -39,6 +39,7 @@
 }
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/datePicker")
 }
 
 

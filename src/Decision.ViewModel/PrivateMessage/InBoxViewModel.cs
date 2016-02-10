@@ -19,10 +19,10 @@ namespace Decision.ViewModel.PrivateMessage
         /// <summary>
         /// تاریخ آغاز گفتگو
         /// </summary>
-        public DateTime StartDate { get; set; }
+        public DateTime SentOn { get; set; }
         /// <summary>
         /// نام کاربری ارسال کننده
         /// </summary>
-        public string SenderUserName { get; set; }
+        public string DisplayName { get; set; }
     }
 }

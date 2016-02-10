@@ -185,7 +185,7 @@ WriteLiteral("                        ");
 
             
             #line 22 "..\..\Views\User\_Edit.cshtml"
-                   Write(Html.LabelFor(m => m.FirstName, new { @class = "col-md-3 control-label" }));
+                   Write(Html.LabelFor(m => m.DisplayName, new { @class = "col-md-3 control-label" }));
 
             
             #line default
@@ -200,7 +200,7 @@ WriteLiteral("                            ");
 
             
             #line 24 "..\..\Views\User\_Edit.cshtml"
-                       Write(Html.NoAutoCompleteTextBoxFor(m => m.FirstName));
+                       Write(Html.NoAutoCompleteTextBoxFor(m => m.DisplayName));
 
             
             #line default
@@ -211,7 +211,7 @@ WriteLiteral("                            ");
 
             
             #line 25 "..\..\Views\User\_Edit.cshtml"
-                       Write(Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" }));
+                       Write(Html.ValidationMessageFor(m => m.DisplayName, "", new { @class = "text-danger" }));
 
             
             #line default
@@ -227,48 +227,6 @@ WriteLiteral("                        ");
 
             
             #line 29 "..\..\Views\User\_Edit.cshtml"
-                   Write(Html.LabelFor(m => m.LastName, new { @class = "col-md-3 control-label" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                        <div");
-
-WriteLiteral(" class=\"col-md-8\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                            ");
-
-            
-            #line 31 "..\..\Views\User\_Edit.cshtml"
-                       Write(Html.NoAutoCompleteTextBoxFor(m => m.LastName));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                            ");
-
-            
-            #line 32 "..\..\Views\User\_Edit.cshtml"
-                       Write(Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                   " +
-" <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                        ");
-
-            
-            #line 36 "..\..\Views\User\_Edit.cshtml"
                    Write(Html.LabelFor(m => m.Password, new { @class = "col-md-3 control-label" }));
 
             
@@ -283,7 +241,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 38 "..\..\Views\User\_Edit.cshtml"
+            #line 31 "..\..\Views\User\_Edit.cshtml"
                        Write(Html.FormControlPasswordFor(m => m.Password));
 
             
@@ -294,7 +252,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 39 "..\..\Views\User\_Edit.cshtml"
+            #line 32 "..\..\Views\User\_Edit.cshtml"
                        Write(Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" }));
 
             
@@ -310,7 +268,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 43 "..\..\Views\User\_Edit.cshtml"
+            #line 36 "..\..\Views\User\_Edit.cshtml"
                    Write(Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-3 control-label" }));
 
             
@@ -325,7 +283,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 45 "..\..\Views\User\_Edit.cshtml"
+            #line 38 "..\..\Views\User\_Edit.cshtml"
                        Write(Html.FormControlPasswordFor(m => m.ConfirmPassword));
 
             
@@ -336,7 +294,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 46 "..\..\Views\User\_Edit.cshtml"
+            #line 39 "..\..\Views\User\_Edit.cshtml"
                        Write(Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" }));
 
             
@@ -345,115 +303,47 @@ WriteLiteral("                            ");
 WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                   " +
 " <div");
 
-WriteLiteral(" class=\"col-md-10 col-md-offset-2\"");
-
-WriteLiteral(">\r\n                        <ul");
-
-WriteLiteral(" class=\"list-group row margin-bottom-0\"");
+WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
+WriteLiteral("                        ");
+
             
-            #line 51 "..\..\Views\User\_Edit.cshtml"
-                            
-            
-            #line default
-            #line hidden
-            
-            #line 51 "..\..\Views\User\_Edit.cshtml"
-                             foreach (var role in Model.Roles)
-                            {
+            #line 43 "..\..\Views\User\_Edit.cshtml"
+                   Write(Html.LabelFor(model => Model.RoleId, new { @class = "control-label col-md-3" }));
 
             
             #line default
             #line hidden
-WriteLiteral("                                <li");
+WriteLiteral("\r\n                        <div");
 
-WriteLiteral(" class=\"list-group-item non-border col-xs-6 text-primary\"");
+WriteLiteral(" class=\"col-md-8\"");
 
-WriteLiteral(">\r\n\r\n                                    <div");
+WriteLiteral(">\r\n");
 
-WriteLiteral(" class=\"col-md-12\"");
-
-WriteLiteral(">\r\n                                        <input");
-
-WriteLiteral(" type=\"checkbox\"");
-
-WriteLiteral(" ");
+WriteLiteral("                            ");
 
             
-            #line 56 "..\..\Views\User\_Edit.cshtml"
-                                                                if (role.Selected) {
-            
-            #line default
-            #line hidden
-WriteLiteral(" ");
-
-WriteLiteral(" checked=\"checked\" ");
-
-WriteLiteral(" ");
-
-            
-            #line 56 "..\..\Views\User\_Edit.cshtml"
-                                                                                                                      }
+            #line 45 "..\..\Views\User\_Edit.cshtml"
+                       Write(Html.DropDownListFor(model => model.RoleId, Model.Roles, "انتخاب گروه کاربری", new { @class = "form-control" }));
 
             
             #line default
             #line hidden
-WriteLiteral("                                               id=\"");
+WriteLiteral("\r\n");
+
+WriteLiteral("                            ");
 
             
-            #line 57 "..\..\Views\User\_Edit.cshtml"
-                                              Write(role.Value);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\" name=\"RoleIds\" value=\"");
-
-            
-            #line 57 "..\..\Views\User\_Edit.cshtml"
-                                                                                  Write(role.Value);
+            #line 46 "..\..\Views\User\_Edit.cshtml"
+                       Write(Html.ValidationMessageFor(model => model.RoleId, null, new { @class = "text-danger" }));
 
             
             #line default
             #line hidden
-WriteLiteral("\" class=\"checkbox-inline\" />\r\n                                        <label");
-
-WriteLiteral(" class=\"control-label\"");
-
-WriteAttribute("for", Tuple.Create(" for=\"", 3576), Tuple.Create("\"", 3593)
-            
-            #line 58 "..\..\Views\User\_Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 3582), Tuple.Create<System.Object, System.Int32>(role.Value
-            
-            #line default
-            #line hidden
-, 3582), false)
-);
-
-WriteLiteral(">");
-
-            
-            #line 58 "..\..\Views\User\_Edit.cshtml"
-                                                                                  Write(role.Text);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</label>\r\n                                    </div>\r\n\r\n                         " +
-"       </li>\r\n");
-
-            
-            #line 62 "..\..\Views\User\_Edit.cshtml"
-
-                            }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                        </ul>\r\n                    </div>\r\n                </div>" +
-"\r\n            </div>\r\n            <div");
+WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                </d" +
+"iv>\r\n            </div>\r\n            <div");
 
 WriteLiteral(" class=\"panel-footer block\"");
 
@@ -469,17 +359,17 @@ WriteLiteral(" id=\"@*@($\"editButton{Model.Id}\")*@\"");
 
 WriteLiteral(" autocomplete=\"off\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 4019), Tuple.Create("\"", 4069)
-, Tuple.Create(Tuple.Create("", 4029), Tuple.Create("AjaxForm.CustomSubmit(this,", 4029), true)
-, Tuple.Create(Tuple.Create(" ", 4056), Tuple.Create("\'", 4057), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3187), Tuple.Create("\"", 3237)
+, Tuple.Create(Tuple.Create("", 3197), Tuple.Create("AjaxForm.CustomSubmit(this,", 3197), true)
+, Tuple.Create(Tuple.Create(" ", 3224), Tuple.Create("\'", 3225), true)
             
-            #line 70 "..\..\Views\User\_Edit.cshtml"
-                                                       , Tuple.Create(Tuple.Create("", 4058), Tuple.Create<System.Object, System.Int32>(Model.Id
+            #line 53 "..\..\Views\User\_Edit.cshtml"
+                                                       , Tuple.Create(Tuple.Create("", 3226), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 4058), false)
-, Tuple.Create(Tuple.Create("", 4067), Tuple.Create("\')", 4067), true)
+, 3226), false)
+, Tuple.Create(Tuple.Create("", 3235), Tuple.Create("\')", 3235), true)
 );
 
 WriteLiteral(" data-loading-text=\"در حال ارسال اطلاعات\"");
@@ -504,7 +394,7 @@ WriteLiteral(" data-ajax-complete=\"cancelEditOnComplete(xhr, status)\"");
 WriteLiteral("\r\n                       data-ajax-update=\"#user-");
 
             
-            #line 76 "..\..\Views\User\_Edit.cshtml"
+            #line 59 "..\..\Views\User\_Edit.cshtml"
                                           Write(Model.Id);
 
             
@@ -514,14 +404,14 @@ WriteLiteral("\"");
 
 WriteLiteral(" data-ajax-method=\"POST\"");
 
-WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 4539), Tuple.Create("\"", 4612)
+WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 3707), Tuple.Create("\"", 3780)
             
-            #line 77 "..\..\Views\User\_Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 4570), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.User.CancelEdit(Model.Id))
+            #line 60 "..\..\Views\User\_Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 3738), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.User.CancelEdit(Model.Id))
             
             #line default
             #line hidden
-, 4570), false)
+, 3738), false)
 );
 
 WriteLiteral(" role=\"button\"");
@@ -538,7 +428,7 @@ WriteLiteral(" class=\"clearfix\"");
 WriteLiteral("></div>\r\n            </div>\r\n        </div>\r\n");
 
             
-            #line 85 "..\..\Views\User\_Edit.cshtml"
+            #line 68 "..\..\Views\User\_Edit.cshtml"
 
     }
 

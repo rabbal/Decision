@@ -2,7 +2,6 @@
 @model Decision.ViewModel.EducationalBackground.EducationalBackgroundViewModel
 <div class="col-md-12 " id="educationalBackground-@Model.Id">
     <div class="panel panel-default">
-
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-3">
@@ -17,10 +16,10 @@
                 </div>
                 <div class="col-md-3">
                     <label class="text-muted">
-                        نوع تحصیلات:
+                        کشور:
                     </label>
                     <small>
-                        @Html.DisplayFor(a => a.EducationalType)
+                       @Model.Country
                     </small>
                 </div>
                 <div class="col-md-3">
@@ -37,13 +36,12 @@
                     </label>
                     <small>@Model.GraduationDate.ToPersianString(PersianDateTimeFormat.Date)</small>
                 </div>
-
             </div>
 
             <div class="row">
                 <div class="col-md-3">
                     <label class="text-muted">
-                        متقاضی مشاور:
+                        استاد مشاور:
                     </label>
                     <small>@Model.Advisor</small>
                 </div>
@@ -61,34 +59,34 @@
                 </div>
                 <div class="col-md-3">
                     <label class="text-muted">
-                        ارتباط با پست کاری :
+                        دانشگاه :
                     </label>
-                    <small>@Model.RelatedToOrganizationPosition.GetPersianNumber()</small>
+                    <small>@Model.University</small>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-3">
                     <label class="text-muted">
-                        موسسه آموزشی:
+                       رشته :
                     </label>
-                    <small>@Model.InstitutionName</small>
+                    <small>@Model.Field</small>
                 </div>
                 <div class="col-md-3">
                     <label class="text-muted">
-                        رشته تحصیلی :
+                        موضوع پایان نامه :
                     </label>
-                    <small>@Model.StudyFieldName</small>
+                    <small>@Model.ThesisTopic</small>
                 </div>
 
-                <div class="col-md-9">
+                <div class="col-md-3">
                     <label class="text-muted">
-                        توضیحات:
+                        <i class="fa fa-star"></i>:
                     </label>
-                    <small>@Model.Description</small>
+                    <small>@Model.Score.GetPersianNumber()</small>
                 </div>
                 <div class="col-md-3">
                     <label class="text-muted">
-                        متقاضی راهنما:
+                        استاد راهنما:
                     </label>
                     <small>@Model.Supervisor</small>
                 </div>

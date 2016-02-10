@@ -9,6 +9,7 @@ using Decision.Common.Json;
 using Decision.DataLayer.Context;
 using Decision.Common.Extentions;
 using Decision.ServiceLayer.Contracts.ApplicantInfo;
+using Decision.ServiceLayer.Contracts.Users;
 using Decision.ServiceLayer.Security;
 using Decision.ViewModel.EducationalExperience;
 using Decision.Web.Filters;
@@ -22,15 +23,18 @@ namespace Decision.Web.Controllers
     public partial class EducationalExperienceController : Controller
     {
         #region	Fields
+
+        private readonly IApplicationUserManager _userManager;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IEducationalExperienceService _educationalExperienceService;
         #endregion
 
         #region	Ctor
-        public EducationalExperienceController(IUnitOfWork unitOfWork, IEducationalExperienceService educationalExperienceService)
+        public EducationalExperienceController(IUnitOfWork unitOfWork, IEducationalExperienceService educationalExperienceService,IApplicationUserManager userManager)
         {
             _unitOfWork = unitOfWork;
             _educationalExperienceService = educationalExperienceService;
+            _userManager = userManager;
         }
         #endregion
 
@@ -63,9 +67,10 @@ namespace Decision.Web.Controllers
         #region Create
         [HttpGet]
         [AjaxOnly]
-        public virtual async Task<ActionResult> Create(Guid applicantId)
+        public virtual  ActionResult Create(Guid applicantId)
         {
-            return PartialView(MVC.EducationalExperience.Views._Create);
+            var viewModel = new AddEducationalExperienceViewModel {ApplicantId = applicantId};
+            return PartialView(MVC.EducationalExperience.Views._Create,viewModel);
         }
 
         [AjaxOnly]
@@ -135,9 +140,9 @@ namespace Decision.Web.Controllers
                 }
 
             await _educationalExperienceService.EditAsync(viewModel);
-             await _unitOfWork.SaveAllChangesAsync();
-            
-                var EducationalExperience =
+            await _unitOfWork.SaveAllChangesAsync(auditUserId: _userManager.GetCurrentUserId());
+
+            var educationalExperience =
                     await _educationalExperienceService.GetEducationalExperienceViewModel(viewModel.Id);
                 return new JsonNetResult
                 {
@@ -145,7 +150,7 @@ namespace Decision.Web.Controllers
                     {
                         success = true,
                         View =
-                            this.RenderPartialViewToString(MVC.EducationalExperience.Views._EducationalExperienceItem, EducationalExperience)
+                            this.RenderPartialViewToString(MVC.EducationalExperience.Views._EducationalExperienceItem, educationalExperience)
                     }
                 };
         }

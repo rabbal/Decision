@@ -12,7 +12,7 @@
         {
             @Html.AntiForgeryToken()
             @Html.HiddenFor(a => a.ConversationId)
-            @Html.HiddenFor(a => a.ReplyId)
+            @Html.HiddenFor(a => a.ParentId)
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
@@ -22,20 +22,11 @@
                         </label>
                         <div class="col-md-10">
 
-                            @Html.TextAreaFor(a => a.Content, new {@class = "ckeditor form-control", rows = 10})
-                            @Html.ValidationMessageFor(model => model.Content, "", new {@class = "text-danger"})
+                            @Html.TextAreaFor(a => a.Body, new {@class = "ckeditor form-control", rows = 10})
+                            @Html.ValidationMessageFor(model => model.Body, "", new {@class = "text-danger"})
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="Attachments" class="control-label col-md-1">
-                            <i class="fa fa-file"></i>
-                            ضمیمه
-                        </label>
-                        <div class="col-md-6">
-
-                            @Html.TextBoxFor(model => model.Attachments, new {type = "file", @class = "form-control", multiple = "true"})
-                        </div>
-                    </div>
+                   
                     <div class="form-group">
                         <div class="col-md-6 col-md-offset-1">
                             <button type="button" autocomplete="off" onclick="AjaxForm.CustomSubmitWithEditor(this, 'replyForm')"

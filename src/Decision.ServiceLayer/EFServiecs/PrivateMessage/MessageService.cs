@@ -57,7 +57,7 @@ namespace Decision.ServiceLayer.EFServiecs.PrivateMessage
             var message = new Message
             {
                 SenderId = currentUserId,
-                Body = viewModel.Content.ToSafeHtml(),
+                Body = viewModel.Body.ToSafeHtml(),
                 SentOn = sentOn,
                 ConversationId = conversation.Id
             };
@@ -69,8 +69,8 @@ namespace Decision.ServiceLayer.EFServiecs.PrivateMessage
             var newMessageToConversation = new Message
             {
                 ConversationId = viewModel.ConversationId,
-                Body = viewModel.Content.ToSafeHtml(),
-                ParentId = viewModel.ReplyId,
+                Body = viewModel.Body.ToSafeHtml(),
+                ParentId = viewModel.ParentId,
                 SentOn = DateTime.Now,
                 SenderId = _userManager.GetCurrentUserId()
             };
@@ -83,13 +83,14 @@ namespace Decision.ServiceLayer.EFServiecs.PrivateMessage
         public async Task<IEnumerable<InBoxViewModel>> GetInBox(int page)
         {
             var currentUserId = _userManager.GetCurrentUserId();
+            var resultsToSkip = (page - 1)*5;
             return
                 await
                     _conversations.Where(a => a.ReceiverId == currentUserId)
                         .Include(a => a.Sender).AsNoTracking()
                         .ProjectTo<InBoxViewModel>(_mappingEngine)
-                        .OrderByDescending(a => a.StartDate)
-                        .Skip((page - 1) * 5)
+                        .OrderByDescending(a => a.SentOn)
+                        .Skip(()=>resultsToSkip)
                         .Take(5)
                         .ToListAsync();
         }
@@ -97,12 +98,13 @@ namespace Decision.ServiceLayer.EFServiecs.PrivateMessage
         public async Task<IEnumerable<OutBoxViewModel>> GetOutBox(int page)
         {
             var currentUserId = _userManager.GetCurrentUserId();
+            var resultsToSkip = (page - 1) * 5;
             return await _conversations.Where(a => a.SenderId == currentUserId)
                 .Include(a => a.Receiver)
                 .AsNoTracking()
                 .ProjectTo<OutBoxViewModel>(_mappingEngine)
-                .OrderByDescending(a => a.StartDate)
-                .Skip((page - 1) * 5)
+                .OrderByDescending(a => a.SentOn)
+                .Skip(() => resultsToSkip)
                 .Take(5)
                 .ToListAsync();
         }
@@ -120,8 +122,6 @@ namespace Decision.ServiceLayer.EFServiecs.PrivateMessage
                 await
                     _messages.Where(a => a.ConversationId == conversationId)
                         .Include(a=>a.Sender)
-                        .OrderBy(a => a.SentOn)
-                        .ProjectTo<MessageViewModel>(_mappingEngine)
                         .ToListAsync();
             
             return new MessageListViewModel
@@ -130,7 +130,7 @@ namespace Decision.ServiceLayer.EFServiecs.PrivateMessage
                 AddMessageViewModel = new AddMessageViewModel
                 {
                     ConversationId = conversationId,
-                    ReplyId = messages.First().Id
+                    ParentId = messages.First().Id
                 }
             };
         }

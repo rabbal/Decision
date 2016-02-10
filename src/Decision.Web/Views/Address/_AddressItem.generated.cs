@@ -27,7 +27,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
+    using Decision.Common.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -293,11 +293,11 @@ WriteLiteral(" data-delete-url=\"");
             #line hidden
 WriteLiteral("\"");
 
-WriteLiteral(" data-Applicant=\"");
+WriteLiteral(" data-applicant=\"");
 
             
             #line 60 "..\..\Views\Address\_AddressItem.cshtml"
-                                                                                                   Write(Model.ApplicantId);
+                                                                                                     Write(Model.ApplicantId);
 
             
             #line default
@@ -308,22 +308,22 @@ WriteLiteral(" data-removal-element=\"#address-");
 
             
             #line 60 "..\..\Views\Address\_AddressItem.cshtml"
-                                                                                                                                                    Write(Model.Id);
+                                                                                                                                                        Write(Model.Id);
 
             
             #line default
             #line hidden
 WriteLiteral("\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 2740), Tuple.Create("\"", 2761)
-, Tuple.Create(Tuple.Create("", 2745), Tuple.Create("remove-", 2745), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 2744), Tuple.Create("\"", 2765)
+, Tuple.Create(Tuple.Create("", 2749), Tuple.Create("remove-", 2749), true)
             
             #line 60 "..\..\Views\Address\_AddressItem.cshtml"
-                                                                                               , Tuple.Create(Tuple.Create("", 2752), Tuple.Create<System.Object, System.Int32>(Model.Id
+                                                                                                   , Tuple.Create(Tuple.Create("", 2756), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 2752), false)
+, 2756), false)
 );
 
 WriteLiteral(">\r\n                    <i");

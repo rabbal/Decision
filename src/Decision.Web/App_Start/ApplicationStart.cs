@@ -37,8 +37,7 @@ namespace Decision.Web
             var filterProider = FilterProviders.Providers.Single(p => p is FilterAttributeFilterProvider);
             FilterProviders.Providers.Remove(filterProider);
             FilterProviders.Providers.Add(ProjectObjectFactory.Container.GetInstance<StructureMapFilterProvider>());
-
-
+            
             var defaultJsonFactory = ValueProviderFactories.Factories
                 .OfType<JsonValueProviderFactory>().FirstOrDefault();
             var index = ValueProviderFactories.Factories.IndexOf(defaultJsonFactory);

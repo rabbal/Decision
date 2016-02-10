@@ -10,6 +10,7 @@ using Decision.Common.Filters;
 using Decision.Common.Json;
 using Decision.DataLayer.Context;
 using Decision.ServiceLayer.Contracts.ApplicantInfo;
+using Decision.ServiceLayer.Contracts.Users;
 using Decision.ServiceLayer.Security;
 using Decision.ViewModel.EducationalBackground;
 using Decision.Web.Extentions;
@@ -26,17 +27,17 @@ namespace Decision.Web.Controllers
     {
         #region	Fields
 
-       
+        private readonly IApplicationUserManager _userManager;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IEducationalBackgroundService _educationalBackgroundService;
         #endregion
 
         #region	Ctor
-        public EducationalBackgroundController(IUnitOfWork unitOfWork, IEducationalBackgroundService educationalBackgroundService)
+        public EducationalBackgroundController(IUnitOfWork unitOfWork, IEducationalBackgroundService educationalBackgroundService,IApplicationUserManager userManager)
         {
             _unitOfWork = unitOfWork;
             _educationalBackgroundService = educationalBackgroundService;
-            
+            _userManager = userManager;
         }
         #endregion
 
@@ -59,7 +60,6 @@ namespace Decision.Web.Controllers
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public virtual async Task<ActionResult> ListAjax(EducationalBackgroundSearchRequest request)
         {
-           
             var viewModel = await _educationalBackgroundService.GetPagedListAsync(request);
             if (viewModel.EducationalBackgrounds == null || !viewModel.EducationalBackgrounds.Any())
                 return Content("no-more-info");
@@ -139,7 +139,7 @@ namespace Decision.Web.Controllers
             }
 
             await _educationalBackgroundService.EditAsync(viewModel);
-            await _unitOfWork.SaveAllChangesAsync();
+            await _unitOfWork.SaveAllChangesAsync(auditUserId:_userManager.GetCurrentUserId());
 
             return RedirectToAction(MVC.EducationalBackground.List(viewModel.ApplicantId));
 

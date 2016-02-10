@@ -34,7 +34,7 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
         #endregion
 
         #region Ctor
-        public WorkExperienceService(IUnitOfWork unitOfWork,ICityService cityService,IStateService stateService, IApplicationUserManager userManager, IMappingEngine mappingEngine)
+        public WorkExperienceService(IUnitOfWork unitOfWork, ICityService cityService, IStateService stateService, IApplicationUserManager userManager, IMappingEngine mappingEngine)
         {
             _userManager = userManager;
             _unitOfWork = unitOfWork;
@@ -46,9 +46,9 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
         #endregion
 
         #region GetForEdit
-        public async Task<EditWorkExperienceViewModel> GetForEditAsync(Guid id,string path)
+        public async Task<EditWorkExperienceViewModel> GetForEditAsync(Guid id, string path)
         {
-            var viewModel=await  _workExperiences.AsNoTracking().ProjectTo<EditWorkExperienceViewModel>(_mappingEngine).FirstOrDefaultAsync(a => a.Id == id);
+            var viewModel = await _workExperiences.AsNoTracking().ProjectTo<EditWorkExperienceViewModel>(_mappingEngine).FirstOrDefaultAsync(a => a.Id == id);
             if (viewModel == null) return null;
             viewModel.States = _stateService.GetAsSelectListItemAsync(viewModel.State, path);
             viewModel.Cities = _cityService.GetAsSelectListByStateNameAsync(viewModel.State, viewModel.City, path);
@@ -82,12 +82,13 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
         #endregion
 
         #region GetPagedList
-        public  async Task<WorkExperienceListViewModel> GetPagedListAsync(WorkExperienceSearchRequest request)
+        public async Task<WorkExperienceListViewModel> GetPagedListAsync(WorkExperienceSearchRequest request)
         {
-            var cities = _workExperiences.Include(a=>a.CreatedBy).Include(a=>a.ModifiedBy).Where(a => a.ApplicantId == request.ApplicantId).AsNoTracking().OrderByDescending(a => a.TenureBeginDate).AsQueryable();
-            var selectedCities = cities.ProjectTo<WorkExperienceViewModel>(_mappingEngine);
+            var works = _workExperiences.Include(a => a.CreatedBy).Include(a => a.ModifiedBy).Where(a => a.ApplicantId == request.ApplicantId).AsNoTracking().OrderByDescending(a => a.TenureBeginDate).AsQueryable();
+            var selectedCities = works.ProjectTo<WorkExperienceViewModel>(_mappingEngine);
+            var resultsToSkip = (request.PageIndex - 1) * 10;
             var query = await selectedCities
-                .Skip((request.PageIndex - 1)*10)
+                .Skip(() => resultsToSkip)
                 .Take(10).ToListAsync();
 
             return new WorkExperienceListViewModel { SearchRequest = request, WorkExperiences = query };
@@ -107,22 +108,22 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
                 ApplicantId = ApplicantId,
                 States = _stateService.GetAsSelectListItemAsync(null, path),
                 Cities = new List<SelectListItem>(),
-             };
+            };
         }
 
-        public async Task FillAddViewModel(AddWorkExperienceViewModel viewModel,string path)
+        public async Task FillAddViewModel(AddWorkExperienceViewModel viewModel, string path)
         {
             viewModel.States = _stateService.GetAsSelectListItemAsync(viewModel.State, path);
             viewModel.Cities = _cityService.GetAsSelectListByStateNameAsync(viewModel.State, viewModel.City, path);
-         }
+        }
 
         public async Task FillEditViewModel(EditWorkExperienceViewModel viewModel, string path)
         {
             viewModel.States = _stateService.GetAsSelectListItemAsync(viewModel.State, path);
             viewModel.Cities = _cityService.GetAsSelectListByStateNameAsync(viewModel.State, viewModel.City, path);
-          }
+        }
         #endregion
-        
+
         public Task<WorkExperienceViewModel> GetWorkExperienceViewModel(Guid guid)
         {
             return

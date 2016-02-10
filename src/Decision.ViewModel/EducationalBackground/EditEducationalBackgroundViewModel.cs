@@ -16,21 +16,11 @@ namespace Decision.ViewModel.EducationalBackground
     /// </summary>
     public class EditEducationalBackgroundViewModel : BaseRowVersion
     {
-     
         #region Properties
         /// <summary>
         /// آی دی سوابق متقاضی
         /// </summary>
         public Guid Id { get; set; }
-        /// <summary>
-        /// نوع تحصیلات 
-        /// حوزوی / دانشگاهی
-        /// </summary>
-        [DisplayName("نوع تحصیلات")]
-        [Required(ErrorMessage = "لطفا نوع تحصیلات را مشخص کنید ")]
-        public EducationalType EducationalType { get; set; }
-        
-
         /// <summary>
         /// مقطع تحصیلی دانشگاهی
         /// </summary>
@@ -48,12 +38,14 @@ namespace Decision.ViewModel.EducationalBackground
         /// زمان فارغ التحصیل شدن در این مدرک
         /// </summary>
         [DisplayName("تاریخ فارغ التحصیلی")]
+        [Required(ErrorMessage = "لفطا تاریخ فارغ التحصیل شدن در این مدرک را وارد کنید")]
         public DateTime GraduationDate { get; set; }
 
         /// <summary>
         /// تاریخ ورود به مقطع تحصیلی
         /// </summary>
         [DisplayName("تاریخ شروع مقطع")]
+        [Required(ErrorMessage = "لفطا تاریخ  ورود به مقطع تحصیلی را وارد کنید")]
         public DateTime EntryDate { get; set; }
 
         /// <summary>
@@ -78,71 +70,59 @@ namespace Decision.ViewModel.EducationalBackground
 
         [DisplayName("توضیحات")]
         public string Description { get; set; }
-
         /// <summary>
         /// معدل کل مقطع
         /// </summary>
         [DisplayName("معدل کل")]
-        [Range(0.00,20.00, ErrorMessage = "نمره معدل کل میبایست بین صفر تا ۲۰ باشد")]
+        [Range(0.00, 20.00, ErrorMessage = "نمره معدل کل میبایست بین صفر تا ۲۰ باشد")]
         [RegularExpression(@"\d+(\.\d{2})?", ErrorMessage = "لطفا معدل کل را به شکل صحیح وارد کنید")]
         public decimal GPA { get; set; }
-
         /// <summary>
         /// نمره پایان نامه
         /// </summary>
         [DisplayName("نمره پایان نامه")]
-        [Range(0.00,20.00, ErrorMessage = "نمره پایان نامه میبایست بین صفر تا ۲۰ باشد")]
-        [RegularExpression(@"\d+(\.\d{2})?", ErrorMessage = "لطفا پایان نامه را به شکل صحیح وارد کنید")]
+        [Range(0.00, 20.00, ErrorMessage = "نمره پایان نامه میبایست بین صفر تا ۲۰ باشد")]
+        [RegularExpression(@"\d+(\.\d{2})?", ErrorMessage = "لطفا نمره پایان نامه را به شکل صحیح وارد کنید")]
         public decimal ThesisScore { get; set; }
-        /// <summary>
-        /// میزان ارتباط با پست کاری
-        /// </summary>
-        [DisplayName("ارتباط با پست کاری")]
-        [Range(0, 10, ErrorMessage = " عدد وارد شده میبایست بین صفر تا ۱۰ باشد")]
-        public int RelatedToOrganizationPosition { get; set; }
-
         /// <summary>
         /// اسکن فایل ضمیمه مدرک تحصیلی
         /// </summary>
         public string AttachmentScan { get; set; }
-
         /// <summary>
         /// اسکن فایل ضمیمه مدرک تحصیلی
         /// </summary>
         [DisplayName("فایل ضمیمه مدرک")]
         public HttpPostedFileBase AttachmentFile { get; set; }
-
         /// <summary>
         /// آی دی متقاضی صاحب مدرک
         /// </summary>
         [DisplayName("متقاضی")]
+        [Required]
         public Guid ApplicantId { get; set; }
-
         /// <summary>
-        /// آی دی موسسه آموزشی
+        /// امتیاز 
         /// </summary>
-        [Required(ErrorMessage = "لطفا موسسه آموزشی را انتخاب کنید")]
-        [DisplayName("موسسه آموزشی")]
-        public Guid InstitutionId { get; set; }
-
+        [DisplayName("امتیاز")]
+        [Required(ErrorMessage = "لطفا برای این مدرک امتیاز دهی کنید")]
+        public double Score { get; set; }
         /// <summary>
-        /// آی دی عنوان رشته تحصیلی
+        /// کشور محل تحصیل
         /// </summary>
-        [Required(ErrorMessage = "لطفا رشته تحصیلی را انتخاب کنید")]
-        [DisplayName("رشته تحصیلی")]
-        public Guid StudyFieldId { get; set; }
+        [DisplayName("کشور")]
+        public string Country { get; set; }
+        /// <summary>
+        /// دانشگاه
+        /// </summary>
+        [DisplayName("دانشگاه")]
+        [Required(ErrorMessage = "لطفا دانشگاه محل تحصیل را مشخص کنید")]
+        public string University { get; set; }
+        /// <summary>
+        /// رشته تحصیلی
+        /// </summary>
+        [DisplayName("رشته دانشگاهی")]
+        [Required(ErrorMessage = "لطفا رشته تحصیلی را مشخص کنید")]
+        public string Field { get; set; }
         #endregion
 
-        #region SelectListItems
-        /// <summary>
-        /// لیست عنوان رشته های تحصیلی برای لیست آبشاری در ویو
-        /// </summary>
-        public IEnumerable<SelectListItem> StudyFields { get; set; }
-
-        /// <summary>
-        /// لیست موسسه های آموزشی برای لیست آبشاری در ویو
-        /// </summary>
-        public IEnumerable<SelectListItem> Institutions { get; set; }
-        #endregion
     }
 }

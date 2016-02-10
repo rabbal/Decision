@@ -1,41 +1,67 @@
-﻿@model Decision.ViewModel.EducationalExperience.EducationalExperienceViewModel
+﻿@using DNT.Extensions
+@model Decision.ViewModel.EducationalExperience.EducationalExperienceViewModel
 
 <div class="col-md-12 " id="educationalExperience-@Model.Id">
     <div class="panel panel-default">
 
         <div class="panel-body">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-9">
                     <i class="fa fa-list-alt"></i>
                     <label class="text-muted">
-                        عنوان تدریس شده :
+                        عنوان دروس :
                     </label>
-                    <small>@Model.TitleName</small>
+                    <small>@Model.Lessons</small>
                 </div>
+                <div class="col-md-3">
+                    <label class="text-muted">
+                        <i class="fa fa-star"></i>:
+                    </label>
+                    <small>@Model.Score.GetPersianNumber()</small>
+                </div>
+
+            </div>
+
+            <div class="row">
                 <div class="col-md-3">
                     <i class="fa fa-calendar"></i>
                     <label class="text-muted">
                         سال شروع :
                     </label>
-                    <small>@Model.BeginYear.GetPersianNumber()</small>
+                    <small>@Model.BeginYear.ToPersianString(PersianDateTimeFormat.Date)</small>
                 </div>
-                <div class="col-md-3">
+                @*<div class="col-md-3">
                     <i class="fa fa-calendar"></i>
                     <label class="text-muted">
                         سال پایان :
                     </label>
-                    <small>@Model.EndYear.GetPersianNumber()</small>
-                </div>
+                    <small>@Model.EndYear.ToPersianString(PersianDateTimeFormat.Date)</small>
+                </div>*@
                 <div class="col-md-6">
-                    <i class="fa fa-github-alt"></i>
+                    <i class="fa fa-building"></i>
                     <label class="text-muted">
-                        نام مرکز علمی :
+                        نام موسسه :
                     </label>
-                    <small>@Model.Description</small>
+                    <small>@Model.Institution</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <i class="fa fa-location-arrow"></i>
+                    <label class="text-muted">
+                        آدرس موسسه :
+                    </label>
+                    <small>@Model.InstitutionAddress.ToPersianContent(true)</small>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-phone"></i>
+                    <label class="text-muted">
+                        تلفن موسسه :
+                    </label>
+                    <small>@Model.InstitutionPhoneNumber.GetPersianNumber()</small>
                 </div>
 
             </div>
-
             @{Html.RenderPartial(MVC.Shared.Views._AuditLog, Model);}
         </div>
         <div class="panel-footer ">

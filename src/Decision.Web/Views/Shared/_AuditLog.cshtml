@@ -1,4 +1,4 @@
-﻿@using AttributeRouting.Helpers
+﻿
 @model Decision.ViewModel.Common.BaseViewModel
 <hr class="margin-bottom-5 margin-top-5">
 <div class="row">
@@ -24,7 +24,10 @@
     </div>
     <div class="col-md-3">
         <i class="fa fa-edit text-info"></i>
-        <small class="text-muted">نوع علمیات:</small>
-        <small>@Html.DisplayFor(a=>a.Action)</small><br>
+        <small class="text-muted">آخرین علمیات:</small>
+        <small>@Html.DisplayFor(a => a.Action)</small><br>
+        <i class="fa fa-edit text-info"></i>
+        <small class="text-muted">ورژن رکورد:</small>
+        <small>@Model.Version.GetPersianNumber()</small><br>
     </div>
 </div>

@@ -27,7 +27,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
+    using Decision.Common.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -113,7 +113,7 @@ WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(" id=\"scientificTeachingList\"");
+WriteLiteral(" id=\"educationalExperienceList\"");
 
 WriteLiteral(">\r\n");
 
@@ -188,19 +188,19 @@ WriteLiteral(" style=\"display: none\"");
 
 WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1652), Tuple.Create("\"", 1702)
+WriteAttribute("src", Tuple.Create(" src=\"", 1655), Tuple.Create("\"", 1705)
             
             #line 33 "..\..\Views\EducationalExperience\List.cshtml"
-, Tuple.Create(Tuple.Create("", 1658), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
+, Tuple.Create(Tuple.Create("", 1661), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
             
             #line default
             #line hidden
-, 1658), false)
+, 1661), false)
 );
 
 WriteLiteral(" alt=\"loading...\"");
 
-WriteLiteral("/>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+WriteLiteral(" />\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 DefineSection("Menu", () => {
 
@@ -231,6 +231,17 @@ WriteLiteral("    ");
             
             #line 41 "..\..\Views\EducationalExperience\List.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 42 "..\..\Views\EducationalExperience\List.cshtml"
+Write(Scripts.Render("~/bundles/datePicker"));
 
             
             #line default

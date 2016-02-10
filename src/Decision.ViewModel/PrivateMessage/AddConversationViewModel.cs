@@ -15,11 +15,10 @@ namespace Decision.ViewModel.PrivateMessage
         [Required(ErrorMessage = "لطفا محتوای پیغام را مشخص کنید")]
         [DisplayName("محتوای پیغام")]
         [AllowHtml]
-        public string Content { get; set; }
+        public string Body { get; set; }
         [Required(ErrorMessage = "لطفا دریافت کننده پیغام را مشخص کنید")]
         [DisplayName("دریافت کننده")]
         public Guid ReciverId { get; set; }
-        public IEnumerable<HttpPostedFileBase> Attachments { get; set; }
         public IEnumerable<SelectListItem> Users  { get; set; }
     }
 }

@@ -855,7 +855,6 @@
     </Compile>
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Extentions\ControllerExtentions.cs" />
-    <Compile Include="Helpers\TreeView.cs" />
     <Compile Include="Hubs\BaseHub.cs" />
     <Compile Include="App_Start\RoutingConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />

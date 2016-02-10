@@ -1,6 +1,5 @@
-﻿@using AttributeRouting.Helpers
+﻿
 @using Decision.Common.HtmlHelpers
-@using Decision.DomainClasses.Entities.Common
 @using Decision.DomainClasses.Entities.ApplicantInfo
 
 
@@ -19,14 +18,11 @@
                     <div class="col-md-12">
                         <div class="center-block text-center">
                             <figure>
-                                
-                                @Html.Image(Model.Photo, Model.FullName, "img-circle img-responsive img-thumbnail",200)
+                                @Html.Image(Model.Photo, Model.FullName, "img-circle img-responsive img-thumbnail", 200)
                                 <figcaption>
                                     <h5>
                                         @Model.FullName
                                         <br>
-                                        <small class="text-muted">کد پرسنلی :</small>
-                                        <small><strong class="text-primary">@Model.PersonnelCode</strong></small>
                                     </h5>
                                     @if (Model.Gender == GenderType.Male)
                                     {
@@ -79,26 +75,26 @@
                             <div class="col-md-3">
                                 <label for="birthCertificate">لینک دانلود کپی شناسنامه:</label>
                                 <small id="birthCertificate">
-                                    @Html.ActionLink("بارگذاری", MVC.Applicant.GetApplicantFile(Model.Id, "birthCertificate"))
+                                    @Html.ActionLink("بارگیری", MVC.Applicant.GetApplicantFile(Model.Id, "birthCertificate"))
                                 </small>
                             </div>
                             <div class="col-md-3">
                                 <label for="nationalCode">لینک دانلود کپی کارت ملی:</label>
                                 <small id="nationalCode">
-                                    @Html.ActionLink("بارگذاری", MVC.Applicant.GetApplicantFile(Model.Id, "nationalCode"))
+                                    @Html.ActionLink("بارگیری", MVC.Applicant.GetApplicantFile(Model.Id, "nationalCode"))
                                 </small>
                             </div>
                             <div class="col-md-3">
-                                <label >ملبس </label>
-                                <small >
-                                 @if (Model.IsClothed)
-                                 {
-                                     <i class="fa fa-check-square text-success"></i>
-                                 }
-                                 else
-                                 {
-                                    <i class="fa fa-check-square-o text-muted"></i>
-                                 }
+                                <label>ملبس </label>
+                                <small>
+                                    @if (Model.IsClothed)
+                                    {
+                                        <i class="fa fa-check-square text-success"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="fa fa-check-square-o text-muted"></i>
+                                    }
                                 </small>
                             </div>
                         </div>
@@ -107,86 +103,30 @@
                 <div class="row">
                     <div class="col-md-12 ">
                         <h3 class="line-status">
-                            <small >
+                            <small>
                                 <i class="fa fa-graduation-cap"></i>
                                 وضعیت شغلی تحصیلی
                             </small>
                         </h3>
                         <div class="row">
-                            <div class="col-md-3">
-                                <label for="CollegiateOrder">پایه متقاضی:</label>
-                                <small id="CollegiateOrder">@Model.CollegiateOrder.GetPersianNumber()</small>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="OccupationalGroup">گروه شغلی:</label>
-                                <small id="OccupationalGroup">@Model.OccupationalGroup.GetPersianNumber()</small>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="TrainigGrade">رتبه کارآموزی:</label>
-                                <small id="TrainigGrade">
-                                    @if (Model.TrainigGrade > 0)
-                                    {
-                                    <text>
-                                        @Model.TrainigGrade.GetPersianNumber()
-                                    </text>
-                                    }
-                                    else
-                                    {<text>
-                                        ثبت نشده
-                                    </text>
-                                    }
-                                </small>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="TrainingGPA">معدل کارآموزی:</label>
-                                <small id="TrainingGPA">
-                                    @if (Model.TrainingGPA > decimal.Zero)
-                                    {
-                                    <text>
-                                        @Model.TrainingGPA.GetPersianNumber()
-                                    </text>
-                                    }
-                                    else
-                                    {<text>
-                                        ثبت نشده
-                                    </text>
-                                    }
-                                </small>
-                            </div>
+                           
+                           
                         </div>
                         <div class="row">
-                            <div class="col-md-3">
-                                <label for="PositionName">سمت متقاضی:</label>
-                                <small id="PositionName">@Model.PositionName</small>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="TrainingCourseDetails">دوره کارآموزی:</label>
-                                <small id="TrainingCourseDetails">@Model.TrainingCourseDetails</small>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 ">
                         <h3 class="line-status">
-                            <small >
+                            <small>
                                 <i class="fa fa-credit-card"></i>
-                                مشخصات بانکی
+                                سایر مشخصات
                             </small>
                         </h3>
                         <div class="row">
-                            <div class="col-md-3">
-                                <label for="BankName">نام بانک دارای حساب</label>
-                                <small id="BankName">@Model.BankName</small>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="BankBranch">شعبه:</label>
-                                <small id="BankBranch">@Model.BankBranch</small>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="AccountNumber">شماره حساب:</label>
-                                <small id="AccountNumber">@Model.AccountNumber</small>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -199,5 +139,5 @@
 </div>
 
 @section Menu{
-    @{Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder,Model.Id);}
+    @{Html.RenderPartial(MVC.Applicant.Views._ApplicantRelatedLinksBuilder, Model.Id);}
 }

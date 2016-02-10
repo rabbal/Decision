@@ -27,6 +27,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
+    using Decision.Common.HtmlHelpers;
     
     #line 1 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
     using Decision.DomainClasses.Entities.ApplicantInfo;
@@ -66,7 +67,7 @@ WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"panel panel-default\"");
 
-WriteLiteral(">\r\n\r\n        <div");
+WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" class=\"panel-body\"");
 
@@ -92,7 +93,7 @@ WriteLiteral(">\r\n                        مقطع تحصیلی :\r\n          
 WriteLiteral("                        ");
 
             
-            #line 14 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+            #line 13 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
                    Write(Html.DisplayFor(a => a.AcademicDegree));
 
             
@@ -106,14 +107,14 @@ WriteLiteral(">\r\n                    <label");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">\r\n                        نوع تحصیلات:\r\n                    </label>\r\n          " +
-"          <small>\r\n");
+WriteLiteral(">\r\n                        کشور:\r\n                    </label>\r\n                 " +
+"   <small>\r\n");
 
-WriteLiteral("                        ");
+WriteLiteral("                       ");
 
             
-            #line 23 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
-                   Write(Html.DisplayFor(a => a.EducationalType));
+            #line 22 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+                  Write(Model.Country);
 
             
             #line default
@@ -134,7 +135,7 @@ WriteLiteral(">\r\n                        ورود:\r\n                    </la
 "   <small>");
 
             
-            #line 31 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+            #line 30 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
                       Write(Model.EntryDate.ToPersianString(PersianDateTimeFormat.Date));
 
             
@@ -156,13 +157,13 @@ WriteLiteral(">\r\n                        فارغ التحصیل:\r\n         
 "           <small>");
 
             
-            #line 38 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+            #line 37 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
                       Write(Model.GraduationDate.ToPersianString(PersianDateTimeFormat.Date));
 
             
             #line default
             #line hidden
-WriteLiteral("</small>\r\n                </div>\r\n\r\n            </div>\r\n\r\n            <div");
+WriteLiteral("</small>\r\n                </div>\r\n            </div>\r\n\r\n            <div");
 
 WriteLiteral(" class=\"row\"");
 
@@ -174,11 +175,11 @@ WriteLiteral(">\r\n                    <label");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">\r\n                        متقاضی مشاور:\r\n                    </label>\r\n         " +
-"           <small>");
+WriteLiteral(">\r\n                        استاد مشاور:\r\n                    </label>\r\n          " +
+"          <small>");
 
             
-            #line 48 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+            #line 46 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
                       Write(Model.Advisor);
 
             
@@ -196,7 +197,7 @@ WriteLiteral(">\r\n                        معدل کل :\r\n                  
 "       <small>");
 
             
-            #line 54 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+            #line 52 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
                       Write(Model.GPA.GetPersianNumber());
 
             
@@ -214,7 +215,7 @@ WriteLiteral(">\r\n                        نمره پایان نامه :\r\n   
 "               <small>");
 
             
-            #line 60 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+            #line 58 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
                       Write(Model.ThesisScore.GetPersianNumber());
 
             
@@ -228,12 +229,12 @@ WriteLiteral(">\r\n                    <label");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">\r\n                        ارتباط با پست کاری :\r\n                    </label>\r\n  " +
-"                  <small>");
+WriteLiteral(">\r\n                        دانشگاه :\r\n                    </label>\r\n             " +
+"       <small>");
 
             
-            #line 66 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
-                      Write(Model.RelatedToOrganizationPosition.GetPersianNumber());
+            #line 64 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+                      Write(Model.University);
 
             
             #line default
@@ -250,12 +251,12 @@ WriteLiteral(">\r\n                    <label");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">\r\n                        موسسه آموزشی:\r\n                    </label>\r\n         " +
-"           <small>");
+WriteLiteral(">\r\n                       رشته :\r\n                    </label>\r\n                 " +
+"   <small>");
 
             
-            #line 74 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
-                      Write(Model.InstitutionName);
+            #line 72 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+                      Write(Model.Field);
 
             
             #line default
@@ -268,30 +269,33 @@ WriteLiteral(">\r\n                    <label");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">\r\n                        رشته تحصیلی :\r\n                    </label>\r\n         " +
-"           <small>");
+WriteLiteral(">\r\n                        موضوع پایان نامه :\r\n                    </label>\r\n    " +
+"                <small>");
 
             
-            #line 80 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
-                      Write(Model.StudyFieldName);
+            #line 78 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+                      Write(Model.ThesisTopic);
 
             
             #line default
             #line hidden
 WriteLiteral("</small>\r\n                </div>\r\n\r\n                <div");
 
-WriteLiteral(" class=\"col-md-9\"");
+WriteLiteral(" class=\"col-md-3\"");
 
 WriteLiteral(">\r\n                    <label");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">\r\n                        توضیحات:\r\n                    </label>\r\n              " +
-"      <small>");
+WriteLiteral(">\r\n                        <i");
+
+WriteLiteral(" class=\"fa fa-star\"");
+
+WriteLiteral("></i>:\r\n                    </label>\r\n                    <small>");
 
             
-            #line 87 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
-                      Write(Model.Description);
+            #line 85 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+                      Write(Model.Score.GetPersianNumber());
 
             
             #line default
@@ -304,11 +308,11 @@ WriteLiteral(">\r\n                    <label");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">\r\n                        متقاضی راهنما:\r\n                    </label>\r\n        " +
-"            <small>");
+WriteLiteral(">\r\n                        استاد راهنما:\r\n                    </label>\r\n         " +
+"           <small>");
 
             
-            #line 93 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+            #line 91 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
                       Write(Model.Supervisor);
 
             
@@ -317,13 +321,13 @@ WriteLiteral(">\r\n                        متقاضی راهنما:\r\n       
 WriteLiteral("</small>\r\n                </div>\r\n            </div>\r\n");
 
             
-            #line 96 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+            #line 94 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 96 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+            #line 94 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
               Html.RenderPartial(MVC.Shared.Views._AuditLog, Model);
             
             #line default
@@ -351,14 +355,14 @@ WriteLiteral("></i>\r\n                    مشاهده ضمیمه\r\n          
 
 WriteLiteral(" class=\"btn btn-primary btn-sm\"");
 
-WriteAttribute("href", Tuple.Create("\r\n                   href=\"", 4100), Tuple.Create("\"", 4180)
+WriteAttribute("href", Tuple.Create("\r\n                   href=\"", 4027), Tuple.Create("\"", 4107)
             
-            #line 106 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
-, Tuple.Create(Tuple.Create("", 4127), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.EducationalBackground.Edit(Model.Id))
+            #line 104 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+, Tuple.Create(Tuple.Create("", 4054), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.EducationalBackground.Edit(Model.Id))
             
             #line default
             #line hidden
-, 4127), false)
+, 4054), false)
 );
 
 WriteLiteral(" role=\"button\"");
@@ -376,7 +380,7 @@ WriteLiteral("\r\n                        type=\"button\"");
 WriteLiteral(" data-delete-url=\"");
 
             
-            #line 108 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+            #line 106 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
                                                   Write(Url.Action(MVC.EducationalBackground.Delete()));
 
             
@@ -387,7 +391,7 @@ WriteLiteral("\"");
 WriteLiteral(" data-Applicant=\"");
 
             
-            #line 108 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+            #line 106 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
                                                                                                                    Write(Model.ApplicantId);
 
             
@@ -398,7 +402,7 @@ WriteLiteral("\"");
 WriteLiteral(" data-removal-element=\"#educationalBackground-");
 
             
-            #line 108 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+            #line 106 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
                                                                                                                                                                                     Write(Model.Id);
 
             
@@ -406,15 +410,15 @@ WriteLiteral(" data-removal-element=\"#educationalBackground-");
             #line hidden
 WriteLiteral("\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 4484), Tuple.Create("\"", 4505)
-, Tuple.Create(Tuple.Create("", 4489), Tuple.Create("remove-", 4489), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 4411), Tuple.Create("\"", 4432)
+, Tuple.Create(Tuple.Create("", 4416), Tuple.Create("remove-", 4416), true)
             
-            #line 108 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
-                                                                                                                               , Tuple.Create(Tuple.Create("", 4496), Tuple.Create<System.Object, System.Int32>(Model.Id
+            #line 106 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
+                                                                                                                               , Tuple.Create(Tuple.Create("", 4423), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 4496), false)
+, 4423), false)
 );
 
 WriteLiteral(">\r\n                    <i");

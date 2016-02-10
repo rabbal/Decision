@@ -23,7 +23,6 @@ namespace Decision.AutoMapperProfiles
                 .IgnoreAllNonExisting();
 
             CreateMap<EditEducationalExperienceViewModel, EducationalExperience>()
-                .ForMember(d => d.InstitutionAddress, m => m.MapFrom(a => a.Description.ToPersianContent(true)))
                 .IgnoreAllNonExisting();
 
             CreateMap<EducationalExperience, EditEducationalExperienceViewModel>().IgnoreAllNonExisting();

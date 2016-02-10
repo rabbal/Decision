@@ -266,7 +266,8 @@ namespace Decision.ServiceLayer.EFServiecs.Users
             if (userWithRoles == null) return null;
             var viewModel = _mappingEngine.Map<EditUserViewModel>(userWithRoles);
             viewModel.Roles = await _roleManager.GetAllAsSelectList();
-            viewModel.Roles.ToList().ForEach(a => a.Selected = viewModel.RoleIds.Any(b => Guid.Parse(a.Value) == b));
+            if (userWithRoles.Roles!=null  && userWithRoles.Roles.Any())
+                viewModel.Roles.ToList().ForEach(a => a.Selected = userWithRoles.Roles.First().RoleId.ToString() == a.Value);
             return viewModel;
         }
 
@@ -282,10 +283,10 @@ namespace Decision.ServiceLayer.EFServiecs.Users
                 user.PasswordHash = PasswordHasher.HashPassword(viewModel.Password);
             }
 
-            if (viewModel.RoleIds != null && viewModel.RoleIds.Any())
+            if (viewModel.RoleId.HasValue)
             {
                 _unitOfWork.MarkAsDetached(user);
-                viewModel.RoleIds.ToList().ForEach(roleId => user.Roles.Add(new UserRole { RoleId = roleId, UserId = user.Id }));
+                user.Roles.Add(new UserRole { RoleId = viewModel.RoleId.Value, UserId = user.Id });
                 _unitOfWork.Update(user, a => a.AssociatedCollection(u => u.Roles));
             }
             {
@@ -424,7 +425,7 @@ namespace Decision.ServiceLayer.EFServiecs.Users
             return _users.Any(a => a.IsSystemAccount);
         }
         #endregion
-        
+
         #region IsEmailAvailableForConfirm
         public bool IsEmailAvailableForConfirm(string email)
         {
@@ -493,9 +494,9 @@ namespace Decision.ServiceLayer.EFServiecs.Users
         public async Task FillForEdit(EditUserViewModel viewModel)
         {
             viewModel.Roles = await _roleManager.GetAllAsSelectList();
-            if (viewModel.RoleIds != null)
+            if (viewModel.RoleId.HasValue)
             {
-                viewModel.Roles.ToList().ForEach(a => a.Selected = viewModel.RoleIds.Any(b => Guid.Parse(a.Value) == b));
+                viewModel.Roles.ToList().ForEach(a => a.Selected = viewModel.RoleId.Value.ToString() == a.Value);
             }
         }
 

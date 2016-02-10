@@ -23,10 +23,10 @@ namespace Decision.AutoMapperProfiles
             CreateMap<List<Message>, List<MessageViewModel>>().IgnoreAllNonExisting();
             
             CreateMap<Conversation, InBoxViewModel>()
-                .ForMember(d => d.SenderUserName, m => m.MapFrom(s => s.Sender.UserName)).IgnoreAllNonExisting();
+               .IgnoreAllNonExisting();
 
             CreateMap<Conversation, OutBoxViewModel>()
-                .ForMember(d => d.RecieverUserName, m => m.MapFrom(s => s.Receiver.UserName)).IgnoreAllNonExisting();
+                .IgnoreAllNonExisting();
         }
 
         public override string ProfileName => GetType().Name;

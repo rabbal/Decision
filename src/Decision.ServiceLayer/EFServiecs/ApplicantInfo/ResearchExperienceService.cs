@@ -74,18 +74,18 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
         #region GetPagedList
         public async Task<ResearchExperienceListViewModel> GetPagedListAsync(ResearchExperienceSearchRequest request)
         {
-            var cities =
+            var researches =
                 _researchExperiences.Include(a => a.CreatedBy)
                     .Include(a => a.ModifiedBy)
                     .Where(a => a.ApplicantId == request.ApplicantId)
-                    .AsNoTracking()
+                    .AsNoTracking().OrderByDescending(a=>a.CreatedOn)
                     .AsQueryable();
 
-            var selectedCities = cities.ProjectTo<ResearchExperienceViewModel>(_mappingEngine);
+            var selectedCities = researches.ProjectTo<ResearchExperienceViewModel>(_mappingEngine);
 
-
+            var resultsToSkip = (request.PageIndex - 1)*10;
             var query = await selectedCities
-                .Skip((request.PageIndex - 1) * 10)
+                .Skip(()=>resultsToSkip)
                 .Take(10).ToListAsync();
 
             return new ResearchExperienceListViewModel { SearchRequest = request, ResearchExperiences = query };

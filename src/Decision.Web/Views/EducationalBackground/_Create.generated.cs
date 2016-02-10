@@ -111,6 +111,7 @@ WriteLiteral(">\r\n");
             
             #line 10 "..\..\Views\EducationalBackground\_Create.cshtml"
                                                           
+           
 
             
             #line default
@@ -124,57 +125,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 12 "..\..\Views\EducationalBackground\_Create.cshtml"
-           Write(Html.LabelFor(model => model.EducationalType, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                <div");
-
-WriteLiteral(" class=\"col-md-4\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 14 "..\..\Views\EducationalBackground\_Create.cshtml"
-               Write(Html.EditorFor(model => model.EducationalType));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 15 "..\..\Views\EducationalBackground\_Create.cshtml"
-               Write(Html.ValidationMessageFor(model => model.EducationalType, "", new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
-
-            
-            #line 18 "..\..\Views\EducationalBackground\_Create.cshtml"
-
-
-            
-            #line default
-            #line hidden
-WriteLiteral("            <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
-
-            
-            #line 20 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 13 "..\..\Views\EducationalBackground\_Create.cshtml"
            Write(Html.LabelFor(model => model.AcademicDegree, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -189,7 +140,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 22 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 15 "..\..\Views\EducationalBackground\_Create.cshtml"
                Write(Html.EditorFor(model => model.AcademicDegree));
 
             
@@ -200,8 +151,51 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 23 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 16 "..\..\Views\EducationalBackground\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.AcademicDegree, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
+
+WriteLiteral("            <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 20 "..\..\Views\EducationalBackground\_Create.cshtml"
+           Write(Html.LabelFor(model => model.Field, new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                <div");
+
+WriteLiteral(" class=\"col-md-4\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                    ");
+
+            
+            #line 22 "..\..\Views\EducationalBackground\_Create.cshtml"
+               Write(Html.NoAutoCompleteTextBoxFor(model => model.Field));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                    ");
+
+            
+            #line 23 "..\..\Views\EducationalBackground\_Create.cshtml"
+               Write(Html.ValidationMessageFor(model => model.Field, null, new { @class = "text-danger" }));
 
             
             #line default
@@ -210,7 +204,7 @@ WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
 
             
             #line 26 "..\..\Views\EducationalBackground\_Create.cshtml"
-            
+
 
             
             #line default
@@ -225,7 +219,7 @@ WriteLiteral("                ");
 
             
             #line 28 "..\..\Views\EducationalBackground\_Create.cshtml"
-           Write(Html.LabelFor(model => model.StudyFieldId, new { @class = "control-label col-md-2" }));
+           Write(Html.LabelFor(model => model.University, new { @class = "control-label col-md-2" }));
 
             
             #line default
@@ -240,7 +234,7 @@ WriteLiteral("                    ");
 
             
             #line 30 "..\..\Views\EducationalBackground\_Create.cshtml"
-               Write(Html.DropDownListFor(model => model.StudyFieldId, Model.StudyFields, "انتخاب رشته تحصیلی", new { @class = "form-control" }));
+               Write(Html.NoAutoCompleteTextBoxFor(model => model.University));
 
             
             #line default
@@ -251,57 +245,7 @@ WriteLiteral("                    ");
 
             
             #line 31 "..\..\Views\EducationalBackground\_Create.cshtml"
-               Write(Html.ValidationMessageFor(model => model.StudyFieldId, null, new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
-
-            
-            #line 34 "..\..\Views\EducationalBackground\_Create.cshtml"
-
-
-            
-            #line default
-            #line hidden
-WriteLiteral("            <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
-
-            
-            #line 36 "..\..\Views\EducationalBackground\_Create.cshtml"
-           Write(Html.LabelFor(model => model.InstitutionId, new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                <div");
-
-WriteLiteral(" class=\"col-md-4\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 38 "..\..\Views\EducationalBackground\_Create.cshtml"
-               Write(Html.DropDownListFor(model => model.InstitutionId, Model.Institutions, "انتخاب موسسه آموزشی", new { @class = "form-control" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 39 "..\..\Views\EducationalBackground\_Create.cshtml"
-               Write(Html.ValidationMessageFor(model => model.InstitutionId, null, new { @class = "text-danger" }));
+               Write(Html.ValidationMessageFor(model => model.University, null, new { @class = "text-danger" }));
 
             
             #line default
@@ -317,7 +261,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 43 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 35 "..\..\Views\EducationalBackground\_Create.cshtml"
            Write(Html.LabelFor(model => model.Supervisor, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -332,7 +276,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 45 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 37 "..\..\Views\EducationalBackground\_Create.cshtml"
                Write(Html.NoAutoCompleteTextBoxFor(model => model.Supervisor));
 
             
@@ -343,7 +287,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 46 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 38 "..\..\Views\EducationalBackground\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.Supervisor, "", new { @class = "text-danger" }));
 
             
@@ -360,7 +304,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 50 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 42 "..\..\Views\EducationalBackground\_Create.cshtml"
            Write(Html.LabelFor(model => model.Advisor, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -375,7 +319,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 52 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 44 "..\..\Views\EducationalBackground\_Create.cshtml"
                Write(Html.NoAutoCompleteTextBoxFor(model => model.Advisor));
 
             
@@ -386,8 +330,58 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 53 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 45 "..\..\Views\EducationalBackground\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.Advisor, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
+
+            
+            #line 48 "..\..\Views\EducationalBackground\_Create.cshtml"
+
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 50 "..\..\Views\EducationalBackground\_Create.cshtml"
+           Write(Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                <div");
+
+WriteLiteral(" class=\"col-md-8\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                    ");
+
+            
+            #line 52 "..\..\Views\EducationalBackground\_Create.cshtml"
+               Write(Html.TextAreaFor(model => model.Description, new { @class = "form-control", rows = 2 }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                    ");
+
+            
+            #line 53 "..\..\Views\EducationalBackground\_Create.cshtml"
+               Write(Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" }));
 
             
             #line default
@@ -411,56 +405,6 @@ WriteLiteral("                ");
 
             
             #line 58 "..\..\Views\EducationalBackground\_Create.cshtml"
-           Write(Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                <div");
-
-WriteLiteral(" class=\"col-md-8\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 60 "..\..\Views\EducationalBackground\_Create.cshtml"
-               Write(Html.TextAreaFor(model => model.Description, new { @class = "form-control", rows = 2 }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 61 "..\..\Views\EducationalBackground\_Create.cshtml"
-               Write(Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
-
-            
-            #line 64 "..\..\Views\EducationalBackground\_Create.cshtml"
-
-
-            
-            #line default
-            #line hidden
-WriteLiteral("            <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
-
-            
-            #line 66 "..\..\Views\EducationalBackground\_Create.cshtml"
            Write(Html.LabelFor(model => model.ThesisTopic, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -475,7 +419,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 68 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 60 "..\..\Views\EducationalBackground\_Create.cshtml"
                Write(Html.NoAutoCompleteTextBoxFor(model => model.ThesisTopic));
 
             
@@ -486,7 +430,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 69 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 61 "..\..\Views\EducationalBackground\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.ThesisTopic, "", new { @class = "text-danger" }));
 
             
@@ -503,7 +447,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 73 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 65 "..\..\Views\EducationalBackground\_Create.cshtml"
            Write(Html.LabelFor(model => model.EntryDate, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -518,7 +462,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 75 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 67 "..\..\Views\EducationalBackground\_Create.cshtml"
                Write(Html.EditorFor(model => model.EntryDate, MVC.Shared.Views.EditorTemplates.PersianDatePicker));
 
             
@@ -529,8 +473,58 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 76 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 68 "..\..\Views\EducationalBackground\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.EntryDate, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
+
+            
+            #line 71 "..\..\Views\EducationalBackground\_Create.cshtml"
+
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 73 "..\..\Views\EducationalBackground\_Create.cshtml"
+           Write(Html.LabelFor(model => model.GraduationDate, htmlAttributes: new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                <div");
+
+WriteLiteral(" class=\"col-md-4\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                    ");
+
+            
+            #line 75 "..\..\Views\EducationalBackground\_Create.cshtml"
+               Write(Html.EditorFor(model => model.GraduationDate, MVC.Shared.Views.EditorTemplates.PersianDatePicker));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                    ");
+
+            
+            #line 76 "..\..\Views\EducationalBackground\_Create.cshtml"
+               Write(Html.ValidationMessageFor(model => model.GraduationDate, "", new { @class = "text-danger" }));
 
             
             #line default
@@ -554,56 +548,6 @@ WriteLiteral("                ");
 
             
             #line 81 "..\..\Views\EducationalBackground\_Create.cshtml"
-           Write(Html.LabelFor(model => model.GraduationDate, htmlAttributes: new { @class = "control-label col-md-2" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                <div");
-
-WriteLiteral(" class=\"col-md-4\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 83 "..\..\Views\EducationalBackground\_Create.cshtml"
-               Write(Html.EditorFor(model => model.GraduationDate, MVC.Shared.Views.EditorTemplates.PersianDatePicker));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 84 "..\..\Views\EducationalBackground\_Create.cshtml"
-               Write(Html.ValidationMessageFor(model => model.GraduationDate, "", new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
-
-            
-            #line 87 "..\..\Views\EducationalBackground\_Create.cshtml"
-
-
-            
-            #line default
-            #line hidden
-WriteLiteral("            <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
-
-            
-            #line 89 "..\..\Views\EducationalBackground\_Create.cshtml"
            Write(Html.LabelFor(model => model.ThesisScore, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -618,7 +562,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 91 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 83 "..\..\Views\EducationalBackground\_Create.cshtml"
                Write(Html.NoAutoCompleteTextBoxFor(model => model.ThesisScore));
 
             
@@ -629,7 +573,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 92 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 84 "..\..\Views\EducationalBackground\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.ThesisScore, "", new { @class = "text-danger" }));
 
             
@@ -646,7 +590,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 96 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 88 "..\..\Views\EducationalBackground\_Create.cshtml"
            Write(Html.LabelFor(model => model.GPA, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -661,7 +605,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 98 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 90 "..\..\Views\EducationalBackground\_Create.cshtml"
                Write(Html.NoAutoCompleteTextBoxFor(model => model.GPA));
 
             
@@ -672,7 +616,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 99 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 91 "..\..\Views\EducationalBackground\_Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.GPA, "", new { @class = "text-danger" }));
 
             
@@ -689,8 +633,8 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 103 "..\..\Views\EducationalBackground\_Create.cshtml"
-           Write(Html.LabelFor(model => model.RelatedToOrganizationPosition, htmlAttributes: new { @class = "control-label col-md-2" }));
+            #line 95 "..\..\Views\EducationalBackground\_Create.cshtml"
+           Write(Html.LabelFor(model => model.Score, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
             #line default
@@ -704,8 +648,8 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 105 "..\..\Views\EducationalBackground\_Create.cshtml"
-               Write(Html.NoAutoCompleteTextBoxForNumber(model => model.RelatedToOrganizationPosition));
+            #line 97 "..\..\Views\EducationalBackground\_Create.cshtml"
+               Write(Html.NoAutoCompleteTextBoxForNumber(model => model.Score));
 
             
             #line default
@@ -715,8 +659,8 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 106 "..\..\Views\EducationalBackground\_Create.cshtml"
-               Write(Html.ValidationMessageFor(model => model.RelatedToOrganizationPosition, "", new { @class = "text-danger" }));
+            #line 98 "..\..\Views\EducationalBackground\_Create.cshtml"
+               Write(Html.ValidationMessageFor(model => model.Score, "", new { @class = "text-danger" }));
 
             
             #line default
@@ -724,7 +668,7 @@ WriteLiteral("                    ");
 WriteLiteral("\r\n                </div>\r\n            </div>\r\n");
 
             
-            #line 109 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 101 "..\..\Views\EducationalBackground\_Create.cshtml"
     
 
             
@@ -757,7 +701,7 @@ WriteLiteral(">\r\n                        ثبت سابقه جدید\r\n       
 "         </div>\r\n            </div>\r\n");
 
             
-            #line 117 "..\..\Views\EducationalBackground\_Create.cshtml"
+            #line 109 "..\..\Views\EducationalBackground\_Create.cshtml"
         }
 
             

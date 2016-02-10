@@ -4,72 +4,39 @@
 @model  Decision.ViewModel.PrivateMessage.MessageListViewModel
 @{
     ViewBag.Title = "گفتگو";
-    var parent = Model.Messages.First(a => a.ReplyId == null);
-    var children = Model.Messages.Where(a => a.ReplyId != null);
 }
 
+@foreach (var item in Model.Messages)
+{
+    
 <ul class="media-list">
-
     <li class="media">
         <div class="media-body">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h6 class=" media-heading">
                         <span class="fa fa-user"></span>
-                        @parent.SenderUserName
+                        @item.Sender.DisplayName
                         <small class="pull-left">
                             <i class="fa fa-calendar"></i>
-                            <time>@parent.SendDate.ToRemainingDateTime(),@parent.SendDate.ToPersianString(PersianDateTimeFormat.Date)</time>
+                            <time>@item.SentOn.ToRemainingDateTime(),@item.SentOn.ToPersianString(PersianDateTimeFormat.Date)</time>
                             <time>
                                 <i class="fa fa-clock-o"></i>
-                                <span>@parent.SendDate.ToPersianTimeString()</span>
+                                <span>@item.SentOn.ToPersianTimeString()</span>
                             </time>
                         </small>
                     </h6>
                 </div>
                 <div class="panel-body">
-                    @Html.Raw(parent.Content)
+                    @Html.Raw(item.Body)
                 </div>
             </div>
         </div>
-
-        @foreach (var item in children)
-        {
-            <ul >
-                <li class="media margin-top-minus-35">
-                    <div class="media-body">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h6 class=" media-heading">
-                                    <span class="fa fa-user"></span>
-                                    @item.SenderUserName
-                                    <small class="pull-left">
-                                        <i class="fa fa-calendar"></i>
-                                        <time>@item.SendDate.ToRemainingDateTime(),@item.SendDate.ToPersianString(PersianDateTimeFormat.Date)</time>
-                                        <time>
-                                            
-                                            <i class="fa fa-clock-o"></i>
-                                            <span>@item.SendDate.ToPersianTimeString()</span>
-                                        </time>
-                                    </small>
-                                </h6>
-                            </div>
-                            <div class="panel-body">
-                                @Html.Raw(item.Content)
-                               
-                                
-
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-            </ul>
-        }
     </li>
 
 </ul>
 
+}
 @{Html.RenderPartial(MVC.PrivateMessage.Views._Reply, Model.AddMessageViewModel);}
 
 @section Menu{

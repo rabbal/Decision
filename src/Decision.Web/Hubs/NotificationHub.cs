@@ -6,11 +6,11 @@ using Microsoft.AspNet.SignalR;
 
 namespace Decision.Web.Hubs
 {
-    public class NotificationHub : Hub
+    public class NotificationHub : BaseHub
     {
-        public void Hello()
+        public  void NotifyConversation()
         {
-            Clients.All.hello();
+           // Clients.Clients().newConversation("پیغام جدیدی دریافت کردید");
         }
     }
 }

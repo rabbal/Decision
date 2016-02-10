@@ -202,7 +202,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n                        <label");
 
-WriteLiteral(" for=\"Content\"");
+WriteLiteral(" for=\"Body\"");
 
 WriteLiteral(" class=\"control-label col-md-2\"");
 
@@ -221,7 +221,7 @@ WriteLiteral("                            ");
 
             
             #line 50 "..\..\Views\PrivateMessage\NewMessage.cshtml"
-                       Write(Html.TextAreaFor(a => a.Content, new {@class = "ckeditor form-control", rows = 10}));
+                       Write(Html.TextAreaFor(a => a.Body, new {@class = "ckeditor form-control", rows = 10}));
 
             
             #line default
@@ -232,44 +232,14 @@ WriteLiteral("                            ");
 
             
             #line 51 "..\..\Views\PrivateMessage\NewMessage.cshtml"
-                       Write(Html.ValidationMessageFor(model => model.Content, "", new {@class = "text-danger"}));
+                       Write(Html.ValidationMessageFor(model => model.Body, "", new {@class = "text-danger"}));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                   " +
-" <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                        <label");
-
-WriteLiteral(" for=\"Attachments\"");
-
-WriteLiteral(" class=\"control-label col-md-2\"");
-
-WriteLiteral(">\r\n                            <i");
-
-WriteLiteral(" class=\"fa fa-file\"");
-
-WriteLiteral("></i>\r\n                            ضمیمه\r\n                        </label>\r\n     " +
-"                   <div");
-
-WriteLiteral(" class=\"col-md-6\"");
-
-WriteLiteral(">\r\n\r\n");
-
-WriteLiteral("                            ");
-
-            
-            #line 61 "..\..\Views\PrivateMessage\NewMessage.cshtml"
-                       Write(Html.TextBoxFor(model => model.Attachments, new {type = "file", @class = "form-control", multiple = "true"}));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                </d" +
-"iv>\r\n            </div>\r\n\r\n        </div>\r\n        <footer");
+" \r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n        <footer" +
+"");
 
 WriteLiteral(" class=\"panel-footer\"");
 
@@ -293,7 +263,7 @@ WriteLiteral("></i>\r\n                ارسال پیغام\r\n\r\n            
 "   </div>\r\n");
 
             
-            #line 77 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 68 "..\..\Views\PrivateMessage\NewMessage.cshtml"
    
 }
 
@@ -305,13 +275,13 @@ DefineSection("Menu", () => {
 WriteLiteral("\r\n");
 
             
-            #line 80 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 71 "..\..\Views\PrivateMessage\NewMessage.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 80 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 71 "..\..\Views\PrivateMessage\NewMessage.cshtml"
       Html.RenderPartial(MVC.Shared.Views._UserProfileSideBarMenu);
             
             #line default
@@ -327,7 +297,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 83 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 74 "..\..\Views\PrivateMessage\NewMessage.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             
@@ -338,7 +308,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 84 "..\..\Views\PrivateMessage\NewMessage.cshtml"
+            #line 75 "..\..\Views\PrivateMessage\NewMessage.cshtml"
 Write(Scripts.Render("~/bundles/editor"));
 
             

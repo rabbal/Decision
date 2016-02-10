@@ -33,7 +33,7 @@ namespace ASP
     
     #line default
     #line hidden
-    
+    using Decision.Common.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -128,14 +128,14 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 15 "..\..\Views\PrivateMessage\_Reply.cshtml"
-       Write(Html.HiddenFor(a => a.ReplyId));
+       Write(Html.HiddenFor(a => a.ParentId));
 
             
             #line default
             #line hidden
             
             #line 15 "..\..\Views\PrivateMessage\_Reply.cshtml"
-                                           
+                                            
 
             
             #line default
@@ -173,7 +173,7 @@ WriteLiteral("                            ");
 
             
             #line 25 "..\..\Views\PrivateMessage\_Reply.cshtml"
-                       Write(Html.TextAreaFor(a => a.Content, new {@class = "ckeditor form-control", rows = 10}));
+                       Write(Html.TextAreaFor(a => a.Body, new {@class = "ckeditor form-control", rows = 10}));
 
             
             #line default
@@ -184,44 +184,13 @@ WriteLiteral("                            ");
 
             
             #line 26 "..\..\Views\PrivateMessage\_Reply.cshtml"
-                       Write(Html.ValidationMessageFor(model => model.Content, "", new {@class = "text-danger"}));
+                       Write(Html.ValidationMessageFor(model => model.Body, "", new {@class = "text-danger"}));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                   " +
-" <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                        <label");
-
-WriteLiteral(" for=\"Attachments\"");
-
-WriteLiteral(" class=\"control-label col-md-1\"");
-
-WriteLiteral(">\r\n                            <i");
-
-WriteLiteral(" class=\"fa fa-file\"");
-
-WriteLiteral("></i>\r\n                            ضمیمه\r\n                        </label>\r\n     " +
-"                   <div");
-
-WriteLiteral(" class=\"col-md-6\"");
-
-WriteLiteral(">\r\n\r\n");
-
-WriteLiteral("                            ");
-
-            
-            #line 36 "..\..\Views\PrivateMessage\_Reply.cshtml"
-                       Write(Html.TextBoxFor(model => model.Attachments, new {type = "file", @class = "form-control", multiple = "true"}));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                   " +
-" <div");
+"\r\n                    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -250,7 +219,7 @@ WriteLiteral("></i>\r\n                                ارسال پاسخ\r\n  
 "         </div>\r\n            </div>\r\n");
 
             
-            #line 50 "..\..\Views\PrivateMessage\_Reply.cshtml"
+            #line 41 "..\..\Views\PrivateMessage\_Reply.cshtml"
 
 
         }

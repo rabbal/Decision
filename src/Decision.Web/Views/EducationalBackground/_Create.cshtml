@@ -8,14 +8,7 @@
             @Html.AntiForgeryToken()
             @Html.HiddenFor(model => model.ApplicantId)
             @Html.HiddenFor(model => model.AttachmentScan)
-            <div class="form-group">
-                @Html.LabelFor(model => model.EducationalType, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-4">
-                    @Html.EditorFor(model => model.EducationalType)
-                    @Html.ValidationMessageFor(model => model.EducationalType, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
+           
             <div class="form-group">
                 @Html.LabelFor(model => model.AcademicDegree, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-4">
@@ -23,20 +16,19 @@
                     @Html.ValidationMessageFor(model => model.AcademicDegree, "", new { @class = "text-danger" })
                 </div>
             </div>
-            
             <div class="form-group">
-                @Html.LabelFor(model => model.StudyFieldId, new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Field, new { @class = "control-label col-md-2" })
                 <div class="col-md-4">
-                    @Html.DropDownListFor(model => model.StudyFieldId, Model.StudyFields, "انتخاب رشته تحصیلی", new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.StudyFieldId, null, new { @class = "text-danger" })
+                    @Html.NoAutoCompleteTextBoxFor(model => model.Field)
+                    @Html.ValidationMessageFor(model => model.Field, null, new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.InstitutionId, new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.University, new { @class = "control-label col-md-2" })
                 <div class="col-md-4">
-                    @Html.DropDownListFor(model => model.InstitutionId, Model.Institutions, "انتخاب موسسه آموزشی", new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.InstitutionId, null, new { @class = "text-danger" })
+                    @Html.NoAutoCompleteTextBoxFor(model => model.University)
+                    @Html.ValidationMessageFor(model => model.University, null, new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
@@ -100,10 +92,10 @@
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(model => model.RelatedToOrganizationPosition, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Score, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-4">
-                    @Html.NoAutoCompleteTextBoxForNumber(model => model.RelatedToOrganizationPosition)
-                    @Html.ValidationMessageFor(model => model.RelatedToOrganizationPosition, "", new { @class = "text-danger" })
+                    @Html.NoAutoCompleteTextBoxForNumber(model => model.Score)
+                    @Html.ValidationMessageFor(model => model.Score, "", new { @class = "text-danger" })
                 </div>
             </div>
     

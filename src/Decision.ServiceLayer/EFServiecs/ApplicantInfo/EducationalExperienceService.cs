@@ -63,7 +63,7 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
         {
             var educationalExperience = _mappingEngine.Map<EducationalExperience>(viewModel);
             _educationalExperiences.Add(educationalExperience);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveAllChangesAsync(auditUserId:_userManager.GetCurrentUserId());
             return await GetEducationalExperienceViewModel(educationalExperience.Id);
         }
 
@@ -73,13 +73,13 @@ namespace Decision.ServiceLayer.EFServiecs.ApplicantInfo
                 _educationalExperiences.Where(a => a.ApplicantId == request.ApplicantId)
                     .AsNoTracking()
                     .Include(a => a.CreatedBy)
-                    .Include(a => a.ModifiedBy)
+                    .Include(a => a.ModifiedBy).OrderByDescending(a=>a.CreatedOn)
                     .AsQueryable();
 
             var selectedEducationalExperiences = educationalExperiences.ProjectTo<EducationalExperienceViewModel>(_mappingEngine);
-
+            var resultsToSkip = (request.PageIndex - 1)*10;
             var query = await selectedEducationalExperiences
-                .Skip((request.PageIndex - 1) * 10)
+                .Skip(()=>resultsToSkip)
                 .Take(10).ToListAsync();
 
             return new EducationalExperienceListViewModel { SearchRequest = request, EducationalExperiences = query };

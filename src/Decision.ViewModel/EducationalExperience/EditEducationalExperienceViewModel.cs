@@ -13,15 +13,6 @@ namespace Decision.ViewModel.EducationalExperience
     /// </summary>
     public class EditEducationalExperienceViewModel:BaseRowVersion
     {
-        #region Ctor
-        /// <summary>
-        /// سازنده پیش فرض
-        /// </summary>
-        public EditEducationalExperienceViewModel()
-        {
-            Titles = new List<SelectListItem>();
-        }
-        #endregion
 
         #region Properties
         /// <summary>
@@ -29,46 +20,54 @@ namespace Decision.ViewModel.EducationalExperience
         /// </summary>
         public Guid Id { get; set; }
 
-        /// <summary>
-        /// فیلد مشترک برای موارد زیر
-        /// <remarks>نام سازمان مربوطه/توضیحات/نام مرکز علمی</remarks>
-        /// </summary>
-
-        public string Description { get; set; }
-
         ///<summary>
         /// سال آغاز  
         /// </summary>
         [DisplayName("سال آغاز")]
         [Required(ErrorMessage = "لطفا سال آغاز را وارد کنید")]
-        public int BeginYear { get; set; }
+        public DateTime BeginYear { get; set; } 
 
         /// <summary>
         /// سال پایان 
         /// </summary>
         [DisplayName("سال پایان")]
         [Required(ErrorMessage = "لطفا سال پایان را وارد کنید")]
-        public int EndYear { get; set; }
-
+        public DateTime? EndYear { get; set; } 
         /// <summary>
         /// آی دی متقاضی مرتبط با سابقه تدریس
         /// </summary>
         [Required]
         public Guid ApplicantId { get; set; }
-
         /// <summary>
-        ///آی دی عنوان تدریس شده یا درس
+        /// نام موسسه یا مرکز آموزشی
         /// </summary>
-        [Required(ErrorMessage = "لطفا عنوان درس را نتخاب کنید")]
-        [DisplayName("عنوان درس")]
-        public Guid TitleId { get; set; }
-        #endregion
-
-        #region SelectListItems
+        [DisplayName("نام موسسه")]
+        [Required(ErrorMessage = "لطفا نام موسسه را وارد کنید")]
+        public string Institution { get; set; }
         /// <summary>
-        /// لیست عنوان ها برای لیست آبشاری در ویو
+        /// عنوان درس های تدریس شده یا درحال تدریس
         /// </summary>
-        public IEnumerable<SelectListItem> Titles { get; set; }
+        [DisplayName("عنوان درس ها")]
+        [Required(ErrorMessage = "لطفا درس های تدریس شده را وارد کنید")]
+        public string Lessons { get; set; }
+        /// <summary>
+        /// آدرس موسسه آموزشی
+        /// </summary>
+        [DisplayName("آدرس موسسه")]
+        [Required(ErrorMessage = "لطفا آدرس موسسه را وارد کنید")]
+        public string InstitutionAddress { get; set; }
+        /// <summary>
+        /// شماره تلفن موسسه آموزشی
+        /// </summary>
+        [DisplayName("تلفن موسسه")]
+        [Required(ErrorMessage = "لطفا تلفن موسسه را وارد کنید")]
+        public string InstitutionPhoneNumber { get; set; }
+        /// <summary>
+        /// امتیاز 
+        /// </summary>
+        [DisplayName("امتیاز")]
+        [Required(ErrorMessage = "لطفا امتیاز را وارد کنید")]
+        public double Score { get; set; }
         #endregion
     }
 }
