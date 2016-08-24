@@ -28,7 +28,7 @@ namespace Decision.Web
                 FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
                 BundleConfig.RegisterBundles(BundleTable.Bundles);
                 ApplicationStart.Config();
-               
+
             }
             catch
             {
@@ -49,11 +49,11 @@ namespace Decision.Web
                     task.Execute();
                 }
             }
-            catch (Exception)
+            finally
             {
                 HttpContextLifecycle.DisposeAndClearAll();
             }
-          
+
         }
         #endregion
 
@@ -106,6 +106,6 @@ namespace Decision.Web
             }
         }
         #endregion
-      
+
     }
 }
