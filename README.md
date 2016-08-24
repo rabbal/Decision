@@ -1,4 +1,5 @@
 # Decision
+#### Help For Persian [بررسی نحوه راه اندازی](http://www.dotnettips.info/post/2432 "")
 One Full Feature Decision System For Store Informations of Masters
 # Features
 + UserManagement With Dynamic GroupBase Authorization
