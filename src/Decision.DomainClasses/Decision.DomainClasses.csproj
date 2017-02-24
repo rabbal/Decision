@@ -94,9 +94,7 @@
     <Compile Include="Setting.cs" />
     <Compile Include="SystemSettings.cs" />
     <Compile Include="Users\ActivityLog.cs" />
-    <Compile Include="Users\ActivityLogType.cs" />
     <Compile Include="Users\Notification.cs" />
-    <Compile Include="Users\NotificationType.cs" />
     <Compile Include="Users\Role.cs" />
     <Compile Include="Users\User.cs" />
     <Compile Include="Users\UserClaim.cs" />
