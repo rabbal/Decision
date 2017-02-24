@@ -4,8 +4,10 @@ namespace Decision.DomainClasses.ApplicantInfo
 {
     public enum MarriageStatus
     {
-        [Display(Name = "متأهل")] Married,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.Married))]
+        Married = 0,
 
-        [Display(Name = "مجرد")] Single
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.Single))]
+        Single
     }
 }

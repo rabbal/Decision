@@ -1,9 +1,11 @@
 ﻿using System;
+using Decision.Common.Domain.Tracking;
 using Decision.DomainClasses.ApplicantInfo;
+using Decision.DomainClasses.Identity;
 
 namespace Decision.DomainClasses.Evaluations
 {
-    public class EntireEvaluation : BaseEntity
+    public class EntireEvaluation : TrackableEntity<long, User>
     {
         #region Properties
 
@@ -19,7 +21,7 @@ namespace Decision.DomainClasses.Evaluations
 
         #region NavigationProperties
 
-        public Guid ApplicantId { get; set; }
+        public long ApplicantId { get; set; }
 
         public Applicant Applicant { get; set; }
 

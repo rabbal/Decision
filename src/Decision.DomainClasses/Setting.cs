@@ -1,4 +1,8 @@
-﻿namespace NTierMvcFramework.DomainClasses
+﻿using Decision.Common.Domain;
+using Decision.Common.Domain.Tracking;
+using Decision.DomainClasses.Identity;
+
+namespace Decision.DomainClasses
 {
     public class Setting : TrackableEntity, ISystemDefaultEntry
     {

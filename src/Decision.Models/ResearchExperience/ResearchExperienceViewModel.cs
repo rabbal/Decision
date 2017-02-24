@@ -26,7 +26,7 @@ namespace Decision.ViewModel.ResearchExperience
         /// نوع پژوهش
         /// </summary>
         [DisplayName("نوع پژوهش")]
-        public  PresenterType ResearchType { get; set; }
+        public  ResearchType ResearchType { get; set; }
 
         /// <summary>
         ///  چاپ شده توسط  

@@ -4,8 +4,13 @@ namespace Decision.DomainClasses.ApplicantInfo
 {
     public enum CooperationType
     {
-        [Display(Name = "مسئول")] Accountable,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.None))]
+        None = 0,
 
-        [Display(Name = "همکار")] Coworker
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.Accountable))]
+        Accountable ,
+
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.CoWorker))]
+        Coworker
     }
 }

@@ -4,20 +4,28 @@ namespace Decision.DomainClasses.ApplicantInfo
 {
     public enum ArticleType
     {
-        [Display(Name = "کامل اصیل پژوهشی")] OriginalArticle,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.None))]
+        None = 0,
 
-        [Display(Name = "مروری")] ReviewArticle,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.OriginalArticle))]
+        OriginalArticle,
 
-        [Display(Name = "مقاله کوتاه")] ShortCommunication,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.ReviewArticle))]
+        ReviewArticle,
 
-        [Display(Name = "Case Series")] CaseSeries,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.ShortCommunication))]
+        ShortCommunication,
 
-        [Display(Name = "گزارش موارد نادر")] CaseReport,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.CaseSeries))]
+        CaseSeries,
 
-        [Display(Name = "Research Letter")] ResearchLetter,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.CaseReport))]
+        CaseReport,
 
-        [Display(Name = "Letter To Editor")] LetterToEditor,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.ResearchLetter))]
+        ResearchLetter,
 
-        [Display(Name = "غیره")] Other
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.LetterToEditor))]
+        LetterToEditor
     }
 }

@@ -4,14 +4,19 @@ namespace Decision.DomainClasses.ApplicantInfo
 {
     public enum ApplicantStatus
     {
-        [Display(Name = "معلق")] Pending,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.Pending))]
+        Pending = 0,
 
-        [Display(Name = "بررسی اولیه")] InitialReview,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.InitialReview))]
+        InitialReview,
 
-        [Display(Name = "بررسی هیئت جذب")] InProgress,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.InProgress))]
+        InProgress,
 
-        [Display(Name = "تأیید شده توسط هیئت جذب")] Approved,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.Approved))]
+        Approved,
 
-        [Display(Name = "پذیرفته شده")] Accepted
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.Accepted))]
+        Accepted
     }
 }

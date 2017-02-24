@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using Decision.Common.Domain.Tracking;
 using Decision.DomainClasses.Evaluations;
+using Decision.DomainClasses.Identity;
 
 namespace Decision.DomainClasses.ApplicantInfo
 {
-    public class Applicant : BaseEntity
+    public class Applicant : TrackableEntity<long, User>
     {
-        #region Ctor
-
+        #region Constructors
         public Applicant()
         {
             Photo = BitConverter.GetBytes(0);
@@ -15,7 +16,6 @@ namespace Decision.DomainClasses.ApplicantInfo
             CopyOfNationalCard = Photo = BitConverter.GetBytes(0);
             Status = ApplicantStatus.Pending;
         }
-
         #endregion
 
         #region Properties
@@ -88,8 +88,6 @@ namespace Decision.DomainClasses.ApplicantInfo
         public ICollection<Interview> Interviews { get; set; }
 
         public ICollection<Address> Addresses { get; set; }
-
-        public ICollection<Presenter> Presenters { get; set; }
 
         #endregion
     }

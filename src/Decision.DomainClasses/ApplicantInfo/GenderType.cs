@@ -4,8 +4,10 @@ namespace Decision.DomainClasses.ApplicantInfo
 {
     public enum GenderType
     {
-        [Display(Name = "مرد")] Male,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.Male))]
+        Male = 0,
 
-        [Display(Name = "زن")] FeMale
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.FeMale))]
+        FeMale
     }
 }

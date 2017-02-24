@@ -1,16 +1,18 @@
 ﻿using System.Collections.Generic;
+using Decision.Common.Domain.Tracking;
+using Decision.DomainClasses.Identity;
 
 namespace Decision.DomainClasses.Evaluations
 {
-    public class Question : BaseEntity
+    public class Question : TrackableEntity<long, User>
     {
         #region Properties
 
-        public virtual string Title { get; set; }
+        public string Title { get; set; }
 
-        public virtual bool IsMultiSelect { get; set; }
+        public bool IsMultiSelect { get; set; }
 
-        public virtual int Weight { get; set; }
+        public int Weight { get; set; }
 
         public string Description { get; set; }
 
@@ -20,9 +22,9 @@ namespace Decision.DomainClasses.Evaluations
 
         #region NavigationProperties
 
-        public virtual ICollection<AnswerOption> AnswerOptions { get; set; }
+        public ICollection<AnswerOption> AnswerOptions { get; set; }
 
-        public virtual ICollection<EntireEvaluation> EntireEvaluations { get; set; }
+        public ICollection<EntireEvaluation> EntireEvaluations { get; set; }
 
         #endregion
     }

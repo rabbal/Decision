@@ -56,11 +56,8 @@
     <Compile Include="ApplicantInfo\MagazineOrSeminarType.cs" />
     <Compile Include="ApplicantInfo\MembershipType.cs" />
     <Compile Include="ApplicantInfo\MilitaryStatus.cs" />
-    <Compile Include="ApplicantInfo\Presenter.cs" />
     <Compile Include="AuditAction.cs" />
     <Compile Include="AuditLog.cs" />
-    <Compile Include="Common\AuditAction.cs" />
-    <Compile Include="Common\AuditLogType.cs" />
     <Compile Include="Attachment.cs" />
     <Compile Include="ApplicantInfo\AcademicDegrees.cs" />
     <Compile Include="ApplicantInfo\Address.cs" />
@@ -68,7 +65,6 @@
     <Compile Include="Evaluations\AnswerOption.cs" />
     <Compile Include="ApplicantInfo\EducationalExperience.cs" />
     <Compile Include="ApplicantInfo\EducationalBackground.cs" />
-    <Compile Include="ApplicantInfo\EducationalType.cs" />
     <Compile Include="Evaluations\EntireEvaluation.cs" />
     <Compile Include="ApplicantInfo\GenderType.cs" />
     <Compile Include="Evaluations\Interview.cs" />
@@ -78,7 +74,7 @@
     <Compile Include="ApplicantInfo\MarriageStatus.cs" />
     <Compile Include="Evaluations\Question.cs" />
     <Compile Include="ApplicantInfo\ResearchExperience.cs" />
-    <Compile Include="ApplicantInfo\PresenterType.cs" />
+    <Compile Include="ApplicantInfo\ResearchType.cs" />
     <Compile Include="ApplicantInfo\WorkExperience.cs" />
     <Compile Include="Identity\ActivityLog.cs" />
     <Compile Include="Identity\Notification.cs" />
@@ -93,8 +89,12 @@
     <Compile Include="Identity\UserUsedPassword.cs" />
     <Compile Include="Messages\Conversation.cs" />
     <Compile Include="Messages\Message.cs" />
-    <Compile Include="Common\Setting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Setting.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +106,13 @@
       <Project>{795b21df-4be9-444d-bcc4-674144d560d2}</Project>
       <Name>Decision.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

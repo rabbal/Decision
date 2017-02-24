@@ -4,10 +4,13 @@ namespace Decision.DomainClasses.ApplicantInfo
 {
     public enum MembershipType
     {
-        [Display(Name = "پیمانی")] Contractual,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.Contractual))]
+        Contractual = 0,
 
-        [Display(Name = "راتبه")] Ratbh,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.Ratbh))]
+        Ratbh,
 
-        [Display(Name = "طرح سربازی")] MilitaryPlan
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.MilitaryPlan))]
+        MilitaryPlan
     }
 }

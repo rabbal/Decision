@@ -4,12 +4,16 @@ namespace Decision.DomainClasses.ApplicantInfo
 {
     public enum MilitaryStatus
     {
-        [Display(Name = "خدمت کرده")] Served,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.Served))]
+        Served = 0,
 
-        [Display(Name = "معافیت تحصیلی")] EducationPardon,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.EducationPardon))]
+        EducationPardon,
 
-        [Display(Name = "معاف دائم")] PermanentExemption,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.PermanentExemption))]
+        PermanentExemption,
 
-        [Display(Name = "مشغول خدمت")] Serving
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.Serving))]
+        Serving
     }
 }

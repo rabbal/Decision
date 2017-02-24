@@ -4,8 +4,10 @@ namespace Decision.DomainClasses.ApplicantInfo
 {
     public enum AddressType
     {
-        [Display(Name = "منزل")] Home,
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.Home))]
+        Home = 0,
 
-        [Display(Name = "محل کار")] Office
+        [Display(ResourceType = typeof(Resources), Name = nameof(Resources.Office))]
+        Office
     }
 }

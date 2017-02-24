@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using Decision.Common.Domain.Tracking;
+using Decision.DomainClasses.Identity;
 
 namespace Decision.DomainClasses.Evaluations
 {
-    public class AnswerOption : BaseEntity
+    public class AnswerOption : TrackableEntity<long, User>
     {
         #region Properties
 
-        public virtual string Title { get; set; }
+        public string Title { get; set; }
 
-        public virtual int Weight { get; set; }
+        public int Weight { get; set; }
 
         public string Description { get; set; }
 
@@ -23,7 +25,7 @@ namespace Decision.DomainClasses.Evaluations
 
         public virtual Question Question { get; set; }
 
-        public virtual Guid QuestionId { get; set; }
+        public virtual long QuestionId { get; set; }
 
         #endregion
     }

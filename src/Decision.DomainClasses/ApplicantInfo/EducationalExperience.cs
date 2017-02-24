@@ -1,8 +1,10 @@
 ﻿using System;
+using Decision.Common.Domain.Tracking;
+using Decision.DomainClasses.Identity;
 
 namespace Decision.DomainClasses.ApplicantInfo
 {
-    public class EducationalExperience : BaseEntity
+    public class EducationalExperience : TrackableEntity<long, User>
     {
         #region Properties
 
@@ -30,7 +32,7 @@ namespace Decision.DomainClasses.ApplicantInfo
 
         public Applicant Applicant { get; set; }
 
-        public Guid ApplicantId { get; set; }
+        public long ApplicantId { get; set; }
 
         #endregion
     }

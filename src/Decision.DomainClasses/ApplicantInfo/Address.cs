@@ -1,8 +1,9 @@
 ﻿using System;
+using Decision.Common.Domain;
 
 namespace Decision.DomainClasses.ApplicantInfo
 {
-    public class Address : BaseEntity
+    public class Address : Entity
     {
         #region Properties
 
@@ -19,7 +20,7 @@ namespace Decision.DomainClasses.ApplicantInfo
         #region NavigationProperties
 
         public Applicant Applicant { get; set; }
-        public Guid ApplicantId { get; set; }
+        public long ApplicantId { get; set; }
 
         #endregion
     }
