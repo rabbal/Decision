@@ -346,6 +346,11 @@
     <Compile Include="Infrastructure\Temp\StructureMapSignalRDependencyResolver.cs" />
     <Compile Include="Infrastructure\Temp\TaskRegistery.cs" />
     <Compile Include="Infrastructure\WebTasks\FullBackUpTask.cs" />
+    <Compile Include="T4MVC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Views\Address\_AddressItem.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
