@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Web.Mvc;
-using NTierMvcFramework.Common.Infrastructure;
+using Decision.Common.Infrastructure;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
     [AttributeUsage(AttributeTargets.Method)]
     public sealed class ContinueCreatingAttribute : FilterAttribute, IActionFilter
     {
-        public readonly string _elementName;
+        private readonly string _elementName;
 
         public ContinueCreatingAttribute(string elementName)
         {
@@ -19,7 +19,7 @@ namespace NTierMvcFramework.Common.MvcToolkit.Filters
             var viewModel = filterContext.ActionParameters["viewModel"] as IContinuableForCreating;
 
             if (viewModel != null)
-                ((IContinuableForCreating)viewModel).ContinueCreating = !string.IsNullOrEmpty(formValue);
+                viewModel.ContinueCreating = !string.IsNullOrEmpty(formValue);
         }
 
         public void OnActionExecuted(ActionExecutedContext filterContext)

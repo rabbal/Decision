@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     /// <summary>
     ///     Helps convert <see cref="string" /> title text to URL friendly <see cref="string" />'s that can safely be

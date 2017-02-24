@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace NTierMvcFramework.Common.IO.WebSite
+namespace Decision.Common.IO.WebSite
 {
     /// <summary>
     ///     Abstraction over the virtual files/directories of a web site.

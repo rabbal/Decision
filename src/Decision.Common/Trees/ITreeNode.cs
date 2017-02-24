@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace NTierMvcFramework.Common.Trees
+namespace Decision.Common.Trees
 {
     /// <summary>
     ///     An object which implements this interface is considered a node in a tree.

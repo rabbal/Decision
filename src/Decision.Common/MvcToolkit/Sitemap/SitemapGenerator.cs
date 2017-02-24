@@ -4,9 +4,9 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-using NTierMvcFramework.Common.Extensions;
+using Decision.Common.Extensions;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Sitemap
+namespace Decision.Common.MvcToolkit.Sitemap
 {
     /// <summary>
     /// Generates sitemap XML.

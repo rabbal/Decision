@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Web;
 
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     /// <summary>
     ///     Normalize the Url for Check Are Same with other Url

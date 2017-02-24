@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Helpers
+namespace Decision.Common.MvcToolkit.Helpers
 {
     public static class AngularHelpers
     {

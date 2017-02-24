@@ -1,4 +1,4 @@
-namespace NTierMvcFramework.Common.Misc
+namespace Decision.Common.Misc
 {
     public interface ICookieService
     {

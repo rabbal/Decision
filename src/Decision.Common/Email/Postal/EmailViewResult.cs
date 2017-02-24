@@ -5,7 +5,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.Email.Postal
+namespace Decision.Common.Email.Postal
 {
     /// <summary>
     /// Renders a preview of an email to display in the browser.

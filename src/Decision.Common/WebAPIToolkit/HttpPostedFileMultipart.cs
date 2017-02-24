@@ -1,7 +1,7 @@
 using System.IO;
 using System.Web;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit
+namespace Decision.Common.WebAPIToolkit
 {
     public class HttpPostedFileMultipart : HttpPostedFileBase
     {

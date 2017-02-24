@@ -1,10 +1,10 @@
 using System.Web.Mvc;
 using Elmah;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
 
-    public class ElmahHandledErrorLoggerFilter : IExceptionFilter
+    public sealed class ElmahHandledErrorLoggerFilter : FilterAttribute, IExceptionFilter
     {
         public void OnException(ExceptionContext filterContext)
         {

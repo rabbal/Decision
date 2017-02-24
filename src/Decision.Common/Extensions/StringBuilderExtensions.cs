@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     /// <summary>
     ///     <see cref="StringBuilder" /> extension methods.

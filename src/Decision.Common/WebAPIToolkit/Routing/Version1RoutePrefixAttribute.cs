@@ -1,6 +1,4 @@
-﻿using System.Web.Http;
-
-namespace NTierMvcFramework.Common.WebAPIToolkit.Routing
+﻿namespace Decision.Common.WebAPIToolkit.Routing
 {
     /// <summary>
     /// usage [ApiVersion1RoutePrefix("product")]

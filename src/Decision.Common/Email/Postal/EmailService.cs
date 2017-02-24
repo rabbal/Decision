@@ -3,7 +3,7 @@ using System.Net.Mail;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.Email.Postal
+namespace Decision.Common.Email.Postal
 {
     public class EmailService : IEmailService
     {

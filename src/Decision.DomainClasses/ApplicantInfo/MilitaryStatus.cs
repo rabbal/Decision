@@ -2,22 +2,14 @@
 
 namespace Decision.DomainClasses.ApplicantInfo
 {
-    
-    public enum  MilitaryStatus
+    public enum MilitaryStatus
     {
-        
-        [Display(Name = "خدمت کرده")]
-        Served,
-        
-        [Display(Name = "معافیت تحصیلی")]
-        EducationPardon,
-        
-        [Display(Name = "معاف دائم")]
-        PermanentExemption,
-        
-        [Display(Name ="مشغول خدمت")]
-        Serving
+        [Display(Name = "خدمت کرده")] Served,
 
+        [Display(Name = "معافیت تحصیلی")] EducationPardon,
 
+        [Display(Name = "معاف دائم")] PermanentExemption,
+
+        [Display(Name = "مشغول خدمت")] Serving
     }
 }

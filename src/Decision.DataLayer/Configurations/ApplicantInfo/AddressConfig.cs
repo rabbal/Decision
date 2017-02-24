@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
+using Decision.DomainClasses.ApplicantInfo;
 
 namespace Decision.DataLayer.Configurations.ApplicantInfo
 {

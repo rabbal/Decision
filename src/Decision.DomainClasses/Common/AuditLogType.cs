@@ -1,7 +1,7 @@
 ﻿namespace Decision.DomainClasses.Common
 {
     /// <summary>
-    /// نشان دهنده انواع لاگ های سیستم میباشد
+    ///     نشان دهنده انواع لاگ های سیستم میباشد
     /// </summary>
     public enum AuditLogType
     {

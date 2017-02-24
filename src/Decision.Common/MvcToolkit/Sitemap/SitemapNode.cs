@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Sitemap
+namespace Decision.Common.MvcToolkit.Sitemap
 {
     /// <summary>
     /// Represents a page or URL in your sitemap.

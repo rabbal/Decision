@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit
+namespace Decision.Common.WebAPIToolkit
 {
     public class ResponsePackage
     {

@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Globalization;
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     public static class DecimalExtensions
     {

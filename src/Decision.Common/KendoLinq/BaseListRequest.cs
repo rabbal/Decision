@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NTierMvcFramework.Common.KendoLinq
+namespace Decision.Common.KendoLinq
 {
     /// <summary>
     ///     Describes a Kendo Datasource request.

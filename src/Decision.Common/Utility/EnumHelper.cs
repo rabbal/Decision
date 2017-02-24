@@ -6,7 +6,7 @@ using System.Globalization;
 using System.Linq;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     public static class EnumHelper
     {

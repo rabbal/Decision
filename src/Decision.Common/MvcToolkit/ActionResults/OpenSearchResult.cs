@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Xml;
 
-namespace NTierMvcFramework.Common.MvcToolkit.ActionResults
+namespace Decision.Common.MvcToolkit.ActionResults
 {
     public class OpenSearchResult : ActionResult
     {
@@ -20,10 +20,10 @@ namespace NTierMvcFramework.Common.MvcToolkit.ActionResults
                 throw new ArgumentNullException(nameof(context));
 
             var response = context.HttpContext.Response;
-            writeToResponse(response);
+            WriteToResponse(response);
         }
 
-        private void writeToResponse(HttpResponseBase response)
+        private void WriteToResponse(HttpResponseBase response)
         {
             response.ContentEncoding = Encoding.UTF8;
             response.ContentType = "application/opensearchdescription+xml";

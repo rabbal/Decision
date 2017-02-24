@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace NTierMvcFramework.Common.KendoLinq
+namespace Decision.Common.KendoLinq
 {
     /// <summary>
     ///     Describes the result of Kendo DataSource read operation.

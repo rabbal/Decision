@@ -5,7 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     public static class PropertyExtensions
     {

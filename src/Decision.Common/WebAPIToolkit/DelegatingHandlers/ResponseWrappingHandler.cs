@@ -3,10 +3,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Http;
 using Newtonsoft.Json;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit.DelegatingHandlers
+namespace Decision.Common.WebAPIToolkit.DelegatingHandlers
 {
     public class ResponseWrappingHandler : DelegatingHandler
     {

@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using System.Web;
 
-namespace NTierMvcFramework.Common.Fakes
+namespace Decision.Common.Fakes
 {
     public class FakeHttpResponse : HttpResponseBase
     {

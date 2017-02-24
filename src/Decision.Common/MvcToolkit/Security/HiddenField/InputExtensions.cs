@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Security.HiddenField
+namespace Decision.Common.MvcToolkit.Security.HiddenField
 {
     public static class InputExtensions
     {

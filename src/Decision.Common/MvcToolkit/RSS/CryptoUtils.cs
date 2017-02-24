@@ -2,7 +2,7 @@ using System;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace NTierMvcFramework.Common.MvcToolkit.RSS
+namespace Decision.Common.MvcToolkit.RSS
 {
     public static class CryptoUtils
     {

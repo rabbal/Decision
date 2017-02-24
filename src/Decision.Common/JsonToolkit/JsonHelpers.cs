@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using Newtonsoft.Json;
 
-namespace NTierMvcFramework.Common.JsonToolkit
+namespace Decision.Common.JsonToolkit
 {
     public static class JsonHelpers
     {

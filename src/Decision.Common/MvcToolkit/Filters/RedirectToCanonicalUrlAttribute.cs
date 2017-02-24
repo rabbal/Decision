@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
     /// <summary>
     /// To improve Search Engine Optimization SEO, there should only be a single URL for each resource. Case 

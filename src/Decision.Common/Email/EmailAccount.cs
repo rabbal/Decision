@@ -1,4 +1,4 @@
-﻿namespace NTierMvcFramework.Common.Email
+﻿namespace Decision.Common.Email
 {
     /// <summary>
     ///     Represents an email account

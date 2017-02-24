@@ -1,4 +1,4 @@
-namespace NTierMvcFramework.Common.Constants
+namespace Decision.Common.Constants
 {
     public class SecurityHeadersConstants
     {

@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Extensions
+namespace Decision.Common.MvcToolkit.Extensions
 {
     public static class HtmlHelperExtensions
     {

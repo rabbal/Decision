@@ -1,4 +1,4 @@
-﻿namespace NTierMvcFramework.Common.MvcToolkit.Sitemap
+﻿namespace Decision.Common.MvcToolkit.Sitemap
 {
     /// <summary>
     /// How frequently the page or URL is likely to change.

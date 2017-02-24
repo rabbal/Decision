@@ -1,4 +1,4 @@
-﻿namespace NTierMvcFramework.Common.Configuration
+﻿namespace Decision.Common.Configuration
 {
     public interface IAppConfiguration
     {

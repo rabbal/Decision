@@ -1,6 +1,6 @@
 using System;
 
-namespace NTierMvcFramework.Common.MvcToolkit.RSS
+namespace Decision.Common.MvcToolkit.RSS
 {
     public class FeedItem
     {

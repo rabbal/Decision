@@ -2,15 +2,10 @@
 
 namespace Decision.DomainClasses.ApplicantInfo
 {
-
     public enum AddressType
     {
+        [Display(Name = "منزل")] Home,
 
-        [Display(Name = "منزل")]
-        Home,
-
-        [Display(Name = "محل کار")]
-        Office,
-
+        [Display(Name = "محل کار")] Office
     }
 }

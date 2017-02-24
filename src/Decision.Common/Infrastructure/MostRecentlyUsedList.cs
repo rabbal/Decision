@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using NTierMvcFramework.Common.Extensions;
+using Decision.Common.Extensions;
 
-namespace NTierMvcFramework.Common.Infrastructure
+namespace Decision.Common.Infrastructure
 {
     public class MostRecentlyUsedList<T> : IEnumerable<T>
     {

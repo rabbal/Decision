@@ -1,11 +1,11 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using Decision.Common.Extensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
-using NTierMvcFramework.Common.Extensions;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Helpers
+namespace Decision.Common.MvcToolkit.Helpers
 {
     public static class JsonHelpers
     {

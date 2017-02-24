@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     [EditorBrowsable(EditorBrowsableState.Never)]
     public interface IHideObjectMembers

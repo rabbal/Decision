@@ -4,9 +4,8 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using System.Linq.Dynamic;
 
-namespace NTierMvcFramework.Common.KendoLinq
+namespace Decision.Common.KendoLinq
 {
     public static class QueryableExtensions
     {

@@ -1,8 +1,5 @@
 using System;
 using Decision.IocConfig;
-using Decision.ServiceLayer.Contracts;
-using Decision.ServiceLayer.Contracts.Users;
-using Decision.ServiceLayer.EFServiecs.Users;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;

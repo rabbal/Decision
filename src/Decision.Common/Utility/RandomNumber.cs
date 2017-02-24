@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     /// <summary>
     ///     Helper class to generates the random numbers.

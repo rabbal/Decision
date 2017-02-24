@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 
-namespace NTierMvcFramework.Common.Fakes
+namespace Decision.Common.Fakes
 {
     public static class Extentions
     {

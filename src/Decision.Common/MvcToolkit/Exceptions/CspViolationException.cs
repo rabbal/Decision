@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Exceptions
+namespace Decision.Common.MvcToolkit.Exceptions
 {
     /// <summary>
     /// Represents a Content Security Policy (CSP) violation.

@@ -1,6 +1,4 @@
-﻿using System.Web.Http;
-
-namespace NTierMvcFramework.Common.WebAPIToolkit.Attributes
+﻿namespace Decision.Common.WebAPIToolkit.Attributes
 {
     public sealed class ApiAuthorizeAttribute : AuthorizeAttribute
     {

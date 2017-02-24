@@ -2,7 +2,7 @@ using System;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit.Controller
+namespace Decision.Common.WebAPIToolkit.Controller
 {
     public abstract class ApiControllerWithHub<THub> : BaseApiController
         where THub : IHub

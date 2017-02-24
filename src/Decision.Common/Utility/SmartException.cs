@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     /// <summary>
     ///     Represents errors that occur during application execution

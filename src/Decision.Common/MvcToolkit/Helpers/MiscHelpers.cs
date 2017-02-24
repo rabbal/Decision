@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Helpers
+namespace Decision.Common.MvcToolkit.Helpers
 {
     public static class MiscHelpers
     {

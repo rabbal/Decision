@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Web.Http.Routing;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit.Routing
+namespace Decision.Common.WebAPIToolkit.Routing
 {
     public class VersionConstraint : IHttpRouteConstraint
     {

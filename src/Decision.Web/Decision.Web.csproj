@@ -2465,6 +2465,8 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Index.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="App_Browsers\edge.browser" />
+    <Content Include="App_Code\Helpers.cshtml" />
     <None Include="bundleconfig.json" />
     <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
@@ -2746,7 +2748,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\ErrorLogs\" />
     <Folder Include="Client\Controllers\" />
     <Folder Include="Client\Directives\" />
     <Folder Include="Client\Models\" />
@@ -2774,14 +2775,6 @@
     <ProjectReference Include="..\Decision.DomainClasses\Decision.DomainClasses.csproj">
       <Project>{72B9849F-931A-40C0-B11E-44324CD46250}</Project>
       <Name>Decision.DomainClasses</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Decision.ServiceLayer\Decision.ServiceLayer.csproj">
-      <Project>{A3151FC4-6C88-4323-858A-9AA522D54BC2}</Project>
-      <Name>Decision.ServiceLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Decision.ViewModel\Decision.ViewModel.csproj">
-      <Project>{51986c43-db68-4a80-ae14-4ffd7a9e91a4}</Project>
-      <Name>Decision.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

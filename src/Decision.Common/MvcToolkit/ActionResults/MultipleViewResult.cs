@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.ActionResults
+namespace Decision.Common.MvcToolkit.ActionResults
 {
     /// <summary>
     /// برای ارسال چندین پارشال ویو در کنار هم

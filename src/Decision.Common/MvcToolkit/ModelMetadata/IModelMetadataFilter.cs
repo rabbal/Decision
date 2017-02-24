@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NTierMvcFramework.Common.MvcToolkit.ModelMetadata
+namespace Decision.Common.MvcToolkit.ModelMetadata
 {
     public interface IModelMetadataFilter
     {

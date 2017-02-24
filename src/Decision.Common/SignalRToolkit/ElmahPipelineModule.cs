@@ -3,7 +3,7 @@ using System.Reflection;
 using Elmah;
 using Microsoft.AspNet.SignalR.Hubs;
 
-namespace NTierMvcFramework.Common.SignalRToolkit
+namespace Decision.Common.SignalRToolkit
 {
     public class ElmahPipelineModule : HubPipelineModule
     {

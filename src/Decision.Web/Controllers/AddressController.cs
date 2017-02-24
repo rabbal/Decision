@@ -4,6 +4,9 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
+using Decision.Common.MvcToolkit.Extensions;
+using Decision.Common.MvcToolkit.Filters;
+using Decision.Common.MvcToolkit.Json;
 using Decision.DataLayer.Context;
 using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Security;
@@ -11,9 +14,6 @@ using Decision.ViewModel.Address;
 using Decision.Web.Filters;
 using MvcSiteMapProvider;
 using Decision.ServiceLayer.Contracts.Users;
-using NTierMvcFramework.Common.MvcToolkit.Extensions;
-using NTierMvcFramework.Common.MvcToolkit.Filters;
-using NTierMvcFramework.Common.MvcToolkit.Json;
 
 namespace Decision.Web.Controllers
 {

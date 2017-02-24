@@ -5,10 +5,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using Fasterflect;
-using NTierMvcFramework.Common.Infrastructure;
+using Decision.Common.GuardToolkit;
+using Decision.Common.Infrastructure;
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     public static class TypeExtensions
     {
@@ -125,7 +125,7 @@ namespace NTierMvcFramework.Common.Extensions
 
         public static bool IsConstructable(this Type type)
         {
-            Guard.ArgumentNotNull(type, nameof(type));
+            Check.ArgumentNotNull(type, nameof(type));
 
             if (type.IsAbstract || type.IsInterface || type.IsArray || type.IsGenericTypeDefinition ||
                 type == typeof(void))
@@ -154,7 +154,7 @@ namespace NTierMvcFramework.Common.Extensions
         [DebuggerStepThrough]
         public static bool HasDefaultConstructor(this Type type)
         {
-            Guard.ArgumentNotNull(() => type);
+            Check.ArgumentNotNull(() => type);
 
             if (type.IsValueType)
                 return true;
@@ -171,8 +171,8 @@ namespace NTierMvcFramework.Common.Extensions
 
         public static bool IsSubClass(this Type type, Type check, out Type implementingType)
         {
-            Guard.ArgumentNotNull(type, nameof(type));
-            Guard.ArgumentNotNull(check, nameof(check));
+            Check.ArgumentNotNull(type, nameof(type));
+            Check.ArgumentNotNull(check, nameof(check));
 
             return IsSubClassInternal(type, type, check, out implementingType);
         }
@@ -221,7 +221,7 @@ namespace NTierMvcFramework.Common.Extensions
 
         public static bool IsIndexed(this PropertyInfo property)
         {
-            Guard.ArgumentNotNull(property, nameof(property));
+            Check.ArgumentNotNull(property, nameof(property));
             return !property.GetIndexParameters().IsNullOrEmpty();
         }
 
@@ -234,7 +234,7 @@ namespace NTierMvcFramework.Common.Extensions
         /// </returns>
         public static bool IsIndexed(this MemberInfo member)
         {
-            Guard.ArgumentNotNull(member, nameof(member));
+            Check.ArgumentNotNull(member, nameof(member));
 
             var propertyInfo = member as PropertyInfo;
 
@@ -273,7 +273,7 @@ namespace NTierMvcFramework.Common.Extensions
 
         public static string GetNameAndAssemblyName(this Type type)
         {
-            Guard.ArgumentNotNull(type, nameof(type));
+            Check.ArgumentNotNull(type, nameof(type));
             return type.FullName + ", " + type.Assembly.GetName().Name;
         }
 
@@ -305,7 +305,7 @@ namespace NTierMvcFramework.Common.Extensions
         public static List<MemberInfo> FindMembers(this Type targetType, MemberTypes memberType,
             BindingFlags bindingAttr, MemberFilter filter, object filterCriteria)
         {
-            Guard.ArgumentNotNull(targetType, nameof(targetType));
+            Check.ArgumentNotNull(targetType, nameof(targetType));
 
             var memberInfos =
                 new List<MemberInfo>(targetType.FindMembers(memberType, bindingAttr, filter, filterCriteria));
@@ -330,9 +330,9 @@ namespace NTierMvcFramework.Common.Extensions
 
         //public static Type MakeGenericType(this Type genericTypeDefinition, params Type[] innerTypes)
         //{
-        //    Guard.ArgumentNotNull(genericTypeDefinition, "genericTypeDefinition");
-        //    Guard.ArgumentNotEmpty<Type>(innerTypes, "innerTypes");
-        //    Guard.Argument.IsTrue(genericTypeDefinition.IsGenericTypeDefinition, "genericTypeDefinition", "Type '{0}' must be a generic type definition.".FormatInvariant(genericTypeDefinition));
+        //    Check.ArgumentNotNull(genericTypeDefinition, "genericTypeDefinition");
+        //    Check.ArgumentNotEmpty<Type>(innerTypes, "innerTypes");
+        //    Check.Argument.IsTrue(genericTypeDefinition.IsGenericTypeDefinition, "genericTypeDefinition", "Type '{0}' must be a generic type definition.".FormatInvariant(genericTypeDefinition));
 
         //    return genericTypeDefinition.MakeGenericType(innerTypes);
         //}
@@ -350,9 +350,9 @@ namespace NTierMvcFramework.Common.Extensions
         public static object CreateGeneric(this Type genericTypeDefinition, Type[] innerTypes,
             Func<Type, object[], object> instanceCreator, params object[] args)
         {
-            Guard.ArgumentNotNull(() => genericTypeDefinition);
-            Guard.ArgumentNotNull(() => innerTypes);
-            Guard.ArgumentNotNull(() => instanceCreator);
+            Check.ArgumentNotNull(() => genericTypeDefinition);
+            Check.ArgumentNotNull(() => innerTypes);
+            Check.ArgumentNotNull(() => instanceCreator);
             if (innerTypes.Length == 0)
                 throw Error.Argument(nameof(innerTypes), "The sequence must contain at least one entry.");
 
@@ -363,7 +363,7 @@ namespace NTierMvcFramework.Common.Extensions
 
         public static IList CreateGenericList(this Type listType)
         {
-            Guard.ArgumentNotNull(listType, nameof(listType));
+            Check.ArgumentNotNull(listType, nameof(listType));
             return (IList) typeof(List<>).CreateGeneric(listType);
         }
 
@@ -378,7 +378,7 @@ namespace NTierMvcFramework.Common.Extensions
 
         public static bool IsEnumerable(this Type type)
         {
-            Guard.ArgumentNotNull(type, nameof(type));
+            Check.ArgumentNotNull(type, nameof(type));
             return type.IsAssignableFrom(typeof(IEnumerable));
         }
 
@@ -393,7 +393,7 @@ namespace NTierMvcFramework.Common.Extensions
 
         //public static bool IsListType(this Type type)
         //{
-        //    Guard.ArgumentNotNull(type, "type");
+        //    Check.ArgumentNotNull(type, "type");
 
         //    if (type.IsArray)
         //        return true;
@@ -413,8 +413,8 @@ namespace NTierMvcFramework.Common.Extensions
         /// <returns>The member's value on the object.</returns>
         public static object GetValue(this MemberInfo member, object target)
         {
-            Guard.ArgumentNotNull(member, nameof(member));
-            Guard.ArgumentNotNull(target, nameof(target));
+            Check.ArgumentNotNull(member, nameof(member));
+            Check.ArgumentNotNull(target, nameof(target));
 
             switch (member.MemberType)
             {
@@ -438,8 +438,8 @@ namespace NTierMvcFramework.Common.Extensions
         /// <param name="value">The value.</param>
         public static void SetValue(this MemberInfo member, object target, object value)
         {
-            Guard.ArgumentNotNull(member, nameof(member));
-            Guard.ArgumentNotNull(target, nameof(target));
+            Check.ArgumentNotNull(member, nameof(member));
+            Check.ArgumentNotNull(target, nameof(target));
 
             switch (member.MemberType)
             {
@@ -631,7 +631,7 @@ namespace NTierMvcFramework.Common.Extensions
         /// <returns>PropertyInfo for the property, or null if method is not part of a property.</returns>
         public static PropertyInfo GetPropertyFromMethod(this MethodBase method)
         {
-            Guard.ArgumentNotNull(method, nameof(method));
+            Check.ArgumentNotNull(method, nameof(method));
 
             PropertyInfo property = null;
             if (method.IsSpecialName)

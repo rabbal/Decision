@@ -3,7 +3,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace NTierMvcFramework.Common.JsonToolkit
+namespace Decision.Common.JsonToolkit
 {
     public class OrderedContractResolver : DefaultContractResolver
     {

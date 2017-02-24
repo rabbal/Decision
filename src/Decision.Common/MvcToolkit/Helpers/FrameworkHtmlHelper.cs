@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Helpers
+namespace Decision.Common.MvcToolkit.Helpers
 {
     public class FrameworkHtmlHelper
     {

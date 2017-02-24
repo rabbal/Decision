@@ -4,9 +4,9 @@ using System.Dynamic;
 using System.Text;
 using System.Web;
 using System.Web.Routing;
-using NTierMvcFramework.Common.Infrastructure;
+using Decision.Common.Infrastructure;
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     public static class DictionaryExtensions
     {
@@ -75,7 +75,7 @@ namespace NTierMvcFramework.Common.Extensions
 
         public static ExpandoObject ToExpandoObject(this IDictionary<string, object> source, bool castIfPossible = false)
         {
-            Guard.ArgumentNotNull(source, nameof(source));
+            Check.ArgumentNotNull(source, nameof(source));
 
             if (castIfPossible && source is ExpandoObject)
             {

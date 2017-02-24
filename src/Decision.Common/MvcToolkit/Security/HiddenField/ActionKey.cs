@@ -1,4 +1,4 @@
-﻿namespace NTierMvcFramework.Common.MvcToolkit.Security.HiddenField
+﻿namespace Decision.Common.MvcToolkit.Security.HiddenField
 {
     public class ActionKey
     {

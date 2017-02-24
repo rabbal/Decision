@@ -3,9 +3,9 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Web.Mvc;
-using NTierMvcFramework.Common.Extensions;
+using Decision.Common.Extensions;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Extensions
+namespace Decision.Common.MvcToolkit.Extensions
 {
     public static class ControllerExtentions
     {

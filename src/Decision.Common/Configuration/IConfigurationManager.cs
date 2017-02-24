@@ -1,6 +1,6 @@
 ﻿using System.Collections.Specialized;
 
-namespace NTierMvcFramework.Common.Configuration
+namespace Decision.Common.Configuration
 {
     public interface IConfigurationManager
     {

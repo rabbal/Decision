@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.UI;
 using System.Web.WebPages;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Helpers
+namespace Decision.Common.MvcToolkit.Helpers
 {
     public static class TreeViewHelper
     {

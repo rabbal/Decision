@@ -6,9 +6,9 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml;
-using NTierMvcFramework.Common.Utility;
+using Decision.Common.Utility;
 
-namespace NTierMvcFramework.Common.MvcToolkit.RSS
+namespace Decision.Common.MvcToolkit.RSS
 {
     public class FeedResult : ActionResult
     {

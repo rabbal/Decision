@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Net;
-using System.Net.Http;
-using System.Web.Http.Controllers;
-using System.Web.Http.Filters;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit
+namespace Decision.Common.WebAPIToolkit
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public sealed class ValidateModelStateFilter : ActionFilterAttribute

@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     internal static class QueryHelper
     {

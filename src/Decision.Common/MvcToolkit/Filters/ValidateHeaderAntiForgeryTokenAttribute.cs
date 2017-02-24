@@ -2,7 +2,7 @@
 using System.Web.Helpers;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
     /// <summary>
     /// Represents an attribute that is used to prevent forgery of a request. Same as 

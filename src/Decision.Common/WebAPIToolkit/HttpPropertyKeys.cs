@@ -1,4 +1,4 @@
-namespace NTierMvcFramework.Common.WebAPIToolkit
+namespace Decision.Common.WebAPIToolkit
 {
     public static class HttpPropertyKeys
     {

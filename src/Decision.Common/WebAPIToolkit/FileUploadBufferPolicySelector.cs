@@ -1,8 +1,7 @@
 ﻿using System.Linq;
 using System.Web;
-using System.Web.Http.WebHost;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit
+namespace Decision.Common.WebAPIToolkit
 {
     /// <summary>
     /// todo:httpConfiguration.Services.Replace(typeof(IHostBufferPolicySelector), new FileUploadBufferPolicySelector());

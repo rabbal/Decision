@@ -4,7 +4,7 @@ using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed class MvcClaimAccessAuthorizeAttribute : AuthorizeAttribute
@@ -15,7 +15,7 @@ namespace NTierMvcFramework.Common.MvcToolkit.Filters
         public string Value { get; set; }
         #endregion
 
-        #region AuthorizeCore
+        #region Protected Methods
         protected override bool AuthorizeCore(HttpContextBase context)
         {
             return context.User.Identity.IsAuthenticated
@@ -24,26 +24,20 @@ namespace NTierMvcFramework.Common.MvcToolkit.Filters
             x.Issuer == Issuer && x.Type == ClaimType && x.Value == Value
             );
         }
-        #endregion
-
-        #region HandleUnauthorizedRequest
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
             if (filterContext.HttpContext.Request.IsAuthenticated)
             {
                 filterContext.Result = new HttpStatusCodeResult(403);
+                throw new UnauthorizedAccessException(); //to avoid multiple redirects
+            }
 
-                // throw new UnauthorizedAccessException(); //to avoid multiple redirects
-            }
-            else
-            {
-                HandleAjaxRequest(filterContext);
-                base.HandleUnauthorizedRequest(filterContext);
-            }
+            HandleAjaxRequest(filterContext);
+            base.HandleUnauthorizedRequest(filterContext);
         }
         #endregion
 
-        #region Private
+        #region Private Methods
         private static void HandleAjaxRequest(ControllerContext filterContext)
         {
             var ctx = filterContext.HttpContext;

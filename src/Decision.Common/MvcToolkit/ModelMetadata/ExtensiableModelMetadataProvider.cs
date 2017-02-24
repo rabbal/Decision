@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.ModelMetadata
+namespace Decision.Common.MvcToolkit.ModelMetadata
 {
     public class ExtensiableModelMetadataProvider :
         DataAnnotationsModelMetadataProvider

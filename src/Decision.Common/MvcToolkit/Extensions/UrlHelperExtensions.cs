@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Extensions
+namespace Decision.Common.MvcToolkit.Extensions
 {
     /// <summary>
     /// <see cref="UrlHelper"/> extension methods.

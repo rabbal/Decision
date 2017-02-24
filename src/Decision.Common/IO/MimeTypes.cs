@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Web;
+using Decision.Common.Extensions;
 using Microsoft.Win32;
-using NTierMvcFramework.Common.Extensions;
 
-namespace NTierMvcFramework.Common.IO
+namespace Decision.Common.IO
 {
     public static class MimeTypes
     {

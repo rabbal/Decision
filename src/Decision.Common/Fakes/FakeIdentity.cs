@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Principal;
 
-namespace NTierMvcFramework.Common.Fakes
+namespace Decision.Common.Fakes
 {
     public class FakeIdentity : IIdentity
     {

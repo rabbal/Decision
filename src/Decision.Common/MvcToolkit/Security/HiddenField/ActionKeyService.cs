@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Security.HiddenField
+namespace Decision.Common.MvcToolkit.Security.HiddenField
 {
     public class ActionKeyService : IActionKeyService
     {

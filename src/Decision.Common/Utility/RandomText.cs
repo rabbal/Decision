@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     /// <summary>
     ///     Helper class to generate the random text.

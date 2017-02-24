@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Web.UI;
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     public static class HtmlTextWriterExtensions
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NTierMvcFramework.Common.Experimental.ObjectPool
+namespace Decision.Common.Experimental.ObjectPool
 {
     /// <summary>
     ///     Copied from Microsoft Roslyn code at

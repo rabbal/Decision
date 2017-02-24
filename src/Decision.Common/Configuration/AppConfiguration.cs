@@ -1,9 +1,9 @@
 using System;
 using System.Configuration;
 using System.Web;
-using NTierMvcFramework.Common.Utility;
+using Decision.Common.Utility;
 
-namespace NTierMvcFramework.Common.Configuration
+namespace Decision.Common.Configuration
 {
     public class AppConfiguration : ConfigurationSection, IAppConfiguration
     {

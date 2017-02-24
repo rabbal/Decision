@@ -1,8 +1,7 @@
 ﻿using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.Infrastructure
+namespace Decision.Common.Infrastructure
 {
-
     public interface IHaveUserSelectList
     {
         SelectListItem[] AvailableUsers { get; set; }

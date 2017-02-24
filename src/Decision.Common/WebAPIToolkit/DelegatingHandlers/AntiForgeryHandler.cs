@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web.Helpers;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit.DelegatingHandlers
+namespace Decision.Common.WebAPIToolkit.DelegatingHandlers
 {
     /// <summary>
     ///     todo: config.MessageHandlers.Add(new AntiForgeryHandler());

@@ -1,7 +1,6 @@
 ﻿using System.Web;
-using System.Web.Optimization;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Bundles
+namespace Decision.Common.MvcToolkit.Bundles
 {
     public static class BundleHelpers
     {

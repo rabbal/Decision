@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Web.Routing;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Extensions
+namespace Decision.Common.MvcToolkit.Extensions
 {
     public static class MiscExtensions
     {

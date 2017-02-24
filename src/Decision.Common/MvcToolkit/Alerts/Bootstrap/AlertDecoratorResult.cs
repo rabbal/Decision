@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Alerts.Bootstrap
+namespace Decision.Common.MvcToolkit.Alerts.Bootstrap
 {
     public class AlertDecoratorResult : ActionResult
     {

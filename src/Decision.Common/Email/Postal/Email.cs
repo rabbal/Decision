@@ -4,7 +4,7 @@ using System.Dynamic;
 using System.Net.Mail;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.Email.Postal
+namespace Decision.Common.Email.Postal
 {
    public class Email : DynamicObject, IViewDataContainer
     {

@@ -1,4 +1,4 @@
-namespace NTierMvcFramework.Common.Trees
+namespace Decision.Common.Trees
 {
     /// <summary>
     ///     A type of tree node.

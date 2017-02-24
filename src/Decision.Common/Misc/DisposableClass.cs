@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace NTierMvcFramework.Common.Misc
+namespace Decision.Common.Misc
 {
-    public class DisposableClass : IDisposable
+    public abstract class DisposableClass : IDisposable
     {
         private bool _disposed;
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
     /// <summary>
     /// use for remote validation or ajax calls action methods
@@ -14,8 +14,6 @@ namespace NTierMvcFramework.Common.MvcToolkit.Filters
             base.OnActionExecuted(filterContext);
             filterContext.HttpContext.Response.CacheControl = "private";
             filterContext.HttpContext.Response.Cache.SetMaxAge(TimeSpan.FromSeconds(0));
-
-
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Microsoft.Win32;
 
-namespace NTierMvcFramework.Common.IO
+namespace Decision.Common.IO
 {
     public static class MimeTypeManager
     {

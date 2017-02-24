@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NTierMvcFramework.Common.KendoLinq
+namespace Decision.Common.KendoLinq
 {
     /// <summary>
     ///     Represents a filter expression of Kendo DataSource.

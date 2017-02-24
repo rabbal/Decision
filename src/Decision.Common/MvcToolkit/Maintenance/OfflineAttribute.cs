@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Net;
 using System.Web.Mvc;
-using NTierMvcFramework.Common.Extensions;
+using Decision.Common.Extensions;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Maintenance
+namespace Decision.Common.MvcToolkit.Maintenance
 {
     [AttributeUsage(AttributeTargets.Method)]
     public sealed class OfflineAttribute : ActionFilterAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            var ipAddress = filterContext.HttpContext.Request.GetIp();
+            var ipAddress = filterContext.HttpContext.Request.GetUserIp();
 
             var offlineHelper = new OfflineHelper(ipAddress,
                  filterContext.HttpContext.Server.MapPath);

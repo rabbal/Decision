@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     public static class RemainingDateTime
     {

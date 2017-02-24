@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Web;
 using System.Web.Mvc;
-using NTierMvcFramework.Common.Extensions;
-using NTierMvcFramework.Common.MvcToolkit.Video;
+using Decision.Common.Extensions;
+using Decision.Common.MvcToolkit.Video;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Helpers
+namespace Decision.Common.MvcToolkit.Helpers
 {
     public static class HtmlHelperExtentions
     {

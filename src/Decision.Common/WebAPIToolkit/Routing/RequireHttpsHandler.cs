@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit.Routing
+namespace Decision.Common.WebAPIToolkit.Routing
 {
     public class RequireHttpsHandler : DelegatingHandler
     {

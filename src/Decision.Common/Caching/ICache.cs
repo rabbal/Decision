@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NTierMvcFramework.Common.Caching
+namespace Decision.Common.Caching
 {
     public interface ICache
     {

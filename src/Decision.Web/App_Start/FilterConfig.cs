@@ -1,6 +1,5 @@
 using System.Web.Mvc;
-using Decision.Common.Filters;
-using ElmahEFLogger.CustomElmahLogger;
+using Decision.Common.MvcToolkit.Filters;
 
 namespace Decision.Web
 {
@@ -13,11 +12,9 @@ namespace Decision.Web
             filters.Add(new ElmahHandledErrorLoggerFilter());
             //  logg xss attacks
             filters.Add(new ElmahRequestValidationErrorFilter());
-            
-            filters.Add(new RemoveServerHeaderFilterAttribute());
 
-            //filters.Add(new ForceWww("http://localhost:25890/"));
-            
+            //  filters.Add(new RemoveServerHeaderFilterAttribute());
+
         }
     }
 }

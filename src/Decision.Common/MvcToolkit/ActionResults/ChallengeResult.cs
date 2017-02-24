@@ -2,7 +2,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.Owin.Security;
 
-namespace NTierMvcFramework.Common.MvcToolkit.ActionResults
+namespace Decision.Common.MvcToolkit.ActionResults
 {
     public class ChallengeResult : HttpUnauthorizedResult
     {
@@ -25,7 +25,7 @@ namespace NTierMvcFramework.Common.MvcToolkit.ActionResults
 
         #endregion
         
-        #region Base Methods Override
+        #region Public Methods
         public override void ExecuteResult(ControllerContext context)
         {
             var properties = new AuthenticationProperties { RedirectUri = RedirectUri };

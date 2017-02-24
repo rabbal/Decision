@@ -1,6 +1,6 @@
 using System.Collections.Concurrent;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit
+namespace Decision.Common.WebAPIToolkit
 {
     public static class Global
     {

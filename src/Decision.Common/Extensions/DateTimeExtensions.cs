@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Globalization;
 using System.Xml;
-using DNT.Extensions;
-using NTierMvcFramework.Common.Utility;
+using Decision.Common.Utility;
 using TimeZone = System.TimeZoneInfo;
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     public static class DateTimeExtensions
     {

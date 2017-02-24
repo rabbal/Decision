@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Web;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Validators
+namespace Decision.Common.MvcToolkit.Validators
 {
     public sealed class MinimumFileSizeValidator
         : ValidationAttribute, IClientValidatable
@@ -25,12 +25,9 @@ namespace NTierMvcFramework.Common.MvcToolkit.Validators
         public override bool IsValid(
              object value)
         {
-            if (value == null)
-            {
-                return true;
-            }
-
-            if (IsValidMinimumFileSize((value as HttpPostedFileBase).ContentLength)) return true;
+            var httpPostedFileBase
+                 = value as HttpPostedFileBase;
+            if (httpPostedFileBase != null && IsValidMinimumFileSize(httpPostedFileBase.ContentLength)) return true;
             ErrorMessage = string.Format(_errorMessage, "{0}", MinimumFileSize);
             return false;
         }

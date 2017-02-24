@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Json
+namespace Decision.Common.MvcToolkit.Json
 {
     public class JsonNetValueProviderFactory : ValueProviderFactory
     {

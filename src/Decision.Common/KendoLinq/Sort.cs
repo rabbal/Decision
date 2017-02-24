@@ -1,4 +1,4 @@
-﻿namespace NTierMvcFramework.Common.KendoLinq
+﻿namespace Decision.Common.KendoLinq
 {
     /// <summary>
     ///     Represents a sort expression of Kendo DataSource.

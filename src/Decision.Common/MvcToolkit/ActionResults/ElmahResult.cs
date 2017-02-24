@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.ActionResults
+namespace Decision.Common.MvcToolkit.ActionResults
 {
 
     public class ElmahResult : ActionResult

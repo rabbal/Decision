@@ -11,7 +11,7 @@ using Newtonsoft.Json.Serialization;
 // Needs JSon.Net (Newtonsoft.Json.dll) from http://json.codeplex.com/
 //////////////////////////////////////////////////////////////////////
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     public static class JsonExtensions
     {

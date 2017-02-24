@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.ServiceModel.Syndication;
 using System.Xml;
-using NTierMvcFramework.Common.Infrastructure;
+using Decision.Common.Infrastructure;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit
+namespace Decision.Common.WebAPIToolkit
 {
     public class RssFeedBuilder
     {

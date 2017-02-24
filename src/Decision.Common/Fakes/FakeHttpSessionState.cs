@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.Web.SessionState;
 
-namespace NTierMvcFramework.Common.Fakes
+namespace Decision.Common.Fakes
 {
     public class FakeHttpSessionState : HttpSessionStateBase
     {

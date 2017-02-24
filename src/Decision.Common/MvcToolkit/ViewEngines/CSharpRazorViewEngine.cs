@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.ViewEngines
+namespace Decision.Common.MvcToolkit.ViewEngines
 {
     /// <summary>
     /// Represents a view engine that is used to render a Web page that uses the ASP.NET Razor syntax and C# .cshtml 

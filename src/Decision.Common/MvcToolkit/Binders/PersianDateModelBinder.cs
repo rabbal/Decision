@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Binders
+namespace Decision.Common.MvcToolkit.Binders
 {
     public class PersianDateModelBinder : IModelBinder
     {

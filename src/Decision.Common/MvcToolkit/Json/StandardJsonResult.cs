@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Json
+namespace Decision.Common.MvcToolkit.Json
 {
     public class StandardJsonResult : JsonNetResult
     {

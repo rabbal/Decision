@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web.Hosting;
-using NTierMvcFramework.Common.Utility;
+using Decision.Common.Utility;
 
-namespace NTierMvcFramework.Common.IO.Media
+namespace Decision.Common.IO.Media
 {
     public class FileSystemStorageProvider : IStorageProvider
     {

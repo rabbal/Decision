@@ -2,9 +2,9 @@
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
-using NTierMvcFramework.Common.IO.VirtualPath;
+using Decision.Common.IO.VirtualPath;
 
-namespace NTierMvcFramework.Common.IO.WebSite
+namespace Decision.Common.IO.WebSite
 {
     public class WebSiteFolder : IWebSiteFolder
     {

@@ -3,7 +3,7 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit
+namespace Decision.Common.WebAPIToolkit
 {
     public class VideoStream
     {

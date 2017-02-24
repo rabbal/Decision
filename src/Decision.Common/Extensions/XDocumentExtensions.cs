@@ -1,9 +1,9 @@
 ﻿using System.IO;
 using System.Text;
 using System.Xml.Linq;
-using NTierMvcFramework.Common.Utility;
+using Decision.Common.Utility;
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     /// <summary>
     ///     <see cref="XDocument" /> extension methods

@@ -1,7 +1,7 @@
 using System;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
     /// <summary>
     /// http://www.dotnettips.info/post/825 
@@ -9,7 +9,6 @@ namespace NTierMvcFramework.Common.MvcToolkit.Filters
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public sealed class AjaxOnlyAttribute : ActionFilterAttribute
     {
-
         #region OnActionExecuting
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
@@ -23,6 +22,5 @@ namespace NTierMvcFramework.Common.MvcToolkit.Filters
             }
         }
         #endregion
-
     }
 }

@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
-using NTierMvcFramework.Common.Collections;
-using NTierMvcFramework.Common.Infrastructure;
+using Decision.Common.Collections;
+using Decision.Common.Infrastructure;
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     public static class EnumerableExtensions
     {
@@ -18,9 +18,9 @@ namespace NTierMvcFramework.Common.Extensions
             Func<TSource, TKey> keySelector,
             Func<TSource, TValue> valueSelector)
         {
-            Guard.ArgumentNotNull(() => source);
-            Guard.ArgumentNotNull(() => keySelector);
-            Guard.ArgumentNotNull(() => valueSelector);
+            Check.ArgumentNotNull(() => source);
+            Check.ArgumentNotNull(() => keySelector);
+            Check.ArgumentNotNull(() => valueSelector);
 
             var map = new Multimap<TKey, TValue>();
 
@@ -38,7 +38,7 @@ namespace NTierMvcFramework.Common.Extensions
 
         public static void AddRange(this NameValueCollection initial, NameValueCollection other)
         {
-            Guard.ArgumentNotNull(initial, nameof(initial));
+            Check.ArgumentNotNull(initial, nameof(initial));
             if (other == null)
                 return;
 

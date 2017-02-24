@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace NTierMvcFramework.Common.Infrastructure
+namespace Decision.Common.Infrastructure
 {
     /// <summary>
     ///     Classes implementing this interface provide information about types

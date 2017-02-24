@@ -2,14 +2,10 @@
 
 namespace Decision.DomainClasses.ApplicantInfo
 {
-    
     public enum EducationalType
     {
-        
-        [Display(Name = "حوزوی")]
-        Hoze,
-     
-        [Display(Name = "دانشگاهی")]
-        Academic
+        [Display(Name = "حوزوی")] Hoze,
+
+        [Display(Name = "دانشگاهی")] Academic
     }
 }

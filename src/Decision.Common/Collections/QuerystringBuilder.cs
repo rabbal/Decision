@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.Text;
 using System.Web;
 
-namespace NTierMvcFramework.Common.Collections
+namespace Decision.Common.Collections
 {
     /// <summary>
     ///     http://weblogs.asp.net/bradvincent/archive/2008/10/27/helper-class-querystring-builder-chainable.aspx

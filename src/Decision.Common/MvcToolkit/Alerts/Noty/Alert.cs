@@ -1,4 +1,4 @@
-﻿namespace NTierMvcFramework.Common.MvcToolkit.Alerts.Noty
+﻿namespace Decision.Common.MvcToolkit.Alerts.Noty
 {
     public class Alert
     {

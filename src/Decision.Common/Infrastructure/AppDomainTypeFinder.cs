@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
-namespace NTierMvcFramework.Common.Infrastructure
+namespace Decision.Common.Infrastructure
 {
     /// <summary>
     ///     A class that finds types needed by SmartStore by looping assemblies in the

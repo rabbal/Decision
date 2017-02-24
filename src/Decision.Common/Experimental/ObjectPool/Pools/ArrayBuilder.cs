@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
-namespace NTierMvcFramework.Common.Experimental.ObjectPool.Pools
+namespace Decision.Common.Experimental.ObjectPool.Pools
 {
     public sealed class ArrayBuilder<T>
     {

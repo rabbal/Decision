@@ -1,4 +1,4 @@
-﻿namespace NTierMvcFramework.Common.SignalRToolkit.Filters
+﻿namespace Decision.Common.SignalRToolkit.Filters
 {
     public sealed class SignalRAuthorizeAttribute : Microsoft.AspNet.SignalR.AuthorizeAttribute
     {

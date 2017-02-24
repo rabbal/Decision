@@ -1,8 +1,8 @@
 using System;
 using System.Web.Mvc;
-using NTierMvcFramework.Common.Constants;
+using Decision.Common.Constants;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
     /// <summary>
     /// http://www.dotnettips.info/Post/1604

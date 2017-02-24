@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace NTierMvcFramework.Common.Trees
+namespace Decision.Common.Trees
 {
     /// <summary>
     ///     A helper class for objects which implement <see cref="ITreeNode{T}" />, providing

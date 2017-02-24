@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Alerts.Bootstrap
+namespace Decision.Common.MvcToolkit.Alerts.Bootstrap
 {
     public static class AlertExtensions
     {
-        const string Alerts = "_Alerts";
+        private const string Alerts = "_Alerts";
         public static List<Alert> GetAlerts(this TempDataDictionary tempData)
         {
             if (!tempData.ContainsKey(Alerts))

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NTierMvcFramework.Common.SignalRToolkit.AntiSpam
+namespace Decision.Common.SignalRToolkit.AntiSpam
 {
     public class ActivityInfo
     {

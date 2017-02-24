@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Web;
 using System.Web.Hosting;
-using NTierMvcFramework.Common.Utility;
+using Decision.Common.Utility;
 
-namespace NTierMvcFramework.Common.Infrastructure
+namespace Decision.Common.Infrastructure
 {
     /// <summary>
     ///     Provides information about types in the current web application.

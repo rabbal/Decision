@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Web.Mvc;
-using NTierMvcFramework.Common.Infrastructure;
+using Decision.Common.Infrastructure;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
 
     [AttributeUsage(AttributeTargets.Method)]
     public sealed class ContinueEditingAttribute : FilterAttribute, IActionFilter
     {
-        public readonly string _elementName;
+        private readonly string _elementName;
 
         public ContinueEditingAttribute(string elementName)
         {
@@ -20,7 +20,7 @@ namespace NTierMvcFramework.Common.MvcToolkit.Filters
             var viewModel = filterContext.ActionParameters["viewModel"] as IContinuableForEditing;
 
             if (viewModel != null)
-                ((IContinuableForEditing)viewModel).ContinueEditing = !string.IsNullOrEmpty(formValue);
+                viewModel.ContinueEditing = !string.IsNullOrEmpty(formValue);
         }
 
         public void OnActionExecuted(ActionExecutedContext filterContext)

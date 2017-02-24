@@ -3,7 +3,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
     /// <summary>
     /// Represents an attribute that forces an unsecured HTTP request to be re-sent over HTTPS. 

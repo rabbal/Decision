@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NTierMvcFramework.Common.IO.Media
+namespace Decision.Common.IO.Media
 {
     public interface IStorageProvider
     {

@@ -1,8 +1,6 @@
-﻿using System.Web.Http;
-using Microsoft.AspNet.Identity;
-using WebApiThrottle;
+﻿using Microsoft.AspNet.Identity;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit.Controller
+namespace Decision.Common.WebAPIToolkit.Controller
 {
     [EnableThrottling]
     public class BaseApiController : ApiController

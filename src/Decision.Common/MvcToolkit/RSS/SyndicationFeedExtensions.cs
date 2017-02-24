@@ -4,7 +4,7 @@ using System.ServiceModel.Syndication;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace NTierMvcFramework.Common.MvcToolkit.RSS
+namespace Decision.Common.MvcToolkit.RSS
 {
     /// <summary>
     /// <see cref="SyndicationFeed"/> extension methods.

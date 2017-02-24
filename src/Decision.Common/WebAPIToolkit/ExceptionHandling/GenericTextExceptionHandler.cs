@@ -1,8 +1,7 @@
 using System.Text;
-using System.Web.Http.ExceptionHandling;
-using NTierMvcFramework.Common.WebAPIToolkit.Results;
+using Decision.Common.WebAPIToolkit.Results;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit.ExceptionHandling
+namespace Decision.Common.WebAPIToolkit.ExceptionHandling
 {
     public class GenericTextExceptionHandler : ExceptionHandler
     {

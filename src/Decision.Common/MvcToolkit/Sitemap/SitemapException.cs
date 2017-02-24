@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Sitemap
+namespace Decision.Common.MvcToolkit.Sitemap
 {
     /// <summary>
     /// Represents errors that occur during sitemap creation.

@@ -3,9 +3,9 @@ using System.Linq;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Routing;
-using NTierMvcFramework.Common.Utility;
+using Decision.Common.Utility;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Security.HiddenField
+namespace Decision.Common.MvcToolkit.Security.HiddenField
 {
     public static class MvcHtmlHelperExtentions
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     public static class CollectionExtensions
     {
@@ -23,7 +23,7 @@ namespace NTierMvcFramework.Common.Extensions
 
         public static bool IsNullOrEmpty<T>(this ICollection<T> source)
         {
-            return source == null || source.Count == 0;
+            return source == null || !source.Any();
         }
 
 

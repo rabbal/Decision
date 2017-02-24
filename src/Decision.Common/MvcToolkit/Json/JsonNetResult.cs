@@ -3,7 +3,7 @@ using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Json
+namespace Decision.Common.MvcToolkit.Json
 {
     public class JsonNetResult : JsonResult
     {

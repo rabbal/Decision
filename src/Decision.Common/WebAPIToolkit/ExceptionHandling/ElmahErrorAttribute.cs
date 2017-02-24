@@ -1,7 +1,6 @@
-﻿using System.Web.Http.Filters;
-using Elmah;
+﻿using Elmah;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit.ExceptionHandling
+namespace Decision.Common.WebAPIToolkit.ExceptionHandling
 {
     public sealed class ElmahErrorAttribute :
         ExceptionFilterAttribute

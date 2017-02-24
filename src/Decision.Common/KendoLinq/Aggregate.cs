@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace NTierMvcFramework.Common.KendoLinq
+namespace Decision.Common.KendoLinq
 {
     /// <summary>
     ///     Represents a aggregate expression of Kendo DataSource.

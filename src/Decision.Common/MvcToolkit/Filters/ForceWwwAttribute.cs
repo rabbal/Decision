@@ -3,66 +3,21 @@ using System.Globalization;
 using System.Web;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
     public sealed class ForceWwwAttribute : ActionFilterAttribute
     {
-
-        #region Fields
-        private readonly string _baseHost;
-        private ActionExecutingContext _filterContext;
-        private HttpRequestBase _request;
-        #endregion
-
         #region Constructor
+
         public ForceWwwAttribute(string siteRootUrl)
         {
             _baseHost = new Uri(siteRootUrl).Host.ToLowerInvariant();
         }
-        #endregion
-
-        #region CanIgnoreRequest
-        private bool CanIgnoreRequest
-        {
-            get
-            {
-                var url = _request.Url;
-                return url != null &&
-                    (_filterContext.IsChildAction ||
-                     _filterContext.HttpContext.Request.IsAjaxRequest() ||
-                     url.AbsoluteUri.Contains("?"));
-            }
-        }
-        #endregion
-
-        #region IsDomainSetCorrectly
-        private bool IsDomainSetCorrectly
-        {
-            get
-            {
-                var url = _request.Url;
-                return (url != null) && (url.Host == _baseHost);
-            }
-        }
-        #endregion
-
-        #region IsLocalRequest
-        private bool IsLocalRequest => _request.IsLocal;
 
         #endregion
 
-        #region IsRootRequest
-        private bool IsRootRequest
-        {
-            get
-            {
-                var url = _request.Url;
-                return url != null && url.AbsolutePath == "/";
-            }
-        }
-        #endregion
+        #region Public Methods
 
-        #region OnActionExecuting Override
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             _filterContext = filterContext;
@@ -74,18 +29,61 @@ namespace NTierMvcFramework.Common.MvcToolkit.Filters
 
         #endregion
 
-        #region AvoidTrailingSlashes
+        #region Fields
+
+        private readonly string _baseHost;
+        private ActionExecutingContext _filterContext;
+        private HttpRequestBase _request;
+
+        #endregion
+
+        #region Properties
+
+        private bool IsRootRequest
+        {
+            get
+            {
+                var url = _request.Url;
+                return url != null && url.AbsolutePath == "/";
+            }
+        }
+
+        private bool IsLocalRequest => _request.IsLocal;
+
+        #endregion
+
+        #region Private Methods
+
+        private bool CanIgnoreRequest
+        {
+            get
+            {
+                var url = _request.Url;
+                return url != null &&
+                       (_filterContext.IsChildAction ||
+                        _filterContext.HttpContext.Request.IsAjaxRequest() ||
+                        url.AbsoluteUri.Contains("?"));
+            }
+        }
+
+        private bool IsDomainSetCorrectly
+        {
+            get
+            {
+                var url = _request.Url;
+                return (url != null) && (url.Host == _baseHost);
+            }
+        }
+
         private string AvoidTrailingSlashes(string url)
         {
             if (!IsRootRequest && url.EndsWith("/"))
             {
-                url = url.TrimEnd(new[] { '/' });
+                url = url.TrimEnd('/');
             }
             return url;
         }
-        #endregion
 
-        #region ModifyUrlAndRedirectPermanent
         private void ModifyUrlAndRedirectPermanent()
         {
             if (IsLocalRequest || IsDomainSetCorrectly || CanIgnoreRequest)
@@ -95,7 +93,7 @@ namespace NTierMvcFramework.Common.MvcToolkit.Filters
             if (url == null)
                 return;
 
-            var newUri = new UriBuilder(url) { Host = _baseHost };
+            var newUri = new UriBuilder(url) {Host = _baseHost};
             var absoluteUrl = HttpUtility.UrlDecode(newUri.Uri.AbsoluteUri.ToString(CultureInfo.InvariantCulture));
             if (string.IsNullOrWhiteSpace(absoluteUrl))
                 return;
@@ -104,9 +102,9 @@ namespace NTierMvcFramework.Common.MvcToolkit.Filters
             redirectUrl = AvoidTrailingSlashes(redirectUrl);
             _filterContext.Controller.ViewBag.CanonicalUrl = redirectUrl;
 
-            _filterContext.Result = new RedirectResult(redirectUrl, permanent: true);
+            _filterContext.Result = new RedirectResult(redirectUrl, true);
         }
-        #endregion
 
+        #endregion
     }
 }

@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.CodeDom.Compiler;
+using System.Data.Entity.Core.Metadata.Edm;
 using System.Data.Entity.Infrastructure.MappingViews;
+using Decision.DataLayer.Context;
 
-[assembly: DbMappingViewCacheTypeAttribute(
-    typeof(Decision.DataLayer.Context.ApplicationDbContext),
-    typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySets0530d53c5a4930013975645cd655bd87099568b946b8d9e57bc1c382692eecec))]
+[assembly: DbMappingViewCacheType(
+    typeof(ApplicationDbContext),
+    typeof(ViewsForBaseEntitySets0530d53c5a4930013975645cd655bd87099568b946b8d9e57bc1c382692eecec))]
 
-namespace Edm_EntityMappingGeneratedViews
+namespace Decision.DataLayer.Context
 {
-    using System;
-    using System.CodeDom.Compiler;
-    using System.Data.Entity.Core.Metadata.Edm;
-
     /// <summary>
     /// Implements a mapping view cache.
     /// </summary>
@@ -383,7 +383,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing ActivityLogs
-        [Decision.DataLayer.Context.ActivityLog](T1.ActivityLog_Id, T1.ActivityLog_Title, T1.ActivityLog_Description, T1.ActivityLog_Url, T1.ActivityLog_OperantIp, T1.ActivityLog_OperatedOn, T1.ActivityLog_UserId)
+        [NTierMvcFramework.DataLayer.Context.ActivityLog](T1.ActivityLog_Id, T1.ActivityLog_Title, T1.ActivityLog_Description, T1.ActivityLog_Url, T1.ActivityLog_OperantIp, T1.ActivityLog_OperatedOn, T1.ActivityLog_UserId)
     FROM (
         SELECT 
             T.Id AS ActivityLog_Id, 
@@ -406,7 +406,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing Users
-        [Decision.DataLayer.Context.User](T1.User_Id, T1.User_IsBanned, T1.User_IsSystemAccount, T1.User_LastIp, T1.User_LastLoggedInOn, T1.User_LastActivityOn, T1.User_BannedOn, T1.User_DisplayName, T1.User_TrimmedDisplayName, T1.User_BannedReason, T1.User_RegisteredOn, T1.User_CreatedOn, T1.User_ModifiedOn, T1.User_CreatorIp, T1.User_ModifierIp, T1.User_ModifiedBy, T1.User_CreatedBy, T1.User_RowId, T1.User_RowVersion, T1.User_Email, T1.User_EmailConfirmed, T1.User_PasswordHash, T1.User_SecurityStamp, T1.User_PhoneNumber, T1.User_PhoneNumberConfirmed, T1.User_TwoFactorEnabled, T1.User_LockoutEndDateUtc, T1.User_LockoutEnabled, T1.User_AccessFailedCount, T1.User_UserName)
+        [NTierMvcFramework.DataLayer.Context.User](T1.User_Id, T1.User_IsBanned, T1.User_IsSystemAccount, T1.User_LastIp, T1.User_LastLoggedInOn, T1.User_LastActivityOn, T1.User_BannedOn, T1.User_DisplayName, T1.User_TrimmedDisplayName, T1.User_BannedReason, T1.User_RegisteredOn, T1.User_CreatedOn, T1.User_ModifiedOn, T1.User_CreatorIp, T1.User_ModifierIp, T1.User_ModifiedBy, T1.User_CreatedBy, T1.User_RowId, T1.User_RowVersion, T1.User_Email, T1.User_EmailConfirmed, T1.User_PasswordHash, T1.User_SecurityStamp, T1.User_PhoneNumber, T1.User_PhoneNumberConfirmed, T1.User_TwoFactorEnabled, T1.User_LockoutEndDateUtc, T1.User_LockoutEnabled, T1.User_AccessFailedCount, T1.User_UserName)
     FROM (
         SELECT 
             T.Id AS User_Id, 
@@ -452,7 +452,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing AuditLogs
-        [Decision.DataLayer.Context.AuditLog](T1.AuditLog_Id, T1.AuditLog_EntityId, T1.AuditLog_EntityType, T1.AuditLog_JsonOriginalValues, T1.AuditLog_JsonNewValues, T1.AuditLog_Action, T1.AuditLog_UserId)
+        [NTierMvcFramework.DataLayer.Context.AuditLog](T1.AuditLog_Id, T1.AuditLog_EntityId, T1.AuditLog_EntityType, T1.AuditLog_JsonOriginalValues, T1.AuditLog_JsonNewValues, T1.AuditLog_Action, T1.AuditLog_UserId)
     FROM (
         SELECT 
             T.Id AS AuditLog_Id, 
@@ -460,7 +460,7 @@ namespace Edm_EntityMappingGeneratedViews
             T.EntityType AS AuditLog_EntityType, 
             T.JsonOriginalValues AS AuditLog_JsonOriginalValues, 
             T.JsonNewValues AS AuditLog_JsonNewValues, 
-            CAST(T.Action AS [Decision.DataLayer.Context.AuditAction]) AS AuditLog_Action, 
+            CAST(T.Action AS [NTierMvcFramework.DataLayer.Context.AuditAction]) AS AuditLog_Action, 
             T.UserId AS AuditLog_UserId, 
             True AS _from0
         FROM CodeFirstDatabase.AuditLog AS T
@@ -475,7 +475,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing UserClaims
-        [Decision.DataLayer.Context.UserClaim](T1.UserClaim_Id, T1.UserClaim_UserId, T1.UserClaim_ClaimType, T1.UserClaim_ClaimValue)
+        [NTierMvcFramework.DataLayer.Context.UserClaim](T1.UserClaim_Id, T1.UserClaim_UserId, T1.UserClaim_ClaimType, T1.UserClaim_ClaimValue)
     FROM (
         SELECT 
             T.Id AS UserClaim_Id, 
@@ -495,7 +495,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing UserLogins
-        [Decision.DataLayer.Context.UserLogin](T1.UserLogin_LoginProvider, T1.UserLogin_ProviderKey, T1.UserLogin_UserId)
+        [NTierMvcFramework.DataLayer.Context.UserLogin](T1.UserLogin_LoginProvider, T1.UserLogin_ProviderKey, T1.UserLogin_UserId)
     FROM (
         SELECT 
             T.LoginProvider AS UserLogin_LoginProvider, 
@@ -514,7 +514,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing Notifications
-        [Decision.DataLayer.Context.Notification](T1.Notification_Id, T1.Notification_IsDismissed, T1.Notification_Message, T1.Notification_Title, T1.Notification_Url, T1.Notification_ReceivedOn, T1.Notification_Type, T1.Notification_UserId)
+        [NTierMvcFramework.DataLayer.Context.Notification](T1.Notification_Id, T1.Notification_IsDismissed, T1.Notification_Message, T1.Notification_Title, T1.Notification_Url, T1.Notification_ReceivedOn, T1.Notification_Type, T1.Notification_UserId)
     FROM (
         SELECT 
             T.Id AS Notification_Id, 
@@ -523,7 +523,7 @@ namespace Edm_EntityMappingGeneratedViews
             T.Title AS Notification_Title, 
             T.Url AS Notification_Url, 
             T.ReceivedOn AS Notification_ReceivedOn, 
-            CAST(T.Type AS [Decision.DataLayer.Context.NotificationType]) AS Notification_Type, 
+            CAST(T.Type AS [NTierMvcFramework.DataLayer.Context.NotificationType]) AS Notification_Type, 
             T.UserId AS Notification_UserId, 
             True AS _from0
         FROM CodeFirstDatabase.Notification AS T
@@ -538,7 +538,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing UserRoles
-        [Decision.DataLayer.Context.UserRole](T1.UserRole_UserId, T1.UserRole_RoleId)
+        [NTierMvcFramework.DataLayer.Context.UserRole](T1.UserRole_UserId, T1.UserRole_RoleId)
     FROM (
         SELECT 
             T.UserId AS UserRole_UserId, 
@@ -556,7 +556,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing Roles
-        [Decision.DataLayer.Context.Role](T1.Role_Id, T1.Role_IsSystemRole, T1.Role_DisplayName, T1.Role_CreatedOn, T1.Role_ModifiedOn, T1.Role_CreatorIp, T1.Role_ModifierIp, T1.Role_ModifiedBy, T1.Role_CreatedBy, T1.Role_RowId, T1.Role_RowVersion, T1.Role_Name)
+        [NTierMvcFramework.DataLayer.Context.Role](T1.Role_Id, T1.Role_IsSystemRole, T1.Role_DisplayName, T1.Role_CreatedOn, T1.Role_ModifiedOn, T1.Role_CreatorIp, T1.Role_ModifierIp, T1.Role_ModifiedBy, T1.Role_CreatedBy, T1.Role_RowId, T1.Role_RowVersion, T1.Role_Name)
     FROM (
         SELECT 
             T.Id AS Role_Id, 
@@ -584,7 +584,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing UserTokens
-        [Decision.DataLayer.Context.UserToken](T1.UserToken_Id, T1.UserToken_AccessTokenHash, T1.UserToken_AccessTokenExpireOn, T1.UserToken_RefreshTokenIdHash, T1.UserToken_Subject, T1.UserToken_RefreshTokenExpiresUtc, T1.UserToken_RefreshToken, T1.UserToken_UserId)
+        [NTierMvcFramework.DataLayer.Context.UserToken](T1.UserToken_Id, T1.UserToken_AccessTokenHash, T1.UserToken_AccessTokenExpireOn, T1.UserToken_RefreshTokenIdHash, T1.UserToken_Subject, T1.UserToken_RefreshTokenExpiresUtc, T1.UserToken_RefreshToken, T1.UserToken_UserId)
     FROM (
         SELECT 
             T.Id AS UserToken_Id, 
@@ -635,7 +635,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing Settings
-        [Decision.DataLayer.Context.Setting](T1.Setting_Id, T1.Setting_Name, T1.Setting_Value, T1.Setting_CreatedOn, T1.Setting_ModifiedOn, T1.Setting_CreatorIp, T1.Setting_ModifierIp, T1.Setting_ModifiedBy, T1.Setting_CreatedBy, T1.Setting_RowId, T1.Setting_RowVersion)
+        [NTierMvcFramework.DataLayer.Context.Setting](T1.Setting_Id, T1.Setting_Name, T1.Setting_Value, T1.Setting_CreatedOn, T1.Setting_ModifiedOn, T1.Setting_CreatorIp, T1.Setting_ModifierIp, T1.Setting_ModifiedBy, T1.Setting_CreatedBy, T1.Setting_RowId, T1.Setting_RowVersion)
     FROM (
         SELECT 
             T.Id AS Setting_Id, 

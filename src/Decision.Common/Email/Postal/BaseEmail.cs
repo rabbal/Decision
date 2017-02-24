@@ -1,6 +1,4 @@
-﻿using DNT.Extensions;
-
-namespace NTierMvcFramework.Common.Email.Postal
+﻿namespace Decision.Common.Email.Postal
 {
     /// <summary>
     ///     از ایمیل‌های خودکار برنامه log تهیه کنید.

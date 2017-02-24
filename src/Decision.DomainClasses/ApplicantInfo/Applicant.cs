@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Decision.DomainClasses.Common;
 using Decision.DomainClasses.Evaluations;
 
 namespace Decision.DomainClasses.ApplicantInfo
 {
-
     public class Applicant : BaseEntity
     {
         #region Ctor
@@ -17,6 +15,7 @@ namespace Decision.DomainClasses.ApplicantInfo
             CopyOfNationalCard = Photo = BitConverter.GetBytes(0);
             Status = ApplicantStatus.Pending;
         }
+
         #endregion
 
         #region Properties
@@ -42,7 +41,7 @@ namespace Decision.DomainClasses.ApplicantInfo
         public MilitaryStatus MilitaryStatus { get; set; }
 
         public DateTime? ServedEndOn { get; set; }
-   
+
 
         public MembershipType MembershipType { get; set; }
 
@@ -69,6 +68,7 @@ namespace Decision.DomainClasses.ApplicantInfo
         public double TotalReputation { get; set; }
 
         public ApplicantStatus Status { get; set; }
+
         #endregion
 
         #region NavigationProperties
@@ -78,18 +78,19 @@ namespace Decision.DomainClasses.ApplicantInfo
         public ICollection<EducationalExperience> EducationalExperiences { get; set; }
 
         public ICollection<ResearchExperience> ReseachExperiences { get; set; }
- 
+
         public ICollection<EntireEvaluation> EntireEvaluations { get; set; }
 
         public ICollection<EducationalBackground> EducationalBackgrounds { get; set; }
 
         public ICollection<WorkExperience> WorkExperiences { get; set; }
- 
+
         public ICollection<Interview> Interviews { get; set; }
 
         public ICollection<Address> Addresses { get; set; }
 
         public ICollection<Presenter> Presenters { get; set; }
+
         #endregion
     }
 }

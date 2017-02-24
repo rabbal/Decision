@@ -1,0 +1,19 @@
+﻿<!--
+    You can find existing browser definitions at
+    <windir>\Microsoft.NET\Framework\<ver>\CONFIG\Browsers
+-->
+
+
+<browsers>
+  <browser id="Edge" parentID="Chrome">
+    <identification>
+      <userAgent match="Edge/(?'version'(?'major'\d+)(?'minor'\.\d+))" />
+    </identification>
+    <capabilities>
+      <capability name="browser" value="Edge" />
+      <capability name="version" value="${version}" />
+      <capability name="majorversion" value="${major}" />
+      <capability name="minorversion" value="${minor}" />
+    </capabilities>
+  </browser>
+</browsers>

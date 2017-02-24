@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace NTierMvcFramework.Common.Email
+namespace Decision.Common.Email
 {
     [Serializable]
     public class EmailException : Exception

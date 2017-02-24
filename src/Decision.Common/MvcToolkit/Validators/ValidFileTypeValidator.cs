@@ -3,9 +3,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using NTierMvcFramework.Common.Extensions;
+using Decision.Common.Extensions;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Validators
+namespace Decision.Common.MvcToolkit.Validators
 {
     public sealed class ValidFileTypeValidator
         : ValidationAttribute, IClientValidatable

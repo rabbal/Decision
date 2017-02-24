@@ -1,4 +1,4 @@
-﻿namespace NTierMvcFramework.Common.Extensions
+﻿namespace Decision.Common.Extensions
 {
     public static class StreamExtensions
     {

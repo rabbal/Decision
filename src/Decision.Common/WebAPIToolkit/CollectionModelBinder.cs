@@ -1,9 +1,6 @@
 using System;
-using System.Linq;
-using System.Web.Http.Controllers;
-using System.Web.Http.ModelBinding;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit
+namespace Decision.Common.WebAPIToolkit
 {
     public class CollectionModelBinder<T> : IModelBinder
     {

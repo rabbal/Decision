@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
     
     public sealed class RemoveServerHeaderAttribute : ActionFilterAttribute

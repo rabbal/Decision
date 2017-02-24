@@ -5,10 +5,10 @@ using System.IO;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
-using NTierMvcFramework.Common.Extensions;
-using NTierMvcFramework.Common.Infrastructure;
+using Decision.Common.Extensions;
+using Decision.Common.Infrastructure;
 
-namespace NTierMvcFramework.Common.Email
+namespace Decision.Common.Email
 {
     public class EmailMessage : ICloneable<EmailMessage>
     {
@@ -30,10 +30,10 @@ namespace NTierMvcFramework.Common.Email
         public EmailMessage(string to, string subject, string body, string from)
             : this()
         {
-            Guard.ArgumentNotEmpty(() => to);
-            Guard.ArgumentNotEmpty(() => from);
-            Guard.ArgumentNotEmpty(() => subject);
-            Guard.ArgumentNotEmpty(() => body);
+            Check.ArgumentNotEmpty(() => to);
+            Check.ArgumentNotEmpty(() => from);
+            Check.ArgumentNotEmpty(() => subject);
+            Check.ArgumentNotEmpty(() => body);
 
             To.Add(new EmailAddress(to));
             Subject = subject;
@@ -44,10 +44,10 @@ namespace NTierMvcFramework.Common.Email
         public EmailMessage(EmailAddress to, string subject, string body, EmailAddress from)
             : this()
         {
-            Guard.ArgumentNotNull(() => to);
-            Guard.ArgumentNotNull(() => from);
-            Guard.ArgumentNotEmpty(() => subject);
-            Guard.ArgumentNotEmpty(() => body);
+            Check.ArgumentNotNull(() => to);
+            Check.ArgumentNotNull(() => from);
+            Check.ArgumentNotEmpty(() => subject);
+            Check.ArgumentNotEmpty(() => body);
 
             To.Add(to);
             Subject = subject;

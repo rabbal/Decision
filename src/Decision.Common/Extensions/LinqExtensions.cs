@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Reflection;
-using NTierMvcFramework.Common.Infrastructure;
+using Decision.Common.Infrastructure;
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     public static class LinqExtensions
     {
@@ -19,7 +19,7 @@ namespace NTierMvcFramework.Common.Extensions
 
         public static MemberInfo ExtractMemberInfo(this LambdaExpression propertyAccessor)
         {
-            Guard.ArgumentNotNull(() => propertyAccessor);
+            Check.ArgumentNotNull(() => propertyAccessor);
 
             MemberInfo info;
             try

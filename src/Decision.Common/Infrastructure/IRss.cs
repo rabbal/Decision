@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NTierMvcFramework.Common.Infrastructure
+namespace Decision.Common.Infrastructure
 {
     public interface IRss
     {

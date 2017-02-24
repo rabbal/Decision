@@ -1,7 +1,7 @@
 using System;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
     [AttributeUsage(AttributeTargets.Method)]
     public sealed class ImportModelStateAttribute : ModelStateTransfer

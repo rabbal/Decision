@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Maintenance
+namespace Decision.Common.MvcToolkit.Maintenance
 {
     public class OfflineHelper
     {

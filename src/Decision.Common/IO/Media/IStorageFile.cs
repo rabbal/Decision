@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace NTierMvcFramework.Common.IO.Media
+namespace Decision.Common.IO.Media
 {
     public interface IStorageFile
     {

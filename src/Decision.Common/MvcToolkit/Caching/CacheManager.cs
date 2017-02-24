@@ -2,7 +2,7 @@ using System;
 using System.Web;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Caching
+namespace Decision.Common.MvcToolkit.Caching
 {
     public static class CacheManager
     {

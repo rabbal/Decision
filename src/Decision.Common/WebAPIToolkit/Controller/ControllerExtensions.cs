@@ -2,9 +2,8 @@
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Web.Http;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit.Controller
+namespace Decision.Common.WebAPIToolkit.Controller
 {
     public static class ControllerExtensions
     {

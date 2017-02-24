@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Alerts.Noty
+namespace Decision.Common.MvcToolkit.Alerts.Noty
 {
     [Serializable]
     public class Noty

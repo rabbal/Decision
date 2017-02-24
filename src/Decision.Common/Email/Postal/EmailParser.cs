@@ -7,7 +7,7 @@ using System.Net.Mime;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace NTierMvcFramework.Common.Email.Postal
+namespace Decision.Common.Email.Postal
 {
     public class EmailParser : IEmailParser
     {

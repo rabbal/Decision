@@ -5,9 +5,9 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using NTierMvcFramework.Common.IO;
+using Decision.Common.IO;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
     /// <summary>
     /// http://www.dotnettips.info/Post/920

@@ -10,7 +10,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Newtonsoft.Json;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Providers
+namespace Decision.Common.MvcToolkit.Providers
 {
     public class CookieTempDataProvider : ITempDataProvider
     {

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Configuration;
-using StackExchange.Redis;
 
-namespace NTierMvcFramework.Common.Caching
+namespace Decision.Common.Caching
 {
-    public class RedisCache : BaseCache, IRedisCache
+    public class RedisCache : CacheBase
     {
-        private ConnectionMultiplexer redisConnections;
+        private ConnectionMultiplexer _redisConnections;
 
         public RedisCache()
         {
@@ -17,21 +16,21 @@ namespace NTierMvcFramework.Common.Caching
         {
             get
             {
-                if (redisConnections == null)
+                if (_redisConnections == null)
                 {
                     InitializeConnection();
                 }
-                return redisConnections?.GetDatabase();
+                return _redisConnections?.GetDatabase();
             }
         }
 
-        public override bool IsCacheRunning => redisConnections != null && redisConnections.IsConnected;
+        public override bool IsCacheRunning => _redisConnections != null && _redisConnections.IsConnected;
 
         private void InitializeConnection()
         {
             try
             {
-                redisConnections =
+                _redisConnections =
                     ConnectionMultiplexer.Connect(ConfigurationManager.AppSettings["CacheConnectionString"]);
             }
             catch (RedisConnectionException errorConnectionException)
@@ -67,10 +66,10 @@ namespace NTierMvcFramework.Common.Caching
             {
                 return;
             }
-            var endPoints = redisConnections.GetEndPoints();
+            var endPoints = _redisConnections.GetEndPoints();
             foreach (var endPoint in endPoints)
             {
-                var server = redisConnections.GetServer(endPoint);
+                var server = _redisConnections.GetServer(endPoint);
                 server.FlushAllDatabases();
             }
         }

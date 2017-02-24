@@ -2,14 +2,10 @@
 
 namespace Decision.DomainClasses.ApplicantInfo
 {
-   
-    public enum  GenderType
+    public enum GenderType
     {
-        
-        [Display(Name = "مرد")]
-        Male,
-       
-        [Display(Name = "زن")]
-        FeMale
+        [Display(Name = "مرد")] Male,
+
+        [Display(Name = "زن")] FeMale
     }
 }

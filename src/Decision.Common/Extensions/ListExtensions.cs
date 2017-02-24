@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using NTierMvcFramework.Common.Infrastructure;
+using Decision.Common.GuardToolkit;
+using Decision.Common.Infrastructure;
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     public static class ListExtensions
     {

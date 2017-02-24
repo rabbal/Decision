@@ -1,7 +1,7 @@
 ﻿using System.Collections.Specialized;
 using System.Configuration;
 
-namespace NTierMvcFramework.Common.Configuration
+namespace Decision.Common.Configuration
 {
     public class ConfigurationManagerWrapper : IConfigurationManager
     {

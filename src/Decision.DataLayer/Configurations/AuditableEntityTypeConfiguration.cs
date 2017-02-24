@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
+using Decision.DomainClasses;
 using Decision.DomainClasses.Common;
 
 namespace Decision.DataLayer.Configurations

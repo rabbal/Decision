@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Video
+namespace Decision.Common.MvcToolkit.Video
 {
     public class YouTubePlayerOption
     {

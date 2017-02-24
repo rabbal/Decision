@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Attributes
+namespace Decision.Common.MvcToolkit.Attributes
 {
     public sealed class DirectionAttribute : Attribute, IMetadataAware
     {

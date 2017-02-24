@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNet.SignalR.Hubs;
 
-namespace NTierMvcFramework.Common.SignalRToolkit.AntiSpam
+namespace Decision.Common.SignalRToolkit.AntiSpam
 {
     public class SpamDetectionPiplelineModule : HubPipelineModule
     {

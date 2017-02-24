@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Web;
 
-namespace NTierMvcFramework.Common.IO
+namespace Decision.Common.IO
 {
     public class MimeTypeDetector
     {

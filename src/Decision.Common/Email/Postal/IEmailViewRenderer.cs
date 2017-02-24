@@ -1,4 +1,4 @@
-﻿namespace NTierMvcFramework.Common.Email.Postal
+﻿namespace Decision.Common.Email.Postal
 {
     /// <summary>
     /// Renders an email view.

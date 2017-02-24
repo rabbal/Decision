@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NTierMvcFramework.Common.MvcToolkit.ModelMetadata.Filters
+namespace Decision.Common.MvcToolkit.ModelMetadata.Filters
 {
     public class TextAreaByNameFilter : IModelMetadataFilter
     {

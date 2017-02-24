@@ -1,9 +1,7 @@
 ﻿using System;
-using Decision.DomainClasses.Common;
 
 namespace Decision.DomainClasses.ApplicantInfo
 {
-  
     public class EducationalBackground : BaseEntity
     {
         #region Properties
@@ -19,7 +17,7 @@ namespace Decision.DomainClasses.ApplicantInfo
         public DateTime EntryDate { get; set; }
 
         public string Advisor { get; set; }
-     
+
         public string Supervisor { get; set; }
 
         public string Description { get; set; }
@@ -31,8 +29,9 @@ namespace Decision.DomainClasses.ApplicantInfo
         public string Country { get; set; }
 
         public string University { get; set; }
- 
+
         public string Field { get; set; }
+
         #endregion
 
         #region NavigationProperties
@@ -40,6 +39,7 @@ namespace Decision.DomainClasses.ApplicantInfo
         public Guid ApplicantId { get; set; }
 
         public Applicant Applicant { get; set; }
+
         #endregion
     }
 }

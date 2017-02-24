@@ -1,11 +1,10 @@
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using MvcThrottle;
-using NTierMvcFramework.Common.KendoLinq;
-using NTierMvcFramework.Common.MvcToolkit.Json;
+using Decision.Common.KendoLinq;
+using Decision.Common.MvcToolkit.Json;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Controller
+namespace Decision.Common.MvcToolkit.Controller
 {
     [EnableThrottling]
     public class BaseController : System.Web.Mvc.Controller

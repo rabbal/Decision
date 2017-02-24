@@ -1,4 +1,4 @@
-﻿namespace NTierMvcFramework.Common.JsonToolkit
+﻿namespace Decision.Common.JsonToolkit
 {
     public class PersianDateConverter
     {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using NTierMvcFramework.Common.Infrastructure;
+using Decision.Common.Infrastructure;
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     public static class TypeDescriptorExtensions
     {
@@ -26,7 +26,7 @@ namespace NTierMvcFramework.Common.Extensions
             Func<TAttribute, bool> predicate)
             where TAttribute : Attribute
         {
-            Guard.ArgumentNotNull(predicate, nameof(predicate));
+            Check.ArgumentNotNull(predicate, nameof(predicate));
 
             var attributes = pd.Attributes.OfType<TAttribute>().Where(predicate);
             return TypeExtensions.SortAttributesIfPossible(attributes);
@@ -34,7 +34,7 @@ namespace NTierMvcFramework.Common.Extensions
 
         public static PropertyDescriptor GetProperty(this ICustomTypeDescriptor td, string name)
         {
-            Guard.ArgumentNotEmpty(name, nameof(name));
+            Check.ArgumentNotEmpty(name, nameof(name));
             return td.GetProperties().Find(name, true);
             //.Cast<PropertyDescriptor>()
             //.FirstOrDefault(p => p.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase));
@@ -51,7 +51,7 @@ namespace NTierMvcFramework.Common.Extensions
             Func<TAttribute, bool> predicate)
             where TAttribute : Attribute
         {
-            Guard.ArgumentNotNull(predicate, nameof(predicate));
+            Check.ArgumentNotNull(predicate, nameof(predicate));
 
             return td.GetProperties()
                 .Cast<PropertyDescriptor>()

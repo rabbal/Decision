@@ -1,8 +1,8 @@
 using System;
 using System.Web.Mvc;
-using NTierMvcFramework.Common.MvcToolkit.Caching;
+using Decision.Common.MvcToolkit.Caching;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class)]
     public sealed class NoBrowserCacheAttribute : ActionFilterAttribute

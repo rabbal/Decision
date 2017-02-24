@@ -4,10 +4,10 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using NTierMvcFramework.Common.Extensions;
-using NTierMvcFramework.Common.Infrastructure;
+using Decision.Common.Extensions;
+using Decision.Common.GuardToolkit;
 
-namespace NTierMvcFramework.Common.Collections
+namespace Decision.Common.Collections
 {
     /// <summary>
     ///     A data structure that contains multiple values for each key.
@@ -53,7 +53,7 @@ namespace NTierMvcFramework.Common.Collections
 
         protected Multimap(IDictionary<TKey, ICollection<TValue>> dictionary, bool isReadonly)
         {
-            Guard.ArgumentNotNull(() => dictionary);
+            Check.ArgumentNotNull(() => dictionary);
 
             _items = dictionary;
 
@@ -132,15 +132,10 @@ namespace NTierMvcFramework.Common.Collections
 
         public IEnumerable<TValue> Find(TKey key, Expression<Func<TValue, bool>> predicate)
         {
-            Guard.ArgumentNotNull(() => key);
-            Guard.ArgumentNotNull(() => predicate);
+            Check.ArgumentNotNull(() => key);
+            Check.ArgumentNotNull(() => predicate);
 
-            if (_items.ContainsKey(key))
-            {
-                return _items[key].Where(predicate.Compile());
-            }
-
-            return Enumerable.Empty<TValue>();
+            return _items.ContainsKey(key) ? _items[key].Where(predicate.Compile()) : Enumerable.Empty<TValue>();
         }
 
         /// <summary>
@@ -243,7 +238,7 @@ namespace NTierMvcFramework.Common.Collections
 
         public static Multimap<TKey, TValue> CreateFromLookup(ILookup<TKey, TValue> source)
         {
-            Guard.ArgumentNotNull(() => source);
+            Check.ArgumentNotNull(() => source);
 
             var map = new Multimap<TKey, TValue>();
 

@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace NTierMvcFramework.Common.Email.Postal
+namespace Decision.Common.Email.Postal
 {
     public class EmailViewRenderer : IEmailViewRenderer
     {

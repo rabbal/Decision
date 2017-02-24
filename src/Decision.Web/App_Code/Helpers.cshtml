@@ -1,0 +1,31 @@
+﻿@using System.Configuration
+@using System.Web.Mvc
+@helper IncludeGoogleAnalytics(WebViewPage page)
+{
+    var controller = page.ViewContext.Controller;
+    var controllerHasAuthorizeAttribute = controller.GetType().GetCustomAttributes(typeof(AuthorizeAttribute), true).Any();
+    var currentActionName = page.ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString();
+    var actionHasAuthorizeAttribute = controller.GetType()
+        .GetMethods()
+        .Any(x => x.Name == currentActionName &&
+                  x.GetCustomAttributes(typeof(AuthorizeAttribute), true).Any());
+    if (controllerHasAuthorizeAttribute || actionHasAuthorizeAttribute)
+    {
+        return;
+    }
+    var trackingId = ConfigurationManager.AppSettings["GoogleAnalyticsID"];
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(["_setAccount", '@trackingId']);
+        _gaq.push(["_trackPageview"]);
+        (function() {
+            var ga = document.createElement("script");
+            ga.type = "text/javascript";
+            ga.async = true;
+            ga.src = ("https:" === document.location.protocol ? 'https://ssl' : 'http://www') +
+                ".google-analytics.com/ga.js";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+}

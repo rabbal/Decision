@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Web.Optimization;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Bundles
+namespace Decision.Common.MvcToolkit.Bundles
 {
     /// <summary>
     /// A custom bundle orderer (IBundleOrderer) that will ensure bundles are

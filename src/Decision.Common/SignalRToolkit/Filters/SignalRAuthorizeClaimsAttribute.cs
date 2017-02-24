@@ -2,7 +2,7 @@
 using System.Security.Claims;
 using Microsoft.AspNet.SignalR;
 
-namespace NTierMvcFramework.Common.SignalRToolkit.Filters
+namespace Decision.Common.SignalRToolkit.Filters
 {
     [AttributeUsage(AttributeTargets.Class, Inherited = false)]
     public sealed class SignalRAuthorizeClaimsAttribute : AuthorizeAttribute

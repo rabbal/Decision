@@ -3,9 +3,8 @@ using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Http.Filters;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit.Routing
+namespace Decision.Common.WebAPIToolkit.Routing
 {
     public class RequireHttpsAttribute : IAuthenticationFilter
     {

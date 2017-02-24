@@ -2,7 +2,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit.DelegatingHandlers
+namespace Decision.Common.WebAPIToolkit.DelegatingHandlers
 {
     /// <summary>
     ///     when display error details

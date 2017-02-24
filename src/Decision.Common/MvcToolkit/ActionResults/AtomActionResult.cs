@@ -3,9 +3,9 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml;
-using NTierMvcFramework.Common.Constants;
+using Decision.Common.Constants;
 
-namespace NTierMvcFramework.Common.MvcToolkit.ActionResults
+namespace Decision.Common.MvcToolkit.ActionResults
 {
     /// <summary>
     /// Represents a class that is used to render an Atom 1.0 feed by using an <see cref="SyndicationFeed"/> instance 
@@ -13,27 +13,18 @@ namespace NTierMvcFramework.Common.MvcToolkit.ActionResults
     /// </summary>
     public sealed class AtomActionResult : ActionResult
     {
-        private readonly SyndicationFeed syndicationFeed;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AtomActionResult"/> class.
-        /// </summary>
-        /// <param name="syndicationFeed">The Atom 1.0 <see cref="SyndicationFeed" />.</param>
+        private readonly SyndicationFeed _syndicationFeed;
+        
         public AtomActionResult(SyndicationFeed syndicationFeed)
         {
-            this.syndicationFeed = syndicationFeed;
+            this._syndicationFeed = syndicationFeed;
         }
-
-        /// <summary>
-        /// Executes the call to the ActionResult method and returns the created feed to the output response.
-        /// </summary>
-        /// <param name="context">The context in which the result is executed. The context information includes the 
-        /// controller, HTTP content, request context, and route data.</param>
+        
         public override void ExecuteResult(ControllerContext context)
         {
             context.HttpContext.Response.ContentType = ContentType.Atom;
 
-            var feedFormatter = new Atom10FeedFormatter(this.syndicationFeed);
+            var feedFormatter = new Atom10FeedFormatter(this._syndicationFeed);
 
             var xmlWriterSettings = new XmlWriterSettings
             {

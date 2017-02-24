@@ -1,11 +1,11 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace NTierMvcFramework.Common.Infrastructure
+namespace Decision.Common.Infrastructure
 {
     public static class RegularExpressions
     {
-        internal static readonly string ValidRealPattern = "^([-]|[.]|[-.]|[0-9])[0-9]*[.]*[0-9]+$";
-        internal static readonly string ValidIntegerPattern = "^([-]|[0-9])[0-9]*$";
+        internal const string ValidRealPattern = "^([-]|[.]|[-.]|[0-9])[0-9]*[.]*[0-9]+$";
+        internal const string ValidIntegerPattern = "^([-]|[0-9])[0-9]*$";
 
         internal static readonly Regex HasTwoDot = new Regex("[0-9]*[.][0-9]*[.][0-9]*", RegexOptions.Compiled);
         internal static readonly Regex HasTwoMinus = new Regex("[0-9]*[-][0-9]*[-][0-9]*", RegexOptions.Compiled);

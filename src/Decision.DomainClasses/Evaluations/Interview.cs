@@ -1,10 +1,8 @@
 ﻿using System;
 using Decision.DomainClasses.ApplicantInfo;
-using Decision.DomainClasses.Common;
 
 namespace Decision.DomainClasses.Evaluations
 {
-
     public class Interview : BaseEntity
     {
         #region Properties
@@ -12,6 +10,7 @@ namespace Decision.DomainClasses.Evaluations
         public DateTime InterviewDate { get; set; }
 
         public string Body { get; set; }
+
         #endregion
 
         #region NavigationProperties
@@ -19,6 +18,7 @@ namespace Decision.DomainClasses.Evaluations
         public Guid ApplicantId { get; set; }
 
         public Applicant Applicant { get; set; }
+
         #endregion
     }
 }

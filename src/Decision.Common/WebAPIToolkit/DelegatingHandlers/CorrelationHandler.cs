@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit.DelegatingHandlers
+namespace Decision.Common.WebAPIToolkit.DelegatingHandlers
 {
     public class CorrelationHandler : DelegatingHandler
     {

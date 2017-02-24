@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace NTierMvcFramework.Common.IO.VirtualPath
+namespace Decision.Common.IO.VirtualPath
 {
     public interface IVirtualPathProvider
     {

@@ -4,7 +4,7 @@ using Decision.Web;
 [assembly: PreApplicationStartMethod(typeof(RegisterModules), "Start")]
 namespace Decision.Web
 {
-    public class RegisterModules
+    public static class RegisterModules
     {
         public static void Start()
         {

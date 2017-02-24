@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://disposableemailaddressdetector.email.services.v4_0.soap.server.nameapi.org/" targetNamespace="http://disposableemailaddressdetector.email.services.v4_0.soap.server.nameapi.org/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AccessDeniedWebServiceException" nillable="true" type="tns:faultBean" />
+  <xs:element name="InternalServerErrorWebServiceException" nillable="true" type="tns:faultBean" />
+  <xs:element name="InvalidInputWebServiceException" nillable="true" type="tns:faultBean" />
+  <xs:element name="isDisposable" type="tns:isDisposable" />
+  <xs:element name="isDisposableResponse" type="tns:isDisposableResponse" />
+  <xs:complexType name="isDisposable">
+    <xs:sequence>
+      <xs:element name="context" type="tns:soapContext" />
+      <xs:element name="emailAddress" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="soapContext">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apiKey" type="xs:string" />
+      <xs:element minOccurs="0" name="geo" type="xs:string" />
+      <xs:element minOccurs="0" name="language" type="xs:string" />
+      <xs:element minOccurs="0" name="priority" type="tns:priority" />
+      <xs:element name="properties">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="entry">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="key" type="xs:string" />
+                  <xs:element minOccurs="0" name="value" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="textCase" type="tns:textCase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="isDisposableResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:soapDisposableEmailAddressDetectorResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="soapDisposableEmailAddressDetectorResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="disposable" type="tns:maybe" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="faultBean">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="blame" type="tns:blame" />
+      <xs:element name="errorCode" type="xs:int" />
+      <xs:element minOccurs="0" name="faultCause" type="xs:string" />
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+      <xs:element name="problemReported" type="xs:boolean" />
+      <xs:element minOccurs="0" name="retryOtherServers" type="tns:retry" />
+      <xs:element minOccurs="0" name="retrySameServer" type="tns:retry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="retry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="retryInSeconds" type="xs:long" />
+      <xs:element minOccurs="0" name="retryType" type="tns:retryType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="priority">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="REALTIME" />
+      <xs:enumeration value="LOW" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="textCase">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TITLE_CASE" />
+      <xs:enumeration value="UPPER_CASE" />
+      <xs:enumeration value="LOWER_CASE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="maybe">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNKNOWN" />
+      <xs:enumeration value="NO" />
+      <xs:enumeration value="YES" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="blame">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CLIENT" />
+      <xs:enumeration value="SERVER" />
+      <xs:enumeration value="NETWORK" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="retryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NO" />
+      <xs:enumeration value="LATER" />
+      <xs:enumeration value="NOW" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

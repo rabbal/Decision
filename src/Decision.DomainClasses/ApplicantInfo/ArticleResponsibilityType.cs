@@ -2,27 +2,18 @@
 
 namespace Decision.DomainClasses.ApplicantInfo
 {
-
     public enum ArticleResponsibilityType
     {
+        [Display(Name = "نویسنده مسئول")] CorrespondingAuthor,
 
-        [Display(Name = "نویسنده مسئول")]
-        CorrespondingAuthor,
+        [Display(Name = "نفر اول")] FirstOne,
 
-        [Display(Name = "نفر اول")]
-        FirstOne,
- 
-        [Display(Name = "همکار")]
-        CoWorker,
-    
-        [Display(Name = "دانشجو")]
-        Student,
+        [Display(Name = "همکار")] CoWorker,
 
-        [Display(Name = "هیئت علمی")]
-        ScienceCommittee,
+        [Display(Name = "دانشجو")] Student,
 
-        [Display(Name = "غیر هیئت علمی")]
-        NonScienceCommittee
+        [Display(Name = "هیئت علمی")] ScienceCommittee,
 
+        [Display(Name = "غیر هیئت علمی")] NonScienceCommittee
     }
 }

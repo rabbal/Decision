@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Security.Principal;
 
-namespace NTierMvcFramework.Common.Fakes
+namespace Decision.Common.Fakes
 {
     public class FakePrincipal : IPrincipal
     {

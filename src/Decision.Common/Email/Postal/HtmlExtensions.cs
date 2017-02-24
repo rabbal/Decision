@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.Email.Postal
+namespace Decision.Common.Email.Postal
 {
     public static class HtmlExtensions
     {

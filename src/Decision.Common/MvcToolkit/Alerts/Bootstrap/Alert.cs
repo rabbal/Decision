@@ -1,4 +1,4 @@
-﻿namespace NTierMvcFramework.Common.MvcToolkit.Alerts.Bootstrap
+﻿namespace Decision.Common.MvcToolkit.Alerts.Bootstrap
 {
     public class Alert
     {

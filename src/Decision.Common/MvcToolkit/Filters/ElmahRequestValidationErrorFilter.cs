@@ -2,9 +2,9 @@ using System.Web;
 using System.Web.Mvc;
 using Elmah;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
-    public class ElmahRequestValidationErrorFilter : IExceptionFilter
+    public sealed class ElmahRequestValidationErrorFilter : FilterAttribute, IExceptionFilter
     {
         public void OnException(ExceptionContext context)
         {

@@ -4,7 +4,7 @@ using System.Net.Mime;
 using System.Text;
 using net = System.Net.Mail;
 
-namespace NTierMvcFramework.Common.Email
+namespace Decision.Common.Email
 {
     /// <summary>
     ///     attachment-multipart

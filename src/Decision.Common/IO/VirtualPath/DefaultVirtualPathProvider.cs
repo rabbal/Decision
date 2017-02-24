@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Hosting;
 
-namespace NTierMvcFramework.Common.IO.VirtualPath
+namespace Decision.Common.IO.VirtualPath
 {
     public class DefaultVirtualPathProvider : IVirtualPathProvider
     {

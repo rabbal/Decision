@@ -1,15 +1,15 @@
 ﻿using System.Net;
 using System.Net.Mail;
-using NTierMvcFramework.Common.Infrastructure;
+using Decision.Common.Infrastructure;
 
-namespace NTierMvcFramework.Common.Email
+namespace Decision.Common.Email
 {
     public class SmtpContext
     {
         public SmtpContext(string host, int port = 25)
         {
-            Guard.ArgumentNotEmpty(() => host);
-            Guard.ArgumentIsPositive(port, nameof(port));
+            Check.ArgumentNotEmpty(() => host);
+            Check.ArgumentIsPositive(port, nameof(port));
 
             Host = host;
             Port = port;
@@ -17,7 +17,7 @@ namespace NTierMvcFramework.Common.Email
 
         public SmtpContext(EmailAccount account)
         {
-            Guard.ArgumentNotNull(() => account);
+            Check.ArgumentNotNull(() => account);
 
             Host = account.Host;
             Port = account.Port;

@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Web.Http.Dispatcher;
-using NTierMvcFramework.Common.WebAPIToolkit.Controller;
+using Decision.Common.WebAPIToolkit.Controller;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit
+namespace Decision.Common.WebAPIToolkit
 {
     /// <summary>
     ///     for self host

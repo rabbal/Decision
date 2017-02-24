@@ -1,10 +1,9 @@
 using System;
 using System.Net.Http;
 using System.Web;
-using System.Web.Http.ExceptionHandling;
 using Elmah;
 
-namespace NTierMvcFramework.Common.WebAPIToolkit.ExceptionHandling
+namespace Decision.Common.WebAPIToolkit.ExceptionHandling
 {
     public class ElmahExceptionLogger : ExceptionLogger
     {

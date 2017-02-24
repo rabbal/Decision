@@ -2,7 +2,7 @@
 using System.Net;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
 
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
@@ -10,30 +10,26 @@ namespace NTierMvcFramework.Common.MvcToolkit.Filters
     {
         #region Ctor
         public MvcAuthorizeAttribute(params string[] permissions)
-            : base()
         {
             Roles = string.Join(",", permissions);
         }
         #endregion
 
-
-        #region HandleUnauthorizedRequest
+        #region Protected Methods
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
             if (filterContext.HttpContext.Request.IsAuthenticated)
             {
                 filterContext.Result = new HttpStatusCodeResult(403);
-                // throw new UnauthorizedAccessException(); //to avoid multiple redirects
+                throw new UnauthorizedAccessException(); //to avoid multiple redirects
             }
-            else
-            {
-                HandleAjaxRequest(filterContext);
-                base.HandleUnauthorizedRequest(filterContext);
-            }
+
+            HandleAjaxRequest(filterContext);
+            base.HandleUnauthorizedRequest(filterContext);
         }
         #endregion
 
-        #region Private
+        #region Private Methods
         private static void HandleAjaxRequest(ControllerContext filterContext)
         {
             var ctx = filterContext.HttpContext;

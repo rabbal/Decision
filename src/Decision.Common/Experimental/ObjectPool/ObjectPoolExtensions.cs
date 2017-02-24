@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NTierMvcFramework.Common.Experimental.ObjectPool
+namespace Decision.Common.Experimental.ObjectPool
 {
     /// <summary>
     ///     <see cref="ObjectPool{T}" /> extension methods.

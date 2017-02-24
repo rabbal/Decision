@@ -3,7 +3,7 @@ using System.IO;
 using System.Net;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
     /// <summary>
     /// for conditional request -- without this filter , the caching is not complete

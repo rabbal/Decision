@@ -1,7 +1,7 @@
 ﻿using System.Net.Mail;
-using NTierMvcFramework.Common.Extensions;
+using Decision.Common.Extensions;
 
-namespace NTierMvcFramework.Common.Email
+namespace Decision.Common.Email
 {
     public class EmailAddress
     {

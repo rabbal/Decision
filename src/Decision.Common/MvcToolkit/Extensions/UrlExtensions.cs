@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Extensions
+namespace Decision.Common.MvcToolkit.Extensions
 {
     public static class UrlExtensions
     {

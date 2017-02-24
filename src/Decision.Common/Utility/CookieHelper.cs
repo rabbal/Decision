@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Web;
 
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     public static class CookieHelper
     {

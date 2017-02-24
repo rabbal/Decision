@@ -1,4 +1,4 @@
-﻿namespace NTierMvcFramework.Common.MvcToolkit.Controller
+﻿namespace Decision.Common.MvcToolkit.Controller
 {
     public class AdminBaseController : System.Web.Mvc.Controller
     {

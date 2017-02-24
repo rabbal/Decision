@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A3151FC4-6C88-4323-858A-9AA522D54BC2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Decision.ServiceLayer</RootNamespace>
+    <AssemblyName>Decision.ServiceLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DNT.Extensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DNT.Extensions.1.0.0\lib\DNT.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EFSecondLevelCache, Version=1.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EFSecondLevelCache.1.1.4.0\lib\net45\EFSecondLevelCache.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Persia, Version=3.0.4727.38582, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Persia.NET.3.0.4727\lib\Persia.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RefactorThis.GraphDiff">
+      <HintPath>..\..\packages\RefactorThis.GraphDiff.2.0.1\lib\RefactorThis.GraphDiff.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityFramework\ServiceBase.cs" />
+    <Compile Include="Interfaces\ApplicantInfo\IAddressService.cs" />
+    <Compile Include="Interfaces\ApplicantInfo\IPresenterService.cs" />
+    <Compile Include="Interfaces\Identity\IActivityLogService.cs" />
+    <Compile Include="Interfaces\Common\ICityService.cs" />
+    <Compile Include="Interfaces\Evaluations\IAnswerOptionService.cs" />
+    <Compile Include="Interfaces\Evaluations\IEnitreEvaluationService.cs" />
+    <Compile Include="Interfaces\Evaluations\IQuestionService.cs" />
+    <Compile Include="Interfaces\ApplicantInfo\IApplicantService.cs" />
+    <Compile Include="Interfaces\Common\IStateService.cs" />
+    <Compile Include="Interfaces\Evaluations\IInterviewService.cs" />
+    <Compile Include="Interfaces\ApplicantInfo\IEducationalBackgroundService.cs" />
+    <Compile Include="Interfaces\ApplicantInfo\IEducationalExperienceService.cs" />
+    <Compile Include="Interfaces\ApplicantInfo\IArticleService.cs" />
+    <Compile Include="Interfaces\ApplicantInfo\IResearchExperienceService.cs" />
+    <Compile Include="Interfaces\ApplicantInfo\IWorkExperienceService.cs" />
+    <Compile Include="Interfaces\IServiceBase.cs" />
+    <Compile Include="Interfaces\PrivateMessage\IMessageService.cs" />
+    <Compile Include="Interfaces\Identity\IApplicationRoleManager.cs" />
+    <Compile Include="Interfaces\Identity\IApplicationSignInManager.cs" />
+    <Compile Include="Interfaces\Identity\IApplicationUserManager.cs" />
+    <Compile Include="Interfaces\Identity\ICustomRoleStore.cs" />
+    <Compile Include="Interfaces\Identity\ICustomUserStore.cs" />
+    <Compile Include="Interfaces\Identity\IPermissionService.cs" />
+    <Compile Include="Interfaces\Common\IRunAfterEachRequest.cs" />
+    <Compile Include="Interfaces\Common\IRunAtInit.cs" />
+    <Compile Include="Interfaces\Common\IRunAtStartUp.cs" />
+    <Compile Include="Interfaces\Common\IRunOnEachRequest.cs" />
+    <Compile Include="Interfaces\Common\IRunOnError.cs" />
+    <Compile Include="Interfaces\Common\ISettingService.cs" />
+    <Compile Include="EntityFramework\CustomAspNetIdentity\CustomSecurityStampValidator.cs" />
+    <Compile Include="EntityFramework\ApplicantInfo\AddressServices.cs" />
+    <Compile Include="EntityFramework\ApplicantInfo\PresenterService.cs" />
+    <Compile Include="EntityFramework\Users\ActivityLogService.cs" />
+    <Compile Include="EntityFramework\Common\CityService.cs" />
+    <Compile Include="EntityFramework\Common\StateService.cs" />
+    <Compile Include="EntityFramework\Evaluations\AnswerOptionService.cs" />
+    <Compile Include="EntityFramework\Evaluations\EnitreEvaluationService.cs" />
+    <Compile Include="EntityFramework\Evaluations\InterviewService.cs" />
+    <Compile Include="EntityFramework\Evaluations\QuestionService.cs" />
+    <Compile Include="EntityFramework\ApplicantInfo\EducationalBackgroundService.cs" />
+    <Compile Include="EntityFramework\ApplicantInfo\EducationalExperienceService.cs" />
+    <Compile Include="EntityFramework\ApplicantInfo\ApplicantService.cs" />
+    <Compile Include="EntityFramework\ApplicantInfo\ArticleService.cs" />
+    <Compile Include="EntityFramework\ApplicantInfo\ResearchExperienceService.cs" />
+    <Compile Include="EntityFramework\ApplicantInfo\WorkExperienceService.cs" />
+    <Compile Include="EntityFramework\PrivateMessage\MessageService.cs" />
+    <Compile Include="EntityFramework\Users\ApplicationRoleManager.cs" />
+    <Compile Include="EntityFramework\Common\ApplicationSignInManager.cs" />
+    <Compile Include="EntityFramework\Users\ApplicationUserManager.cs" />
+    <Compile Include="EntityFramework\Users\CustomRoleStore.cs" />
+    <Compile Include="EntityFramework\Users\CustomUserStore.cs" />
+    <Compile Include="EntityFramework\Common\EmailService.cs" />
+    <Compile Include="EntityFramework\Users\PermissionService.cs" />
+    <Compile Include="EntityFramework\Common\SettingService.cs" />
+    <Compile Include="EntityFramework\Common\SmsService.cs" />
+    <Compile Include="EntityFramework\CustomAspNetIdentity\CustomClaimFactory.cs" />
+    <Compile Include="EntityFramework\CustomAspNetIdentity\CustomPasswordValidator.cs" />
+    <Compile Include="EntityFramework\CustomAspNetIdentity\CustomUserValidator.cs" />
+    <Compile Include="EntityFramework\Common\TransactionPerRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EntityFramework\Security\PermissionModel.cs" />
+    <Compile Include="EntityFramework\Security\PermissionRecord.cs" />
+    <Compile Include="EntityFramework\Security\AssignableToRolePermissions.cs" />
+    <Compile Include="EntityFramework\Security\StandardRoles.cs" />
+    <Compile Include="Service References\DisposableEmailDetectorService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Settings\OwnConstants.cs" />
+    <Compile Include="EntityFramework\Settings\ExternalAuthSettings.cs" />
+    <Compile Include="EntityFramework\Settings\ISettings.cs" />
+    <Compile Include="EntityFramework\Settings\SeoSettings.cs" />
+    <Compile Include="EntityFramework\Settings\SettingsBase.cs" />
+    <Compile Include="EntityFramework\Settings\Settings.cs" />
+    <Compile Include="EntityFramework\Settings\SocialSetting.cs" />
+    <Compile Include="EntityFramework\Settings\GeneralSetting.cs" />
+    <Compile Include="EntityFramework\Settings\UserSettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DisposableEmailDetectorService\Decision.ServiceLayer.DisposableEmailDetectorService.isDisposableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DisposableEmailDetectorService\Decision.ServiceLayer.DisposableEmailDetectorService.soapDisposableEmailAddressDetectorResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DisposableEmailDetectorService\disposableemailaddressdetector.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DisposableEmailDetectorService\SoapDisposableEmailAddressDetectorService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Decision.Common\Decision.Common.csproj">
+      <Project>{795B21DF-4BE9-444D-BCC4-674144D560D2}</Project>
+      <Name>Decision.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Decision.DataLayer\Decision.DataLayer.csproj">
+      <Project>{A5AD7839-9524-4896-9009-97F1C45F7578}</Project>
+      <Name>Decision.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Decision.DomainClasses\Decision.DomainClasses.csproj">
+      <Project>{72B9849F-931A-40C0-B11E-44324CD46250}</Project>
+      <Name>Decision.DomainClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Decision.Models\Decision.Models.csproj">
+      <Project>{51986C43-DB68-4A80-AE14-4FFD7A9E91A4}</Project>
+      <Name>Decision.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DisposableEmailDetectorService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DisposableEmailDetectorService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DisposableEmailDetectorService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DisposableEmailDetectorService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

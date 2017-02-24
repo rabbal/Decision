@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
-using NTierMvcFramework.Common.Utility;
+using Decision.Common.Utility;
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     public static class StringExtensions
     {
@@ -191,6 +191,7 @@ namespace NTierMvcFramework.Common.Extensions
         /// <summary>
         ///     Determines whether the string is null, empty or all whitespace.
         /// </summary>
+        /// <param name="value"></param>
         [DebuggerStepThrough]
         public static bool IsEmpty(this string value)
         {

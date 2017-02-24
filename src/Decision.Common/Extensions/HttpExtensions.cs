@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Net.Http;
-
 using System.Web;
+using Decision.Common.KendoLinq;
 using Newtonsoft.Json;
-using NTierMvcFramework.Common.KendoLinq;
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     public static class HttpExtensions
     {
@@ -45,7 +44,7 @@ namespace NTierMvcFramework.Common.Extensions
 
         #region Get Ip Address
 
-        public static string GetIp(this HttpRequestBase request)
+        public static string GetUserIp(this HttpRequestBase request)
         {
             string ip = null;
             try
@@ -117,7 +116,7 @@ namespace NTierMvcFramework.Common.Extensions
 
         #region User-Agent
 
-        public static string GetBrowser(this HttpRequestBase request)
+        public static string GetUserAgent(this HttpRequestBase request)
         {
             return $"{request.Browser.Browser} - {request.Browser.Version}";
         }

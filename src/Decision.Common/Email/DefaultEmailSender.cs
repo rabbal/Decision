@@ -3,12 +3,11 @@ using System.IO;
 using System.Linq;
 using System.Net.Mime;
 using System.Threading.Tasks;
-using NTierMvcFramework.Common.Extensions;
-using NTierMvcFramework.Common.Infrastructure;
-
+using Decision.Common.Extensions;
+using Decision.Common.Infrastructure;
 using net = System.Net.Mail;
 
-namespace NTierMvcFramework.Common.Email
+namespace Decision.Common.Email
 {
     public class DefaultEmailSender : IEmailSender
     {
@@ -91,8 +90,8 @@ namespace NTierMvcFramework.Common.Email
 
         public void SendEmail(SmtpContext context, EmailMessage message)
         {
-            Guard.ArgumentNotNull(() => context);
-            Guard.ArgumentNotNull(() => message);
+            Check.ArgumentNotNull(() => context);
+            Check.ArgumentNotNull(() => message);
 
             var msg = BuildMailMessage(message);
 
@@ -104,8 +103,8 @@ namespace NTierMvcFramework.Common.Email
 
         public Task SendEmailAsync(SmtpContext context, EmailMessage message)
         {
-            Guard.ArgumentNotNull(() => context);
-            Guard.ArgumentNotNull(() => message);
+            Check.ArgumentNotNull(() => context);
+            Check.ArgumentNotNull(() => message);
 
             var msg = BuildMailMessage(message);
 

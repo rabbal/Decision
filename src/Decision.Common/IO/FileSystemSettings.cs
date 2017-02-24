@@ -1,4 +1,4 @@
-﻿namespace NTierMvcFramework.Common.IO
+﻿namespace Decision.Common.IO
 {
     public class FileSystemSettings //: ISettings
     {

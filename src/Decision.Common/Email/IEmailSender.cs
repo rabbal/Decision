@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace NTierMvcFramework.Common.Email
+namespace Decision.Common.Email
 {
     /// <summary>
     ///     contract for email sender

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Web;
 
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     public static class FileSystemHelper
     {

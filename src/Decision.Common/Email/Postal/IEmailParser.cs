@@ -1,6 +1,6 @@
 ﻿using System.Net.Mail;
 
-namespace NTierMvcFramework.Common.Email.Postal
+namespace Decision.Common.Email.Postal
 {
     /// <summary>
     /// Parses raw string output of email views into <see cref="MailMessage"/>.

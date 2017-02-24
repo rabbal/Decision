@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace NTierMvcFramework.Common.MvcToolkit.Filters
+namespace Decision.Common.MvcToolkit.Filters
 {
     /// <summary>
     /// Requires that a HTTP request does not contain a trailing slash. If it does, return a 404 Not Found. This is 
@@ -10,24 +10,23 @@ namespace NTierMvcFramework.Common.MvcToolkit.Filters
     /// it is upper-case or lower-case in this instance.
     /// </summary>
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class)]
-    public  class NoTrailingSlashAttribute : FilterAttribute, IAuthorizationFilter
+    public sealed class NoTrailingSlashAttribute : FilterAttribute, IAuthorizationFilter
     {
+        #region Constants
         private const char QueryCharacter = '?';
         private const char SlashCharacter = '/';
 
-        /// <summary>
-        /// Determines whether a request contains a trailing slash and if it does, calls the 
-        /// <see cref="HandleTrailingSlashRequest"/> method.
-        /// </summary>
-        /// <param name="filterContext">An object that encapsulates information that is required in order to use the 
-        /// <see cref="RequireHttpsAttribute"/> attribute.</param>
-        /// <exception cref="ArgumentNullException">The <paramref name="filterContext"/> parameter is null.</exception>
-        public virtual void OnAuthorization(AuthorizationContext filterContext)
+        #endregion
+
+        #region Public Methods
+        public void OnAuthorization(AuthorizationContext filterContext)
         {
             if (filterContext == null)
             {
                 throw new ArgumentNullException(nameof(filterContext));
             }
+
+            if (filterContext.HttpContext.Request.Url == null) return;
 
             var canonicalUrl = filterContext.HttpContext.Request.Url.ToString();
             var queryIndex = canonicalUrl.IndexOf(QueryCharacter);
@@ -36,26 +35,25 @@ namespace NTierMvcFramework.Common.MvcToolkit.Filters
             {
                 if (canonicalUrl[canonicalUrl.Length - 1] == SlashCharacter)
                 {
-                    this.HandleTrailingSlashRequest(filterContext);
+                    HandleTrailingSlashRequest(filterContext);
                 }
             }
             else
             {
                 if (canonicalUrl[queryIndex - 1] == SlashCharacter)
                 {
-                    this.HandleTrailingSlashRequest(filterContext);
+                    HandleTrailingSlashRequest(filterContext);
                 }
             }
         }
 
-        /// <summary>
-        /// Handles HTTP requests that have a trailing slash but are not meant to.
-        /// </summary>
-        /// <param name="filterContext">An object that encapsulates information that is required in order to use the 
-        /// <see cref="RequireHttpsAttribute"/> attribute.</param>
-        protected virtual void HandleTrailingSlashRequest(AuthorizationContext filterContext)
+        #endregion
+
+        #region Private Methods
+        private static void HandleTrailingSlashRequest(AuthorizationContext filterContext)
         {
             filterContext.Result = new HttpNotFoundResult();
         }
+        #endregion
     }
 }

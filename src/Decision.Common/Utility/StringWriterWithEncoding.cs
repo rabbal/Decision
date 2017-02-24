@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     /// <summary>
     ///     The <see cref="StringWriter" /> class always outputs UTF-16 encoded strings. To use a different encoding, we

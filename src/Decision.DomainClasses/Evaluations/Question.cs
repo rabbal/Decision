@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
-using Decision.DomainClasses.Common;
 
 namespace Decision.DomainClasses.Evaluations
 {
-
     public class Question : BaseEntity
     {
         #region Properties
@@ -17,6 +15,7 @@ namespace Decision.DomainClasses.Evaluations
         public string Description { get; set; }
 
         public int DisplayOrder { get; set; }
+
         #endregion
 
         #region NavigationProperties
@@ -24,6 +23,7 @@ namespace Decision.DomainClasses.Evaluations
         public virtual ICollection<AnswerOption> AnswerOptions { get; set; }
 
         public virtual ICollection<EntireEvaluation> EntireEvaluations { get; set; }
+
         #endregion
     }
 }

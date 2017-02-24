@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using NTierMvcFramework.Common.Extensions;
-using NTierMvcFramework.Common.Infrastructure;
+using Decision.Common.Extensions;
+using Decision.Common.GuardToolkit;
+using Decision.Common.Infrastructure;
 
-namespace NTierMvcFramework.Common.Collections
+namespace Decision.Common.Collections
 {
     public class TreeNode<T> : ICloneable<TreeNode<T>>
     {
@@ -206,7 +207,7 @@ namespace NTierMvcFramework.Common.Collections
 
         private void Insert(TreeNode<T> refNode, bool after)
         {
-            Guard.ArgumentNotNull(() => refNode);
+            Check.ArgumentNotNull(() => refNode);
 
             if (refNode.Parent == null)
             {
@@ -242,7 +243,7 @@ namespace NTierMvcFramework.Common.Collections
 
         public TreeNode<T> SelectNode(Expression<Func<TreeNode<T>, bool>> predicate)
         {
-            Guard.ArgumentNotNull(() => predicate);
+            Check.ArgumentNotNull(() => predicate);
 
             return FlattenNodes(predicate, false).FirstOrDefault();
         }
@@ -255,7 +256,7 @@ namespace NTierMvcFramework.Common.Collections
         /// <returns>A readonly collection of node matches</returns>
         public ICollection<TreeNode<T>> SelectNodes(Expression<Func<TreeNode<T>, bool>> predicate)
         {
-            Guard.ArgumentNotNull(() => predicate);
+            Check.ArgumentNotNull(() => predicate);
 
             var result = new List<TreeNode<T>>();
 
@@ -333,7 +334,7 @@ namespace NTierMvcFramework.Common.Collections
 
         public TreeNode<T> Find(T value)
         {
-            //Guard.ArgumentNotNull(value, "value"); 
+            //Check.ArgumentNotNull(value, "value"); 
 
             if (Value.Equals(value))
             {

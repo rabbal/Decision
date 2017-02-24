@@ -5,10 +5,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography;
 using System.Web.Hosting;
-using NTierMvcFramework.Common.Extensions;
-using NTierMvcFramework.Common.Infrastructure;
+using Decision.Common.Extensions;
+using Decision.Common.Infrastructure;
 
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     public static class CommonHelper
     {
@@ -71,7 +71,7 @@ namespace NTierMvcFramework.Common.Utility
         public static string MapPath(string path, bool findAppRoot = true)
         {
             var path1 = path;
-            Guard.ArgumentNotNull(() => path1);
+            Check.ArgumentNotNull(() => path1);
 
             if (HostingEnvironment.IsHosted)
             {
@@ -131,7 +131,7 @@ namespace NTierMvcFramework.Common.Utility
         /// <returns>The casted setting value</returns>
         public static T GetAppSetting<T>(string key, T defValue = default(T))
         {
-            Guard.ArgumentNotEmpty(() => key);
+            Check.ArgumentNotEmpty(() => key);
 
             var setting = ConfigurationManager.AppSettings[key];
 

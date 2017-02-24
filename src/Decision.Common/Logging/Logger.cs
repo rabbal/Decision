@@ -2,9 +2,8 @@
 using System.Diagnostics;
 using System.Web;
 using Elmah;
-using NTierMvcFramework.Common.Exceptions;
 
-namespace NTierMvcFramework.Common.Logging
+namespace Decision.Common.Logging
 {
     /// <summary>
     /// Log <see cref="Exception"/> objects.
@@ -22,9 +21,9 @@ namespace NTierMvcFramework.Common.Logging
         public void Log(Exception exception, string message)
         {
             // Log to Tracing.
-            Trace.TraceError(new LogException(message, exception).ToString());
+            Trace.TraceError(new Exception(message, exception).ToString());
             // Log to Elmah.
-            ErrorSignal.FromCurrentContext().Raise(new LogException(message, exception), HttpContext.Current);
+            ErrorSignal.FromCurrentContext().Raise(new Exception(message, exception), HttpContext.Current);
         }
     }
 }

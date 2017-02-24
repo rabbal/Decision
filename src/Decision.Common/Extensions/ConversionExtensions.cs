@@ -10,9 +10,10 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
-using NTierMvcFramework.Common.Infrastructure;
+using Decision.Common.GuardToolkit;
+using Decision.Common.Infrastructure;
 
-namespace NTierMvcFramework.Common.Extensions
+namespace Decision.Common.Extensions
 {
     public static class ConversionExtensions
     {
@@ -27,12 +28,12 @@ namespace NTierMvcFramework.Common.Extensions
 
         public static T Convert<T>(this object value)
         {
-            return (T) Convert(value, typeof(T));
+            return (T)Convert(value, typeof(T));
         }
 
         public static T Convert<T>(this object value, CultureInfo culture)
         {
-            return (T) Convert(value, typeof(T), culture);
+            return (T)Convert(value, typeof(T), culture);
         }
 
         public static object Convert(this object value, Type to)
@@ -42,7 +43,7 @@ namespace NTierMvcFramework.Common.Extensions
 
         public static object Convert(this object value, Type to, CultureInfo culture)
         {
-            Guard.ArgumentNotNull(to, nameof(to));
+            Check.ArgumentNotNull(to, nameof(to));
 
             if (value == null || to.IsInstanceOfType(value))
             {
@@ -57,7 +58,7 @@ namespace NTierMvcFramework.Common.Extensions
                 if (valueAsArray != null)
                 {
                     // case 1: both destination + source type are arrays, so convert each element
-                    var valueAsList = (IList) valueAsArray;
+                    var valueAsList = (IList)valueAsArray;
                     IList converted = Array.CreateInstance(destinationElementType, valueAsList.Count);
                     for (var i = 0; i < valueAsList.Count; i++)
                     {
@@ -77,7 +78,7 @@ namespace NTierMvcFramework.Common.Extensions
             if (valueAsArray != null)
             {
                 // case 3: destination type is single element but source is array, so extract first element + convert
-                var valueAsList = (IList) valueAsArray;
+                var valueAsList = (IList)valueAsArray;
                 if (valueAsList.Count > 0)
                 {
                     value = valueAsList[0];
@@ -106,10 +107,10 @@ namespace NTierMvcFramework.Common.Extensions
             }
 
             if (value is DateTime && to == typeof(DateTimeOffset))
-                return new DateTimeOffset((DateTime) value);
+                return new DateTimeOffset((DateTime)value);
 
             if (value is string && to == typeof(Guid))
-                return new Guid((string) value);
+                return new Guid((string)value);
 
             // see if source or target types have a TypeConverter that converts between the two
             var toConverter = GetTypeConverter(fromType);
@@ -138,7 +139,7 @@ namespace NTierMvcFramework.Common.Extensions
             // TypeConverter doesn't like Double to Decimal
             if (fromType == typeof(double) && nonNullableTo == typeof(decimal))
             {
-                var result = new decimal((double) value);
+                var result = new decimal((double)value);
                 return isNullableTo
                     ? Activator.CreateInstance(typeof(Nullable<>).MakeGenericType(nonNullableTo), result)
                     : result;
@@ -197,9 +198,9 @@ namespace NTierMvcFramework.Common.Extensions
         {
             if (value <= 9)
             {
-                return (char) (value + 48);
+                return (char)(value + 48);
             }
-            return (char) (value - 10 + 97);
+            return (char)(value - 10 + 97);
         }
 
         /// <summary>
@@ -209,7 +210,7 @@ namespace NTierMvcFramework.Common.Extensions
         /// <returns></returns>
         public static int ToKb(this int value)
         {
-            return value*1024;
+            return value * 1024;
         }
 
         /// <summary>
@@ -219,7 +220,7 @@ namespace NTierMvcFramework.Common.Extensions
         /// <returns></returns>
         public static int ToMb(this int value)
         {
-            return value*1024*1024;
+            return value.ToKb() * 1024;
         }
 
         /// <summary>Returns a <see cref="TimeSpan" /> that represents a specified number of minutes.</summary>
@@ -333,7 +334,7 @@ namespace NTierMvcFramework.Common.Extensions
 
             if (string.IsNullOrEmpty(value)) return convertedValue;
             {
-                convertedValue = (T) Enum.Parse(typeof(T), value.Trim(), true);
+                convertedValue = (T)Enum.Parse(typeof(T), value.Trim(), true);
             }
 
             return convertedValue;
@@ -448,7 +449,7 @@ namespace NTierMvcFramework.Common.Extensions
 
         public static byte[] ToByteArray(this Stream stream)
         {
-            Guard.ArgumentNotNull(stream, nameof(stream));
+            Check.ArgumentNotNull(stream, nameof(stream));
 
             byte[] buffer;
 
@@ -530,7 +531,7 @@ namespace NTierMvcFramework.Common.Extensions
         [DebuggerStepThrough]
         public static string Hash(this byte[] value, bool toBase64 = false)
         {
-            Guard.ArgumentNotNull(value, nameof(value));
+            Check.ArgumentNotNull(value, nameof(value));
 
             using (var md5 = MD5.Create())
             {
@@ -557,18 +558,18 @@ namespace NTierMvcFramework.Common.Extensions
 
         public static byte[] ToByteArray(this Image image)
         {
-            Guard.ArgumentNotNull(() => image);
+            Check.ArgumentNotNull(() => image);
 
             var converter = new ImageConverter();
-            var bytes = (byte[]) converter.ConvertTo(image, typeof(byte[]));
+            var bytes = (byte[])converter.ConvertTo(image, typeof(byte[]));
             return bytes;
         }
 
 
         internal static Image ConvertTo(this Image image, ImageFormat format)
         {
-            Guard.ArgumentNotNull(() => image);
-            Guard.ArgumentNotNull(() => format);
+            Check.ArgumentNotNull(() => image);
+            Check.ArgumentNotNull(() => format);
 
             using (var stream = new MemoryStream())
             {

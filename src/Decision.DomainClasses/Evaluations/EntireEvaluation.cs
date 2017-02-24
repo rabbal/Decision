@@ -1,10 +1,8 @@
 ﻿using System;
 using Decision.DomainClasses.ApplicantInfo;
-using Decision.DomainClasses.Common;
 
 namespace Decision.DomainClasses.Evaluations
 {
-
     public class EntireEvaluation : BaseEntity
     {
         #region Properties
@@ -12,10 +10,11 @@ namespace Decision.DomainClasses.Evaluations
         public string Content { get; set; }
 
         public DateTime EvaluationDate { get; set; }
-  
+
         public string Foible { get; set; }
 
         public string StrongPoint { get; set; }
+
         #endregion
 
         #region NavigationProperties
@@ -23,6 +22,7 @@ namespace Decision.DomainClasses.Evaluations
         public Guid ApplicantId { get; set; }
 
         public Applicant Applicant { get; set; }
+
         #endregion
     }
 }

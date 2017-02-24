@@ -57,17 +57,14 @@
     <Compile Include="ApplicantInfo\MembershipType.cs" />
     <Compile Include="ApplicantInfo\MilitaryStatus.cs" />
     <Compile Include="ApplicantInfo\Presenter.cs" />
-    <Compile Include="AuditableEntity.cs" />
+    <Compile Include="AuditAction.cs" />
     <Compile Include="AuditLog.cs" />
     <Compile Include="Common\AuditAction.cs" />
     <Compile Include="Common\AuditLogType.cs" />
-    <Compile Include="Common\Attachment.cs" />
-    <Compile Include="Common\BaseEntity.cs" />
-    <Compile Include="Common\Entity.cs" />
+    <Compile Include="Attachment.cs" />
     <Compile Include="ApplicantInfo\AcademicDegrees.cs" />
     <Compile Include="ApplicantInfo\Address.cs" />
     <Compile Include="ApplicantInfo\AddressType.cs" />
-    <Compile Include="Entity.cs" />
     <Compile Include="Evaluations\AnswerOption.cs" />
     <Compile Include="ApplicantInfo\EducationalExperience.cs" />
     <Compile Include="ApplicantInfo\EducationalBackground.cs" />
@@ -83,31 +80,33 @@
     <Compile Include="ApplicantInfo\ResearchExperience.cs" />
     <Compile Include="ApplicantInfo\PresenterType.cs" />
     <Compile Include="ApplicantInfo\WorkExperience.cs" />
-    <Compile Include="IAuditableEntity.cs" />
-    <Compile Include="IEntity.cs" />
-    <Compile Include="IHasGuidKey.cs" />
-    <Compile Include="ISettings.cs" />
-    <Compile Include="JsonPersistAttribute.cs" />
-    <Compile Include="PrivateMessage\Conversation.cs" />
-    <Compile Include="PrivateMessage\Message.cs" />
-    <Compile Include="Common\AuditLog.cs" />
-    <Compile Include="Setting.cs" />
-    <Compile Include="SystemSettings.cs" />
-    <Compile Include="Users\ActivityLog.cs" />
-    <Compile Include="Users\Notification.cs" />
-    <Compile Include="Users\Role.cs" />
-    <Compile Include="Users\User.cs" />
-    <Compile Include="Users\UserClaim.cs" />
-    <Compile Include="Users\UserLogin.cs" />
-    <Compile Include="Users\UserRole.cs" />
+    <Compile Include="Identity\ActivityLog.cs" />
+    <Compile Include="Identity\Notification.cs" />
+    <Compile Include="Identity\NotificationType.cs" />
+    <Compile Include="Identity\Role.cs" />
+    <Compile Include="Identity\RoleClaim.cs" />
+    <Compile Include="Identity\User.cs" />
+    <Compile Include="Identity\UserClaim.cs" />
+    <Compile Include="Identity\UserLogin.cs" />
+    <Compile Include="Identity\UserRole.cs" />
+    <Compile Include="Identity\UserToken.cs" />
+    <Compile Include="Identity\UserUsedPassword.cs" />
+    <Compile Include="Messages\Conversation.cs" />
+    <Compile Include="Messages\Message.cs" />
     <Compile Include="Common\Setting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Decision.Common\Decision.Common.csproj">
+      <Project>{795b21df-4be9-444d-bcc4-674144d560d2}</Project>
+      <Name>Decision.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

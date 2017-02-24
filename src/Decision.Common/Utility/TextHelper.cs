@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     public static class TextHelper
     {

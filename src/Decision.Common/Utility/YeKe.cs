@@ -1,7 +1,4 @@
-using System.Data;
-using System.Data.Common;
-
-namespace NTierMvcFramework.Common.Utility
+namespace Decision.Common.Utility
 {
     public static class YeKe
     {
