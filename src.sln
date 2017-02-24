@@ -16,8 +16,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decision.Web", "src\Decisio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScannerService", "src\ScannerApi\ScannerService.csproj", "{ED227675-689B-49BD-A38F-85CF659E2FA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decision.Framework", "Decision.Framework\Decision.Framework.csproj", "{8D4D9A06-562B-4D38-9102-B457D831C744}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,10 +50,6 @@ Global
 		{ED227675-689B-49BD-A38F-85CF659E2FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED227675-689B-49BD-A38F-85CF659E2FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED227675-689B-49BD-A38F-85CF659E2FA2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D4D9A06-562B-4D38-9102-B457D831C744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D4D9A06-562B-4D38-9102-B457D831C744}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D4D9A06-562B-4D38-9102-B457D831C744}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D4D9A06-562B-4D38-9102-B457D831C744}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
