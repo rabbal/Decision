@@ -4,16 +4,16 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
-using Decision.Common.Filters;
-using Decision.Common.Json;
 using Decision.DataLayer.Context;
 using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Security;
 using Decision.ViewModel.Address;
 using Decision.Web.Filters;
 using MvcSiteMapProvider;
-using Decision.Common.Extentions;
 using Decision.ServiceLayer.Contracts.Users;
+using NTierMvcFramework.Common.MvcToolkit.Extensions;
+using NTierMvcFramework.Common.MvcToolkit.Filters;
+using NTierMvcFramework.Common.MvcToolkit.Json;
 
 namespace Decision.Web.Controllers
 {
@@ -141,7 +141,7 @@ namespace Decision.Web.Controllers
                 };
             }
             await _addressService.EditAsync(viewModel);
-            await _unitOfWork.SaveAllChangesAsync(auditUserId: _userManager.GetCurrentUserId());
+            await _unitOfWork.SaveAllChangesAsync();
 
             if (ModelState.IsValid)
             {

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using Decision.DomainClasses.Entities.Evaluations;
 using Decision.ViewModel.AnswerOption;
 using Decision.ViewModel.Common;
 

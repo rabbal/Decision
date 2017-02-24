@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-using Decision.DomainClasses.Entities.ApplicantInfo;
+using Decision.DomainClasses.ApplicantInfo;
 using Decision.ViewModel.Common;
 
 namespace Decision.ViewModel.EducationalBackground

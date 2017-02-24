@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Decision.DomainClasses.Entities.Evaluations;
+using Decision.DomainClasses.Evaluations;
 using Decision.ViewModel.Question;
 
 namespace Decision.ServiceLayer.Contracts.Evaluations

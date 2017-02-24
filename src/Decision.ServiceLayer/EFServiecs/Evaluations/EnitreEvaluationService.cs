@@ -6,7 +6,7 @@ using System.Web;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.Evaluations;
+using Decision.DomainClasses.Evaluations;
 using Decision.ServiceLayer.Contracts.Evaluations;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.ViewModel.EntireEvaluation;

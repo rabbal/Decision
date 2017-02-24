@@ -1,7 +1,7 @@
 using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Decision.DomainClasses.Entities.Users;
+using Decision.DomainClasses.Users;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 

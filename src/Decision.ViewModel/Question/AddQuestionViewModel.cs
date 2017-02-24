@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using Decision.DomainClasses.Entities.Evaluations;
 using Decision.ViewModel.AnswerOption;
 
 namespace Decision.ViewModel.Question

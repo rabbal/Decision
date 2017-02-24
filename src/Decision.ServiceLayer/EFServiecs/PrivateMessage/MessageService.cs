@@ -8,7 +8,7 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Decision.Common.HtmlCleaner;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.PrivateMessage;
+using Decision.DomainClasses.PrivateMessage;
 using Decision.ServiceLayer.Contracts.PrivateMessage;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.Utility;

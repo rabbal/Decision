@@ -2,7 +2,7 @@
 using System.Data.Entity.Utilities;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Decision.DomainClasses.Entities.Users;
+using Decision.DomainClasses.Users;
 using Decision.ServiceLayer.EFServiecs.Users;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;

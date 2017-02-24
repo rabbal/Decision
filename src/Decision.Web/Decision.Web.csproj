@@ -221,24 +221,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AddressController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ApplicantController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ArticleController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BaseSettingController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CityController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\AddressController.cs" />
     <Compile Include="Controllers\BaseSettingController.cs" />
     <Compile Include="Controllers\CityController.cs" />
@@ -254,59 +236,116 @@
     <Compile Include="Controllers\EducationalExperienceController.cs" />
     <Compile Include="Controllers\WorkExperienceController.cs" />
     <Compile Include="Controllers\PrivateMessageController.cs" />
-    <Compile Include="EducationalBackgroundController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EducationalExperienceController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ElmahController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntireEvaluationController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ErrorController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\LazySingleton.cs" />
-    <Compile Include="HomeController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="Hubs\HomeHub.cs" />
     <Compile Include="Hubs\NotificationHub.cs" />
-    <Compile Include="InterviewController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PresenterController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PrivateMessageController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QuestionController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ReportController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ResearchExperienceController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RoleController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SharedController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4MVC.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Infrastructure\Bundles\AdminContentBundle.cs" />
+    <Compile Include="Infrastructure\Bundles\AngularBundle.cs" />
+    <Compile Include="Infrastructure\Bundles\ContentBundle.cs" />
+    <Compile Include="Infrastructure\Bundles\CssUrlTransform.cs" />
+    <Compile Include="Infrastructure\Bundles\CustomBundleBuilder.cs" />
+    <Compile Include="Infrastructure\Bundles\KendoContentBundle.cs" />
+    <Compile Include="Infrastructure\Bundles\KendoDataVizBundle.cs" />
+    <Compile Include="Infrastructure\Bundles\KendoScriptsBundle.cs" />
+    <Compile Include="Infrastructure\Bundles\MomentBundle.cs" />
+    <Compile Include="Infrastructure\Bundles\ResourcesBundle.cs" />
+    <Compile Include="Infrastructure\Bundles\ScriptsBundle.cs" />
+    <Compile Include="Infrastructure\Constants\CacheProfileName.cs" />
+    <Compile Include="Infrastructure\Constants\CacheSetting.cs" />
+    <Compile Include="Infrastructure\Constants\ContentDeliveryNetwork.cs" />
+    <Compile Include="Infrastructure\Constants\MiscConstants.cs" />
+    <Compile Include="Infrastructure\Filters\LayoutInfoAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\LogAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\PopulateUserSelectListAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\UnitOfWorkAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\UpdateLastActivityAttribute.cs" />
+    <Compile Include="Infrastructure\HtmlHelperExtensions.cs" />
+    <Compile Include="Infrastructure\IocConfig\ActionFilterRegistry.cs" />
+    <Compile Include="Infrastructure\IocConfig\AutoMapperRegistry.cs" />
+    <Compile Include="Infrastructure\IocConfig\CommonRegistry.cs" />
+    <Compile Include="Infrastructure\IocConfig\ControllerRegistry.cs" />
+    <Compile Include="Infrastructure\IocConfig\IdentityRegistry.cs" />
+    <Compile Include="Infrastructure\IocConfig\IoC.cs" />
+    <Compile Include="Infrastructure\IocConfig\ModelMetadataRegistry.cs" />
+    <Compile Include="Infrastructure\IocConfig\MvcRegistry.cs" />
+    <Compile Include="Infrastructure\IocConfig\ServicesRegistry.cs" />
+    <Compile Include="Infrastructure\IocConfig\SignalRRegistry.cs" />
+    <Compile Include="Infrastructure\IocConfig\StandardRegistry.cs" />
+    <Compile Include="Infrastructure\IocConfig\StructureMapControllerFactory.cs" />
+    <Compile Include="Infrastructure\IocConfig\StructureMapDependencyResolver.cs" />
+    <Compile Include="Infrastructure\IocConfig\StructureMapFilterProvider.cs" />
+    <Compile Include="Infrastructure\IocConfig\StructureMapHttpControllerActivator.cs" />
+    <Compile Include="Infrastructure\IocConfig\StructureMapSignalRDependencyResolver.cs" />
+    <Compile Include="Infrastructure\IocConfig\StructureMapValidatorFactory.cs" />
+    <Compile Include="Infrastructure\IocConfig\TaskRegistry.cs" />
+    <Compile Include="Infrastructure\IocConfig\ValidatorsRegistry.cs" />
+    <Compile Include="Infrastructure\IocConfig\WebApiFilterProvider.cs" />
+    <Compile Include="Infrastructure\IocConfig\WebApiRegistry.cs" />
+    <Compile Include="Infrastructure\JsonWebTokenConfig\AppJwtConfiguration.cs" />
+    <Compile Include="Infrastructure\JsonWebTokenConfig\AppJwtOptions.cs" />
+    <Compile Include="Infrastructure\JsonWebTokenConfig\AppJwtWriterFormat.cs" />
+    <Compile Include="Infrastructure\JsonWebTokenConfig\AppOAuthOptions.cs" />
+    <Compile Include="Infrastructure\JsonWebTokenConfig\AppOAuthProvider.cs" />
+    <Compile Include="Infrastructure\JsonWebTokenConfig\IAppJwtConfiguration.cs" />
+    <Compile Include="Infrastructure\JsonWebTokenConfig\JwtAuthorizeAttribute.cs" />
+    <Compile Include="Infrastructure\JsonWebTokenConfig\RefreshTokenProvider.cs" />
+    <Compile Include="Infrastructure\Mapper\AddressProfile.cs" />
+    <Compile Include="Infrastructure\Mapper\AnswerOptionProfile.cs" />
+    <Compile Include="Infrastructure\Mapper\ApplicantProfile.cs" />
+    <Compile Include="Infrastructure\Mapper\ArticleProfile.cs" />
+    <Compile Include="Infrastructure\Mapper\EducationalBackgroundProfile.cs" />
+    <Compile Include="Infrastructure\Mapper\EducationalExperienceProfile.cs" />
+    <Compile Include="Infrastructure\Mapper\EnitreEvaluationProfile.cs" />
+    <Compile Include="Infrastructure\Mapper\Extensions\PersianExtensions.cs" />
+    <Compile Include="Infrastructure\Mapper\InterviewProfile.cs" />
+    <Compile Include="Infrastructure\Mapper\PrivateMessageProfile.cs" />
+    <Compile Include="Infrastructure\Mapper\QuestionProfile.cs" />
+    <Compile Include="Infrastructure\Mapper\ResearchExperienceProfile.cs" />
+    <Compile Include="Infrastructure\Mapper\RoleProfile.cs" />
+    <Compile Include="Infrastructure\Mapper\UserProfile.cs" />
+    <Compile Include="Infrastructure\Mapper\WorkExperienceProfile.cs" />
+    <Compile Include="Infrastructure\Services\BrowserConfigService.cs" />
+    <Compile Include="Infrastructure\Services\CacheService.cs" />
+    <Compile Include="Infrastructure\Services\Contracts\IBrowserConfigService.cs" />
+    <Compile Include="Infrastructure\Services\Contracts\ICacheService.cs" />
+    <Compile Include="Infrastructure\Services\Contracts\ICookieService.cs" />
+    <Compile Include="Infrastructure\Services\Contracts\IFeedService.cs" />
+    <Compile Include="Infrastructure\Services\Contracts\IManifestService.cs" />
+    <Compile Include="Infrastructure\Services\Contracts\IOpenSearchService.cs" />
+    <Compile Include="Infrastructure\Services\Contracts\IRobotsService.cs" />
+    <Compile Include="Infrastructure\Services\Contracts\ISitemapPingerService.cs" />
+    <Compile Include="Infrastructure\Services\Contracts\ISitemapService.cs" />
+    <Compile Include="Infrastructure\Services\FeedService.cs" />
+    <Compile Include="Infrastructure\Services\ManifestService.cs" />
+    <Compile Include="Infrastructure\Services\OpenSearchService.cs" />
+    <Compile Include="Infrastructure\Services\RobotsService.cs" />
+    <Compile Include="Infrastructure\Services\SitemapPingerService.cs" />
+    <Compile Include="Infrastructure\Services\SitemapService.cs" />
+    <Compile Include="Infrastructure\Tasks\ ConfigureAntiForgery.cs" />
+    <Compile Include="Infrastructure\Tasks\ ConfigureSecurity.cs" />
+    <Compile Include="Infrastructure\Tasks\AddUserAndRoles.cs" />
+    <Compile Include="Infrastructure\Tasks\ConfigureEntityFramework.cs" />
+    <Compile Include="Infrastructure\Tasks\ConfigureFluentValidation.cs" />
+    <Compile Include="Infrastructure\Tasks\ConfigureMvc.cs" />
+    <Compile Include="Infrastructure\Tasks\ConfigureSignalR.cs" />
+    <Compile Include="Infrastructure\Tasks\Contracts\IBootstrapperTask.cs" />
+    <Compile Include="Infrastructure\Tasks\Contracts\IRunAfterEachRequest.cs" />
+    <Compile Include="Infrastructure\Tasks\Contracts\IRunOnEachRequest.cs" />
+    <Compile Include="Infrastructure\Tasks\Contracts\IRunOnEnd.cs" />
+    <Compile Include="Infrastructure\Tasks\Contracts\IRunOnError.cs" />
+    <Compile Include="Infrastructure\Tasks\Contracts\IRunStartUp.cs" />
+    <Compile Include="Infrastructure\Tasks\ScheduledTasksRegistry.cs" />
+    <Compile Include="Infrastructure\Tasks\SignalrStartUp.cs" />
+    <Compile Include="Infrastructure\Tasks\TransactionPerRequest.cs" />
+    <Compile Include="Infrastructure\Temp\AspNetIdentityRegistery.cs" />
+    <Compile Include="Infrastructure\Temp\AutoMapperRegistery.cs" />
+    <Compile Include="Infrastructure\Temp\ProjectObjectFactory.cs" />
+    <Compile Include="Infrastructure\Temp\ServiceLayerRegistery.cs" />
+    <Compile Include="Infrastructure\Temp\StructureMapFilterProvider.cs" />
+    <Compile Include="Infrastructure\Temp\StructureMapHttpControllerActivator.cs" />
+    <Compile Include="Infrastructure\Temp\StructureMapSignalRDependencyResolver.cs" />
+    <Compile Include="Infrastructure\Temp\TaskRegistery.cs" />
+    <Compile Include="Infrastructure\WebTasks\FullBackUpTask.cs" />
     <Compile Include="Views\Address\_AddressItem.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -909,9 +948,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_ViewStart.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="WorkExperienceController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2734,17 +2770,9 @@
       <Project>{72B9849F-931A-40C0-B11E-44324CD46250}</Project>
       <Name>Decision.DomainClasses</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Decision.IocConfig\Decision.IocConfig.csproj">
-      <Project>{4955766B-D513-4867-9F5C-F333A8E66F9A}</Project>
-      <Name>Decision.IocConfig</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Decision.ServiceLayer\Decision.ServiceLayer.csproj">
       <Project>{A3151FC4-6C88-4323-858A-9AA522D54BC2}</Project>
       <Name>Decision.ServiceLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Decision.Utility\Decision.Utility.csproj">
-      <Project>{1F30BF22-BAC2-4F0F-9C1F-2EE1282E25FD}</Project>
-      <Name>Decision.Utility</Name>
     </ProjectReference>
     <ProjectReference Include="..\Decision.ViewModel\Decision.ViewModel.csproj">
       <Project>{51986c43-db68-4a80-ae14-4ffd7a9e91a4}</Project>

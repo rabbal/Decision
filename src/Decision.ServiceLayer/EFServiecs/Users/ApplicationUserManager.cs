@@ -12,7 +12,7 @@ using AutoMapper.QueryableExtensions;
 using Decision.Common.Controller;
 using Decision.Common.Extentions;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.Users;
+using Decision.DomainClasses.Users;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.ServiceLayer.CustomAspNetIdentity;
 using Decision.ServiceLayer.Security;

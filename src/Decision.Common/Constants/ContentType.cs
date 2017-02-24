@@ -1,4 +1,4 @@
-﻿namespace Decision.Common.Constants
+﻿namespace NTierMvcFramework.Common.Constants
 {
     /// <summary>
     /// A list of internet media types, which are a standard identifier used on the Internet to indicate the type of 

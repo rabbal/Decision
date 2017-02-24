@@ -6,7 +6,7 @@ using System.Web;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.ApplicantInfo;
+using Decision.DomainClasses.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.ViewModel.ResearchExperience;

@@ -181,10 +181,6 @@
       <Project>{72B9849F-931A-40C0-B11E-44324CD46250}</Project>
       <Name>Decision.DomainClasses</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Decision.Utility\Decision.Utility.csproj">
-      <Project>{1F30BF22-BAC2-4F0F-9C1F-2EE1282E25FD}</Project>
-      <Name>Decision.Utility</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Decision.ViewModel\Decision.ViewModel.csproj">
       <Project>{51986C43-DB68-4A80-AE14-4FFD7A9E91A4}</Project>
       <Name>Decision.ViewModel</Name>

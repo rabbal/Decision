@@ -15,29 +15,26 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 
-namespace Decision.Common.Experimental.ObjectPool
+namespace NTierMvcFramework.Common.Experimental.ObjectPool
 {
 #if DETECT_LEAKS
 using System.Runtime.CompilerServices;
 #endif
 
     /// <summary>
-    /// Generic implementation of object pooling pattern with predefined pool size limit. The main purpose is that 
-    /// limited number of frequently used objects can be kept in the pool for further recycling.
-    /// 
-    /// Notes: 
-    /// 1) it is not the goal to keep all returned objects. Pool is not meant for storage. If there is no space in the 
-    /// pool, extra returned objects will be dropped.
-    /// 
-    /// 2) it is implied that if object was obtained from a pool, the caller will return it back in a relatively short 
-    /// time. Keeping checked out objects for long durations is ok, but reduces usefulness of pooling. Just new up your 
-    /// own.
-    /// 
-    /// Not returning objects to the pool in not detrimental to the pool's work, but is a bad practice. 
-    /// Rationale: 
-    /// If there is no intent for reusing the object, do not use pool - just use "new". 
-    /// 
-    /// Copied from Microsoft Roslyn code at http://source.roslyn.codeplex.com/#Microsoft.CodeAnalysis/ObjectPool%25601.cs,20b9a041fb2d5b00
+    ///     Generic implementation of object pooling pattern with predefined pool size limit. The main purpose is that
+    ///     limited number of frequently used objects can be kept in the pool for further recycling.
+    ///     Notes:
+    ///     1) it is not the goal to keep all returned objects. Pool is not meant for storage. If there is no space in the
+    ///     pool, extra returned objects will be dropped.
+    ///     2) it is implied that if object was obtained from a pool, the caller will return it back in a relatively short
+    ///     time. Keeping checked out objects for long durations is ok, but reduces usefulness of pooling. Just new up your
+    ///     own.
+    ///     Not returning objects to the pool in not detrimental to the pool's work, but is a bad practice.
+    ///     Rationale:
+    ///     If there is no intent for reusing the object, do not use pool - just use "new".
+    ///     Copied from Microsoft Roslyn code at
+    ///     http://source.roslyn.codeplex.com/#Microsoft.CodeAnalysis/ObjectPool%25601.cs,20b9a041fb2d5b00
     /// </summary>
     public class ObjectPool<T> where T : class
     {
@@ -47,43 +44,43 @@ using System.Runtime.CompilerServices;
         }
 
         /// <summary>
-        /// The first item is stored in a dedicated field because we expect to be able to satisfy most requests from it.
+        ///     The first item is stored in a dedicated field because we expect to be able to satisfy most requests from it.
         /// </summary>
-        private T _firstItem;
+        private T firstItem;
 
         /// <summary>
-        /// Storage for the pool objects.
+        ///     Storage for the pool objects.
         /// </summary>
-        private readonly Element[] _items;
+        private readonly Element[] items;
 
         /// <summary>
-        /// Factory is stored for the lifetime of the pool. We will call this only when pool needs to
-        /// expand. compared to "new T()", Func gives more flexibility to implementers and faster
-        /// than "new T()".
+        ///     Factory is stored for the lifetime of the pool. We will call this only when pool needs to
+        ///     expand. compared to "new T()", Func gives more flexibility to implementers and faster
+        ///     than "new T()".
         /// </summary>
-        private readonly Func<T> _factory;
+        private readonly Func<T> factory;
 
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ObjectPool{T}"/> class.
+        ///     Initializes a new instance of the <see cref="ObjectPool{T}" /> class.
         /// </summary>
         /// <param name="factory">The factory.</param>
         public ObjectPool(Func<T> factory)
-            : this(factory, Environment.ProcessorCount * 2)
+            : this(factory, Environment.ProcessorCount*2)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ObjectPool{T}"/> class.
+        ///     Initializes a new instance of the <see cref="ObjectPool{T}" /> class.
         /// </summary>
         /// <param name="factory">The factory.</param>
         /// <param name="size">The size of the pool.</param>
         public ObjectPool(Func<T> factory, int size)
         {
             Debug.Assert(size >= 1);
-            this._factory = factory;
-            this._items = new Element[size - 1];
+            this.factory = factory;
+            items = new Element[size - 1];
         }
 
         #endregion
@@ -91,12 +88,12 @@ using System.Runtime.CompilerServices;
         #region Public Methods
 
         /// <summary>
-        /// Produces an instance.
+        ///     Produces an instance.
         /// </summary>
         /// <remarks>
-        /// Search strategy is a simple linear probing which is chosen for it cache-friendliness. Note that Free will 
-        /// try to store recycled objects close to the start thus statistically reducing how far we will typically 
-        /// search.
+        ///     Search strategy is a simple linear probing which is chosen for it cache-friendliness. Note that Free will
+        ///     try to store recycled objects close to the start thus statistically reducing how far we will typically
+        ///     search.
         /// </remarks>
         public T Allocate()
         {
@@ -104,8 +101,8 @@ using System.Runtime.CompilerServices;
             // Note that the initial read is optimistically not synchronized. That is intentional. 
             // We will interlock only when we have a candidate. in a worst case we may miss some
             // recently returned objects. Not a big deal.
-            var instance = this._firstItem;
-            if ((instance == null) || (instance != Interlocked.CompareExchange(ref this._firstItem, null, instance)))
+            var instance = firstItem;
+            if ((instance == null) || (instance != Interlocked.CompareExchange(ref firstItem, null, instance)))
             {
                 instance = AllocateSlow();
             }
@@ -123,39 +120,41 @@ using System.Runtime.CompilerServices;
         }
 
         /// <summary>
-        /// Returns objects to the pool.
+        ///     Returns objects to the pool.
         /// </summary>
+        /// <param name="obj">todo: describe obj parameter on Free</param>
         /// <remarks>
-        /// Search strategy is a simple linear probing which is chosen for it cache-friendliness.
-        /// Note that Free will try to store recycled objects close to the start thus statistically 
-        /// reducing how far we will typically search in Allocate.
+        ///     Search strategy is a simple linear probing which is chosen for it cache-friendliness.
+        ///     Note that Free will try to store recycled objects close to the start thus statistically
+        ///     reducing how far we will typically search in Allocate.
         /// </remarks>
         public void Free(T obj)
         {
-            this.Validate(obj);
-            this.ForgetTrackedObject(obj);
+            Validate(obj);
+            ForgetTrackedObject(obj);
 
-            if (this._firstItem == null)
+            if (firstItem == null)
             {
                 // Intentionally not using interlocked here. 
                 // In a worst case scenario two objects may be stored into same slot.
                 // It is very unlikely to happen and will only mean that one of the objects will get collected.
-                this._firstItem = obj;
+                firstItem = obj;
             }
             else
             {
-                this.FreeSlow(obj);
+                FreeSlow(obj);
             }
         }
 
         /// <summary>
-        /// Removes an object from leak tracking.  
-        /// 
-        /// This is called when an object is returned to the pool.  It may also be explicitly 
-        /// called if an object allocated from the pool is intentionally not being returned
-        /// to the pool.  This can be of use with pooled arrays if the consumer wants to 
-        /// return a larger array to the pool than was originally allocated.
+        ///     Removes an object from leak tracking.
+        ///     This is called when an object is returned to the pool.  It may also be explicitly
+        ///     called if an object allocated from the pool is intentionally not being returned
+        ///     to the pool.  This can be of use with pooled arrays if the consumer wants to
+        ///     return a larger array to the pool than was originally allocated.
         /// </summary>
+        /// <param name="old">todo: describe old parameter on ForgetTrackedObject</param>
+        /// <param name="replacement">todo: describe replacement parameter on ForgetTrackedObject</param>
         [Conditional("DEBUG")]
         internal void ForgetTrackedObject(T old, T replacement = null)
         {
@@ -178,63 +177,63 @@ using System.Runtime.CompilerServices;
                 leakTrackers.Add(replacement, tracker);
             }
 #endif
-        } 
+        }
 
         #endregion
 
         #region Private Methods
 
         /// <summary>
-        /// Allocates an instance if one already exists and is available, otherwise creates a new instance.
+        ///     Allocates an instance if one already exists and is available, otherwise creates a new instance.
         /// </summary>
-        /// <returns>An instance of <typeparamref name="T"/>.</returns>
+        /// <returns>An instance of <typeparamref name="T" />.</returns>
         private T AllocateSlow()
         {
-            var items = this._items;
+            var elements = items;
 
-            for (var i = 0; i < items.Length; ++i)
+            for (var i = 0; i < elements.Length; ++i)
             {
                 // Note that the initial read is optimistically not synchronized. That is intentional. 
                 // We will interlock only when we have a candidate. in a worst case we may miss some
                 // recently returned objects. Not a big deal.
-                var inst = items[i].Value;
+                var inst = elements[i].Value;
                 if (inst != null)
                 {
-                    if (inst == Interlocked.CompareExchange(ref items[i].Value, null, inst))
+                    if (inst == Interlocked.CompareExchange(ref elements[i].Value, null, inst))
                     {
                         return inst;
                     }
                 }
             }
 
-            return this.CreateInstance();
+            return CreateInstance();
         }
 
         /// <summary>
-        /// Creates a new instance of <typeparamref name="T"/> from the factory.
+        ///     Creates a new instance of <typeparamref name="T" /> from the factory.
         /// </summary>
-        /// <returns>A new instance of <typeparamref name="T"/>.</returns>
+        /// <returns>A new instance of <typeparamref name="T" />.</returns>
         private T CreateInstance()
         {
-            var instance = this._factory();
+            var instance = factory();
             return instance;
         }
 
         /// <summary>
-        /// Frees an instance of type <typeparamref name="T"/>.
+        ///     Frees an instance of type <typeparamref name="T" />.
         /// </summary>
-        /// <param name="obj">The free instance of type <typeparamref name="T"/>.</param>
+        /// <param name="obj">The free instance of type <typeparamref name="T" />.</param>
         private void FreeSlow(T obj)
         {
-            var items = this._items;
-            for (var i = 0; i < items.Length; i++)
+            var elements = items;
+            for (var i = 0; i < elements.Length; i++)
             {
-                if (items[i].Value == null)
+                if (elements[i].Value == null)
                 {
                     // Intentionally not using interlocked here. 
                     // In a worst case scenario two objects may be stored into same slot.
                     // It is very unlikely to happen and will only mean that one of the objects will get collected.
-                    items[i].Value = obj;
+                    elements[i].Value = obj;
                     break;
                 }
             }
@@ -243,12 +242,13 @@ using System.Runtime.CompilerServices;
         [Conditional("DEBUG")]
         private void Validate(object obj)
         {
+            if (obj == null) throw new ArgumentNullException(nameof(obj));
             Debug.Assert(obj != null, "freeing null?");
 
-            var items = this._items;
-            for (var i = 0; i < items.Length; i++)
+            var elements = items;
+            for (var i = 0; i < elements.Length; i++)
             {
-                var value = items[i].Value;
+                var value = elements[i].Value;
                 if (value == null)
                 {
                     return;

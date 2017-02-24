@@ -1,7 +1,7 @@
 using System.Data.Entity;
 using System.Reflection;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.Common;
+using Decision.DomainClasses.Common;
 
 namespace Decision.ServiceLayer.Settings
 {

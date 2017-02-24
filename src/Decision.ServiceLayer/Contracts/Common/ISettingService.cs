@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Decision.DomainClasses.Entities.Common;
+using Decision.DomainClasses.Common;
 using Decision.ServiceLayer.Settings;
 
 namespace Decision.ServiceLayer.Contracts.Common

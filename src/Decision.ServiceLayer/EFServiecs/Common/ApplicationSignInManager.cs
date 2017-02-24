@@ -1,5 +1,5 @@
 using System;
-using Decision.DomainClasses.Entities.Users;
+using Decision.DomainClasses.Users;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.ServiceLayer.EFServiecs.Users;
 using Microsoft.AspNet.Identity.Owin;

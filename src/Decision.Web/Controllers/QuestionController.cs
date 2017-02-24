@@ -9,7 +9,6 @@ using Decision.Common.Extentions;
 using Decision.Common.Filters;
 using Decision.Common.Json;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.Evaluations;
 using Decision.ServiceLayer.Contracts.Evaluations;
 using Decision.ServiceLayer.Security;
 using Decision.ViewModel.Question;

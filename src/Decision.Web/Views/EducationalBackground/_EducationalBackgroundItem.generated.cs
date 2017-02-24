@@ -30,9 +30,7 @@ namespace ASP
     using Decision.Common.HtmlHelpers;
     
     #line 1 "..\..\Views\EducationalBackground\_EducationalBackgroundItem.cshtml"
-    using Decision.DomainClasses.Entities.ApplicantInfo;
-    
-    #line default
+#line default
     #line hidden
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;

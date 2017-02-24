@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web.Mvc;
 
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.Common;
+using Decision.DomainClasses.Common;
 using Decision.ServiceLayer.Contracts.Common;
 using Decision.ServiceLayer.Contracts.Users;
 

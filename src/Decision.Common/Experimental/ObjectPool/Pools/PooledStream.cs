@@ -6,17 +6,18 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Decision.Common.Experimental.ObjectPool.Pools
+namespace NTierMvcFramework.Common.Experimental.ObjectPool.Pools
 {
     /// <summary>
-    /// Copied from Microsoft Roslyn code at http://source.roslyn.codeplex.com/#Microsoft.CodeAnalysis.Workspaces/Utilities/SerializableBytes.cs,61c72a633a8d3192
-    /// Helpers to create temporary streams backed by pooled memory.
+    ///     Copied from Microsoft Roslyn code at
+    ///     http://source.roslyn.codeplex.com/#Microsoft.CodeAnalysis.Workspaces/Utilities/SerializableBytes.cs,61c72a633a8d3192
+    ///     Helpers to create temporary streams backed by pooled memory.
     /// </summary>
     internal static class SerializableBytes
     {
         private const int ChunkSize = SharedPools.ByteBufferSize;
         private static readonly byte[] EmptyBytes = new byte[0];
-
+        
         internal static PooledStream CreateReadableStream(byte[] bytes, CancellationToken cancellationToken)
         {
             var stream = CreateWritableStream();
@@ -31,21 +32,22 @@ namespace Decision.Common.Experimental.ObjectPool.Pools
             return CreateReadableStream(stream, /*length*/ -1, cancellationToken);
         }
 
-        internal static PooledStream CreateReadableStream(Stream stream, long length, CancellationToken cancellationToken)
+        internal static PooledStream CreateReadableStream(Stream stream, long length,
+            CancellationToken cancellationToken)
         {
             if (length == -1)
             {
                 length = stream.Length;
             }
 
-            var chunkCount = (length + ChunkSize - 1) / ChunkSize;
+            var chunkCount = (length + ChunkSize - 1)/ChunkSize;
             var chunks = new byte[chunkCount][];
 
             try
             {
                 for (long i = 0, c = 0; i < length; i += ChunkSize, c++)
                 {
-                    var count = (int)Math.Min(ChunkSize, length - i);
+                    var count = (int) Math.Min(ChunkSize, length - i);
                     var chunk = SharedPools.ByteArray.Allocate();
 
                     var chunkOffset = 0;
@@ -83,27 +85,29 @@ namespace Decision.Common.Experimental.ObjectPool.Pools
             return CreateReadableStreamAsync(stream, /*length*/ -1, cancellationToken);
         }
 
-        internal static async Task<PooledStream> CreateReadableStreamAsync(Stream stream, long length, CancellationToken cancellationToken)
+        internal static async Task<PooledStream> CreateReadableStreamAsync(Stream stream, long length,
+            CancellationToken cancellationToken)
         {
             if (length == -1)
             {
                 length = stream.Length;
             }
 
-            var chunkCount = (length + ChunkSize - 1) / ChunkSize;
+            var chunkCount = (length + ChunkSize - 1)/ChunkSize;
             var chunks = new byte[chunkCount][];
 
             try
             {
                 for (long i = 0, c = 0; i < length; i += ChunkSize, c++)
                 {
-                    var count = (int)Math.Min(ChunkSize, length - i);
+                    var count = (int) Math.Min(ChunkSize, length - i);
                     var chunk = SharedPools.ByteArray.Allocate();
 
                     var chunkOffset = 0;
                     while (count > 0)
                     {
-                        var bytesRead = await stream.ReadAsync(chunk, chunkOffset, count, cancellationToken).ConfigureAwait(false);
+                        var bytesRead =
+                            await stream.ReadAsync(chunk, chunkOffset, count, cancellationToken).ConfigureAwait(false);
                         if (bytesRead > 0)
                         {
                             count = count - bytesRead;
@@ -151,59 +155,36 @@ namespace Decision.Common.Experimental.ObjectPool.Pools
 
         public class PooledStream : Stream
         {
-            protected List<byte[]> Chunks;
+            protected List<byte[]> chunks;
+            protected long length;
 
             protected long position;
-            protected long length;
 
             public PooledStream(long length, byte[][] chunks)
             {
-                this.position = 0;
+                position = 0;
                 this.length = length;
-                this.Chunks = new List<byte[]>(chunks);
+                this.chunks = new List<byte[]>(chunks);
             }
 
             protected PooledStream()
             {
-                this.position = 0;
-                this.length = 0;
-                this.Chunks = new List<byte[]>();
+                position = 0;
+                length = 0;
+                chunks = new List<byte[]>();
             }
 
-            public override long Length
-            {
-                get
-                {
-                    return this.length;
-                }
-            }
+            public override long Length => length;
 
-            public override bool CanRead
-            {
-                get { return true; }
-            }
+            public override bool CanRead => true;
 
-            public override bool CanSeek
-            {
-                get { return true; }
-            }
+            public override bool CanSeek => true;
 
-            public override bool CanWrite
-            {
-                get { return false; }
-            }
-
-            public override void Flush()
-            {
-                // nothing to do, this is a read-only stream
-            }
+            public override bool CanWrite => false;
 
             public override long Position
             {
-                get
-                {
-                    return this.position;
-                }
+                get { return position; }
 
                 set
                 {
@@ -212,8 +193,16 @@ namespace Decision.Common.Experimental.ObjectPool.Pools
                         throw new ArgumentOutOfRangeException("value");
                     }
 
-                    this.position = value;
+                    position = value;
                 }
+            }
+
+            protected int CurrentChunkIndex => GetChunkIndex(position);
+            protected int CurrentChunkOffset => GetChunkOffset(position);
+
+            public override void Flush()
+            {
+                // nothing to do, this is a read-only stream
             }
 
             public override long Seek(long offset, SeekOrigin origin)
@@ -236,17 +225,17 @@ namespace Decision.Common.Experimental.ObjectPool.Pools
                             break;
 
                         default:
-                            throw new ArgumentOutOfRangeException("origin");
+                            throw new ArgumentOutOfRangeException(nameof(origin));
                     }
                 }
                 catch (OverflowException)
                 {
-                    throw new ArgumentOutOfRangeException("offset");
+                    throw new ArgumentOutOfRangeException(nameof(offset));
                 }
 
                 if (target < 0)
                 {
-                    throw new ArgumentOutOfRangeException("offset");
+                    throw new ArgumentOutOfRangeException(nameof(offset));
                 }
 
                 position = target;
@@ -261,12 +250,12 @@ namespace Decision.Common.Experimental.ObjectPool.Pools
                 }
 
                 var currentIndex = CurrentChunkIndex;
-                var chunk = Chunks[currentIndex];
+                var chunk = chunks[currentIndex];
 
                 var currentOffset = CurrentChunkOffset;
                 var result = chunk[currentOffset];
 
-                this.position++;
+                position++;
                 return result;
             }
 
@@ -277,10 +266,10 @@ namespace Decision.Common.Experimental.ObjectPool.Pools
                     return 0;
                 }
 
-                var totalCopyCount = Read(this.Chunks, this.position, this.length, buffer, index, count);
-                this.position += totalCopyCount;
+                var totalCopyCount = Read(chunks, position, length, buffer, index, count);
+                position += totalCopyCount;
 
-                return (int)totalCopyCount;
+                return totalCopyCount;
             }
 
             private static int Read(List<byte[]> chunks, long position, long length, byte[] buffer, int index, int count)
@@ -292,7 +281,7 @@ namespace Decision.Common.Experimental.ObjectPool.Pools
                     var chunk = chunks[GetChunkIndex(position)];
                     var currentOffset = GetChunkOffset(position);
 
-                    var copyCount = Math.Min(Math.Min(ChunkSize - currentOffset, count), (int)(length - position));
+                    var copyCount = Math.Min(Math.Min(ChunkSize - currentOffset, count), (int) (length - position));
                     Array.Copy(chunk, currentOffset, buffer, index, copyCount);
 
                     position += copyCount;
@@ -301,48 +290,45 @@ namespace Decision.Common.Experimental.ObjectPool.Pools
                     count -= copyCount;
                 }
 
-                return (int)(position - oldPosition);
+                return (int) (position - oldPosition);
             }
 
             public byte[] ToArray()
             {
-                if (this.Length == 0)
+                if (Length == 0)
                 {
                     return EmptyBytes;
                 }
 
-                var array = new byte[this.Length];
+                var array = new byte[Length];
 
                 // read entire array
-                Read(this.Chunks, 0, this.length, array, 0, array.Length);
+                Read(chunks, 0, length, array, 0, array.Length);
                 return array;
             }
 
-            protected int CurrentChunkIndex { get { return GetChunkIndex(this.position); } }
-            protected int CurrentChunkOffset { get { return GetChunkOffset(this.position); } }
-
             protected static int GetChunkIndex(long value)
             {
-                return (int)(value / ChunkSize);
+                return (int) (value/ChunkSize);
             }
 
             protected static int GetChunkOffset(long value)
             {
-                return (int)(value % ChunkSize);
+                return (int) (value%ChunkSize);
             }
 
             protected override void Dispose(bool disposing)
             {
                 base.Dispose(disposing);
 
-                if (Chunks != null)
+                if (chunks != null)
                 {
-                    foreach (var chunk in Chunks)
+                    foreach (var chunk in chunks)
                     {
                         SharedPools.ByteArray.Free(chunk);
                     }
 
-                    Chunks = null;
+                    chunks = null;
                 }
             }
 
@@ -359,22 +345,11 @@ namespace Decision.Common.Experimental.ObjectPool.Pools
 
         private class ReadWriteStream : PooledStream
         {
-            public ReadWriteStream()
-                : base()
-            {
-            }
-
-            public override bool CanWrite
-            {
-                get { return true; }
-            }
+            public override bool CanWrite => true;
 
             public override long Position
             {
-                get
-                {
-                    return base.Position;
-                }
+                get { return base.Position; }
 
                 set
                 {
@@ -383,62 +358,62 @@ namespace Decision.Common.Experimental.ObjectPool.Pools
                         throw new ArgumentOutOfRangeException("value");
                     }
 
-                    this.position = value;
+                    position = value;
                 }
             }
 
             private void EnsureCapacity(long value)
             {
                 var nextIndex = GetChunkIndex(value);
-                for (var i = this.Chunks.Count; i <= nextIndex; i++)
+                for (var i = chunks.Count; i <= nextIndex; i++)
                 {
                     // allocate memory and initialize it to zero
                     var chunk = SharedPools.ByteArray.Allocate();
                     Array.Clear(chunk, 0, chunk.Length);
-                    Chunks.Add(chunk);
+                    chunks.Add(chunk);
                 }
             }
 
             public override void WriteByte(byte value)
             {
-                EnsureCapacity(this.position + 1);
+                EnsureCapacity(position + 1);
 
                 var currentIndex = CurrentChunkIndex;
                 var currentOffset = CurrentChunkOffset;
 
-                Chunks[currentIndex][currentOffset] = value;
+                chunks[currentIndex][currentOffset] = value;
 
-                this.position++;
-                if (this.position >= length)
+                position++;
+                if (position >= length)
                 {
-                    this.length = this.position;
+                    length = position;
                 }
             }
 
             public override void Write(byte[] buffer, int index, int count)
             {
-                EnsureCapacity(this.position + count);
+                EnsureCapacity(position + count);
 
                 var currentIndex = index;
                 var countLeft = count;
 
                 while (countLeft > 0)
                 {
-                    var chunk = Chunks[CurrentChunkIndex];
+                    var chunk = chunks[CurrentChunkIndex];
                     var currentOffset = CurrentChunkOffset;
 
                     var writeCount = Math.Min(ChunkSize - currentOffset, countLeft);
                     Array.Copy(buffer, currentIndex, chunk, currentOffset, writeCount);
 
-                    this.position += writeCount;
+                    position += writeCount;
 
                     currentIndex += writeCount;
                     countLeft -= writeCount;
                 }
 
-                if (this.position >= length)
+                if (position >= length)
                 {
-                    this.length = this.position;
+                    length = position;
                 }
             }
         }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-using Decision.DomainClasses.Entities.Common;
+using Decision.DomainClasses.Common;
 
 namespace Decision.ViewModel.Common
 {

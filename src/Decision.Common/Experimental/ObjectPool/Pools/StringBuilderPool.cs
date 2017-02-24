@@ -2,25 +2,26 @@
 
 using System.Text;
 
-namespace Decision.Common.Experimental.ObjectPool.Pools
+namespace NTierMvcFramework.Common.Experimental.ObjectPool.Pools
 {
     /// <summary>
-    /// Copied from Microsoft Roslyn code at http://source.roslyn.codeplex.com/#Microsoft.CodeAnalysis.Workspaces/Formatting/StringBuilderPool.cs,039ef0c630df07c3
-    /// A pool of <see cref="StringBuilder"/> objects.
+    ///     Copied from Microsoft Roslyn code at
+    ///     http://source.roslyn.codeplex.com/#Microsoft.CodeAnalysis.Workspaces/Formatting/StringBuilderPool.cs,039ef0c630df07c3
+    ///     A pool of <see cref="StringBuilder" /> objects.
     /// </summary>
     public static class StringBuilderPool
     {
         /// <summary>
-        /// Allocates an instance of <see cref="StringBuilder"/> from the object pool.
+        ///     Allocates an instance of <see cref="StringBuilder" /> from the object pool.
         /// </summary>
-        /// <returns>An instance of <see cref="StringBuilder"/>.</returns>
+        /// <returns>An instance of <see cref="StringBuilder" />.</returns>
         public static StringBuilder Allocate()
         {
             return SharedPools.Default<StringBuilder>().AllocateAndClear();
         }
 
         /// <summary>
-        /// Frees the specified string builder back to the object pool.
+        ///     Frees the specified string builder back to the object pool.
         /// </summary>
         /// <param name="stringBuilder">The string builder.</param>
         public static void Free(StringBuilder stringBuilder)
@@ -29,11 +30,11 @@ namespace Decision.Common.Experimental.ObjectPool.Pools
         }
 
         /// <summary>
-        /// Returns the <see cref="string"/> representation of the <paramref name="stringBuilder"/> and frees it back 
-        /// to the object pool.
+        ///     Returns the <see cref="string" /> representation of the <paramref name="stringBuilder" /> and frees it back
+        ///     to the object pool.
         /// </summary>
         /// <param name="stringBuilder">The string builder.</param>
-        /// <returns>The <see cref="string"/> representation of the <paramref name="stringBuilder"/>.</returns>
+        /// <returns>The <see cref="string" /> representation of the <paramref name="stringBuilder" />.</returns>
         public static string ReturnAndFree(StringBuilder stringBuilder)
         {
             SharedPools.Default<StringBuilder>().ForgetTrackedObject(stringBuilder);

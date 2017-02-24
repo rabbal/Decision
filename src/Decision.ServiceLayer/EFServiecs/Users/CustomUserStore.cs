@@ -2,7 +2,7 @@ using System;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.Users;
+using Decision.DomainClasses.Users;
 using Decision.ServiceLayer.Contracts.Users;
 using Microsoft.AspNet.Identity.EntityFramework;
 

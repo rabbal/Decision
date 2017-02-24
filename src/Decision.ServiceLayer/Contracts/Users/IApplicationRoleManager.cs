@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Decision.DomainClasses.Entities.Users;
+using Decision.DomainClasses.Users;
 using Decision.ViewModel.Role;
 using Microsoft.AspNet.Identity;
 

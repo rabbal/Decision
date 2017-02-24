@@ -7,7 +7,7 @@ using Decision.Common.Controller;
 using Decision.Common.Extentions;
 using Decision.Common.Filters;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.Common;
+using Decision.DomainClasses.Common;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.Utility;
 using Decision.ViewModel.Account;

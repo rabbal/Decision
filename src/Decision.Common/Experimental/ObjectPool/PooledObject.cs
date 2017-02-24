@@ -2,59 +2,57 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Decision.Common.Experimental.ObjectPool
+namespace NTierMvcFramework.Common.Experimental.ObjectPool
 {
     /// <summary>
-    /// Copied from Microsoft Roslyn code at http://source.roslyn.codeplex.com/#Microsoft.CodeAnalysis.Workspaces/Utilities/ObjectPools/PooledObject.cs,b2e28c15ee358f81
-    /// This is resource acquisition is initialization (RAII) object to automatically release pooled object when its owning pool.
+    ///     Copied from Microsoft Roslyn code at
+    ///     http://source.roslyn.codeplex.com/#Microsoft.CodeAnalysis.Workspaces/Utilities/ObjectPools/PooledObject.cs,b2e28c15ee358f81
+    ///     This is resource acquisition is initialization (RAII) object to automatically release pooled object when its owning
+    ///     pool.
     /// </summary>
     public struct PooledObject<T> : IDisposable where T : class
     {
-        private readonly Action<ObjectPool<T>, T> _releaser;
-        private readonly ObjectPool<T> _pool;
-        private T _pooledObject;
+        private readonly Action<ObjectPool<T>, T> releaser;
+        private readonly ObjectPool<T> pool;
 
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PooledObject{T}"/> struct.
+        ///     Initializes a new instance of the <see cref="PooledObject{T}" /> struct.
         /// </summary>
         /// <param name="pool">The object pool.</param>
-        /// <param name="allocator">The allocator function that allocates a new instance of <typeparamref name="T"/>.</param>
-        /// <param name="releaser">The releaser function that de-allocates an instance of <typeparamref name="T"/>.</param>
+        /// <param name="allocator">The allocator function that allocates a new instance of <typeparamref name="T" />.</param>
+        /// <param name="releaser">The releaser function that de-allocates an instance of <typeparamref name="T" />.</param>
         public PooledObject(
-            ObjectPool<T> pool, 
-            Func<ObjectPool<T>, T> allocator, 
-            Action<ObjectPool<T>, T> releaser) 
+            ObjectPool<T> pool,
+            Func<ObjectPool<T>, T> allocator,
+            Action<ObjectPool<T>, T> releaser)
             : this()
         {
-            this._pool = pool;
-            this._pooledObject = allocator(pool);
-            this._releaser = releaser;
+            this.pool = pool;
+            Object = allocator(pool);
+            this.releaser = releaser;
         }
 
         #endregion
 
         /// <summary>
-        /// Gets the pooled object.
+        ///     Gets the pooled object.
         /// </summary>
         /// <value>
-        /// The pooled object.
+        ///     The pooled object.
         /// </value>
-        public T Object
-        {
-            get { return this._pooledObject; }
-        }
+        public T Object { get; private set; }
 
         /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        ///     Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
         public void Dispose()
         {
-            if (this._pooledObject != null)
+            if (Object != null)
             {
-                this._releaser(this._pool, this._pooledObject);
-                this._pooledObject = null;
+                releaser(pool, Object);
+                Object = null;
             }
         }
 
@@ -80,7 +78,8 @@ namespace Decision.Common.Experimental.ObjectPool
             return new PooledObject<HashSet<TItem>>(pool, Allocator, Releaser);
         }
 
-        public static PooledObject<Dictionary<TKey, TValue>> Create<TKey, TValue>(ObjectPool<Dictionary<TKey, TValue>> pool)
+        public static PooledObject<Dictionary<TKey, TValue>> Create<TKey, TValue>(
+            ObjectPool<Dictionary<TKey, TValue>> pool)
         {
             return new PooledObject<Dictionary<TKey, TValue>>(pool, Allocator, Releaser);
         }
@@ -139,7 +138,8 @@ namespace Decision.Common.Experimental.ObjectPool
             return pool.AllocateAndClear();
         }
 
-        private static void Releaser<TKey, TValue>(ObjectPool<Dictionary<TKey, TValue>> pool, Dictionary<TKey, TValue> dictionary)
+        private static void Releaser<TKey, TValue>(ObjectPool<Dictionary<TKey, TValue>> pool,
+            Dictionary<TKey, TValue> dictionary)
         {
             pool.ClearAndFree(dictionary);
         }

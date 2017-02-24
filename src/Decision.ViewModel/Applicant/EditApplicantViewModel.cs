@@ -5,8 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
-using Decision.DomainClasses.Entities.Common;
-using Decision.DomainClasses.Entities.ApplicantInfo;
+using Decision.DomainClasses.ApplicantInfo;
 
 namespace Decision.ViewModel.Applicant
 {

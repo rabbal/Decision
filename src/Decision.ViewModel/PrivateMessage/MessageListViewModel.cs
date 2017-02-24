@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Decision.DomainClasses.Entities.PrivateMessage;
+using Decision.DomainClasses.PrivateMessage;
 
 namespace Decision.ViewModel.PrivateMessage
 {

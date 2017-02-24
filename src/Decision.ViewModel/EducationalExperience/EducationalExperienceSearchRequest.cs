@@ -1,5 +1,4 @@
 ﻿using System;
-using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Common;
 
 namespace Decision.ViewModel.EducationalExperience

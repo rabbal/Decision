@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Decision.Common.Filters;
-using Decision.DomainClasses.Entities.Users;
+using Decision.DomainClasses.Users;
 using Decision.ServiceLayer.Contracts.Users;
 using Microsoft.AspNet.SignalR;
 

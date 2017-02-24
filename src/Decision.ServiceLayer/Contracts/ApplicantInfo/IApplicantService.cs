@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Home;
 using Decision.ViewModel.Applicant;
 

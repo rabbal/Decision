@@ -3,15 +3,18 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace Decision.Common.Experimental.ObjectPool.Pools
+namespace NTierMvcFramework.Common.Experimental.ObjectPool.Pools
 {
     /// <summary>
-    /// Copied from Microsoft Roslyn code at http://source.roslyn.codeplex.com/#Microsoft.CodeAnalysis/PooledHashSet.cs,afe982be5207ab5e
-    /// HashSet that can be recycled via an object pool.
-    /// NOTE: these HashSets always have the default comparer.
+    ///     Copied from Microsoft Roslyn code at
+    ///     http://source.roslyn.codeplex.com/#Microsoft.CodeAnalysis/PooledHashSet.cs,afe982be5207ab5e
+    ///     HashSet that can be recycled via an object pool.
+    ///     NOTE: these HashSets always have the default comparer.
     /// </summary>
     internal class PooledHashSet<T> : HashSet<T>
     {
+        // global pool
+        private static readonly ObjectPool<PooledHashSet<T>> s_poolInstance = CreatePool();
         private readonly ObjectPool<PooledHashSet<T>> _pool;
 
         private PooledHashSet(ObjectPool<PooledHashSet<T>> pool)
@@ -21,15 +24,12 @@ namespace Decision.Common.Experimental.ObjectPool.Pools
 
         public void Free()
         {
-            this.Clear();
+            Clear();
             if (_pool != null)
             {
                 _pool.Free(this);
             }
         }
-
-        // global pool
-        private static readonly ObjectPool<PooledHashSet<T>> SPoolInstance = CreatePool();
 
         // if someone needs to create a pool;
         public static ObjectPool<PooledHashSet<T>> CreatePool()
@@ -41,7 +41,7 @@ namespace Decision.Common.Experimental.ObjectPool.Pools
 
         public static PooledHashSet<T> GetInstance()
         {
-            var instance = SPoolInstance.Allocate();
+            var instance = s_poolInstance.Allocate();
             Debug.Assert(instance.Count == 0);
             return instance;
         }

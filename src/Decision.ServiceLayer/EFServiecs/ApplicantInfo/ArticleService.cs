@@ -7,7 +7,7 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Decision.Common.Extentions;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.ApplicantInfo;
+using Decision.DomainClasses.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Contracts.Users;
 using Decision.Utility;

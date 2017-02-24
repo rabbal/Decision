@@ -2,11 +2,12 @@
 
 using System.Collections.Generic;
 
-namespace Decision.Common.Experimental.ObjectPool.Pools
+namespace NTierMvcFramework.Common.Experimental.ObjectPool.Pools
 {
     /// <summary>
-    /// Copied from Microsoft Roslyn code at http://source.roslyn.codeplex.com/#Microsoft.CodeAnalysis.Workspaces/Formatting/ListPool.cs,1086fa28bcfcb8ca
-    /// A pool of <see cref="List{T}"/> objects.
+    ///     Copied from Microsoft Roslyn code at
+    ///     http://source.roslyn.codeplex.com/#Microsoft.CodeAnalysis.Workspaces/Formatting/ListPool.cs,1086fa28bcfcb8ca
+    ///     A pool of <see cref="List{T}" /> objects.
     /// </summary>
     public static class ListPool<T>
     {

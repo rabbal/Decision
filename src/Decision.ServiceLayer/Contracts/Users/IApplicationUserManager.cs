@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Decision.DomainClasses.Entities.Users;
+using Decision.DomainClasses.Users;
 using Decision.ViewModel.User;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security.Cookies;

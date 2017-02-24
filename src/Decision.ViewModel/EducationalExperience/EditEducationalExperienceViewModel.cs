@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
-using Decision.DomainClasses.Entities.ApplicantInfo;
 using Decision.ViewModel.Common;
 
 namespace Decision.ViewModel.EducationalExperience

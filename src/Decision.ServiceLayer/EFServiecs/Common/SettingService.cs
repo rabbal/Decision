@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Entities.Common;
+using Decision.DomainClasses.Common;
 using Decision.ServiceLayer.Contracts.Common;
 using Decision.ServiceLayer.Settings;
 

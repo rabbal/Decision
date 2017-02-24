@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
-using Decision.DomainClasses.Entities.Common;
-using Decision.DomainClasses.Entities.Users;
+using Decision.DomainClasses.Users;
 using Decision.ViewModel.Home;
 
 namespace Decision.ServiceLayer.Contracts.Users
