@@ -1,10 +1,11 @@
 ﻿using System;
 using Decision.Framework.Domain;
 using Decision.DomainClasses.Identity;
+using Decision.Framework.Domain.Entities;
 
 namespace Decision.DomainClasses
 {
-    public class AuditLog : Entity<Guid>
+    public class AuditLog : Entity
     {
         #region Properties
 

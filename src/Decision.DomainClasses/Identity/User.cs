@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Decision.Framework.Domain;
-using Decision.Framework.Domain.Tracking;
+using Decision.Framework.Domain.Entities;
+using Decision.Framework.Domain.Entities.Tracking;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Decision.DomainClasses.Identity
 {
-    public class User : IdentityUser<long, UserLogin, UserRole, UserClaim>, ITrackable<User>, ISoftDeletable,
+    public class User : IdentityUser<long, UserLogin, UserRole, UserClaim>, ITrackable<User>, ISoftDelete,
         ISystemDefaultEntry, IEntity<long>, IPassivable
     {
         #region Constructors

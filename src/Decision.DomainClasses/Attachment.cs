@@ -2,10 +2,11 @@
 using Decision.Framework.Domain;
 using Decision.Framework.Domain.Tracking;
 using Decision.DomainClasses.Identity;
+using Decision.Framework.Domain.Entities;
 
 namespace Decision.DomainClasses
 {
-    public class Attachment : Entity<Guid>, ICreationTracking<User>, IHasModificationDateTime
+    public class Attachment : Entity, ICreationTracking<User>, IHasModificationDateTime
     {
         #region Properties
 

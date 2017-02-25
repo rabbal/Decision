@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using Decision.DomainClasses.Identity;
+using Decision.Framework.Domain.Entities;
 
 namespace Decision.DomainClasses.Messages
 {
-    public class Message
+    public class Message : Entity<Guid>
     {
         #region Ctor
 
         public Message()
         {
-            Id = SequentialGuidGenerator.NewSequentialGuid();
+
             SentOn = DateTime.Now;
         }
 
         #endregion
 
         #region Properties
-
-        public Guid Id { get; set; }
-
+    
         public bool IsRead { get; set; }
 
         public string Body { get; set; }
@@ -35,9 +35,9 @@ namespace Decision.DomainClasses.Messages
 
         public ICollection<Message> Children { get; set; }
 
-        public Guid SenderId { get; set; }
+        public long SenderUserId { get; set; }
 
-        public User Sender { get; set; }
+        public User SenderUser { get; set; }
 
         public Conversation Conversation { get; set; }
 

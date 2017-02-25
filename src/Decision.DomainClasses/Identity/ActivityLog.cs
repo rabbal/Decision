@@ -1,9 +1,10 @@
 ﻿using System;
 using Decision.Framework.Domain;
+using Decision.Framework.Domain.Entities;
 
 namespace Decision.DomainClasses.Identity
 {
-    public class ActivityLog : Entity<Guid>
+    public class ActivityLog : Entity
     {
         #region Properties
 
