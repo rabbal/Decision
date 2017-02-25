@@ -1,12 +1,8 @@
 using System.Collections.Generic;
-using AutoMapper;
-using AutoMapper.Internal;
-using AutoMapper.Mappers;
-using Decision.AutoMapperProfiles;
 using StructureMap.Configuration.DSL;
 using StructureMap.Web;
 
-namespace Decision.IocConfig
+namespace Decision.Web.Infrastructure.Temp
 {
     public class AutoMapperRegistery : Registry
     {

@@ -35,7 +35,7 @@ namespace ASP
     #line hidden
     
     #line 2 "..\..\Views\Account\Login.cshtml"
-    using Decision.Common.HtmlHelpers;
+    using Decision.Framework.HtmlHelpers;
     
     #line default
     #line hidden

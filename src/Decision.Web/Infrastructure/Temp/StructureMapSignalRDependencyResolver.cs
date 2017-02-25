@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR;
 using StructureMap;
 
-namespace Decision.IocConfig
+namespace Decision.Web.Infrastructure.Temp
 {
     public class StructureMapSignalRDependencyResolver : DefaultDependencyResolver
     {

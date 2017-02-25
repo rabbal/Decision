@@ -1,15 +1,6 @@
-
-using System.Runtime.Serialization;
-using System.Web.Mvc;
-using Decision.Common.Controller;
 using StructureMap.Configuration.DSL;
-using System.Runtime.Serialization.Formatters.Binary;
-using Decision.ServiceLayer.Contracts.Common;
-using Decision.ServiceLayer.Contracts.ApplicantInfo;
-using Decision.ServiceLayer.EFServiecs.Users;
-using Decision.ServiceLayer.Contracts.Users;
 
-namespace Decision.IocConfig
+namespace Decision.Web.Infrastructure.Temp
 {
     public class ServiceLayerRegistery : Registry
     {

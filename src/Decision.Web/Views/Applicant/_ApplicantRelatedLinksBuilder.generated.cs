@@ -32,6 +32,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
+    using Decision.Framework.HtmlHelpers;
     
     #line 4 "..\..\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml"
     using Decision.ServiceLayer.Security;

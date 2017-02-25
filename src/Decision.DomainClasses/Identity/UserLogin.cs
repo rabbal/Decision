@@ -1,5 +1,5 @@
 ﻿using System;
-using Decision.Common.Domain;
+using Decision.Framework.Domain;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Decision.DomainClasses.Identity

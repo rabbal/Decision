@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 using System.Web.Http.Dispatcher;
-using Decision.IocConfig;
+using Decision.Web.Infrastructure.Temp;
 
 namespace Decision.Web
 {

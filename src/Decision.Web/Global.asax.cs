@@ -7,10 +7,9 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Decision.IocConfig;
 using Decision.ServiceLayer.Contracts;
 using Decision.ServiceLayer.Contracts.Common;
-
+using Decision.Web.Infrastructure.Temp;
 using StructureMap.Web.Pipeline;
 
 namespace Decision.Web

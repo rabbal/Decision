@@ -5,11 +5,11 @@ using System.ServiceModel.Syndication;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Decision.Common;
-using Decision.Common.Configuration;
-using Decision.Common.Constants;
-using Decision.Common.MvcToolkit.Extensions;
-using Decision.Common.MvcToolkit.RSS;
+using Decision.Framework;
+using Decision.Framework.Configuration;
+using Decision.Framework.Constants;
+using Decision.Framework.MvcToolkit.Extensions;
+using Decision.Framework.MvcToolkit.RSS;
 using Decision.Web.Infrastructure.Constants;
 using Decision.Web.Infrastructure.Services.Contracts;
 

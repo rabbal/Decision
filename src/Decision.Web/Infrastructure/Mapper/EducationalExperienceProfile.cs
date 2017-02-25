@@ -1,14 +1,7 @@
-﻿using System;
-using AutoMapper;
-using Decision.AutoMapperProfiles.Extentions;
-using Decision.DomainClasses.Entities.ApplicantInfo;
-using Decision.ViewModel.EducationalExperience;
-using DNT.Extensions;
-
-// ReSharper disable ConvertPropertyToExpressionBody
+﻿// ReSharper disable ConvertPropertyToExpressionBody
 // ReSharper disable UseStringInterpolation
 
-namespace Decision.AutoMapperProfiles
+namespace Decision.Web.Infrastructure.Mapper
 {
     /// <summary>
     /// تنظیمات مربوط به

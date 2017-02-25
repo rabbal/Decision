@@ -33,7 +33,7 @@ namespace ASP
     
     #line default
     #line hidden
-    using Decision.Common.HtmlHelpers;
+    using Decision.Framework.HtmlHelpers;
     
     #line 1 "..\..\Views\Shared\_LoginPartial.cshtml"
     using Decision.ServiceLayer.Security;

@@ -1,6 +1,6 @@
-﻿using Decision.Common.Caching;
-using Decision.Common.Configuration;
-using Decision.Common.Logging;
+﻿using Decision.Framework.Caching;
+using Decision.Framework.Configuration;
+using Decision.Framework.Logging;
 using StructureMap;
 
 namespace Decision.Web.Infrastructure.IocConfig

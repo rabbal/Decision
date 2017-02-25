@@ -27,17 +27,17 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
+    using Decision.Framework.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
     using MvcSiteMapProvider.Web.Html.Models;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Home/_NewApplicantsList.cshtml")]
-    public partial class _Views_Home__NewApplicantsList_cshtml : System.Web.Mvc.WebViewPage<IList<Decision.ViewModel.Home.NewAddedApplicantViewModel>>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Home/_NewTeachersList.cshtml")]
+    public partial class _Views_Home__NewTeachersList_cshtml : System.Web.Mvc.WebViewPage<IList<Decision.ViewModel.Home.NewAddedApplicantViewModel>>
     {
-        public _Views_Home__NewApplicantsList_cshtml()
+        public _Views_Home__NewTeachersList_cshtml()
         {
         }
         public override void Execute()
@@ -72,13 +72,13 @@ WriteLiteral(" class=\"list-group\"");
 WriteLiteral(">\r\n");
 
             
-            #line 14 "..\..\Views\Home\_NewApplicantsList.cshtml"
+            #line 14 "..\..\Views\Home\_NewTeachersList.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 14 "..\..\Views\Home\_NewApplicantsList.cshtml"
+            #line 14 "..\..\Views\Home\_NewTeachersList.cshtml"
                  foreach (var newAddedApplicantViewModel in Model)
                 {
 
@@ -92,7 +92,7 @@ WriteLiteral(" class=\"list-group-item log-list\"");
 WriteLiteral(">\r\n                        <span>");
 
             
-            #line 17 "..\..\Views\Home\_NewApplicantsList.cshtml"
+            #line 17 "..\..\Views\Home\_NewTeachersList.cshtml"
                          Write(newAddedApplicantViewModel.FullName);
 
             
@@ -105,7 +105,7 @@ WriteLiteral(" class=\"badge\"");
 WriteLiteral(">");
 
             
-            #line 19 "..\..\Views\Home\_NewApplicantsList.cshtml"
+            #line 19 "..\..\Views\Home\_NewTeachersList.cshtml"
                                        Write(newAddedApplicantViewModel.CreateDate.ToRemainingDateTime());
 
             
@@ -114,7 +114,7 @@ WriteLiteral(">");
 WriteLiteral("</span>\r\n                    </li>\r\n");
 
             
-            #line 21 "..\..\Views\Home\_NewApplicantsList.cshtml"
+            #line 21 "..\..\Views\Home\_NewTeachersList.cshtml"
                 }
 
             
@@ -126,14 +126,14 @@ WriteLiteral(" class=\"panel-footer\"");
 
 WriteLiteral(">\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 890), Tuple.Create("\"", 928)
+WriteAttribute("href", Tuple.Create(" href=\"", 898), Tuple.Create("\"", 938)
             
-            #line 27 "..\..\Views\Home\_NewApplicantsList.cshtml"
-, Tuple.Create(Tuple.Create("", 897), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.List())
+            #line 27 "..\..\Views\Home\_NewTeachersList.cshtml"
+, Tuple.Create(Tuple.Create("", 905), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.List())
             
             #line default
             #line hidden
-, 897), false)
+, 905), false)
 );
 
 WriteLiteral(">\r\n                موارد بیشتر\r\n                <span");

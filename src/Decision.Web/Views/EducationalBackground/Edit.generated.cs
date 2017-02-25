@@ -29,7 +29,7 @@ namespace ASP
     using System.Web.WebPages;
     
     #line 2 "..\..\Views\EducationalBackground\Edit.cshtml"
-    using Decision.Common.HtmlHelpers;
+    using Decision.Framework.HtmlHelpers;
     
     #line default
     #line hidden
@@ -738,14 +738,14 @@ WriteLiteral("></i>\r\n                        ذخیره تغییرات\r\n    
 
 WriteLiteral(" class=\"btn btn-default btn-md\"");
 
-WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 7340), Tuple.Create("\"", 7433)
+WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 7343), Tuple.Create("\"", 7436)
             
             #line 119 "..\..\Views\EducationalBackground\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 7371), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.EducationalBackground.List(Model.ApplicantId))
+, Tuple.Create(Tuple.Create("", 7374), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.EducationalBackground.List(Model.ApplicantId))
             
             #line default
             #line hidden
-, 7371), false)
+, 7374), false)
 );
 
 WriteLiteral(" role=\"button\"");

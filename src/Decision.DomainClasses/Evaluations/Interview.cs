@@ -1,5 +1,5 @@
 ﻿using System;
-using Decision.Common.Domain.Tracking;
+using Decision.Framework.Domain.Tracking;
 using Decision.DomainClasses.ApplicantInfo;
 using Decision.DomainClasses.Identity;
 

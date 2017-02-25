@@ -1,15 +1,7 @@
-﻿using System;
-using System.Web.Mvc;
-using AutoMapper;
-using Decision.AutoMapperProfiles.Extentions;
-using Decision.DomainClasses.Entities.Evaluations;
-using Decision.ViewModel.EntireEvaluation;
-using DNT.Extensions;
-
-// ReSharper disable UseStringInterpolation
+﻿// ReSharper disable UseStringInterpolation
 // ReSharper disable ConvertPropertyToExpressionBody
 
-namespace Decision.AutoMapperProfiles
+namespace Decision.Web.Infrastructure.Mapper
 {
     /// <summary>
     /// تنظیمات مربوط به

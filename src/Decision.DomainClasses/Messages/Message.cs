@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Decision.DomainClasses.PrivateMessage
+namespace Decision.DomainClasses.Messages
 {
     public class Message
     {

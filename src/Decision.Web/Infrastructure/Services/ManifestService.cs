@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Decision.Common.Configuration;
+using Decision.Framework.Configuration;
 using Decision.Web.Infrastructure.Services.Contracts;
 
 namespace Decision.Web.Infrastructure.Services

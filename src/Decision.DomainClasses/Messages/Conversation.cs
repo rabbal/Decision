@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Decision.DomainClasses.Identity;
-using Decision.DomainClasses.PrivateMessage;
 
 namespace Decision.DomainClasses.Messages
 {

@@ -27,17 +27,17 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
+    using Decision.Framework.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
     using MvcSiteMapProvider.Web.Html.Models;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Home/_ApplicantWithTopScoreList.cshtml")]
-    public partial class _Views_Home__ApplicantWithTopScoreList_cshtml : System.Web.Mvc.WebViewPage<IList<Decision.ViewModel.Home.ApplicantWithTopScoreViewModel>>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Home/_TeacherWithTopScoreList.cshtml")]
+    public partial class _Views_Home__TeacherWithTopScoreList_cshtml : System.Web.Mvc.WebViewPage<IList<Decision.ViewModel.Home.ApplicantWithTopScoreViewModel>>
     {
-        public _Views_Home__ApplicantWithTopScoreList_cshtml()
+        public _Views_Home__TeacherWithTopScoreList_cshtml()
         {
         }
         public override void Execute()
@@ -72,13 +72,13 @@ WriteLiteral(" class=\"list-group\"");
 WriteLiteral(">\r\n\r\n");
 
             
-            #line 15 "..\..\Views\Home\_ApplicantWithTopScoreList.cshtml"
+            #line 15 "..\..\Views\Home\_TeacherWithTopScoreList.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 15 "..\..\Views\Home\_ApplicantWithTopScoreList.cshtml"
+            #line 15 "..\..\Views\Home\_TeacherWithTopScoreList.cshtml"
                  foreach (var item in Model)
                 {
 
@@ -92,7 +92,7 @@ WriteLiteral(" class=\"list-group-item log-list\"");
 WriteLiteral(">\r\n                        <span>");
 
             
-            #line 18 "..\..\Views\Home\_ApplicantWithTopScoreList.cshtml"
+            #line 18 "..\..\Views\Home\_TeacherWithTopScoreList.cshtml"
                          Write(item.FullName);
 
             
@@ -109,7 +109,7 @@ WriteLiteral(" class=\"fa fa-star text-warning\"");
 WriteLiteral("></span>\r\n                            <span>");
 
             
-            #line 21 "..\..\Views\Home\_ApplicantWithTopScoreList.cshtml"
+            #line 21 "..\..\Views\Home\_TeacherWithTopScoreList.cshtml"
                              Write(item.Score.GetPersianNumber());
 
             
@@ -118,7 +118,7 @@ WriteLiteral("></span>\r\n                            <span>");
 WriteLiteral("</span>\r\n                        </span>\r\n                    </li>\r\n");
 
             
-            #line 24 "..\..\Views\Home\_ApplicantWithTopScoreList.cshtml"
+            #line 24 "..\..\Views\Home\_TeacherWithTopScoreList.cshtml"
                 }
 
             
@@ -130,14 +130,14 @@ WriteLiteral(" class=\"panel-footer\"");
 
 WriteLiteral(">\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 931), Tuple.Create("\"", 969)
+WriteAttribute("href", Tuple.Create(" href=\"", 933), Tuple.Create("\"", 973)
             
-            #line 28 "..\..\Views\Home\_ApplicantWithTopScoreList.cshtml"
-, Tuple.Create(Tuple.Create("", 938), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.List())
+            #line 28 "..\..\Views\Home\_TeacherWithTopScoreList.cshtml"
+, Tuple.Create(Tuple.Create("", 940), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.List())
             
             #line default
             #line hidden
-, 938), false)
+, 940), false)
 );
 
 WriteLiteral(">\r\n                موارد بیشتر\r\n                <span");

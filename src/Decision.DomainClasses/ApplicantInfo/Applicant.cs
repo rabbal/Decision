@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Decision.Common.Domain.Tracking;
+using Decision.Framework.Domain.Tracking;
 using Decision.DomainClasses.Evaluations;
 using Decision.DomainClasses.Identity;
 

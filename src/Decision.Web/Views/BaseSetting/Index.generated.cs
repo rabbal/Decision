@@ -29,7 +29,7 @@ namespace ASP
     using System.Web.WebPages;
     
     #line 1 "..\..\Views\BaseSetting\Index.cshtml"
-    using Decision.Common.HtmlHelpers;
+    using Decision.Framework.HtmlHelpers;
     
     #line default
     #line hidden

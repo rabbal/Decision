@@ -8,7 +8,7 @@ using System.Web.Hosting;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Decision.Common.MvcToolkit.Providers;
+using Decision.Framework.MvcToolkit.Providers;
 using StructureMap;
 
 namespace Decision.Web.Infrastructure.IocConfig

@@ -27,7 +27,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
+    using Decision.Framework.HtmlHelpers;
     
     #line 1 "..\..\Views\Shared\_ApplicantManagementsSidbarMenu.cshtml"
     using Decision.ServiceLayer.Security;

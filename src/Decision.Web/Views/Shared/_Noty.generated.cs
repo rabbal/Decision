@@ -27,10 +27,10 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using Decision.Common.HtmlHelpers;
+    using Decision.Framework.HtmlHelpers;
     
     #line 2 "..\..\Views\Shared\_Noty.cshtml"
-    using Decision.Common.Noty;
+    using Decision.Framework.Noty;
     
     #line default
     #line hidden

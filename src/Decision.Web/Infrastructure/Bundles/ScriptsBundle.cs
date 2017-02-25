@@ -1,5 +1,5 @@
 ﻿using System.Web.Optimization;
-using Decision.Common.MvcToolkit.Bundles;
+using Decision.Framework.MvcToolkit.Bundles;
 
 namespace Decision.Web.Infrastructure.Bundles
 {

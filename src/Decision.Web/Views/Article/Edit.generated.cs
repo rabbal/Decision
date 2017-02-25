@@ -29,7 +29,7 @@ namespace ASP
     using System.Web.WebPages;
     
     #line 2 "..\..\Views\Article\Edit.cshtml"
-    using Decision.Common.HtmlHelpers;
+    using Decision.Framework.HtmlHelpers;
     
     #line default
     #line hidden
@@ -386,17 +386,17 @@ WriteLiteral(" data-type=\"pdf\"");
 
 WriteLiteral(" data-container=\"AttachmentScan\"");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3429), Tuple.Create("\"", 3533)
-, Tuple.Create(Tuple.Create("", 3437), Tuple.Create("btn", 3437), true)
-, Tuple.Create(Tuple.Create(" ", 3440), Tuple.Create("btn-primary", 3441), true)
-, Tuple.Create(Tuple.Create("   ", 3452), Tuple.Create("btn-sm", 3455), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3432), Tuple.Create("\"", 3536)
+, Tuple.Create(Tuple.Create("", 3440), Tuple.Create("btn", 3440), true)
+, Tuple.Create(Tuple.Create(" ", 3443), Tuple.Create("btn-primary", 3444), true)
+, Tuple.Create(Tuple.Create("   ", 3455), Tuple.Create("btn-sm", 3458), true)
             
             #line 55 "..\..\Views\Article\Edit.cshtml"
-                                                                     , Tuple.Create(Tuple.Create(" ", 3461), Tuple.Create<System.Object, System.Int32>(!string.IsNullOrEmpty(Model.AttachmentScan) ? "scan-remove" : "scan"
+                                                                     , Tuple.Create(Tuple.Create(" ", 3464), Tuple.Create<System.Object, System.Int32>(!string.IsNullOrEmpty(Model.AttachmentScan) ? "scan-remove" : "scan"
             
             #line default
             #line hidden
-, 3462), false)
+, 3465), false)
 );
 
 WriteLiteral(">\r\n\r\n");
@@ -489,14 +489,14 @@ WriteLiteral("></i>\r\n                        ذخیره تغییرات\r\n    
 
 WriteLiteral(" class=\"btn btn-default btn-md\"");
 
-WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 4776), Tuple.Create("\"", 4855)
+WriteAttribute("href", Tuple.Create("\r\n                       href=\"", 4779), Tuple.Create("\"", 4858)
             
             #line 83 "..\..\Views\Article\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 4807), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Article.List(Model.ApplicantId))
+, Tuple.Create(Tuple.Create("", 4810), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Article.List(Model.ApplicantId))
             
             #line default
             #line hidden
-, 4807), false)
+, 4810), false)
 );
 
 WriteLiteral(" role=\"button\"");

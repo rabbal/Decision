@@ -4,7 +4,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
 using StructureMap;
 
-namespace Decision.IocConfig
+namespace Decision.Web.Infrastructure.Temp
 {
     public class StructureMapHttpControllerActivator : IHttpControllerActivator
     {

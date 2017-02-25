@@ -5,13 +5,11 @@ using System.Security.Principal;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
-using AutoMapper;
-using Decision.Common.Controller;
 using Decision.DataLayer.Context;
 using StructureMap;
 using StructureMap.Web;
 
-namespace Decision.IocConfig
+namespace Decision.Web.Infrastructure.Temp
 {
     public class ProjectObjectFactory
     {

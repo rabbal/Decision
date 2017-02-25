@@ -27,7 +27,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
+    using Decision.Framework.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -83,8 +83,8 @@ WriteLiteral(">");
             
             #line default
             #line hidden
-WriteLiteral("</span>\r\n                    متقاضی ثبت شده\r\n                </h4>\r\n            </" +
-"div>\r\n        </div>\r\n    </div>\r\n    <div");
+WriteLiteral("</span>\r\n                    متقاضی ثبت شده\r\n                </h4>\r\n            <" +
+"/div>\r\n        </div>\r\n    </div>\r\n    <div");
 
 WriteLiteral(" class=\"col-md-2\"");
 

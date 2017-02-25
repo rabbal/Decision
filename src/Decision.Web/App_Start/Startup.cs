@@ -1,5 +1,5 @@
 using System;
-using Decision.IocConfig;
+using Decision.Web.Infrastructure.Temp;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;

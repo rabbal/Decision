@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Decision.Common.Domain.Tracking;
+using Decision.Framework.Domain.Tracking;
 using Decision.DomainClasses.Identity;
 
 namespace Decision.DomainClasses.Evaluations

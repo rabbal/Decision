@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using Decision.Common.Logging;
-using Decision.Common.MvcToolkit.Sitemap;
+using Decision.Framework.Logging;
+using Decision.Framework.MvcToolkit.Sitemap;
 using Decision.Web.Infrastructure.Constants;
 using Decision.Web.Infrastructure.Services.Contracts;
 

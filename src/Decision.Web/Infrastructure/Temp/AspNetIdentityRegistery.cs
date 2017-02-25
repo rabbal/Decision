@@ -2,17 +2,13 @@ using System;
 using System.Data.Entity;
 using System.Web;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Users;
-using Decision.ServiceLayer.Contracts.Users;
-using Decision.ServiceLayer.EFServiecs.Common;
-using Decision.ServiceLayer.EFServiecs.Users;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using StructureMap.Configuration.DSL;
 using StructureMap.Web;
 
-namespace Decision.IocConfig
+namespace Decision.Web.Infrastructure.Temp
 {
     public class AspNetIdentityRegistery : Registry
     {

@@ -1,6 +1,6 @@
 ﻿using System;
-using Decision.Common.Domain;
-using Decision.Common.Domain.Tracking;
+using Decision.Framework.Domain;
+using Decision.Framework.Domain.Tracking;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Decision.DomainClasses.Identity

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Decision.Common.Utility;
+using Decision.Framework.Utility;
 using Decision.DomainClasses.Users;
 using Decision.Models.Administrator.Users;
 using Decision.Models.Web.Account;

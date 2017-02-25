@@ -29,7 +29,7 @@ namespace ASP
     using System.Web.WebPages;
     
     #line 2 "..\..\Views\Address\_Edit.cshtml"
-    using Decision.Common.HtmlHelpers;
+    using Decision.Framework.HtmlHelpers;
     
     #line default
     #line hidden
@@ -53,15 +53,15 @@ WriteLiteral("<div");
 
 WriteLiteral(" class=\"col-md-12\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 118), Tuple.Create("\"", 140)
-, Tuple.Create(Tuple.Create("", 123), Tuple.Create("address-", 123), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 121), Tuple.Create("\"", 143)
+, Tuple.Create(Tuple.Create("", 126), Tuple.Create("address-", 126), true)
             
             #line 5 "..\..\Views\Address\_Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 131), Tuple.Create<System.Object, System.Int32>(Model.Id
+, Tuple.Create(Tuple.Create("", 134), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 131), false)
+, 134), false)
 );
 
 WriteLiteral(">\r\n    <div");
@@ -449,29 +449,29 @@ WriteLiteral(">\r\n                <button");
 
 WriteLiteral(" type=\"button\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 4076), Tuple.Create("\"", 4121)
+WriteAttribute("id", Tuple.Create(" id=\"", 4079), Tuple.Create("\"", 4124)
             
             #line 76 "..\..\Views\Address\_Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 4081), Tuple.Create<System.Object, System.Int32>(string.Format("editButton{0}",Model.Id)
+, Tuple.Create(Tuple.Create("", 4084), Tuple.Create<System.Object, System.Int32>(string.Format("editButton{0}",Model.Id)
             
             #line default
             #line hidden
-, 4081), false)
+, 4084), false)
 );
 
 WriteLiteral(" autocomplete=\"off\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 4141), Tuple.Create("\"", 4191)
-, Tuple.Create(Tuple.Create("", 4151), Tuple.Create("AjaxForm.CustomSubmit(this,", 4151), true)
-, Tuple.Create(Tuple.Create(" ", 4178), Tuple.Create("\'", 4179), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 4144), Tuple.Create("\"", 4194)
+, Tuple.Create(Tuple.Create("", 4154), Tuple.Create("AjaxForm.CustomSubmit(this,", 4154), true)
+, Tuple.Create(Tuple.Create(" ", 4181), Tuple.Create("\'", 4182), true)
             
             #line 76 "..\..\Views\Address\_Edit.cshtml"
-                                                             , Tuple.Create(Tuple.Create("", 4180), Tuple.Create<System.Object, System.Int32>(Model.Id
+                                                             , Tuple.Create(Tuple.Create("", 4183), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 4180), false)
-, Tuple.Create(Tuple.Create("", 4189), Tuple.Create("\')", 4189), true)
+, 4183), false)
+, Tuple.Create(Tuple.Create("", 4192), Tuple.Create("\')", 4192), true)
 );
 
 WriteLiteral(" data-loading-text=\"در حال ارسال اطلاعات\"");
@@ -506,14 +506,14 @@ WriteLiteral("\"");
 
 WriteLiteral(" data-ajax-method=\"POST\"");
 
-WriteAttribute("href", Tuple.Create("\r\n                   href=\"", 4642), Tuple.Create("\"", 4714)
+WriteAttribute("href", Tuple.Create("\r\n                   href=\"", 4645), Tuple.Create("\"", 4717)
             
             #line 84 "..\..\Views\Address\_Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 4669), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Address.CancelEdit(Model.Id))
+, Tuple.Create(Tuple.Create("", 4672), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Address.CancelEdit(Model.Id))
             
             #line default
             #line hidden
-, 4669), false)
+, 4672), false)
 );
 
 WriteLiteral(" role=\"button\"");

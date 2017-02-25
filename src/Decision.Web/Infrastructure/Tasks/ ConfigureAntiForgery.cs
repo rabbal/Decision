@@ -1,5 +1,5 @@
 ﻿using System.Web.Helpers;
-using Decision.Common.Configuration;
+using Decision.Framework.Configuration;
 using Decision.Web.Infrastructure.Tasks.Contracts;
 
 namespace Decision.Web.Infrastructure.Tasks

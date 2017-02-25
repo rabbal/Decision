@@ -29,11 +29,11 @@ namespace ASP
     using System.Web.WebPages;
     
     #line 2 "..\..\Views\PrivateMessage\_Reply.cshtml"
-    using Decision.Common.Helpers;
+    using Decision.Framework.Helpers;
     
     #line default
     #line hidden
-    using Decision.Common.HtmlHelpers;
+    using Decision.Framework.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;

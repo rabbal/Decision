@@ -29,7 +29,7 @@ namespace ASP
     using System.Web.WebPages;
     
     #line 2 "..\..\Views\PrivateMessage\InBox.cshtml"
-    using Decision.Common.HtmlHelpers;
+    using Decision.Framework.HtmlHelpers;
     
     #line default
     #line hidden
@@ -165,14 +165,14 @@ WriteLiteral(" style=\"display: none\"");
 
 WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1484), Tuple.Create("\"", 1534)
+WriteAttribute("src", Tuple.Create(" src=\"", 1487), Tuple.Create("\"", 1537)
             
             #line 36 "..\..\Views\PrivateMessage\InBox.cshtml"
-, Tuple.Create(Tuple.Create("", 1490), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
+, Tuple.Create(Tuple.Create("", 1493), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
             
             #line default
             #line hidden
-, 1490), false)
+, 1493), false)
 );
 
 WriteLiteral(" alt=\"loading...\"");

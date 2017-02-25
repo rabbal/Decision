@@ -9,7 +9,7 @@ namespace Decision.Web
         public static void Start()
         {
             //    DynamicModuleDecision.Utility.RegisterModule(typeof(DosAttackModule));
-            //    DynamicModuleDecision.Utility.RegisterModule(typeof(Decision.Common.HttpCompress.HttpModule));
+            //    DynamicModuleDecision.Utility.RegisterModule(typeof(Decision.Framework.HttpCompress.HttpModule));
         }
     }
 }

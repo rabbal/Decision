@@ -27,7 +27,7 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
+    using Decision.Framework.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -78,7 +78,7 @@ WriteLiteral(" data-ajax-success=\"onSuccessFormValidation(data, status, xhr,\'c
 
 WriteLiteral("\r\n                   data-ajax-update=\"#modal\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 460), Tuple.Create("\"", 536)
+WriteAttribute("href", Tuple.Create(" href=\"", 460), Tuple.Create("\"", 538)
             
             #line 10 "..\..\Views\WorkExperience\List.cshtml"
 , Tuple.Create(Tuple.Create("", 467), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.WorkExperience.Create(Model.SearchRequest.ApplicantId))
@@ -139,7 +139,7 @@ WriteLiteral(" data-json=\'{\"ApplicantId\":\"");
 
             
             #line 22 "..\..\Views\WorkExperience\List.cshtml"
-                                                          Write(Model.SearchRequest.ApplicantId);
+                                                            Write(Model.SearchRequest.ApplicantId);
 
             
             #line default
@@ -178,14 +178,14 @@ WriteLiteral(" style=\"display: none\"");
 
 WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1520), Tuple.Create("\"", 1570)
+WriteAttribute("src", Tuple.Create(" src=\"", 1526), Tuple.Create("\"", 1576)
             
             #line 31 "..\..\Views\WorkExperience\List.cshtml"
-, Tuple.Create(Tuple.Create("", 1526), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
+, Tuple.Create(Tuple.Create("", 1532), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
             
             #line default
             #line hidden
-, 1526), false)
+, 1532), false)
 );
 
 WriteLiteral(" alt=\"loading...\"");

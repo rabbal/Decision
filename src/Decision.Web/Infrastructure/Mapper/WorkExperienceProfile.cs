@@ -1,11 +1,4 @@
-﻿using System;
-using AutoMapper;
-using Decision.AutoMapperProfiles.Extentions;
-using Decision.DomainClasses.Entities.ApplicantInfo;
-using Decision.ViewModel.WorkExperience;
-using DNT.Extensions;
-
-namespace Decision.AutoMapperProfiles
+﻿namespace Decision.Web.Infrastructure.Mapper
 {
     /// <summary>
     /// تنظیمات مربوط به

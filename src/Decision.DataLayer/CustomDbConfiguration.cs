@@ -1,4 +1,7 @@
 ﻿using System.Data.Entity;
+using Decision.Framework.EntityFrameworkToolkit;
+using Decision.Framework.EntityFrameworkToolkit.Interceptors;
+using ElmahEFLogger.CustomElmahLogger;
 
 namespace Decision.DataLayer
 {

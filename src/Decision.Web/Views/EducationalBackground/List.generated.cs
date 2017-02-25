@@ -29,7 +29,7 @@ namespace ASP
     using System.Web.WebPages;
     
     #line 1 "..\..\Views\EducationalBackground\List.cshtml"
-    using Decision.Common.HtmlHelpers;
+    using Decision.Framework.HtmlHelpers;
     
     #line default
     #line hidden
@@ -230,14 +230,14 @@ WriteLiteral(" style=\"display: none\"");
 
 WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2239), Tuple.Create("\"", 2289)
+WriteAttribute("src", Tuple.Create(" src=\"", 2242), Tuple.Create("\"", 2292)
             
             #line 46 "..\..\Views\EducationalBackground\List.cshtml"
-, Tuple.Create(Tuple.Create("", 2245), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
+, Tuple.Create(Tuple.Create("", 2248), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/images/loading.gif")
             
             #line default
             #line hidden
-, 2245), false)
+, 2248), false)
 );
 
 WriteLiteral(" alt=\"loading...\"");

@@ -1,5 +1,5 @@
 ﻿using System;
-using Decision.Common.Domain;
+using Decision.Framework.Domain;
 using Decision.DomainClasses.Identity;
 
 namespace Decision.DomainClasses

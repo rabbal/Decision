@@ -1,5 +1,5 @@
 ﻿using System;
-using Decision.Common.Configuration;
+using Decision.Framework.Configuration;
 using Decision.Services.EntityFramework.Common;
 using Decision.Services.Interfaces.Common;
 using Decision.Services.Interfaces.Security;

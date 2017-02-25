@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Decision.Common.Filters;
+using Decision.Framework.Filters;
 using Decision.DomainClasses.Users;
 using Decision.ServiceLayer.Contracts.Users;
 using Microsoft.AspNet.SignalR;

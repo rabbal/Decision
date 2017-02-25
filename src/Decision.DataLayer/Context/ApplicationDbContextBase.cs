@@ -7,8 +7,14 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
+using Decision.DomainClasses.Identity;
+using Decision.Framework.Domain.Entities;
+using Decision.Framework.Domain.Entities.Tracking;
+using Decision.Framework.Domain.Uow;
+using Decision.Framework.GuardToolkit;
 using EFSecondLevelCache;
 using EntityFramework.BulkInsert.Extensions;
+using EntityFramework.DynamicFilters;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using RefactorThis.GraphDiff;
@@ -47,7 +53,7 @@ namespace Decision.DataLayer.Context
         {
             Entry(entity).State = EntityState.Modified;
         }
-        public void MarkAsSoftDeleted<TEntity>(TEntity entity) where TEntity : class, ISoftDeletable
+        public void MarkAsSoftDeleted<TEntity>(TEntity entity) where TEntity : class, ISoftDelete
         {
             Entry(entity).State = EntityState.Modified;
         }
@@ -201,33 +207,6 @@ namespace Decision.DataLayer.Context
         }
         #endregion
         
-        #region Public Methods
-        public void RejectChanges()
-        {
-            foreach (var entry in this.ChangeTracker.Entries())
-            {
-                switch (entry.State)
-                {
-                    case EntityState.Modified:
-                        entry.State = EntityState.Unchanged;
-                        break;
-
-                    case EntityState.Added:
-                        entry.State = EntityState.Detached;
-                        break;
-                    case EntityState.Detached:
-                        break;
-                    case EntityState.Unchanged:
-                        break;
-                    case EntityState.Deleted:
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-            }
-        }
-        #endregion
-
         #region Protected Methods
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

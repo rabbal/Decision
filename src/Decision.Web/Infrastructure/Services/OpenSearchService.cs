@@ -1,8 +1,8 @@
 ﻿using System.Text;
 using System.Web.Mvc;
 using System.Xml.Linq;
-using Decision.Common.Extensions;
-using Decision.Common.MvcToolkit.Extensions;
+using Decision.Framework.Extensions;
+using Decision.Framework.MvcToolkit.Extensions;
 using Decision.Web.Infrastructure.Services.Contracts;
 
 namespace Decision.Web.Infrastructure.Services

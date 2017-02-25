@@ -32,15 +32,92 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    
+    using Decision.Framework.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
     using MvcSiteMapProvider.Web.Html.Models;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    public class _Views_Shared_DisplayTemplates_SiteMapPathHelperModel_cshtml : System.Web.WebPages.HelperPage
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/DisplayTemplates/SiteMapPathHelperModel.cshtml")]
+    public partial class _Views_Shared_DisplayTemplates_SiteMapPathHelperModel_cshtml_ : System.Web.Mvc.WebViewPage<SiteMapPathHelperModel>
     {
+        public _Views_Shared_DisplayTemplates_SiteMapPathHelperModel_cshtml_()
+        {
+        }
+        public override void Execute()
+        {
+WriteLiteral("\r\n<ol");
+
+WriteLiteral(" class=\"breadcrumb\"");
+
+WriteLiteral(">\r\n");
+
+            
+            #line 5 "..\..\Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml"
+    
+            
+            #line default
+            #line hidden
+            
+            #line 5 "..\..\Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml"
+     foreach (var node in Model)
+    {
+        if (node==Model.Last())
+        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <li");
+
+WriteLiteral(" class=\"active\"");
+
+WriteLiteral(">");
+
+            
+            #line 9 "..\..\Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml"
+                          Write(Html.DisplayFor(m => node));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</li>\r\n");
+
+            
+            #line 10 "..\..\Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml"
+        }
+        else
+        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <li>\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 14 "..\..\Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml"
+           Write(Html.DisplayFor(m => node));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </li>\r\n");
+
+            
+            #line 16 "..\..\Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml"
+        }
+
+    }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n</ol>");
+
+        }
     }
 }
 #pragma warning restore 1591

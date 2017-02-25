@@ -2,7 +2,7 @@
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Infrastructure;
 using Microsoft.Owin.Security.OAuth;
-using Decision.Common.Configuration;
+using Decision.Framework.Configuration;
 using Decision.Web.Infrastructure.IocConfig;
 
 namespace Decision.Web.Infrastructure.JsonWebTokenConfig

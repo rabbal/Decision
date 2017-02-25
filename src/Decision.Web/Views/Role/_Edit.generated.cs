@@ -29,11 +29,11 @@ namespace ASP
     using System.Web.WebPages;
     
     #line 1 "..\..\Views\Role\_Edit.cshtml"
-    using Decision.Common.Helpers;
+    using Decision.Framework.Helpers;
     
     #line default
     #line hidden
-    
+    using Decision.Framework.HtmlHelpers;
     using Decision.Utility;
     using Decision.Web.HtmlHelpers;
     using MvcSiteMapProvider.Web.Html;
@@ -52,15 +52,15 @@ WriteLiteral("<div");
 
 WriteLiteral(" class=\"col-md-12\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 106), Tuple.Create("\"", 125)
-, Tuple.Create(Tuple.Create("", 111), Tuple.Create("role-", 111), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 109), Tuple.Create("\"", 128)
+, Tuple.Create(Tuple.Create("", 114), Tuple.Create("role-", 114), true)
             
             #line 4 "..\..\Views\Role\_Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 116), Tuple.Create<System.Object, System.Int32>(Model.Id
+, Tuple.Create(Tuple.Create("", 119), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 116), false)
+, 119), false)
 );
 
 WriteLiteral(">\r\n");
@@ -234,14 +234,14 @@ WriteLiteral("\" class=\"checkbox-inline\" />\r\n                               
 
 WriteLiteral(" class=\"control-label\"");
 
-WriteAttribute("for", Tuple.Create(" for=\"", 1801), Tuple.Create("\"", 1815)
+WriteAttribute("for", Tuple.Create(" for=\"", 1804), Tuple.Create("\"", 1818)
             
             #line 29 "..\..\Views\Role\_Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 1807), Tuple.Create<System.Object, System.Int32>(p.Value
+, Tuple.Create(Tuple.Create("", 1810), Tuple.Create<System.Object, System.Int32>(p.Value
             
             #line default
             #line hidden
-, 1807), false)
+, 1810), false)
 );
 
 WriteLiteral(">");
@@ -276,29 +276,29 @@ WriteLiteral(">\r\n                        <button");
 
 WriteLiteral(" type=\"button\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 2219), Tuple.Create("\"", 2250)
+WriteAttribute("id", Tuple.Create(" id=\"", 2222), Tuple.Create("\"", 2253)
             
             #line 39 "..\..\Views\Role\_Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 2224), Tuple.Create<System.Object, System.Int32>($"editButton{Model.Id}"
+, Tuple.Create(Tuple.Create("", 2227), Tuple.Create<System.Object, System.Int32>($"editButton{Model.Id}"
             
             #line default
             #line hidden
-, 2224), false)
+, 2227), false)
 );
 
 WriteLiteral(" autocomplete=\"off\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 2270), Tuple.Create("\"", 2320)
-, Tuple.Create(Tuple.Create("", 2280), Tuple.Create("AjaxForm.CustomSubmit(this,", 2280), true)
-, Tuple.Create(Tuple.Create(" ", 2307), Tuple.Create("\'", 2308), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 2273), Tuple.Create("\"", 2323)
+, Tuple.Create(Tuple.Create("", 2283), Tuple.Create("AjaxForm.CustomSubmit(this,", 2283), true)
+, Tuple.Create(Tuple.Create(" ", 2310), Tuple.Create("\'", 2311), true)
             
             #line 39 "..\..\Views\Role\_Edit.cshtml"
-                                                       , Tuple.Create(Tuple.Create("", 2309), Tuple.Create<System.Object, System.Int32>(Model.Id
+                                                       , Tuple.Create(Tuple.Create("", 2312), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 2309), false)
-, Tuple.Create(Tuple.Create("", 2318), Tuple.Create("\')", 2318), true)
+, 2312), false)
+, Tuple.Create(Tuple.Create("", 2321), Tuple.Create("\')", 2321), true)
 );
 
 WriteLiteral(" data-loading-text=\"در حال ارسال اطلاعات\"");
@@ -333,14 +333,14 @@ WriteLiteral("\"");
 
 WriteLiteral(" data-ajax-method=\"POST\"");
 
-WriteAttribute("href", Tuple.Create("\r\n                           href=\"", 2816), Tuple.Create("\"", 2893)
+WriteAttribute("href", Tuple.Create("\r\n                           href=\"", 2819), Tuple.Create("\"", 2896)
             
             #line 47 "..\..\Views\Role\_Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 2851), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Role.CancelEdit(Model.Id))
+, Tuple.Create(Tuple.Create("", 2854), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Role.CancelEdit(Model.Id))
             
             #line default
             #line hidden
-, 2851), false)
+, 2854), false)
 );
 
 WriteLiteral(" role=\"button\"");

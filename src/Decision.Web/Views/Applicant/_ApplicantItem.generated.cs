@@ -35,7 +35,7 @@ namespace ASP
     #line hidden
     
     #line 2 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-    using Decision.Common.HtmlHelpers;
+    using Decision.Framework.HtmlHelpers;
     
     #line default
     #line hidden
@@ -63,15 +63,15 @@ WriteLiteral("<div");
 
 WriteLiteral(" class=\"col-md-12\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 170), Tuple.Create("\"", 194)
-, Tuple.Create(Tuple.Create("", 175), Tuple.Create("applicant-", 175), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 173), Tuple.Create("\"", 197)
+, Tuple.Create(Tuple.Create("", 178), Tuple.Create("applicant-", 178), true)
             
             #line 5 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-, Tuple.Create(Tuple.Create("", 185), Tuple.Create<System.Object, System.Int32>(Model.Id
+, Tuple.Create(Tuple.Create("", 188), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 185), false)
+, 188), false)
 );
 
 WriteLiteral(">\r\n    <div");
@@ -400,14 +400,14 @@ WriteLiteral(" class=\"pull-left\"");
 
 WriteLiteral(">\r\n                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4048), Tuple.Create("\"", 4096)
+WriteAttribute("href", Tuple.Create(" href=\"", 4051), Tuple.Create("\"", 4099)
             
             #line 78 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-, Tuple.Create(Tuple.Create("", 4055), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.Edit(Model.Id))
+, Tuple.Create(Tuple.Create("", 4058), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.Edit(Model.Id))
             
             #line default
             #line hidden
-, 4055), false)
+, 4058), false)
 );
 
 WriteLiteral(" class=\"btn btn-sm btn-primary\"");
@@ -420,14 +420,14 @@ WriteLiteral(" class=\"fa fa-edit\"");
 
 WriteLiteral("></i>\r\n                    ویرایش\r\n                </a>\r\n                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4261), Tuple.Create("\"", 4312)
+WriteAttribute("href", Tuple.Create(" href=\"", 4264), Tuple.Create("\"", 4315)
             
             #line 82 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-, Tuple.Create(Tuple.Create("", 4268), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.Details(Model.Id))
+, Tuple.Create(Tuple.Create("", 4271), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Applicant.Details(Model.Id))
             
             #line default
             #line hidden
-, 4268), false)
+, 4271), false)
 );
 
 WriteLiteral(" class=\"btn btn-sm btn-info\"");
@@ -467,15 +467,15 @@ WriteLiteral(" data-removal-element=\"#applicant-");
             #line hidden
 WriteLiteral("\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 4668), Tuple.Create("\"", 4689)
-, Tuple.Create(Tuple.Create("", 4673), Tuple.Create("remove-", 4673), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 4671), Tuple.Create("\"", 4692)
+, Tuple.Create(Tuple.Create("", 4676), Tuple.Create("remove-", 4676), true)
             
             #line 87 "..\..\Views\Applicant\_ApplicantItem.cshtml"
-                                                                   , Tuple.Create(Tuple.Create("", 4680), Tuple.Create<System.Object, System.Int32>(Model.Id
+                                                                   , Tuple.Create(Tuple.Create("", 4683), Tuple.Create<System.Object, System.Int32>(Model.Id
             
             #line default
             #line hidden
-, 4680), false)
+, 4683), false)
 );
 
 WriteLiteral(">\r\n                    <i");

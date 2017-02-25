@@ -29,13 +29,13 @@ namespace ASP
     using System.Web.WebPages;
     
     #line 1 "..\..\Views\Applicant\Create.cshtml"
-    using Decision.Common.Extentions;
+    using Decision.Framework.Extentions;
     
     #line default
     #line hidden
     
     #line 2 "..\..\Views\Applicant\Create.cshtml"
-    using Decision.Common.HtmlHelpers;
+    using Decision.Framework.HtmlHelpers;
     
     #line default
     #line hidden
@@ -1098,17 +1098,17 @@ WriteLiteral(" data-type=\"image\"");
 
 WriteLiteral(" data-container=\"CopyOfNationalCardScan\"");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 14167), Tuple.Create("\"", 14267)
-, Tuple.Create(Tuple.Create("", 14175), Tuple.Create("btn", 14175), true)
-, Tuple.Create(Tuple.Create(" ", 14178), Tuple.Create("btn-primary", 14179), true)
-, Tuple.Create(Tuple.Create("   ", 14190), Tuple.Create("btn-sm", 14193), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 14173), Tuple.Create("\"", 14273)
+, Tuple.Create(Tuple.Create("", 14181), Tuple.Create("btn", 14181), true)
+, Tuple.Create(Tuple.Create(" ", 14184), Tuple.Create("btn-primary", 14185), true)
+, Tuple.Create(Tuple.Create("   ", 14196), Tuple.Create("btn-sm", 14199), true)
             
             #line 210 "..\..\Views\Applicant\Create.cshtml"
-                                                                                      , Tuple.Create(Tuple.Create(" ", 14199), Tuple.Create<System.Object, System.Int32>(Model.CopyOfNationalCardScan.HasValue() ? "scan-remove" : "scan"
+                                                                                      , Tuple.Create(Tuple.Create(" ", 14205), Tuple.Create<System.Object, System.Int32>(Model.CopyOfNationalCardScan.HasValue() ? "scan-remove" : "scan"
             
             #line default
             #line hidden
-, 14200), false)
+, 14206), false)
 );
 
 WriteLiteral(">\r\n");
@@ -1204,17 +1204,17 @@ WriteLiteral(" data-type=\"image\"");
 
 WriteLiteral(" data-container=\"CopyOfBirthCertificateScan\"");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 15674), Tuple.Create("\"", 15774)
-, Tuple.Create(Tuple.Create("", 15682), Tuple.Create("btn", 15682), true)
-, Tuple.Create(Tuple.Create(" ", 15685), Tuple.Create("btn-primary", 15686), true)
-, Tuple.Create(Tuple.Create("   ", 15697), Tuple.Create("btn-sm", 15700), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 15680), Tuple.Create("\"", 15780)
+, Tuple.Create(Tuple.Create("", 15688), Tuple.Create("btn", 15688), true)
+, Tuple.Create(Tuple.Create(" ", 15691), Tuple.Create("btn-primary", 15692), true)
+, Tuple.Create(Tuple.Create("   ", 15703), Tuple.Create("btn-sm", 15706), true)
             
             #line 232 "..\..\Views\Applicant\Create.cshtml"
-                                                                                          , Tuple.Create(Tuple.Create(" ", 15706), Tuple.Create<System.Object, System.Int32>(Model.CopyOfNationalCardScan.HasValue() ? "scan-remove" : "scan"
+                                                                                          , Tuple.Create(Tuple.Create(" ", 15712), Tuple.Create<System.Object, System.Int32>(Model.CopyOfNationalCardScan.HasValue() ? "scan-remove" : "scan"
             
             #line default
             #line hidden
-, 15707), false)
+, 15713), false)
 );
 
 WriteLiteral(">\r\n");
@@ -1310,17 +1310,17 @@ WriteLiteral(" data-type=\"image\"");
 
 WriteLiteral(" data-container=\"PhotoScan\"");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 17135), Tuple.Create("\"", 17235)
-, Tuple.Create(Tuple.Create("", 17143), Tuple.Create("btn", 17143), true)
-, Tuple.Create(Tuple.Create(" ", 17146), Tuple.Create("btn-primary", 17147), true)
-, Tuple.Create(Tuple.Create("   ", 17158), Tuple.Create("btn-sm", 17161), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 17141), Tuple.Create("\"", 17241)
+, Tuple.Create(Tuple.Create("", 17149), Tuple.Create("btn", 17149), true)
+, Tuple.Create(Tuple.Create(" ", 17152), Tuple.Create("btn-primary", 17153), true)
+, Tuple.Create(Tuple.Create("   ", 17164), Tuple.Create("btn-sm", 17167), true)
             
             #line 254 "..\..\Views\Applicant\Create.cshtml"
-                                                                         , Tuple.Create(Tuple.Create(" ", 17167), Tuple.Create<System.Object, System.Int32>(Model.CopyOfNationalCardScan.HasValue() ? "scan-remove" : "scan"
+                                                                         , Tuple.Create(Tuple.Create(" ", 17173), Tuple.Create<System.Object, System.Int32>(Model.CopyOfNationalCardScan.HasValue() ? "scan-remove" : "scan"
             
             #line default
             #line hidden
-, 17168), false)
+, 17174), false)
 );
 
 WriteLiteral(">\r\n");

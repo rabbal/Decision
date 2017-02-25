@@ -1,6 +1,6 @@
 using System.Net;
 using System.Web.Mvc;
-using Decision.Common.Constants;
+using Decision.Framework.Constants;
 namespace Decision.Web.Controllers
 {
     /// <summary>

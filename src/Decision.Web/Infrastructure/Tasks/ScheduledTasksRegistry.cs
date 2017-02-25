@@ -2,8 +2,8 @@
 using System.Diagnostics;
 using System.Net;
 using DNTScheduler;
-using Decision.Common.Configuration;
-using Decision.Common.Logging;
+using Decision.Framework.Configuration;
+using Decision.Framework.Logging;
 using Decision.Web.Infrastructure.Tasks.Contracts;
 using Decision.Web.Infrastructure.WebTasks;
 

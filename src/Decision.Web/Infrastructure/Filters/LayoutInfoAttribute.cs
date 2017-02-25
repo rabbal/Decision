@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
-using Decision.Common.Configuration;
+using Decision.Framework.Configuration;
 using Decision.Models.Web;
 using Decision.Services.Interfaces.Users;
 

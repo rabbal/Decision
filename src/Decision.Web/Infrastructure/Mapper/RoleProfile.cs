@@ -1,13 +1,6 @@
 using System.Web.Mvc;
-using AutoMapper;
-using Decision.AutoMapperProfiles.Extentions;
-using Decision.DomainClasses.Entities;
-using System.Collections.ObjectModel;
-using Decision.DomainClasses.Entities.Users;
-using Decision.ViewModel.Role;
-using DNT.Extensions;
 
-namespace Decision.AutoMapperProfiles
+namespace Decision.Web.Infrastructure.Mapper
 {
     public class RoleProfile : Profile
     {

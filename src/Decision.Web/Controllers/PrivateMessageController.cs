@@ -5,7 +5,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
-using Decision.Common.Filters;
+using Decision.Framework.Filters;
 using Decision.DataLayer.Context;
 using Decision.ServiceLayer.Contracts.PrivateMessage;
 using Decision.ServiceLayer.Contracts.Users;

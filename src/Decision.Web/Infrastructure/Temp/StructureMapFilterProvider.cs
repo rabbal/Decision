@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Web.Mvc;
 using StructureMap;
 
-namespace Decision.IocConfig
+namespace Decision.Web.Infrastructure.Temp
 {
     public class StructureMapFilterProvider : FilterAttributeFilterProvider
     {

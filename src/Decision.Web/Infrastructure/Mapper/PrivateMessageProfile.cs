@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
-using Decision.AutoMapperProfiles.Extentions;
-using Decision.DomainClasses.Entities.PrivateMessage;
-using Decision.ViewModel.PrivateMessage;
+﻿using System.Collections.Generic;
 
-namespace Decision.AutoMapperProfiles
+namespace Decision.Web.Infrastructure.Mapper
 {
    
 

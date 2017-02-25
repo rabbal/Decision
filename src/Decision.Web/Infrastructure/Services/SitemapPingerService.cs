@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Mvc;
-using Decision.Common.Logging;
+using Decision.Framework.Logging;
 using Decision.Web.Infrastructure.Services.Contracts;
 
 namespace Decision.Web.Infrastructure.Services

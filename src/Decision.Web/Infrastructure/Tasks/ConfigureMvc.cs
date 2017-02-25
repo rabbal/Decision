@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using CaptchaMvc.Infrastructure;
-using Decision.Common.MvcToolkit.Json;
+using Decision.Framework.MvcToolkit.Json;
 using Decision.Web.Infrastructure.IocConfig;
 using Decision.Web.Infrastructure.Tasks.Contracts;
 using StructureMap;

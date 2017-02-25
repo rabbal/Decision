@@ -1,5 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Web;
+using Decision.DomainClasses;
+using Decision.DomainClasses.Identity;
 
 namespace Decision.DataLayer.Context
 {

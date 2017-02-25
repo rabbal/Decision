@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
-using Decision.Common.Infrastructure;
+using Decision.Framework.Infrastructure;
 using Decision.Services.Interfaces.Users;
 
 namespace Decision.Web.Infrastructure.Filters

@@ -1,12 +1,4 @@
-﻿using System;
-using System.Web.Mvc;
-using AutoMapper;
-using Decision.AutoMapperProfiles.Extentions;
-using Decision.DomainClasses.Entities.ApplicantInfo;
-using Decision.ViewModel.EducationalBackground;
-using DNT.Extensions;
-
-namespace Decision.AutoMapperProfiles
+﻿namespace Decision.Web.Infrastructure.Mapper
 {
     public class EducationalBackgroundProfile : Profile
     {

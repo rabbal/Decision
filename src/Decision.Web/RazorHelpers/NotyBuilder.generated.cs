@@ -28,7 +28,7 @@ namespace Decision.Web.RazorHelpers
     using System.Web.WebPages;
     
     #line 3 "..\..\RazorHelpers\NotyBuilder.cshtml"
-    using Decision.Common.Noty;
+    using Decision.Framework.Noty;
     
     #line default
     #line hidden

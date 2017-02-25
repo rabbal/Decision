@@ -4,10 +4,10 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
-using Decision.Common.Controller;
-using Decision.Common.Filters;
-using Decision.Common.HtmlCleaner;
-using Decision.Common.Json;
+using Decision.Framework.Controller;
+using Decision.Framework.Filters;
+using Decision.Framework.HtmlCleaner;
+using Decision.Framework.Json;
 using Decision.DataLayer.Context;
 using Decision.ServiceLayer.Contracts.ApplicantInfo;
 using Decision.ServiceLayer.Security;
@@ -15,7 +15,7 @@ using Decision.ViewModel.Article;
 using Decision.Web.Extentions;
 using Decision.Web.Filters;
 using MvcSiteMapProvider;
-using Decision.Common.Extentions;
+using Decision.Framework.Extentions;
 namespace Decision.Web.Controllers
 {
 

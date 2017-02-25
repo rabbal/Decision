@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using Decision.Common.Filters;
+using Decision.Framework.Filters;
 using Decision.ServiceLayer.Security;
 using MvcSiteMapProvider;
 

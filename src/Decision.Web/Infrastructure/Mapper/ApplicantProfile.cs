@@ -1,18 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Mvc;
-using AutoMapper;
-using Decision.AutoMapperProfiles.Extentions;
-using Decision.DomainClasses.Entities.ApplicantInfo;
-using Decision.Utility;
-using Decision.ViewModel.Home;
-using Decision.ViewModel.Applicant;
-using DNT.Extensions;
-
-namespace Decision.AutoMapperProfiles
+﻿namespace Decision.Web.Infrastructure.Mapper
 {
     public class ApplicantProfile : Profile
     {

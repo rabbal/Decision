@@ -29,7 +29,7 @@ namespace ASP
     using System.Web.WebPages;
     
     #line 2 "..\..\Views\Article\_Create.cshtml"
-    using Decision.Common.HtmlHelpers;
+    using Decision.Framework.HtmlHelpers;
     
     #line default
     #line hidden
@@ -338,17 +338,17 @@ WriteLiteral(" data-type=\"pdf\"");
 
 WriteLiteral(" data-container=\"AttachmentScan\"");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 2761), Tuple.Create("\"", 2865)
-, Tuple.Create(Tuple.Create("", 2769), Tuple.Create("btn", 2769), true)
-, Tuple.Create(Tuple.Create(" ", 2772), Tuple.Create("btn-primary", 2773), true)
-, Tuple.Create(Tuple.Create("   ", 2784), Tuple.Create("btn-sm", 2787), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 2764), Tuple.Create("\"", 2868)
+, Tuple.Create(Tuple.Create("", 2772), Tuple.Create("btn", 2772), true)
+, Tuple.Create(Tuple.Create(" ", 2775), Tuple.Create("btn-primary", 2776), true)
+, Tuple.Create(Tuple.Create("   ", 2787), Tuple.Create("btn-sm", 2790), true)
             
             #line 46 "..\..\Views\Article\_Create.cshtml"
-                                                             , Tuple.Create(Tuple.Create(" ", 2793), Tuple.Create<System.Object, System.Int32>(!string.IsNullOrEmpty(Model.AttachmentScan) ? "scan-remove" : "scan"
+                                                             , Tuple.Create(Tuple.Create(" ", 2796), Tuple.Create<System.Object, System.Int32>(!string.IsNullOrEmpty(Model.AttachmentScan) ? "scan-remove" : "scan"
             
             #line default
             #line hidden
-, 2794), false)
+, 2797), false)
 );
 
 WriteLiteral(">\r\n\r\n");

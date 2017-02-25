@@ -1,5 +1,5 @@
 ﻿using System.Security.Claims;
-using Decision.Common.Domain;
+using Decision.Framework.Domain;
 
 namespace Decision.DomainClasses.Identity
 {
