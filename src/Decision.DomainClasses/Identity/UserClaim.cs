@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Security.Claims;
+using Decision.Framework.Domain.Entities;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Decision.DomainClasses.Identity

@@ -231,6 +231,7 @@
     <Compile Include="Domain\Services\ICreateService.cs" />
     <Compile Include="Domain\Services\IDeleteService.cs" />
     <Compile Include="Domain\Services\IEditService.cs" />
+    <Compile Include="Domain\Services\IFetchService.cs" />
     <Compile Include="Domain\Services\IServiceBase.cs" />
     <Compile Include="Domain\Services\ServiceBase.cs" />
     <Compile Include="Domain\Uow\IUnitOfWork.cs" />
@@ -655,9 +656,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MvcToolkit\Resources.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

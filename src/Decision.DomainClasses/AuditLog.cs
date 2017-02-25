@@ -1,6 +1,4 @@
-﻿using System;
-using Decision.Framework.Domain;
-using Decision.DomainClasses.Identity;
+﻿using Decision.DomainClasses.Identity;
 using Decision.Framework.Domain.Entities;
 
 namespace Decision.DomainClasses
