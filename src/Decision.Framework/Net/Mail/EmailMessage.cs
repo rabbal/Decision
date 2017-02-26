@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using Decision.Framework.Extensions;
+using Decision.Framework.GuardToolkit;
 using Decision.Framework.Infrastructure;
 
 namespace Decision.Framework.Net.Mail

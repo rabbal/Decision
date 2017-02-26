@@ -1,13 +1,14 @@
 ﻿using System.Data.Entity.ModelConfiguration;
+using Decision.DomainClasses.Identity;
 
 namespace Decision.DataLayer.Mappings.Users
 {
-    public class UserRoleConfiguration : EntityTypeConfiguration<UserRole>
+    public class UserRoleMap : EntityTypeConfiguration<UserRole>
     {
-        public UserRoleConfiguration()
+        public UserRoleMap()
         {
             HasKey(r => new { r.UserId, r.RoleId });
-            ToTable(nameof(UserRole));
+            ToTable(nameof(UserRoleMap));
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Web.Optimization;
 
 namespace Decision.Framework.MvcToolkit.Bundles
 {

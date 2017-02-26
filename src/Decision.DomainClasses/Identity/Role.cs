@@ -6,7 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Decision.DomainClasses.Identity
 {
-    public class Role : IdentityRole<long, UserRole>, ITrackable<Role>, ISystemDefaultEntry, IEntity<long>
+    public class Role : IdentityRole<long, UserRole>, ITrackable<User>, ISystemDefaultEntry, IEntity<long>
     {
         #region Constructor
 
@@ -41,8 +41,8 @@ namespace Decision.DomainClasses.Identity
 
         #region Navigation Properties
 
-        public Role CreatorUser { get; set; }
-        public Role LastModifierUser { get; set; }
+        public User CreatorUser { get; set; }
+        public User LastModifierUser { get; set; }
         public ICollection<RoleClaim> Claims { get; set; }
 
         #endregion

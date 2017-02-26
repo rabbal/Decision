@@ -63,7 +63,7 @@ namespace Decision.Framework.EntityFrameworkToolkit.Extensions
         {
             var userAgent = httpContextBase?.Request?.GetUserAgent();
             var userIp = httpContextBase?.Request?.GetUserIp();
-            var now = DateTimeOffset.UtcNow;
+            var now = DateTime.Now;
             var userId = GetUserId(httpContextBase);
 
             var modifiedEntries = changeTracker.Entries<ITrackable>()

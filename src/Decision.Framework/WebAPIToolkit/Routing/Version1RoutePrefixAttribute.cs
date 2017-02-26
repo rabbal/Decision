@@ -1,4 +1,6 @@
-﻿namespace Decision.Framework.WebAPIToolkit.Routing
+﻿using System.Web.Http;
+
+namespace Decision.Framework.WebAPIToolkit.Routing
 {
     /// <summary>
     /// usage [ApiVersion1RoutePrefix("product")]

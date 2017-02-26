@@ -1,7 +1,10 @@
 ﻿using System.Data.Entity.Migrations.Model;
+using System.Data.Entity.SqlServer;
+using System.Linq;
 using Decision.Framework.EntityFrameworkToolkit.FullTextSearch;
 using Decision.Framework.EntityFrameworkToolkit.Indexing;
 using Decision.Framework.GuardToolkit;
+using Decision.Framework.LinqToolkit;
 
 namespace Decision.Framework.EntityFrameworkToolkit
 {
@@ -9,7 +12,7 @@ namespace Decision.Framework.EntityFrameworkToolkit
     {
         protected override void Generate(MigrationOperation migrationOperation)
         {
-            Check.NotNull(migrationOperation, nameof(migrationOperation));
+            Check.ArgumentNotNull(migrationOperation, nameof(migrationOperation));
 
             var fullTextIndexOperation = migrationOperation as CreateFullTextIndexOperation;
             if (fullTextIndexOperation != null)

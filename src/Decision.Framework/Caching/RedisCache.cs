@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using StackExchange.Redis;
 
 namespace Decision.Framework.Caching
 {

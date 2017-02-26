@@ -1,3 +1,6 @@
+using System.Data;
+using System.Data.Common;
+
 namespace Decision.Framework.Utility
 {
     public static class YeKe

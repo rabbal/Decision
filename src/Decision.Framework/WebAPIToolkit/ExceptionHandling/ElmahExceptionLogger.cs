@@ -1,6 +1,7 @@
 using System;
 using System.Net.Http;
 using System.Web;
+using System.Web.Http.ExceptionHandling;
 using Elmah;
 
 namespace Decision.Framework.WebAPIToolkit.ExceptionHandling

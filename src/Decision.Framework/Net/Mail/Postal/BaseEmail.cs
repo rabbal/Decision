@@ -1,4 +1,6 @@
-﻿namespace Decision.Framework.Net.Mail.Postal
+﻿using DNT.Extensions;
+
+namespace Decision.Framework.Net.Mail.Postal
 {
     /// <summary>
     ///     از ایمیل‌های خودکار برنامه log تهیه کنید.

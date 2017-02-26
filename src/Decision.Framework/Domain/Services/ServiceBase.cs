@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using Decision.Framework.Domain.Entities;
+using Decision.Framework.Domain.Uow;
 using Decision.Framework.GuardToolkit;
 
 namespace Decision.Framework.Domain.Services

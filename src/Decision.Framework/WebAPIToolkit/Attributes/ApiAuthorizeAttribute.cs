@@ -1,4 +1,6 @@
-﻿namespace Decision.Framework.WebAPIToolkit.Attributes
+﻿using System.Web.Http;
+
+namespace Decision.Framework.WebAPIToolkit.Attributes
 {
     public sealed class ApiAuthorizeAttribute : AuthorizeAttribute
     {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Globalization;
+using Decision.Framework.Extensions;
 
 namespace Decision.Framework.GuardToolkit
 {

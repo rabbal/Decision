@@ -5,7 +5,7 @@ using Decision.Framework.Domain.Entities.Tracking;
 
 namespace Decision.DomainClasses
 {
-    public class Setting : TrackableEntity, ISystemDefaultEntry
+    public class Setting : ModificationTrackingEntity<long, User>, ISystemDefaultEntry
     {
         #region Properties
 

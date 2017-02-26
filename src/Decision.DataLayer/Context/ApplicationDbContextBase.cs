@@ -45,6 +45,7 @@ namespace Decision.DataLayer.Context
         #endregion
 
         #region IUnitOfWork Members
+
         IDbSet<TEntity> IUnitOfWork.Set<TEntity>()
         {
             return base.Set<TEntity>();
@@ -86,12 +87,12 @@ namespace Decision.DataLayer.Context
 
         public void AddRange<TEntity>(IEnumerable<TEntity> entities) where TEntity : class
         {
-            Set<TEntity>().AddRange(entities);
+            base.Set<TEntity>().AddRange(entities);
         }
 
         public void RemoveRange<TEntity>(IEnumerable<TEntity> entities) where TEntity : class
         {
-            Set<TEntity>().RemoveRange(entities);
+            base.Set<TEntity>().RemoveRange(entities);
         }
 
         public T Update<T>(T entity, Expression<Func<IUpdateConfiguration<T>, object>> mapping)
@@ -123,7 +124,7 @@ namespace Decision.DataLayer.Context
 
             PerformPreSaveActions();
             var changedEntityNames = ChangeTracker.GetChangedEntityNames();
-            
+
             Configuration.AutoDetectChangesEnabled = false; //for performance reasons, to avoid calling DetectChanges() again.
             var result = base.SaveChanges();
             Configuration.AutoDetectChangesEnabled = true;
@@ -207,7 +208,7 @@ namespace Decision.DataLayer.Context
             DynamicFilterExtensions.EnableAllFilters(this);
         }
         #endregion
-        
+
         #region Protected Methods
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -249,11 +250,11 @@ namespace Decision.DataLayer.Context
             //modelBuilder.Filter(nameof(ISoftDelete), (ISoftDelete d) => d.IsDeleted, false);
             //modelBuilder.Filter(nameof(ISystemDefaultEntry), (ISystemDefaultEntry e) => e.IsSystemEntry, true);
         }
-        private static void InvalidateEfSecondLevelCache(string [] changedEntityNames)
+        private static void InvalidateEfSecondLevelCache(string[] changedEntityNames)
         {
             new EFCacheServiceProvider().InvalidateCacheDependencies(changedEntityNames);
         }
-       
+
 
 
         private long? GetUserId()

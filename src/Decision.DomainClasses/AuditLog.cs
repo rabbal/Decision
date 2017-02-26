@@ -1,9 +1,10 @@
-﻿using Decision.DomainClasses.Identity;
-using Decision.Framework.Domain.Entities;
+﻿using System;
+using Decision.DomainClasses.Identity;
+using Decision.Framework.Domain.Entities.Tracking;
 
 namespace Decision.DomainClasses
 {
-    public class AuditLog : Entity
+    public class AuditLog : CreationTrackingEntity<Guid, User>
     {
         #region Properties
 
@@ -12,14 +13,6 @@ namespace Decision.DomainClasses
         public string JsonOriginalValues { get; set; }
         public string JsonNewValues { get; set; }
         public AuditAction Action { get; set; }
-
-        #endregion
-
-        #region NavigationProperties
-
-        public User User { get; set; }
-        public long UserId { get; set; }
-
         #endregion
     }
 }

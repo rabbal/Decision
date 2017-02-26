@@ -57,7 +57,6 @@
     <Compile Include="Applicants\MagazineOrSeminarType.cs" />
     <Compile Include="Applicants\MembershipType.cs" />
     <Compile Include="Applicants\MilitaryStatus.cs" />
-    <Compile Include="Applicants\University.cs" />
     <Compile Include="AuditAction.cs" />
     <Compile Include="AuditLog.cs" />
     <Compile Include="Attachment.cs" />

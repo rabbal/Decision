@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Mvc;
 using Decision.Framework.KendoLinq;
 using Decision.Framework.MvcToolkit.Json;
+using MvcThrottle;
 
 namespace Decision.Framework.MvcToolkit.Controller
 {

@@ -1,4 +1,5 @@
-﻿using Elmah;
+﻿using System.Web.Http.Filters;
+using Elmah;
 
 namespace Decision.Framework.WebAPIToolkit.ExceptionHandling
 {

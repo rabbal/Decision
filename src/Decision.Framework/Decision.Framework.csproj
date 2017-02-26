@@ -65,6 +65,10 @@
       <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
       <Private>True</Private>
@@ -83,6 +87,14 @@
     </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -236,6 +248,12 @@
     <Compile Include="Domain\Services\ServiceBase.cs" />
     <Compile Include="Domain\Uow\IUnitOfWork.cs" />
     <Compile Include="Domain\Uow\NullUnitOfWork.cs" />
+    <Compile Include="IdentityToolkit\Validators\ClaimsIdentityFactory.cs" />
+    <Compile Include="IdentityToolkit\Validators\NullPasswordValidator.cs" />
+    <Compile Include="IdentityToolkit\Validators\NullUserValidator.cs" />
+    <Compile Include="IdentityToolkit\Validators\PasswordValidator.cs" />
+    <Compile Include="IdentityToolkit\Validators\SecurityStampValidator.cs" />
+    <Compile Include="IdentityToolkit\Validators\UserValidator.cs" />
     <Compile Include="Net\Mail\DefaultEmailSender.cs" />
     <Compile Include="Net\Mail\EmailAccount.cs" />
     <Compile Include="Net\Mail\EmailAddress.cs" />
@@ -313,10 +331,6 @@
     <Compile Include="GuardToolkit\ImagesGuardExt.cs" />
     <Compile Include="GuardToolkit\ProtectionProviderService.cs" />
     <Compile Include="GuardToolkit\ValidationExtensions.cs" />
-    <Compile Include="IdentityToolkit\CustomClaimFactory.cs" />
-    <Compile Include="IdentityToolkit\CustomPasswordValidator.cs" />
-    <Compile Include="IdentityToolkit\CustomSecurityStampValidator.cs" />
-    <Compile Include="IdentityToolkit\CustomUserValidator.cs" />
     <Compile Include="IGuidGenerator.cs" />
     <Compile Include="Infrastructure\AppDomainTypeFinder.cs" />
     <Compile Include="Infrastructure\DisposableBase.cs" />

@@ -4,6 +4,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using Decision.Framework.Extensions;
 using Decision.Framework.GuardToolkit;
 
 namespace Decision.Framework.Collections

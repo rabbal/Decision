@@ -4,7 +4,7 @@ using Decision.Framework.Domain.Entities;
 
 namespace Decision.DomainClasses.Identity
 {
-    public class UserToken : Entity
+    public class UserToken : Entity<Guid>
     {
         #region Properties
 

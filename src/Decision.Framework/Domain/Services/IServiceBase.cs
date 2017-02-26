@@ -3,13 +3,13 @@ using System.Threading.Tasks;
 
 namespace Decision.Framework.Domain.Services
 {
-    public interface IServiceBase<in TKey, TEntityViewModel, TEditEntityViewModel, TCreateEntityViewModel> : IDisposable
+    public interface IServiceBase<in TKey, TEntityViewModel, TEditEntityViewModel, TCreateEntityViewModel, TListRequest, TListReponse> : IDisposable
     {
         Task<TEditEntityViewModel> GetForEditAsync(TKey id);
         Task DeleteAsync(TKey id);
         Task EditAsync(TEditEntityViewModel viewModel);
         Task<TEntityViewModel> Create(TCreateEntityViewModel viewModel);
-        Task<AddressListViewModel> FetchAllAsync(AddressSearchRequest request);
+        Task<TListRequest> FetchAllAsync(TListRequest request);
         Task<bool> Exists(Guid id);
         void FillCreateViewModel(TCreateEntityViewModel viewModel, string path);
         void FillEditViewModel(TEditEntityViewModel viewModel, string path);

@@ -8,8 +8,6 @@ namespace Decision.DomainClasses.Applicants
     {
         #region Properties
 
-        public decimal Score { get; set; }
-
         public AcademicDegrees AcademicDegree { get; set; }
 
         public string ThesisTopic { get; set; }
@@ -31,6 +29,7 @@ namespace Decision.DomainClasses.Applicants
         public string University { get; set; }
 
         public string Field { get; set; }
+        public decimal Score { get; set; }
 
         #endregion
 

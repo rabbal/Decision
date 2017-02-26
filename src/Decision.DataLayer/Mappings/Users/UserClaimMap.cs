@@ -1,10 +1,11 @@
 ﻿using System.Data.Entity.ModelConfiguration;
+using Decision.DomainClasses.Identity;
 
 namespace Decision.DataLayer.Mappings.Users
 {
-    public class UserClaimConfiguration : EntityTypeConfiguration<UserClaim>
+    public class UserClaimMap : EntityMap<UserClaim, int>
     {
-        public UserClaimConfiguration()
+        public UserClaimMap()
         {
             ToTable("UserClaims");
         }

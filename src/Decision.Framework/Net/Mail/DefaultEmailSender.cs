@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Mime;
 using System.Threading.Tasks;
 using Decision.Framework.Extensions;
+using Decision.Framework.GuardToolkit;
 using net = System.Net.Mail;
 
 namespace Decision.Framework.Net.Mail

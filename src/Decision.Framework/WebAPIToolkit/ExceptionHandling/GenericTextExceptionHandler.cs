@@ -1,4 +1,5 @@
 using System.Text;
+using System.Web.Http.ExceptionHandling;
 using Decision.Framework.WebAPIToolkit.Results;
 
 namespace Decision.Framework.WebAPIToolkit.ExceptionHandling

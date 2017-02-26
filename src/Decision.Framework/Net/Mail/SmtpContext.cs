@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Net.Mail;
+using Decision.Framework.GuardToolkit;
 
 namespace Decision.Framework.Net.Mail
 {

@@ -9,6 +9,7 @@ namespace Decision.DomainClasses.Applicants
     public class Applicant : TrackableEntity<long, User>
     {
         #region Constructor
+
         public Applicant()
         {
             Status = ApplicantStatus.Pending;
@@ -19,11 +20,12 @@ namespace Decision.DomainClasses.Applicants
             EducationalBackgrounds = new HashSet<EducationalBackground>();
             WorkExperiences = new HashSet<WorkExperience>();
             Interviews = new HashSet<Interview>();
-
         }
+
         #endregion
 
         #region Properties
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -83,7 +85,9 @@ namespace Decision.DomainClasses.Applicants
         public ICollection<WorkExperience> WorkExperiences { get; set; }
 
         public ICollection<Interview> Interviews { get; set; }
+
         public Region BirthPlaceCity { get; set; }
+
         public long BirthPlaceCityId { get; set; }
 
         #endregion
