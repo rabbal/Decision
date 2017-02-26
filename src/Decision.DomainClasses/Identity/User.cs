@@ -11,7 +11,7 @@ namespace Decision.DomainClasses.Identity
     public class User : IdentityUser<long, UserLogin, UserRole, UserClaim>, ITrackable<User>, ISoftDelete,
         ISystemDefaultEntry, IEntity<long>, IPassivable
     {
-        #region Constructors
+        #region Constructor
 
         public User()
         {
@@ -38,7 +38,7 @@ namespace Decision.DomainClasses.Identity
         public bool IsActive { get; set; } = true;
         public bool IsDeleted { get; set; }
         public bool IsSystemEntry { get; set; }
-        public DateTimeOffset? LastVisitDateTime { get; set; }
+        public DateTime? LastVisitDateTime { get; set; }
 
         [NotMapped]
         public string DisplayName
@@ -50,10 +50,10 @@ namespace Decision.DomainClasses.Identity
             }
         }
 
-        public string PhotoFileName { get; set; }
-        public DateTimeOffset? BirthDate { get; set; }
-        public DateTimeOffset? CreatedDateTime { get; set; }
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public byte[] PhotoContent { get; set; }
+        public DateTime? BirthDate { get; set; }
+        public DateTime CreationDateTime { get; set; }
+        public DateTime? LasModificationDateTime { get; set; }
         public string CreatorIp { get; set; }
         public string LastModifierIp { get; set; }
         public string CreatorBrowserName { get; set; }

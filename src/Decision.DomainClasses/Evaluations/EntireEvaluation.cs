@@ -1,5 +1,5 @@
 ﻿using System;
-using Decision.DomainClasses.ApplicantInfo;
+using Decision.DomainClasses.Applicants;
 using Decision.DomainClasses.Identity;
 using Decision.Framework.Domain.Entities.Tracking;
 
@@ -11,7 +11,7 @@ namespace Decision.DomainClasses.Evaluations
 
         public string Content { get; set; }
 
-        public DateTime EvaluationDate { get; set; }
+        public DateTime EvaluationDateTime { get; set; }
 
         public string Foible { get; set; }
 
@@ -22,8 +22,9 @@ namespace Decision.DomainClasses.Evaluations
         #region NavigationProperties
 
         public long ApplicantId { get; set; }
-
         public Applicant Applicant { get; set; }
+        public EvaluationPeriod EvaluationPeriod { get; set; }
+        public long EvaluationPeriodId { get; set; }
 
         #endregion
     }

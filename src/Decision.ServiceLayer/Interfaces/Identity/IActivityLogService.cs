@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Decision.ViewModel.Home;
+using Decision.ViewModels.Home;
 
 namespace Decision.ServiceLayer.Interfaces.Identity
 {

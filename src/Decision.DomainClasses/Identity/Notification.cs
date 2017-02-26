@@ -10,7 +10,7 @@ namespace Decision.DomainClasses.Identity
 
         public Notification()
         {
-            ReceivedDateTime = DateTimeOffset.UtcNow;
+            ReceivedDateTime = DateTime.Now;
         }
 
         #endregion
@@ -22,12 +22,12 @@ namespace Decision.DomainClasses.Identity
         public string Message { get; set; }
         public string Title { get; set; }
         public string Url { get; set; }
-        public DateTimeOffset ReceivedDateTime { get; set; }
+        public DateTime ReceivedDateTime { get; set; }
         public NotificationType Type { get; set; }
 
         #endregion
 
-        #region NavigationProperties
+        #region Navigation Properties
 
         public long UserId { get; set; }
         public User User { get; set; }

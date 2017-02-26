@@ -13,7 +13,7 @@ using Decision.DataLayer.Context;
 using Decision.Framework.IdentityToolkit;
 using Decision.ServiceLayer.EntityFramework.Security;
 using Decision.ServiceLayer.Interfaces.Identity;
-using Decision.ViewModel.User;
+using Decision.ViewModels.Identity;
 using EFSecondLevelCache;
 using EFSecondLevelCache.Contracts;
 using EntityFramework.Extensions;

@@ -16,8 +16,8 @@ namespace Decision.Framework.Domain.Entities.Tracking
     public abstract class TrackableEntity<TKey> : Entity<TKey>, ITrackableEntity<TKey>
         where TKey : IEquatable<TKey>
     {
-        public DateTimeOffset? CreatedDateTime { get; set; }
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTime CreationDateTime { get; set; }
+        public DateTime? LasModificationDateTime { get; set; }
         public string CreatorIp { get; set; }
         public string LastModifierIp { get; set; }
         public string CreatorBrowserName { get; set; }

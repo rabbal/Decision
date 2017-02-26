@@ -165,21 +165,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\ApplicantInfo\IAddressService.cs" />
-    <Compile Include="Interfaces\ApplicantInfo\IPresenterService.cs" />
+    <Compile Include="Interfaces\Applicants\IAddressService.cs" />
+    <Compile Include="Interfaces\Applicants\IPresenterService.cs" />
     <Compile Include="Interfaces\Identity\IActivityLogService.cs" />
     <Compile Include="Interfaces\Common\ICityService.cs" />
     <Compile Include="Interfaces\Evaluations\IAnswerOptionService.cs" />
     <Compile Include="Interfaces\Evaluations\IEnitreEvaluationService.cs" />
     <Compile Include="Interfaces\Evaluations\IQuestionService.cs" />
-    <Compile Include="Interfaces\ApplicantInfo\IApplicantService.cs" />
+    <Compile Include="Interfaces\Applicants\IApplicantService.cs" />
     <Compile Include="Interfaces\Common\IStateService.cs" />
     <Compile Include="Interfaces\Evaluations\IInterviewService.cs" />
-    <Compile Include="Interfaces\ApplicantInfo\IEducationalBackgroundService.cs" />
-    <Compile Include="Interfaces\ApplicantInfo\IEducationalExperienceService.cs" />
-    <Compile Include="Interfaces\ApplicantInfo\IArticleService.cs" />
-    <Compile Include="Interfaces\ApplicantInfo\IResearchExperienceService.cs" />
-    <Compile Include="Interfaces\ApplicantInfo\IWorkExperienceService.cs" />
+    <Compile Include="Interfaces\Applicants\IEducationalBackgroundService.cs" />
+    <Compile Include="Interfaces\Applicants\IEducationalExperienceService.cs" />
+    <Compile Include="Interfaces\Applicants\IArticleService.cs" />
+    <Compile Include="Interfaces\Applicants\IResearchExperienceService.cs" />
+    <Compile Include="Interfaces\Applicants\IWorkExperienceService.cs" />
     <Compile Include="Interfaces\PrivateMessage\IMessageService.cs" />
     <Compile Include="Interfaces\Identity\IApplicationRoleManager.cs" />
     <Compile Include="Interfaces\Identity\IApplicationSignInManager.cs" />
@@ -193,8 +193,6 @@
     <Compile Include="Interfaces\Common\IRunOnEachRequest.cs" />
     <Compile Include="Interfaces\Common\IRunOnError.cs" />
     <Compile Include="Interfaces\Common\ISettingService.cs" />
-    <Compile Include="EntityFramework\ApplicantInfo\AddressServices.cs" />
-    <Compile Include="EntityFramework\ApplicantInfo\PresenterService.cs" />
     <Compile Include="EntityFramework\Users\ActivityLogService.cs" />
     <Compile Include="EntityFramework\Common\CityService.cs" />
     <Compile Include="EntityFramework\Common\StateService.cs" />
@@ -202,12 +200,12 @@
     <Compile Include="EntityFramework\Evaluations\EnitreEvaluationService.cs" />
     <Compile Include="EntityFramework\Evaluations\InterviewService.cs" />
     <Compile Include="EntityFramework\Evaluations\QuestionService.cs" />
-    <Compile Include="EntityFramework\ApplicantInfo\EducationalBackgroundService.cs" />
-    <Compile Include="EntityFramework\ApplicantInfo\EducationalExperienceService.cs" />
-    <Compile Include="EntityFramework\ApplicantInfo\ApplicantService.cs" />
-    <Compile Include="EntityFramework\ApplicantInfo\ArticleService.cs" />
-    <Compile Include="EntityFramework\ApplicantInfo\ResearchExperienceService.cs" />
-    <Compile Include="EntityFramework\ApplicantInfo\WorkExperienceService.cs" />
+    <Compile Include="EntityFramework\Applicants\EducationalBackgroundService.cs" />
+    <Compile Include="EntityFramework\Applicants\EducationalExperienceService.cs" />
+    <Compile Include="EntityFramework\Applicants\ApplicantService.cs" />
+    <Compile Include="EntityFramework\Applicants\ArticleService.cs" />
+    <Compile Include="EntityFramework\Applicants\ResearchExperienceService.cs" />
+    <Compile Include="EntityFramework\Applicants\WorkExperienceService.cs" />
     <Compile Include="EntityFramework\PrivateMessage\MessageService.cs" />
     <Compile Include="EntityFramework\Users\ApplicationRoleManager.cs" />
     <Compile Include="EntityFramework\Common\ApplicationSignInManager.cs" />
@@ -250,10 +248,6 @@
     <ProjectReference Include="..\Decision.DomainClasses\Decision.DomainClasses.csproj">
       <Project>{72B9849F-931A-40C0-B11E-44324CD46250}</Project>
       <Name>Decision.DomainClasses</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Decision.Models\Decision.Models.csproj">
-      <Project>{51986C43-DB68-4A80-AE14-4FFD7A9E91A4}</Project>
-      <Name>Decision.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

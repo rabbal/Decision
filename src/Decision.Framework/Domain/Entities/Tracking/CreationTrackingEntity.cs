@@ -16,7 +16,7 @@ namespace Decision.Framework.Domain.Entities.Tracking
     public abstract class CreationTrackingEntity<TKey> : Entity<TKey>, ICreationTrackingEntity<TKey>
         where TKey : IEquatable<TKey>
     {
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTime CreationDateTime { get; set; }
         public string CreatorIp { get; set; }
         public string CreatorBrowserName { get; set; }
         public long? CreatorUserId { get; set; }

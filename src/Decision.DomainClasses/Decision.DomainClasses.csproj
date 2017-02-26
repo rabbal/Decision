@@ -51,32 +51,34 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicantInfo\ApplicantStatus.cs" />
-    <Compile Include="ApplicantInfo\ArticleResponsibilityType.cs" />
-    <Compile Include="ApplicantInfo\ArticleType.cs" />
-    <Compile Include="ApplicantInfo\MagazineOrSeminarType.cs" />
-    <Compile Include="ApplicantInfo\MembershipType.cs" />
-    <Compile Include="ApplicantInfo\MilitaryStatus.cs" />
+    <Compile Include="Applicants\ApplicantStatus.cs" />
+    <Compile Include="Applicants\ArticleResponsibilityType.cs" />
+    <Compile Include="Applicants\ArticleType.cs" />
+    <Compile Include="Applicants\MagazineOrSeminarType.cs" />
+    <Compile Include="Applicants\MembershipType.cs" />
+    <Compile Include="Applicants\MilitaryStatus.cs" />
+    <Compile Include="Applicants\University.cs" />
     <Compile Include="AuditAction.cs" />
     <Compile Include="AuditLog.cs" />
     <Compile Include="Attachment.cs" />
-    <Compile Include="ApplicantInfo\AcademicDegrees.cs" />
-    <Compile Include="ApplicantInfo\Address.cs" />
-    <Compile Include="ApplicantInfo\AddressType.cs" />
+    <Compile Include="Applicants\AcademicDegrees.cs" />
     <Compile Include="Evaluations\AnswerOption.cs" />
-    <Compile Include="ApplicantInfo\EducationalExperience.cs" />
-    <Compile Include="ApplicantInfo\EducationalBackground.cs" />
+    <Compile Include="Applicants\EducationalExperience.cs" />
+    <Compile Include="Applicants\EducationalBackground.cs" />
     <Compile Include="Evaluations\EntireEvaluation.cs" />
-    <Compile Include="ApplicantInfo\GenderType.cs" />
+    <Compile Include="Applicants\GenderType.cs" />
+    <Compile Include="Evaluations\EvaluationPeriod.cs" />
     <Compile Include="Evaluations\Interview.cs" />
-    <Compile Include="ApplicantInfo\CooperationType.cs" />
-    <Compile Include="ApplicantInfo\Article.cs" />
-    <Compile Include="ApplicantInfo\Applicant.cs" />
-    <Compile Include="ApplicantInfo\MarriageStatus.cs" />
+    <Compile Include="Applicants\CooperationType.cs" />
+    <Compile Include="Applicants\Article.cs" />
+    <Compile Include="Applicants\Applicant.cs" />
+    <Compile Include="Applicants\MarriageStatus.cs" />
+    <Compile Include="Evaluations\InterviewAnswer.cs" />
     <Compile Include="Evaluations\Question.cs" />
-    <Compile Include="ApplicantInfo\ResearchExperience.cs" />
-    <Compile Include="ApplicantInfo\ResearchType.cs" />
-    <Compile Include="ApplicantInfo\WorkExperience.cs" />
+    <Compile Include="Applicants\ResearchExperience.cs" />
+    <Compile Include="Applicants\ResearchType.cs" />
+    <Compile Include="Applicants\WorkExperience.cs" />
+    <Compile Include="Evaluations\QuestionCategory.cs" />
     <Compile Include="Identity\ActivityLog.cs" />
     <Compile Include="Identity\Notification.cs" />
     <Compile Include="Identity\NotificationType.cs" />
@@ -91,6 +93,8 @@
     <Compile Include="Messages\Conversation.cs" />
     <Compile Include="Messages\Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Region.cs" />
+    <Compile Include="RegionType.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

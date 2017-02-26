@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Decision.ViewModel.Role;
+using Decision.ViewModels.Identity;
 using Microsoft.AspNet.Identity;
 
 namespace Decision.ServiceLayer.Interfaces.Identity

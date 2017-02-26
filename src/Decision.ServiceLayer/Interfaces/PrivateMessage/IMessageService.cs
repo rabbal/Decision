@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Decision.ViewModel.PrivateMessage;
+using Decision.ViewModels.Messages;
 
 namespace Decision.ServiceLayer.Interfaces.PrivateMessage
 {

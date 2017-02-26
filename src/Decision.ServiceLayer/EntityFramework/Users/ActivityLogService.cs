@@ -4,7 +4,7 @@ using System.Data.Entity;
 using AutoMapper;
 using Decision.DataLayer.Context;
 using Decision.ServiceLayer.Interfaces.Identity;
-using Decision.ViewModel.Home;
+using Decision.ViewModels.Home;
 
 namespace Decision.ServiceLayer.EntityFramework.Users
 {

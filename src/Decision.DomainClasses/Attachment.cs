@@ -15,10 +15,10 @@ namespace Decision.DomainClasses
         public string Extension { get; set; }
         public byte[] Content { get; set; }
         public long DownloadsCount { get; set; }
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTime CreationDateTime { get; set; }
         public string CreatorIp { get; set; }
         public string CreatorBrowserName { get; set; }
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTime? LasModificationDateTime { get; set; }
 
         #endregion
 
@@ -27,6 +27,5 @@ namespace Decision.DomainClasses
         public long? CreatorUserId { get; set; }
         public User CreatorUser { get; set; }
         #endregion
-
     }
 }

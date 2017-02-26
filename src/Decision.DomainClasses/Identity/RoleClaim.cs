@@ -1,5 +1,4 @@
 ﻿using System.Security.Claims;
-using Decision.Framework.Domain;
 using Decision.Framework.Domain.Entities;
 
 namespace Decision.DomainClasses.Identity
@@ -31,7 +30,7 @@ namespace Decision.DomainClasses.Identity
         #region Navigation Properties
 
         public Role Role { get; set; }
-        public Role RoleId { get; set; }
+        public long RoleId { get; set; }
 
         #endregion
     }

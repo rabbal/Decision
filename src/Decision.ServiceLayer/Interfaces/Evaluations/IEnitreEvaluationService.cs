@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Decision.ViewModel.EntireEvaluation;
+using Decision.ViewModels.EntireEvaluation;
 
 namespace Decision.ServiceLayer.Interfaces.Evaluations
 {

@@ -12,7 +12,7 @@ using Decision.DataLayer.Context;
 using Decision.DomainClasses.Identity;
 using Decision.ServiceLayer.EntityFramework.Security;
 using Decision.ServiceLayer.Interfaces.Identity;
-using Decision.ViewModel.Role;
+using Decision.ViewModels.Identity;
 using EFSecondLevelCache;
 using EntityFramework.Extensions;
 using Microsoft.AspNet.Identity;

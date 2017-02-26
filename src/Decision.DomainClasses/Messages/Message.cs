@@ -7,12 +7,12 @@ namespace Decision.DomainClasses.Messages
 {
     public class Message : Entity<Guid>
     {
-        #region Ctor
+        #region Constructor
 
         public Message()
         {
 
-            SentOn = DateTime.Now;
+            SubmitDateTime = DateTime.Now;
         }
 
         #endregion
@@ -23,7 +23,7 @@ namespace Decision.DomainClasses.Messages
 
         public string Body { get; set; }
 
-        public DateTime SentOn { get; set; }
+        public DateTime SubmitDateTime { get; set; }
 
         #endregion
 

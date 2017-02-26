@@ -8,7 +8,7 @@ using Decision.DataLayer.Context;
 using Decision.DomainClasses.Evaluations;
 using Decision.ServiceLayer.Interfaces.Evaluations;
 using Decision.ServiceLayer.Interfaces.Identity;
-using Decision.ViewModel.Interview;
+using Decision.ViewModels.Interview;
 using EntityFramework.Extensions;
 
 namespace Decision.ServiceLayer.EntityFramework.Evaluations

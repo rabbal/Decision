@@ -16,9 +16,9 @@ namespace Decision.Framework.Domain.Entities.Tracking
     public abstract class FullTrackableEntity<TKey> : Entity<TKey>, IFullTrackableEntity<TKey>
         where TKey : IEquatable<TKey>
     {
-        public DateTimeOffset? CreatedDateTime { get; set; }
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-        public DateTimeOffset? DeletedDateTime { get; set; }
+        public DateTime CreationDateTime { get; set; }
+        public DateTime? LasModificationDateTime { get; set; }
+        public DateTime? DeletionDateTime { get; set; }
         public string CreatorIp { get; set; }
         public string LastModifierIp { get; set; }
         public string DeleterIp { get; set; }

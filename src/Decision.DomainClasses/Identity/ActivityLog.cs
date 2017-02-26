@@ -11,11 +11,11 @@ namespace Decision.DomainClasses.Identity
         public string Title { get; set; }
         public string Description { get; set; }
         public string Url { get; set; }
-        public DateTimeOffset LogDateTime { get; set; }
+        public DateTime LogDateTime { get; set; }
 
         #endregion
 
-        #region NavigationProperties
+        #region Navigation Properties
 
         public User User { get; set; }
         public long UserId { get; set; }

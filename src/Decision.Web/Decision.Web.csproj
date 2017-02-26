@@ -2498,6 +2498,22 @@
       <Project>{72B9849F-931A-40C0-B11E-44324CD46250}</Project>
       <Name>Decision.DomainClasses</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Decision.Framework\Decision.Framework.csproj">
+      <Project>{795b21df-4be9-444d-bcc4-674144d560d2}</Project>
+      <Name>Decision.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Decision.Resources\Decision.Resources.csproj">
+      <Project>{d1bd7ff4-26d1-44aa-bbf2-513012ca842d}</Project>
+      <Name>Decision.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Decision.ServiceLayer\Decision.ServiceLayer.csproj">
+      <Project>{a3151fc4-6c88-4323-858a-9aa522d54bc2}</Project>
+      <Name>Decision.ServiceLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Decision.ViewModels\Decision.ViewModels.csproj">
+      <Project>{51986c43-db68-4a80-ae14-4ffd7a9e91a4}</Project>
+      <Name>Decision.ViewModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

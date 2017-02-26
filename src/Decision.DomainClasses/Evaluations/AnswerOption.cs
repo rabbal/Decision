@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Decision.DomainClasses.Identity;
 using Decision.Framework.Domain.Entities.Tracking;
 
@@ -11,7 +10,7 @@ namespace Decision.DomainClasses.Evaluations
 
         public string Title { get; set; }
 
-        public int Weight { get; set; }
+        public int Ratio { get; set; }
 
         public string Description { get; set; }
 
@@ -19,7 +18,7 @@ namespace Decision.DomainClasses.Evaluations
 
         #endregion
 
-        #region NavigationProperties
+        #region Navigation Properties
 
         public virtual ICollection<EntireEvaluation> EntireEvaluations { get; set; }
 

@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AD0FBD07
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{01FBDED3-BD96-42A9-B595-1AC4569377AC}"
 	ProjectSection(SolutionItems) = preProject
+		src\Decision.Models\Decision.ViewModels.csproj = src\Decision.Models\Decision.ViewModels.csproj
 		Local.testsettings = Local.testsettings
 	EndProjectSection
 EndProject
@@ -23,8 +24,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decision.PerformanceTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decision.IntegrationTests", "src\Decision.IntegrationTests\Decision.IntegrationTests.csproj", "{8632F6F6-E97C-41E0-9AAF-1BE1DDF31A2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decision.Models", "src\Decision.Models\Decision.Models.csproj", "{51986C43-DB68-4A80-AE14-4FFD7A9E91A4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decision.ServiceLayer", "src\Decision.ServiceLayer\Decision.ServiceLayer.csproj", "{A3151FC4-6C88-4323-858A-9AA522D54BC2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{A8F1979B-964D-4251-BE2F-22F17A2CD085}"
@@ -32,6 +31,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decision.Resources", "src\Decision.Resources\Decision.Resources.csproj", "{D1BD7FF4-26D1-44AA-BBF2-513012CA842D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decision.Framework", "src\Decision.Framework\Decision.Framework.csproj", "{795B21DF-4BE9-444D-BCC4-674144D560D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decision.ViewModels", "src\Decision.ViewModels\Decision.ViewModels.csproj", "{51986C43-DB68-4A80-AE14-4FFD7A9E91A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,10 +68,6 @@ Global
 		{8632F6F6-E97C-41E0-9AAF-1BE1DDF31A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8632F6F6-E97C-41E0-9AAF-1BE1DDF31A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8632F6F6-E97C-41E0-9AAF-1BE1DDF31A2E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51986C43-DB68-4A80-AE14-4FFD7A9E91A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51986C43-DB68-4A80-AE14-4FFD7A9E91A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51986C43-DB68-4A80-AE14-4FFD7A9E91A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51986C43-DB68-4A80-AE14-4FFD7A9E91A4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A3151FC4-6C88-4323-858A-9AA522D54BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A3151FC4-6C88-4323-858A-9AA522D54BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3151FC4-6C88-4323-858A-9AA522D54BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -83,6 +80,10 @@ Global
 		{795B21DF-4BE9-444D-BCC4-674144D560D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{795B21DF-4BE9-444D-BCC4-674144D560D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{795B21DF-4BE9-444D-BCC4-674144D560D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51986C43-DB68-4A80-AE14-4FFD7A9E91A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51986C43-DB68-4A80-AE14-4FFD7A9E91A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51986C43-DB68-4A80-AE14-4FFD7A9E91A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51986C43-DB68-4A80-AE14-4FFD7A9E91A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

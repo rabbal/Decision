@@ -70,7 +70,7 @@ namespace Decision.Framework.EntityFrameworkToolkit.Extensions
                    .Where(x => x.State == EntityState.Modified);
             foreach (var modifiedEntry in modifiedEntries)
             {
-                modifiedEntry.Entity.LastModifiedDateTime = now;
+                modifiedEntry.Entity.LasModificationDateTime = now;
                 modifiedEntry.Entity.LastModifierUserId = userId;
                 modifiedEntry.Entity.LastModifierIp = userIp;
                 modifiedEntry.Entity.LastModifierBrowserName = userAgent;
@@ -80,7 +80,7 @@ namespace Decision.Framework.EntityFrameworkToolkit.Extensions
                 .Where(x => x.State == EntityState.Added);
             foreach (var addedEntry in addedEntries)
             {
-                addedEntry.Entity.CreatedDateTime = now;
+                addedEntry.Entity.CreationDateTime = now;
                 addedEntry.Entity.CreatorUserId = userId;
                 addedEntry.Entity.CreatorIp = userIp;
                 addedEntry.Entity.CreatorBrowserName = userAgent;

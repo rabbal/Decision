@@ -6,13 +6,21 @@ namespace Decision.DomainClasses.Evaluations
 {
     public class Question : TrackableEntity<long, User>
     {
+        #region Constructor
+
+        public Question()
+        {
+            Options = new HashSet<AnswerOption>();
+            Interviews = new HashSet<Interview>();
+            EvaluationPeriods = new HashSet<EvaluationPeriod>();
+        }
+        #endregion
+
         #region Properties
 
         public string Title { get; set; }
 
-        public bool IsMultiSelect { get; set; }
-
-        public int Weight { get; set; }
+        public int Ratio { get; set; }
 
         public string Description { get; set; }
 
@@ -20,11 +28,11 @@ namespace Decision.DomainClasses.Evaluations
 
         #endregion
 
-        #region NavigationProperties
+        #region Navigation Properties
 
-        public ICollection<AnswerOption> AnswerOptions { get; set; }
-
-        public ICollection<EntireEvaluation> EntireEvaluations { get; set; }
+        public ICollection<AnswerOption> Options { get; set; }
+        public ICollection<Interview> Interviews { get; set; }
+        public ICollection<EvaluationPeriod> EvaluationPeriods { get; set; }
 
         #endregion
     }

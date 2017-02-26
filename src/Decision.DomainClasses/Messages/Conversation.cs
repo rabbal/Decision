@@ -7,11 +7,12 @@ namespace Decision.DomainClasses.Messages
 {
     public class Conversation : Entity<Guid>
     {
-        #region Ctor
+        #region Constructor
 
         public Conversation()
         {
-            SentOn = DateTime.Now;
+            SumbitDateTime = DateTime.Now;
+            Messages = new HashSet<Message>();
         }
 
         #endregion
@@ -20,12 +21,9 @@ namespace Decision.DomainClasses.Messages
 
         public bool IsRead { get; set; }
         public string Subject { get; set; }
-        public DateTime SentOn { get; set; }
+        public DateTime SumbitDateTime { get; set; }
         public bool DeletedBySender { get; set; }
         public bool DeletedByReceiver { get; set; }
-        public int UnReadSenderMessagesCount { get; set; }
-        public int UnReadReceiverMessagesCount { get; set; }
-        public int MessagesCount { get; set; }
 
         #endregion
 

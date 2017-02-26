@@ -7,7 +7,7 @@ using CaptchaMvc.Infrastructure;
 using Decision.Framework.MvcToolkit.Binders;
 using Decision.Framework.MvcToolkit.Json;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.ApplicantInfo;
+using Decision.DomainClasses.Applicants;
 using Decision.DomainClasses.Evaluations;
 using Decision.DomainClasses.Identity;
 using Decision.Web.Infrastructure.Temp;

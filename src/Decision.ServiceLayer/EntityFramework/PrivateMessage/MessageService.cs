@@ -9,7 +9,7 @@ using Decision.DataLayer.Context;
 using Decision.DomainClasses.Messages;
 using Decision.ServiceLayer.Interfaces.Identity;
 using Decision.ServiceLayer.Interfaces.PrivateMessage;
-using Decision.ViewModel.PrivateMessage;
+using Decision.ViewModels.Messages;
 using EntityFramework.Extensions;
 
 namespace Decision.ServiceLayer.EntityFramework.PrivateMessage
@@ -48,14 +48,14 @@ namespace Decision.ServiceLayer.EntityFramework.PrivateMessage
                 Subject = viewModel.Subject,
                 SenderId = currentUserId,
                 ReceiverId = viewModel.ReciverId,
-                SentOn = sentOn
+                SumbitDateTime = sentOn
             };
             _conversations.Add(conversation);
             var message = new Message
             {
                 SenderId = currentUserId,
                 Body = viewModel.Body.ToSafeHtml(),
-                SentOn = sentOn,
+                SubmitDateTime = sentOn,
                 ConversationId = conversation.Id
             };
             _messages.Add(message);
@@ -68,7 +68,7 @@ namespace Decision.ServiceLayer.EntityFramework.PrivateMessage
                 ConversationId = viewModel.ConversationId,
                 Body = viewModel.Body.ToSafeHtml(),
                 ParentId = viewModel.ParentId,
-                SentOn = DateTime.Now,
+                SubmitDateTime = DateTime.Now,
                 SenderId = _userManager.GetCurrentUserId()
             };
             _messages.Add(newMessageToConversation);

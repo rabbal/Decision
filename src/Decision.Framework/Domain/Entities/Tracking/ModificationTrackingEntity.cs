@@ -17,7 +17,7 @@ namespace Decision.Framework.Domain.Entities.Tracking
     public abstract class ModificationTrackingEntity<TKey> : Entity<TKey>, IModificationTrackingEntity<TKey>
         where TKey : IEquatable<TKey>
     {
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTime? LasModificationDateTime { get; set; }
         public string LastModifierIp { get; set; }
         public string LastModifierBrowserName { get; set; }
         public long? LastModifierUserId { get; set; }

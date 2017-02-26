@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Decision.DomainClasses.Evaluations;
-using Decision.ViewModel.AnswerOption;
+using Decision.ViewModels.Question;
 
 namespace Decision.ServiceLayer.Interfaces.Evaluations
 {

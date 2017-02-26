@@ -17,7 +17,7 @@ namespace Decision.Framework.Domain.Entities.Tracking
         where TKey : IEquatable<TKey>
     {
         public bool IsDeleted { get; set; }
-        public DateTimeOffset? DeletedDateTime { get; set; }
+        public DateTime? DeletionDateTime { get; set; }
         public string DeleterIp { get; set; }
         public string DeleterBrowserName { get; set; }
         public long? DeleterUserId { get; set; }

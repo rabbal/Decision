@@ -18,7 +18,7 @@ namespace Decision.Framework.Domain.Entities
             if (!(entity is IDeletionTracking)) return;
 
             var deletionAuditedEntity = entity.As<IDeletionTracking>();
-            deletionAuditedEntity.DeletedDateTime = null;
+            deletionAuditedEntity.DeletionDateTime = null;
             deletionAuditedEntity.DeleterUserId = null;
         }
 

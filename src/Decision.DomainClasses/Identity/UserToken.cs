@@ -9,10 +9,10 @@ namespace Decision.DomainClasses.Identity
         #region Properties
 
         public string AccessTokenHash { get; set; }
-        public DateTimeOffset AccessTokenExpireDateTime { get; set; }
+        public DateTime AccessTokenExpireDateTime { get; set; }
         public string RefreshTokenIdHash { get; set; }
         public string Subject { get; set; }
-        public DateTimeOffset RefreshTokenExpiresUtc { get; set; }
+        public DateTime RefreshTokenExpiresUtc { get; set; }
         public string RefreshToken { get; set; }
 
         #endregion
