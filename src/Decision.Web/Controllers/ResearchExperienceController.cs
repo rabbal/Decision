@@ -21,7 +21,7 @@ namespace Decision.Web.Controllers
     
     [RoutePrefix("Applicant/ResearchExperience")]
     [Route("{action}")]
-    [Mvc5Authorize(AssignableToRolePermissions.CanManageResearchExperience)]
+    [MvcAuthorize(AssignableToRolePermissions.CanManageResearchExperience)]
     public partial class ResearchExperienceController : Controller
     {
 	    #region	Fields

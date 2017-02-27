@@ -21,7 +21,7 @@ namespace Decision.Web.Controllers
 
     [RoutePrefix("Applicant/WorkExperience")]
     [Route("{action}")]
-    [Mvc5Authorize(AssignableToRolePermissions.CanManageWorkExperience)]
+    [MvcAuthorize(AssignableToRolePermissions.CanManageWorkExperience)]
     public partial class WorkExperienceController : Controller
     {
         #region	Fields

@@ -21,7 +21,7 @@ namespace Decision.Web.Controllers
 
     [RoutePrefix("BaseSetting/Question")]
     [Route("{action}")]
-    [Mvc5Authorize(AssignableToRolePermissions.CanManageQuestion)]
+    [MvcAuthorize(AssignableToRolePermissions.CanManageQuestion)]
     public partial class QuestionController : Controller
     {
         #region	Fields

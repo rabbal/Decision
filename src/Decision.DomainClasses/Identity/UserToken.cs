@@ -4,24 +4,24 @@ using Decision.Framework.Domain.Entities;
 
 namespace Decision.DomainClasses.Identity
 {
-    public class UserToken : Entity<Guid>
-    {
-        #region Properties
+    //public class UserToken : Entity<Guid>
+    //{
+    //    #region Properties
 
-        public string AccessTokenHash { get; set; }
-        public DateTime AccessTokenExpireDateTime { get; set; }
-        public string RefreshTokenIdHash { get; set; }
-        public string Subject { get; set; }
-        public DateTime RefreshTokenExpiresUtc { get; set; }
-        public string RefreshToken { get; set; }
+    //    public string AccessTokenHash { get; set; }
+    //    public DateTime AccessTokenExpireDateTime { get; set; }
+    //    public string RefreshTokenIdHash { get; set; }
+    //    public string Subject { get; set; }
+    //    public DateTime RefreshTokenExpiresUtc { get; set; }
+    //    public string RefreshToken { get; set; }
 
-        #endregion
+    //    #endregion
 
-        #region NavigationProperties
+    //    #region NavigationProperties
 
-        public long UserId { get; set; }
-        public User User { get; set; }
+    //    public long UserId { get; set; }
+    //    public User User { get; set; }
 
-        #endregion
-    }
+    //    #endregion
+    //}
 }

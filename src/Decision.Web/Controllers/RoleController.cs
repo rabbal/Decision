@@ -22,7 +22,7 @@ namespace Decision.Web.Controllers
 
     [RoutePrefix("UserManagement/Role")]
     [Route("{action}")]
-    [Mvc5Authorize(AssignableToRolePermissions.CanManageUser)]
+    [MvcAuthorize(AssignableToRolePermissions.CanManageUser)]
     public partial class RoleController : BaseController
     {
         #region Fields

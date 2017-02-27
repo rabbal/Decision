@@ -45,7 +45,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
@@ -55,13 +75,48 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AddressController.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\ApplicantEvaluation\ApplicantEvaluationAreaRegistration.cs" />
+    <Compile Include="Areas\GeneralBasicData\GeneralBasicDataAreaRegistration.cs" />
+    <Compile Include="Areas\Identity\IdentityAreaRegistration.cs" />
     <Compile Include="Controllers\BaseSettingController.cs" />
     <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\EducationalBackgroundController.cs" />
@@ -76,7 +131,6 @@
     <Compile Include="Controllers\EducationalExperienceController.cs" />
     <Compile Include="Controllers\WorkExperienceController.cs" />
     <Compile Include="Controllers\PrivateMessageController.cs" />
-    <Compile Include="Helpers\LazySingleton.cs" />
     <Compile Include="Hubs\HomeHub.cs" />
     <Compile Include="Hubs\NotificationHub.cs" />
     <Compile Include="Infrastructure\Bundles\AdminContentBundle.cs" />
@@ -186,519 +240,13 @@
     <Compile Include="Infrastructure\Temp\StructureMapSignalRDependencyResolver.cs" />
     <Compile Include="Infrastructure\Temp\TaskRegistery.cs" />
     <Compile Include="Infrastructure\WebTasks\FullBackUpTask.cs" />
-    <Compile Include="Views\Address\_AddressItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_AddressItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\BaseSetting\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EducationalBackground\_EducationalBackgroundItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_EducationalBackgroundItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EntireEvaluation\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EntireEvaluation\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EntireEvaluation\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EntireEvaluation\_EntireEvaluationItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_EntireEvaluationItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EntireEvaluation\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Error\BadRequest.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BadRequest.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Error\Forbidden.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Forbidden.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Error\InternalServerError.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InternalServerError.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Error\LockOut.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LockOut.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Error\MethodNotAllowed.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MethodNotAllowed.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Error\NotFound.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotFound.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Error\Unauthorized.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Unauthorized.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Home\_Benckmarks.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Benckmarks.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Home\_TeacherWithTopScoreList.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_TeacherWithTopScoreList.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Home\_NewTeachersList.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_NewTeachersList.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Interview\_InterviewItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_InterviewItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Applicant\_ApplicantRelatedLinksBuilder.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ApplicantRelatedLinksBuilder.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Address\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Address\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Address\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Address\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EducationalBackground\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EducationalBackground\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EducationalBackground\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EducationalBackground\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Interview\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Interview\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Interview\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Interview\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Applicant\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Applicant\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Applicant\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Applicant\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Applicant\_ApplicantItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ApplicantItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Applicant\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Article\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Article\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Article\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Article\_ArticleItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ArticleItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Article\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Presenter\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Presenter\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Presenter\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Presenter\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Presenter\_PresenterItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_PresenterItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PrivateMessage\InBox.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InBox.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PrivateMessage\Messages.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Messages.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PrivateMessage\NewMessage.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NewMessage.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PrivateMessage\OutBox.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OutBox.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PrivateMessage\_InBoxListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_InBoxListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PrivateMessage\_OutBoxListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_OutBoxListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PrivateMessage\_Reply.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Reply.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Question\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Question\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Question\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Question\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Question\_QuestionItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_QuestionItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Report\Design.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Design.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ResearchExperience\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ResearchExperience\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ResearchExperience\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ResearchExperience\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ResearchExperience\_ResearchExperienceItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ResearchExperienceItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Role\_RoleItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_RoleItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EducationalExperience\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EducationalExperience\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EducationalExperience\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EducationalExperience\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EducationalExperience\_EducationalExperienceItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_EducationalExperienceItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\DisplayTemplates\SiteMapPath.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SiteMapPath.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SiteMapPathHelperModel.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\EditorTemplates\Decimal.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Decimal.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_AuditLog.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_AuditLog.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_ApplicantManagementsSidbarMenu.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ApplicantManagementsSidbarMenu.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_LoginPartial.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_LoginPartial.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_NewMessagesCount.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_NewMessagesCount.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_PublicSettingSideBarMenu.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_PublicSettingSideBarMenu.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_UserManagementsSideBarMenu.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_UserManagementsSideBarMenu.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_UserProfileSideBarMenu.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_UserProfileSideBarMenu.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\User\_UserItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_UserItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\WorkExperience\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\WorkExperience\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\WorkExperience\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\WorkExperience\_ListAjax1.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\WorkExperience\_WorkExperienceItem.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_WorkExperienceItem.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Filters\ActivityAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\ActivityAttribute.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ApplicantController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Views\Home\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Role\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Role\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Role\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Role\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\DisplayTemplates\Enum.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Enum.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\EditorTemplates\Enum.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Enum.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\EditorTemplates\PersianDatePicker.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PersianDatePicker.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_Layout1.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Layout.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\User\_Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\User\_Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\User\List.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>List.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\User\_ListAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListAjax.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Extentions\ControllerExtentions.cs" />
     <Compile Include="Hubs\BaseHub.cs" />
     <Compile Include="App_Start\RoutingConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -713,50 +261,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App_Start\Startup.cs" />
-    <Compile Include="RazorHelpers\CheckBoxListBuilder.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckBoxListBuilder.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="RazorHelpers\DatePickerInitial.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatePickerInitial.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="RazorHelpers\NotyBuilder.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotyBuilder.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="HtmlHelpers\T4SecureExtensions.cs" />
-    <Compile Include="Views\Account\Login.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Login.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\Error.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Error.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_CaptchaPartial.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_CaptchaPartial.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_Noty.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Noty.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\_ViewStart.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ViewStart.cshtml</DependentUpon>
-    </Compile>
+    <Compile Include="Infrastructure\T4SecureExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\IranCities.xml" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\fonts\BMitra-Bold.svg" />
     <Content Include="Content\fonts\BMitra-Regular.svg" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
@@ -782,6 +292,7 @@
     <Content Include="Content\Images\Overlays\13.png" />
     <Content Include="Content\Images\Overlays\14.png" />
     <Content Include="Content\Images\Overlays\15.png" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\plugins\fileinput.min.css" />
     <Content Include="Content\plugins\PagedList.css" />
     <Content Include="Content\plugins\PagedList.min.css" />
@@ -803,6 +314,8 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular-scenario.js" />
     <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />
     <Content Include="Scripts\ckeditor\ckeditor.js" />
@@ -1755,6 +1268,16 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
+    <Content Include="Areas\GeneralBasicData\Views\web.config" />
+    <Content Include="Areas\ApplicantEvaluation\Views\web.config" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\libs\jquery.signalR-2.2.0.js" />
     <Content Include="Scripts\libs\jquery.signalR-2.2.0.min.js" />
     <Content Include="Scripts\libs\modernizr-2.8.3.min.js" />
@@ -1762,14 +1285,10 @@
     <Content Include="Scripts\libs\bootstrap.min.js" />
     <Content Include="Scripts\libs\bootstrap.min.js.map" />
     <Content Include="RazorHelpers\NotyBuilder.cshtml">
-      <LastGenOutput>NotyBuilder.generated.cs</LastGenOutput>
       <BrowseToURL>~/ToastrBuilder.cshtml</BrowseToURL>
-      <Generator>RazorGenerator</Generator>
     </Content>
-    <Content Include="RazorHelpers\CheckBoxListBuilder.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>CheckBoxListBuilder.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="RazorHelpers\CheckBoxListBuilder.cshtml" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\plugins\jquery.farsiInput.js" />
     <Content Include="Scripts\plugins\jquery.farsiInput.min.js">
       <DependentUpon>jquery.farsiInput.js</DependentUpon>
@@ -1777,66 +1296,21 @@
     <Content Include="Scripts\plugins\jquery.mvc.deleteItem.min.js">
       <DependentUpon>jquery.mvc.deleteItem.js</DependentUpon>
     </Content>
-    <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Enum.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\EditorTemplates\Enum.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Enum.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Role\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Role\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Role\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Role\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_Layout.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Layout1.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\User\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\User\_Create.cshtml">
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-      <Generator>RazorGenerator</Generator>
-    </Content>
-    <Content Include="Views\User\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\User\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Applicant\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\EditorTemplates\PersianDatePicker.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>PersianDatePicker.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Applicant\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Enum.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\Role\_ListAjax.cshtml" />
+    <Content Include="Areas\Identity\Views\Role\_Create.cshtml" />
+    <Content Include="Areas\Identity\Views\Role\_Edit.cshtml" />
+    <Content Include="Areas\Identity\Views\Role\List.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Identity\Views\User\_ListAjax.cshtml" />
+    <Content Include="Areas\Identity\Views\User\_Create.cshtml" />
+    <Content Include="Areas\Identity\Views\User\_Edit.cshtml" />
+    <Content Include="Areas\Identity\Views\User\List.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Applicant\Create.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PersianDatePicker.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Applicant\List.cshtml" />
     <Content Include="Scripts\plugins\affix.js" />
     <Content Include="Scripts\plugins\affix.min.js">
       <DependentUpon>affix.js</DependentUpon>
@@ -1897,197 +1371,51 @@
     <Content Include="Scripts\customs\jquery.ajax.querystring.min.js.map">
       <DependentUpon>jquery.ajax.querystring.min.js</DependentUpon>
     </Content>
-    <Content Include="RazorHelpers\DatePickerInitial.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>DatePickerInitial.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_PublicSettingSideBarMenu.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_PublicSettingSideBarMenu.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Applicant\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Applicant\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_ApplicantManagementsSidbarMenu.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ApplicantManagementsSidbarMenu.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="RazorHelpers\DatePickerInitial.cshtml" />
+    <Content Include="Views\Shared\_PublicSettingSideBarMenu.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Applicant\_ItemsList.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Applicant\Edit.cshtml" />
+    <Content Include="Views\Shared\_ApplicantManagementsSidbarMenu.cshtml" />
     <Content Include="Scripts\customs\noty.alerts.min.js.map">
       <DependentUpon>noty.alerts.min.js</DependentUpon>
     </Content>
-    <Content Include="Views\Shared\_UserManagementsSideBarMenu.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_UserManagementsSideBarMenu.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Applicant\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Address\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Address\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Address\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Address\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EducationalBackground\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EducationalBackground\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EducationalBackground\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EducationalBackground\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Interview\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Interview\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Interview\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Interview\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Article\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Article\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Article\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Article\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\ResearchExperience\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\ResearchExperience\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\ResearchExperience\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\ResearchExperience\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EducationalExperience\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EducationalExperience\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EducationalExperience\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EducationalExperience\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\WorkExperience\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\WorkExperience\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\WorkExperience\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\WorkExperience\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax1.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Role\_RoleItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_RoleItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\User\_UserItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_UserItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Applicant\_ApplicantItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ApplicantItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ApplicantRelatedLinksBuilder.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Address\_AddressItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_AddressItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EducationalBackground\_EducationalBackgroundItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_EducationalBackgroundItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Interview\_InterviewItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_InterviewItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Article\_ArticleItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ArticleItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\ResearchExperience\_ResearchExperienceItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ResearchExperienceItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EducationalExperience\_EducationalExperienceItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_EducationalExperienceItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\WorkExperience\_WorkExperienceItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_WorkExperienceItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_AuditLog.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_AuditLog.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Views\Shared\_UserManagementsSideBarMenu.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Applicant\Details.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\EducationalBackground\List.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\EducationalBackground\_Create.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\EducationalBackground\Edit.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\EducationalBackground\_ListAjax.cshtml" />
+    <Content Include="Areas\ApplicantEvaluation\Views\Interview\List.cshtml" />
+    <Content Include="Areas\ApplicantEvaluation\Views\Interview\_Create.cshtml" />
+    <Content Include="Areas\ApplicantEvaluation\Views\Interview\Edit.cshtml" />
+    <Content Include="Areas\ApplicantEvaluation\Views\Interview\_ListAjax.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Article\List.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Article\_Create.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Article\Edit.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Article\_ListAjax.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\ResearchExperience\List.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\ResearchExperience\_Create.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\ResearchExperience\_Edit.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\ResearchExperience\_ListAjax.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\EducationalExperience\List.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\EducationalExperience\_Create.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\EducationalExperience\_Edit.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\EducationalExperience\_ListAjax.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\WorkExperience\List.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\WorkExperience\_Create.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\WorkExperience\_Edit.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\WorkExperience\_ListAjax.cshtml" />
+    <Content Include="Areas\Identity\Views\Role\_RoleItem.cshtml" />
+    <Content Include="Areas\Identity\Views\User\_UserItem.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Applicant\_ApplicantItem.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\EducationalBackground\_EducationalBackgroundItem.cshtml" />
+    <Content Include="Areas\ApplicantEvaluation\Views\Interview\_InterviewItem.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Article\_ArticleItem.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\ResearchExperience\_ResearchExperienceItem.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\EducationalExperience\_EducationalExperienceItem.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\WorkExperience\_WorkExperienceItem.cshtml" />
+    <Content Include="Views\Shared\_AuditLog.cshtml" />
     <Content Include="Scripts\customs\jquery.form.config.min.js.map">
       <DependentUpon>jquery.form.config.min.js</DependentUpon>
     </Content>
@@ -2162,92 +1490,38 @@
     <Content Include="Content\fonts\wYekan.woff" />
     <Content Include="Content\fonts\YekanWeb-Bold.woff" />
     <Content Include="Content\fonts\YekanWeb-Regular.woff" />
-    <Content Include="Views\EntireEvaluation\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EntireEvaluation\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EntireEvaluation\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EntireEvaluation\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EntireEvaluation\_EntireEvaluationItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_EntireEvaluationItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Question\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Question\_QuestionItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_QuestionItem.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Question\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Question\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Question\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\PrivateMessage\NewMessage.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NewMessage.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\PrivateMessage\Messages.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Messages.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\PrivateMessage\InBox.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>InBox.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\PrivateMessage\OutBox.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>OutBox.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\PrivateMessage\_InBoxListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_InBoxListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\PrivateMessage\_OutBoxListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_OutBoxListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_UserProfileSideBarMenu.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_UserProfileSideBarMenu.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\PrivateMessage\_Reply.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Reply.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\BaseSetting\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Areas\GeneralBasicData\Views\EntireEvaluation\List.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\EntireEvaluation\_ListAjax.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\EntireEvaluation\_Create.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\EntireEvaluation\Edit.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\EntireEvaluation\_EntireEvaluationItem.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Question\List.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Question\_QuestionItem.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Question\_Create.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Question\Edit.cshtml" />
+    <Content Include="Areas\GeneralBasicData\Views\Question\_ListAjax.cshtml" />
+    <Content Include="Areas\Identity\Views\PrivateMessage\NewMessage.cshtml" />
+    <Content Include="Areas\Identity\Views\PrivateMessage\Messages.cshtml" />
+    <Content Include="Areas\Identity\Views\PrivateMessage\InBox.cshtml" />
+    <Content Include="Areas\Identity\Views\PrivateMessage\OutBox.cshtml" />
+    <Content Include="Areas\Identity\Views\PrivateMessage\_InBoxListAjax.cshtml" />
+    <Content Include="Areas\Identity\Views\PrivateMessage\_OutBoxListAjax.cshtml" />
+    <Content Include="Views\Shared\_UserProfileSideBarMenu.cshtml" />
+    <Content Include="Areas\Identity\Views\PrivateMessage\_Reply.cshtml" />
+    <Content Include="Views\BaseSetting\Index.cshtml" />
     <Content Include="App_Browsers\edge.browser" />
     <Content Include="App_Code\Helpers.cshtml" />
+    <Content Include="Areas\Identity\Views\web.config" />
     <None Include="bundleconfig.json" />
     <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.woff" />
     <Content Include="Mvc.sitemap" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Decision.pubxml" />
     <Content Include="Scripts\errors.json" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Scripts\libs\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\libs\jquery-2.1.4.js" />
     <Content Include="Scripts\libs\jquery-2.1.4.min.js" />
@@ -2372,113 +1646,39 @@
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\Shared\Error.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Error.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ViewStart.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_Noty.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Noty.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Account\Login.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Login.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_CaptchaPartial.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_CaptchaPartial.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_LoginPartial.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_LoginPartial.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>SiteMapPathHelperModel.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapPath.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>SiteMapPath.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\_Benckmarks.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Benckmarks.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\_TeacherWithTopScoreList.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_TeacherWithTopScoreList.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\_NewTeachersList.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_NewTeachersList.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_NewMessagesCount.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_NewMessagesCount.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Report\Design.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Design.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Decimal.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Error\BadRequest.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>BadRequest.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Error\Forbidden.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Forbidden.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Error\InternalServerError.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>InternalServerError.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Error\LockOut.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>LockOut.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Error\MethodNotAllowed.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>MethodNotAllowed.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Error\NotFound.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotFound.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Error\Unauthorized.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Unauthorized.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Presenter\_Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Presenter\_Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Presenter\_ListAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Presenter\List.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>List.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Presenter\_PresenterItem.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_PresenterItem.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Noty.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\_CaptchaPartial.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapPath.cshtml" />
+    <Content Include="Views\Home\_Benckmarks.cshtml" />
+    <Content Include="Views\Home\_TeacherWithTopScoreList.cshtml" />
+    <Content Include="Views\Home\_NewTeachersList.cshtml" />
+    <Content Include="Views\Shared\_NewMessagesCount.cshtml" />
+    <Content Include="Views\Report\Design.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
+    <Content Include="Views\Error\BadRequest.cshtml" />
+    <Content Include="Views\Error\Forbidden.cshtml" />
+    <Content Include="Views\Error\InternalServerError.cshtml" />
+    <Content Include="Views\Error\LockOut.cshtml" />
+    <Content Include="Views\Error\MethodNotAllowed.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\Unauthorized.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\ApplicantEvaluation\Controllers\" />
+    <Folder Include="Areas\ApplicantEvaluation\Validators\" />
+    <Folder Include="Areas\ApplicantEvaluation\Views\Shared\" />
+    <Folder Include="Areas\GeneralBasicData\Controllers\" />
+    <Folder Include="Areas\GeneralBasicData\Validators\" />
+    <Folder Include="Areas\GeneralBasicData\Views\Shared\" />
+    <Folder Include="Areas\Identity\Controllers\" />
+    <Folder Include="Areas\Identity\Validators\" />
+    <Folder Include="Areas\Identity\Views\Shared\" />
     <Folder Include="Client\Controllers\" />
     <Folder Include="Client\Directives\" />
     <Folder Include="Client\Models\" />

@@ -17,6 +17,8 @@ namespace Decision.DataLayer.Mappings.Applicants
 
             Property(a => a.LastName).HasMaxLength(50).IsRequired();
 
+            Ignore(a => a.FullName);
+
             Property(a => a.NationalCode).HasMaxLength(50).IsRequired()
                 .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("UIX_Applicant_NationalCode") { IsUnique = true }));
 

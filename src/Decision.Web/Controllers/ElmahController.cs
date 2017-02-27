@@ -11,7 +11,7 @@ using Decision.ServiceLayer.Security;
 namespace Decision.Web.Controllers
 {
     [RoutePrefix("Admin")]
-    [Mvc5Authorize(AssignableToRolePermissions.CanAccessToSystemMaintenance)]
+    [MvcAuthorize(AssignableToRolePermissions.CanAccessToSystemMaintenance)]
     public partial class ElmahController : Controller
     {
         [Route("Elmah/{type?}")]

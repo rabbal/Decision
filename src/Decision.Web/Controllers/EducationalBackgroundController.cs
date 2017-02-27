@@ -22,7 +22,7 @@ namespace Decision.Web.Controllers
 
     [RoutePrefix("Applicant/EducationalBackground")]
     [Route("{action}")]
-    [Mvc5Authorize(AssignableToRolePermissions.CanManageEducationalBackground)]
+    [MvcAuthorize(AssignableToRolePermissions.CanManageEducationalBackground)]
     public partial class EducationalBackgroundController : Controller
     {
         #region	Fields

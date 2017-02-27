@@ -19,7 +19,7 @@ namespace Decision.Web.Controllers
 {
     [RoutePrefix("Applicant/EducationalExperience")]
     [Route("{action}")]
-   // [Mvc5Authorize(AssignableToRolePermissions.CanManageEducationalExperience)]
+   // [MvcAuthorize(AssignableToRolePermissions.CanManageEducationalExperience)]
     public partial class EducationalExperienceController : Controller
     {
         #region	Fields

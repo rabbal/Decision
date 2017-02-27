@@ -38,9 +38,11 @@ namespace Decision.DomainClasses.Applicants
 
         public string EmailAddress { get; set; }
 
-        public string CellphoneNumber { get; set; }
+        public string CellPhoneNumber { get; set; }
 
         public string NumberIndispensable { get; set; }
+
+        public string Gilder { get; set; }
 
         public MilitaryStatus MilitaryStatus { get; set; }
 
@@ -64,9 +66,11 @@ namespace Decision.DomainClasses.Applicants
 
         public string CopyOfBirthCertificateFileName { get; set; }
 
-        public decimal TotalReputation { get; set; }
+        public decimal TotalScore { get; set; }
 
         public ApplicantStatus Status { get; set; }
+
+        public string FullName => $"{FirstName} {LastName}";
 
         #endregion
 

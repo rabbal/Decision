@@ -193,11 +193,16 @@ namespace Decision.Framework.Extensions
         /// </summary>
         /// <param name="value"></param>
         [DebuggerStepThrough]
-        public static bool IsEmpty(this string value)
+        public static bool IsNullOrWhiteSpace(this string value)
         {
             return string.IsNullOrWhiteSpace(value);
         }
 
+        [DebuggerStepThrough]
+        public static bool IsNullOrEmpty(this string value)
+        {
+            return string.IsNullOrEmpty(value);
+        }
         /// <summary>
         ///     Determines whether the string is all white space. Empty string will return false.
         /// </summary>
@@ -394,7 +399,7 @@ namespace Decision.Framework.Extensions
         public static bool SplitToPair(this string value, out string strLeft, out string strRight, string delimiter)
         {
             int idx;
-            if (value.IsEmpty() || delimiter.IsEmpty() || (idx = value.IndexOf(delimiter)) == -1)
+            if (value.IsNullOrWhiteSpace() || delimiter.IsNullOrWhiteSpace() || (idx = value.IndexOf(delimiter)) == -1)
             {
                 strLeft = value;
                 strRight = "";
@@ -493,7 +498,7 @@ namespace Decision.Framework.Extensions
         [SuppressMessage("ReSharper", "StringCompareIsCultureSpecific.3")]
         public static string ToAttribute(this string value, string name, bool htmlEncode = true)
         {
-            if (name.IsEmpty())
+            if (name.IsNullOrWhiteSpace())
                 return "";
 
             if (value == "" && name != nameof(value) && !name.StartsWith("data"))
@@ -627,7 +632,7 @@ namespace Decision.Framework.Extensions
         [DebuggerStepThrough]
         public static string RemoveInvalidXmlChars(this string s)
         {
-            if (s.IsEmpty())
+            if (s.IsNullOrWhiteSpace())
                 return s;
 
             return Regex.Replace(s, @"[^\u0009\u000A\u000D\u0020-\uD7FF\uE000-\uFFFD]", "", RegexOptions.Compiled);
@@ -636,7 +641,7 @@ namespace Decision.Framework.Extensions
         [DebuggerStepThrough]
         public static string ReplaceCsvChars(this string s)
         {
-            if (s.IsEmpty())
+            if (s.IsNullOrWhiteSpace())
             {
                 return "";
             }

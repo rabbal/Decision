@@ -49,7 +49,7 @@ if (!String.IsNullOrWhiteSpace(AreaName)) {
 
 		#region List,ListAjax
 		[HttpGet]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
         [Audit( Description = "")]
 		public async  Task<ActionResult> List()
 		{
@@ -57,7 +57,7 @@ if (!String.IsNullOrWhiteSpace(AreaName)) {
 		}
 		//[CheckReferrer]
         [AjaxOnly]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
 		public async  Task<ActionResult> ListAjax()
 		{
@@ -69,7 +69,7 @@ if (!String.IsNullOrWhiteSpace(AreaName)) {
 		#region Create
 		[HttpGet]
 		[AjaxOnly]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
         public async  Task<ActionResult> Create()
         {
             return View();
@@ -78,7 +78,7 @@ if (!String.IsNullOrWhiteSpace(AreaName)) {
 		[AjaxOnly]
 		[HttpPost]
         [ValidateAntiForgeryToken]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
         //[CheckReferrer]
 		[Audit( Description = "")]
         public async  Task<ActionResult> Create(Add<#= ControllerName.Replace("Controller","") #>ViewModel viewModel)
@@ -92,7 +92,7 @@ if (!String.IsNullOrWhiteSpace(AreaName)) {
 		[Route("Edit/{id}")]
         [HttpGet]
 		[AjaxOnly]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
 		[OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public async  Task<ActionResult> Edit(Guid? id)
         {
@@ -104,7 +104,7 @@ if (!String.IsNullOrWhiteSpace(AreaName)) {
         //[CheckReferrer]
 		[AjaxOnly]
         [ValidateAntiForgeryToken]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
 		[Audit( Description = "")]
         public async  Task<ActionResult> Edit(Edit<#= ControllerName.Replace("Controller","") #>ViewModel viewModel)
         {
@@ -119,7 +119,7 @@ if (!String.IsNullOrWhiteSpace(AreaName)) {
         [Route("Delete/{id}")]
         //[CheckReferrer]
         [ValidateAntiForgeryToken]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
 		[Audit( Description = "")]
 		[OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public async  Task<ActionResult> Delete(Guid? id)
@@ -134,7 +134,7 @@ if (!String.IsNullOrWhiteSpace(AreaName)) {
 		#region RemoteValidations
 		[HttpPost]
 		[AjaxOnly]
-		[Mvc5Authorize()]
+		[MvcAuthorize()]
 
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public async  Task<JsonResult> Check(string input, Guid? id)

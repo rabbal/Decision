@@ -18,7 +18,7 @@ namespace Decision.Web.Controllers
     
     [RoutePrefix("PrivateMessage")]
     [Route("{action}")]
-    [Mvc5Authorize(AssignableToRolePermissions.CanUsePrivateMessage)]
+    [MvcAuthorize(AssignableToRolePermissions.CanUsePrivateMessage)]
     public partial class PrivateMessageController : Controller
     {
         #region	Fields

@@ -97,7 +97,7 @@ namespace Decision.Framework.GuardToolkit
         {
             var handler = arg;
             if (handler == null) return;
-            if (!handler().IsEmpty()) return;
+            if (!handler().IsNullOrWhiteSpace()) return;
 
             var argName = GetParamName(handler);
             throw Error.Argument(argName, "String parameter '{0}' cannot be null or all whitespace.", argName);

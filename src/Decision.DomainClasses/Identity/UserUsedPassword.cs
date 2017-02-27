@@ -1,8 +1,9 @@
+using System;
 using Decision.Framework.Domain.Entities;
 
 namespace Decision.DomainClasses.Identity
 {
-    public class UserUsedPassword : Entity
+    public class UserUsedPassword : Entity<Guid>
     {
         #region Properties
 

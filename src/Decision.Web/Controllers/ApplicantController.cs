@@ -1,30 +1,23 @@
 ﻿using System;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
-using Decision.Framework.Extentions;
-using Decision.Framework.Filters;
-using Decision.Framework.Helpers;
-using Decision.DataLayer.Context;
-using Decision.ServiceLayer.Contracts.Common;
-using Decision.ServiceLayer.Contracts.ApplicantInfo;
-using Decision.ServiceLayer.Contracts.Users;
-using Decision.ViewModel.Applicant;
+using Decision.Framework.Domain.Uow;
+using Decision.Framework.MvcToolkit.Filters;
+using Decision.Framework.Utility;
+using Decision.ServiceLayer.Interfaces.Applicants;
+using Decision.ServiceLayer.Interfaces.Common;
+using Decision.ServiceLayer.Interfaces.Identity;
+using Decision.ViewModels.GeneralBasicData.Applicants;
 using Decision.Web.Filters;
-using MvcSiteMapProvider.Web.Mvc.Filters;
-using Auth = Decision.ServiceLayer.Security.AssignableToRolePermissions;
+
 namespace Decision.Web.Controllers
 {
-    /// <summary>
-    /// کنترلر مربوط به متقاضی
-    /// </summary>
     [RoutePrefix("Applicant/Manage")]
     [Route("{action}")]
     public partial class ApplicantController : Controller
     {
         #region Fields
-        private const string IranCitiesPath = "~/App_Data/IranCities.xml";
         private readonly IUnitOfWork _unitOfWork;
         private readonly IApplicantService _applicantService;
         private readonly IApplicationUserManager _userManager;
@@ -32,11 +25,13 @@ namespace Decision.Web.Controllers
         private readonly ICityService _cityService;
         #endregion
 
-        #region Ctor
+        #region Constructor
 
-        public ApplicantController(IUnitOfWork unitOfWork, IApplicationUserManager userManager,
-
-            IApplicantService applicantService, IStateService stateService, ICityService cityService)
+        public ApplicantController(IUnitOfWork unitOfWork,
+            IApplicationUserManager userManager,
+            IApplicantService applicantService,
+            IStateService stateService,
+            ICityService cityService)
         {
             _unitOfWork = unitOfWork;
             _userManager = userManager;
@@ -46,42 +41,41 @@ namespace Decision.Web.Controllers
         }
         #endregion
 
-        #region List,ListAjax
+        #region Actions
         [HttpGet]
         [Activity(Description = "مشاهده لیست اساتید")]
-        [Mvc5Authorize(Auth.CanViewApplicantList)]
+        [MvcAuthorize(Auth.CanViewApplicantList)]
         public virtual async Task<ActionResult> List()
         {
             var viewModel = await _applicantService.GetPagedListAsync(new ApplicantSearchRequest());
             viewModel.States = _stateService.GetAsSelectListItemAsync(string.Empty, IranCitiesPath);
-            return View(viewModel);
+            return System.Web.UI.WebControls.View(viewModel);
         }
         //[CheckReferrer]
         [AjaxOnly]
         [HttpPost]
-        [Mvc5Authorize(Auth.CanViewApplicantList)]
+        [MvcAuthorize(Auth.CanViewApplicantList)]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        public virtual async Task<ActionResult> ListAjax(ApplicantSearchRequest request)
+        public virtual async Task<ActionResult> List(ApplicantListRequest request)
         {
             var viewModel = await _applicantService.GetPagedListAsync(request);
             if (viewModel.Applicants == null || !viewModel.Applicants.Any()) return Content("no-more-info");
-            return PartialView(MVC.Applicant.Views._ListAjax, viewModel);
+            return PartialView(MVC.Applicant.Views._ItemsList, viewModel);
         }
-        #endregion
 
-        #region Create
+
         [HttpGet]
-        [Mvc5Authorize(Auth.CanCreateApplicant)]
+        [MvcAuthorize(Auth.CanCreateApplicant)]
         public virtual async Task<ActionResult> Create()
         {
             var viewModel = await _applicantService.GetForCreate(IranCitiesPath);
-            return View(viewModel);
+            return System.Web.UI.WebControls.View(viewModel);
         }
 
         [HttpPost]
         // [CheckReferrer]
         [ValidateAntiForgeryToken]
-        [Mvc5Authorize(Auth.CanCreateApplicant)]
+        [MvcAuthorize(Auth.CanCreateApplicant)]
         [AllowUploadSpecialFilesOnly(".png,.jpg,.jpeg,.gif", justImage: true)]
         public virtual async Task<ActionResult> Create(AddApplicantViewModel viewModel)
         {
@@ -95,25 +89,23 @@ namespace Decision.Web.Controllers
             {
                 await _applicantService.FillAddViewMoel(viewModel, IranCitiesPath);
 
-                return View(viewModel);
+                return System.Web.UI.WebControls.View(viewModel);
             }
 
             _applicantService.Create(viewModel);
-            await _unitOfWork.SaveAllChangesAsync(auditUserId:_userManager.GetCurrentUserId());
+            await _unitOfWork.SaveAllChangesAsync(auditUserId: _userManager.GetCurrentUserId());
             this.NotyInformation("متقاضی جدید با موفقیت ثبت شد.");
             return RedirectToAction(MVC.Applicant.Create());
         }
-        #endregion
 
-        #region Edit
         [Route("EditApplicant/{ApplicantId}")]
         [HttpGet]
-        [Mvc5Authorize(Auth.CanEditApplicant)]
+        [MvcAuthorize(Auth.CanEditApplicant)]
         public virtual async Task<ActionResult> Edit(Guid applicantId)
         {
             var viewModel = await _applicantService.GetForEditAsync(applicantId, IranCitiesPath);
             if (viewModel == null) return HttpNotFound();
-            return View(viewModel);
+            return System.Web.UI.WebControls.View(viewModel);
         }
 
         [Route("EditApplicant/{ApplicantId}")]
@@ -121,7 +113,7 @@ namespace Decision.Web.Controllers
         // [CheckReferrer]
         [ValidateAntiForgeryToken]
         [AllowUploadSpecialFilesOnly(".png,.jpg,.jpeg,.gif", justImage: true)]
-        [Mvc5Authorize(Auth.CanEditApplicant)]
+        [MvcAuthorize(Auth.CanEditApplicant)]
         public virtual async Task<ActionResult> Edit(EditApplicantViewModel viewModel)
         {
             if (!viewModel.NationalCode.IsValidNationalCode())
@@ -133,32 +125,28 @@ namespace Decision.Web.Controllers
             if (!ModelState.IsValid)
             {
                 await _applicantService.FillEditViewMoel(viewModel, IranCitiesPath);
-                return View(MVC.Applicant.Views.Edit, viewModel);
+                return System.Web.UI.WebControls.View(MVC.Applicant.Views.Edit, viewModel);
             }
-           this.NotySuccess("علمیات ویرایش متقاضی با موفقیت انجام شد");
+            this.NotySuccess("علمیات ویرایش متقاضی با موفقیت انجام شد");
             await _applicantService.EditAsync(viewModel);
-            await _unitOfWork.SaveAllChangesAsync(auditUserId:_userManager.GetCurrentUserId());
+            await _unitOfWork.SaveAllChangesAsync(auditUserId: _userManager.GetCurrentUserId());
             return
                 RedirectToAction(MVC.Applicant.Details(viewModel.Id));
         }
-        #endregion
 
-        #region Delete
         [HttpPost]
         //[CheckReferrer]
         [ValidateAntiForgeryToken]
-        [Mvc5Authorize(Auth.CanDeleteApplicant)]
+        [MvcAuthorize(Auth.CanDeleteApplicant)]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public virtual async Task<ActionResult> Delete(Guid id)
         {
             await _applicantService.DeleteAsync(id);
             return Content("ok");
         }
-        #endregion
 
-        #region Details
         [HttpGet]
-        [Mvc5Authorize(Auth.CanViewApplicantDetails)]
+        [MvcAuthorize(Auth.CanViewApplicantDetails)]
         [Route("Details/{ApplicantId}")]
 
         [SiteMapTitle("FullName", Target = AttributeTarget.CurrentNode)]
@@ -166,14 +154,36 @@ namespace Decision.Web.Controllers
         {
             var viewModel = await _applicantService.GetApplicantDetails(applicantId);
             if (viewModel == null) return HttpNotFound();
-            return View(viewModel);
+            return System.Web.UI.WebControls.View(viewModel);
+        }
+
+
+        [HttpPost]
+        //[CheckReferrer]
+        [MvcAuthorize(Auth.CanApproveApplicant)]
+        [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
+        public virtual async Task<ActionResult> ApproveApplicant(Guid id)
+        {
+            var viewModel = await _applicantService.Approve(id);
+            if (viewModel == null) return HttpNotFound();
+            return PartialView(MVC.Applicant.Views._ApplicantItem, viewModel);
+        }
+
+        [HttpGet]
+        [Route("File/{ApplicantId}/{type}")]
+        [MvcAuthorize(Auth.CanViewApplicantDetails)]
+
+        public virtual async Task<ActionResult> GetApplicantFile(Guid applicantId, string type)
+        {
+            var file = await _applicantService.GetApplicantDocument(applicantId, type);
+            return File(file, "image/png", $"{applicantId}.png");
         }
         #endregion
 
         #region RemoteValidations
         [HttpPost]
         [AjaxOnly]
-        [Mvc5Authorize(Auth.CanEditApplicant, Auth.CanCreateApplicant)]
+        [MvcAuthorize(Auth.CanEditApplicant, Auth.CanCreateApplicant)]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public async Task<JsonResult> IsApplicantBirthCertificateNumberExist(string birthCertificateNumber, Guid? id)
         {
@@ -182,7 +192,7 @@ namespace Decision.Web.Controllers
 
         [HttpPost]
         [AjaxOnly]
-        [Mvc5Authorize(Auth.CanEditApplicant, Auth.CanCreateApplicant)]
+        [MvcAuthorize(Auth.CanEditApplicant, Auth.CanCreateApplicant)]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public async Task<JsonResult> IsApplicantNationalCodeExist(string nationalCode, Guid? id)
         {
@@ -193,31 +203,5 @@ namespace Decision.Web.Controllers
         }
 
         #endregion
-
-        #region DownloadFiles
-        [HttpGet]
-        [Route("File/{ApplicantId}/{type}")]
-        [Mvc5Authorize(Auth.CanViewApplicantDetails)]
-
-        public virtual async Task<ActionResult> GetApplicantFile(Guid applicantId, string type)
-        {
-            var file = await _applicantService.GetApplicantDocument(applicantId, type);
-            return File(file, "image/png", $"{applicantId}.png");
-        }
-        #endregion
-
-        #region ApproveApplicant
-        [HttpPost]
-        //[CheckReferrer]
-        [Mvc5Authorize(Auth.CanApproveApplicant)]
-        [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
-        public virtual async Task<ActionResult> ApproveApplicant(Guid id)
-        {
-            var viewModel = await _applicantService.Approve(id);
-            if (viewModel == null) return HttpNotFound();
-            return PartialView(MVC.Applicant.Views._ApplicantItem, viewModel);
-        }
-        #endregion
-
     }
 }

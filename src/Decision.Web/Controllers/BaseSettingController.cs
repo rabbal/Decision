@@ -6,7 +6,7 @@ using MvcSiteMapProvider;
 namespace Decision.Web.Controllers
 {
     
-    [Mvc5Authorize(AssignableToRolePermissions.CanManageTrainingCenter,
+    [MvcAuthorize(AssignableToRolePermissions.CanManageTrainingCenter,
         AssignableToRolePermissions.CanManageTitle,
         AssignableToRolePermissions.CanManageAppraiser,
         AssignableToRolePermissions.CanManageInstitution,

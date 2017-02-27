@@ -23,7 +23,7 @@ namespace Decision.Framework.IO
         /// <returns>The corresponding file extension (without dot)</returns>
         public static string MapMimeTypeToExtension(string mimeType)
         {
-            if (mimeType.IsEmpty())
+            if (mimeType.IsNullOrWhiteSpace())
                 return null;
 
             return _mimeMap.GetOrAdd(mimeType, k =>

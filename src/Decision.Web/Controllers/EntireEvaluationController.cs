@@ -23,7 +23,7 @@ namespace Decision.Web.Controllers
 
     [RoutePrefix("Applicant/EntireEvaluation")]
     [Route("{action}")]
-    [Mvc5Authorize(AssignableToRolePermissions.CanManageEntireEvaluation)]
+    [MvcAuthorize(AssignableToRolePermissions.CanManageEntireEvaluation)]
     public partial class EntireEvaluationController : Controller
     {
         #region	Fields

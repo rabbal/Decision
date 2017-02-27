@@ -21,7 +21,7 @@ using MvcSiteMapProvider;
 namespace Decision.Web.Controllers
 {
 
-    [Mvc5Authorize(AssignableToRolePermissions.CanManageUser)]
+    [MvcAuthorize(AssignableToRolePermissions.CanManageUser)]
     
     [RoutePrefix("UserManagement/User")]
     [Route("{action}")]

@@ -26,7 +26,7 @@ namespace Decision.Framework.Net.Mail
 
         public override string ToString()
         {
-            return DisplayName.IsEmpty() ? Address : "{0} [{1}]".FormatCurrent(DisplayName, Address);
+            return DisplayName.IsNullOrWhiteSpace() ? Address : "{0} [{1}]".FormatCurrent(DisplayName, Address);
         }
 
         public MailAddress ToMailAddress()

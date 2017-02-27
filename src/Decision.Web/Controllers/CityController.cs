@@ -27,7 +27,7 @@ namespace Decision.Web.Controllers
 
         #region GetCities
         [AjaxOnly]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public virtual ActionResult GetCities(string id)
         {

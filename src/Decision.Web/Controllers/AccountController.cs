@@ -104,7 +104,7 @@ namespace Decision.Web.Controllers
 
         [HttpGet]
         // [CheckReferrer]
-        [Mvc5Authorize]
+        [MvcAuthorize]
         [Activity(Description ="خروج از حساب کاربری")]
         public virtual ActionResult LogOff()
         {

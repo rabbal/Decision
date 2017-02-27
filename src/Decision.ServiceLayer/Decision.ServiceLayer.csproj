@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="DelegateDecompiler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
@@ -165,7 +165,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\Applicants\IAddressService.cs" />
     <Compile Include="Interfaces\Applicants\IPresenterService.cs" />
     <Compile Include="Interfaces\Identity\IActivityLogService.cs" />
     <Compile Include="Interfaces\Common\ICityService.cs" />
@@ -248,6 +247,10 @@
     <ProjectReference Include="..\Decision.DomainClasses\Decision.DomainClasses.csproj">
       <Project>{72B9849F-931A-40C0-B11E-44324CD46250}</Project>
       <Name>Decision.DomainClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Decision.ViewModels\Decision.ViewModels.csproj">
+      <Project>{51986c43-db68-4a80-ae14-4ffd7a9e91a4}</Project>
+      <Name>Decision.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

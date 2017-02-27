@@ -13,7 +13,7 @@ using Decision.ViewModel.Home;
 
 namespace Decision.Web.Controllers
 {
-    [Mvc5Authorize()]
+    [MvcAuthorize()]
     [Route("{action=index}")]
     public partial class HomeController : BaseController
     {

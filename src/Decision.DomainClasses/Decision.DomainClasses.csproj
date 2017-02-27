@@ -51,6 +51,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Applicants\ApplicantScore.cs" />
     <Compile Include="Applicants\ApplicantStatus.cs" />
     <Compile Include="Applicants\ArticleResponsibilityType.cs" />
     <Compile Include="Applicants\ArticleType.cs" />

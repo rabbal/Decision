@@ -37,6 +37,10 @@
       <HintPath>..\..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DNT.Extensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\DNT.Extensions.1.0.0\lib\DNT.Extensions.dll</HintPath>
       <Private>True</Private>
@@ -600,6 +604,7 @@
     <Compile Include="Utility\HumanReadableInteger.cs" />
     <Compile Include="Utility\IHideObjectMembers.cs" />
     <Compile Include="Utility\ImageManage.cs" />
+    <Compile Include="Misc\LazySingleton.cs" />
     <Compile Include="Utility\NormalizationInfo.cs" />
     <Compile Include="Utility\NormalizationUrl.cs" />
     <Compile Include="Utility\PersianProofWriter.cs" />

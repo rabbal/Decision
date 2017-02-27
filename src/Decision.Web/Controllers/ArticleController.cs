@@ -21,7 +21,7 @@ namespace Decision.Web.Controllers
 
     [RoutePrefix("Applicant/Article")]
     [Route("{action}")]
-    [Mvc5Authorize(AssignableToRolePermissions.CanManageArticle)]
+    [MvcAuthorize(AssignableToRolePermissions.CanManageArticle)]
     public partial class ArticleController : Controller
     {
         #region	Fields

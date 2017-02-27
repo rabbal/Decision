@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using Decision.ViewModels.Common;
 
 namespace Decision.ViewModels.Identity
 {

@@ -23,7 +23,7 @@ namespace Decision.Web.Controllers
     
     [RoutePrefix("Applicant/Interview")]
     [Route("{action}")]
-    [Mvc5Authorize(AssignableToRolePermissions.CanManageInterview)]
+    [MvcAuthorize(AssignableToRolePermissions.CanManageInterview)]
     public partial class InterviewController : Controller
     {
         #region	Fields

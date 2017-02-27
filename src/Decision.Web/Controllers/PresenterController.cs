@@ -29,14 +29,14 @@ namespace Decision.Web.Controllers
 
         #region List,ListAjax
         [HttpGet]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
         public virtual async Task<ActionResult> List()
         {
             return View();
         }
         //[CheckReferrer]
         [AjaxOnly]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public virtual async Task<ActionResult> ListAjax()
         {
@@ -47,7 +47,7 @@ namespace Decision.Web.Controllers
         #region Create
         [HttpGet]
         [AjaxOnly]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
         public virtual async Task<ActionResult> Create()
         {
             return View();
@@ -56,7 +56,7 @@ namespace Decision.Web.Controllers
         [AjaxOnly]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
         public virtual async Task<ActionResult> Create(AddPresenterViewModel viewModel)
         {
             return View();
@@ -67,7 +67,7 @@ namespace Decision.Web.Controllers
         [Route("Edit/{id}")]
         [HttpGet]
         [AjaxOnly]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public virtual async Task<ActionResult> Edit(Guid? id)
         {
@@ -79,7 +79,7 @@ namespace Decision.Web.Controllers
         //[CheckReferrer]
         [AjaxOnly]
         [ValidateAntiForgeryToken]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
         public virtual async Task<ActionResult> Edit(EditPresenterViewModel viewModel)
         {
             return View();
@@ -93,7 +93,7 @@ namespace Decision.Web.Controllers
         [Route("Delete/{id}")]
         //[CheckReferrer]
         [ValidateAntiForgeryToken]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
 
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public virtual async Task<ActionResult> Delete(Guid? id)
@@ -106,7 +106,7 @@ namespace Decision.Web.Controllers
         #region RemoteValidations
         [HttpPost]
         [AjaxOnly]
-        [Mvc5Authorize()]
+        [MvcAuthorize()]
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true, Duration = 0)]
         public async Task<JsonResult> Check(string input, Guid? id)
         {
