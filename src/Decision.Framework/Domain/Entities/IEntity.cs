@@ -17,6 +17,6 @@ namespace Decision.Framework.Domain.Entities
     {
         TKey Id { get; set; }
         byte[] RowVersion { get; set; }
-        bool IsTransient();
+        //bool IsTransient();
     }
 }

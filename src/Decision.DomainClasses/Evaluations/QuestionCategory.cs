@@ -1,9 +1,8 @@
-﻿using Decision.DomainClasses.Identity;
-using Decision.Framework.Domain.Entities.Tracking;
+﻿using Decision.Framework.Domain.Entities;
 
 namespace Decision.DomainClasses.Evaluations
 {
-    public class QuestionCategory : TrackableEntity<long, User>
+    public class QuestionCategory : Entity
     {
         public string Title { get; set; }
         public int DisplayOrder { get; set; }

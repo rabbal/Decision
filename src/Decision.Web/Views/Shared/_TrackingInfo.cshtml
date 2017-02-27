@@ -1,0 +1,35 @@
+﻿
+@using Decision.Framework.Extensions
+@using DNT.Extensions
+@model Decision.Framework.Domain.Models.TrackableViewModel
+<hr class="margin-bottom-5 margin-top-5">
+<div class="row">
+    <div class="col-md-3">
+        <i class="fa fa-check-square-o text-success"></i>
+        <small class="text-muted">ثبت شده توسط:</small>
+        <small>@Model.CreatorUserName</small><br>
+        <i class="fa fa-calendar-o"></i>
+        <small>در :</small>
+        <time>@Model.CreationDateTime.ToPersianString(PersianDateTimeFormat.Date)</time>
+        <i class="fa fa-clock-o "></i>
+        <time>@Model.CreationDateTime.ToPersianTimeString()</time>
+    </div>
+    <div class="col-md-3">
+        <i class="fa fa-edit text-info"></i>
+        <small class="text-muted">ویرایش شده توسط:</small>
+        <small>@Model.LastModifierUserName</small><br>
+        <i class="fa fa-calendar-o"></i>
+        <small>در :</small>
+        <time>@Model.LastModificationDateTime.ToPersianString(PersianDateTimeFormat.Date)</time>
+        <i class="fa fa-clock-o"></i>
+        <time>@Model.LastModificationDateTime.ToPersianTimeString()</time>
+    </div>
+    <div class="col-md-3">
+        <i class="fa fa-server text-info"></i>
+        <small class="text-muted">آی پی ثبت کننده:</small>
+        <small>@Model.CreatorIp.GetPersianNumbers()</small><br>
+        <i class="fa fa-server text-info"></i>
+        <small>آی پی ویرایش کننده:</small>
+        <small>@Model.LastModifierIp.GetPersianNumbers()</small>
+    </div>
+</div>

@@ -1,9 +1,0 @@
-﻿@using Decision.ServiceLayer.Security
-@using Decision.Web.HtmlHelpers
-
-
-@Html.SideBarSecureActionLink("لیست اساتید", Url.Action(MVC.Applicant.List()), "list-group-item thrid-split", "fa fa-group", AssignableToRolePermissions.CanViewApplicantList)
-
-@Html.SideBarSecureActionLink("درج متقاضی ", Url.Action(MVC.Applicant.Create()), "list-group-item thrid-split", "fa fa-plus", AssignableToRolePermissions.CanCreateApplicant)
-
-

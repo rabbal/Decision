@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Decision.Framework.Domain.Services
 {
-    public interface IEditService<in TEditViewModel, in TKey>
-        where TKey : IEquatable<TKey>
+    public interface IEditService<in TEditViewModel>
     {
         void Edit(TEditViewModel model);
         void FillEditViewModel(TEditViewModel model);

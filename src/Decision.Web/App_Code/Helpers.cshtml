@@ -1,5 +1,6 @@
 ﻿@using System.Configuration
 @using System.Web.Mvc
+@using Decision.Framework.MvcToolkit.Alerts.Noty
 @helper IncludeGoogleAnalytics(WebViewPage page)
 {
     var controller = page.ViewContext.Controller;
@@ -27,5 +28,72 @@
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(ga, s);
         })();
+    </script>
+}
+
+
+@* Generator: MvcHelper GeneratePrettyNames: true *@
+
+@*for using razor generator after creating htmlhlper and run Enable-RazorGenerator
+    you should change build action of generated class to complie *@
+
+@helper ShowNotyMessages(Noty notyInput)
+{
+if (notyInput == null)
+{
+    return;
+}
+
+    <script>
+    $(function() {
+
+        @foreach (var message in notyInput.NotyMessages)
+            {
+                @*@:var  overrideOptions= {};
+                @: overrideOptions.layout= '@message.Location';
+                @:overrideOptions.type= '@message.Type';
+                @:overrideOptions.text='@message.Message';
+                @:var overrideAnimation={};
+                @:overrideAnimation.open= 'animated @message.OpenAnimation';
+                @: overrideAnimation.close= 'animated @message.CloseAnimation';
+                @:overrideOptions.maxVisible= @notyInput.MaxVisibleForQueue;
+                @:overrideOptions.closeWith= ['@message.CloseWith'];
+                @:overrideOptions.buttons= false;
+                @:overrideAnimation.speed= @message.AnimateSpeed;
+
+             if (message.IsSwing)
+                {
+                    @: overrideAnimation.easing='swing';
+                                             }
+
+                if (notyInput.DismissQueue)
+                {
+                    @: overrideOptions.dismissQueue= true;
+                                            }
+                if (message.IsForce)
+                {
+                    @:overrideOptions.force= true;
+                                           }
+                if (message.IsKiller)
+                {
+                    @:overrideOptions. killer= true;
+                                                     }
+                if (message.IsModal)
+                {
+                    @:overrideOptions.modal=true;
+                                            }
+                if (message.IsSticky)
+                {
+                    @:overrideOptions.timeout= false;
+
+                }
+                 @:overrideAnimation.fadeSpeed=50;
+                 @:overrideOptions.animation=overrideAnimation;
+                 @:noty(overrideOptions);*@
+            @:infoNoty('@message.Message');
+                }
+
+    });
+
     </script>
 }

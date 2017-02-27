@@ -80,6 +80,7 @@
     <Compile Include="Applicants\WorkExperience.cs" />
     <Compile Include="Evaluations\QuestionCategory.cs" />
     <Compile Include="Identity\ActivityLog.cs" />
+    <Compile Include="Identity\ActivityLogType.cs" />
     <Compile Include="Identity\Notification.cs" />
     <Compile Include="Identity\NotificationType.cs" />
     <Compile Include="Identity\Role.cs" />

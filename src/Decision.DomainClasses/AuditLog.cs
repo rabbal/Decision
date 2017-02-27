@@ -4,7 +4,7 @@ using Decision.Framework.Domain.Entities.Tracking;
 
 namespace Decision.DomainClasses
 {
-    public class AuditLog : CreationTrackingEntity<Guid, User>
+    public class AuditLog : CreationTrackingEntity<long, User>
     {
         #region Properties
 

@@ -5,17 +5,14 @@ using Decision.ViewModels.GeneralBasicData.Applicants;
 
 namespace Decision.ServiceLayer.Interfaces.Applicants
 {
-    public interface IApplicantService :
-        IServiceBase
-            <long, ApplicantViewModel, CreateApplicantViewModel, EditApplicantViewModel, ApplicantListRequest,
-                ApplicantListViewModel>
+    public interface IApplicantService : IServiceBase<ApplicantViewModel, CreateApplicantViewModel, EditApplicantViewModel, ApplicantListRequest, ApplicantListViewModel>
     {
-       bool CheckFirstNameExist(string firstName, long? id);
+        bool CheckFirstNameExist(string firstName, long? id);
         bool CheckLastNameExist(string lastName, long? id);
         bool CheckEmailAddressExist(string emailAddress, long? id);
         bool CheckNationalCodeExist(string nationalCode, long? id);
         bool CheckBirthCertificateNumberExist(string birthCertificateNumber, long? id);
-        
+
         Task<bool> CheckFirstNameExistAsync(string firstName, long? id);
         Task<bool> CheckLastNameExistAsync(string lastName, long? id);
         Task<bool> CheckEmailAddressExistAsync(string emailAddress, long? id);

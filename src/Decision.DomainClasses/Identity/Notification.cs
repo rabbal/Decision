@@ -4,7 +4,7 @@ using Decision.Framework.Domain.Entities;
 
 namespace Decision.DomainClasses.Identity
 {
-    public class Notification : Entity<Guid>, IHasRowLevelSecurity
+    public class Notification : Entity, IHasRowLevelSecurity
     {
         #region Constructor
 

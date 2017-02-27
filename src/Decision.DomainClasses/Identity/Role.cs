@@ -6,7 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Decision.DomainClasses.Identity
 {
-    public class Role : IdentityRole<long, UserRole>, ITrackable<User>, ISystemDefaultEntry, IEntity<long>
+    public class Role : IdentityRole<long, UserRole>, ITrackable<User>, ISystemDefaultEntry, IEntity
     {
         #region Constructor
 

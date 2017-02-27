@@ -3,7 +3,7 @@ using Decision.Framework.Domain.Entities;
 
 namespace Decision.DomainClasses.Identity
 {
-    public class UserUsedPassword : Entity<Guid>
+    public class UserUsedPassword : Entity
     {
         #region Properties
 

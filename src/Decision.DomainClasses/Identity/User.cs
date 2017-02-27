@@ -9,7 +9,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 namespace Decision.DomainClasses.Identity
 {
     public class User : IdentityUser<long, UserLogin, UserRole, UserClaim>, ITrackable<User>,
-        ISystemDefaultEntry, IEntity<long>, IPassivable
+        ISystemDefaultEntry, IEntity, IActivatable
     {
      
         #region Public Methods

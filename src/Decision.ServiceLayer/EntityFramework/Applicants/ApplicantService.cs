@@ -13,9 +13,7 @@ using Decision.ViewModels.GeneralBasicData.Applicants;
 
 namespace Decision.ServiceLayer.EntityFramework.Applicants
 {
-    public class ApplicantService :
-        ServiceBase
-            <Applicant, long, ApplicantViewModel, CreateApplicantViewModel, EditApplicantViewModel,
+    public class ApplicantService : ServiceBase<Applicant, ApplicantViewModel, CreateApplicantViewModel, EditApplicantViewModel,
                 ApplicantListViewModel, ApplicantListRequest>, IApplicantService
     {
         #region Constructor
@@ -57,7 +55,6 @@ namespace Decision.ServiceLayer.EntityFramework.Applicants
         #endregion
 
         #region Public Methods
-
         public bool CheckFirstNameExist(string firstName, long? id)
         {
             throw new NotImplementedException();

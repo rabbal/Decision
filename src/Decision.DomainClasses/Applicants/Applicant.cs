@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using Decision.DomainClasses.Evaluations;
 using Decision.DomainClasses.Identity;
+using Decision.Framework.Domain.Entities;
 using Decision.Framework.Domain.Entities.Tracking;
 
 namespace Decision.DomainClasses.Applicants
 {
-    public class Applicant : TrackableEntity<long, User>
+    public class Applicant : TrackableEntity<long, User>, IEntity
     {
         #region Constructor
 

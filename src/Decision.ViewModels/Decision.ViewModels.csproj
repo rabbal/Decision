@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -170,12 +174,6 @@
     <Compile Include="GeneralBasicData\WorkExperience\WorkExperienceListViewModel.cs" />
     <Compile Include="GeneralBasicData\WorkExperience\WorkExperienceListRequest.cs" />
     <Compile Include="GeneralBasicData\WorkExperience\WorkExperienceViewModel.cs" />
-    <Compile Include="BaseRowVersion.cs" />
-    <Compile Include="ListRequestBase.cs" />
-    <Compile Include="ListViewModelBase.cs" />
-    <Compile Include="TrackableViewModel.cs" />
-    <Compile Include="PageSize.cs" />
-    <Compile Include="SortOrder.cs" />
     <Compile Include="ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Identity\RoleViewModel.cs" />

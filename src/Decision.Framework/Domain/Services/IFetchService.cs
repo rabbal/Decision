@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace Decision.Framework.Domain.Services
 {
-    public interface IFetchService<TListViewModel, in TListReqeust, in TKey, TViewModel, TCreateViewModel, TEditViewModel>
-        where TKey : IEquatable<TKey>
-    {
+    public interface IFetchService<TListViewModel, in TListReqeust, TViewModel, TCreateViewModel, TEditViewModel>
+        {
         Task<TListViewModel> FetchListAsync(TListReqeust request);
-        Task<TViewModel> FetchByIdAsync(TKey id);
-        Task<TCreateViewModel> FetchForCreateAsync(TKey id);
-        Task<TEditViewModel> FetchForEditAsync(TKey id);
+        Task<TViewModel> FetchByIdAsync(long id);
+        Task<TCreateViewModel> FetchForCreateAsync(long id);
+        Task<TEditViewModel> FetchForEditAsync(long id);
+        Task<bool> ExistsAsync(long id);
 
         TListViewModel FetchList(TListReqeust request);
-        TViewModel FetchById(TKey id);
-        TCreateViewModel FetchForCreate(TKey id);
-        TEditViewModel FetchForEdit(TKey id);
+        TViewModel FetchById(long id);
+        TCreateViewModel FetchForCreate(long id);
+        TEditViewModel FetchForEdit(long id);
+        bool Exists(long id);
+
     }
 }

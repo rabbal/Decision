@@ -1,14 +1,14 @@
 ﻿using System;
+using Decision.Framework.Domain.Entities;
 
 namespace Decision.Framework.Domain.Services
 {
-    public interface IServiceBase<in TKey, TViewModel, TCreateViewModel, TEditViewModel, in TListRequest, TListViewModel> :
-        IDisposable, ICreateService<TCreateViewModel, TKey>,
-        IEditService<TEditViewModel, TKey>,
-        IFetchService<TListViewModel, TListRequest, TKey, TViewModel, TCreateViewModel, TEditViewModel>,
-        ICheckExist<TKey>
-        where TKey : IEquatable<TKey>
-
+    public interface IServiceBase<TViewModel, TCreateViewModel, TEditViewModel, in TListRequest, TListViewModel> :
+        IDisposable, ICreateService<TCreateViewModel>,
+        IEditService<TEditViewModel>,
+        IFetchService<TListViewModel, TListRequest, TViewModel, TCreateViewModel, TEditViewModel>,
+        IDeleteService
+        where TEditViewModel : IEntity
     {
     }
 }

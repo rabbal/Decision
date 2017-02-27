@@ -3,7 +3,7 @@ using Decision.DomainClasses.Applicants;
 
 namespace Decision.ViewModels.GeneralBasicData.Applicants
 {
-    public class ApplicantViewModel : TrackableViewModel
+    public class ApplicantViewModel 
     {
         #region Properties
         public long Id { get; set; }
@@ -25,6 +25,6 @@ namespace Decision.ViewModels.GeneralBasicData.Applicants
         public GenderType Gender { get; set; }
         public decimal TotalReputation { get; set; }
         public ApplicantStatus Status { get; set; }
-        #endregion 
+        #endregion
     }
 }

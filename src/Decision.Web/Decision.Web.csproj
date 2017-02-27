@@ -49,6 +49,14 @@
       <HintPath>..\..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -64,6 +72,14 @@
     </Reference>
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap, Version=3.1.9.463, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\structuremap.3.1.9.463\lib\net40\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap.Net4, Version=3.1.9.463, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\structuremap.3.1.9.463\lib\net40\StructureMap.Net4.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -107,32 +123,44 @@
     </Reference>
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="T4MVCExtensions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\T4MVCExtensions.4.0.0\lib\net45\T4MVCExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicantEvaluation.SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\ApplicantEvaluation\ApplicantEvaluationAreaRegistration.cs" />
+    <Compile Include="Areas\GeneralBasicData\Controllers\ApplicantController.cs" />
     <Compile Include="Areas\GeneralBasicData\GeneralBasicDataAreaRegistration.cs" />
     <Compile Include="Areas\Identity\IdentityAreaRegistration.cs" />
-    <Compile Include="Controllers\BaseSettingController.cs" />
-    <Compile Include="Controllers\CityController.cs" />
-    <Compile Include="Controllers\EducationalBackgroundController.cs" />
-    <Compile Include="Controllers\ElmahController.cs" />
-    <Compile Include="Controllers\EntireEvaluationController.cs" />
-    <Compile Include="Controllers\InterviewController.cs" />
-    <Compile Include="Controllers\ArticleController.cs" />
-    <Compile Include="Controllers\PresenterController.cs" />
-    <Compile Include="Controllers\QuestionController.cs" />
-    <Compile Include="Controllers\ReportController.cs" />
-    <Compile Include="Controllers\ResearchExperienceController.cs" />
-    <Compile Include="Controllers\EducationalExperienceController.cs" />
-    <Compile Include="Controllers\WorkExperienceController.cs" />
-    <Compile Include="Controllers\PrivateMessageController.cs" />
+    <Compile Include="ErrorController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralBasicData.ApplicantController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralBasicData.SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HomeController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Hubs\HomeHub.cs" />
     <Compile Include="Hubs\NotificationHub.cs" />
+    <Compile Include="Identity.AccountController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Identity.SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Infrastructure\Bundles\AdminContentBundle.cs" />
     <Compile Include="Infrastructure\Bundles\AngularBundle.cs" />
     <Compile Include="Infrastructure\Bundles\ContentBundle.cs" />
@@ -242,11 +270,6 @@
     <Compile Include="Infrastructure\WebTasks\FullBackUpTask.cs" />
     <Compile Include="Infrastructure\Filters\ActivityAttribute.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ApplicantController.cs" />
-    <Compile Include="Controllers\RoleController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Hubs\BaseHub.cs" />
     <Compile Include="App_Start\RoutingConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -255,13 +278,23 @@
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="App_Start\RegisterModules.cs" />
     <Compile Include="App_Start\StructureMapControllerFactory.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Infrastructure\T4SecureExtensions.cs" />
+    <Compile Include="ReportController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4MVC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\IranCities.xml" />
@@ -1296,18 +1329,14 @@
     <Content Include="Scripts\plugins\jquery.mvc.deleteItem.min.js">
       <DependentUpon>jquery.mvc.deleteItem.js</DependentUpon>
     </Content>
+    <None Include="T4MVC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
+    </None>
     <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Enum.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Areas\Identity\Views\Role\_ListAjax.cshtml" />
-    <Content Include="Areas\Identity\Views\Role\_Create.cshtml" />
-    <Content Include="Areas\Identity\Views\Role\_Edit.cshtml" />
-    <Content Include="Areas\Identity\Views\Role\List.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Identity\Views\User\_ListAjax.cshtml" />
-    <Content Include="Areas\Identity\Views\User\_Create.cshtml" />
-    <Content Include="Areas\Identity\Views\User\_Edit.cshtml" />
-    <Content Include="Areas\Identity\Views\User\List.cshtml" />
     <Content Include="Areas\GeneralBasicData\Views\Applicant\Create.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PersianDatePicker.cshtml" />
     <Content Include="Areas\GeneralBasicData\Views\Applicant\List.cshtml" />
@@ -1372,50 +1401,14 @@
       <DependentUpon>jquery.ajax.querystring.min.js</DependentUpon>
     </Content>
     <Content Include="RazorHelpers\DatePickerInitial.cshtml" />
-    <Content Include="Views\Shared\_PublicSettingSideBarMenu.cshtml" />
     <Content Include="Areas\GeneralBasicData\Views\Applicant\_ItemsList.cshtml" />
     <Content Include="Areas\GeneralBasicData\Views\Applicant\Edit.cshtml" />
-    <Content Include="Views\Shared\_ApplicantManagementsSidbarMenu.cshtml" />
     <Content Include="Scripts\customs\noty.alerts.min.js.map">
       <DependentUpon>noty.alerts.min.js</DependentUpon>
     </Content>
-    <Content Include="Views\Shared\_UserManagementsSideBarMenu.cshtml" />
     <Content Include="Areas\GeneralBasicData\Views\Applicant\Details.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\EducationalBackground\List.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\EducationalBackground\_Create.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\EducationalBackground\Edit.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\EducationalBackground\_ListAjax.cshtml" />
-    <Content Include="Areas\ApplicantEvaluation\Views\Interview\List.cshtml" />
-    <Content Include="Areas\ApplicantEvaluation\Views\Interview\_Create.cshtml" />
-    <Content Include="Areas\ApplicantEvaluation\Views\Interview\Edit.cshtml" />
-    <Content Include="Areas\ApplicantEvaluation\Views\Interview\_ListAjax.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\Article\List.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\Article\_Create.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\Article\Edit.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\Article\_ListAjax.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\ResearchExperience\List.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\ResearchExperience\_Create.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\ResearchExperience\_Edit.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\ResearchExperience\_ListAjax.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\EducationalExperience\List.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\EducationalExperience\_Create.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\EducationalExperience\_Edit.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\EducationalExperience\_ListAjax.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\WorkExperience\List.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\WorkExperience\_Create.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\WorkExperience\_Edit.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\WorkExperience\_ListAjax.cshtml" />
-    <Content Include="Areas\Identity\Views\Role\_RoleItem.cshtml" />
-    <Content Include="Areas\Identity\Views\User\_UserItem.cshtml" />
     <Content Include="Areas\GeneralBasicData\Views\Applicant\_ApplicantItem.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\Applicant\_ApplicantRelatedLinksBuilder.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\EducationalBackground\_EducationalBackgroundItem.cshtml" />
-    <Content Include="Areas\ApplicantEvaluation\Views\Interview\_InterviewItem.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\Article\_ArticleItem.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\ResearchExperience\_ResearchExperienceItem.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\EducationalExperience\_EducationalExperienceItem.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\WorkExperience\_WorkExperienceItem.cshtml" />
-    <Content Include="Views\Shared\_AuditLog.cshtml" />
+    <Content Include="Views\Shared\_TrackingInfo.cshtml" />
     <Content Include="Scripts\customs\jquery.form.config.min.js.map">
       <DependentUpon>jquery.form.config.min.js</DependentUpon>
     </Content>
@@ -1490,25 +1483,6 @@
     <Content Include="Content\fonts\wYekan.woff" />
     <Content Include="Content\fonts\YekanWeb-Bold.woff" />
     <Content Include="Content\fonts\YekanWeb-Regular.woff" />
-    <Content Include="Areas\GeneralBasicData\Views\EntireEvaluation\List.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\EntireEvaluation\_ListAjax.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\EntireEvaluation\_Create.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\EntireEvaluation\Edit.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\EntireEvaluation\_EntireEvaluationItem.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\Question\List.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\Question\_QuestionItem.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\Question\_Create.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\Question\Edit.cshtml" />
-    <Content Include="Areas\GeneralBasicData\Views\Question\_ListAjax.cshtml" />
-    <Content Include="Areas\Identity\Views\PrivateMessage\NewMessage.cshtml" />
-    <Content Include="Areas\Identity\Views\PrivateMessage\Messages.cshtml" />
-    <Content Include="Areas\Identity\Views\PrivateMessage\InBox.cshtml" />
-    <Content Include="Areas\Identity\Views\PrivateMessage\OutBox.cshtml" />
-    <Content Include="Areas\Identity\Views\PrivateMessage\_InBoxListAjax.cshtml" />
-    <Content Include="Areas\Identity\Views\PrivateMessage\_OutBoxListAjax.cshtml" />
-    <Content Include="Views\Shared\_UserProfileSideBarMenu.cshtml" />
-    <Content Include="Areas\Identity\Views\PrivateMessage\_Reply.cshtml" />
-    <Content Include="Views\BaseSetting\Index.cshtml" />
     <Content Include="App_Browsers\edge.browser" />
     <Content Include="App_Code\Helpers.cshtml" />
     <Content Include="Areas\Identity\Views\web.config" />
@@ -1635,6 +1609,7 @@
       <DependentUpon>mustache.min.js</DependentUpon>
     </Content>
     <Content Include="Scripts\version.json" />
+    <None Include="T4MVC.tt.hooks.t4" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1653,12 +1628,9 @@
     <Content Include="Areas\Identity\Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_CaptchaPartial.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapPath.cshtml" />
     <Content Include="Views\Home\_Benckmarks.cshtml" />
     <Content Include="Views\Home\_TeacherWithTopScoreList.cshtml" />
     <Content Include="Views\Home\_NewTeachersList.cshtml" />
-    <Content Include="Views\Shared\_NewMessagesCount.cshtml" />
     <Content Include="Views\Report\Design.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
     <Content Include="Views\Error\BadRequest.cshtml" />
@@ -1673,7 +1645,6 @@
     <Folder Include="Areas\ApplicantEvaluation\Controllers\" />
     <Folder Include="Areas\ApplicantEvaluation\Validators\" />
     <Folder Include="Areas\ApplicantEvaluation\Views\Shared\" />
-    <Folder Include="Areas\GeneralBasicData\Controllers\" />
     <Folder Include="Areas\GeneralBasicData\Validators\" />
     <Folder Include="Areas\GeneralBasicData\Views\Shared\" />
     <Folder Include="Areas\Identity\Controllers\" />
@@ -1685,6 +1656,7 @@
     <Folder Include="Client\Services\" />
     <Folder Include="Client\Views\" />
     <Folder Include="Content\Report\" />
+    <Folder Include="Controllers\" />
     <Folder Include="File\avatar\" />
     <Folder Include="File\image\" />
     <Folder Include="File\userFile\" />

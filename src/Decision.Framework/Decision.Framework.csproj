@@ -37,8 +37,20 @@
       <HintPath>..\..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.EF6, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.EF6.0.5.0\lib\net45\AutoMapper.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DelegateDecompiler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DelegateDecompiler.0.18.1\lib\net40-Client\DelegateDecompiler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DelegateDecompiler.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DelegateDecompiler.EntityFramework.0.18.1\lib\net45\DelegateDecompiler.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="DNT.Extensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -103,6 +115,10 @@
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Reflection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Mono.Reflection.1.0.0.0\lib\Mono.Reflection.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MvcThrottle, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -223,7 +239,7 @@
     <Compile Include="Domain\Entities\EntityNotFoundException.cs" />
     <Compile Include="Domain\Entities\IEntity.cs" />
     <Compile Include="Domain\Entities\IHasRowLevelSecurity.cs" />
-    <Compile Include="Domain\Entities\IPassivable.cs" />
+    <Compile Include="Domain\Entities\IActivatable.cs" />
     <Compile Include="Domain\Entities\ISoftDelete.cs" />
     <Compile Include="Domain\Entities\ISystemDefaultEntry.cs" />
     <Compile Include="Domain\Entities\Tracking\CreationTrackingEntity.cs" />
@@ -235,6 +251,7 @@
     <Compile Include="Domain\Entities\Tracking\IDeletionTrackingEntity.cs" />
     <Compile Include="Domain\Entities\Tracking\IFullTrackable.cs" />
     <Compile Include="Domain\Entities\Tracking\IFullTrackableEntity.cs" />
+    <Compile Include="Domain\Entities\Tracking\IFullTrakable.cs" />
     <Compile Include="Domain\Entities\Tracking\IHasCreationDateTime.cs" />
     <Compile Include="Domain\Entities\Tracking\IHasDeletionDateTime.cs" />
     <Compile Include="Domain\Entities\Tracking\IHasModificationDateTime.cs" />
@@ -244,6 +261,11 @@
     <Compile Include="Domain\Entities\Tracking\ITrackableEntity.cs" />
     <Compile Include="Domain\Entities\Tracking\ModificationTrackingEntity.cs" />
     <Compile Include="Domain\Entities\Tracking\TrackableEntity.cs" />
+    <Compile Include="Domain\Models\ListRequestBase.cs" />
+    <Compile Include="Domain\Models\ListViewModelBase.cs" />
+    <Compile Include="Domain\Models\PageSize.cs" />
+    <Compile Include="Domain\Models\SortOrder.cs" />
+    <Compile Include="Domain\Models\TrackableViewModel.cs" />
     <Compile Include="Domain\Services\ICreateService.cs" />
     <Compile Include="Domain\Services\IDeleteService.cs" />
     <Compile Include="Domain\Services\IEditService.cs" />
@@ -258,6 +280,8 @@
     <Compile Include="IdentityToolkit\Validators\PasswordValidator.cs" />
     <Compile Include="IdentityToolkit\Validators\SecurityStampValidator.cs" />
     <Compile Include="IdentityToolkit\Validators\UserValidator.cs" />
+    <Compile Include="MapperToolkit\IHaveCustomMappings.cs" />
+    <Compile Include="MapperToolkit\IMapFrom.cs" />
     <Compile Include="Net\Mail\DefaultEmailSender.cs" />
     <Compile Include="Net\Mail\EmailAccount.cs" />
     <Compile Include="Net\Mail\EmailAddress.cs" />
@@ -405,8 +429,8 @@
     <Compile Include="MvcToolkit\Bundles\AsIsBundleOrderer.cs" />
     <Compile Include="MvcToolkit\Bundles\BundleHelpers.cs" />
     <Compile Include="MvcToolkit\Caching\CacheManager.cs" />
-    <Compile Include="MvcToolkit\Controller\AdminBaseController.cs" />
-    <Compile Include="MvcToolkit\Controller\BaseController.cs" />
+    <Compile Include="MvcToolkit\Controller\AdminController.cs" />
+    <Compile Include="MvcToolkit\Controller\ControllerBase.cs" />
     <Compile Include="MvcToolkit\Exceptions\CspViolationException.cs" />
     <Compile Include="MvcToolkit\Extensions\ControllerExtentions.cs" />
     <Compile Include="MvcToolkit\Extensions\HtmlHelperExtensions.cs" />

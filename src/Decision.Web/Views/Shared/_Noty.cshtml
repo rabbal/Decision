@@ -1,9 +1,8 @@
 
-@using Decision.Framework.Noty
-@using Decision.Web.RazorHelpers
+@using Decision.Framework.MvcToolkit.Alerts.Noty
 @if (TempData.ContainsKey(Noty.TempDataKey))
 {
     var noty = TempData[Noty.TempDataKey] as Noty;
-    @NotyBuilder.ShowNotyMessages(noty)
+    @.ShowNotyMessages(noty)
 }
 
