@@ -2,6 +2,7 @@
 using Decision.Framework.MvcToolkit.ModelMetadata;
 using Decision.Framework.MvcToolkit.ModelMetadata.Filters;
 using StructureMap;
+using StructureMap.Configuration.DSL;
 
 namespace Decision.Web.Infrastructure.IocConfig
 {

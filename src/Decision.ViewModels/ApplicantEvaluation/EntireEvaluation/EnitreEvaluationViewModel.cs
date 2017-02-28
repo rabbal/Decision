@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Decision.ViewModels.ApplicantEvaluation.EntireEvaluation
 {
-    public class EntireEvaluationViewModel :BaseViewModel
+    public class EntireEvaluationViewModel 
     {
         #region Properties
         public  Guid Id { get; set; }

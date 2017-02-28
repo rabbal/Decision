@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using AutoMapper;
 using StructureMap;
@@ -8,21 +10,20 @@ namespace Decision.Web.Infrastructure.IocConfig
 
     public static class IoC
     {
-
-        #region Fields (1)
+        #region Fields 
 
         private static readonly Lazy<Container> ContainerBuilder =
             new Lazy<Container>(DefaultContainer, LazyThreadSafetyMode.ExecutionAndPublication);
 
+        
         #endregion
 
-        #region Properties (1)
+        #region Properties
         public static IContainer Container => ContainerBuilder.Value;
 
         #endregion
 
-        #region Methods (6)
-
+        #region Private Methods
         private static Container DefaultContainer()
         {
             var container = new Container(ioc =>
@@ -41,24 +42,19 @@ namespace Decision.Web.Infrastructure.IocConfig
                 ioc.AddRegistry<WebApiRegistry>();
             });
 
-            ConfigureAutoMapper(container);
-
             //container.AssertConfigurationIsValid();
             return container;
         }
 
-        private static void ConfigureAutoMapper(IContainer container)
+        #endregion
+
+        #region Public Methods 
+        public static IEnumerable<T> GetAllInstances<T>()
         {
-            var configuration = container.TryGetInstance<IConfiguration>();
-            if (configuration == null) return;
-            //saying AutoMapper how to resolve services
-            configuration.ConstructServicesUsing(Container.GetInstance);
-            foreach (var profile in container.GetAllInstances<Profile>())
-            {
-                configuration.AddProfile(profile);
-            }
-            Resolve<IMapper>().ConfigurationProvider.AssertConfigurationIsValid();
+            return Container.GetAllInstances<T>();
         }
+
+
         public static T Resolve<T>()
         {
             return Container.GetInstance<T>();

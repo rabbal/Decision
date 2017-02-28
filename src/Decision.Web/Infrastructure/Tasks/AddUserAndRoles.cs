@@ -1,4 +1,5 @@
-﻿using Decision.Services.Interfaces.Users;
+﻿using Decision.ServiceLayer.Interfaces.Identity;
+using Decision.Services.Interfaces.Users;
 using Decision.Web.Infrastructure.Tasks.Contracts;
 
 namespace Decision.Web.Infrastructure.Tasks

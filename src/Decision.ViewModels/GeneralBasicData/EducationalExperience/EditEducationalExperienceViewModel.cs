@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Decision.ViewModels.GeneralBasicData.EducationalExperience
 {
-    public class EditEducationalExperienceViewModel:BaseRowVersion
+    public class EditEducationalExperienceViewModel
     {
 
         #region Properties

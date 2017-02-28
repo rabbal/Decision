@@ -4,7 +4,7 @@ using Decision.DomainClasses.Applicants;
 
 namespace Decision.ViewModels.GeneralBasicData.WorkExperience
 {
-    public class WorkExperienceViewModel:BaseViewModel
+    public class WorkExperienceViewModel
     {
         #region Properties
         public  Guid Id { get; set; }

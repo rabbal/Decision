@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Decision.ViewModels.ApplicantEvaluation.Interview
 {
-    public class InterviewViewModel :BaseViewModel
+    public class InterviewViewModel 
     {
         #region Properties
         public  Guid Id { get; set; }

@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Web.Mvc;
 using Decision.Framework.Infrastructure;
-using Decision.Services.Interfaces.Users;
+using Decision.ServiceLayer.Interfaces.Identity;
 
 namespace Decision.Web.Infrastructure.Filters
 {
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class)]
     public sealed class PopulateUserSelectListAttribute : ActionFilterAttribute
     {
-        #region Properties (1)
+        #region Properties
 
         public IUserService UserService { get; set; }
 
         #endregion
 
-        #region Methods (1)
+        #region Public Methods 
 
         public override void OnActionExecuted(ActionExecutedContext filterContext)
         {

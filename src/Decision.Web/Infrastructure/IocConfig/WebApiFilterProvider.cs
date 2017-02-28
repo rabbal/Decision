@@ -2,7 +2,10 @@ using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
+using System.Web.Mvc;
 using StructureMap;
+using FilterInfo = System.Web.Http.Filters.FilterInfo;
+using IFilterProvider = System.Web.Http.Filters.IFilterProvider;
 
 namespace Decision.Web.Infrastructure.IocConfig
 {

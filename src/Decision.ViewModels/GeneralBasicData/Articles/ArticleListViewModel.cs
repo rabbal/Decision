@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Decision.ViewModels.GeneralBasicData.Article
+namespace Decision.ViewModels.GeneralBasicData.Articles
 {
     public class ArticleListViewModel
     {

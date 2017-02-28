@@ -17,8 +17,8 @@ namespace Decision.DomainClasses.Identity
         #endregion
 
         #region Properties
-
         public string NormalizedName { get; set; }
+        public string DisplayName { get; set; }
         public string Description { get; set; }
         public bool IsActive { get; set; } = true;
         public bool IsSystemEntry { get; set; }

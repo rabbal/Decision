@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Decision.ViewModels.ApplicantEvaluation.EntireEvaluation
 {
-    public class EditEntireEvaluationViewModel : BaseRowVersion
+    public class EditEntireEvaluationViewModel 
     {
         #region Properties
         public  Guid Id { get; set; }

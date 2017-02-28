@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using Decision.Framework.Domain.Models;
 
 namespace Decision.ViewModels.Identity
 {

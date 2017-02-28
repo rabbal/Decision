@@ -1,5 +1,6 @@
 ﻿using Decision.Web.Infrastructure.Tasks.Contracts;
 using StructureMap;
+using StructureMap.Configuration.DSL;
 using StructureMap.Graph;
 
 namespace Decision.Web.Infrastructure.IocConfig

@@ -1,20 +1,23 @@
 ﻿@using System.Configuration
+@using System.Globalization
 @using System.Web.Mvc
 @using Decision.Framework.MvcToolkit.Alerts.Noty
+
 @helper IncludeGoogleAnalytics(WebViewPage page)
 {
-    var controller = page.ViewContext.Controller;
-    var controllerHasAuthorizeAttribute = controller.GetType().GetCustomAttributes(typeof(AuthorizeAttribute), true).Any();
-    var currentActionName = page.ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString();
-    var actionHasAuthorizeAttribute = controller.GetType()
-        .GetMethods()
-        .Any(x => x.Name == currentActionName &&
-                  x.GetCustomAttributes(typeof(AuthorizeAttribute), true).Any());
-    if (controllerHasAuthorizeAttribute || actionHasAuthorizeAttribute)
-    {
-        return;
-    }
-    var trackingId = ConfigurationManager.AppSettings["GoogleAnalyticsID"];
+var controller = page.ViewContext.Controller;
+var controllerHasAuthorizeAttribute = controller.GetType().GetCustomAttributes(typeof(AuthorizeAttribute), true).Any();
+var currentActionName = page.ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString();
+var actionHasAuthorizeAttribute = controller.GetType()
+    .GetMethods()
+    .Any(x => x.Name == currentActionName &&
+              x.GetCustomAttributes(typeof(AuthorizeAttribute), true).Any());
+
+if (controllerHasAuthorizeAttribute || actionHasAuthorizeAttribute)
+{
+    return;
+}
+var trackingId = ConfigurationManager.AppSettings["GoogleAnalyticsID"];
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(["_setAccount", '@trackingId']);
@@ -31,12 +34,6 @@
     </script>
 }
 
-
-@* Generator: MvcHelper GeneratePrettyNames: true *@
-
-@*for using razor generator after creating htmlhlper and run Enable-RazorGenerator
-    you should change build action of generated class to complie *@
-
 @helper ShowNotyMessages(Noty notyInput)
 {
 if (notyInput == null)
@@ -45,9 +42,9 @@ if (notyInput == null)
 }
 
     <script>
-    $(function() {
+        $(function() {
 
-        @foreach (var message in notyInput.NotyMessages)
+            @foreach (var message in notyInput.NotyMessages)
             {
                 @*@:var  overrideOptions= {};
                 @: overrideOptions.layout= '@message.Location';
@@ -91,9 +88,52 @@ if (notyInput == null)
                  @:overrideOptions.animation=overrideAnimation;
                  @:noty(overrideOptions);*@
             @:infoNoty('@message.Message');
-                }
+                            }
 
-    });
+        });
 
+    </script>
+}
+
+@helper CheckBoxList(string name, IEnumerable<SelectListItem> items)
+{
+    <div class="row">
+        @foreach (var item in items)
+        {
+            <text>
+                <div class="col-md-6">
+                    <input type="checkbox" @if (item.Selected) { <text> checked="checked" </text>    }
+                           id="@item.Value" name="@name" value="@item.Value" class="checkbox-inline" />
+                    <label for="@item.Value" class="control-label">@item.Text</label>
+                </div>
+            </text>
+        }
+    </div>
+}
+
+@helper InitialDatePicker()
+{
+Func<DateTime, string> toPersianDate = date =>
+{
+    var dateTime = new DateTime(date.Year, date.Month, date.Day, new GregorianCalendar());
+    var persianCalendar = new PersianCalendar();
+    return string.Format("{0}/{1}/{2}",
+        persianCalendar.GetYear(dateTime),
+        persianCalendar.GetMonth(dateTime).ToString("00"),
+        persianCalendar.GetDayOfMonth(dateTime).ToString("00"));
+};
+
+var today = toPersianDate(DateTime.Now);
+    <script>
+        $(function() {
+            $(document).on('focus', 'input.datepicker', function() {
+                $(this).datepicker({
+                    "setDate": @today,
+                    changeMonth: true, //
+                    changeYear: true, // T
+                    yearRange: 'c-100:c+0'
+                });
+            });
+        });
     </script>
 }

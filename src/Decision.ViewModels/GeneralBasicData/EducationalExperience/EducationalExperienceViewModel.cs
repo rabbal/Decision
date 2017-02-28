@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Decision.ViewModels.GeneralBasicData.EducationalExperience
 {
-    public class EducationalExperienceViewModel : BaseViewModel
+    public class EducationalExperienceViewModel 
     {
         #region Properties
         public Guid Id { get; set; }

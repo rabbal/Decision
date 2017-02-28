@@ -240,6 +240,7 @@
     <Compile Include="Domain\Entities\IEntity.cs" />
     <Compile Include="Domain\Entities\IHasRowLevelSecurity.cs" />
     <Compile Include="Domain\Entities\IActivatable.cs" />
+    <Compile Include="Domain\Entities\ISetting.cs" />
     <Compile Include="Domain\Entities\ISoftDelete.cs" />
     <Compile Include="Domain\Entities\ISystemDefaultEntry.cs" />
     <Compile Include="Domain\Entities\Tracking\CreationTrackingEntity.cs" />

@@ -38,6 +38,7 @@ namespace T4MVC
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string _BreadCrumb = "_BreadCrumb";
                 public readonly string _CaptchaPartial = "_CaptchaPartial";
                 public readonly string _Layout = "_Layout";
                 public readonly string _LoginPartial = "_LoginPartial";
@@ -45,6 +46,7 @@ namespace T4MVC
                 public readonly string _TrackingInfo = "_TrackingInfo";
                 public readonly string Error = "Error";
             }
+            public readonly string _BreadCrumb = "~/Views/Shared/_BreadCrumb.cshtml";
             public readonly string _CaptchaPartial = "~/Views/Shared/_CaptchaPartial.cshtml";
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
             public readonly string _LoginPartial = "~/Views/Shared/_LoginPartial.cshtml";

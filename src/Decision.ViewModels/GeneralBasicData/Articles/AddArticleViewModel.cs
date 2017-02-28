@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Decision.ViewModels.GeneralBasicData.Article
+namespace Decision.ViewModels.GeneralBasicData.Articles
 {
     public class AddArticleViewModel
     {

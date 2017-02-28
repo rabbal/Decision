@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Decision.ViewModels.ApplicantEvaluation.Interview
 {
-    public class EditInterviewViewModel : BaseRowVersion
+    public class EditInterviewViewModel 
     {
    
         #region Properties

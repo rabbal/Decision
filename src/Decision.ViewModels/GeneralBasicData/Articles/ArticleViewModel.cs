@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace Decision.ViewModels.GeneralBasicData.Article
+namespace Decision.ViewModels.GeneralBasicData.Articles
 {
-    public class ArticleViewModel :BaseViewModel
+    public class ArticleViewModel 
     {
         #region Properties
         [DisplayName("کد مقاله")]

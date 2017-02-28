@@ -211,7 +211,6 @@ namespace Decision.ServiceLayer.EntityFramework.Security
                 CanManageAppraiser,
                 CanManageQuestion,
                 CanManageInstitution
-
             };
         }
     }

@@ -12,9 +12,11 @@ namespace Decision.DataLayer.Mappings.Users
 
             Property(u => u.RowVersion).IsRowVersion();
 
+            Ignore(u => u.FullName);
+
             Property(u => u.PhoneNumber).IsOptional().HasMaxLength(20);
 
-            Property(u => u.DisplayName).IsRequired().HasMaxLength(50);
+            Property(u => u.FullName).IsRequired().HasMaxLength(50);
 
             Property(u => u.UserName)
                 .IsRequired()

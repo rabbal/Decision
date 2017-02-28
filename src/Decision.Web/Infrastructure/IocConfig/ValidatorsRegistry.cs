@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using FluentValidation;
 using StructureMap;
+using StructureMap.Configuration.DSL;
 
 namespace Decision.Web.Infrastructure.IocConfig
 {

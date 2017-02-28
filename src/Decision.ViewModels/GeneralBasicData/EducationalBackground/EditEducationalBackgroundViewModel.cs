@@ -8,7 +8,7 @@ using Decision.DomainClasses.Applicants;
 
 namespace Decision.ViewModels.GeneralBasicData.EducationalBackground
 {
-    public class EditEducationalBackgroundViewModel : BaseRowVersion
+    public class EditEducationalBackgroundViewModel 
     {
         #region Properties
         public Guid Id { get; set; }

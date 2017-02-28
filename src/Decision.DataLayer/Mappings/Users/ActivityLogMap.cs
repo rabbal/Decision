@@ -4,7 +4,7 @@ using Decision.DomainClasses.Identity;
 
 namespace Decision.DataLayer.Mappings.Users
 {
-    public class ActivityLogMap : EntityMap<ActivityLog, Guid>
+    public class ActivityLogMap : EntityMap<ActivityLog, long>
     {
         public ActivityLogMap()
         {

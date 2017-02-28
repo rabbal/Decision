@@ -2,6 +2,7 @@
 using Decision.Framework.Configuration;
 using Decision.Framework.Logging;
 using StructureMap;
+using StructureMap.Configuration.DSL;
 
 namespace Decision.Web.Infrastructure.IocConfig
 {
@@ -9,7 +10,6 @@ namespace Decision.Web.Infrastructure.IocConfig
     {
         public CommonRegistry()
         {
-            For<ICache>().Use<HttpContextCacheAdapter>();
             For<IConfigurationManager>().Singleton().Use<ConfigurationManagerWrapper>();
 
             //For<IRedisCache>().Singleton().Add<RedisCache>();

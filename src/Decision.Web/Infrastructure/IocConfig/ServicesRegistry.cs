@@ -1,13 +1,11 @@
 ﻿using System;
 using Decision.Framework.Configuration;
-using Decision.Services.EntityFramework.Common;
-using Decision.Services.Interfaces.Common;
-using Decision.Services.Interfaces.Security;
-using Decision.Services.Interfaces.Users;
+using Decision.ServiceLayer.Interfaces.Identity;
+
 using Decision.Web.Infrastructure.Services;
 using Decision.Web.Infrastructure.Services.Contracts;
-using StructureMap;
 using StructureMap.Web;
+using StructureMap.Configuration.DSL;
 
 namespace Decision.Web.Infrastructure.IocConfig
 {
@@ -15,7 +13,6 @@ namespace Decision.Web.Infrastructure.IocConfig
     {
         public ServicesRegistry()
         {
-            For<IDateTime>().Use<SystemDateTime>();
             For<IAppConfiguration>().Singleton().Use(AppConfiguration.Config);
 
             For<IFeedService>().HybridHttpOrThreadLocalScoped().Use<FeedService>();
@@ -33,7 +30,6 @@ namespace Decision.Web.Infrastructure.IocConfig
                 setterConvention.OfType<ICurrentUser>();
                 setterConvention.OfType<IAppConfiguration>();
                 setterConvention.OfType<Func<IAppConfiguration>>();
-                setterConvention.OfType<Func<ITokenStoreService>>();
             });
 
             Scan(a =>

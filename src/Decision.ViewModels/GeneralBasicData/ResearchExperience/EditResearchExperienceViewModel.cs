@@ -5,7 +5,7 @@ using Decision.DomainClasses.Applicants;
 
 namespace Decision.ViewModels.GeneralBasicData.ResearchExperience
 {
-    public class EditResearchExperienceViewModel:BaseRowVersion
+    public class EditResearchExperienceViewModel
     {
         #region Properties
         public Guid Id { get; set; }

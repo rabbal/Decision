@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 using Decision.DataLayer.Context;
+using Decision.Framework.Domain.Uow;
 
 namespace Decision.Web.Infrastructure.Filters
 {

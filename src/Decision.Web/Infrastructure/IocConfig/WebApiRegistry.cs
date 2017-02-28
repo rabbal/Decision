@@ -1,7 +1,4 @@
-﻿using Microsoft.Owin.Security.Infrastructure;
-using Microsoft.Owin.Security.OAuth;
-using Decision.Web.Infrastructure.JsonWebTokenConfig;
-using StructureMap;
+﻿using StructureMap.Configuration.DSL;
 
 namespace Decision.Web.Infrastructure.IocConfig
 {
@@ -9,9 +6,6 @@ namespace Decision.Web.Infrastructure.IocConfig
     {
         public WebApiRegistry()
         {
-            For<IAppJwtConfiguration>().Singleton().Use(() => AppJwtConfiguration.Config);
-            For<IOAuthAuthorizationServerProvider>().Singleton().Use<AppOAuthProvider>();
-            For<IAuthenticationTokenProvider>().Singleton().Use<RefreshTokenProvider>();
         }
     }
 }

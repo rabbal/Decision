@@ -1,16 +1,14 @@
 ﻿using System.Data.Entity;
 using System.Web;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using Decision.DataLayer.Context;
-using Decision.DomainClasses.Users;
-using Decision.Services.EntityFramework.Messages;
-using Decision.Services.EntityFramework.Security;
-using Decision.Services.EntityFramework.Users;
-using Decision.Services.Interfaces.Security;
-using Decision.Services.Interfaces.Users;
-using StructureMap;
+using Decision.DomainClasses.Identity;
+using Decision.Framework.Domain.Uow;
+using Decision.ServiceLayer.EntityFramework.Identity;
+using Decision.ServiceLayer.Interfaces.Identity;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using StructureMap.Configuration.DSL;
 using StructureMap.Web;
 
 namespace Decision.Web.Infrastructure.IocConfig

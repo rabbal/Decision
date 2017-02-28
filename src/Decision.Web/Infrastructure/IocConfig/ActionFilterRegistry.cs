@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Http.Filters;
 using StructureMap;
+using StructureMap.Configuration.DSL;
 using StructureMap.TypeRules;
 
 namespace Decision.Web.Infrastructure.IocConfig

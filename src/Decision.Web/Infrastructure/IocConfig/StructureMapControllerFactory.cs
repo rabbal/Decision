@@ -5,6 +5,7 @@ using Decision.Framework.Logging;
 using Decision.Web.Controllers;
 using StructureMap;
 
+
 namespace Decision.Web.Infrastructure.IocConfig
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Decision.Web.Infrastructure.IocConfig
             //requestContext.RouteData.Values["action"] = MVC.Search.ActionNames.Index;
             //requestContext.RouteData.Values["term"] = url.GetPostSlug().Replace("-", " ");
 
-            var searchController = _container.GetInstance(typeof(SearchController)) as Controller;
+            var searchController = _container.GetInstance(typeof(HomeController)) as Controller;
             searchController.TempDataProvider = _container.GetInstance<ITempDataProvider>();
 
             return searchController;

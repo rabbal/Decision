@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Decision.ViewModels.GeneralBasicData.Question
 {
-    public class QuestionViewModel : BaseViewModel
+    public class QuestionViewModel 
     {
         #region Properties
         public Guid Id { get; set; }

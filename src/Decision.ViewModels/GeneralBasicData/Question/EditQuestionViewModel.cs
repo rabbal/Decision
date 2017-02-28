@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Decision.ViewModels.GeneralBasicData.Question
 {
-    public class EditQuestionViewModel : BaseIsDelete
+    public class EditQuestionViewModel 
     {
         #region Properties
         public  Guid Id { get; set; }

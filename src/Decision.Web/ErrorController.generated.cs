@@ -23,10 +23,66 @@ using System.Web.Mvc.Ajax;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
 using T4MVC;
-namespace T4MVC
+namespace Decision.Web.Controllers
 {
-    public class ErrorController
+    public partial class ErrorController
     {
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ErrorController() { }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected ErrorController(Dummy d) { }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected RedirectToRouteResult RedirectToAction(ActionResult result)
+        {
+            var callInfo = result.GetT4MVCResult();
+            return RedirectToRoute(callInfo.RouteValueDictionary);
+        }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected RedirectToRouteResult RedirectToAction(Task<ActionResult> taskResult)
+        {
+            return RedirectToAction(taskResult.Result);
+        }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected RedirectToRouteResult RedirectToActionPermanent(ActionResult result)
+        {
+            var callInfo = result.GetT4MVCResult();
+            return RedirectToRoutePermanent(callInfo.RouteValueDictionary);
+        }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected RedirectToRouteResult RedirectToActionPermanent(Task<ActionResult> taskResult)
+        {
+            return RedirectToActionPermanent(taskResult.Result);
+        }
+
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ErrorController Actions { get { return MVC.Error; } }
+        [GeneratedCode("T4MVC", "2.0")]
+        public readonly string Area = "";
+        [GeneratedCode("T4MVC", "2.0")]
+        public readonly string Name = "error";
+        [GeneratedCode("T4MVC", "2.0")]
+        public const string NameConst = "error";
+        [GeneratedCode("T4MVC", "2.0")]
+        static readonly ActionNamesClass s_actions = new ActionNamesClass();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionNamesClass ActionNames { get { return s_actions; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionNamesClass
+        {
+            public readonly string BadRequest = ("BadRequest").ToLowerInvariant();
+            public readonly string Forbidden = ("Forbidden").ToLowerInvariant();
+            public readonly string InternalServerError = ("InternalServerError").ToLowerInvariant();
+            public readonly string MethodNotAllowed = ("MethodNotAllowed").ToLowerInvariant();
+            public readonly string NotFound = ("NotFound").ToLowerInvariant();
+            public readonly string Unauthorized = ("Unauthorized").ToLowerInvariant();
+        }
+
 
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -56,6 +112,78 @@ namespace T4MVC
         }
     }
 
+    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+    public partial class T4MVC_ErrorController : Decision.Web.Controllers.ErrorController
+    {
+        public T4MVC_ErrorController() : base(Dummy.Instance) { }
+
+        [NonAction]
+        partial void BadRequestOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult BadRequest()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.BadRequest);
+            BadRequestOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ForbiddenOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Forbidden()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Forbidden);
+            ForbiddenOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void InternalServerErrorOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult InternalServerError()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.InternalServerError);
+            InternalServerErrorOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void MethodNotAllowedOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult MethodNotAllowed()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.MethodNotAllowed);
+            MethodNotAllowedOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void NotFoundOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult NotFound()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.NotFound);
+            NotFoundOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void UnauthorizedOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Unauthorized()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Unauthorized);
+            UnauthorizedOverride(callInfo);
+            return callInfo;
+        }
+
+    }
 }
 
 #endregion T4MVC

@@ -4,7 +4,7 @@ using Decision.DomainClasses.Identity;
 
 namespace Decision.DataLayer.Mappings.Users
 {
-    public class NotificationMap : EntityMap<Notification,Guid>
+    public class NotificationMap : EntityMap<Notification, long>
     {
         public NotificationMap()
         {

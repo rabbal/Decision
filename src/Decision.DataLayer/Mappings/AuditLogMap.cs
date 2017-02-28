@@ -5,7 +5,7 @@ using Decision.DomainClasses;
 
 namespace Decision.DataLayer.Mappings
 {
-    public class AuditLogMap : EntityMap<AuditLog, Guid>
+    public class AuditLogMap : EntityMap<AuditLog, long>
     {
         public AuditLogMap()
         {

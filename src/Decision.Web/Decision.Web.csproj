@@ -57,13 +57,89 @@
       <HintPath>..\..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DNTBreadCrumb, Version=1.1.0.0, Culture=neutral, PublicKeyToken=497634d1897e8b41, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DNTBreadCrumb.1.1.0.0\lib\net45\DNTBreadCrumb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DNTScheduler, Version=1.1.0.0, Culture=neutral, PublicKeyToken=50c85bcc1dbe9da4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DNTScheduler.1.1.0.0\lib\net46\DNTScheduler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ElmahEFLogger, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ElmahEFLogger.1.0.2.0\lib\net45\ElmahEFLogger.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation.Mvc, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentValidation.MVC5.6.2.1.0\lib\Net45\FluentValidation.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <HintPath>..\..\packages\DNTScheduler.1.1.0.0\lib\net46\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
@@ -74,6 +150,10 @@
       <HintPath>..\..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RazorGenerator.Mvc.2.4.8\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="StructureMap, Version=3.1.9.463, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\structuremap.3.1.9.463\lib\net40\StructureMap.dll</HintPath>
       <Private>True</Private>
@@ -82,9 +162,20 @@
       <HintPath>..\..\packages\structuremap.3.1.9.463\lib\net40\StructureMap.Net4.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="StructureMap.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\structuremap.web.4.0.0.315\lib\net40\StructureMap.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -93,6 +184,10 @@
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -127,6 +222,10 @@
       <HintPath>..\..\packages\T4MVCExtensions.4.0.0\lib\net45\T4MVCExtensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DNTScheduler.1.1.0.0\lib\net46\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
@@ -136,11 +235,15 @@
     <Compile Include="ApplicantEvaluation.SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\ApplicantEvaluation\ApplicantEvaluationAreaRegistration.cs" />
     <Compile Include="Areas\GeneralBasicData\Controllers\ApplicantController.cs" />
     <Compile Include="Areas\GeneralBasicData\GeneralBasicDataAreaRegistration.cs" />
     <Compile Include="Areas\Identity\IdentityAreaRegistration.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="ErrorController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -180,8 +283,6 @@
     <Compile Include="Infrastructure\Filters\LogAttribute.cs" />
     <Compile Include="Infrastructure\Filters\PopulateUserSelectListAttribute.cs" />
     <Compile Include="Infrastructure\Filters\UnitOfWorkAttribute.cs" />
-    <Compile Include="Infrastructure\Filters\UpdateLastActivityAttribute.cs" />
-    <Compile Include="Infrastructure\HtmlHelperExtensions.cs" />
     <Compile Include="Infrastructure\IocConfig\ActionFilterRegistry.cs" />
     <Compile Include="Infrastructure\IocConfig\AutoMapperRegistry.cs" />
     <Compile Include="Infrastructure\IocConfig\CommonRegistry.cs" />
@@ -203,29 +304,7 @@
     <Compile Include="Infrastructure\IocConfig\ValidatorsRegistry.cs" />
     <Compile Include="Infrastructure\IocConfig\WebApiFilterProvider.cs" />
     <Compile Include="Infrastructure\IocConfig\WebApiRegistry.cs" />
-    <Compile Include="Infrastructure\JsonWebTokenConfig\AppJwtConfiguration.cs" />
-    <Compile Include="Infrastructure\JsonWebTokenConfig\AppJwtOptions.cs" />
-    <Compile Include="Infrastructure\JsonWebTokenConfig\AppJwtWriterFormat.cs" />
-    <Compile Include="Infrastructure\JsonWebTokenConfig\AppOAuthOptions.cs" />
-    <Compile Include="Infrastructure\JsonWebTokenConfig\AppOAuthProvider.cs" />
-    <Compile Include="Infrastructure\JsonWebTokenConfig\IAppJwtConfiguration.cs" />
-    <Compile Include="Infrastructure\JsonWebTokenConfig\JwtAuthorizeAttribute.cs" />
-    <Compile Include="Infrastructure\JsonWebTokenConfig\RefreshTokenProvider.cs" />
-    <Compile Include="Infrastructure\Mapper\AddressProfile.cs" />
-    <Compile Include="Infrastructure\Mapper\AnswerOptionProfile.cs" />
-    <Compile Include="Infrastructure\Mapper\ApplicantProfile.cs" />
-    <Compile Include="Infrastructure\Mapper\ArticleProfile.cs" />
-    <Compile Include="Infrastructure\Mapper\EducationalBackgroundProfile.cs" />
-    <Compile Include="Infrastructure\Mapper\EducationalExperienceProfile.cs" />
-    <Compile Include="Infrastructure\Mapper\EnitreEvaluationProfile.cs" />
     <Compile Include="Infrastructure\Mapper\Extensions\PersianExtensions.cs" />
-    <Compile Include="Infrastructure\Mapper\InterviewProfile.cs" />
-    <Compile Include="Infrastructure\Mapper\PrivateMessageProfile.cs" />
-    <Compile Include="Infrastructure\Mapper\QuestionProfile.cs" />
-    <Compile Include="Infrastructure\Mapper\ResearchExperienceProfile.cs" />
-    <Compile Include="Infrastructure\Mapper\RoleProfile.cs" />
-    <Compile Include="Infrastructure\Mapper\UserProfile.cs" />
-    <Compile Include="Infrastructure\Mapper\WorkExperienceProfile.cs" />
     <Compile Include="Infrastructure\Services\BrowserConfigService.cs" />
     <Compile Include="Infrastructure\Services\CacheService.cs" />
     <Compile Include="Infrastructure\Services\Contracts\IBrowserConfigService.cs" />
@@ -237,12 +316,6 @@
     <Compile Include="Infrastructure\Services\Contracts\IRobotsService.cs" />
     <Compile Include="Infrastructure\Services\Contracts\ISitemapPingerService.cs" />
     <Compile Include="Infrastructure\Services\Contracts\ISitemapService.cs" />
-    <Compile Include="Infrastructure\Services\FeedService.cs" />
-    <Compile Include="Infrastructure\Services\ManifestService.cs" />
-    <Compile Include="Infrastructure\Services\OpenSearchService.cs" />
-    <Compile Include="Infrastructure\Services\RobotsService.cs" />
-    <Compile Include="Infrastructure\Services\SitemapPingerService.cs" />
-    <Compile Include="Infrastructure\Services\SitemapService.cs" />
     <Compile Include="Infrastructure\Tasks\ ConfigureAntiForgery.cs" />
     <Compile Include="Infrastructure\Tasks\ ConfigureSecurity.cs" />
     <Compile Include="Infrastructure\Tasks\AddUserAndRoles.cs" />
@@ -259,25 +332,13 @@
     <Compile Include="Infrastructure\Tasks\ScheduledTasksRegistry.cs" />
     <Compile Include="Infrastructure\Tasks\SignalrStartUp.cs" />
     <Compile Include="Infrastructure\Tasks\TransactionPerRequest.cs" />
-    <Compile Include="Infrastructure\Temp\AspNetIdentityRegistery.cs" />
-    <Compile Include="Infrastructure\Temp\AutoMapperRegistery.cs" />
-    <Compile Include="Infrastructure\Temp\ProjectObjectFactory.cs" />
-    <Compile Include="Infrastructure\Temp\ServiceLayerRegistery.cs" />
-    <Compile Include="Infrastructure\Temp\StructureMapFilterProvider.cs" />
-    <Compile Include="Infrastructure\Temp\StructureMapHttpControllerActivator.cs" />
-    <Compile Include="Infrastructure\Temp\StructureMapSignalRDependencyResolver.cs" />
-    <Compile Include="Infrastructure\Temp\TaskRegistery.cs" />
     <Compile Include="Infrastructure\WebTasks\FullBackUpTask.cs" />
-    <Compile Include="Infrastructure\Filters\ActivityAttribute.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Infrastructure\Filters\ActivityLogAttribute.cs" />
     <Compile Include="Hubs\BaseHub.cs" />
-    <Compile Include="App_Start\RoutingConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\ApplicationStart.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="App_Start\RegisterModules.cs" />
-    <Compile Include="App_Start\StructureMapControllerFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -345,6 +406,7 @@
     <Content Include="NoScript.html" />
     <Content Include="browserconfig.xml" />
     <Content Include="Global.asax" />
+    <Content Include="readme.txt" />
     <Content Include="Scripts\angular-scenario.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1317,10 +1379,6 @@
     <Content Include="Scripts\libs\bootstrap.js" />
     <Content Include="Scripts\libs\bootstrap.min.js" />
     <Content Include="Scripts\libs\bootstrap.min.js.map" />
-    <Content Include="RazorHelpers\NotyBuilder.cshtml">
-      <BrowseToURL>~/ToastrBuilder.cshtml</BrowseToURL>
-    </Content>
-    <Content Include="RazorHelpers\CheckBoxListBuilder.cshtml" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\plugins\jquery.farsiInput.js" />
     <Content Include="Scripts\plugins\jquery.farsiInput.min.js">
@@ -1400,7 +1458,6 @@
     <Content Include="Scripts\customs\jquery.ajax.querystring.min.js.map">
       <DependentUpon>jquery.ajax.querystring.min.js</DependentUpon>
     </Content>
-    <Content Include="RazorHelpers\DatePickerInitial.cshtml" />
     <Content Include="Areas\GeneralBasicData\Views\Applicant\_ItemsList.cshtml" />
     <Content Include="Areas\GeneralBasicData\Views\Applicant\Edit.cshtml" />
     <Content Include="Scripts\customs\noty.alerts.min.js.map">
@@ -1640,6 +1697,7 @@
     <Content Include="Views\Error\MethodNotAllowed.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\Unauthorized.cshtml" />
+    <Content Include="Views\Shared\_BreadCrumb.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\ApplicantEvaluation\Controllers\" />
@@ -1656,7 +1714,6 @@
     <Folder Include="Client\Services\" />
     <Folder Include="Client\Views\" />
     <Folder Include="Content\Report\" />
-    <Folder Include="Controllers\" />
     <Folder Include="File\avatar\" />
     <Folder Include="File\image\" />
     <Folder Include="File\userFile\" />

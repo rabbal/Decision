@@ -1,0 +1,71 @@
+﻿@using DNTBreadCrumb
+@{
+    var homeUrl = Url.Action("Index", "Home");
+    const string homePage = "Home";
+
+    var breadCrumbs = this.Context.Items[BreadCrumbExtentions.CurrentBreadCrumbKey] as List<BreadCrumb>;
+    var currentFullUrl = this.Request.Url.ToString();
+    var currentRouteUrl = Url.RouteUrl(this.ViewContext.RouteData.Values);
+    var isCurrentPageHomeUrl = homeUrl.Equals(currentFullUrl, StringComparison.OrdinalIgnoreCase) ||
+                               homeUrl.Equals(currentRouteUrl, StringComparison.OrdinalIgnoreCase);
+}
+
+@if (breadCrumbs != null && breadCrumbs.Any())
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                    @if (isCurrentPageHomeUrl)
+                    {
+                        <li class="active">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                            @homePage
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="@homeUrl">
+                                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                                @homePage
+                            </a>
+                        </li>
+                    }
+
+                    @foreach (var node in breadCrumbs.OrderBy(x => x.Order))
+                    {
+                        if (node.Url.Equals(homeUrl, StringComparison.OrdinalIgnoreCase))
+                        {
+                            continue;
+                        }
+
+                        if (node.Url.Equals(currentFullUrl, StringComparison.OrdinalIgnoreCase) ||
+                            node.Url.Equals(currentRouteUrl, StringComparison.OrdinalIgnoreCase))
+                        {
+                            <li class="active">
+                                @if (!string.IsNullOrWhiteSpace(node.GlyphIcon))
+                                {
+                                    <span class="@node.GlyphIcon" aria-hidden="true"></span>
+                                }
+                                @node.Title
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="@node.Url">
+                                    @if (!string.IsNullOrWhiteSpace(node.GlyphIcon))
+                                    {
+                                        <span class="@node.GlyphIcon" aria-hidden="true"></span>
+                                    }
+                                    @node.Title
+                                </a>
+                            </li>
+                        }
+                    }
+                </ol>
+            </div>
+        </div>
+    </div>
+}

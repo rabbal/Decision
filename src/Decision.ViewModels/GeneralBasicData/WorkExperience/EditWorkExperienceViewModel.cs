@@ -7,7 +7,7 @@ using Decision.DomainClasses.Applicants;
 
 namespace Decision.ViewModels.GeneralBasicData.WorkExperience
 {
-    public class EditWorkExperienceViewModel:BaseRowVersion
+    public class EditWorkExperienceViewModel
     {
         #region Ctor
         public EditWorkExperienceViewModel()

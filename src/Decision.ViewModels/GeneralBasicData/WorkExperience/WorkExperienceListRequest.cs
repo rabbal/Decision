@@ -1,4 +1,5 @@
 ﻿using System;
+using Decision.Framework.Domain.Models;
 
 namespace Decision.ViewModels.GeneralBasicData.WorkExperience
 {

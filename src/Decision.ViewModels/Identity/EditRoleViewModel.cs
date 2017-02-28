@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Decision.ViewModels.Identity
 {
-    public class EditRoleViewModel : BaseRowVersion
+    public class EditRoleViewModel 
     {
 
         public Guid Id { get; set; }

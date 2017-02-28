@@ -4,7 +4,7 @@ using Decision.DomainClasses.Applicants;
 
 namespace Decision.ViewModels.GeneralBasicData.EducationalBackground
 {
-    public class EducationalBackgroundViewModel : BaseViewModel
+    public class EducationalBackgroundViewModel 
     {
         #region Properties
         public Guid ApplicantId { get; set; }

@@ -1,4 +1,5 @@
 ﻿using StructureMap;
+using StructureMap.Configuration.DSL;
 using StructureMap.Graph;
 
 namespace Decision.Web.Infrastructure.IocConfig

@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Decision.ViewModels.GeneralBasicData.Article
+namespace Decision.ViewModels.GeneralBasicData.Articles
 {
-    public class EditArticleViewModel : BaseRowVersion
+    public class EditArticleViewModel 
     {
         #region Properties
         public  Guid Id { get; set; }

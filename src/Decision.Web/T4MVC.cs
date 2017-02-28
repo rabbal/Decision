@@ -33,8 +33,8 @@ public static partial class MVC
     public static GeneralBasicDataClass GeneralBasicData { get { return s_GeneralBasicData; } }
     static readonly IdentityClass s_Identity = new IdentityClass();
     public static IdentityClass Identity { get { return s_Identity; } }
-    public static T4MVC.ErrorController Error = new T4MVC.ErrorController();
-    public static T4MVC.HomeController Home = new T4MVC.HomeController();
+    public static Decision.Web.Controllers.ErrorController Error = new Decision.Web.Controllers.T4MVC_ErrorController();
+    public static Decision.Web.Controllers.HomeController Home = new Decision.Web.Controllers.T4MVC_HomeController();
     public static T4MVC.ReportController Report = new T4MVC.ReportController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }

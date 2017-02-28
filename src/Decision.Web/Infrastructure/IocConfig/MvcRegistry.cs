@@ -10,6 +10,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Decision.Framework.MvcToolkit.Providers;
 using StructureMap;
+using StructureMap.Configuration.DSL;
 
 namespace Decision.Web.Infrastructure.IocConfig
 {
