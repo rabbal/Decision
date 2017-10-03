@@ -9,6 +9,7 @@ namespace Decision.DataLayer
     {
         public CustomDbConfiguration()
         {
+
             // problem with user defined transaction like [db.Database.BeginTransaction()]
             //SetExecutionStrategy("System.Data.SqlClient", () => new SqlServerExecutionStrategy());
             SetManifestTokenResolver(new CustomManifestTokenResolver());

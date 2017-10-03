@@ -491,7 +491,6 @@
     <Compile Include="MvcToolkit\ModelMetadata\IModelMetadataFilter.cs" />
     <Compile Include="MvcToolkit\Providers\CookieTempDataProvider.cs" />
     <Compile Include="MvcToolkit\Providers\SecureTempDataProvider.cs" />
-    <Compile Include="MvcToolkit\Resources.Designer.cs" />
     <Compile Include="MvcToolkit\RSS\CryptoUtils.cs" />
     <Compile Include="MvcToolkit\RSS\FeedItem.cs" />
     <Compile Include="MvcToolkit\RSS\FeedResult.cs" />
@@ -692,14 +691,12 @@
     <Folder Include="Configuration\Collections\" />
     <Folder Include="Configuration\Elements\" />
     <Folder Include="Cryptography\" />
+    <Folder Include="EntityFrameworkToolkit\Hooks\" />
     <Folder Include="MvcToolkit\HttpModules\" />
     <Folder Include="SEO\GoogleAnalytics\" />
     <Folder Include="SEO\Microdata\" />
     <Folder Include="Serialization\" />
     <Folder Include="WebToolkit\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="MvcToolkit\Resources.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
