@@ -1,7 +1,12 @@
-# Decision
-#### Help For Persian [بررسی نحوه راه اندازی](http://www.dotnettips.info/post/2432 "")
-One Full Feature Decision System For Store Informations of Masters
-# Features
+﻿<div dir="rtl">
+  
+سیستم تصمیم یار
+========
+
+[بررسی نحوه راه اندازی](http://www.dotnettips.info/post/2432)
+
+امکانات
+-------
 + UserManagement With Dynamic GroupBase Authorization
 + Integrated With Elmah
 + PrivateMessage System
@@ -20,7 +25,9 @@ One Full Feature Decision System For Store Informations of Masters
 + Teacher's Articles Evaluation System 
 + File Scanning
 
-# Screenshots
+Screenshots
+------------
+
 ![Index Page](http://www.dotnettips.info/file/image?name=1-5d57c3601d3e4a54918ef86de32b0e3f.jpg "")
 ![Teacher Details](http://www.dotnettips.info/file/image?name=2-bc7f4967a47a4d3ca9d8c6c9db9bc3b1.jpg "")
 ![](http://www.dotnettips.info/file/image?name=3-45b4fc0d20264567bbe932d6e1ac62b9.jpg "")
